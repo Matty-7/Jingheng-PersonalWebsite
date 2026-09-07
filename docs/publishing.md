@@ -14,15 +14,19 @@ Add an object to the array in `content/posts.json`:
   "date": "2026-09-07",
   "kind": "Essay",
   "status": "draft",
-  "paragraphs": ["First paragraph.", "Second paragraph."]
+  "blocks": [
+    { "type": "paragraph", "text": "First paragraph." },
+    { "type": "heading", "text": "A section title" },
+    { "type": "paragraph", "text": "Second paragraph." }
+  ]
 }
 ```
 
-This is a schema example, not a published article. Use a unique lowercase slug, an ISO date, and kind `Essay`, `Note`, or `Letter`. Paragraphs render as plain text; HTML is escaped. Change `status` to `published` when the actual text is ready. Journal routes and RSS filter out drafts and future dates. There are no example posts in the live data.
+This is a schema example, not a published article. Use a unique lowercase slug, an ISO date, and kind `Essay`, `Note`, or `Letter`. Blocks support paragraphs and section headings; text is escaped rather than interpreted as HTML. Change `status` to `published` when the actual text is ready. Journal routes and RSS filter out drafts and future dates. There are no example posts in the live data.
 
 Never put confidential drafts into the repository: draft status hides them from public pages, but collaborators with source access can still read committed files. Keep the post data and publishing module in server components. The homepage does not import draft data into its client bundle.
 
-The current workflow is repository-based. Edit content, run the checks in README, then publish a new version. There is no browser editor, scheduled publication job, or newsletter sending service. A scheduled date is a visibility guard, not a promise of an automatic email.
+The current workflow is repository-based. Edit content, run the checks in README, and merge the reviewed PR into `main`; the merge triggers deployment without another publishing confirmation. There is no browser editor, date-triggered article publication job, or newsletter sending service. A scheduled article date is a visibility guard, not a promise of an automatic email.
 
 ## Add a project
 
@@ -46,4 +50,8 @@ Memento and the alternate French Lovers on the Bridge poster use original theatr
 
 ## Public identity
 
-Use Jingheng Huan as the site's title and name. Matty Huan is the creator channel name. Public location is Upper East Side, New York only. Do not add a home address.
+Use Jingheng Huan as the site's title and name. Matty Huan is the creator channel name. Do not add a home address or location labels to the hero. Geographic details in owner-authored essays remain part of the original text.
+
+## Draft imports
+
+The Journal supports paragraph and section-heading blocks. When importing an owner-supplied document, retain the author's wording, remove exported comment anchors and the comment appendix, and do not silently apply suggestions inside comments. Confirm that full text may be stored in this public source repository before adding private document content. The owner explicitly approved committing both original essays to the public repository on September 7, 2026. *Something of My Own* and *Across the Water* are included with their original paragraphs and section headings. Only exported comment markers and the trailing comment appendix were removed. September 7 is their proposed website publication date, not a claimed document creation date. A source commit does not deploy the Site.

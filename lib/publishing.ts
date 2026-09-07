@@ -1,5 +1,6 @@
 import rawPosts from '@/content/posts.json';
 import profile from '@/content/profile.json';
+import { get_published_posts } from '@/lib/post_visibility';
 
 export type Post = {
   slug: string;
@@ -8,16 +9,10 @@ export type Post = {
   date: string;
   kind: 'Essay' | 'Note' | 'Letter';
   status: 'draft' | 'published';
-  paragraphs: string[];
+  blocks: { type: 'paragraph' | 'heading'; text: string }[];
 };
 const posts: Post[] = rawPosts as Post[];
-export const publishedPosts = posts
-  .filter(
-    (post) =>
-      post.status === 'published' &&
-      new Date(`${post.date}T00:00:00Z`).getTime() <= Date.now(),
-  )
-  .sort((a, b) => b.date.localeCompare(a.date));
+export const publishedPosts = get_published_posts(posts);
 export const newsletterUrl: string | null = profile.newsletterUrl;
 export const formatDate = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', {

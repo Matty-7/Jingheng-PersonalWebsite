@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { publishedPosts, newsletterUrl, formatDate } from '@/lib/publishing';
@@ -13,8 +14,8 @@ export default function Journal() {
   return (
     <main className="journal-page">
       <nav className="journal-nav" aria-label="Journal navigation">
-        <Link className="wordmark" href="/">
-          Jingheng Huan
+        <Link className="brand-link" href="/" aria-label="Jingheng Huan home">
+          <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
         </Link>
         <Link href="/">
           <ArrowLeft size={16} /> Back to the living room
@@ -99,7 +100,7 @@ export default function Journal() {
         )}
       </aside>
       <div className="journal-bottom">
-        <span>JINGHENG HUAN · NEW YORK</span>
+        <span>JINGHENG HUAN</span>
         <a href={`${profile.siteUrl}/feed.xml`}>
           Journal RSS <ArrowUpRight size={15} />
         </a>

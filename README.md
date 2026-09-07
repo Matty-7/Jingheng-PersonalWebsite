@@ -1,10 +1,10 @@
 # Jingheng Huan
 
-Jingheng's English personal website: selected work, YouTube, Talking Laughs, a journal, and an illustrated New York living room with ten records, ten films, and ten books.
+Jingheng's English personal website: selected work, YouTube, Talking Laughs, a journal, and an illustrated living room with ten records, ten films, and ten books.
 
 Visit **[www.jinghenghuan.com](https://www.jinghenghuan.com/)**.
 
-The website is named for its owner. The repository retains its original technical name so existing clones and source integrations keep working.
+The project name is `jingheng-personal-website`. The GitHub repository URL still uses `an-afternoon-uptown` until its owner completes the repository rename in Settings. The existing domain and Sites identity are independent of that name.
 
 ## Development
 
@@ -31,6 +31,7 @@ See [the publishing guide](docs/publishing.md) for the update process. There is 
 ```sh
 npm run lint
 npx tsc --noEmit
+npm test
 node scripts/check-content.mjs
 npm run build
 # With the development server running, use its printed URL:
@@ -38,3 +39,11 @@ node scripts/check-seo.mjs http://localhost:3001
 ```
 
 Built with React, TypeScript and Vinext. Hosting configuration is in `.openai/hosting.json`. Source: https://github.com/Matty-7/an-afternoon-uptown
+
+## Cloud development
+
+Open a cloud Work conversation in the same ChatGPT account/workspace and ask to continue this Site, or use this repository and the current PR as the handoff. Code execution and builds run in the cloud; the Mac does not need to remain awake. Work availability depends on the account and app. Remote is a separate mode that controls a connected computer.
+
+GitHub remains the code review history. Sites stores source versions and serves the existing domain. The autonomous four-role workflow reviews improvements, merges passing PRs into `main`, deploys them, then starts the next critique. Jingheng has authorized these merges and deployments without a separate confirmation. Pushing an unmerged branch or saving a Site version alone does not deploy it. Read [the agent workflow](docs/agent_workflow.md) before substantive changes.
+
+Official guidance: https://learn.chatgpt.com/training/walkthroughs/working-on-your-phone

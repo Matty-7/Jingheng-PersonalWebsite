@@ -4,7 +4,7 @@ All website content is in English. Conversation and planning can be in Chinese.
 
 ## Direction
 
-A sunny, illustrated Manhattan living room. Mid-century furniture, a bird-of-paradise plant, walnut, warm ivory, terracotta, forest green, mustard, a little blue. Prefer flat editorial room artwork and recognizable official film poster compositions with slight impressionist brushwork. No original symbolic stand-in film art. Use ordinary scrolling, with restrained spatial transitions and moments of stillness for reading.
+A sunny, illustrated living room. Mid-century furniture, a bird-of-paradise plant, walnut, warm ivory, terracotta, forest green, mustard, a little blue. Prefer flat editorial room artwork and recognizable official film poster compositions with slight impressionist brushwork. No original symbolic stand-in film art. Use ordinary scrolling, with restrained spatial transitions and moments of stillness for reading.
 
 ## First ten selections
 
@@ -21,6 +21,10 @@ Other music: New Radicals; jazz; Rain on Me (Tamia); The A Team (Ed Sheeran); Mi
 Broadway: “New York” from Two Strangers (Carry a Cake Across New York). Featured artwork and link use the original London cast recording with Sam Tutty and Dujonna Gift; do not label this recording as the Broadway cast.
 
 Daily New York: Upper East Side, Central Park, Lincoln Center, the Frick Collection.
+
+## September 2026 identity refinement
+
+Keep the large hero name as the only full-name treatment in the opening viewport. The navigation and browser icons use a custom JH path mark. Remove the hero location labels and generic slogans. The closing image is a distinct writing corner overlooking trees, with no numbered city chapter or repeated hero crop. The tenth record is now Tamia’s Rain on Me.
 
 ## Next refinements
 
