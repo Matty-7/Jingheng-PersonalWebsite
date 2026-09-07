@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Before Sunrise",
+    "year": 1995,
+    "director": "Richard Linklater",
+    "sourcePage": "https://www.impawards.com/1995/before_sunrise.html",
+    "sourceImage": "https://www.impawards.com/1995/posters/before_sunrise.jpg",
+    "sourceType": "archive of official theatrical poster",
+    "displayAsset": "/images/films/before-sunrise.jpg",
+    "treatment": "official",
+    "note": "Unmodified official poster. Image editing service rejected the requested transformation; no alternate transformation was applied."
+  },
+  {
+    "title": "Mulholland Dr.",
+    "year": 2001,
+    "director": "David Lynch",
+    "sourcePage": "https://www.impawards.com/2001/mulholland_drive_ver1.html",
+    "sourceImage": "https://www.impawards.com/2001/posters/mulholland_drive_ver1.jpg",
+    "sourceType": "archive of official theatrical poster",
+    "displayAsset": "/images/films/mulholland-dr.jpg",
+    "treatment": "official",
+    "note": "Unmodified official poster. Image editing service rejected the requested transformation; no alternate transformation was applied."
+  },
+  {
+    "title": "The Best of Youth",
+    "year": 2003,
+    "director": "Marco Tullio Giordana",
+    "sourcePage": "https://www.miramax.com/movie/the-best-of-youth-la-meglio-gioventu/",
+    "sourceImage": "https://www.miramax.com/assets/The-Best-of-Youth.png",
+    "sourceType": "official distributor artwork",
+    "displayAsset": "/images/films/the-best-of-youth.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  },
+  {
+    "title": "Synecdoche, New York",
+    "year": 2008,
+    "director": "Charlie Kaufman",
+    "sourcePage": "https://www.sonypictures.com/movies/synecdochenewyork",
+    "sourceImage": "https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/chameleon/title-movie/321988_SYNECDOCHE%20NEW%20YORK_1400x2100_Eng_1.jpg?itok=NX3tGG1N",
+    "sourceType": "official studio artwork",
+    "displayAsset": "/images/films/synecdoche-new-york.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  },
+  {
+    "title": "The Lovers on the Bridge",
+    "year": 1991,
+    "director": "Leos Carax",
+    "sourcePage": "https://www.janusfilms.com/films/2272",
+    "sourceImage": "https://s3.amazonaws.com/criterion-production/janus_promo_packages/1343-/LoversontheBridge_poster_tp_original.jpg",
+    "sourceType": "official distributor theatrical poster",
+    "displayAsset": "/images/films/the-lovers-on-the-bridge.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  },
+  {
+    "title": "Robot Dreams",
+    "year": 2023,
+    "director": "Pablo Berger",
+    "sourcePage": "https://www.neonrated.com/film/robot-dreams-film",
+    "sourceImage": "https://www.datocms-assets.com/148598/1757707992-untitled-7.jpg",
+    "sourceType": "official distributor theatrical poster",
+    "displayAsset": "/images/films/robot-dreams.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  },
+  {
+    "title": "Rear Window",
+    "year": 1954,
+    "director": "Alfred Hitchcock",
+    "sourcePage": "https://www.universalpicturesathome.com/movies/rear-window",
+    "sourceImage": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/blt48f257e2723dd00c/691c8680e5c92c99e77feab0/RearWindow_Poster_2000x3000_uaa.jpg?width=2560",
+    "sourceType": "official studio artwork",
+    "displayAsset": "/images/films/rear-window.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  },
+  {
+    "title": "North by Northwest",
+    "year": 1959,
+    "director": "Alfred Hitchcock",
+    "sourcePage": "https://www.impawards.com/1959/north_by_northwest.html",
+    "sourceImage": "https://www.impawards.com/1959/posters/north_by_northwest.jpg",
+    "sourceType": "archive of official theatrical poster",
+    "displayAsset": "/images/films/north-by-northwest.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  },
+  {
+    "title": "Her",
+    "year": 2013,
+    "director": "Spike Jonze",
+    "sourcePage": "https://www.impawards.com/2013/her.html",
+    "sourceImage": "https://www.impawards.com/2013/posters/her.jpg",
+    "sourceType": "archive of official theatrical poster",
+    "displayAsset": "/images/films/her.jpg",
+    "treatment": "official",
+    "note": "Unmodified official poster. Image editing service rejected the requested transformation; no alternate transformation was applied."
+  },
+  {
+    "title": "The Love That Remains",
+    "year": 2025,
+    "director": "Hlynur Pálmason",
+    "sourcePage": "https://www.janusfilms.com/films/2294",
+    "sourceImage": "https://s3.amazonaws.com/criterion-production/janus_promo_packages/1379-/LOVE_THAT_REMAINS_Janus_Poster_27x40_tp_original.jpg",
+    "sourceType": "official distributor theatrical poster",
+    "displayAsset": "/images/films/the-love-that-remains.jpg",
+    "treatment": "impressionist",
+    "note": "Light impressionist edit of the source poster."
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "retrievedAt": "2026-09-07T17:24:44.280161+00:00",
+  "trackId": 1758366810,
+  "musicKitCatalogId": "1758366810",
+  "trackName": "New York",
+  "artistName": "Two Strangers (Carry A Cake Across New York), Sam Tutty & Dujonna Gift",
+  "displayArtist": "Sam Tutty & Dujonna Gift",
+  "album": "Two Strangers (Carry a Cake Across New York) [Original London Cast Recording]",
+  "collectionId": 1758366809,
+  "trackNumber": 1,
+  "appleMusicUrl": "https://music.apple.com/us/album/new-york/1758366809?i=1758366810&uo=4",
+  "appleMusicSongUrl": "https://music.apple.com/us/song/1758366810",
+  "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0c/ca/0e/0cca0e97-960f-1d45-47b9-00989e917ace/145543.jpg/600x600bb.jpg",
+  "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ef/7d/4a/ef7d4ad8-605c-5d19-827d-7e81aa02785c/mzaf_5895761153984590382.plus.aac.p.m4a",
+  "durationMillis": 202064,
+  "durationSeconds": 202.064,
+  "duration": "3:22",
+  "releaseDate": "2024-02-21T12:00:00Z",
+  "isStreamable": true,
+  "storefront": "us",
+  "previewCheck": {
+    "method": "HEAD",
+    "status": 200,
+    "contentType": "audio/x-m4p"
+  },
+  "audioDownloaded": false,
+  "notes": "Track 1 of the Original London Cast Recording, featuring the requested Sam Tutty and Dujonna Gift. The 2026 Original Broadway Cast Recording features Christiani Pitts instead of Dujonna Gift.",
+  "sources": [
+    "https://itunes.apple.com/lookup?id=1758366810&country=us",
+    "https://music.apple.com/us/song/1758366810",
+    "https://music.apple.com/us/album/new-york/1758366809?i=1758366810&uo=4"
+  ],
+  "artwork": "/images/broadway.jpg"
+}

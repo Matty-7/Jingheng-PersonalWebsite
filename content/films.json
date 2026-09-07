@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "before-sunrise",
+    "title": "Before Sunrise",
+    "year": 1995,
+    "director": "Richard Linklater",
+    "note": "A conversation, a whole world.",
+    "poster": "/images/films/before-sunrise.jpg",
+    "posterTreatment": "official"
+  },
+  {
+    "slug": "mulholland-dr",
+    "title": "Mulholland Dr.",
+    "year": 2001,
+    "director": "David Lynch",
+    "note": "A dream, just out of reach.",
+    "poster": "/images/films/mulholland-dr.jpg",
+    "posterTreatment": "official"
+  },
+  {
+    "slug": "the-best-of-youth",
+    "title": "The Best of Youth",
+    "year": 2003,
+    "director": "Marco Tullio Giordana",
+    "note": "All the years in between.",
+    "poster": "/images/films/the-best-of-youth.jpg",
+    "posterTreatment": "impressionist"
+  },
+  {
+    "slug": "synecdoche-new-york",
+    "title": "Synecdoche, New York",
+    "year": 2008,
+    "director": "Charlie Kaufman",
+    "note": "A life, rehearsed inside another life.",
+    "poster": "/images/films/synecdoche-new-york.jpg",
+    "posterTreatment": "impressionist"
+  },
+  {
+    "slug": "the-lovers-on-the-bridge",
+    "title": "The Lovers on the Bridge",
+    "year": 1991,
+    "director": "Leos Carax",
+    "note": "Love at the edge of the city.",
+    "poster": "/images/films/the-lovers-on-the-bridge.jpg",
+    "posterTreatment": "impressionist"
+  },
+  {
+    "slug": "robot-dreams",
+    "title": "Robot Dreams",
+    "year": 2023,
+    "director": "Pablo Berger",
+    "note": "A city remembers its friendships.",
+    "poster": "/images/films/robot-dreams.jpg",
+    "posterTreatment": "impressionist"
+  },
+  {
+    "slug": "rear-window",
+    "title": "Rear Window",
+    "year": 1954,
+    "director": "Alfred Hitchcock",
+    "note": "A whole world, across the courtyard.",
+    "poster": "/images/films/rear-window.jpg",
+    "posterTreatment": "impressionist"
+  },
+  {
+    "slug": "north-by-northwest",
+    "title": "North by Northwest",
+    "year": 1959,
+    "director": "Alfred Hitchcock",
+    "note": "An ordinary man, an extraordinary wrong turn.",
+    "poster": "/images/films/north-by-northwest.jpg",
+    "posterTreatment": "impressionist"
+  },
+  {
+    "slug": "her",
+    "title": "Her",
+    "year": 2013,
+    "director": "Spike Jonze",
+    "note": "The distance between connection and closeness.",
+    "poster": "/images/films/her.jpg",
+    "posterTreatment": "official"
+  },
+  {
+    "slug": "the-love-that-remains",
+    "title": "The Love That Remains",
+    "year": 2025,
+    "director": "Hlynur Pálmason",
+    "note": "What remains, when a life changes shape.",
+    "poster": "/images/films/the-love-that-remains.jpg",
+    "posterTreatment": "impressionist"
+  }
+]
