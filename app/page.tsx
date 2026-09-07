@@ -91,6 +91,9 @@ export default function Home() {
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const film_motion_query = window.matchMedia(
+      '(min-width: 760px) and (prefers-reduced-motion: no-preference)',
+    );
     document.documentElement.classList.add('motion-ready');
     const observer = new IntersectionObserver(
       (entries) =>
@@ -117,9 +120,17 @@ export default function Home() {
     const resizeObserver = new ResizeObserver(() => schedule());
     if (filmTrack) resizeObserver.observe(filmTrack);
     let raf = 0;
+    const reset_film_motion = () => {
+      filmSection?.classList.remove('film-motion-ready');
+      filmSection?.style.removeProperty('--film-height');
+      filmSection?.style.removeProperty('--film-progress');
+      filmSection?.style.removeProperty('height');
+      filmTrack?.style.removeProperty('--film-transform');
+      filmTrack?.style.removeProperty('transform');
+      posters.forEach((el) => el.style.removeProperty('--depth'));
+    };
     const update = () => {
       raf = 0;
-      const small = window.innerWidth < 760;
       document.documentElement.style.setProperty(
         '--page-progress',
         String(
@@ -156,12 +167,16 @@ export default function Home() {
         );
       }
       if (filmSection && filmTrack) {
-        const distance = Math.max(
-          0,
-          filmTrack.scrollWidth - window.innerWidth + window.innerWidth * 0.09,
-        );
-        if (!small && !reduced.matches) {
-          filmSection.style.height = `${window.innerHeight + distance * 1.2}px`;
+        if (film_motion_query.matches) {
+          filmSection.classList.add('film-motion-ready');
+          const distance = Math.max(
+            0,
+            filmTrack.scrollWidth - window.innerWidth + window.innerWidth * 0.09,
+          );
+          filmSection.style.setProperty(
+            '--film-height',
+            `${window.innerHeight + distance * 1.2}px`,
+          );
           const rect = filmSection.getBoundingClientRect();
           const progress = Math.max(
             0,
@@ -170,27 +185,26 @@ export default function Home() {
               -rect.top / Math.max(1, rect.height - window.innerHeight),
             ),
           );
-          filmTrack.style.transform = `translate3d(${-progress * distance}px,0,0)`;
+          filmTrack.style.setProperty(
+            '--film-transform',
+            `translate3d(${-progress * distance}px,0,0)`,
+          );
           filmSection.style.setProperty('--film-progress', String(progress));
+          posters.forEach((el) => {
+            const r = el.getBoundingClientRect();
+            const depth = Math.max(
+              -1,
+              Math.min(
+                1,
+                (r.left + r.width / 2 - window.innerWidth / 2) /
+                  window.innerWidth,
+              ),
+            );
+            el.style.setProperty('--depth', String(depth));
+          });
         } else {
-          filmSection.style.height = 'auto';
-          filmTrack.style.transform = 'none';
+          reset_film_motion();
         }
-        posters.forEach((el) => {
-          const r = el.getBoundingClientRect();
-          const depth = Math.max(
-            -1,
-            Math.min(
-              1,
-              (r.left + r.width / 2 - window.innerWidth / 2) /
-                window.innerWidth,
-            ),
-          );
-          el.style.setProperty(
-            '--depth',
-            small || reduced.matches ? '0' : String(depth),
-          );
-        });
       }
     };
     const schedule = () => {
@@ -199,14 +213,17 @@ export default function Home() {
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
     reduced.addEventListener('change', schedule);
+    film_motion_query.addEventListener('change', schedule);
     update();
     return () => {
+      reset_film_motion();
       document.documentElement.classList.remove('motion-ready');
       observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
       reduced.removeEventListener('change', schedule);
+      film_motion_query.removeEventListener('change', schedule);
       window.cancelAnimationFrame(raf);
     };
   }, []);
