@@ -1,4 +1,27 @@
 import type { Metadata } from 'next';
+import profile from '@/content/profile.json';
 import './globals.css';
-export const metadata:Metadata={title:'An Afternoon Uptown — Jingheng Huan',description:'A little room for work, records, films, books, and life in New York.',metadataBase:new URL('https://jingheng-afternoon-uptown.jh730493450.chatgpt.site')};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}
+export const metadata: Metadata = {
+  title: { default: 'Jingheng Huan', template: '%s' },
+  description: profile.description,
+  metadataBase: new URL(profile.siteUrl),
+  authors: [{ name: profile.name }],
+  openGraph: {
+    type: 'website',
+    siteName: profile.name,
+    title: profile.name,
+    description: profile.description,
+  },
+  alternates: { types: { 'application/rss+xml': '/feed.xml' } },
+};
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}

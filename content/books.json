@@ -2,51 +2,111 @@
   {
     "title": "Let My People Go Surfing",
     "author": "Yvon Chouinard",
-    "note": "Responsibility, freedom, and the way we work."
+    "note": "Responsibility, freedom, and the way we work.",
+    "slug": "let-my-people-go-surfing",
+    "cover": "/images/books/let-my-people-go-surfing.jpg",
+    "coverWidth": 500,
+    "coverHeight": 730,
+    "edition": "Penguin Books, 2016, paperback; 10th anniversary edition",
+    "sourceUrl": "https://penguinrandomhousehighereducation.com/book/?isbn=9780143109679"
   },
   {
     "title": "Steppenwolf",
     "author": "Hermann Hesse",
-    "note": "The many selves inside a single life."
+    "note": "The many selves inside a single life.",
+    "slug": "steppenwolf",
+    "cover": "/images/books/steppenwolf.jpg",
+    "coverWidth": 500,
+    "coverHeight": 767,
+    "edition": "Penguin Modern Classics, 2012, paperback; translated by David Horrocks",
+    "sourceUrl": "https://www.penguin.co.uk/books/176799/steppenwolf-by-hesse-hermann/9780141192093"
   },
   {
     "title": "The Snows of Kilimanjaro",
     "author": "Ernest Hemingway",
-    "note": "What we remember. What we leave unsaid."
+    "note": "What we remember. What we leave unsaid.",
+    "slug": "the-snows-of-kilimanjaro",
+    "cover": "/images/books/the-snows-of-kilimanjaro.jpg",
+    "coverWidth": 500,
+    "coverHeight": 760,
+    "edition": "The Snows of Kilimanjaro and Other Stories; Scribner Classics, 1999, hardcover collection",
+    "sourceUrl": "https://www.simonandschuster.com/books/The-Snows-of-Kilimanjaro-and-Other-Stories/Ernest-Hemingway/9780684862217"
   },
   {
     "title": "Brave New World",
     "author": "Aldous Huxley",
-    "note": "Comfort, control, and the price of belonging."
+    "note": "Comfort, control, and the price of belonging.",
+    "slug": "brave-new-world",
+    "cover": "/images/books/brave-new-world.jpg",
+    "coverWidth": 500,
+    "coverHeight": 767,
+    "edition": "Vintage Classics, 2024, paperback",
+    "sourceUrl": "https://www.penguin.co.uk/books/357838/brave-new-world-by-huxley-aldous/9780099518471"
   },
   {
     "title": "One Hundred Years of Solitude",
-    "author": "Gabriel Garc\u00eda M\u00e1rquez",
-    "note": "A family, a town, a world of recurring time."
+    "author": "Gabriel García Márquez",
+    "note": "A family, a town, a world of recurring time.",
+    "slug": "one-hundred-years-of-solitude",
+    "cover": "/images/books/one-hundred-years-of-solitude.jpg",
+    "coverWidth": 500,
+    "coverHeight": 769,
+    "edition": "Penguin, 2014, commemorative hardback; translated by Gregory Rabassa",
+    "sourceUrl": "https://www.penguin.co.uk/books/482987/one-hundred-years-of-solitude-by-marquez-gabriel-garcia/9780241971826"
   },
   {
     "title": "Fortress Besieged",
     "author": "Qian Zhongshu",
-    "note": "The comic distance between wanting and having."
+    "note": "The comic distance between wanting and having.",
+    "slug": "fortress-besieged",
+    "cover": "/images/books/fortress-besieged.jpg",
+    "coverWidth": 500,
+    "coverHeight": 769,
+    "edition": "Penguin, English ebook edition listed 10 December 2025",
+    "sourceUrl": "https://www.penguin.co.uk/books/57471/fortress-besieged-by-zhongshu-qian/9780141915722"
   },
   {
     "title": "And Then There Were None",
     "author": "Agatha Christie",
-    "note": "An island. Ten strangers. A perfect unease."
+    "note": "An island. Ten strangers. A perfect unease.",
+    "slug": "and-then-there-were-none",
+    "cover": "/images/books/and-then-there-were-none.jpg",
+    "coverWidth": 500,
+    "coverHeight": 769,
+    "edition": "The Ultimate Mystery Edition, English hardback, 304 pages",
+    "sourceUrl": "https://shop.agathachristie.com/products/agatha-christie-and-then-there-were-none"
   },
   {
     "title": "The Lady of the Camellias",
     "author": "Alexandre Dumas fils",
-    "note": "Love under the weight of society."
+    "note": "Love under the weight of society.",
+    "slug": "the-lady-of-the-camellias",
+    "cover": "/images/books/the-lady-of-the-camellias.jpg",
+    "coverWidth": 500,
+    "coverHeight": 765,
+    "edition": "Penguin Classics, 2013, paperback; translated by Liesl Schillinger; introduction by Julie Kavanagh",
+    "sourceUrl": "https://www.penguinrandomhouse.com/books/311874/the-lady-of-the-camellias-by-alexandre-dumas-fils-translated-by-liesl-schillinger-introduction-by-julie-kavanagh/"
   },
   {
     "title": "The Garden of Forking Paths",
     "author": "Jorge Luis Borges",
-    "note": "Every possibility, branching into another."
+    "note": "Every possibility, branching into another.",
+    "slug": "the-garden-of-forking-paths",
+    "cover": "/images/books/the-garden-of-forking-paths.jpg",
+    "coverWidth": 500,
+    "coverHeight": 722,
+    "edition": "Penguin Modern No. 46, 2018, English paperback, 64 pages",
+    "sourceUrl": "https://www.penguin.co.uk/books/308559/the-garden-of-forking-paths-by-borges-jorge-luis/9780241339053"
   },
   {
     "title": "The Three-Body Problem",
     "author": "Liu Cixin",
-    "note": "The familiar world, suddenly impossibly small."
+    "note": "The familiar world, suddenly impossibly small.",
+    "slug": "the-three-body-problem",
+    "cover": "/images/books/the-three-body-problem.jpg",
+    "coverWidth": 500,
+    "coverHeight": 755,
+    "edition": "Tor Books, 2016, English paperback; translated by Ken Liu; current artwork includes Netflix badge",
+    "sourceUrl": "https://us.macmillan.com/books/9780765382030/thethreebodyproblem/"
   }
 ]

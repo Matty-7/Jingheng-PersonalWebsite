@@ -42,7 +42,7 @@
     "director": "Leos Carax",
     "note": "Love at the edge of the city.",
     "poster": "/images/films/the-lovers-on-the-bridge.jpg",
-    "posterTreatment": "impressionist"
+    "posterTreatment": "official"
   },
   {
     "slug": "robot-dreams",
@@ -54,13 +54,13 @@
     "posterTreatment": "impressionist"
   },
   {
-    "slug": "rear-window",
-    "title": "Rear Window",
-    "year": 1954,
-    "director": "Alfred Hitchcock",
-    "note": "A whole world, across the courtyard.",
-    "poster": "/images/films/rear-window.jpg",
-    "posterTreatment": "impressionist"
+    "slug": "memento",
+    "title": "Memento",
+    "year": 2000,
+    "director": "Christopher Nolan",
+    "note": "The stories we tell ourselves, one fragment at a time.",
+    "poster": "/images/films/memento.jpg",
+    "posterTreatment": "official"
   },
   {
     "slug": "north-by-northwest",

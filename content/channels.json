@@ -1,0 +1,35 @@
+{
+  "podcast": {
+    "title": "Talking Laughs",
+    "description": "Conversations with Jason about travel, music, and the world around us.",
+    "language": "Conversations in Mandarin",
+    "sourceFeed": "https://feed.xyzfm.space/urynb8y6tke7",
+    "url": "https://www.xiaoyuzhoufm.com/podcast/64ccba1d1ebeec58035400a5",
+    "artwork": "/images/talking-laughs.jpg",
+    "sourceArtwork": "https://image.xyzcdn.net/Fs0BUkGsBrZKrWnTLBUhlDDaYubC.jpg",
+    "checkedAt": "2026-09-07",
+    "episodes": [
+      {
+        "id": "64dc2d4e3fa4090b745d409a",
+        "title": "Why we go to live music",
+        "subtitle": "Music festivals & livehouses",
+        "date": "2023-08-16",
+        "duration": "33 min",
+        "url": "https://www.xiaoyuzhoufm.com/episode/64dc2d4e3fa4090b745d409a"
+      },
+      {
+        "id": "64cd17fcf50b650b28000046",
+        "title": "A journey to Zhoushan",
+        "subtitle": "Travel notes from the coast",
+        "date": "2023-08-04",
+        "duration": "93 min",
+        "url": "https://www.xiaoyuzhoufm.com/episode/64cd17fcf50b650b28000046"
+      }
+    ]
+  },
+  "youtube": {
+    "title": "Matty Huan",
+    "handle": "@MattyHuan",
+    "url": "https://www.youtube.com/@MattyHuan/featured"
+  }
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "let-my-people-go-surfing",
+    "title": "Let My People Go Surfing",
+    "author": "Yvon Chouinard",
+    "sourcePage": "https://penguinrandomhousehighereducation.com/book/?isbn=9780143109679",
+    "sourceImage": "https://images.penguinrandomhouse.com/cover/tif/9780143109679",
+    "isbn": "9780143109679",
+    "edition": "Penguin Books, 2016, paperback; 10th anniversary edition",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 730
+    },
+    "sourceDimensions": {
+      "width": 1950,
+      "height": 2850
+    },
+    "verifiedVisually": true,
+    "notes": "High-resolution publisher TIFF converted to JPEG and reduced to 500px width."
+  },
+  {
+    "id": "steppenwolf",
+    "title": "Steppenwolf",
+    "author": "Hermann Hesse",
+    "sourcePage": "https://www.penguin.co.uk/books/176799/steppenwolf-by-hesse-hermann/9780141192093",
+    "sourceImage": "https://cdn.penguin.co.uk/dam-assets/books/9780141192093/9780141192093-jacket-large.jpg",
+    "isbn": "9780141192093",
+    "edition": "Penguin Modern Classics, 2012, paperback; translated by David Horrocks",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 767
+    },
+    "sourceDimensions": {
+      "width": 326,
+      "height": 500
+    },
+    "verifiedVisually": true,
+    "notes": "Publisher image is 326 × 500px; proportionally resized to 500px width for a consistent asset size."
+  },
+  {
+    "id": "the-snows-of-kilimanjaro",
+    "title": "The Snows of Kilimanjaro",
+    "author": "Ernest Hemingway",
+    "sourcePage": "https://www.simonandschuster.com/books/The-Snows-of-Kilimanjaro-and-Other-Stories/Ernest-Hemingway/9780684862217",
+    "sourceImage": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9780684862217/the-snows-of-kilimanjaro-and-other-stories-9780684862217_hr.jpg",
+    "isbn": "9780684862217",
+    "edition": "The Snows of Kilimanjaro and Other Stories; Scribner Classics, 1999, hardcover collection",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 760
+    },
+    "sourceDimensions": {
+      "width": 1400,
+      "height": 2128
+    },
+    "verifiedVisually": true,
+    "notes": "This is the collection The Snows of Kilimanjaro and Other Stories, including the requested title story. Use the collection title or edition note alongside the image. High-resolution publisher image reduced to 500px width."
+  },
+  {
+    "id": "brave-new-world",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "sourcePage": "https://www.penguin.co.uk/books/357838/brave-new-world-by-huxley-aldous/9780099518471",
+    "sourceImage": "https://cdn.penguin.co.uk/dam-assets/books/9780099518471/9780099518471-jacket-large.jpg",
+    "isbn": "9780099518471",
+    "edition": "Vintage Classics, 2024, paperback",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 767
+    },
+    "sourceDimensions": {
+      "width": 326,
+      "height": 500
+    },
+    "verifiedVisually": true,
+    "notes": "Publisher image is 326 × 500px; proportionally resized to 500px width for a consistent asset size."
+  },
+  {
+    "id": "one-hundred-years-of-solitude",
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "sourcePage": "https://www.penguin.co.uk/books/482987/one-hundred-years-of-solitude-by-marquez-gabriel-garcia/9780241971826",
+    "sourceImage": "https://cdn.penguin.co.uk/dam-assets/books/9780241971826/9780241971826-jacket-large.jpg",
+    "isbn": "9780241971826",
+    "edition": "Penguin, 2014, commemorative hardback; translated by Gregory Rabassa",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 769
+    },
+    "sourceDimensions": {
+      "width": 325,
+      "height": 500
+    },
+    "verifiedVisually": true,
+    "notes": "Publisher image is 325 × 500px; proportionally resized to 500px width for a consistent asset size."
+  },
+  {
+    "id": "fortress-besieged",
+    "title": "Fortress Besieged",
+    "author": "Qian Zhongshu",
+    "sourcePage": "https://www.penguin.co.uk/books/57471/fortress-besieged-by-zhongshu-qian/9780141915722",
+    "sourceImage": "https://cdn.penguin.co.uk/dam-assets/books/9780141915722/9780141915722-jacket-large.jpg",
+    "isbn": "9780141915722",
+    "edition": "Penguin, English ebook edition listed 10 December 2025",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 769
+    },
+    "sourceDimensions": {
+      "width": 325,
+      "height": 500
+    },
+    "verifiedVisually": true,
+    "notes": "Cover is the publisher’s English ebook cover. Publisher image is 325 × 500px; proportionally resized to 500px width for a consistent asset size."
+  },
+  {
+    "id": "and-then-there-were-none",
+    "title": "And Then There Were None",
+    "author": "Agatha Christie",
+    "sourcePage": "https://shop.agathachristie.com/products/agatha-christie-and-then-there-were-none",
+    "sourceImage": "https://shop.agathachristie.com/cdn/shop/files/andthentherewerenone.jpg?v=1781278379&width=1200",
+    "isbn": "9780008687496",
+    "edition": "The Ultimate Mystery Edition, English hardback, 304 pages",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 769
+    },
+    "sourceDimensions": {
+      "width": 1000,
+      "height": 1000
+    },
+    "verifiedVisually": true,
+    "notes": "Official author shop image. Cropped only the white side padding from the square source (175px each side), retaining the complete 650 × 1000px front cover, then reduced to 500px width."
+  },
+  {
+    "id": "the-lady-of-the-camellias",
+    "title": "The Lady of the Camellias",
+    "author": "Alexandre Dumas fils",
+    "sourcePage": "https://www.penguinrandomhouse.com/books/311874/the-lady-of-the-camellias-by-alexandre-dumas-fils-translated-by-liesl-schillinger-introduction-by-julie-kavanagh/",
+    "sourceImage": "https://images.penguinrandomhouse.com/cover/tif/9780143107026",
+    "isbn": "9780143107026",
+    "edition": "Penguin Classics, 2013, paperback; translated by Liesl Schillinger; introduction by Julie Kavanagh",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 765
+    },
+    "sourceDimensions": {
+      "width": 3038,
+      "height": 4650
+    },
+    "verifiedVisually": true,
+    "notes": "High-resolution publisher TIFF converted to JPEG and reduced to 500px width. Current publisher artwork for this ISBN uses the same floral portrait with refreshed typography."
+  },
+  {
+    "id": "the-garden-of-forking-paths",
+    "title": "The Garden of Forking Paths",
+    "author": "Jorge Luis Borges",
+    "sourcePage": "https://www.penguin.co.uk/books/308559/the-garden-of-forking-paths-by-borges-jorge-luis/9780241339053",
+    "sourceImage": "https://cdn.penguin.co.uk/dam-assets/books/9780241339053/9780241339053-jacket-large.jpg",
+    "isbn": "9780241339053",
+    "edition": "Penguin Modern No. 46, 2018, English paperback, 64 pages",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 722
+    },
+    "sourceDimensions": {
+      "width": 346,
+      "height": 500
+    },
+    "verifiedVisually": true,
+    "notes": "An English collection with the exact requested title, not Ficciones. Open Library corroboration: https://openlibrary.org/books/OL30597973M/The_Garden_of_Forking_Paths . Publisher image is 346 × 500px; proportionally resized to 500px width for a consistent asset size."
+  },
+  {
+    "id": "the-three-body-problem",
+    "title": "The Three-Body Problem",
+    "author": "Liu Cixin",
+    "sourcePage": "https://us.macmillan.com/books/9780765382030/thethreebodyproblem/",
+    "sourceImage": "https://mpd-biblio-covers.imgix.net/9780765382030.jpg",
+    "isbn": "9780765382030",
+    "edition": "Tor Books, 2016, English paperback; translated by Ken Liu; current artwork includes Netflix badge",
+    "language": "English",
+    "dimensions": {
+      "width": 500,
+      "height": 755
+    },
+    "sourceDimensions": {
+      "width": 1838,
+      "height": 2775
+    },
+    "verifiedVisually": true,
+    "notes": "Publisher uses the author display name Cixin Liu on this English cover. High-resolution publisher image reduced to 500px width."
+  }
+]

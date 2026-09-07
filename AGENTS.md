@@ -1,4 +1,9 @@
-# Project conventions
+# Jingheng Huan — project conventions
+
+- The identity is Jingheng Huan. Work, personal publishing, YouTube and Talking Laughs come before the taste collections.
+- Maintain actual book covers on the bookshelf, with keyboard/touch-accessible selection. Never turn it into a ranking.
+- Journal content is maintained in content/posts.json; drafts and future-dated entries must stay out of public routes and RSS. Do not import the posts file or lib/publishing into client components.
+- Newsletter links appear only when profile.newsletterUrl is configured to a real provider. Do not add a nonfunctional sign-up form.
 
 - All website copy is English. Maintain the sunny Upper East Side digital living room direction, with mid-century furniture and editorial illustration.
 - The visitor scrolls the page normally. Do not add a scroll-simulation slider, intercept wheel events, or require dragging to browse the collections.

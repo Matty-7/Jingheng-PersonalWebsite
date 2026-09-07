@@ -27,3 +27,7 @@ Daily New York: Upper East Side, Central Park, Lincoln Center, the Frick Collect
 More independent room layers would allow the chair, window light, leaves and furniture to move at different depths. The current room uses a controlled scroll-linked camera move. The turntable’s disc follows real playback; a moving needle needs a clean aligned arm/base asset pair. An attempted pair failed transparency/alignment checks and was not used. Do not describe the current needle as animated.
 
 MusicKit full playback is intentionally deferred after the owner chose real previews and Apple Music links. If added later, provision an Apple Developer media identifier/key, sign developer tokens server-side, and authorize each listening subscriber through MusicKit. Never commit private signing keys.
+
+## Personal identity and publishing update
+
+The site is now named Jingheng Huan. Its opening chapters prioritize personal work, YouTube (Matty Huan), Talking Laughs, and the Journal. The illustrated living room remains the aesthetic setting rather than a separate website brand. Memento replaces Rear Window in the ten-film selection. Books are presented with actual cover art on a bookshelf. The future newsletter has a real provider-link setting but no active subscription service yet.

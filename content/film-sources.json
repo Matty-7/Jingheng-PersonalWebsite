@@ -47,12 +47,12 @@
     "title": "The Lovers on the Bridge",
     "year": 1991,
     "director": "Leos Carax",
-    "sourcePage": "https://www.janusfilms.com/films/2272",
-    "sourceImage": "https://s3.amazonaws.com/criterion-production/janus_promo_packages/1343-/LoversontheBridge_poster_tp_original.jpg",
-    "sourceType": "official distributor theatrical poster",
+    "sourcePage": "https://www.laffichedefilm.com/3538-les-amants-du-pont-neuf-affiche-originale-francaise-120160-cm-1991-l-affiche-de-film.html",
+    "sourceImage": "https://www.laffichedefilm.com/6554-large_default/les-amants-du-pont-neuf-affiche-originale-francaise-120160-cm-1991-l-affiche-de-film.jpg",
+    "sourceType": "Original 1991 French theatrical poster, verified by original-poster dealer and Bill Douglas Cinema Museum",
     "displayAsset": "/images/films/the-lovers-on-the-bridge.jpg",
-    "treatment": "impressionist",
-    "note": "Light impressionist edit of the source poster."
+    "treatment": "official",
+    "note": "Alternate white, black and yellow French original selected at user request. Resized only; requested image edit refused, no retry."
   },
   {
     "title": "Robot Dreams",
@@ -66,15 +66,15 @@
     "note": "Light impressionist edit of the source poster."
   },
   {
-    "title": "Rear Window",
-    "year": 1954,
-    "director": "Alfred Hitchcock",
-    "sourcePage": "https://www.universalpicturesathome.com/movies/rear-window",
-    "sourceImage": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/blt48f257e2723dd00c/691c8680e5c92c99e77feab0/RearWindow_Poster_2000x3000_uaa.jpg?width=2560",
-    "sourceType": "official studio artwork",
-    "displayAsset": "/images/films/rear-window.jpg",
-    "treatment": "impressionist",
-    "note": "Light impressionist edit of the source poster."
+    "title": "Memento",
+    "year": 2000,
+    "director": "Christopher Nolan",
+    "sourcePage": "https://www.impawards.com/2001/memento.html",
+    "sourceImage": "https://www.impawards.com/2001/posters/memento_xlg.jpg",
+    "sourceType": "Newmarket theatrical poster archived by IMP Awards",
+    "displayAsset": "/images/films/memento.jpg",
+    "treatment": "official",
+    "note": "Original theatrical artwork resized only. One requested image edit was refused by the image service; no alternate transformation applied."
   },
   {
     "title": "North by Northwest",
