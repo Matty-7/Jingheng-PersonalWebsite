@@ -1787,12 +1787,10 @@ progress.audio-progress::-moz-progress-bar {
   from {
     opacity: 0;
     transform: translateY(35px);
-    clip-path: inset(100% 0 0);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    clip-path: inset(0);
   }
 }
 @keyframes book-note-arrival {
