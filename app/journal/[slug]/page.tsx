@@ -3,20 +3,30 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { publishedPosts, formatDate } from '@/lib/publishing';
+import {
+  absoluteUrl,
+  pageMetadata,
+  personId,
+  serializeStructuredData,
+} from '@/lib/seo';
+import profile from '@/content/profile.json';
 type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = publishedPosts.find((p) => p.slug === slug);
   return post
-    ? {
-        title: `${post.title} — Jingheng Huan`,
-        description: post.excerpt,
-        alternates: {
-          canonical: `/journal/${post.slug}`,
-          types: { 'application/rss+xml': '/feed.xml' },
+    ? pageMetadata(
+        `${post.title} — Jingheng Huan`,
+        post.excerpt,
+        `/journal/${post.slug}`,
+        {
+          publishedTime: `${post.date}T00:00:00Z`,
         },
-      }
-    : { title: 'Not found — Jingheng Huan' };
+      )
+    : {
+        title: 'Not found — Jingheng Huan',
+        robots: { index: false, follow: true },
+      };
 }
 export default async function Entry({ params }: Props) {
   const { slug } = await params;
@@ -24,6 +34,27 @@ export default async function Entry({ params }: Props) {
   if (!post) notFound();
   return (
     <main className="journal-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: `${post.date}T00:00:00Z`,
+            url: absoluteUrl(`/journal/${post.slug}`),
+            mainEntityOfPage: absoluteUrl(`/journal/${post.slug}`),
+            inLanguage: 'en-US',
+            author: {
+              '@type': 'Person',
+              '@id': personId,
+              name: profile.name,
+              url: absoluteUrl('/'),
+            },
+          }),
+        }}
+      />
       <nav className="journal-nav" aria-label="Article navigation">
         <Link className="wordmark" href="/">
           Jingheng Huan

@@ -1,21 +1,11 @@
 import type { Metadata } from 'next';
 import profile from '@/content/profile.json';
+import { pageMetadata, siteTitle } from '@/lib/seo';
 import './globals.css';
 export const metadata: Metadata = {
-  title: { default: 'Jingheng Huan', template: '%s' },
-  description: profile.description,
+  ...pageMetadata(siteTitle, profile.description, '/'),
   metadataBase: new URL(profile.siteUrl),
   authors: [{ name: profile.name }],
-  openGraph: {
-    type: 'website',
-    siteName: profile.name,
-    title: profile.name,
-    description: profile.description,
-  },
-  alternates: {
-    canonical: '/',
-    types: { 'application/rss+xml': '/feed.xml' },
-  },
 };
 export default function RootLayout({
   children,

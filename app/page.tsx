@@ -26,6 +26,7 @@ import broadway from '@/content/broadway.json';
 import profile from '@/content/profile.json';
 import projects from '@/content/projects.json';
 import channels from '@/content/channels.json';
+import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
 const newsletterUrl = profile.newsletterUrl as string | null;
 
 type Track = (typeof music)[number];
@@ -291,6 +292,12 @@ export default function Home() {
         <div className="reading-progress" aria-hidden="true" />
       </nav>
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeStructuredData(homeStructuredData),
+          }}
+        />
         <section id="home" className="arrival">
           <Image
             unoptimized
@@ -813,6 +820,7 @@ export default function Home() {
               <br />
               <em>in New York.</em>
             </h2>
+            <p>{profile.bio}</p>
             <p>
               Usually between the Upper East Side,
               <br />
@@ -831,6 +839,9 @@ export default function Home() {
             </h2>
           </div>
           <div className="footer-links">
+            <a href={profile.links.github} target="_blank" rel="me noreferrer">
+              GitHub <ArrowUpRight />
+            </a>
             <a href={profile.links.youtube} target="_blank" rel="noreferrer">
               YouTube <ArrowUpRight />
             </a>

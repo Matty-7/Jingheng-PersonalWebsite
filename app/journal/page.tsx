@@ -3,14 +3,12 @@ import type { Metadata } from 'next';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { publishedPosts, newsletterUrl, formatDate } from '@/lib/publishing';
 import profile from '@/content/profile.json';
-export const metadata: Metadata = {
-  title: 'Journal — Jingheng Huan',
-  description: 'Essays, notes, and letters from Jingheng Huan.',
-  alternates: {
-    canonical: '/journal',
-    types: { 'application/rss+xml': '/feed.xml' },
-  },
-};
+import { pageMetadata } from '@/lib/seo';
+export const metadata: Metadata = pageMetadata(
+  'Journal — Jingheng Huan',
+  'Essays, notes, and letters from Jingheng Huan, also known as Matty Huan.',
+  '/journal',
+);
 export default function Journal() {
   return (
     <main className="journal-page">
