@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
@@ -56,8 +57,8 @@ export default async function Entry({ params }: Props) {
         }}
       />
       <nav className="journal-nav" aria-label="Article navigation">
-        <Link className="wordmark" href="/">
-          Jingheng Huan
+        <Link className="brand-link" href="/" aria-label="Jingheng Huan home">
+          <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
         </Link>
         <Link href="/journal">
           <ArrowLeft size={16} /> All entries
@@ -70,12 +71,17 @@ export default async function Entry({ params }: Props) {
             <time dateTime={post.date}>{formatDate(post.date)}</time>
           </p>
           <h1>{post.title}</h1>
+          <p className="article-subtitle">{post.excerpt}</p>
           <p className="article-byline">By Jingheng Huan</p>
         </header>
         <div className="article-body">
-          {post.paragraphs.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+          {post.blocks.map((block, i) =>
+            block.type === 'heading' ? (
+              <h2 key={i}>{block.text}</h2>
+            ) : (
+              <p key={i}>{block.text}</p>
+            ),
+          )}
         </div>
       </article>
     </main>

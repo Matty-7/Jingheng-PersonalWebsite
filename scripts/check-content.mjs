@@ -67,8 +67,10 @@ for (const post of posts) {
   assert.ok(['draft', 'published'].includes(post.status));
   assert.ok(['Essay', 'Note', 'Letter'].includes(post.kind));
   assert.ok(
-    post.paragraphs.length > 0 &&
-      post.paragraphs.every((x) => typeof x === 'string' && x.trim()),
+    post.blocks.length > 0 &&
+      post.blocks.every((block) =>
+        ['paragraph', 'heading'].includes(block.type) &&
+        typeof block.text === 'string' && block.text.trim()),
   );
 }
 for (const project of projects) {

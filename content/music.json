@@ -333,40 +333,39 @@
     "artwork": "/images/records/name.jpg"
   },
   {
-    "id": "new-york-state-of-mind",
-    "requestedTitle": "New York State of Mind",
-    "requestedArtist": "Billy Joel",
-    "trackId": 259213690,
-    "musicKitCatalogId": "259213690",
-    "trackName": "New York State of Mind",
-    "artistName": "Billy Joel",
-    "displayArtist": "Billy Joel",
-    "album": "Turnstiles",
-    "collectionId": 259213439,
-    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/26/77/22/2677221c-2be4-2d89-c7ef-41478a122233/mzaf_5211588923829341321.plus.aac.p.m4a",
-    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/20/9c/8f/209c8fd8-6cdd-6567-74e2-3e62b2803713/888880156822.jpg/600x600bb.jpg",
-    "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/20/9c/8f/209c8fd8-6cdd-6567-74e2-3e62b2803713/888880156822.jpg/100x100bb.jpg",
-    "appleMusicUrl": "https://music.apple.com/us/album/new-york-state-of-mind/259213439?i=259213690&uo=4",
-    "appleMusicSongUrl": "https://music.apple.com/us/song/259213690",
-    "durationMillis": 363286,
-    "durationSeconds": 363.286,
-    "duration": "6:03",
-    "releaseDate": "1976-05-19T07:00:00Z",
+    "id": "rain-on-me",
+    "requestedTitle": "Rain on Me",
+    "requestedArtist": "Tamia",
+    "trackId": 390307748,
+    "musicKitCatalogId": "390307748",
+    "trackName": "Rain On Me",
+    "artistName": "Tamia",
+    "displayArtist": "Tamia",
+    "album": "Tamia",
+    "collectionId": 390307455,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6d/c4/22/6dc42210-7444-bff1-d6b0-61fb98dabdfa/mzaf_15588853755079609663.plus.aac.p.m4a",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/80/8a/18/808a18c3-63aa-33d5-c692-e8067c7f0749/mzi.aploynck.jpg/600x600bb.jpg",
+    "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/80/8a/18/808a18c3-63aa-33d5-c692-e8067c7f0749/mzi.aploynck.jpg/100x100bb.jpg",
+    "appleMusicUrl": "https://music.apple.com/us/album/rain-on-me/390307455?i=390307748&uo=4",
+    "appleMusicSongUrl": "https://music.apple.com/us/song/390307748",
+    "durationMillis": 262573,
+    "durationSeconds": 262.573,
+    "duration": "4:23",
+    "releaseDate": "1998-04-14T07:00:00Z",
     "isStreamable": true,
     "storefront": "us",
-    "notes": "Original album studio recording.",
+    "notes": "Original studio recording from Tamia (1998), selected by Jingheng.",
     "previewCheck": {
       "method": "HEAD",
       "status": 200,
       "contentType": "audio/x-m4p",
-      "contentLength": "997763",
-      "acceptRanges": "bytes"
+      "contentLength": "1108902",
+      "checkedOn": "2026-09-07"
     },
     "sources": [
-      "https://itunes.apple.com/search?term=New+York+State+of+Mind+Billy+Joel&entity=song&country=us&limit=50",
-      "https://music.apple.com/us/album/new-york-state-of-mind/259213439?i=259213690&uo=4",
-      "https://music.apple.com/us/song/259213690"
+      "https://itunes.apple.com/lookup?id=390307748&country=us",
+      "https://music.apple.com/us/album/rain-on-me/390307455?i=390307748&uo=4"
     ],
-    "artwork": "/images/records/new-york-state-of-mind.jpg"
+    "artwork": "/images/records/rain-on-me.jpg"
   }
 ]

@@ -277,17 +277,14 @@ export default function Home() {
         Skip to content
       </a>
       <nav className="site-nav" aria-label="Main navigation">
-        <a href="#home" className="wordmark">
-          Jingheng Huan<span>WORK · WORDS · WORLD</span>
+        <a href="#home" className="brand-link" aria-label="Jingheng Huan home">
+          <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
         </a>
         <div className="nav-links">
           <a href="#work">Work</a>
           <a href="#channels">Watch & listen</a>
           <Link href="/journal">Journal</Link>
           <a href="#records">The living room</a>
-          <a href="#city">
-            About <ArrowUpRight size={14} />
-          </a>
         </div>
         <div className="reading-progress" aria-hidden="true" />
       </nav>
@@ -305,10 +302,9 @@ export default function Home() {
             fetchPriority="high"
             width="1600"
             height="900"
-            alt="An illustrated sunny Manhattan living room with an Eames chair, records, books, and a bird-of-paradise plant"
+            alt="An illustrated sunny living room with mid-century chairs, records, books, and a bird-of-paradise plant"
           />
           <div className="arrival-copy">
-            <p className="eyebrow">UPPER EAST SIDE, NEW YORK</p>
             <h1>
               <span>Jingheng</span>
               <br />
@@ -316,17 +312,10 @@ export default function Home() {
                 <span>Huan.</span>
               </em>
             </h1>
-            <p>
-              Work, ideas, and the things that shape me.
-              <br />A personal space, always becoming.
-            </p>
           </div>
           <a className="scroll-invitation" href="#work">
             Come in. Stay a while. <ArrowDown size={20} />
           </a>
-          <span className="room-caption">
-            BASED IN NEW YORK. OPEN TO THE WORLD.
-          </span>
         </section>
         <section id="work" className="work-section">
           <p className="eyebrow" data-reveal>
@@ -474,8 +463,7 @@ export default function Home() {
           <div className="journal-intro" data-reveal>
             <h3>Journal & letters</h3>
             <p>
-              Notes on work, culture, and a life in New York. A place to follow
-              an idea a little further.
+              Notes on work, culture, and whatever stays on my mind.
             </p>
             <Link className="text-link" href="/journal">
               Visit the journal <ArrowUpRight size={18} />
@@ -802,33 +790,16 @@ export default function Home() {
             </a>
           </div>
         </section>
-        <section id="city" className="city-section" data-parallax>
-          <div className="city-window" aria-hidden="true">
-            <Image
-              unoptimized
-              src="/images/living-room.jpg"
-              alt=""
-              width="1600"
-              height="900"
-              loading="lazy"
-            />
-          </div>
-          <div className="city-copy" data-reveal>
-            <p className="eyebrow">08 / AROUND THE BLOCK</p>
-            <h2>
-              Somewhere
-              <br />
-              <em>in New York.</em>
-            </h2>
-            <p>{profile.bio}</p>
-            <p>
-              Usually between the Upper East Side,
-              <br />
-              Central Park, the Frick, and Lincoln Center.
-            </p>
-            <span className="city-signoff">See you around.</span>
-          </div>
-        </section>
+        <div className="closing-art" aria-hidden="true">
+          <Image
+            unoptimized
+            src="/images/writing-corner.webp"
+            alt=""
+            width={1672}
+            height={941}
+            loading="lazy"
+          />
+        </div>
         <footer>
           <div>
             <p className="eyebrow">UNTIL NEXT TIME</p>
@@ -881,9 +852,7 @@ export default function Home() {
             </a>
           </div>
           <p className="footer-small">
-            JINGHENG HUAN · NEW YORK
-            <br />
-            AN INDEPENDENT SPACE, ALWAYS GROWING.
+            JINGHENG HUAN
           </p>
         </footer>
       </main>
