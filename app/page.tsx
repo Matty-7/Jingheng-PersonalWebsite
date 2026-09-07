@@ -453,7 +453,7 @@ export default function Home() {
         </section>
         <section id="journal" className="journal-section" data-parallax>
           <div data-reveal>
-            <p className="eyebrow">03 / A WORK IN PROGRESS</p>
+            <p className="eyebrow">03 / JOURNAL</p>
             <h2>
               A little more
               <br />
@@ -468,7 +468,7 @@ export default function Home() {
             <Link className="text-link" href="/journal">
               Visit the journal <ArrowUpRight size={18} />
             </Link>
-            {newsletterUrl ? (
+            {newsletterUrl && (
               <a
                 className="text-link newsletter-link"
                 href={newsletterUrl}
@@ -477,11 +477,6 @@ export default function Home() {
               >
                 Letters in your inbox <ArrowUpRight size={18} />
               </a>
-            ) : (
-              <p className="newsletter-note">
-                A newsletter will follow. For now, find me on YouTube and
-                Talking Laughs.
-              </p>
             )}
           </div>
         </section>
