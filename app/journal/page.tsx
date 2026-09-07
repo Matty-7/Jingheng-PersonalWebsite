@@ -6,6 +6,10 @@ import profile from '@/content/profile.json';
 export const metadata: Metadata = {
   title: 'Journal — Jingheng Huan',
   description: 'Essays, notes, and letters from Jingheng Huan.',
+  alternates: {
+    canonical: '/journal',
+    types: { 'application/rss+xml': '/feed.xml' },
+  },
 };
 export default function Journal() {
   return (

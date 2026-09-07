@@ -8,7 +8,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = publishedPosts.find((p) => p.slug === slug);
   return post
-    ? { title: `${post.title} — Jingheng Huan`, description: post.excerpt }
+    ? {
+        title: `${post.title} — Jingheng Huan`,
+        description: post.excerpt,
+        alternates: {
+          canonical: `/journal/${post.slug}`,
+          types: { 'application/rss+xml': '/feed.xml' },
+        },
+      }
     : { title: 'Not found — Jingheng Huan' };
 }
 export default async function Entry({ params }: Props) {

@@ -12,7 +12,10 @@ export const metadata: Metadata = {
     title: profile.name,
     description: profile.description,
   },
-  alternates: { types: { 'application/rss+xml': '/feed.xml' } },
+  alternates: {
+    canonical: '/',
+    types: { 'application/rss+xml': '/feed.xml' },
+  },
 };
 export default function RootLayout({
   children,
