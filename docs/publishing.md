@@ -26,7 +26,7 @@ This is a schema example, not a published article. Use a unique lowercase slug, 
 
 Never put confidential drafts into the repository: draft status hides them from public pages, but collaborators with source access can still read committed files. Keep the post data and publishing module in server components. The homepage does not import draft data into its client bundle.
 
-The current workflow is repository-based. Edit content, run the checks in README, then publish a new version. There is no browser editor, scheduled publication job, or newsletter sending service. A scheduled date is a visibility guard, not a promise of an automatic email.
+The current workflow is repository-based. Edit content, run the checks in README, and merge the reviewed PR into `main`; the merge triggers deployment without another publishing confirmation. There is no browser editor, date-triggered article publication job, or newsletter sending service. A scheduled article date is a visibility guard, not a promise of an automatic email.
 
 ## Add a project
 

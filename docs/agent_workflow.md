@@ -1,6 +1,6 @@
 # Four-role development loop
 
-This workflow runs inside an active cloud Work task. These are agent responsibilities and handoff rules, not persistent background processes. No scheduler, API key, external agent service, or automatic merge is configured.
+The four-role review loop runs inside an active cloud Work task. These roles are bounded tasks with explicit handoffs. A separate GitHub merge-triggered Work automation handles deployment after review and merge; the review agents do not run continuously. Future PRs are not automatically merged.
 
 | Role | Responsibility | Handoff |
 | --- | --- | --- |
@@ -19,4 +19,16 @@ Run lint, TypeScript, the publication-visibility tests, content validation and a
 
 Browser or visual interaction checks are performed when requested and supported. Static review and a successful build are not claims of browser testing. Describe any remaining verification limit in the PR.
 
-Every review reports the revision reviewed, concrete findings, severity, evidence and whether it blocks the requested change. PR creation and independent review do not automatically authorize merging or publishing. Follow the user's current publishing instruction.
+Every review reports the revision reviewed, concrete findings, severity, evidence and whether it blocks the requested change. PR creation and independent review do not automatically authorize merging. Once a PR is merged into `main`, Jingheng's standing instruction authorizes immediate deployment without another publishing confirmation.
+
+## Deployment after merge
+
+The GitHub event trigger is `pull_request` with `only_on_merge: true` for `Matty-7/an-afternoon-uptown` (repository ID `1360490618`). The deployment task verifies that the merged PR targets `main`, then deploys the latest checked `main` to the existing public Sites project in `.openai/hosting.json`. It uses the existing domain, `https://jinghenghuan.com`. The Mac does not need to be running.
+
+1. Fetch the current GitHub PR and `main` revision. Ignore unmerged PRs and other target branches. Treat duplicate or delayed events as wake-ups to reconcile the latest `main`, never as instructions to roll production back.
+2. Verify the required checks against the source being deployed. If the exact merged revision lacks a completed passing CI run, run the required checks in the cloud checkout. Do not deploy a failing revision.
+3. Use the Sites skills as the sole Site owner. Fetch the existing Site and its source, preserve the project identity, build the checked revision, push that exact source state, and save it as a Site version. Reuse an existing matching saved build when appropriate.
+4. Recheck `main` before deployment and reconcile any newer merged revision. Skip an already deployed revision. Deploy the saved version and wait for terminal success or failure.
+5. Report the live URL on success, or the concrete failure if recovery cannot finish. Do not ask for routine publishing confirmation, automatically merge another PR, or make unrelated content changes.
+
+The event subscription belongs to Work Automations; `.github/workflows/site_checks.yml` supplies CI checks. A repository rename also requires verifying and, if needed, updating the event subscription so future merges continue to trigger it.

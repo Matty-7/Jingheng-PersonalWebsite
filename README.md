@@ -44,6 +44,6 @@ Built with React, TypeScript and Vinext. Hosting configuration is in `.openai/ho
 
 Open a cloud Work conversation in the same ChatGPT account/workspace and ask to continue this Site, or use this repository and the current PR as the handoff. Code execution and builds run in the cloud; the Mac does not need to remain awake. Work availability depends on the account and app. Remote is a separate mode that controls a connected computer.
 
-GitHub remains the code review history. Sites stores source versions and serves the existing domain. Neither pushing a PR nor saving a Site version deploys it. Read [the agent workflow](docs/agent_workflow.md) before substantive changes.
+GitHub remains the code review history. Sites stores source versions and serves the existing domain. PR merges into `main` trigger the cloud deployment workflow, with no separate publishing confirmation. Pushing an unmerged branch or saving a Site version alone does not deploy it. Read [the agent workflow](docs/agent_workflow.md) before substantive changes.
 
 Official guidance: https://learn.chatgpt.com/training/walkthroughs/working-on-your-phone

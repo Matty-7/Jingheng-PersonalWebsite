@@ -21,3 +21,9 @@
 For substantive development, follow `docs/agent_workflow.md`: design critic, design editor, engineer, regression reviewer, then critic closure. The Site-owning parent acts as engineer and is the only writer to the checkout and the only agent that commits, pushes, opens PRs, or saves/deploys Sites. Spawn bounded read-only critique/design/review tasks; those agents may message one another. Asset agents return files outside the checkout for the owner to integrate.
 
 Use snake_case for new helpers and task files, preserve framework-required naming, and avoid gratuitous renaming of existing code. Keep prose understated, avoid generic personal-brand slogans, and preserve the author's voice.
+
+## Merge and deploy
+
+Jingheng explicitly authorized automatic deployment after PR merges on September 7, 2026. Once a PR is merged into `main`, complete the checks and deploy the current merged `main` to the existing public Site at `https://jinghenghuan.com` without asking for another publishing confirmation. Preserve the project ID in `.openai/hosting.json` and the existing domain and audience. This standing instruction applies to future website PRs until Jingheng changes it.
+
+Follow `docs/agent_workflow.md` for the deployment handoff. Deploy the checked source, observe the terminal deployment result, and report the live URL. If checks or deployment fail, repair routine failures within scope or report the concrete blocker; do not describe an uncompleted deployment as live. This instruction authorizes publishing merged changes, not automatically merging future PRs.
