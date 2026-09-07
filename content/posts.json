@@ -1,1 +1,382 @@
-[]
+[
+  {
+    "slug": "something-of-my-own",
+    "title": "Something of My Own",
+    "excerpt": "Why I started this website, and why I decided to write in public.",
+    "date": "2026-09-07",
+    "kind": "Essay",
+    "status": "published",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Last year at Duke, I attended a workshop about something deceptively simple: how to introduce yourself. The instructor had gone to Duke for undergrad and later Harvard Business School, and he asked us to do an exercise with a group of people we had never met before."
+      },
+      {
+        "type": "paragraph",
+        "text": "The rule was simple. We had to introduce ourselves without relying on the usual labels: no school names, no company names, no impressive job titles. We each had three lives, and every time someone fell back on one of those credentials, they lost one."
+      },
+      {
+        "type": "paragraph",
+        "text": "It was harder than I expected."
+      },
+      {
+        "type": "paragraph",
+        "text": "We get so used to describing ourselves through institutions that the habit becomes almost invisible. I study at Duke. I work at Bloomberg. I am a software engineer. I did this internship. I earned this degree. These things matter to me, and I am proud of them. They have shaped me deeply."
+      },
+      {
+        "type": "paragraph",
+        "text": "Still, the exercise left me with a question that has stayed somewhere in the back of my mind since:"
+      },
+      {
+        "type": "paragraph",
+        "text": "If all the logos disappeared from my résumé tomorrow, what would still be mine?"
+      },
+      {
+        "type": "paragraph",
+        "text": "What would people remember me for? What have I actually created?"
+      },
+      {
+        "type": "heading",
+        "text": "From consuming to creating"
+      },
+      {
+        "type": "paragraph",
+        "text": "I consume an enormous amount of information. I read newsletters and articles, watch YouTube videos and vlogs, listen to podcasts, and regularly disappear down rabbit holes because I find something new I want to understand. I genuinely enjoy doing this."
+      },
+      {
+        "type": "paragraph",
+        "text": "At some point, though, I started noticing how one-sided the whole thing had become. I consume much more than I create, and this is not a new problem for me."
+      },
+      {
+        "type": "paragraph",
+        "text": "In the summer of 2022, before leaving Duke Kunshan for a semester at Duke, I used some of my own spending money to buy a GoPro. I had watched so many other people's vlogs that I wanted to make one myself. I thought it would be fun to document my semester in the U.S., so that fall I carried the camera around Duke and recorded pieces of campus life."
+      },
+      {
+        "type": "paragraph",
+        "text": "During my first fall break, some friends and I went to New York. I filmed a lot there too and came home with hours of footage."
+      },
+      {
+        "type": "paragraph",
+        "text": "Almost none of it went anywhere."
+      },
+      {
+        "type": "paragraph",
+        "text": "I remember opening the editing software and realizing that the video in my head and the video I actually knew how to make were two very different things. I wanted cinematic shots, smooth transitions, and something that felt like the videos I admired on YouTube. What I could make looked much more ordinary."
+      },
+      {
+        "type": "paragraph",
+        "text": "I kept tweaking things, got frustrated, and eventually stopped. The footage stayed on my drive, and the vlog never got finished."
+      },
+      {
+        "type": "paragraph",
+        "text": "Looking back, my lack of editing skills was only part of the problem. I also had very little tolerance for being bad at something while I was learning it. If the result did not look impressive enough, I would rather not publish it at all."
+      },
+      {
+        "type": "paragraph",
+        "text": "There was always another reason to wait: better editing, better footage, a better idea, more experience. The problem is that there is always another level of better."
+      },
+      {
+        "type": "paragraph",
+        "text": "I think I have done something similar with ideas. I can read about a subject for hours and walk away feeling like I understand it, then try to explain it clearly and realize that parts of my understanding are still vague. Writing makes those gaps much easier to see. It forces me to work out what I actually think and how the pieces fit together."
+      },
+      {
+        "type": "paragraph",
+        "text": "That is one reason I want to write more. I do not want everything I read, watch, or learn to pass through me and disappear. I want to turn at least some of it into something I have actually thought through myself."
+      },
+      {
+        "type": "heading",
+        "text": "Why now"
+      },
+      {
+        "type": "paragraph",
+        "text": "A lot has changed since I bought that GoPro in 2022. The biggest difference for me is how much easier AI has made it to start something before I already know how to do every part of it."
+      },
+      {
+        "type": "paragraph",
+        "text": "When I was building this website, I did not need to know every framework or have every design decision figured out before touching anything. If I ran into something unfamiliar, I could ask questions, try an approach, decide I disliked it, and try again. A gap in my knowledge no longer had to stop the whole project."
+      },
+      {
+        "type": "paragraph",
+        "text": "That matters to me because “I don't know how to do this yet” used to be a very effective excuse."
+      },
+      {
+        "type": "paragraph",
+        "text": "AI obviously did not decide what this website should feel like, what I wanted to put on it, or why I wanted one in the first place. Those were still my decisions. What changed was how quickly I could move from having those decisions in my head to seeing something real on the screen."
+      },
+      {
+        "type": "paragraph",
+        "text": "For someone who has spent a lot of time waiting until he felt ready, that has changed my willingness to start."
+      },
+      {
+        "type": "heading",
+        "text": "Why put it on the internet?"
+      },
+      {
+        "type": "paragraph",
+        "text": "I have interesting conversations all the time, sometimes with my girlfriend, sometimes with friends or coworkers. We talk through an idea, I figure out what I think about it, and then the conversation ends. A few weeks later, I may find myself explaining almost the same thing again to someone else."
+      },
+      {
+        "type": "paragraph",
+        "text": "Writing gives those thoughts somewhere to stay."
+      },
+      {
+        "type": "paragraph",
+        "text": "I can spend an evening working through an idea and put it here. Maybe ten people read it. Maybe one hundred do. Maybe almost nobody does. Someone might also find it several years from now."
+      },
+      {
+        "type": "paragraph",
+        "text": "I like that quality of the internet. Something you make once can continue to travel after you have finished making it."
+      },
+      {
+        "type": "paragraph",
+        "text": "Over time, I would like this site to become a body of work that accumulates. I am not starting with a subscriber target or a traffic goal, and I do not expect every thought I have to deserve an audience. Even if relatively few people read these pieces, I still think writing them will have been useful."
+      },
+      {
+        "type": "paragraph",
+        "text": "I am one of the people I am writing for."
+      },
+      {
+        "type": "heading",
+        "text": "A place to think"
+      },
+      {
+        "type": "paragraph",
+        "text": "A lot of what I learn currently lives in fragments. I might spend a week trying to understand something about fixed income, read an interesting newsletter, watch a movie that stays in my head for several days, or notice something while walking around New York."
+      },
+      {
+        "type": "paragraph",
+        "text": "In my head, these things often feel connected before I can properly explain how. I want this website to be one place where I work some of that out."
+      },
+      {
+        "type": "paragraph",
+        "text": "There will probably be plenty about financial markets, especially fixed income, because that is a world I am learning much more deeply right now. Software and AI will show up too. But I also want to write about books, movies, music, travel, New York, and whatever else I happen to find interesting enough to keep thinking about."
+      },
+      {
+        "type": "paragraph",
+        "text": "I read far too many newsletters as well, so I suspect some pieces will simply be my attempt to take all of that information, filter it, connect it to things I already know, and decide what is actually worth remembering."
+      },
+      {
+        "type": "paragraph",
+        "text": "The subjects may look a little scattered at first. I am fine with that. I would rather begin with the things I genuinely care about and discover the categories afterward than decide too early what kind of person this website is supposed to represent."
+      },
+      {
+        "type": "paragraph",
+        "text": "If I keep writing, I imagine the patterns will reveal themselves."
+      },
+      {
+        "type": "heading",
+        "text": "What remains"
+      },
+      {
+        "type": "paragraph",
+        "text": "I still do not have a perfect answer to the question from that workshop. If you take Duke away, take Bloomberg away, and take the job title away, what remains?"
+      },
+      {
+        "type": "paragraph",
+        "text": "I hope the answer becomes clearer over time. Some of it may be the things I build and write. Some of it will probably be the ideas I develop, the people I meet, the places I go, and the things I learn to notice."
+      },
+      {
+        "type": "paragraph",
+        "text": "I am grateful for the institutions that have shaped me. They have given me opportunities, communities, and experiences I would not have had otherwise. I just do not want them to be the only things that explain who I am."
+      },
+      {
+        "type": "paragraph",
+        "text": "I want to build something that belongs to me: a place where ideas do not disappear when a conversation ends, and a record of what I was learning and thinking at different points in my life."
+      },
+      {
+        "type": "paragraph",
+        "text": "Years from now, I want to be able to come back here and see what changed."
+      },
+      {
+        "type": "paragraph",
+        "text": "This website is where I am starting."
+      }
+    ]
+  },
+  {
+    "slug": "across-the-water",
+    "title": "Across the Water",
+    "excerpt": "Notes from an afternoon on Governors Island.",
+    "date": "2026-09-07",
+    "kind": "Essay",
+    "status": "published",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Since moving to Manhattan, I have realized that I rarely get to see Manhattan as a whole."
+      },
+      {
+        "type": "paragraph",
+        "text": "On weekdays, I walk along Third Avenue to and from work. On my way home, I pass Bloomingdale's and the row of international flags flying outside. On weekends, Lexington Avenue–63rd Street is usually where I disappear underground before heading somewhere else in the city. These places have gradually become my New York: the same streets, corners, storefronts, and subway entrance I pass again and again."
+      },
+      {
+        "type": "paragraph",
+        "text": "The longer I live here, the more familiar the city becomes. I know more of its details, but sometimes that makes it harder to see the larger shape."
+      },
+      {
+        "type": "paragraph",
+        "text": "There is an old Chinese line I kept thinking about: You cannot see the true shape of the mountain when you are standing inside it."
+      },
+      {
+        "type": "paragraph",
+        "text": "I thought about it during the first few minutes of the ferry ride to Governors Island. The horn sounded, the boat pulled away from Lower Manhattan, and the buildings that usually surround me slowly became a skyline."
+      },
+      {
+        "type": "paragraph",
+        "text": "Governors Island is only a short ride away, but stepping off the ferry felt like entering a different rhythm. People rode bicycles without seeming to be going anywhere in particular. Others stretched out on the grass or sat in rocking chairs, doing very little. There was no obvious reason to hurry."
+      },
+      {
+        "type": "paragraph",
+        "text": "That feels unusual in New York. In Manhattan, so much of the day is organized around getting somewhere or finishing something. You walk to work, take the subway to save time, go to the gym to complete a workout. Even wandering around can somehow become a question of whether you got enough steps in."
+      },
+      {
+        "type": "paragraph",
+        "text": "On Governors Island, lying on the grass for two hours seems like a perfectly reasonable way to spend an afternoon."
+      },
+      {
+        "type": "paragraph",
+        "text": "You never completely forget where you are, though. Helicopters keep passing overhead, and the Manhattan skyline stays across the water. Every so often, one of those familiar city sounds breaks through the quiet. You are still in New York, just far enough away for it to feel different."
+      },
+      {
+        "type": "heading",
+        "text": "An unfair ping-pong table"
+      },
+      {
+        "type": "paragraph",
+        "text": "The thing I kept thinking about afterward was a ping-pong table, or at least something that vaguely resembled one."
+      },
+      {
+        "type": "paragraph",
+        "text": "Its two sides were different sizes and different heights. Two people could stand at opposite ends and technically play the same game, even though the conditions were obviously unequal."
+      },
+      {
+        "type": "paragraph",
+        "text": "I stood there looking at it for quite a while. I have no idea whether this was what the artist intended, but it made me think about how often we imagine life as a standard ping-pong table. Same rules, same surface, same net. Two people play, and whoever is better wins."
+      },
+      {
+        "type": "paragraph",
+        "text": "Real life rarely starts that evenly."
+      },
+      {
+        "type": "paragraph",
+        "text": "Some people have more space to defend. Some begin from a more comfortable position. A mistake that one person can recover from might end the point for someone else. In the end, everyone sees the score, while the shape of the table is much easier to overlook."
+      },
+      {
+        "type": "paragraph",
+        "text": "That was what stayed with me about the installation. It took something that is supposed to be standardized and fair and distorted it just enough that the unfairness became impossible to ignore."
+      },
+      {
+        "type": "paragraph",
+        "text": "It did not really tell me what conclusion to draw from that."
+      },
+      {
+        "type": "paragraph",
+        "text": "I liked that."
+      },
+      {
+        "type": "heading",
+        "text": "Learning to get the joke"
+      },
+      {
+        "type": "paragraph",
+        "text": "Later, I came across a puppet show. A lot of the props looked like cardboard, and the whole thing was a little ridiculous in a way that made it fun."
+      },
+      {
+        "type": "paragraph",
+        "text": "The show kept making jokes about New York: street sweepers, the MTA, subway delays, and all the little annoyances that become familiar after living here for a while. At some point, I realized I was laughing at the same things as everyone around me."
+      },
+      {
+        "type": "paragraph",
+        "text": "It made me think about when a city begins to feel like home."
+      },
+      {
+        "type": "paragraph",
+        "text": "The famous landmarks probably matter less than I once thought. There is another kind of familiarity that arrives much more quietly. Someone makes a joke about weekend subway service, and you laugh because the exact same thing happened to you last Saturday."
+      },
+      {
+        "type": "paragraph",
+        "text": "At first, those inconveniences are part of the \"New York experience.\" Eventually, they are simply annoying."
+      },
+      {
+        "type": "paragraph",
+        "text": "There is something strangely comforting about reaching that point. Being able to complain about a place might be one small sign that you have started to belong there."
+      },
+      {
+        "type": "heading",
+        "text": "Haven't I seen this before?"
+      },
+      {
+        "type": "paragraph",
+        "text": "I also walked through Fort Jay. My first reaction was a strange sense of familiarity."
+      },
+      {
+        "type": "paragraph",
+        "text": "After a while, I realized it reminded me of Fort McHenry in Baltimore. The geometric layout, the walls, the inner courtyard, and the basic logic of the fort all felt familiar."
+      },
+      {
+        "type": "paragraph",
+        "text": "When I traveled less, I expected new places to keep showing me things I had never seen before. That gets harder the more places I visit. Old European cities begin to remind me of other old European cities. Museums echo one another. Cities have financial districts, railway stations, monuments, and forts that once guarded their harbors."
+      },
+      {
+        "type": "paragraph",
+        "text": "For a while, I wondered if this meant travel was becoming less exciting. Now I think the experience is simply changing."
+      },
+      {
+        "type": "paragraph",
+        "text": "Travel used to feel more like collecting places. Increasingly, it feels like connecting them."
+      },
+      {
+        "type": "paragraph",
+        "text": "Seeing another fort makes me think about why people in different places built such similar structures, what kinds of threats they were responding to, and how the cities around them changed afterward. There may be a little less surprise than before, but more things begin to connect."
+      },
+      {
+        "type": "paragraph",
+        "text": "The map in my head is getting denser."
+      },
+      {
+        "type": "heading",
+        "text": "A little distance"
+      },
+      {
+        "type": "paragraph",
+        "text": "By the end of the afternoon, I realized that the part of Governors Island I valued most was simply the distance it gave me from Manhattan."
+      },
+      {
+        "type": "paragraph",
+        "text": "It is a very small distance. Just a short ferry ride."
+      },
+      {
+        "type": "paragraph",
+        "text": "Most days, I experience New York in fragments: traffic on Third Avenue, the flags outside Bloomingdale's, the elevators at Lex 63 on a Saturday, construction scaffolding, ambulances, a deli on the corner. Those details probably have more to do with the New York I actually live in than the skyline does."
+      },
+      {
+        "type": "paragraph",
+        "text": "Across the water, the scale changes. Manhattan appears all at once. Buildings that normally block whatever sits behind them become part of the same outline. Streets, towers, traffic, neighborhoods, and all the messiness I encounter one piece at a time suddenly fit into something larger."
+      },
+      {
+        "type": "paragraph",
+        "text": "I think getting to know a city happens at both scales. Most of it comes from the inside, through repeating the same walks, finding favorite places, developing the same complaints, and slowly becoming familiar with intersections you once had to look up on a map."
+      },
+      {
+        "type": "paragraph",
+        "text": "Every once in a while, it is useful to step outside that routine and look back."
+      },
+      {
+        "type": "paragraph",
+        "text": "At the end of the afternoon, I took the ferry home. Governors Island grew smaller behind me while Manhattan gradually filled the view again. Soon I was back among traffic lights, crowds, cars, and subway entrances."
+      },
+      {
+        "type": "paragraph",
+        "text": "The next morning, I would walk up Third Avenue to work again. On the way home, Bloomingdale's would still be there, its flags moving above the sidewalk."
+      },
+      {
+        "type": "paragraph",
+        "text": "Those were still the pieces of New York I knew best."
+      },
+      {
+        "type": "paragraph",
+        "text": "I had just seen, for a few minutes, how they fit into the view from across the water."
+      }
+    ]
+  }
+]
