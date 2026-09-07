@@ -22,8 +22,10 @@ For substantive development, follow `docs/agent_workflow.md`: design critic, des
 
 Use snake_case for new helpers and task files, preserve framework-required naming, and avoid gratuitous renaming of existing code. Keep prose understated, avoid generic personal-brand slogans, and preserve the author's voice.
 
-## Merge and deploy
+## Autonomous review, merge and deployment
 
-Jingheng explicitly authorized automatic deployment after PR merges on September 7, 2026. Once a PR is merged into `main`, complete the checks and deploy the current merged `main` to the existing public Site at `https://jinghenghuan.com` without asking for another publishing confirmation. Preserve the project ID in `.openai/hosting.json` and the existing domain and audience. This standing instruction applies to future website PRs until Jingheng changes it.
+On September 7, 2026, Jingheng explicitly authorized the full critic -> design editor -> engineer -> independent PR reviewer -> merge -> public deploy -> critic loop, including current PR #1. Passing independent review and required checks authorize the engineer to merge the reviewed PR into `main` and deploy it without another conversational confirmation. This supersedes the earlier instruction that only deployment after a user-performed merge was authorized.
 
-Follow `docs/agent_workflow.md` for the deployment handoff. Deploy the checked source, observe the terminal deployment result, and report the live URL. If checks or deployment fail, repair routine failures within scope or report the concrete blocker; do not describe an uncompleted deployment as live. This instruction authorizes publishing merged changes, not automatically merging future PRs.
+Use `docs/agent_workflow.md` and the role briefs in `docs/agent_roles.md`. Keep this existing Site, domain and public audience. Routine code quality, accessibility, performance and layout improvements are in scope; preserve the author's approved article text and established design direction. Only make changes that have evidence and an accepted spec. If no worthwhile issue remains, record that outcome and leave the site unchanged.
+
+Observe the exact merged revision and terminal deployment result before beginning the next critique. Respect platform access controls and branch protection; report a concrete blocker if they prevent completion. Do not change permissions or bypass a rejected action. This standing merge and publish authorization remains in effect until Jingheng changes it.
