@@ -438,7 +438,7 @@ export default function Home() {
                   ref={turntable_base_ref}
                   onLoad={turntable_base_load}
                   onError={turntable_base_error}
-                  src="/images/turntable-base.webp"
+                  src="/images/turntable-base.jpg"
                   width="1448"
                   height="1086"
                   alt=""
@@ -446,7 +446,7 @@ export default function Home() {
                 <Image
                   unoptimized
                   className="turntable-mask-probe"
-                  src="/images/turntable.webp"
+                  src="/images/turntable.png"
                   ref={turntable_mask_ref}
                   onLoad={turntable_mask_load}
                   onError={turntable_mask_error}

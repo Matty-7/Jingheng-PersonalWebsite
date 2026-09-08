@@ -10,7 +10,7 @@ export function Tonearm() {
       </defs>
       <g className="tonearm-moving">
         <image
-          href="/images/turntable.webp"
+          href="/images/turntable.png"
           width="1448"
           height="1086"
           clipPath="url(#tonearm-hardware)"
