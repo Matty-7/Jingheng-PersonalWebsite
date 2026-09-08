@@ -1460,7 +1460,7 @@ progress.audio-progress::-moz-progress-bar {
 .bookshelf-book img {
   width: 100%;
   height: auto;
-  max-height: calc(var(--shelf-height)*0.75);
+  max-height: calc(var(--shelf-height)*0.82);
   object-fit: contain;
   object-position: bottom;
 }
@@ -1470,7 +1470,7 @@ progress.audio-progress::-moz-progress-bar {
 }
 .shelf-slot .bookshelf-book:hover,
 .shelf-slot .bookshelf-book:focus-visible {
-  transform: translateY(-25px) rotateY(-9deg) rotate(-1deg);
+  transform: translateY(-20px) rotateY(-9deg) rotate(-1deg);
   filter: drop-shadow(14px 24px 7px #3d281c66);
 }
 .bookshelf-book:focus-visible {
@@ -2209,37 +2209,6 @@ progress.audio-progress::-moz-progress-bar {
   font: 25px/1.25 Georgia, serif;
   text-wrap: balance;
 }
-.playbill-choices {
-  min-width: 0;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0;
-  border: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px 20px;
-}
-.playbill-choices .playbill-choice {
-  height: auto;
-  min-height: 44px;
-  padding: 8px 2px;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  border-radius: 0;
-  background: transparent;
-  color: #fff0d4;
-  font: 15px/1.35 Arial, sans-serif;
-  white-space: normal;
-}
-.playbill-choices .playbill-choice[aria-pressed='true'],
-.playbill-choices .playbill-choice:hover {
-  border-bottom-color: currentColor;
-}
-.playbill-choices .playbill-choice:focus-visible {
-  outline: 2px solid #fff0d4;
-  outline-offset: 4px;
-}
 .footer-links.social-links {
   display: flex;
   flex-wrap: wrap;
@@ -2273,8 +2242,6 @@ progress.audio-progress::-moz-progress-bar {
     transform: translateX(-50%) translateY(-25px) rotate(0deg) scale(1);
   }
   .playbill-title { min-height: 92px; font-size: 23px; }
-  .playbill-choices { gap: 2px 14px; }
-  .playbill-choices .playbill-choice { font-size: 14px; }
   .footer-links.social-links { justify-content: flex-start; }
 }
 
@@ -2413,7 +2380,7 @@ progress.audio-progress::-moz-progress-bar {
 .book-details { min-height: 0; margin-top: 18px; padding-top: 14px; gap: 16px; }
 .book-details h3 { font-size: 26px; margin: 6px 0 4px; line-height: 1.15; }
 .bookshelf { --shelf-height: 220px; }
-.book-reveal { max-width: 125px; }
+.book-reveal { max-width: 135px; }
 @media (min-width: 1001px) {
   .books-section { padding: 32px 5vw; }
   .books-intro { margin-bottom: 16px; }
@@ -2424,5 +2391,5 @@ progress.audio-progress::-moz-progress-bar {
 }
 @media (max-width: 420px) {
   .bookshelf { --shelf-height: 190px; }
-  .book-reveal { max-width: 110px; }
+  .book-reveal { max-width: 119px; }
 }
