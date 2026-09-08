@@ -19,6 +19,7 @@ import {
   Volume2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RoomScene } from '@/components/room_scene';
 import music from '@/content/music.json';
 import films from '@/content/films.json';
 import books from '@/content/books.json';
@@ -313,14 +314,7 @@ export default function Home() {
           }}
         />
         <section id="home" className="arrival">
-          <Image
-            unoptimized
-            src="/images/living-room.jpg"
-            fetchPriority="high"
-            width="1600"
-            height="900"
-            alt="An illustrated sunny living room with mid-century chairs, records, books, and a bird-of-paradise plant"
-          />
+          <RoomScene />
           <div className="arrival-copy">
             <h1>
               <span>Jingheng</span>

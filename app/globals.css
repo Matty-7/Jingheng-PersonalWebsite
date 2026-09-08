@@ -120,12 +120,11 @@ img {
   overflow: hidden;
   background: #e9c881;
 }
-.arrival > img {
+.arrival-scene {
   width: 100%;
   height: 100%;
   position: absolute;
-  object-fit: cover;
-  object-position: center;
+  pointer-events: none;
 }
 .arrival-copy {
   position: relative;
@@ -223,8 +222,8 @@ img {
     height: calc(100svh - 74px);
     min-height: 660px;
   }
-  .arrival > img {
-    object-position: 53% center;
+  .arrival-scene {
+    --room-position: 53%;
   }
   .arrival-copy {
     padding: 45px 7vw;
@@ -293,7 +292,7 @@ img {
   align-items: center;
   gap: 7px;
 }
-.arrival > img {
+.arrival-scene {
   transform: scale(calc(1 + var(--hero-progress, 0)*0.14))
     translateY(calc(var(--hero-progress, 0)*-3%));
   will-change: transform;
@@ -1224,7 +1223,7 @@ footer h2 {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .arrival > img,
+  .arrival-scene,
   .arrival-copy {
     transform: none !important;
     opacity: 1;
@@ -2096,6 +2095,162 @@ progress.audio-progress::-moz-progress-bar {
   width: 44px;
   height: 44px;
   flex: none;
+}
+
+/* Every illustrated layer uses the same cover crop and scroll transform. */
+.arrival-scene {
+  inset: 0;
+  container-type: size;
+}
+.room-artboard,
+.room-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.room-background {
+  object-fit: cover;
+  object-position: var(--room-position, 50%) center;
+}
+.room-effects,
+.room-motion-toggle {
+  display: none;
+}
+@supports (width: 1cqw) {
+  .room-artboard {
+    /* Match object-fit: cover while retaining source-image coordinates. */
+    width: max(100cqw, calc(100cqh * 1672 / 941));
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    top: 50%;
+    left: var(--room-position, 50%);
+    transform: translate(calc(-1 * var(--room-position, 50%)), -50%);
+  }
+  .room-effects {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .room-record {
+    position: absolute;
+    left: 21%;
+    top: 50.05%;
+    width: 10.82%;
+  }
+  .room-record-plane {
+    transform: scaleY(0.1713);
+    transform-origin: center top;
+  }
+  .room-vinyl {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: room-record-turn 7.5s linear infinite;
+  }
+  .room-still {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .room-spindle {
+    clip-path: polygon(26.2% 50.6%, 26.6% 50.6%, 26.6% 51.9%, 26.2% 51.9%);
+  }
+  .room-tonearm {
+    /* A fixed piece of the same illustration keeps the arm above the disc. */
+    clip-path: polygon(
+      28.4% 51.5%,
+      30.5% 49.2%,
+      31.5% 49.2%,
+      31.5% 50.6%,
+      29.5% 51.6%,
+      28.8% 52.1%
+    );
+  }
+  .room-coffee {
+    position: absolute;
+    left: 66.5%;
+    top: 68.5%;
+    width: 3.5%;
+    height: 10.4%;
+  }
+  .room-steam {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform-origin: center bottom;
+    opacity: 0;
+    animation: room-coffee-rise 6.5s ease-in-out infinite;
+  }
+  .room-steam-late {
+    left: 10%;
+    animation-delay: -3.25s;
+  }
+  .room-motion {
+    animation-play-state: paused;
+  }
+  .arrival-scene[data-visible='true'][data-paused='false'] .room-motion {
+    animation-play-state: running;
+  }
+  .room-motion-toggle {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #273a3026;
+    border-radius: 50%;
+    background: #f7eed8e6;
+    color: #273a30;
+    cursor: pointer;
+  }
+  .room-motion-toggle:hover {
+    background: #f7eed8;
+  }
+  .room-motion-toggle:focus-visible {
+    outline: 2px solid #273a30;
+    outline-offset: 4px;
+  }
+}
+@keyframes room-record-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes room-coffee-rise {
+  0% {
+    opacity: 0;
+    transform: translate(0, 14%) scale(0.7, 0.8);
+  }
+  30% {
+    opacity: 0.32;
+  }
+  65% {
+    opacity: 0.22;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-12%, -28%) scale(1.15, 1.1);
+  }
+}
+@media (max-width: 759px) {
+  .room-motion-toggle {
+    top: 14px;
+    right: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .room-effects,
+  .room-motion-toggle {
+    display: none;
+  }
 }
 .brand-link img {
   width: 40px;
