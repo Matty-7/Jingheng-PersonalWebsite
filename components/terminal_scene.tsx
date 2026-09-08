@@ -46,7 +46,7 @@ export function TerminalScene() {
             width={1672}
             height={941}
             loading="lazy"
-            alt="An illustrated walnut work desk with a Bloomberg Terminal, its colored keyboard, and a sunlit window overlooking trees"
+            alt="An illustrated walnut desk with a slim Bloomberg Terminal on central silver monitor arms, a colored keyboard, brick-built Statue of Liberty and Duke basketball figurines, and a sunlit window"
           />
           <div className="terminal-effects" aria-hidden="true">
             <ScreenDetail

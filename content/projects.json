@@ -2,10 +2,22 @@
   {
     "slug": "duber",
     "title": "Duber",
-    "category": "HackDuke 2025",
-    "description": "A ride-sharing platform with sustainability rewards. A project about getting somewhere together.",
-    "url": "https://www.linkedin.com/in/jingheng-huan/",
-    "linkLabel": "Project background on LinkedIn",
-    "status": "selected"
+    "category": "Web",
+    "description": "A shared-ride app for the Duke community, with ride requests, location search, and mapped routes.",
+    "url": "https://github.com/shenxingy/duke-duber"
+  },
+  {
+    "slug": "mealmates",
+    "title": "MealMates",
+    "category": "Mobile",
+    "description": "Making dinner plans a little easier: choose a restaurant, set a time, and find someone to share a meal with.",
+    "url": "https://github.com/shenxingy/MealMates"
+  },
+  {
+    "slug": "tennis-vision",
+    "title": "Tennis vision",
+    "category": "Computer vision",
+    "description": "A computer-vision exploration of tennis footage, tracking the ball and mapping its bounces onto the court.",
+    "url": "https://github.com/Matty-7/CS302-ComputerVision/tree/main/Tennis"
   }
 ]

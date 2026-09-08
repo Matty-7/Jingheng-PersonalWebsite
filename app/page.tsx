@@ -11,7 +11,8 @@ import {
 import Image from 'next/image';
 import {
   ArrowDown,
-  ArrowUpRight,
+  BookOpen,
+  Podcast,
   Pause,
   Play,
   SkipBack,
@@ -22,11 +23,12 @@ import { Button } from '@/components/ui/button';
 import { RoomScene } from '@/components/room_scene';
 import { TerminalScene } from '@/components/terminal_scene';
 import { PlaybillCollection } from '@/components/playbill_collection';
+import { SocialIcon } from '@/components/social_icon';
 import music from '@/content/music.json';
 import films from '@/content/films.json';
 import books from '@/content/books.json';
-import profile from '@/content/profile.json';
 import projects from '@/content/projects.json';
+import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
 import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
 const newsletterUrl = profile.newsletterUrl as string | null;
@@ -173,7 +175,9 @@ export default function Home() {
           filmSection.classList.add('film-motion-ready');
           const distance = Math.max(
             0,
-            filmTrack.scrollWidth - window.innerWidth + window.innerWidth * 0.09,
+            filmTrack.scrollWidth -
+              window.innerWidth +
+              window.innerWidth * 0.09,
           );
           filmSection.style.setProperty(
             '--film-height',
@@ -292,18 +296,20 @@ export default function Home() {
 
   return (
     <>
-      <a className="skip-link" href="#work">
+      <a className="skip-link" href="#channels">
         Skip to content
       </a>
-      <nav className="site-nav" aria-label="Main navigation">
+      <nav className="site-nav home-nav" aria-label="Main navigation">
         <a href="#home" className="brand-link" aria-label="Jingheng Huan home">
           <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
         </a>
         <div className="nav-links">
-          <a href="#work">Work</a>
-          <a href="#channels">Watch & listen</a>
+          <a href="#projects">Projects</a>
           <Link href="/journal">Journal</Link>
-          <a href="#records">The living room</a>
+          <a href="#records">Music</a>
+          <a href="#films">Films</a>
+          <a href="#books">Books</a>
+          <a href="#broadway">Broadway</a>
         </div>
         <div className="reading-progress" aria-hidden="true" />
       </nav>
@@ -325,45 +331,13 @@ export default function Home() {
               </em>
             </h1>
           </div>
-          <a className="scroll-invitation" href="#work">
+          <a className="scroll-invitation" href="#channels">
             Come in. Stay a while. <ArrowDown size={20} />
           </a>
         </section>
-        <section id="work" className="work-section">
-          <p className="eyebrow" data-reveal>
-            01 / AT THE DESK
-          </p>
-          <div data-reveal>
-            <h2>
-              Curiosity,
-              <br />
-              <em>put to work.</em>
-            </h2>
-            <p className="work-intro">
-              Engineering, financial markets,
-              <br />
-              and ideas worth exploring.
-            </p>
-          </div>
-          <div className="project-stack">
-            {projects.map((project) => (
-              <article className="project" key={project.slug} data-reveal>
-                <span>SELECTED WORK / {project.category.toUpperCase()}</span>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.url} target="_blank" rel="noreferrer">
-                  {project.linkLabel} <ArrowUpRight size={18} />
-                </a>
-              </article>
-            ))}
-            <p className="work-postscript">
-              A growing collection of things I build.
-            </p>
-          </div>
-        </section>
         <section id="channels" className="channels-section">
           <div className="section-heading" data-reveal>
-            <p className="eyebrow">02 / IN MY OWN VOICE</p>
+            <p className="eyebrow">01 / IN MY OWN VOICE</p>
             <h2>
               Things to share.
               <br />
@@ -394,7 +368,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Watch on YouTube <ArrowUpRight size={18} />
+                Watch on YouTube
               </a>
             </article>
             <article className="podcast-channel" data-reveal data-parallax>
@@ -424,7 +398,7 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Listen to the show <ArrowUpRight size={18} />
+                  Listen to the show
                 </a>
               </div>
             </article>
@@ -439,33 +413,14 @@ export default function Home() {
                 rel="noreferrer"
                 data-reveal
               >
-                <span className="eyebrow">
-                  TALKING LAUGHS · {episode.duration.toUpperCase()}
-                </span>
-                <h3>
-                  {episode.title} <ArrowUpRight size={21} />
-                </h3>
-                <p>
-                  {episode.subtitle} ·{' '}
-                  <time dateTime={episode.date}>
-                    {new Date(episode.date + 'T12:00:00Z').toLocaleDateString(
-                      'en-US',
-                      {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                        timeZone: 'UTC',
-                      },
-                    )}
-                  </time>
-                </p>
+                <h3>{episode.title}</h3>
               </a>
             ))}
           </div>
         </section>
         <section id="journal" className="journal-section" data-parallax>
           <div data-reveal>
-            <p className="eyebrow">03 / JOURNAL</p>
+            <p className="eyebrow">02 / JOURNAL</p>
             <h2>
               A little more
               <br />
@@ -474,11 +429,9 @@ export default function Home() {
           </div>
           <div className="journal-intro" data-reveal>
             <h3>Journal & letters</h3>
-            <p>
-              Notes on work, culture, and whatever stays on my mind.
-            </p>
+            <p>Notes on work, culture, and whatever stays on my mind.</p>
             <Link className="text-link" href="/journal">
-              Visit the journal <ArrowUpRight size={18} />
+              Visit the journal
             </Link>
             {newsletterUrl && (
               <a
@@ -487,9 +440,35 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Letters in your inbox <ArrowUpRight size={18} />
+                Letters in your inbox
               </a>
             )}
+          </div>
+        </section>
+        <section id="projects" className="projects-shelf">
+          <div className="projects-heading" data-reveal>
+            <p className="eyebrow">03 / AT THE DESK</p>
+            <h2>
+              Selected <em>projects.</em>
+            </h2>
+          </div>
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <article className="project-note" key={project.slug} data-reveal>
+                <p className="eyebrow">{project.category}</p>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <a
+                  className="project-source"
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Source code for ${project.title}`}
+                >
+                  Source code
+                </a>
+              </article>
+            ))}
           </div>
         </section>
         <section id="records" className="records-section">
@@ -500,7 +479,7 @@ export default function Home() {
               <br />
               <em>good on.</em>
             </h2>
-            <p>Ten records for an unhurried afternoon.</p>
+            <p>Ten songs I return to.</p>
           </div>
           <div className="listening-room">
             <div className="player-column">
@@ -581,12 +560,12 @@ export default function Home() {
                   {time(elapsed)} / {duration ? time(duration) : 'Preview'}
                 </span>
                 <a href={track.appleMusicUrl} target="_blank" rel="noreferrer">
-                  Full song on Apple Music <ArrowUpRight size={14} />
+                  Full song on Apple Music
                 </a>
               </div>
-              <output className="playback-message">
-                {message || 'Apple Music preview · Press play to listen.'}
-              </output>
+              {message && (
+                <output className="playback-message">{message}</output>
+              )}
             </div>
             <ol className="record-list">
               {music.map((t: Track, i) => (
@@ -640,11 +619,7 @@ export default function Home() {
                   <em>never leave.</em>
                 </h2>
               </div>
-              <p>
-                Ten films. A few different ways
-                <br />
-                of seeing the world.
-              </p>
+              <p>Ten films that stay with me.</p>
             </div>
             <div className="film-window">
               <div className="film-track" id="film-track">
@@ -672,20 +647,12 @@ export default function Home() {
                     <p className="film-meta">
                       {film.year} · {film.director}
                     </p>
-                    <p className="film-note">{film.note}</p>
                   </article>
                 ))}
               </div>
             </div>
             <div className="film-footer">
               <span>FAVORITE DIRECTORS · HITCHCOCK / NOLAN / SCORSESE</span>
-              <a
-                href="https://movie.douban.com/people/180864246/collect"
-                target="_blank"
-                rel="noreferrer"
-              >
-                The full film diary <ArrowUpRight size={16} />
-              </a>
               <div className="film-progress" aria-hidden="true">
                 <span />
               </div>
@@ -702,11 +669,7 @@ export default function Home() {
                 <em>One bookshelf.</em>
               </h2>
             </div>
-            <p>
-              Ten books I keep close.
-              <br />
-              Pick one off the shelf.
-            </p>
+            <p>Ten books I keep close.</p>
           </div>
           <div className="bookshelf" aria-label="Ten books on my bookshelf">
             {books.map((b, i) => (
@@ -749,17 +712,7 @@ export default function Home() {
               <p className="eyebrow">OFF THE SHELF</p>
               <h3>{book.title}</h3>
               <p className="book-author">{book.author}</p>
-              <p className="book-note">{book.note}</p>
-              <p className="book-edition">{book.edition}</p>
             </div>
-            <a
-              className="text-link"
-              href={book.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              About this edition <ArrowUpRight size={18} />
-            </a>
           </div>
         </section>
         <PlaybillCollection />
@@ -773,51 +726,60 @@ export default function Home() {
               <em>again.</em>
             </h2>
           </div>
-          <div className="footer-links">
-            <a href={profile.links.github} target="_blank" rel="me noreferrer">
-              GitHub <ArrowUpRight />
+          <nav
+            className="footer-links social-links"
+            aria-label="Find me elsewhere"
+          >
+            <a
+              href={profile.links.github}
+              target="_blank"
+              rel="me noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <SocialIcon name="github" />
             </a>
-            <a href={profile.links.youtube} target="_blank" rel="noreferrer">
-              YouTube <ArrowUpRight />
+            <a
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <SocialIcon name="linkedin" />
             </a>
-            <a href={profile.links.podcast} target="_blank" rel="noreferrer">
-              Talking Laughs <ArrowUpRight />
+            <a
+              href={profile.links.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <SocialIcon name="instagram" />
             </a>
-            <Link href="/journal">
-              Journal <ArrowUpRight />
+            <a
+              href={profile.links.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <SocialIcon name="youtube" />
+            </a>
+            <a
+              href={profile.links.podcast}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Talking Laughs podcast"
+              title="Talking Laughs"
+            >
+              <Podcast aria-hidden="true" />
+            </a>
+            <Link href="/journal" aria-label="Journal" title="Journal">
+              <BookOpen aria-hidden="true" />
             </Link>
-            <a
-              href="https://www.linkedin.com/in/jingheng-huan/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn <ArrowUpRight />
-            </a>
-            <a
-              href="https://www.instagram.com/jinghenghuan/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram <ArrowUpRight />
-            </a>
-            <a
-              href="https://www.douban.com/people/180864246/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Douban <ArrowUpRight />
-            </a>
-            <a
-              href="https://music.apple.com/us/playlist/favorite-songs/pl.u-KRULJdg9MJ"
-              target="_blank"
-              rel="noreferrer"
-            >
-              The whole playlist <ArrowUpRight />
-            </a>
-          </div>
-          <p className="footer-small">
-            JINGHENG HUAN
-          </p>
+          </nav>
+          <p className="footer-small">JINGHENG HUAN</p>
         </footer>
       </main>
       {/* Music previews have track and artist labels; synchronized lyric transcripts are not supplied by Apple. */}
