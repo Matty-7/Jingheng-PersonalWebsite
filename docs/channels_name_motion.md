@@ -1,5 +1,7 @@
 # Personal publishing and object motion — September 8, 2026
 
+Current follow-up: `collection_refinements.md` records semantic name colors, the restored podcast artwork, more compact collections, inward stylus position and removal of both desk ornaments. That newer owner request supersedes those details below.
+
 This owner-requested update supersedes the project-shelf decision in `personal_room_edit.md`. Jingheng removed the entire project section and both podcast episode tiles. GitHub and LinkedIn remain footer destinations. Approved essays, paragraph order, publication metadata and the three ten-item collections remain untouched.
 
 ## Accepted decisions

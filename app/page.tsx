@@ -365,8 +365,15 @@ export default function Home() {
                 <SocialIcon name="applepodcasts" />
                 <p className="eyebrow">PODCAST</p>
               </div>
-              <h3>
-                Talking <em>Laughs.</em>
+              <h3 className="podcast-brand">
+                <Image
+                  unoptimized
+                  src={channels.podcast.artwork}
+                  width={128}
+                  height={128}
+                  alt="Talking Laughs"
+                  loading="lazy"
+                />
               </h3>
               <p>Conversations with Jason, in Mandarin.</p>
               <a

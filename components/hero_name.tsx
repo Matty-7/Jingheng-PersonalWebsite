@@ -3,8 +3,18 @@
 import { useEffect, useRef, useState } from 'react';
 
 const names = [
-  { text: 'Jingheng\nHuan', language: 'en' },
-  { text: '郇\n敬恒', language: 'zh-Hans' },
+  {
+    text: 'Jingheng\nHuan',
+    language: 'en',
+    first_role: 'given',
+    last_role: 'family',
+  },
+  {
+    text: '郇\n敬恒',
+    language: 'zh-Hans',
+    first_role: 'family',
+    last_role: 'given',
+  },
 ] as const;
 
 export function HeroName({ paused }: { paused: boolean }) {
@@ -82,11 +92,11 @@ export function HeroName({ paused }: { paused: boolean }) {
         lang={name.language}
         data-active={active}
       >
-        <span className="typed-line">
+        <span className={`typed-line ${name.first_role}-name`}>
           {first}
           {cursor_line === 0 && <span className="typing-caret" />}
         </span>
-        <em className="typed-line">
+        <em className={`typed-line ${name.last_role}-name`}>
           {last}
           {cursor_line === 1 && <span className="typing-caret" />}
         </em>
