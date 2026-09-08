@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
 import { SceneMotionControl, useSceneMotion } from './scene_motion';
+import { useImageStatus } from './image_status';
 
 const quote_frames = [
   ['101.24', '101.28', '101.21'],
@@ -80,13 +81,17 @@ function MarketActivity() {
 
 export function TerminalScene() {
   const { scene, paused, ready, toggle } = useSceneMotion();
+  const { image_ref, state, on_load, on_error } = useImageStatus();
   return (
     <div className="closing-art">
-      <div className="terminal-scene" ref={scene} data-paused={paused}>
+      <div className="terminal-scene" ref={scene} data-paused={paused} data-image-state={state}>
         <div className="terminal-artboard">
           <Image
             unoptimized
             className="terminal-background"
+            ref={image_ref}
+            onLoad={on_load}
+            onError={on_error}
             src="/images/writing-terminal.webp"
             width={1672}
             height={941}
@@ -98,7 +103,7 @@ export function TerminalScene() {
           </div>
         </div>
       </div>
-      {ready && (
+      {ready && state === 'loaded' && (
         <SceneMotionControl paused={paused} toggle={toggle} subject="desk" />
       )}
     </div>

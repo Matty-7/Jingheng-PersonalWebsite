@@ -1,0 +1,11 @@
+# Image delivery and search metadata
+
+Jingheng reported that company-computer screenshots show the styled page and JavaScript/SVG animation but missing external images, including the favicon. The corporate browser's failed-request details are unavailable, so a corporate filtering cause is not confirmed.
+
+Public HTTP inspection on September 8, 2026 found the current homepage title already equals `Jingheng Huan`; Google was still displaying older wording. Hero, terminal and Playbill WebP assets returned 200 with valid WebP bytes but `application/octet-stream`. Sample JPEG, PNG and SVG assets returned their correct image types. All sampled images use the same website origin with no CDN redirects. The static `_headers` rule now explicitly declares `image/webp`; production response headers must be verified after deployment independently from corporate-device behavior.
+
+The design editor accepted the shorter shared description: `Writing and things I enjoy, by Jingheng Huan.` Existing canonical URLs, personal facts, article prose and identity aliases remain intact. The SEO checker now asserts the exact home title and description and handles the existing alias array correctly. Google controls when its index and displayed snippets refresh.
+
+The critic and editor accepted `SCENE_MEDIA_STATE`: room/desk overlays wait for successful background loading, including cached completion. Failed backgrounds retain their layout but hide broken rendering. The desk pause button requires its artwork; the hero pause remains available because it also controls name typing. Turntable artwork waits for both its base and mask/hardware resource, independently from the real audio controls and track text. The existing JH favicon geometry is reused inline in navigation without a separate asset request. Favicon metadata remains unchanged.
+
+Broad cover and podcast fallback redesign is deferred pending the transport fix. This repair preserves successful artwork, collections and motion preferences. Verification includes required code/content/build checks, source review of pending/load/error/cache handling, and public HTTP metadata and image-header probes. Corporate-network behavior and browser interactions are not claimed as tested.
