@@ -4,11 +4,18 @@ const read = async (name) =>
   JSON.parse(
     await readFile(new URL(`../content/${name}.json`, import.meta.url), 'utf8'),
   );
-const [music, films, books, profile, posts, channels, projects] =
+const [music, films, books, profile, posts, channels, projects, playbills] =
   await Promise.all(
-    ['music', 'films', 'books', 'profile', 'posts', 'channels', 'projects'].map(
-      read,
-    ),
+    [
+      'music',
+      'films',
+      'books',
+      'profile',
+      'posts',
+      'channels',
+      'projects',
+      'playbills',
+    ].map(read),
   );
 const asset = async (path) => {
   assert.match(path, /^\/images\//);
@@ -32,6 +39,18 @@ for (const book of books) {
   assert.ok(book.coverWidth > 0 && book.coverHeight > 0);
   https(book.sourceUrl);
   await asset(book.cover);
+}
+assert.deepEqual(
+  playbills.map((show) => show.slug),
+  ['two-strangers', 'six', 'chicago', 'book-of-mormon', 'mamma-mia'],
+);
+for (const show of playbills) {
+  assert.ok(show.title && show.label);
+  assert.ok(show.coverWidth > 0 && show.coverHeight > show.coverWidth);
+  assert.equal(new URL(show.sourceUrl).hostname, 'playbill.com');
+  https(show.sourceUrl);
+  https(show.artworkSourceUrl);
+  await asset(show.cover);
 }
 assert.equal(new Set(music.map((x) => x.trackId)).size, 10);
 assert.equal(new Set(films.map((x) => x.slug)).size, 10);
@@ -68,9 +87,12 @@ for (const post of posts) {
   assert.ok(['Essay', 'Note', 'Letter'].includes(post.kind));
   assert.ok(
     post.blocks.length > 0 &&
-      post.blocks.every((block) =>
-        ['paragraph', 'heading'].includes(block.type) &&
-        typeof block.text === 'string' && block.text.trim()),
+      post.blocks.every(
+        (block) =>
+          ['paragraph', 'heading'].includes(block.type) &&
+          typeof block.text === 'string' &&
+          block.text.trim(),
+      ),
   );
 }
 for (const project of projects) {
@@ -86,5 +108,5 @@ assert.ok(
   'Draft content must not enter the homepage client bundle',
 );
 console.log(
-  'Verified: 10 songs, 10 films, 10 cover books; assets, channel links, project and publication data.',
+  'Verified: 10 songs, 10 films, 10 cover books, 5 Playbills; assets, channel links, project and publication data.',
 );
