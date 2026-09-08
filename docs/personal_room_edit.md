@@ -1,5 +1,7 @@
 # Personal room and editorial update
 
+Historical record: the subsequent owner request in `channels_name_motion.md` removes the projects and episode tiles, makes publishing channels equal, and changes the initial Playbill state. That newer spec controls the current site.
+
 Jingheng’s September 8, 2026 follow-ups supersede the earlier instruction to keep visible Broadway recording details and the intermediate request to remove projects entirely. The final request keeps three meaningful projects, removes redundant metadata and external links, and makes the illustrated rooms and Broadway collection more personal. Review and publication gates are unchanged.
 
 ## Content and navigation

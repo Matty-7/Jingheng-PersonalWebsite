@@ -1,11 +1,11 @@
 # Jingheng Huan: project conventions
 
-- The identity is Jingheng Huan. Work, personal publishing, YouTube and Talking Laughs come before the taste collections.
+- The identity is Jingheng Huan (郇敬恒). YouTube, Talking Laughs and Newsletters are equal publishing channels before the taste collections. The owner removed the projects section; code belongs on his linked GitHub and LinkedIn profiles.
 - Maintain actual book covers on the bookshelf, with keyboard/touch-accessible selection. Never turn it into a ranking.
 - Journal content is maintained in content/posts.json; drafts and future-dated entries must stay out of public routes and RSS. Do not import the posts file or lib/publishing into client components.
 - Newsletter links appear only when profile.newsletterUrl is configured to a real provider. Do not add a nonfunctional sign-up form.
 
-- All website copy is English. Maintain the sunny digital living room direction, with mid-century furniture and editorial illustration.
+- Website copy is English, except the owner-approved bilingual name animation (Jingheng Huan / 郇敬恒). Maintain the sunny digital living room direction, with mid-century furniture and editorial illustration.
 - The visitor scrolls the page normally. Do not add a scroll-simulation slider, intercept wheel events, or require dragging to browse the collections.
 - Keep exactly ten featured films, ten books and ten songs in their content files. Preserve the broader preference list in docs/content-direction.md.
 - Film imagery uses recognizable official source posters with a light impressionist treatment. Keep source provenance. Do not substitute new symbolic illustration concepts.

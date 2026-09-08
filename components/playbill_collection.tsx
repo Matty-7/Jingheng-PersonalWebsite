@@ -1,21 +1,46 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Button } from '@/components/ui/button';
 import shows from '@/content/playbills.json';
 
 export function PlaybillCollection() {
-  const [selected_show, set_selected_show] = useState(0);
+  const [selected_show, set_selected_show] = useState<number | null>(null);
+  const collection = useRef<HTMLElement>(null);
+  const select_show = (index: number) =>
+    set_selected_show((current) => (current === index ? null : index));
+  useEffect(() => {
+    if (selected_show === null) return;
+    const dismiss = (event: PointerEvent) => {
+      const target = event.target;
+      if (
+        !(target instanceof Element) ||
+        !collection.current?.contains(target) ||
+        !target.closest('button')
+      )
+        set_selected_show(null);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') set_selected_show(null);
+    };
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [selected_show]);
 
   return (
     <section
+      ref={collection}
       id="broadway"
       className="broadway-section playbill-collection"
       aria-labelledby="broadway-heading"
     >
       <div className="broadway-copy" data-reveal>
-        <p className="eyebrow">07 / A LITTLE INTERMISSION</p>
+        <p className="eyebrow">05 / A LITTLE INTERMISSION</p>
         <h2 id="broadway-heading">
           A seat at
           <br />
@@ -23,7 +48,7 @@ export function PlaybillCollection() {
         </h2>
         <p>My current top five, from the Broadway shows I’ve seen.</p>
       </div>
-      <div className="playbill-fan">
+      <div className="playbill-fan" data-open={selected_show !== null}>
         {shows.map((show, index) => (
           <Button
             key={show.slug}
@@ -33,7 +58,7 @@ export function PlaybillCollection() {
             aria-pressed={selected_show === index}
             aria-label={`Select ${show.label}`}
             aria-controls="playbill-title"
-            onClick={() => set_selected_show(index)}
+            onClick={() => select_show(index)}
           >
             <Image
               unoptimized
@@ -52,7 +77,9 @@ export function PlaybillCollection() {
         aria-live="polite"
         aria-atomic="true"
       >
-        {shows[selected_show].title}
+        {selected_show === null
+          ? 'Pick a Playbill.'
+          : shows[selected_show].title}
       </p>
       <fieldset className="playbill-choices">
         <legend className="sr-only">Choose a Playbill</legend>
@@ -63,7 +90,7 @@ export function PlaybillCollection() {
             className="playbill-choice"
             aria-pressed={selected_show === index}
             aria-controls="playbill-title"
-            onClick={() => set_selected_show(index)}
+            onClick={() => select_show(index)}
           >
             {show.label}
           </Button>
