@@ -1,50 +1,53 @@
-# Autonomous website improvement loop
+# Website maintenance workflow
 
-Jingheng authorized this workflow, including automatic merge and public deployment after independent review, on September 7, 2026. It runs in cloud Work tasks and does not require his Mac to remain awake.
+Jingheng authorized independent review, automatic merge and public deployment on September 7, 2026, and proactive browser inspection and this workflow redesign on September 8. Cloud tasks do not depend on his Mac. Task prompts are versioned in `docs/automation/`; installing them is a separate native automation action, not something GitHub CI does.
 
-## Roles and handoffs
+## Two independent triggers
 
-| Role | Responsibility | Required output |
+| Task | Trigger | Responsibility |
 | --- | --- | --- |
-| Critic | Inspect code and the current design for evidenced defects or worthwhile improvements. | Ranked findings with locations, impact, evidence and acceptance criteria. |
-| Design editor | Accept, reject or defer each finding; weigh aesthetics and usability as well as engineering cost. | A small implementation spec and reasons for each decision. |
-| Engineer | The Site-owning parent implements the accepted spec and opens a PR. | Scoped diff, checks and persistent review evidence. |
-| PR reviewer | A separate agent independently reviews the exact PR revision for correctness, regressions and spec compliance. | Blocking findings or an explicit pass tied to the full head SHA. |
+| Publisher | A merged GitHub PR | Deploy latest checked main, verify delivery and record the exact receipt. No new design cycle. |
+| Visitor audit | Daily, America/New_York | Inspect the verified deployment and its source in a browser preview. Submit at most one worthwhile reviewed improvement. |
 
-The concrete agent briefs are in `agent_roles.md`. The three read-only subagents may communicate directly; the parent remains the engineer and sole Site owner. Subagents must not edit the Site checkout, call Sites tools, push, merge, deploy, or spawn other agents. If independent agents are unavailable, do not represent the engineer's own review as independent approval.
+Merge-only triggering is not continuous monitoring. Daily inspection runs even when source is unchanged. NO_CHANGE ends that day's inspection, not the schedule. Both tasks remain enabled after success, duplicate events, no change or failure unless Jingheng explicitly asks otherwise. Do not create replacement tasks from a scheduled invocation.
 
-The engineer addresses blocking findings and requests another review of the changed revision. The critic checks that the result satisfies the accepted intent. A passing reviewer, passing checks and critic closure authorize merge and deployment without asking Jingheng again. A new code commit invalidates the previous approval. Record any doc-only follow-up separately.
+Repository: `Matty-7/an-afternoon-uptown`, ID `1360490618`. Resolve renames by this ID. Site: `appgprj_6a9ef28d91308191895df3c89d49f8d0`. Verify `.openai/hosting.json` with native Sites get_site; preserve `https://jinghenghuan.com` and its public audience. Never create another Site or change access controls.
 
-## Cloud event loop
+## Publisher
 
-One Work automation subscribes to GitHub `pull_request` events with `only_on_merge: true` for `Matty-7/an-afternoon-uptown` (repository ID `1360490618`). Each invocation does the following:
+Read every event and its actual PR with GitHub; handle merged PRs targeting main only. Events are wake-ups, not permission to deploy an old revision. Read latest main, recent PR receipts, saved versions and deployments. Verify receipt IDs with Sites. Observe matching pending deployments and reuse matching succeeded deployments or archive-backed versions instead of duplicating them.
 
-1. Read the actual event PR and current `main`. Ignore unmerged PRs and other target branches. Treat duplicate or delayed events as wake-ups to reconcile current state.
-2. Deploy the newest checked merged `main` to the existing public Site in `.openai/hosting.json`, preserving `https://jinghenghuan.com`. Follow the Sites building and hosting skills: obtain source credentials, build, push exact source, save a version, deploy, and observe terminal status. Reuse matching builds and saved versions when appropriate.
-3. Only after deployment succeeds, start the critic and design editor on that deployed revision. Inspect existing optimization branches and PRs before creating new work. Continue an existing incomplete iteration only when no other task owns it; otherwise leave it to that task.
-4. For an accepted improvement, the engineer claims the deterministic branch `auto/optimize_<full_base_sha>` with GitHub's non-overwriting create-branch action. If it already exists, do not start another iteration from that base. Keep the branch as the durable iteration identity, even after merge.
-5. Implement one coherent improvement, open the PR, obtain independent review and critic closure, then merge only the exact reviewed head with `expected_head_sha`. End this invocation after that merge. Its merge event starts the next invocation, which deploys it before starting another critique.
+Before source push, packaging or saving, both webhook publication and daily recovery must acquire the same native non-overwriting claim `auto/publish_YYYYMMDD_<full_target_sha>` (America/New_York date). Only its successful creator owns this attempt. Keep the branch. First inspect prior publication claims and their PR-body attempt records across dates: an unresolved RUNNING record or a branch without a terminal record blocks takeover unless actual evidence shows its owner ended. Never infer abandonment from age or from no pending Sites deployment alone. A terminal FAILED attempt may retry on a later date; the same day's existing claim prevents repeated attempts. A matching succeeded deployment needs no new claim.
 
-This divides the repeating loop into durable event-driven tasks instead of keeping one conversation running forever. It is not a polling schedule. When no worthwhile finding is accepted, end the iteration without an empty PR; the next merge wakes the workflow again. Do not invent a defect, relabel a rejected preference, or alternate between equivalent designs to manufacture another cycle.
+Immediately append a PUBLISH_ATTEMPT record with claim, full source, start time and RUNNING status to the target merged PR, preserving other text. Record a terminal SUCCEEDED, FAILED or SUPERSEDED outcome on every handled exit, including check/build/push failures before a deployment exists. When another claim owns current work, observe rather than package concurrently. Before deploying recheck the owned claim, latest main, Site source and pending deployments. If source advances, record SUPERSEDED and end; a later invocation reconciles latest main.
 
-The foreground task may perform a deployment and its first critique directly. While it owns that work, pause the event subscription, then re-enable it before the next autonomous PR merge. Do not leave the subscription paused at handoff.
+When exact-source passing evidence is missing, run all checks below. `fetch_commit_workflow_runs` only lists PR-triggered runs; an empty result for a merge SHA does not prove failure. Follow current Sites building/hosting skills and supported scripts. Push exact checked source with a short-lived per-command credential, then read full git rev-parse HEAD; package and save that same revision. Recheck main, Site source and pending deployments before publishing. Never force overwrite newer source or production.
+
+Deploy a saved version, poll its exact returned deployment ID to terminal status, and append source SHA, version ID, deployment ID, status and returned URL in a marked deployment receipt in the corresponding merged PR body, preserving existing content. A saved version is not a deployment. Run `node scripts/check_delivery.mjs https://www.jinghenghuan.com` and `node scripts/check-seo.mjs https://www.jinghenghuan.com` from that exact source. Record HTTP failure separately from platform deployment success. End on unrecoverable failure with a concrete blocker and receipt. Do not start a design cycle.
+
+## Dated visitor audit
+
+1. Read latest main, merged PR receipts, Sites versions/status and prior audit decisions. Verify the exact deployed source. If an applicable deployment or known publisher is active, observe it or record WAITING_FOR_DEPLOYMENT. If main is newer because publication failed or its merge event was missed, and no active or unknown-owner attempt remains, the daily parent may run the Publisher procedure above using the SAME publication claim and all exact-source gates. Retry terminal failure at most once per later local date; never create a competing publisher. On recovery failure record the terminal attempt and PARTIAL/BLOCKED, then end so tomorrow can retry. Only after platform success audit that verified deployed source; record HTTP failures as findings, not false platform failure or a clean audit. Do not edit an obsolete base.
+2. Check open optimization/audit PRs and iteration branches. An actively owned PR blocks competing work. Claim `auto/audit_YYYYMMDD_<full_deployed_sha>` with native GitHub non-overwriting create_branch, using the America/New_York date. Only its successful creator owns that audit. An existing branch means another invocation owns that day; never reset or delete it. Preserve historic `auto/optimize_<sha>` guards; they do not suppress a different dated audit. Do not seize abandoned work without evidence.
+3. Parent runs `docs/site_audit.md` against that source: actual supported browser interactions and separate production HTTP checks. Record full source and any uncommitted harness changes. Follow bounded Sites startup recovery. Missing capabilities yield PARTIAL/BLOCKED, not fabricated tests or alternate browser-control methods.
+4. Spawn a read-only critic and a separate read-only design editor. Give them actual observations, available screenshots, revision, prior decisions and scope. Critic returns at most three stable evidenced findings; editor accepts/rejects/defers each, including code-only issues. No accepted issue means no empty PR. Append the dated checkpoint to the deployed PR body and end; tomorrow checks again.
+5. Implement at most one coherent accepted improvement on the owned branch. Parent alone writes source and uses GitHub/Sites/browser tools. Spawn a separate independent read-only PR reviewer on the actual full PR head. Agents may communicate, but cannot edit, commit, push, merge, deploy, use Sites/browser tools or spawn more agents.
+6. Obtain exact-head reviewer PASS, critic closure and successful Site checks CI. Merge with full reviewed expected_head_sha, then end. Its merge event publishes. The audit must not also publish and race the publisher.
+
+An incomplete inspection may produce an evidenced narrow repair PR, such as a broken preview command, but cannot certify the overall visitor experience. Preserve untested scenarios as follow-up checks; do not relax the checklist. After two unsuccessful repair/review passes, preserve a draft PR with blockers and end. Later tasks report rather than overwrite it.
 
 ## Evidence and merge gates
 
-Run `npm run lint`, `npx tsc --noEmit`, `npm test`, `node scripts/check-content.mjs` and `npm run build` for substantive changes. Wait for the PR's `Site checks` CI to pass before merge. All three collections must retain ten items. Changed audio metadata must refer to actual previews. Removed sections must leave no broken homepage anchors. Journal drafts and future dates must stay out of public routes, RSS, sitemap and client bundles.
+Run `npm run lint`, `npx tsc --noEmit`, `npm test`, `node scripts/check-content.mjs` and `npm run build` after substantive changes. Wait for completed successful Site checks CI on the reviewed full PR head. Preserve ten songs, ten films, ten books, five Playbills, actual user-initiated audio, normal scrolling, accessible controls and reduced-motion behavior. Keep drafts and future entries out of public routes, RSS, sitemap and client bundles. Preserve approved essays, paragraph order, metadata and personal facts.
 
-The review record in each PR body must include the critic's accepted finding, editor decisions and spec, full base and head SHAs, independent reviewer result, critic closure, check evidence, and any verification limitation. Update this record after a repair. Do not forge a GitHub approval from a different account or imply that an agent review satisfies an unmet repository branch-protection rule.
+PR body: accepted finding, editor decisions/spec, full base/head SHAs, independent reviewer result, critic closure, checks, runtime evidence and limitations. Source changes invalidate approval, including documentation changes to execution rules. Re-read the actual PR diff after repairs. Immediately before merge recheck base, PR head, CI and unresolved human change requests. If source changed, reconcile and revalidate/review it. Never forge another account's GitHub approval or treat an agent PASS as permission to bypass branch protection.
 
-Inspect the latest base and PR head immediately before merge. If either changed after review, reconcile and review the resulting source before retrying. Honor unresolved human change requests. A failed or cancelled check is not a pass. Native merge must receive the reviewed `expected_head_sha`; never force push or bypass branch protection.
+Do not invent essays, subscriptions, tracking, services, accounts, messages or a new style to manufacture work. Rejected preferences stay rejected unless new evidence or user direction changes them. No self-modification of automation gates during routine audits.
 
-## Deployment and recovery
+## Foreground ownership and reporting
 
-Use only the existing Site project from `.openai/hosting.json`; never create a replacement. Record the exact version ID, deployment ID, source SHA, terminal status and returned production URL in the deployed PR's body. That receipt allows the next invocation to avoid duplicate deployment. Verify receipt IDs with Sites before trusting them. A saved version alone is not a deployment.
+A foreground engineer who directly owns deployment may temporarily pause the publisher, then restore it before handoff. Prefer the publisher after a normal foreground merge and do not race it. Check existing pending work before taking over failures.
 
-Recheck current `main` and any existing deployment immediately before publishing. Never deploy an older event revision over a newer successful or ongoing deployment. If another task has advanced Site source, reconcile instead of force overwriting it. One invocation may produce at most one new optimization PR and merge; further iterations belong to the next event.
+Use the audit statuses and evidence template in `site_audit.md`. Report meaningful fixes, outages or persistent blockers concisely in Chinese, with live/PR links. Silence routine duplicate and complete-no-change notifications. Never call an untested or blocked run successful. Cloud inspection does not reproduce the owner's corporate network.
 
-Fix routine failures within the accepted spec. After two unsuccessful repair/review cycles, preserve the draft PR and evidence, report the concrete blocker, and end that attempt. Do not repeatedly retry an unchanged failing revision. Platform denials must be respected and explained; do not modify approval policies or weaken checks to keep the loop moving.
-
-Preserve owner-authored essays and personal facts. Do not add new articles, subscriptions, analytics, paid services, external messages or a new brand direction as automatic cleanup. Browser QA must be explicitly requested and supported; static review is not visual or interaction testing.
-
-A repo rename requires verifying and, if needed, updating the Work event subscription. The GitHub Actions workflow supplies CI; the Work automation supplies the repeating multi-agent execution and publication.
+A native-verified terminal Sites success for the exact target may reconcile a stale attempt receipt without starting another deployment. Mark the publication attempt SUCCEEDED once that target is confirmed live; record failed HTTP acceptance separately as delivery findings. These findings remain eligible for the next audit and do not turn platform success into an endless deployment wait. Unknown pre-deployment ownership still requires evidence before takeover.
