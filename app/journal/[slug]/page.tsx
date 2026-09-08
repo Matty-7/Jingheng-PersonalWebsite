@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { BrandMark } from '@/components/brand_mark';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
@@ -58,7 +58,7 @@ export default async function Entry({ params }: Props) {
       />
       <nav className="journal-nav" aria-label="Article navigation">
         <Link className="brand-link" href="/" aria-label="Jingheng Huan home">
-          <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
+          <BrandMark />
         </Link>
         <Link href="/journal">
           <ArrowLeft size={16} /> All entries

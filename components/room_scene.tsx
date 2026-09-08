@@ -2,17 +2,22 @@
 
 import Image from 'next/image';
 import { SceneMotionControl, useSceneMotion } from './scene_motion';
+import { useImageStatus } from './image_status';
 
 export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
   const { scene, paused, ready, toggle } = useSceneMotion(control);
+  const { image_ref, state, on_load, on_error } = useImageStatus();
 
   return (
     <>
-      <div className="arrival-scene" ref={scene} data-paused={paused}>
+      <div className="arrival-scene" ref={scene} data-paused={paused} data-image-state={state}>
         <div className="room-artboard">
           <Image
             unoptimized
             className="room-background"
+            ref={image_ref}
+            onLoad={on_load}
+            onError={on_error}
             src="/images/living-room-motion.webp"
             fetchPriority="high"
             width={1672}

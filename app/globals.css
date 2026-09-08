@@ -363,6 +363,7 @@ img {
 }
 .turntable {
   position: relative;
+  aspect-ratio: 1448 / 1086;
   width: 100%;
   margin-left: -4%;
   transform: rotate(-4deg);
@@ -376,6 +377,8 @@ img {
   width: 100%;
   height: auto;
 }
+.turntable[data-image-ready='false'] { visibility: hidden; }
+.turntable-mask-probe { position: absolute; width: 1px; height: 1px; visibility: hidden; }
 .vinyl-disc {
   position: absolute;
   left: 42.68%;
@@ -1910,6 +1913,10 @@ progress.audio-progress::-moz-progress-bar {
 .scene-motion-toggle {
   display: none;
 }
+.arrival-scene:not([data-image-state='loaded']) .room-effects,
+.terminal-scene:not([data-image-state='loaded']) .terminal-effects { display: none; }
+.arrival-scene[data-image-state='error'] .room-background,
+.terminal-scene[data-image-state='error'] .terminal-background { visibility: hidden; }
 @supports (width: 1cqw) {
   .room-artboard {
     /* Match object-fit: cover while retaining source-image coordinates. */

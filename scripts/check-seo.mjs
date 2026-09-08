@@ -56,17 +56,14 @@ for (const path of [
     tagValue(body, 'property="og:url"', 'content')?.replace(/\/$/, ''),
     expected,
   );
-  assert.ok(
-    tagValue(body, 'name="description"', 'content')?.includes(
-      path === '/' ? 'Matty Huan' : '',
-    ),
-    path,
-  );
+  assert.ok(tagValue(body, 'name="description"', 'content'), path);
   if (path === '/') {
+    assert.match(body, /<title[^>]*>Jingheng Huan<\/title>/);
+    assert.equal(tagValue(body, 'name="description"', 'content'), profile.description);
     const graph = structuredData(body).flatMap((data) => data['@graph'] ?? []);
     const person = graph.find((node) => node['@type'] === 'Person');
     assert.equal(person.name, profile.name);
-    assert.equal(person.alternateName, profile.creatorName);
+    assert.deepEqual(person.alternateName, [profile.creatorName, profile.chineseName]);
     assert.ok(person.sameAs.includes(profile.links.linkedin));
     assert.ok(
       graph.some(

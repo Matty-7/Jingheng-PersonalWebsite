@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { BrandMark } from '@/components/brand_mark';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { publishedPosts, newsletterUrl, formatDate } from '@/lib/publishing';
@@ -15,7 +15,7 @@ export default function Journal() {
     <main className="journal-page">
       <nav className="journal-nav" aria-label="Newsletter navigation">
         <Link className="brand-link" href="/" aria-label="Jingheng Huan home">
-          <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
+          <BrandMark />
         </Link>
         <Link href="/">
           <ArrowLeft size={16} /> Back to the living room
