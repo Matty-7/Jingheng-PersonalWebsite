@@ -17,7 +17,7 @@ export function RoomScene() {
             fetchPriority="high"
             width={1672}
             height={941}
-            alt="A sunny illustrated living room with coffee, a record player, Bloomberg Markets and The New Yorker magazines"
+            alt="A sunny illustrated living room with a cinema poster, Manhattan map, coffee, a record player, Bloomberg Markets and The New Yorker magazines"
           />
           <div className="room-effects" aria-hidden="true">
             <div className="room-record">
