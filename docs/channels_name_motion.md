@@ -18,6 +18,8 @@ The closing desk is 1672 × 941, encoded as WebP. Its two masked refresh rectang
 
 ## Verification limits
 
+Independent review identified `hero_pause_fallback`: browsers without container-query units hid the shared pause control but could still type the name. The name now uses the same container-unit support gate as that control, remaining fully static in this fallback. This repair preserves pause availability whenever typing runs.
+
 Asset inspection and source-coordinate checks are not browser QA. No browser, screenshots of the rendered site, DOM interaction tests, audio listening or motion-performance measurement were performed. Required application lint, TypeScript, publication tests, content checks, production build and exact-head independent review are recorded in the PR.
 
 Source-crop arithmetic passed at widths 320, 375, 760, 849, 1280, 1440, 1920, 2560 and 3840 for combined toy/terminal/keyboard bounds (365,278)–(908,605). At 27 degrees the stylus reaches (907.3,779.4), 392.5 source pixels from the CSS vinyl center and within its 398px radius. Homepage anchors resolve, removed UI strings are absent, and approved post bytes match the base revision.

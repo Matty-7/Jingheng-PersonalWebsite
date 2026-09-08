@@ -18,7 +18,13 @@ export function HeroName({ paused }: { paused: boolean }) {
 
   useEffect(() => {
     const element = heading.current;
-    if (!element || !('IntersectionObserver' in window)) return;
+    // Match the scene's CSS fallback: never animate without its pause control.
+    if (
+      !element ||
+      !('IntersectionObserver' in window) ||
+      !window.CSS?.supports('width', '1cqw')
+    )
+      return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let in_view = false;
     const update = () =>
