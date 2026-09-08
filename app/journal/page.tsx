@@ -6,14 +6,14 @@ import { publishedPosts, newsletterUrl, formatDate } from '@/lib/publishing';
 import profile from '@/content/profile.json';
 import { pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata(
-  'Journal — Jingheng Huan',
-  'Essays, notes, and letters from Jingheng Huan, also known as Matty Huan.',
+  'Newsletters — Jingheng Huan',
+  'Essays and newsletters from Jingheng Huan, also known as Matty Huan.',
   '/journal',
 );
 export default function Journal() {
   return (
     <main className="journal-page">
-      <nav className="journal-nav" aria-label="Journal navigation">
+      <nav className="journal-nav" aria-label="Newsletter navigation">
         <Link className="brand-link" href="/" aria-label="Jingheng Huan home">
           <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
         </Link>
@@ -24,14 +24,14 @@ export default function Journal() {
       <header>
         <p className="eyebrow">WORDS, IN MY OWN TIME</p>
         <h1>
-          The <em>journal.</em>
+          <em>Newsletters.</em>
         </h1>
         <p>
-          Essays, notes, and letters.
+          Essays and newsletters.
           <br />A place to think out loud, and keep a few things.
         </p>
       </header>
-      <section className="journal-entries" aria-label="Journal entries">
+      <section className="journal-entries" aria-label="Published newsletters">
         {publishedPosts.length ? (
           publishedPosts.map((post) => (
             <article className="journal-entry" key={post.slug}>
@@ -79,7 +79,7 @@ export default function Journal() {
         )}
       </section>
       <aside className="journal-newsletter">
-        <p className="eyebrow">LETTERS FROM JINGHENG</p>
+        <p className="eyebrow">NEWSLETTERS FROM JINGHENG</p>
         <h2>
           From time <em>to time.</em>
         </h2>
@@ -90,19 +90,19 @@ export default function Journal() {
             target="_blank"
             rel="noreferrer"
           >
-            Subscribe to my letters <ArrowUpRight size={18} />
+            Read on Substack <ArrowUpRight size={18} />
           </a>
         ) : (
           <p>
-            A newsletter is on the horizon. Subscription details will appear
-            here when the first letter is ready.
+            Future editions will be distributed on Substack. Published writing
+            stays here in the archive.
           </p>
         )}
       </aside>
       <div className="journal-bottom">
         <span>JINGHENG HUAN</span>
         <a href={`${profile.siteUrl}/feed.xml`}>
-          Journal RSS <ArrowUpRight size={15} />
+          Newsletter RSS <ArrowUpRight size={15} />
         </a>
       </div>
     </main>

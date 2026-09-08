@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import profile from '@/content/profile.json';
 
-export const siteTitle = 'Jingheng Huan | Software & Writing';
+export const siteTitle = 'Jingheng Huan';
 export const absoluteUrl = (path: string) =>
   new URL(path, `${profile.siteUrl}/`).href;
 export const personId = `${profile.siteUrl}/#person`;
@@ -46,7 +46,7 @@ export const homeStructuredData = {
       '@type': 'Person',
       '@id': personId,
       name: profile.name,
-      alternateName: profile.creatorName,
+      alternateName: [profile.creatorName, profile.chineseName],
       url: absoluteUrl('/'),
       description: profile.bio,
       sameAs: [

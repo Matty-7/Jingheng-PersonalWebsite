@@ -11,8 +11,6 @@ import {
 import Image from 'next/image';
 import {
   ArrowDown,
-  BookOpen,
-  Podcast,
   Pause,
   Play,
   SkipBack,
@@ -20,6 +18,8 @@ import {
   Volume2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { HeroName } from '@/components/hero_name';
+import { Tonearm } from '@/components/tonearm';
 import { RoomScene } from '@/components/room_scene';
 import { TerminalScene } from '@/components/terminal_scene';
 import { PlaybillCollection } from '@/components/playbill_collection';
@@ -27,7 +27,6 @@ import { SocialIcon } from '@/components/social_icon';
 import music from '@/content/music.json';
 import films from '@/content/films.json';
 import books from '@/content/books.json';
-import projects from '@/content/projects.json';
 import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
 import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
@@ -39,6 +38,7 @@ const time = (seconds: number) =>
   `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 
 export default function Home() {
+  const [hero_paused, set_hero_paused] = useState(false);
   const audio = useRef<HTMLAudioElement | null>(null);
   const request = useRef(0);
   const [selected, setSelected] = useState(0);
@@ -304,8 +304,8 @@ export default function Home() {
           <Image unoptimized src="/favicon.svg" width={40} height={40} alt="" />
         </a>
         <div className="nav-links">
-          <a href="#projects">Projects</a>
-          <Link href="/journal">Journal</Link>
+          <a href="#channels">Channels</a>
+          <Link href="/journal">Newsletters</Link>
           <a href="#records">Music</a>
           <a href="#films">Films</a>
           <a href="#books">Books</a>
@@ -321,15 +321,12 @@ export default function Home() {
           }}
         />
         <section id="home" className="arrival">
-          <RoomScene />
+          <RoomScene
+            paused={hero_paused}
+            on_toggle={() => set_hero_paused((value) => !value)}
+          />
           <div className="arrival-copy">
-            <h1>
-              <span>Jingheng</span>
-              <br />
-              <em>
-                <span>Huan.</span>
-              </em>
-            </h1>
+            <HeroName paused={hero_paused} />
           </div>
           <a className="scroll-invitation" href="#channels">
             Come in. Stay a while. <ArrowDown size={20} />
@@ -344,23 +341,15 @@ export default function Home() {
               <em>People to talk to.</em>
             </h2>
           </div>
-          <div className="channel-grid">
-            <article className="youtube-channel" data-reveal>
-              <p className="eyebrow">YOUTUBE / @MATTYHUAN</p>
-              <a
-                className="youtube-title"
-                href={channels.youtube.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>
-                  Matty
-                  <br />
-                  <em>Huan.</em>
-                </span>
-                <Play size={40} strokeWidth={1} />
-                <span className="sr-only">Visit my YouTube channel</span>
-              </a>
+          <div className="publishing-grid">
+            <article className="publishing-card publishing-video" data-reveal>
+              <div className="publishing-label">
+                <SocialIcon name="youtube" />
+                <p className="eyebrow">YOUTUBE</p>
+              </div>
+              <h3>
+                Matty <em>Huan.</em>
+              </h3>
               <p>Another way to get to know me.</p>
               <a
                 className="text-link"
@@ -371,109 +360,53 @@ export default function Home() {
                 Watch on YouTube
               </a>
             </article>
-            <article className="podcast-channel" data-reveal data-parallax>
+            <article className="publishing-card publishing-audio" data-reveal>
+              <div className="publishing-label">
+                <SocialIcon name="applepodcasts" />
+                <p className="eyebrow">PODCAST</p>
+              </div>
+              <h3>
+                Talking <em>Laughs.</em>
+              </h3>
+              <p>Conversations with Jason, in Mandarin.</p>
               <a
-                className="podcast-cover"
+                className="text-link"
                 href={channels.podcast.url}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image
-                  unoptimized
-                  src={channels.podcast.artwork}
-                  width={600}
-                  height={600}
-                  alt="Talking Laughs podcast cover"
-                  loading="lazy"
-                />
+                Listen to the show
               </a>
-              <div className="podcast-description">
-                <p className="eyebrow">PODCAST / WITH JASON</p>
-                <h3>{channels.podcast.title}</h3>
-                <p>{channels.podcast.description}</p>
-                <p className="channel-language">{channels.podcast.language}</p>
+            </article>
+            <article className="publishing-card publishing-writing" data-reveal>
+              <div className="publishing-label">
+                <SocialIcon name="substack" />
+                <p className="eyebrow">SUBSTACK</p>
+              </div>
+              <h3>
+                <em>Newsletters.</em>
+              </h3>
+              <p>Notes on culture and whatever stays on my mind.</p>
+              {newsletterUrl ? (
                 <a
                   className="text-link"
-                  href={channels.podcast.url}
+                  href={newsletterUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Listen to the show
+                  Read on Substack
                 </a>
-              </div>
+              ) : (
+                <Link className="text-link" href="/journal">
+                  Read newsletters
+                </Link>
+              )}
             </article>
-          </div>
-          <div className="episode-row">
-            {channels.podcast.episodes.map((episode) => (
-              <a
-                className="episode"
-                key={episode.id}
-                href={episode.url}
-                target="_blank"
-                rel="noreferrer"
-                data-reveal
-              >
-                <h3>{episode.title}</h3>
-              </a>
-            ))}
-          </div>
-        </section>
-        <section id="journal" className="journal-section" data-parallax>
-          <div data-reveal>
-            <p className="eyebrow">02 / JOURNAL</p>
-            <h2>
-              A little more
-              <br />
-              <em>room to think.</em>
-            </h2>
-          </div>
-          <div className="journal-intro" data-reveal>
-            <h3>Journal & letters</h3>
-            <p>Notes on work, culture, and whatever stays on my mind.</p>
-            <Link className="text-link" href="/journal">
-              Visit the journal
-            </Link>
-            {newsletterUrl && (
-              <a
-                className="text-link newsletter-link"
-                href={newsletterUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Letters in your inbox
-              </a>
-            )}
-          </div>
-        </section>
-        <section id="projects" className="projects-shelf">
-          <div className="projects-heading" data-reveal>
-            <p className="eyebrow">03 / AT THE DESK</p>
-            <h2>
-              Selected <em>projects.</em>
-            </h2>
-          </div>
-          <div className="projects-grid">
-            {projects.map((project) => (
-              <article className="project-note" key={project.slug} data-reveal>
-                <p className="eyebrow">{project.category}</p>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a
-                  className="project-source"
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Source code for ${project.title}`}
-                >
-                  Source code
-                </a>
-              </article>
-            ))}
           </div>
         </section>
         <section id="records" className="records-section">
           <div className="section-heading" data-reveal>
-            <p className="eyebrow">04 / ON ROTATION</p>
+            <p className="eyebrow">02 / ON ROTATION</p>
             <h2>
               Put something
               <br />
@@ -490,7 +423,7 @@ export default function Home() {
                 <Image
                   unoptimized
                   className="turntable-base"
-                  src="/images/turntable.webp"
+                  src="/images/turntable-base.webp"
                   width="1448"
                   height="1086"
                   alt=""
@@ -506,6 +439,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
+                <Tonearm />
               </div>
               <div className="now-playing">
                 <span className="eyebrow">
@@ -612,7 +546,7 @@ export default function Home() {
           <div className="film-sticky">
             <div className="film-heading">
               <div>
-                <p className="eyebrow">05 / AFTER THE CREDITS</p>
+                <p className="eyebrow">03 / AFTER THE CREDITS</p>
                 <h2 id="film-heading">
                   Some films
                   <br />
@@ -662,7 +596,7 @@ export default function Home() {
         <section id="books" className="books-section">
           <div className="books-intro" data-reveal>
             <div>
-              <p className="eyebrow">06 / IN THE MARGINS</p>
+              <p className="eyebrow">04 / IN THE MARGINS</p>
               <h2>
                 Other lives.
                 <br />
@@ -770,14 +704,30 @@ export default function Home() {
               href={profile.links.podcast}
               target="_blank"
               rel="noreferrer"
-              aria-label="Talking Laughs podcast"
+              aria-label="Talking Laughs on Xiaoyuzhou"
               title="Talking Laughs"
             >
-              <Podcast aria-hidden="true" />
+              <SocialIcon name="applepodcasts" />
             </a>
-            <Link href="/journal" aria-label="Journal" title="Journal">
-              <BookOpen aria-hidden="true" />
-            </Link>
+            {newsletterUrl ? (
+              <a
+                href={newsletterUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Newsletters on Substack"
+                title="Substack"
+              >
+                <SocialIcon name="substack" />
+              </a>
+            ) : (
+              <Link
+                href="/journal"
+                aria-label="Newsletters"
+                title="Newsletters"
+              >
+                <SocialIcon name="substack" />
+              </Link>
+            )}
           </nav>
           <p className="footer-small">JINGHENG HUAN</p>
         </footer>

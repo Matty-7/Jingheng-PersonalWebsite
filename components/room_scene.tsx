@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { SceneMotionControl, useSceneMotion } from './scene_motion';
 
-export function RoomScene() {
-  const { scene, paused, ready, toggle } = useSceneMotion();
+export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
+  const { scene, paused, ready, toggle } = useSceneMotion(control);
 
   return (
     <>
@@ -70,7 +70,7 @@ export function RoomScene() {
         </div>
       </div>
       {ready && (
-        <SceneMotionControl paused={paused} toggle={toggle} subject="room" />
+        <SceneMotionControl paused={paused} toggle={toggle} subject="hero" />
       )}
     </>
   );

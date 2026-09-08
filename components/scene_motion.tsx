@@ -3,7 +3,10 @@
 import { Pause, Play } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-export function useSceneMotion() {
+export function useSceneMotion(control?: {
+  paused: boolean;
+  on_toggle: () => void;
+}) {
   const scene = useRef<HTMLDivElement>(null);
   const [paused, set_paused] = useState(false);
   const [ready, set_ready] = useState(false);
@@ -28,7 +31,12 @@ export function useSceneMotion() {
     };
   }, []);
 
-  return { scene, paused, ready, toggle: () => set_paused((value) => !value) };
+  return {
+    scene,
+    paused: control?.paused ?? paused,
+    ready,
+    toggle: control?.on_toggle ?? (() => set_paused((value) => !value)),
+  };
 }
 
 export function SceneMotionControl({
@@ -38,7 +46,7 @@ export function SceneMotionControl({
 }: {
   paused: boolean;
   toggle: () => void;
-  subject: 'room' | 'desk';
+  subject: 'hero' | 'desk';
 }) {
   const label = `${paused ? 'Resume' : 'Pause'} ${subject} animation`;
   return (

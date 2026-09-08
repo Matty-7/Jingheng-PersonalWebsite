@@ -3,8 +3,8 @@
   "creatorName": "Matty Huan",
   "location": "Upper East Side, New York",
   "siteUrl": "https://www.jinghenghuan.com",
-  "description": "The personal website of Jingheng Huan, also known as Matty Huan. Software projects, writing, YouTube, and Talking Laughs.",
-  "bio": "I'm Jingheng Huan, also known as Matty Huan. I live in New York, build software, and share conversations on Talking Laughs. This is where I bring together my work, writing, and love of music, books, and film.",
+  "description": "The personal website of Jingheng Huan, also known as Matty Huan. Newsletters, YouTube, Talking Laughs, and a collection of music, books, and film.",
+  "bio": "I'm Jingheng Huan, also known as Matty Huan. This is where I share writing, conversations, and my love of music, books, and film.",
   "newsletterUrl": null,
   "links": {
     "github": "https://github.com/Matty-7",
@@ -15,5 +15,6 @@
     "podcastFeed": "https://feed.xyzfm.space/urynb8y6tke7",
     "douban": "https://www.douban.com/people/180864246/",
     "appleMusic": "https://music.apple.com/us/playlist/favorite-songs/pl.u-KRULJdg9MJ"
-  }
+  },
+  "chineseName": "郇敬恒"
 }
