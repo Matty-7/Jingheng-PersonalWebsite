@@ -2162,14 +2162,16 @@ progress.audio-progress::-moz-progress-bar {
 .playbill-fan {
   position: relative;
   width: min(100%, 640px);
-  height: 570px;
+  height: 340px;
   margin: 10px auto 0;
+  transition: height 550ms cubic-bezier(0.2, 0.75, 0.2, 1);
   isolation: isolate;
 }
+.playbill-fan[data-open='true'] { height: 500px; }
 .playbill-fan .playbill-card {
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 32px;
   display: block;
   width: 260px;
   height: auto;
@@ -2192,7 +2194,7 @@ progress.audio-progress::-moz-progress-bar {
 }
 .playbill-fan .playbill-card[aria-pressed='true'] {
   z-index: 6;
-  transform: translateX(-50%) translateY(-100px) rotate(0deg) scale(1.05);
+  transform: translateX(-50%) translateY(-20px) rotate(0deg) scale(1.05);
   box-shadow: 0 18px 35px #39130766;
 }
 .playbill-fan .playbill-card:focus-visible {
@@ -2203,7 +2205,7 @@ progress.audio-progress::-moz-progress-bar {
 .playbill-title {
   min-height: 64px;
   max-width: 600px;
-  margin: 12px auto 8px;
+  margin: 8px auto;
   font: 25px/1.25 Georgia, serif;
   text-wrap: balance;
 }
@@ -2260,13 +2262,15 @@ progress.audio-progress::-moz-progress-bar {
 .footer-links.social-links svg { width: 21px; height: 21px; }
 @media (max-width: 759px) {
   .playbill-collection { padding: 75px 9vw; }
-  .playbill-fan { height: 450px; }
+  .playbill-fan { height: 220px; }
+  .playbill-fan[data-open='true'] { height: 370px; }
   .playbill-fan .playbill-card {
+    bottom: 18px;
     width: 200px;
     transform: translateX(calc(-50% + var(--card-offset) * 14px)) rotate(calc(var(--card-offset) * 6deg)) scale(0.55);
   }
   .playbill-fan .playbill-card[aria-pressed='true'] {
-    transform: translateX(-50%) translateY(-100px) rotate(0deg) scale(1);
+    transform: translateX(-50%) translateY(-25px) rotate(0deg) scale(1);
   }
   .playbill-title { min-height: 92px; font-size: 23px; }
   .playbill-choices { gap: 2px 14px; }
@@ -2380,23 +2384,45 @@ progress.audio-progress::-moz-progress-bar {
 .turntable-base { mask: url('/images/turntable.webp') center / 100% 100% no-repeat; }
 .turntable-arm { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .tonearm-moving { transform-box: view-box; transform-origin: 1217px 275px; transform: rotate(0deg); transition: transform 650ms cubic-bezier(0.3, 0, 0.2, 1); }
-.is-playing .tonearm-moving { transform: rotate(27deg); }
-.terminal-jersey { position: absolute; inset: 0; width: 100%; height: 100%; }
-/* Keep the closed hand centered without moving the surrounding page. */
-.playbill-fan[data-open='false'] .playbill-card { bottom: 100px; }
+.is-playing .tonearm-moving { transform: rotate(35deg); }
 .playbill-fan .playbill-card { transition: transform 550ms cubic-bezier(0.2, 0.75, 0.2, 1), box-shadow 550ms ease, bottom 550ms ease; }
 @media (max-width: 849px) {
   .publishing-grid { grid-template-columns: 1fr; gap: 18px; }
   .publishing-card { min-height: 300px; padding: 32px; }
   .publishing-card h3 { margin-top: 28px; font-size: 42px; }
 }
-@media (max-width: 759px) {
-  .playbill-fan[data-open='false'] .playbill-card { bottom: 135px; }
-}
 @media (prefers-reduced-motion: reduce) {
   .typing-caret { display: none; }
-  .tonearm-moving, .playbill-fan .playbill-card { transition: none; }
-  /* The jersey is static artwork, so retain it when chart motion is hidden. */
-  .terminal-effects:has(.terminal-jersey) { display: block; }
+  .tonearm-moving, .playbill-fan, .playbill-fan .playbill-card { transition: none; }
   .terminal-effects .terminal-detail { display: none; }
+}
+
+.arrival h1.hero-name .given-name { color: #273a30; }
+.arrival h1.hero-name .family-name { color: #a03b1f; }
+
+.publishing-card h3 {
+  min-height: 128px;
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  column-gap: 0.2em;
+}
+.podcast-brand img { display: block; width: 128px; height: 128px; transform: rotate(-3deg); }
+.book-details { min-height: 0; margin-top: 18px; padding-top: 14px; gap: 16px; }
+.book-details h3 { font-size: 26px; margin: 6px 0 4px; line-height: 1.15; }
+.bookshelf { --shelf-height: 220px; }
+.book-reveal { max-width: 125px; }
+@media (min-width: 1001px) {
+  .books-section { padding: 32px 5vw; }
+  .books-intro { margin-bottom: 16px; }
+  .books-intro h2 { font-size: clamp(36px, 3vw, 48px); line-height: 1.05; margin-top: 12px; }
+  .bookshelf { --shelf-height: clamp(140px, 21svh, 190px); }
+  .book-details { margin-top: 14px; padding-top: 12px; }
+  .book-details h3 { font-size: 24px; }
+}
+@media (max-width: 420px) {
+  .bookshelf { --shelf-height: 190px; }
+  .book-reveal { max-width: 110px; }
 }

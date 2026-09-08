@@ -1,0 +1,16 @@
+# Personal scale refinements — September 8, 2026
+
+The owner's latest follow-up refines the current design without changing articles, collection data, publishing hierarchy or review gates. It supersedes the desk-ornament and large-stage decisions in `channels_name_motion.md`.
+
+## Accepted critic findings and editor decisions
+
+- `semantic_personal_identity`: Given names Jingheng / 敬恒 use #273a30; family names Huan / 郇 use #a03b1f. Explicit role classes follow each language's text order, including partially typed frames and static fallbacks. Formal Chinese spelling remains 郇敬恒. The existing red 談 artwork is restored as the podcast card heading's 128px image, with Talking Laughs alternative text. All three channel heading areas reserve the same height and preserve peer-card structure and bottom actions. Footer icons and true provider-link fallbacks are unchanged. Both desk figurines, the DUKE overlay and toy alt descriptions are removed.
+- `compact_collection_layout`: The desktop bookshelf keeps five columns and two rows, with 125px maximum cover width and rows sized between 140px and 190px using viewport height. Header, padding and selected-detail spacing are reduced together; there is no clipped viewport or fixed-height text container. At 1280 × 720 the source layout budget is approximately 601px, plus the 90px anchor offset. Tablet/mobile retains normal scrolling with smaller 220px rows, or 190px at widths up to 420px. Titles and authors wrap normally; ten native cover buttons and the live selected details remain.
+- `compact_collection_layout`: The Broadway stage is 340px closed and 500px open on desktop, 220px/370px on mobile. Desktop card bottom32px / selected lift20px and mobile bottom18px / lift25px include rotated lower corners in the spacing budget. These slightly amend the initial editor dimensions so corners cannot intrude into the title. The title margin is8px. Stage height and card movement share550ms easing, with transitions removed under reduced motion. Initial null selection and same-card/outside/Escape dismissal are untouched.
+- `stylus_playing_position`: Playing rotation changes27° to35° about the unchanged(1217,275) pivot. The visible tip reaches(840.1,731.3), approximately78.1% of the vinyl radius, inside the grooves and clear of the center label. Actual audio state, pause/end/error handling, parked pose and reduced-motion behavior are unchanged.
+
+## Asset and verification
+
+One bounded imagegen edit removes both small desk figures and restores the walnut surface. The1672×941 scene retains screen/keyboard/arm positions with minor rendering variation; screen data remains decorative. Converted to WebP without raster repainting. Both existing panel masks remain registered. No new artwork replaces the actual podcast cover.
+
+Verification uses source review, local-asset inspection, source-coordinate calculations, lint, TypeScript, publication tests, content checks and a production build. No browser, rendered viewport, interaction or listening test was requested or performed. The laptop-height estimate applies at standard text size to the specified geometry, not every browser setting or viewport. Larger text and narrow layouts scroll normally; nothing is hidden to force a fit.
