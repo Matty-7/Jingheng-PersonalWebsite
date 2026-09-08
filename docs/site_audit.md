@@ -45,6 +45,6 @@ Record:
 - One of COMPLETE_NO_CHANGE, FINDINGS, PARTIAL, BLOCKED or WAITING_FOR_DEPLOYMENT, plus exact omissions and next check.
 - If repaired: PR link, exact-head reviewer result, critic closure, CI and merge outcome.
 
-COMPLETE_NO_CHANGE requires every essential check to complete without an accepted issue. PARTIAL means some checks completed but required coverage is missing. BLOCKED means essential inspection could not start. WAITING_FOR_DEPLOYMENT means current main has not yet been confirmed live. Do not label a known reproducible defect NO_CHANGE just because no fix is accepted; record FINDINGS and the defer reason.
+COMPLETE_NO_CHANGE requires every essential check to complete without an accepted issue. PARTIAL means some checks completed but required coverage is missing. BLOCKED means essential inspection could not start. WAITING_FOR_DEPLOYMENT means an active publication is still pending. For failed/missed publication use the shared bounded recovery in agent_workflow.md; never wait forever on an unowned terminal failure. Do not label a known reproducible defect NO_CHANGE just because no fix is accepted; record FINDINGS and the defer reason.
 
 Do not send repetitive success/no-change notifications. Report a new or persistent blocker and what actually failed. Neither no change nor a failed tool disables these persistent tasks; future scheduled/event runs remain enabled.
