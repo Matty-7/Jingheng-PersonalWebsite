@@ -18,7 +18,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
             ref={image_ref}
             onLoad={on_load}
             onError={on_error}
-            src="/images/living-room-motion.webp"
+            src="/images/living-room-motion.jpg"
             fetchPriority="high"
             width={1672}
             height={941}
@@ -30,7 +30,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
                 <Image
                   unoptimized
                   className="room-vinyl scene-motion"
-                  src="/images/room-vinyl.webp"
+                  src="/images/room-vinyl.png"
                   width={512}
                   height={512}
                   alt=""
@@ -40,7 +40,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
             <Image
               unoptimized
               className="room-still room-tonearm"
-              src="/images/living-room-motion.webp"
+              src="/images/living-room-motion.jpg"
               width={1672}
               height={941}
               alt=""
@@ -48,7 +48,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
             <Image
               unoptimized
               className="room-still room-spindle"
-              src="/images/living-room-motion.webp"
+              src="/images/living-room-motion.jpg"
               width={1672}
               height={941}
               alt=""
@@ -57,7 +57,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
               <Image
                 unoptimized
                 className="room-steam scene-motion"
-                src="/images/room-steam.webp"
+                src="/images/room-steam.png"
                 width={256}
                 height={512}
                 alt=""
@@ -65,7 +65,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
               <Image
                 unoptimized
                 className="room-steam room-steam-late scene-motion"
-                src="/images/room-steam.webp"
+                src="/images/room-steam.png"
                 width={256}
                 height={512}
                 alt=""

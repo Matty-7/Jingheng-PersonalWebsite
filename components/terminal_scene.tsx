@@ -92,7 +92,7 @@ export function TerminalScene() {
             ref={image_ref}
             onLoad={on_load}
             onError={on_error}
-            src="/images/writing-terminal.webp"
+            src="/images/writing-terminal.jpg"
             width={1672}
             height={941}
             loading="lazy"
