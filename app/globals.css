@@ -2113,7 +2113,7 @@ progress.audio-progress::-moz-progress-bar {
   object-position: var(--room-position, 50%) center;
 }
 .room-effects,
-.room-motion-toggle {
+.scene-motion-toggle {
   display: none;
 }
 @supports (width: 1cqw) {
@@ -2146,7 +2146,7 @@ progress.audio-progress::-moz-progress-bar {
     display: block;
     width: 100%;
     height: auto;
-    animation: room-record-turn 7.5s linear infinite;
+    animation: room-record-turn 4s linear infinite;
   }
   .room-still {
     position: absolute;
@@ -2183,19 +2183,13 @@ progress.audio-progress::-moz-progress-bar {
     object-fit: contain;
     transform-origin: center bottom;
     opacity: 0;
-    animation: room-coffee-rise 6.5s ease-in-out infinite;
+    animation: room-coffee-rise 5.5s ease-in-out infinite;
   }
   .room-steam-late {
     left: 10%;
-    animation-delay: -3.25s;
+    animation-delay: -2.75s;
   }
-  .room-motion {
-    animation-play-state: paused;
-  }
-  .arrival-scene[data-visible='true'][data-paused='false'] .room-motion {
-    animation-play-state: running;
-  }
-  .room-motion-toggle {
+  .scene-motion-toggle {
     position: absolute;
     z-index: 2;
     top: 20px;
@@ -2211,10 +2205,10 @@ progress.audio-progress::-moz-progress-bar {
     color: #273a30;
     cursor: pointer;
   }
-  .room-motion-toggle:hover {
+  .scene-motion-toggle:hover {
     background: #f7eed8;
   }
-  .room-motion-toggle:focus-visible {
+  .scene-motion-toggle:focus-visible {
     outline: 2px solid #273a30;
     outline-offset: 4px;
   }
@@ -2230,10 +2224,10 @@ progress.audio-progress::-moz-progress-bar {
     transform: translate(0, 14%) scale(0.7, 0.8);
   }
   30% {
-    opacity: 0.32;
+    opacity: 0.46;
   }
   65% {
-    opacity: 0.22;
+    opacity: 0.30;
   }
   100% {
     opacity: 0;
@@ -2241,14 +2235,14 @@ progress.audio-progress::-moz-progress-bar {
   }
 }
 @media (max-width: 759px) {
-  .room-motion-toggle {
+  .scene-motion-toggle {
     top: 14px;
     right: 14px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .room-effects,
-  .room-motion-toggle {
+  .scene-motion-toggle {
     display: none;
   }
 }
@@ -2263,15 +2257,96 @@ progress.audio-progress::-moz-progress-bar {
   margin: 0;
 }
 .closing-art {
+  position: relative;
   height: clamp(320px, 38vw, 480px);
   overflow: hidden;
   background: #e9c881;
 }
-.closing-art img {
+.terminal-scene {
+  position: absolute;
+  inset: 0;
+  container-type: size;
+  pointer-events: none;
+}
+.terminal-artboard,
+.terminal-background {
+  position: absolute;
   width: 100%;
   height: 100%;
+}
+.terminal-background {
   object-fit: cover;
-  object-position: center;
+  object-position: 42% 42%;
+}
+.terminal-effects {
+  display: none;
+}
+@supports (width: 1cqw) {
+  .terminal-artboard {
+    width: max(100cqw, calc(100cqh * 1672 / 941));
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    left: 42%;
+    top: 42%;
+    transform: translate(-42%, -42%);
+  }
+  .terminal-effects {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .terminal-detail {
+    position: absolute;
+    left: calc(var(--panel-x) / 1672 * 100%);
+    top: calc(var(--panel-y) / 941 * 100%);
+    width: calc(var(--panel-width) / 1672 * 100%);
+    height: calc(var(--panel-height) / 941 * 100%);
+    overflow: hidden;
+    opacity: 0.8;
+  }
+  .terminal-detail-texture {
+    position: absolute;
+    max-width: none;
+    width: calc(1672 / var(--panel-width) * 100%);
+    height: calc(941 / var(--panel-height) * 100%);
+    left: calc(-1 * var(--panel-x) / var(--panel-width) * 100%);
+    top: calc(-1 * var(--panel-y) / var(--panel-height) * 100%);
+    filter: brightness(1.8) saturate(1.08);
+  }
+  .terminal-chart-sweep {
+    clip-path: polygon(0 6.2%, 100% 0, 100% 85%, 0 100%);
+    mask-image: linear-gradient(90deg, transparent 30%, #000 45%, transparent 60%);
+    mask-size: 250% 100%;
+    animation: terminal-chart-refresh 12s linear infinite;
+  }
+  .terminal-row-sweep {
+    clip-path: polygon(0 4%, 100% 0, 100% 91%, 0 100%);
+    mask-image: linear-gradient(0deg, transparent 35%, #000 45%, transparent 55%);
+    mask-size: 100% 250%;
+    animation: terminal-row-refresh 7.5s linear -2.5s infinite;
+  }
+  .scene-motion {
+    animation-play-state: paused;
+  }
+  .arrival-scene[data-visible='true'][data-paused='false'] .scene-motion,
+  .terminal-scene[data-visible='true'][data-paused='false'] .scene-motion {
+    animation-play-state: running;
+  }
+}
+@keyframes terminal-chart-refresh {
+  from { mask-position: 100% 0; }
+  to { mask-position: 0 0; }
+}
+@keyframes terminal-row-refresh {
+  from { mask-position: 0 100%; }
+  to { mask-position: 0 0; }
+}
+@media (min-width: 2000px) {
+  .closing-art { height: max(600px, 24vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .terminal-effects { display: none; }
 }
 .article-body h2 {
   font-size: clamp(28px, 3vw, 38px);
