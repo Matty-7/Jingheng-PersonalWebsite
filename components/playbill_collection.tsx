@@ -81,21 +81,6 @@ export function PlaybillCollection() {
           ? 'Pick a Playbill.'
           : shows[selected_show].title}
       </p>
-      <fieldset className="playbill-choices">
-        <legend className="sr-only">Choose a Playbill</legend>
-        {shows.map((show, index) => (
-          <Button
-            key={show.slug}
-            variant="ghost"
-            className="playbill-choice"
-            aria-pressed={selected_show === index}
-            aria-controls="playbill-title"
-            onClick={() => select_show(index)}
-          >
-            {show.label}
-          </Button>
-        ))}
-      </fieldset>
     </section>
   );
 }

@@ -11,6 +11,12 @@ The owner's latest follow-up refines the current design without changing article
 
 ## Asset and verification
 
+### Follow-up: cover size and Playbill labels
+
+The owner requested a small increase after seeing the compact bookshelf. Cover width limits are now135px (119px up to420px), and image height is capped at82% of the existing shelf row. This increases covers by approximately8–9% without raising the shelves or moving selected titles/authors lower. It supersedes the125px cover width above; row sizes and text layout remain unchanged. Hover/focus lift is reduced from25px to20px to preserve artwork separation at the shortest shelf height; selected lift remains16px.
+
+The repeated text-button row below Broadway is removed, including its unused CSS. The five poster buttons retain keyboard/touch selection, the idle “Pick a Playbill.” prompt, full selected title, and same-card/outside/Escape dismissal. Fan spacing and motion are unchanged.
+
 One bounded imagegen edit removes both small desk figures and restores the walnut surface. The1672×941 scene retains screen/keyboard/arm positions with minor rendering variation; screen data remains decorative. Converted to WebP without raster repainting. Both existing panel masks remain registered. No new artwork replaces the actual podcast cover.
 
 Verification uses source review, local-asset inspection, source-coordinate calculations, lint, TypeScript, publication tests, content checks and a production build. No browser, rendered viewport, interaction or listening test was requested or performed. The laptop-height estimate applies at standard text size to the specified geometry, not every browser setting or viewport. Larger text and narrow layouts scroll normally; nothing is hidden to force a fit.
