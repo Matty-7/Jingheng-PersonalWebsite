@@ -2090,35 +2090,17 @@ progress.audio-progress::-moz-progress-bar {
     inset: 0;
     pointer-events: none;
   }
-  .terminal-detail {
-    position: absolute;
-    left: calc(var(--panel-x) / 1672 * 100%);
-    top: calc(var(--panel-y) / 941 * 100%);
-    width: calc(var(--panel-width) / 1672 * 100%);
-    height: calc(var(--panel-height) / 941 * 100%);
-    overflow: hidden;
-    opacity: 0.8;
+  .terminal-scene:not([data-visible]) .terminal-effects { display: none; }
+  .terminal-market { display: block; width: 100%; height: 100%; }
+  .market-quote-frame {
+    font: 6.5px ui-monospace, SFMono-Regular, monospace;
+    animation: market-quote-change 9s steps(1, end) infinite;
   }
-  .terminal-detail-texture {
-    position: absolute;
-    max-width: none;
-    width: calc(1672 / var(--panel-width) * 100%);
-    height: calc(941 / var(--panel-height) * 100%);
-    left: calc(-1 * var(--panel-x) / var(--panel-width) * 100%);
-    top: calc(-1 * var(--panel-y) / var(--panel-height) * 100%);
-    filter: brightness(1.8) saturate(1.08);
-  }
-  .terminal-chart-sweep {
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-    mask-image: linear-gradient(90deg, transparent 30%, #000 45%, transparent 60%);
-    mask-size: 250% 100%;
-    animation: terminal-chart-refresh 12s linear infinite;
-  }
-  .terminal-row-sweep {
-    clip-path: polygon(0 4%, 100% 0, 100% 91%, 0 100%);
-    mask-image: linear-gradient(0deg, transparent 35%, #000 45%, transparent 55%);
-    mask-size: 100% 250%;
-    animation: terminal-row-refresh 7.5s linear -2.5s infinite;
+  .market-curve { animation: market-curve-change 12s linear infinite; }
+  .market-bar {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: market-bar-change 7s ease-in-out infinite;
   }
   .scene-motion {
     animation-play-state: paused;
@@ -2128,13 +2110,18 @@ progress.audio-progress::-moz-progress-bar {
     animation-play-state: running;
   }
 }
-@keyframes terminal-chart-refresh {
-  from { mask-position: 100% 0; }
-  to { mask-position: 0 0; }
+@keyframes market-quote-change {
+  0% { opacity: 1; }
+  33.333333%, 100% { opacity: 0; }
 }
-@keyframes terminal-row-refresh {
-  from { mask-position: 0 100%; }
-  to { mask-position: 0 0; }
+@keyframes market-curve-change {
+  0%, 20%, 100% { opacity: 1; }
+  33.333333%, 86.666667% { opacity: 0; }
+}
+@keyframes market-bar-change {
+  0%, 100% { transform: scaleY(0.85); }
+  35% { transform: scaleY(1.03); }
+  70% { transform: scaleY(0.65); }
 }
 @media (min-width: 2000px) {
   .closing-art { height: max(600px, 24vw); }
@@ -2361,7 +2348,6 @@ progress.audio-progress::-moz-progress-bar {
 @media (prefers-reduced-motion: reduce) {
   .typing-caret { display: none; }
   .tonearm-moving, .playbill-fan, .playbill-fan .playbill-card { transition: none; }
-  .terminal-effects .terminal-detail { display: none; }
 }
 
 .arrival h1.hero-name .given-name { color: #273a30; }
