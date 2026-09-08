@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RoomScene } from '@/components/room_scene';
+import { TerminalScene } from '@/components/terminal_scene';
 import music from '@/content/music.json';
 import films from '@/content/films.json';
 import books from '@/content/books.json';
@@ -796,16 +797,7 @@ export default function Home() {
             </a>
           </div>
         </section>
-        <div className="closing-art" aria-hidden="true">
-          <Image
-            unoptimized
-            src="/images/writing-corner.webp"
-            alt=""
-            width={1672}
-            height={941}
-            loading="lazy"
-          />
-        </div>
+        <TerminalScene />
         <footer>
           <div>
             <p className="eyebrow">UNTIL NEXT TIME</p>
