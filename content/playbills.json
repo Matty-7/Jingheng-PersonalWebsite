@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "two-strangers",
+    "label": "Two Strangers",
+    "title": "Two Strangers (Carry a Cake Across New York)",
+    "cover": "/images/playbills/two-strangers.webp",
+    "coverWidth": 649,
+    "coverHeight": 1024,
+    "sourceUrl": "https://playbill.com/production/two-strangers-carry-a-cake-across-new-york-broadway-longacre-theatre-2025",
+    "artworkSourceUrl": "https://assets.playbill.com/playbill-covers/Two-Strangers-Carry-A-Cake-Playbill-2025-11-01_Web.jpg",
+    "artworkContext": "Broadway, Longacre Theatre. Standard cover indexed for November 2025. The cover is Broadway artwork; do not describe existing London cast audio as a Broadway cast recording."
+  },
+  {
+    "slug": "six",
+    "label": "SIX",
+    "title": "SIX",
+    "cover": "/images/playbills/six.webp",
+    "coverWidth": 649,
+    "coverHeight": 1024,
+    "sourceUrl": "https://playbill.com/production/six-the-musicallena-horne-theatre-2021-2022",
+    "artworkSourceUrl": "https://assets.playbill.com/playbill-covers/Six-Playbill-2025-02-01_Web.jpg",
+    "artworkContext": "Broadway, Lena Horne Theatre. Standard purple logo cover indexed for February 2025."
+  },
+  {
+    "slug": "chicago",
+    "label": "Chicago",
+    "title": "Chicago",
+    "cover": "/images/playbills/chicago.webp",
+    "coverWidth": 649,
+    "coverHeight": 1024,
+    "sourceUrl": "https://playbill.com/production/chicago-richard-rodgers-theatre-vault-0000003074",
+    "artworkSourceUrl": "https://assets.playbill.com/playbill-covers/Chicago-Playbill-2023-8-1_Web.jpg",
+    "artworkContext": "Broadway revival cover from August 2023, visibly labeled Ambassador Theatre. Image search associates the cover with the older 1975 production page through related-production content; use the 1996 revival production page for show context. Standard ensemble promotional art, no actor-specific name or engagement on cover."
+  },
+  {
+    "slug": "book-of-mormon",
+    "label": "The Book of Mormon",
+    "title": "The Book of Mormon",
+    "cover": "/images/playbills/book-of-mormon.webp",
+    "coverWidth": 649,
+    "coverHeight": 1024,
+    "sourceUrl": "https://playbill.com/production/the-book-of-mormon-eugene-oneill-theatre-vault-0000013715",
+    "artworkSourceUrl": "https://static.wixstatic.com/media/517bd2_e9bf75ae64b64334a5685de98f1b4131~mv2.jpg/v1/fill/w_649%2Ch_1024%2Cal_c%2Cq_85%2Cenc_avif%2Cquality_auto/517bd2_e9bf75ae64b64334a5685de98f1b4131~mv2.jpg",
+    "artworkContext": "Complete classic Broadway cover with leaping missionary and doorbell art, labeled Eugene O’Neill Theatre. This reproduction is hosted by Dance Molinari, not directly by Playbill. Prefer if familiar generic artwork matters more than first-party image hosting; cover issue date not verified."
+  },
+  {
+    "slug": "mamma-mia",
+    "label": "Mamma Mia!",
+    "title": "Mamma Mia!",
+    "cover": "/images/playbills/mamma-mia.webp",
+    "coverWidth": 649,
+    "coverHeight": 1024,
+    "sourceUrl": "https://playbill.com/production/mamma-mia-broadway-winter-garden-theatre-2025",
+    "artworkSourceUrl": "https://assets.playbill.com/playbill-covers/Mamma-Mia-Playbill-2025-08-02_Web.jpg",
+    "artworkContext": "2025 Broadway return, Winter Garden Theatre. Standard cover featuring the recognizable bride artwork; no opening-night sticker."
+  }
+]

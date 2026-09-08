@@ -51,11 +51,11 @@ export function TerminalScene() {
           <div className="terminal-effects" aria-hidden="true">
             <ScreenDetail
               className="terminal-chart-sweep"
-              rect={[485, 315, 141, 98]}
+              rect={[487, 323, 137, 79]}
             />
             <ScreenDetail
               className="terminal-row-sweep"
-              rect={[659, 400, 133, 58]}
+              rect={[661, 402, 130, 50]}
             />
           </div>
         </div>

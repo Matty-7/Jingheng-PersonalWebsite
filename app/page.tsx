@@ -21,10 +21,10 @@ import {
 import { Button } from '@/components/ui/button';
 import { RoomScene } from '@/components/room_scene';
 import { TerminalScene } from '@/components/terminal_scene';
+import { PlaybillCollection } from '@/components/playbill_collection';
 import music from '@/content/music.json';
 import films from '@/content/films.json';
 import books from '@/content/books.json';
-import broadway from '@/content/broadway.json';
 import profile from '@/content/profile.json';
 import projects from '@/content/projects.json';
 import channels from '@/content/channels.json';
@@ -762,41 +762,7 @@ export default function Home() {
             </a>
           </div>
         </section>
-        <section id="broadway" className="broadway-section" data-parallax>
-          <div className="cast-sleeve" data-reveal>
-            <Image
-              unoptimized
-              src={broadway.artwork}
-              alt="Two Strangers (Carry a Cake Across New York), original London cast recording cover"
-              loading="lazy"
-              width="600"
-              height="600"
-            />
-          </div>
-          <div className="broadway-copy" data-reveal>
-            <p className="eyebrow">07 / A LITTLE INTERMISSION</p>
-            <h2>
-              New York,
-              <br />
-              <em>on a high note.</em>
-            </h2>
-            <p>There’s always room for Broadway.</p>
-            <h3>“New York”</h3>
-            <p className="broadway-credit">
-              Two Strangers (Carry a Cake Across New York)
-              <br />
-              Sam Tutty & Dujonna Gift · Original London Cast
-            </p>
-            <a
-              className="text-link"
-              href={broadway.appleMusicUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Listen on Apple Music <ArrowUpRight size={18} />
-            </a>
-          </div>
-        </section>
+        <PlaybillCollection />
         <TerminalScene />
         <footer>
           <div>

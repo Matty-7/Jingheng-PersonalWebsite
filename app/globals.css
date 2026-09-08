@@ -2315,7 +2315,7 @@ progress.audio-progress::-moz-progress-bar {
     filter: brightness(1.8) saturate(1.08);
   }
   .terminal-chart-sweep {
-    clip-path: polygon(0 6.2%, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
     mask-image: linear-gradient(90deg, transparent 30%, #000 45%, transparent 60%);
     mask-size: 250% 100%;
     animation: terminal-chart-refresh 12s linear infinite;
@@ -2353,6 +2353,123 @@ progress.audio-progress::-moz-progress-bar {
   line-height: 1.2;
   letter-spacing: -0.025em;
   margin: 2.4em 0 0.9em;
+}
+
+.playbill-collection {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(50px, 8vw, 130px);
+}
+.playbill-picker {
+  grid-column: 2;
+  grid-row: 1;
+}
+.playbill-details {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  width: min(100%, 340px);
+  justify-self: center;
+}
+.playbill-choices {
+  min-width: 0;
+  margin: 35px 0 0;
+  padding: 0;
+  border: 0;
+}
+.playbill-choices .playbill-choice {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  height: auto;
+  justify-content: start;
+  gap: 15px;
+  padding: 13px 8px;
+  border: 0;
+  border-bottom: 1px solid #fff0d447;
+  border-radius: 0;
+  background: transparent;
+  color: #fff0d4;
+  font: 17px/1.35 Arial, sans-serif;
+  text-align: left;
+  white-space: normal;
+  cursor: pointer;
+}
+.playbill-choices .playbill-choice:hover {
+  background: #fff0d40d;
+}
+.playbill-choices .playbill-choice[aria-pressed='true'] {
+  border-bottom-color: #fff0d4;
+  background: #fff0d414;
+}
+.playbill-choices .playbill-choice:focus-visible {
+  outline: 2px solid #fff0d4;
+  outline-offset: 4px;
+}
+.playbill-number {
+  flex: none;
+  font-size: 12px;
+  opacity: 0.65;
+}
+.playbill-selection-mark {
+  margin-left: auto;
+  visibility: hidden;
+}
+[aria-pressed='true'] > .playbill-selection-mark {
+  visibility: visible;
+}
+.playbill-collection .playbill-sleeve {
+  width: 100%;
+  max-width: 340px;
+  margin: 0;
+  transform: rotate(-3deg);
+  box-shadow: 12px 14px 0 #702b20;
+}
+.playbill-paper {
+  aspect-ratio: 649 / 1024;
+  background: #191814;
+  animation: playbill-arrive 420ms ease-out both;
+}
+.playbill-paper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.playbill-caption {
+  padding-top: 28px;
+  min-height: 260px;
+  font-size: 14px;
+}
+.playbill-caption h3 {
+  margin: 0 0 16px;
+  font: 27px/1.15 Georgia, serif;
+  letter-spacing: -0.02em;
+}
+.playbill-recording {
+  margin-top: 24px;
+}
+.playbill-recording p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+@keyframes playbill-arrive {
+  from { opacity: 0.35; transform: perspective(800px) rotateY(-7deg) translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 759px) {
+  .playbill-collection {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 45px;
+  }
+  .playbill-picker,
+  .playbill-details {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .playbill-details { width: min(100%, 300px); }
+  .playbill-choices .playbill-choice { font-size: 16px; }
 }
 .longform .article-subtitle {
   font: italic 21px/1.5 Georgia, serif;
