@@ -1,12 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import { preload } from 'react-dom';
 import { SceneMotionControl, useSceneMotion } from './scene_motion';
 import { useImageStatus } from './image_status';
 
 export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
   const { scene, paused, ready, toggle } = useSceneMotion(control);
   const { image_ref, state, on_load, on_error } = useImageStatus();
+  preload('/images/living-room-motion.jpg', { as: 'image', fetchPriority: 'high' });
 
   return (
     <>
@@ -19,6 +21,7 @@ export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
             onLoad={on_load}
             onError={on_error}
             src="/images/living-room-motion.jpg"
+            loading="eager"
             fetchPriority="high"
             width={1672}
             height={941}
