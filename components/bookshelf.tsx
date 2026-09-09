@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import {
   useLayoutEffect,
   useEffect,
+  useEffectEvent,
   useRef,
   useState,
   type CSSProperties,
@@ -18,6 +19,7 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 import books from '@/content/books.json';
+import { bind_book_touch, type BookTouchEvent } from '@/lib/book_touch';
 
 type DragState = {
   slug: string;
@@ -44,6 +46,8 @@ export function Bookshelf() {
   const [announcement, set_announcement] = useState('');
   const [drag_view, set_drag_view] = useState<DragState | null>(null);
   const drag = useRef<DragState | null>(null);
+  const drag_ghost = useRef<HTMLDivElement | null>(null);
+  const drag_frame = useRef<number | null>(null);
   const shelf = useRef<HTMLDivElement | null>(null);
   const slots = useRef(new Map<string, HTMLDivElement>());
   const previous_rects = useRef(new Map<string, DOMRect>());
@@ -59,7 +63,8 @@ export function Bookshelf() {
       }
     }
     function clear_pending_pointer() {
-      if (drag.current && !drag.current.active) drag.current = null;
+      if (drag.current?.pointer_type !== 'touch' && !drag.current?.active)
+        drag.current = null;
     }
     document.addEventListener('pointerdown', dismiss_selection);
     document.addEventListener('pointerup', clear_pending_pointer);
@@ -117,8 +122,13 @@ export function Bookshelf() {
     );
   }
 
-  function start_drag(event: PointerEvent<HTMLButtonElement>, slug: string) {
-    if (event.button !== 0 || !event.isPrimary) return;
+  function prepare_drag(
+    slug: string,
+    pointer_id: number,
+    pointer_type: string,
+    x: number,
+    y: number,
+  ) {
     suppress_click.current = false;
     const targets = order.map((key) => {
       const rect = slots.current.get(key)!.getBoundingClientRect();
@@ -126,46 +136,71 @@ export function Bookshelf() {
     });
     drag.current = {
       slug,
-      pointer_id: event.pointerId,
-      start_x: event.clientX,
-      start_y: event.clientY,
-      x: event.clientX,
-      y: event.clientY,
+      pointer_id,
+      start_x: x,
+      start_y: y,
+      x,
+      y,
       active: false,
-      pointer_type: event.pointerType,
+      pointer_type,
       original: [...order],
       targets,
     };
+  }
+
+  function start_drag(event: PointerEvent<HTMLButtonElement>, slug: string) {
+    if (event.pointerType === 'touch' || event.button !== 0 || !event.isPrimary)
+      return;
+    prepare_drag(
+      slug,
+      event.pointerId,
+      event.pointerType,
+      event.clientX,
+      event.clientY,
+    );
     event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function activate_drag(current: DragState) {
+    current.active = true;
+    suppress_click.current = true;
+    set_selected_slug(current.slug);
+    set_drag_view({ ...current });
   }
 
   function move_drag(event: PointerEvent<HTMLDivElement>) {
     const current = drag.current;
-    if (!current || current.pointer_id !== event.pointerId) return;
+    if (
+      event.pointerType === 'touch' ||
+      !current ||
+      current.pointer_id !== event.pointerId
+    )
+      return;
     const dx = event.clientX - current.start_x;
     const dy = event.clientY - current.start_y;
     if (!current.active) {
       if (Math.hypot(dx, dy) < 8) return;
-      if (current.pointer_type === 'touch' && Math.abs(dy) >= Math.abs(dx)) {
-        suppress_click.current = true;
-        drag.current = null;
-        return;
-      }
-      current.active = true;
-      suppress_click.current = true;
-      set_selected_slug(current.slug);
+      activate_drag(current);
       shelf.current?.setPointerCapture(event.pointerId);
     }
-    current.x = event.clientX;
-    current.y = event.clientY;
-    set_drag_view({ ...current });
+    update_drag(current, event.clientX, event.clientY);
+  }
+
+  function update_drag(current: DragState, x: number, y: number) {
+    current.x = x;
+    current.y = y;
+    if (drag_frame.current === null) {
+      drag_frame.current = requestAnimationFrame(() => {
+        drag_frame.current = null;
+        if (drag.current !== current) return;
+        drag_ghost.current?.style.setProperty('--drag-x', `${current.x}px`);
+        drag_ghost.current?.style.setProperty('--drag-y', `${current.y}px`);
+      });
+    }
     let closest = -1;
     let distance = Infinity;
     current.targets.forEach((target, index) => {
-      const next_distance = Math.hypot(
-        event.clientX - target.x,
-        event.clientY - target.y,
-      );
+      const next_distance = Math.hypot(x - target.x, y - target.y);
       if (next_distance < distance) {
         distance = next_distance;
         closest = index;
@@ -179,6 +214,8 @@ export function Bookshelf() {
   function finish_drag(cancelled = false) {
     const current = drag.current;
     drag.current = null;
+    if (drag_frame.current !== null) cancelAnimationFrame(drag_frame.current);
+    drag_frame.current = null;
     set_drag_view(null);
     if (cancelled && current) {
       suppress_click.current = true;
@@ -190,11 +227,30 @@ export function Bookshelf() {
     }
   }
 
+  const handle_touch = useEffectEvent((event: BookTouchEvent) => {
+    if (event.type === 'start') {
+      prepare_drag(event.slug, event.id, 'touch', event.x, event.y);
+    } else if (event.type === 'activate' && drag.current) {
+      activate_drag(drag.current);
+    } else if (event.type === 'move' && drag.current) {
+      update_drag(drag.current, event.x, event.y);
+    } else if (event.type === 'finish') {
+      finish_drag(event.cancelled);
+    }
+  });
+
+  useEffect(() => {
+    const unbind = bind_book_touch(shelf.current!, (event) =>
+      handle_touch(event),
+    );
+    return () => {
+      unbind();
+      if (drag_frame.current !== null) cancelAnimationFrame(drag_frame.current);
+    };
+  }, []);
+
   return (
     <>
-      <p className="shelf-instructions" id="shelf-instructions">
-        Drag a book to rearrange. Click to open.
-      </p>
       <p className="sr-only" id="book-keyboard-help">
         Use left and right arrow keys to move a book. Press Enter to open;
         Escape to close.
@@ -204,105 +260,122 @@ export function Bookshelf() {
         ref={shelf}
         aria-label="Ten books on my bookshelf"
         onPointerMove={move_drag}
-        onPointerUp={() => finish_drag()}
-        onPointerCancel={() => finish_drag(true)}
+        onPointerUp={(event) => {
+          if (event.pointerType !== 'touch') finish_drag();
+        }}
+        onPointerCancel={(event) => {
+          if (event.pointerType !== 'touch') finish_drag(true);
+        }}
         onLostPointerCapture={(event) => {
-          if (event.target === shelf.current && drag.current) finish_drag(true);
+          if (
+            event.pointerType !== 'touch' &&
+            event.target === shelf.current &&
+            drag.current
+          )
+            finish_drag(true);
         }}
       >
-        {order.map((slug) => {
-          const book = books.find((item) => item.slug === slug)!;
-          const original_index = books.indexOf(book);
-          return (
-            <div
-              className={`shelf-slot ${drag_view?.slug === slug ? 'is-dragging' : ''}`}
-              key={slug}
-              ref={(element) => {
-                if (element) slots.current.set(slug, element);
-                else slots.current.delete(slug);
-              }}
-              style={
-                {
-                  '--book-ratio': book.coverWidth / book.coverHeight,
-                  '--book-depth': `${32 + (original_index % 3) * 3}px`,
-                } as CSSProperties
-              }
-            >
+        {(drag_view?.pointer_type === 'touch' ? drag_view.original : order).map(
+          (slug) => {
+            const book = books.find((item) => item.slug === slug)!;
+            const original_index = books.indexOf(book);
+            return (
               <div
-                className="book-reveal"
+                className={`shelf-slot ${drag_view?.slug === slug ? 'is-dragging' : ''}`}
+                key={slug}
+                ref={(element) => {
+                  if (element) slots.current.set(slug, element);
+                  else slots.current.delete(slug);
+                }}
                 style={
                   {
-                    '--book-cover': loaded_covers[slug]
-                      ? `url("${book.cover}")`
-                      : 'none',
+                    order: order.indexOf(slug),
+                    '--book-ratio': book.coverWidth / book.coverHeight,
+                    '--book-depth': `${32 + (original_index % 3) * 3}px`,
                   } as CSSProperties
                 }
               >
-                <Button
-                  variant="ghost"
-                  className={`bookshelf-book ${selected_slug === slug ? 'chosen' : ''}`}
-                  aria-label={`Open ${book.title} by ${book.author}`}
-                  aria-haspopup="dialog"
-                  aria-describedby="book-keyboard-help"
-                  onPointerDown={(event) => start_drag(event, slug)}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Escape') {
-                      finish_drag(true);
-                      set_selected_slug(null);
-                    }
-                    if (
-                      event.key === 'ArrowLeft' ||
-                      event.key === 'ArrowRight'
-                    ) {
-                      event.preventDefault();
-                      set_selected_slug(slug);
-                      move_book(
-                        slug,
-                        order.indexOf(slug) +
-                          (event.key === 'ArrowLeft' ? -1 : 1),
-                      );
-                    }
-                  }}
-                  onClick={(event) => {
-                    if (suppress_click.current && event.detail !== 0) {
-                      suppress_click.current = false;
-                      return;
-                    }
-                    return_focus.current = event.currentTarget;
-                    set_selected_slug(slug);
-                    set_dialog_slug(slug);
-                    set_is_open(true);
-                  }}
+                <div
+                  className="book-reveal"
+                  style={
+                    {
+                      '--book-cover': loaded_covers[slug]
+                        ? `url("${book.cover}")`
+                        : 'none',
+                    } as CSSProperties
+                  }
                 >
-                  <span className="book-volume">
-                    <span className="book-back" aria-hidden="true" />
-                    <span className="book-spine" aria-hidden="true" />
-                    <span className="book-pages" aria-hidden="true" />
-                    <span className="book-top" aria-hidden="true" />
-                    <span className="book-front">
-                      <Image
-                        unoptimized
-                        src={book.cover}
-                        width={book.coverWidth}
-                        height={book.coverHeight}
-                        alt={`${book.title} book cover`}
-                        loading="lazy"
-                        draggable={false}
-                        onLoad={() =>
-                          set_loaded_covers((current) =>
-                            current[slug]
-                              ? current
-                              : { ...current, [slug]: true },
-                          )
-                        }
-                      />
+                  <Button
+                    variant="ghost"
+                    className={`bookshelf-book ${selected_slug === slug ? 'chosen' : ''}`}
+                    aria-label={`Open ${book.title} by ${book.author}`}
+                    aria-haspopup="dialog"
+                    aria-describedby="book-keyboard-help"
+                    data-book-slug={slug}
+                    onContextMenu={(event) => {
+                      if (drag.current?.pointer_type === 'touch')
+                        event.preventDefault();
+                    }}
+                    onPointerDown={(event) => start_drag(event, slug)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Escape') {
+                        finish_drag(true);
+                        set_selected_slug(null);
+                      }
+                      if (
+                        event.key === 'ArrowLeft' ||
+                        event.key === 'ArrowRight'
+                      ) {
+                        event.preventDefault();
+                        set_selected_slug(slug);
+                        move_book(
+                          slug,
+                          order.indexOf(slug) +
+                            (event.key === 'ArrowLeft' ? -1 : 1),
+                        );
+                      }
+                    }}
+                    onClick={(event) => {
+                      if (suppress_click.current && event.detail !== 0) {
+                        suppress_click.current = false;
+                        return;
+                      }
+                      return_focus.current = event.currentTarget;
+                      set_selected_slug(slug);
+                      set_dialog_slug(slug);
+                      set_is_open(true);
+                    }}
+                  >
+                    <span className="book-volume">
+                      <span className="book-back" aria-hidden="true" />
+                      <span className="book-spine" aria-hidden="true" />
+                      <span className="book-pages" aria-hidden="true" />
+                      <span className="book-top" aria-hidden="true" />
+                      <span className="book-front">
+                        <Image
+                          unoptimized
+                          src={book.cover}
+                          width={book.coverWidth}
+                          height={book.coverHeight}
+                          alt={`${book.title} book cover`}
+                          loading="lazy"
+                          draggable={false}
+                          onLoad={() =>
+                            set_loaded_covers((current) =>
+                              current[slug]
+                                ? current
+                                : { ...current, [slug]: true },
+                            )
+                          }
+                        />
+                      </span>
                     </span>
-                  </span>
-                </Button>
+                  </Button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          },
+        )}
       </div>
       <output className="sr-only" aria-live="polite">
         {announcement}
@@ -351,7 +424,13 @@ export function Bookshelf() {
         createPortal(
           <div
             className="book-drag-ghost"
-            style={{ left: drag_view.x, top: drag_view.y }}
+            ref={drag_ghost}
+            style={
+              {
+                '--drag-x': `${drag_view.x}px`,
+                '--drag-y': `${drag_view.y}px`,
+              } as CSSProperties
+            }
             aria-hidden="true"
           >
             <Image
