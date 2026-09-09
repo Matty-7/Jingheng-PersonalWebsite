@@ -41,8 +41,18 @@ const time = (seconds: number) =>
 
 export default function Home() {
   const [hero_paused, set_hero_paused] = useState(false);
-  const { image_ref: turntable_base_ref, state: turntable_base_state, on_load: turntable_base_load, on_error: turntable_base_error } = useImageStatus();
-  const { image_ref: turntable_mask_ref, state: turntable_mask_state, on_load: turntable_mask_load, on_error: turntable_mask_error } = useImageStatus();
+  const {
+    image_ref: turntable_base_ref,
+    state: turntable_base_state,
+    on_load: turntable_base_load,
+    on_error: turntable_base_error,
+  } = useImageStatus();
+  const {
+    image_ref: turntable_mask_ref,
+    state: turntable_mask_state,
+    on_load: turntable_mask_load,
+    on_error: turntable_mask_error,
+  } = useImageStatus();
   const audio = useRef<HTMLAudioElement | null>(null);
   const request = useRef(0);
   const [selected, setSelected] = useState(0);
@@ -300,9 +310,6 @@ export default function Home() {
 
   return (
     <>
-      <a className="skip-link" href="#channels">
-        Skip to content
-      </a>
       <nav className="site-nav home-nav" aria-label="Main navigation">
         <a href="#home" className="brand-link" aria-label="Jingheng Huan home">
           <BrandMark />
@@ -351,8 +358,15 @@ export default function Home() {
                 <SocialIcon name="youtube" />
                 <p className="eyebrow">YOUTUBE</p>
               </div>
-              <h3>
-                Matty <em>Huan.</em>
+              <h3 className="channel-brand">
+                <Image
+                  unoptimized
+                  src="/images/youtube-mark.png"
+                  width={128}
+                  height={128}
+                  alt="Matty Huan"
+                  loading="lazy"
+                />
               </h3>
               <p>Another way to get to know me.</p>
               <a
@@ -394,10 +408,27 @@ export default function Home() {
                 <SocialIcon name="substack" />
                 <p className="eyebrow">SUBSTACK</p>
               </div>
-              <h3>
-                <em>Newsletters.</em>
+              <h3 className="channel-brand">
+                <Image
+                  unoptimized
+                  src="/images/newsletter-mark.png"
+                  width={128}
+                  height={128}
+                  alt="Newsletters by Jingheng"
+                  loading="lazy"
+                />
               </h3>
-              <p>Notes on culture and whatever stays on my mind.</p>
+              <p>
+                Notes on culture and whatever stays on my mind. Start with{' '}
+                <a
+                  href="https://jinghenghuan.substack.com/p/something-of-my-own"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Something of My Own
+                </a>
+                .
+              </p>
               {newsletterUrl ? (
                 <a
                   className="text-link"
@@ -429,7 +460,10 @@ export default function Home() {
             <div className="player-column">
               <div
                 className={`turntable ${playing ? 'is-playing' : ''}`}
-                data-image-ready={turntable_base_state === 'loaded' && turntable_mask_state === 'loaded'}
+                data-image-ready={
+                  turntable_base_state === 'loaded' &&
+                  turntable_mask_state === 'loaded'
+                }
                 aria-hidden="true"
               >
                 <Image
