@@ -4,19 +4,18 @@ import Image from 'next/image';
 import { createPortal } from 'react-dom';
 import {
   useLayoutEffect,
+  useEffect,
   useRef,
   useState,
   type CSSProperties,
   type PointerEvent,
 } from 'react';
-import { GripHorizontal, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogDescription,
-  DialogClose,
 } from '@/components/ui/dialog';
 import books from '@/content/books.json';
 
@@ -28,6 +27,7 @@ type DragState = {
   x: number;
   y: number;
   active: boolean;
+  pointer_type: string;
   original: string[];
   targets: { x: number; y: number; rect: DOMRect }[];
 };
@@ -36,6 +36,8 @@ export function Bookshelf() {
   const [order, set_order] = useState(() => books.map((book) => book.slug));
   const [selected_slug, set_selected_slug] = useState<string | null>(null);
   const [is_open, set_is_open] = useState(false);
+  const [dialog_slug, set_dialog_slug] = useState<string | null>(null);
+  const suppress_click = useRef(false);
   const [loaded_covers, set_loaded_covers] = useState<Record<string, boolean>>(
     {},
   );
@@ -47,8 +49,25 @@ export function Bookshelf() {
   const previous_rects = useRef(new Map<string, DOMRect>());
   const animations = useRef(new Map<string, Animation>());
   const return_focus = useRef<HTMLButtonElement | null>(null);
-  const selected_book = books.find((book) => book.slug === selected_slug);
-  const selected_index = selected_slug ? order.indexOf(selected_slug) : -1;
+  const dialog_book = books.find((book) => book.slug === dialog_slug);
+
+  useEffect(() => {
+    function dismiss_selection(event: globalThis.PointerEvent) {
+      const target = event.target;
+      if (target instanceof Element && !target.closest('.bookshelf-book')) {
+        set_selected_slug(null);
+      }
+    }
+    function clear_pending_pointer() {
+      if (drag.current && !drag.current.active) drag.current = null;
+    }
+    document.addEventListener('pointerdown', dismiss_selection);
+    document.addEventListener('pointerup', clear_pending_pointer);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss_selection);
+      document.removeEventListener('pointerup', clear_pending_pointer);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     const reduced = window.matchMedia(
@@ -100,6 +119,7 @@ export function Bookshelf() {
 
   function start_drag(event: PointerEvent<HTMLButtonElement>, slug: string) {
     if (event.button !== 0 || !event.isPrimary) return;
+    suppress_click.current = false;
     const targets = order.map((key) => {
       const rect = slots.current.get(key)!.getBoundingClientRect();
       return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2, rect };
@@ -112,25 +132,30 @@ export function Bookshelf() {
       x: event.clientX,
       y: event.clientY,
       active: false,
+      pointer_type: event.pointerType,
       original: [...order],
       targets,
     };
-    set_selected_slug(slug);
-    shelf.current?.setPointerCapture(event.pointerId);
+    event.currentTarget.setPointerCapture(event.pointerId);
   }
 
   function move_drag(event: PointerEvent<HTMLDivElement>) {
     const current = drag.current;
     if (!current || current.pointer_id !== event.pointerId) return;
-    if (
-      !current.active &&
-      Math.hypot(
-        event.clientX - current.start_x,
-        event.clientY - current.start_y,
-      ) < 8
-    )
-      return;
-    current.active = true;
+    const dx = event.clientX - current.start_x;
+    const dy = event.clientY - current.start_y;
+    if (!current.active) {
+      if (Math.hypot(dx, dy) < 8) return;
+      if (current.pointer_type === 'touch' && Math.abs(dy) >= Math.abs(dx)) {
+        suppress_click.current = true;
+        drag.current = null;
+        return;
+      }
+      current.active = true;
+      suppress_click.current = true;
+      set_selected_slug(current.slug);
+      shelf.current?.setPointerCapture(event.pointerId);
+    }
     current.x = event.clientX;
     current.y = event.clientY;
     set_drag_view({ ...current });
@@ -155,6 +180,10 @@ export function Bookshelf() {
     const current = drag.current;
     drag.current = null;
     set_drag_view(null);
+    if (cancelled && current) {
+      suppress_click.current = true;
+      set_selected_slug(null);
+    }
     if (cancelled && current?.active) {
       change_order(current.original);
       set_announcement('Move cancelled. Original order restored.');
@@ -164,7 +193,11 @@ export function Bookshelf() {
   return (
     <>
       <p className="shelf-instructions" id="shelf-instructions">
-        Open a cover. Drag a handle to rearrange.
+        Drag a book to rearrange. Click to open.
+      </p>
+      <p className="sr-only" id="book-keyboard-help">
+        Use left and right arrow keys to move a book. Press Enter to open;
+        Escape to close.
       </p>
       <div
         className="bookshelf"
@@ -173,8 +206,8 @@ export function Bookshelf() {
         onPointerMove={move_drag}
         onPointerUp={() => finish_drag()}
         onPointerCancel={() => finish_drag(true)}
-        onLostPointerCapture={() => {
-          if (drag.current) finish_drag(true);
+        onLostPointerCapture={(event) => {
+          if (event.target === shelf.current && drag.current) finish_drag(true);
         }}
       >
         {order.map((slug) => {
@@ -210,9 +243,34 @@ export function Bookshelf() {
                   className={`bookshelf-book ${selected_slug === slug ? 'chosen' : ''}`}
                   aria-label={`Open ${book.title} by ${book.author}`}
                   aria-haspopup="dialog"
+                  aria-describedby="book-keyboard-help"
+                  onPointerDown={(event) => start_drag(event, slug)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Escape') {
+                      finish_drag(true);
+                      set_selected_slug(null);
+                    }
+                    if (
+                      event.key === 'ArrowLeft' ||
+                      event.key === 'ArrowRight'
+                    ) {
+                      event.preventDefault();
+                      set_selected_slug(slug);
+                      move_book(
+                        slug,
+                        order.indexOf(slug) +
+                          (event.key === 'ArrowLeft' ? -1 : 1),
+                      );
+                    }
+                  }}
                   onClick={(event) => {
+                    if (suppress_click.current && event.detail !== 0) {
+                      suppress_click.current = false;
+                      return;
+                    }
                     return_focus.current = event.currentTarget;
                     set_selected_slug(slug);
+                    set_dialog_slug(slug);
                     set_is_open(true);
                   }}
                 >
@@ -242,96 +300,49 @@ export function Bookshelf() {
                   </span>
                 </Button>
               </div>
-              <button
-                type="button"
-                className="book-drag-handle"
-                aria-label={`Move ${book.title}`}
-                aria-describedby="shelf-instructions"
-                onClick={() => set_selected_slug(slug)}
-                onPointerDown={(event) => start_drag(event, slug)}
-                onKeyDown={(event) => {
-                  if (event.key === 'Escape') {
-                    finish_drag(true);
-                    return;
-                  }
-                  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-                    event.preventDefault();
-                    set_selected_slug(slug);
-                    move_book(
-                      slug,
-                      order.indexOf(slug) +
-                        (event.key === 'ArrowLeft' ? -1 : 1),
-                    );
-                  }
-                }}
-              >
-                <GripHorizontal size={18} aria-hidden="true" />
-              </button>
             </div>
           );
         })}
       </div>
-      <div className="book-details">
-        <div className="book-detail-copy">
-          <p className="eyebrow">
-            {selected_book ? 'OFF THE SHELF' : 'ON THE SHELF'}
-          </p>
-          <h3>{selected_book?.title ?? 'Pick a book.'}</h3>
-          {selected_book && (
-            <p className="book-author">{selected_book.author}</p>
-          )}
-        </div>
-        {selected_book && (
-          <div
-            className="book-move-controls"
-            aria-label={`Rearrange ${selected_book.title}`}
-          >
-            <Button
-              variant="outline"
-              disabled={selected_index === 0}
-              onClick={() => move_book(selected_book.slug, selected_index - 1)}
-            >
-              <ArrowLeft aria-hidden="true" /> Move left
-            </Button>
-            <Button
-              variant="outline"
-              disabled={selected_index === order.length - 1}
-              onClick={() => move_book(selected_book.slug, selected_index + 1)}
-            >
-              Move right <ArrowRight aria-hidden="true" />
-            </Button>
-          </div>
-        )}
-      </div>
       <output className="sr-only" aria-live="polite">
         {announcement}
       </output>
-      <Dialog open={is_open} onOpenChange={set_is_open}>
+      <Dialog
+        open={is_open}
+        onOpenChange={(open) => {
+          set_is_open(open);
+          if (!open) set_selected_slug(null);
+        }}
+      >
         <DialogContent className="open-book-dialog" finalFocus={return_focus}>
-          {selected_book && (
+          {dialog_book && (
             <>
               <div className="open-book-stage">
                 <div className="open-book-paper">
-                  <p className="eyebrow">IN THE MARGINS</p>
-                  <DialogTitle>{selected_book.title}</DialogTitle>
-                  <DialogDescription>{selected_book.author}</DialogDescription>
-                  <p className="open-book-note">{selected_book.note}</p>
+                  <DialogTitle className="sr-only">
+                    {dialog_book.title}
+                  </DialogTitle>
+                  <DialogDescription className="sr-only">
+                    {dialog_book.author}
+                  </DialogDescription>
+                  <blockquote
+                    className="open-book-quote"
+                    cite={dialog_book.quote_source}
+                  >
+                    “{dialog_book.quote}”
+                  </blockquote>
                 </div>
-                <DialogClose
-                  className="open-book-cover"
-                  aria-label="Close book"
-                >
+                <div className="open-book-cover" aria-hidden="true">
                   <Image
                     unoptimized
-                    src={selected_book.cover}
-                    width={selected_book.coverWidth}
-                    height={selected_book.coverHeight}
+                    src={dialog_book.cover}
+                    width={dialog_book.coverWidth}
+                    height={dialog_book.coverHeight}
                     alt=""
                     draggable={false}
                   />
-                </DialogClose>
+                </div>
               </div>
-              <DialogClose className="book-return">Return to shelf</DialogClose>
             </>
           )}
         </DialogContent>
