@@ -266,17 +266,6 @@ img {
 }
 
 /* The page scroll is the timeline. Music alone owns playback state. */
-.skip-link {
-  position: absolute;
-  top: -80px;
-  left: 16px;
-  z-index: 100;
-  background: #f7eed8;
-  padding: 12px;
-}
-.skip-link:focus {
-  top: 8px;
-}
 .site-nav {
   position: sticky;
   top: 0;
@@ -2370,6 +2359,8 @@ progress.audio-progress::-moz-progress-bar {
   column-gap: 0.2em;
 }
 .podcast-brand img { display: block; width: 128px; height: 128px; transform: rotate(-3deg); }
+.channel-brand img, .journal-newsletter > img { display: block; width: 128px; height: 128px; object-fit: contain; background: #f5edd5; }
+.publishing-writing > p a { text-decoration: underline; text-underline-offset: 3px; }
 .book-details { min-height: 0; margin-top: 18px; padding-top: 14px; gap: 16px; }
 .book-details h3 { font-size: 26px; margin: 6px 0 4px; line-height: 1.15; }
 .bookshelf { --shelf-height: 220px; }
