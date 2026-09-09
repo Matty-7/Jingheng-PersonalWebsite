@@ -95,7 +95,7 @@
     "releaseDate": "2007-01-01T12:00:00Z",
     "isStreamable": true,
     "storefront": "us",
-    "notes": "Live recording from Live - One Last Time (Bonus Track Version).",
+    "notes": "From Live - One Last Time (Bonus Track Version).",
     "previewCheck": {
       "method": "GET",
       "status": 200,
