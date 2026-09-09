@@ -648,7 +648,7 @@ export default function Home() {
         <section id="books" className="books-section">
           <div className="books-intro" data-reveal>
             <div>
-              <p className="eyebrow">04 / IN THE MARGINS</p>
+              <p className="eyebrow">04 / READ</p>
               <h2>
                 Other lives.
                 <br />
