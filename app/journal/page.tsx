@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { BrandMark } from '@/components/brand_mark';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
-import { publishedPosts, newsletterUrl, formatDate } from '@/lib/publishing';
+import { get_visible_posts, newsletterUrl, formatDate } from '@/lib/publishing';
 import profile from '@/content/profile.json';
 import { pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata(
@@ -11,6 +11,7 @@ export const metadata: Metadata = pageMetadata(
   '/journal',
 );
 export default function Journal() {
+  const publishedPosts = get_visible_posts();
   return (
     <main className="journal-page">
       <nav className="journal-nav" aria-label="Newsletter navigation">
