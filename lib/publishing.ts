@@ -1,15 +1,14 @@
-import rawPosts from '@/content/posts.json';
+import rawPosts from '@/content/newsletter_links.json';
 import profile from '@/content/profile.json';
 import { get_published_posts } from '@/lib/post_visibility';
 
 export type Post = {
   slug: string;
   title: string;
-  excerpt: string;
   date: string;
   kind: 'Essay' | 'Note' | 'Letter';
   status: 'draft' | 'published';
-  blocks: { type: 'paragraph' | 'heading'; text: string }[];
+  external_url: string;
 };
 const posts: Post[] = rawPosts as Post[];
 // Resolve visibility during each request, never against the Worker startup clock.

@@ -364,7 +364,7 @@ export default function Home() {
                   src="/images/youtube-mark.png"
                   width={128}
                   height={128}
-                  alt="Matty Huan"
+                  alt="視 — Jingheng’s YouTube"
                   loading="lazy"
                 />
               </h3>
@@ -414,7 +414,7 @@ export default function Home() {
                   src="/images/newsletter-mark.png"
                   width={128}
                   height={128}
-                  alt="Newsletters by Jingheng"
+                  alt="文 — Newsletters by Jingheng"
                   loading="lazy"
                 />
               </h3>
