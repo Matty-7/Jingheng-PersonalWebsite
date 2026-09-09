@@ -1,13 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type CSSProperties,
-} from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import {
   ArrowDown,
@@ -28,7 +22,7 @@ import { PlaybillCollection } from '@/components/playbill_collection';
 import { SocialIcon } from '@/components/social_icon';
 import music from '@/content/music.json';
 import films from '@/content/films.json';
-import books from '@/content/books.json';
+import { Bookshelf } from '@/components/bookshelf';
 import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
 import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
@@ -63,9 +57,6 @@ export default function Home() {
   const [duration, setDuration] = useState(0);
   const [message, setMessage] = useState('');
   const track = music[selected];
-  const [selected_book, set_selected_book] = useState<number | null>(null);
-  const [loaded_book_covers, set_loaded_book_covers] = useState<Record<string, boolean>>({});
-  const book = selected_book === null ? null : books[selected_book];
 
   const playTrack = useCallback(async (index: number) => {
     const a = audio.current;
@@ -666,73 +657,7 @@ export default function Home() {
             </div>
             <p>Ten books I keep close.</p>
           </div>
-          <div className="bookshelf" aria-label="Ten books on my bookshelf">
-            {books.map((b, i) => (
-              <div
-                className="shelf-slot"
-                key={b.slug}
-                style={{
-                  '--book-ratio': b.coverWidth / b.coverHeight,
-                  '--book-depth': `${32 + (i % 3) * 3}px`,
-                } as CSSProperties}
-              >
-                <div
-                  className="book-reveal"
-                  data-reveal
-                  style={
-                    {
-                      '--book-delay': `${(i % 5) * 85}ms`,
-                      '--book-cover': loaded_book_covers[b.slug] ? `url("${b.cover}")` : 'none',
-                    } as CSSProperties
-                  }
-                >
-                  <Button
-                    variant="ghost"
-                    className={`bookshelf-book ${selected_book === i ? 'chosen' : ''}`}
-                    onClick={() => set_selected_book((current) => current === i ? null : i)}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Escape') set_selected_book(null);
-                    }}
-                    aria-pressed={selected_book === i}
-                    aria-controls="book-details"
-                    aria-label={`${b.title} by ${b.author}`}
-                  >
-                    <span className="book-volume">
-                      <span className="book-back" aria-hidden="true" />
-                      <span className="book-spine" aria-hidden="true" />
-                      <span className="book-pages" aria-hidden="true" />
-                      <span className="book-top" aria-hidden="true" />
-                      <span className="book-front">
-                        <Image
-                          unoptimized
-                          src={b.cover}
-                          width={b.coverWidth}
-                          height={b.coverHeight}
-                          alt={`${b.title} book cover`}
-                          loading="lazy"
-                          onLoad={() => set_loaded_book_covers((current) =>
-                            current[b.slug] ? current : { ...current, [b.slug]: true },
-                          )}
-                        />
-                      </span>
-                    </span>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div
-            id="book-details"
-            className="book-details"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            <div className="book-detail-copy" key={book?.slug ?? 'shelved'}>
-              <p className="eyebrow">{book ? 'OFF THE SHELF' : 'ON THE SHELF'}</p>
-              <h3>{book?.title ?? 'Pick a book.'}</h3>
-              {book && <p className="book-author">{book.author}</p>}
-            </div>
-          </div>
+          <Bookshelf />
         </section>
         <PlaybillCollection />
         <TerminalScene />
