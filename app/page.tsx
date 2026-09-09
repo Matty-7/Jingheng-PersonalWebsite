@@ -668,14 +668,20 @@ export default function Home() {
           </div>
           <div className="bookshelf" aria-label="Ten books on my bookshelf">
             {books.map((b, i) => (
-              <div className="shelf-slot" key={b.slug}>
+              <div
+                className="shelf-slot"
+                key={b.slug}
+                style={{
+                  '--book-ratio': b.coverWidth / b.coverHeight,
+                  '--book-depth': `${32 + (i % 3) * 3}px`,
+                } as CSSProperties}
+              >
                 <div
                   className="book-reveal"
                   data-reveal
                   style={
                     {
                       '--book-delay': `${(i % 5) * 85}ms`,
-                      '--book-ratio': b.coverWidth / b.coverHeight,
                       '--book-cover': loaded_book_covers[b.slug] ? `url("${b.cover}")` : 'none',
                     } as CSSProperties
                   }
