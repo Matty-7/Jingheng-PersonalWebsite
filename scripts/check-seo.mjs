@@ -5,6 +5,9 @@ const profile = JSON.parse(
   await readFile(new URL('../content/profile.json', import.meta.url), 'utf8'),
 );
 const posts = JSON.parse(
+  await readFile(new URL('../content/newsletter_links.json', import.meta.url), 'utf8'),
+);
+const archived_posts = JSON.parse(
   await readFile(new URL('../content/posts.json', import.meta.url), 'utf8'),
 );
 const origin = process.argv[2];
@@ -37,7 +40,6 @@ const structuredData = (html) =>
 for (const path of [
   '/',
   '/journal',
-  ...published.map((post) => `/journal/${post.slug}`),
 ]) {
   const { response, body } = await read(path);
   assert.equal(response.status, 200, path);
@@ -78,13 +80,38 @@ for (const path of [
       ),
     );
     assert.ok(body.includes('also known as Matty Huan'));
-  } else if (path !== '/journal') {
-    const article = structuredData(body).find(
-      (data) => data['@type'] === 'BlogPosting',
-    );
-    assert.equal(article.url, expected);
-    assert.equal(article.author.name, profile.name);
+  } else {
+    for (const post of published) {
+      assert.ok(body.includes(`href="${post.external_url}"`));
+      assert.ok(body.includes(post.title));
+    }
+    assert.ok(!body.includes('href="/journal/'));
   }
+  for (const post of archived_posts) {
+    assert.ok(!body.includes(post.blocks[0].text), 'Archived prose must not be rendered');
+    if (!published.some((entry) => entry.slug === post.slug)) {
+      assert.ok(!body.includes(post.title), 'Withdrawn article must not be listed');
+    }
+  }
+}
+for (const post of published) {
+  const { response, body } = await read(`/journal/${post.slug}`);
+  assert.equal(response.status, 308, post.slug);
+  assert.equal(response.headers.get('location'), post.external_url);
+  assert.ok(!body.includes('BlogPosting'));
+  for (const archived of archived_posts) assert.ok(!body.includes(archived.blocks[0].text));
+}
+const feed = await read('/feed.xml');
+assert.equal(feed.response.status, 200);
+assert.ok(feed.response.headers.get('content-type')?.includes('xml'));
+assert.equal([...feed.body.matchAll(/<item>/g)].length, published.length);
+for (const post of published) {
+  assert.ok(feed.body.includes(`<link>${post.external_url}</link>`));
+  assert.ok(feed.body.includes(`<guid isPermaLink="true">${post.external_url}</guid>`));
+}
+for (const archived of archived_posts) {
+  assert.ok(!feed.body.includes(archived.blocks[0].text));
+  if (!published.some((post) => post.slug === archived.slug)) assert.ok(!feed.body.includes(archived.title));
 }
 const robots = await read('/robots.txt');
 assert.equal(robots.response.status, 200);
@@ -103,11 +130,11 @@ assert.deepEqual(
   [
     `${canonical}/`,
     `${canonical}/journal`,
-    ...published.map((post) => `${canonical}/journal/${post.slug}`),
   ].sort((a, b) => a.localeCompare(b)),
 );
 for (const slug of [
   'seo-check-missing-page',
+  ...archived_posts.filter((post) => !published.some((entry) => entry.slug === post.slug)).map((post) => post.slug),
   ...posts.filter((post) => !published.includes(post)).map((post) => post.slug),
 ]) {
   const missing = await read(`/journal/${slug}`);

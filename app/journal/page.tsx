@@ -42,11 +42,10 @@ export default function Journal() {
                 <time dateTime={post.date}>{formatDate(post.date)}</time>
               </p>
               <h2>
-                <Link href={`/journal/${post.slug}`}>
+                <a href={post.external_url}>
                   {post.title} <ArrowUpRight size={24} />
-                </Link>
+                </a>
               </h2>
-              <p>{post.excerpt}</p>
             </article>
           ))
         ) : (
@@ -86,24 +85,13 @@ export default function Journal() {
           src="/images/newsletter-mark.png"
           width={128}
           height={128}
-          alt="Newsletters by Jingheng"
+          alt="文 — Newsletters by Jingheng"
           loading="lazy"
         />
         <p className="eyebrow">NEWSLETTERS FROM JINGHENG</p>
         <h2>
           From time <em>to time.</em>
         </h2>
-        <p>
-          On Substack:{' '}
-          <a
-            href="https://jinghenghuan.substack.com/p/something-of-my-own"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Something of My Own
-          </a>
-          .
-        </p>
         {newsletterUrl ? (
           <a
             className="text-link"
@@ -115,8 +103,7 @@ export default function Journal() {
           </a>
         ) : (
           <p>
-            Future editions will be distributed on Substack. Published writing
-            stays here in the archive.
+            Future editions will be distributed on Substack.
           </p>
         )}
       </aside>

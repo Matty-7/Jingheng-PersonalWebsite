@@ -2359,7 +2359,7 @@ progress.audio-progress::-moz-progress-bar {
   column-gap: 0.2em;
 }
 .podcast-brand img { display: block; width: 128px; height: 128px; transform: rotate(-3deg); }
-.channel-brand img, .journal-newsletter > img { display: block; width: 128px; height: 128px; object-fit: contain; background: #f5edd5; }
+.channel-brand img, .journal-newsletter > img { display: block; width: 128px; height: 128px; object-fit: contain; background: #fff; }
 .publishing-writing > p a { text-decoration: underline; text-underline-offset: 3px; }
 .book-details { min-height: 0; margin-top: 18px; padding-top: 14px; gap: 16px; }
 .book-details h3 { font-size: 26px; margin: 6px 0 4px; line-height: 1.15; }
