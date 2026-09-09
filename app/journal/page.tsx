@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BrandMark } from '@/components/brand_mark';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
@@ -80,10 +81,29 @@ export default function Journal() {
         )}
       </section>
       <aside className="journal-newsletter">
+        <Image
+          unoptimized
+          src="/images/newsletter-mark.png"
+          width={128}
+          height={128}
+          alt="Newsletters by Jingheng"
+          loading="lazy"
+        />
         <p className="eyebrow">NEWSLETTERS FROM JINGHENG</p>
         <h2>
           From time <em>to time.</em>
         </h2>
+        <p>
+          On Substack:{' '}
+          <a
+            href="https://jinghenghuan.substack.com/p/something-of-my-own"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Something of My Own
+          </a>
+          .
+        </p>
         {newsletterUrl ? (
           <a
             className="text-link"
