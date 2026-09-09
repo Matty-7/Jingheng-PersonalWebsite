@@ -63,8 +63,8 @@ export default function Home() {
   const [duration, setDuration] = useState(0);
   const [message, setMessage] = useState('');
   const track = music[selected];
-  const [selectedBook, setSelectedBook] = useState(0);
-  const book = books[selectedBook];
+  const [selected_book, set_selected_book] = useState<number | null>(null);
+  const book = selected_book === null ? null : books[selected_book];
 
   const playTrack = useCallback(async (index: number) => {
     const a = audio.current;
@@ -672,25 +672,40 @@ export default function Home() {
                   className="book-reveal"
                   data-reveal
                   style={
-                    { '--book-delay': `${(i % 5) * 85}ms` } as CSSProperties
+                    {
+                      '--book-delay': `${(i % 5) * 85}ms`,
+                      '--book-ratio': b.coverWidth / b.coverHeight,
+                      '--book-cover': `url("${b.cover}")`,
+                    } as CSSProperties
                   }
                 >
                   <Button
                     variant="ghost"
-                    className={`bookshelf-book ${selectedBook === i ? 'chosen' : ''}`}
-                    onClick={() => setSelectedBook(i)}
-                    aria-pressed={selectedBook === i}
+                    className={`bookshelf-book ${selected_book === i ? 'chosen' : ''}`}
+                    onClick={() => set_selected_book((current) => current === i ? null : i)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Escape') set_selected_book(null);
+                    }}
+                    aria-pressed={selected_book === i}
                     aria-controls="book-details"
                     aria-label={`${b.title} by ${b.author}`}
                   >
-                    <Image
-                      unoptimized
-                      src={b.cover}
-                      width={b.coverWidth}
-                      height={b.coverHeight}
-                      alt={`${b.title} book cover`}
-                      loading="lazy"
-                    />
+                    <span className="book-volume">
+                      <span className="book-back" aria-hidden="true" />
+                      <span className="book-spine" aria-hidden="true" />
+                      <span className="book-pages" aria-hidden="true" />
+                      <span className="book-top" aria-hidden="true" />
+                      <span className="book-front">
+                        <Image
+                          unoptimized
+                          src={b.cover}
+                          width={b.coverWidth}
+                          height={b.coverHeight}
+                          alt={`${b.title} book cover`}
+                          loading="lazy"
+                        />
+                      </span>
+                    </span>
                   </Button>
                 </div>
               </div>
@@ -702,10 +717,10 @@ export default function Home() {
             aria-live="polite"
             aria-atomic="true"
           >
-            <div className="book-detail-copy" key={book.slug}>
-              <p className="eyebrow">OFF THE SHELF</p>
-              <h3>{book.title}</h3>
-              <p className="book-author">{book.author}</p>
+            <div className="book-detail-copy" key={book?.slug ?? 'shelved'}>
+              <p className="eyebrow">{book ? 'OFF THE SHELF' : 'ON THE SHELF'}</p>
+              <h3>{book?.title ?? 'Pick a book.'}</h3>
+              {book && <p className="book-author">{book.author}</p>}
             </div>
           </div>
         </section>
