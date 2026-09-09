@@ -3,7 +3,7 @@ import { BrandMark } from '@/components/brand_mark';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
-import { publishedPosts, formatDate } from '@/lib/publishing';
+import { get_visible_posts, formatDate } from '@/lib/publishing';
 import {
   absoluteUrl,
   pageMetadata,
@@ -14,7 +14,7 @@ import profile from '@/content/profile.json';
 type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = publishedPosts.find((p) => p.slug === slug);
+  const post = get_visible_posts().find((p) => p.slug === slug);
   return post
     ? pageMetadata(
         `${post.title} — Jingheng Huan`,
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 export default async function Entry({ params }: Props) {
   const { slug } = await params;
-  const post = publishedPosts.find((p) => p.slug === slug);
+  const post = get_visible_posts().find((p) => p.slug === slug);
   if (!post) notFound();
   return (
     <main className="journal-page">

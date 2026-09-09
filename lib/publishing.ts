@@ -12,7 +12,8 @@ export type Post = {
   blocks: { type: 'paragraph' | 'heading'; text: string }[];
 };
 const posts: Post[] = rawPosts as Post[];
-export const publishedPosts = get_published_posts(posts);
+// Resolve visibility during each request, never against the Worker startup clock.
+export const get_visible_posts = () => get_published_posts(posts);
 export const newsletterUrl: string | null = profile.newsletterUrl;
 export const formatDate = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', {

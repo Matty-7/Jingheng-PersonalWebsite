@@ -1,4 +1,4 @@
-import { publishedPosts } from '@/lib/publishing';
+import { get_visible_posts } from '@/lib/publishing';
 import profile from '@/content/profile.json';
 const xml = (s: string) =>
   s.replace(
@@ -13,7 +13,7 @@ const xml = (s: string) =>
       })[c]!,
   );
 export function GET() {
-  const items = publishedPosts
+  const items = get_visible_posts()
     .map(
       (post) =>
         `<item><title>${xml(post.title)}</title><link>${profile.siteUrl}/journal/${post.slug}</link><guid isPermaLink="true">${profile.siteUrl}/journal/${post.slug}</guid><pubDate>${new Date(post.date + 'T12:00:00Z').toUTCString()}</pubDate><description>${xml(post.excerpt)}</description></item>`,
