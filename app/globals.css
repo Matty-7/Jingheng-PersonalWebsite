@@ -1536,12 +1536,11 @@ progress.audio-progress::-moz-progress-bar {
   outline: 3px solid #283c31;
   outline-offset: 7px;
 }
-.shelf-instructions { text-align: center; margin: 0 0 20px; font-size: 14px; color: #514b40; }
 .shelf-slot { position: relative; }
-.bookshelf-book { touch-action: pan-y; cursor: grab; }
+.bookshelf-book { touch-action: auto; cursor: grab; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .bookshelf-book:active { cursor: grabbing; }
 .is-dragging .book-reveal { opacity: .25; }
-.book-drag-ghost { position: fixed; z-index: 100; pointer-events: none; width: 120px; transform: translate(-50%, -85%) rotate(-8deg); filter: drop-shadow(12px 20px 12px #24190c55); }
+.book-drag-ghost { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; width: 120px; will-change: transform; transform: translate3d(var(--drag-x), var(--drag-y), 0) translate(-50%, -85%) rotate(-8deg); filter: drop-shadow(12px 20px 12px #24190c55); }
 .book-drag-ghost img { width: 100%; height: auto; }
 .open-book-dialog[data-slot='dialog-content'] {
   width: min(620px, calc(100vw - 32px)); max-width: none; max-height: calc(100svh - 32px);
@@ -1581,7 +1580,7 @@ progress.audio-progress::-moz-progress-bar {
 }
 @media (prefers-reduced-motion: reduce) {
   .open-book-stage, .open-book-cover { animation: none; }
-  .book-drag-ghost { transform: translate(-50%, -85%); }
+  .book-drag-ghost { transform: translate3d(var(--drag-x), var(--drag-y), 0) translate(-50%, -85%); }
 }
 .book-details {
   display: flex;
