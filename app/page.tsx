@@ -64,6 +64,7 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const track = music[selected];
   const [selected_book, set_selected_book] = useState<number | null>(null);
+  const [loaded_book_covers, set_loaded_book_covers] = useState<Record<string, boolean>>({});
   const book = selected_book === null ? null : books[selected_book];
 
   const playTrack = useCallback(async (index: number) => {
@@ -675,7 +676,7 @@ export default function Home() {
                     {
                       '--book-delay': `${(i % 5) * 85}ms`,
                       '--book-ratio': b.coverWidth / b.coverHeight,
-                      '--book-cover': `url("${b.cover}")`,
+                      '--book-cover': loaded_book_covers[b.slug] ? `url("${b.cover}")` : 'none',
                     } as CSSProperties
                   }
                 >
@@ -703,6 +704,9 @@ export default function Home() {
                           height={b.coverHeight}
                           alt={`${b.title} book cover`}
                           loading="lazy"
+                          onLoad={() => set_loaded_book_covers((current) =>
+                            current[b.slug] ? current : { ...current, [b.slug]: true },
+                          )}
                         />
                       </span>
                     </span>
