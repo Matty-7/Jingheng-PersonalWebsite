@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const film_motion_query = window.matchMedia(
-      '(min-width: 760px) and (prefers-reduced-motion: no-preference)',
+      '(min-width: 760px) and (min-height: 680px) and (prefers-reduced-motion: no-preference)',
     );
     document.documentElement.classList.add('motion-ready');
     const observer = new IntersectionObserver(
@@ -44,15 +44,23 @@ export default function Home() {
     const filmSection = document.getElementById('films');
     const filmTrack = document.getElementById('film-track');
     const hero = document.querySelector<HTMLElement>('.arrival');
-    const parallax = Array.from(
-      document.querySelectorAll<HTMLElement>('[data-parallax]'),
+    const cards = Array.from(
+      filmTrack?.querySelectorAll<HTMLElement>('.film-card') ?? [],
     );
-    const posters = Array.from(
-      document.querySelectorAll<HTMLElement>('.poster-frame'),
-    );
-    const resizeObserver = new ResizeObserver(() => schedule());
-    if (filmTrack) resizeObserver.observe(filmTrack);
+    const posters = cards.map((card) => card.querySelector<HTMLElement>('.poster-frame'));
+    let layout_dirty = true;
+    let film_enabled = false;
+    let distance = 0;
+    let film_height = 0;
+    let card_centres: number[] = [];
+    let last_progress = -1;
     let raf = 0;
+    const invalidate_layout = () => {
+      layout_dirty = true;
+      schedule();
+    };
+    const resizeObserver = new ResizeObserver(invalidate_layout);
+    if (filmTrack) resizeObserver.observe(filmTrack);
     const reset_film_motion = () => {
       filmSection?.classList.remove('film-motion-ready');
       filmSection?.style.removeProperty('--film-height');
@@ -60,95 +68,77 @@ export default function Home() {
       filmSection?.style.removeProperty('height');
       filmTrack?.style.removeProperty('--film-transform');
       filmTrack?.style.removeProperty('transform');
-      posters.forEach((el) => el.style.removeProperty('--depth'));
+      posters.forEach((el) => el?.style.removeProperty('--depth'));
+      last_progress = -1;
+    };
+    // Layout writes and measurements happen only on initialization/resize.
+    // Stable scrolling never measures transformed posters or changes section height.
+    const measure_layout = () => {
+      layout_dirty = false;
+      film_enabled = film_motion_query.matches && CSS.supports('height', '1cqh');
+      if (!filmSection || !filmTrack) return;
+      if (!film_enabled) {
+        reset_film_motion();
+        return;
+      }
+      filmSection.classList.add('film-motion-ready');
+      distance = Math.max(
+        0,
+        filmTrack.scrollWidth - window.innerWidth + window.innerWidth * 0.09,
+      );
+      film_height = window.innerHeight + distance * 1.2;
+      const height = `${film_height}px`;
+      if (filmSection.style.getPropertyValue('--film-height') !== height) {
+        filmSection.style.setProperty('--film-height', height);
+      }
+      const track_left = filmTrack.getBoundingClientRect().left;
+      card_centres = cards.map((card) => {
+        const rect = card.getBoundingClientRect();
+        return rect.left - track_left + rect.width / 2;
+      });
+      last_progress = -1;
     };
     const update = () => {
       raf = 0;
-      document.documentElement.style.setProperty(
-        '--page-progress',
-        String(
-          window.scrollY /
-            Math.max(
-              1,
-              document.documentElement.scrollHeight - window.innerHeight,
-            ),
-        ),
+      if (layout_dirty) measure_layout();
+
+      // Read every live geometry value before applying this frame's styles.
+      const viewport_height = window.innerHeight;
+      const viewport_width = window.innerWidth;
+      const page_progress = window.scrollY / Math.max(
+        1, document.documentElement.scrollHeight - viewport_height,
       );
-      parallax.forEach((el) => {
-        const r = el.getBoundingClientRect();
-        const progress = Math.max(
-          -1,
-          Math.min(
-            1,
-            (window.innerHeight / 2 - r.top - r.height / 2) /
-              window.innerHeight,
-          ),
-        );
-        el.style.setProperty(
-          '--drift',
-          reduced.matches ? '0' : String(progress),
-        );
-      });
-      if (hero) {
-        const p = Math.min(
-          1,
-          Math.max(0, -hero.getBoundingClientRect().top / hero.offsetHeight),
-        );
-        hero.style.setProperty(
-          '--hero-progress',
-          reduced.matches ? '0' : String(p),
-        );
-      }
-      if (filmSection && filmTrack) {
-        if (film_motion_query.matches) {
-          filmSection.classList.add('film-motion-ready');
-          const distance = Math.max(
-            0,
-            filmTrack.scrollWidth -
-              window.innerWidth +
-              window.innerWidth * 0.09,
-          );
-          filmSection.style.setProperty(
-            '--film-height',
-            `${window.innerHeight + distance * 1.2}px`,
-          );
-          const rect = filmSection.getBoundingClientRect();
-          const progress = Math.max(
-            0,
-            Math.min(
-              1,
-              -rect.top / Math.max(1, rect.height - window.innerHeight),
-            ),
-          );
-          filmTrack.style.setProperty(
-            '--film-transform',
-            `translate3d(${-progress * distance}px,0,0)`,
-          );
-          filmSection.style.setProperty('--film-progress', String(progress));
-          posters.forEach((el) => {
-            const r = el.getBoundingClientRect();
-            const depth = Math.max(
-              -1,
-              Math.min(
-                1,
-                (r.left + r.width / 2 - window.innerWidth / 2) /
-                  window.innerWidth,
-              ),
-            );
-            el.style.setProperty('--depth', String(depth));
-          });
-        } else {
-          reset_film_motion();
-        }
+      const hero_rect = hero?.getBoundingClientRect();
+      const hero_progress = hero_rect
+        ? Math.min(1, Math.max(0, -hero_rect.top / Math.max(1, hero_rect.height)))
+        : 0;
+      const film_rect = film_enabled ? filmSection?.getBoundingClientRect() : null;
+      const film_progress = film_rect
+        ? Math.max(0, Math.min(1, -film_rect.top / Math.max(1, film_height - viewport_height)))
+        : 0;
+
+      document.documentElement.style.setProperty('--page-progress', String(page_progress));
+      hero?.style.setProperty('--hero-progress', reduced.matches ? '0' : String(hero_progress));
+      if (film_enabled && filmSection && filmTrack && film_progress !== last_progress) {
+        const translation = -film_progress * distance;
+        filmTrack.style.setProperty('--film-transform', `translate3d(${translation}px,0,0)`);
+        filmSection.style.setProperty('--film-progress', String(film_progress));
+        posters.forEach((poster, index) => {
+          const depth = Math.max(-1, Math.min(1,
+            (card_centres[index] + translation - viewport_width / 2) / viewport_width,
+          ));
+          poster?.style.setProperty('--depth', String(depth));
+        });
+        last_progress = film_progress;
       }
     };
     const schedule = () => {
       if (!raf) raf = window.requestAnimationFrame(update);
     };
     window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    reduced.addEventListener('change', schedule);
-    film_motion_query.addEventListener('change', schedule);
+    window.addEventListener('resize', invalidate_layout);
+    reduced.addEventListener('change', invalidate_layout);
+    film_motion_query.addEventListener('change', invalidate_layout);
     update();
     return () => {
       reset_film_motion();
@@ -156,9 +146,9 @@ export default function Home() {
       observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      reduced.removeEventListener('change', schedule);
-      film_motion_query.removeEventListener('change', schedule);
+      window.removeEventListener('resize', invalidate_layout);
+      reduced.removeEventListener('change', invalidate_layout);
+      film_motion_query.removeEventListener('change', invalidate_layout);
       window.cancelAnimationFrame(raf);
     };
   }, []);
