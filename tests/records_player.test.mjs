@@ -45,4 +45,6 @@ test('record player renders ten labelled choices and one dormant audio element',
   assert.match(html, /id="records"/);
   assert.match(html, /aria-label="Preview playback progress"[^>]*value="0"/);
   assert.doesNotMatch(html, /aria-label="Current record"/);
+  assert.match(html, /class="turntable\s*"/);
+  assert.doesNotMatch(html, /(?:src|href)="\/images\/turntable(?:\.png|-base\.jpg)"/);
 });
