@@ -651,30 +651,60 @@ img {
   height: 100%;
   background: #ddb15c;
 }
-@media (min-width: 760px) and (prefers-reduced-motion: no-preference) {
+@media (min-width: 760px) and (min-height: 680px) and (prefers-reduced-motion: no-preference) {
   .film-section.film-motion-ready {
     height: var(--film-height, auto);
   }
   .film-section.film-motion-ready .film-sticky {
     position: sticky;
-    min-height: 100svh;
+    height: 100svh;
+    min-height: 0;
+    padding: 108px 0 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 22px;
     overflow: hidden;
   }
+  .film-section.film-motion-ready .film-heading {
+    margin-bottom: 0;
+  }
+  .film-section.film-motion-ready .film-heading h2 {
+    font-size: clamp(42px, 4.4vw, 64px);
+  }
   .film-section.film-motion-ready .film-window {
+    container-type: size;
     overflow: hidden;
   }
   .film-section.film-motion-ready .film-track {
     display: flex;
     width: max-content;
+    gap: 36px;
     transform: var(--film-transform, none);
     will-change: transform;
   }
   .film-section.film-motion-ready .film-card {
-    width: clamp(215px, 22vw, 340px);
+    /* Leave space for two-line titles, metadata and the tilted frame's edges. */
+    width: min(clamp(200px, 22vw, 340px), calc((100cqh - 122px) * 2 / 3));
+  }
+  .film-section.film-motion-ready .film-card h3 {
+    margin-top: 18px;
+  }
+  .film-section.film-motion-ready .film-footer {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .film-section.film-motion-ready .film-progress {
     display: block;
   }
+}
+@media (min-width: 760px) and (min-height: 680px) and (max-height: 820px) and (prefers-reduced-motion: no-preference) {
+  .film-section.film-motion-ready .film-sticky {
+    padding-top: 100px;
+    gap: 18px;
+  }
+  .film-section.film-motion-ready .film-heading h2 { font-size: 43px; }
+  .film-section.film-motion-ready .film-card h3 { margin-top: 15px; }
 }
 .poster-awaiting {
   padding: 20px;
@@ -942,16 +972,6 @@ footer h2 {
   }
   .film-footer {
     margin-top: 24px;
-  }
-}
-@media (min-width: 1600px) and (prefers-reduced-motion: no-preference) {
-  .film-section.film-motion-ready .film-card {
-    width: 300px;
-  }
-}
-@media (max-height: 820px) and (min-width: 760px) and (prefers-reduced-motion: no-preference) {
-  .film-section.film-motion-ready .film-card {
-    width: 200px;
   }
 }
 @media (max-width: 1050px) {

@@ -27,3 +27,18 @@ Temporary console counters were inserted at Home and Bookshelf render entry, and
 - Offscreen/hidden scene animations already pause through visibility handling. Draft and future-date filtering remains server-only; the newsletter archive retains one external article link.
 - Initial client page chunk was 157,219 uncompressed bytes. Component extraction is a render optimization, not a promised transfer reduction. Do not equate declared unused dependencies with shipped client code.
 - Continue through the existing daily audit with this backlog. Retain independent critic/editor/reviewer, browser checks, exact-head CI, publication ownership and receipts. Do not add monitoring services or weaken gates to obtain a pass.
+
+
+## Cinema refinement, 2026-09-10
+
+Base: `a60a6f05c210786546da788df92539cf5c31bf06`. The separate critic and editor accepted `FILM_PINNED_VIEWPORT_FIT` and the previously deferred `SCROLL_LAYOUT_INTERLEAVING` as one cinema refinement. Mobile channel density remains a deferred preference; artwork, content and logos are unchanged.
+
+At 1440 by 900, the old sticky composition measured 980.47px, with footer/progress at y914.88–950.47. The desktop composition now uses a viewport-height grid, reserves caption space, and sizes posters from the available height. Screens below 680px high and browsers without container-height units retain the readable static grid, as do mobile and reduced-motion layouts.
+
+The motion loop now caches untransformed card centres on initialization and ResizeObserver/viewport changes. Ordinary scroll reads page/hero/section geometry before style writes; it neither measures each poster nor rewrites section height. Clamped unchanged film progress skips film style writes outside its travel. The unused parallax query/loop was removed; there were no authored targets.
+
+Temporary source-only console probes, read through the supported browser, showed 120 poster-bound reads over 12 baseline updates, including ten reads per update outside the film section. Afterward, the card-read count remained at20 across stable frames3–6 as the film top moved from90.48 to2353.48px; those scroll frames added zero card measurements. Initialization/ResizeObserver delivery accounts for the initial20. Probe elapsed times are not comparable field benchmarks; no CPU/LCP/INP percentage gain is claimed. All probes were removed.
+
+Supported Chrome evidence: measured1440x900 and1280x720 viewports, near-start/middle/end pinned states, all ten posters decoded/reachable by ordinary scrolling. Heading top108/100px clears88px navigation; footer bottom880/700px fits the viewport. Long titles and metadata fit, including The Lovers on the Bridge and The Love That Remains. At390x844, ten decoded posters remain in a two-column grid without horizontal overflow. Temporary dev-harness buttons resized the same iframe to390x844 and1280x600 (motion class, height, transform and depth cleared), then1440x900 (motion restored). The harness was restored without a production diff.
+
+This is a scoped cinema repair, not a complete daily visitor audit or a physical-device/Safari/corporate-network test. Reduced-motion preference and missing-container support are source-reviewed, not emulated. A browser-controller timeout interrupted the final multi-action readout; fresh DOM inspection confirmed the resulting mobile last row and restored desktop state. Production HTTP acceptance is recorded in the deployment receipt.
