@@ -4,8 +4,7 @@ import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pause, Play, SkipBack, SkipForward, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useImageStatus } from '@/components/image_status';
-import { Tonearm } from '@/components/tonearm';
+import { Turntable } from '@/components/turntable';
 import music from '@/content/music.json';
 
 type Track = (typeof music)[number];
@@ -14,18 +13,6 @@ const time = (seconds: number) =>
   `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 
 export function RecordsPlayer() {
-  const {
-    image_ref: turntable_base_ref,
-    state: turntable_base_state,
-    on_load: turntable_base_load,
-    on_error: turntable_base_error,
-  } = useImageStatus();
-  const {
-    image_ref: turntable_mask_ref,
-    state: turntable_mask_state,
-    on_load: turntable_mask_load,
-    on_error: turntable_mask_error,
-  } = useImageStatus();
   const audio = useRef<HTMLAudioElement | null>(null);
   const request = useRef(0);
   const [selected, setSelected] = useState(0);
@@ -152,49 +139,7 @@ export function RecordsPlayer() {
         </div>
         <div className="listening-room">
           <div className="player-column">
-            <div
-              className={`turntable ${playing ? 'is-playing' : ''}`}
-              data-image-ready={
-                turntable_base_state === 'loaded' &&
-                turntable_mask_state === 'loaded'
-              }
-              aria-hidden="true"
-            >
-              <Image
-                unoptimized
-                className="turntable-base"
-                ref={turntable_base_ref}
-                onLoad={turntable_base_load}
-                onError={turntable_base_error}
-                src="/images/turntable-base.jpg"
-                width="1448"
-                height="1086"
-                alt=""
-              />
-              <Image
-                unoptimized
-                className="turntable-mask-probe"
-                src="/images/turntable.png"
-                ref={turntable_mask_ref}
-                onLoad={turntable_mask_load}
-                onError={turntable_mask_error}
-                width={1}
-                height={1}
-                alt=""
-              />
-              <div className="vinyl-disc">
-                <div className="vinyl-spin">
-                  <Image
-                    unoptimized
-                    src={track.artwork}
-                    alt=""
-                    width={160}
-                    height={160}
-                  />
-                </div>
-              </div>
-              <Tonearm />
-            </div>
+            <Turntable playing={playing} artwork={track.artwork} />
             <div className="now-playing">
               <span className="eyebrow">
                 {loading

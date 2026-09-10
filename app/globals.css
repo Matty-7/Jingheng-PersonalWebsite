@@ -366,7 +366,8 @@ img {
   width: 100%;
   height: auto;
 }
-.turntable[data-image-ready='false'] { visibility: hidden; }
+.turntable-artwork { position: absolute; inset: 0; }
+.turntable-artwork[data-image-ready='false'] { visibility: hidden; }
 .turntable-mask-probe { position: absolute; width: 1px; height: 1px; visibility: hidden; }
 .vinyl-disc {
   position: absolute;
