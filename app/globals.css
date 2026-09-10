@@ -2174,18 +2174,16 @@ progress.audio-progress::-moz-progress-bar {
     inset: 0;
     pointer-events: none;
   }
-  .terminal-scene:not([data-visible]) .terminal-effects { display: none; }
-  .terminal-market { display: block; width: 100%; height: 100%; }
-  .market-quote-frame {
-    font: 6.5px ui-monospace, SFMono-Regular, monospace;
-    animation: market-quote-change 9s steps(1, end) infinite;
+  .terminal-scene:not([data-image-state='loaded']) .terminal-effects { display: none; }
+  .terminal-market { display: block; width: 100%; height: 100%; font: 8px ui-monospace, SFMono-Regular, monospace; }
+  .terminal-cell-frame { animation: terminal-cell-change 12s steps(1, end) infinite; }
+  .terminal-cell-frame-0 { opacity: 1; }
+  .terminal-cell-frame-1, .terminal-cell-frame-2 { opacity: 0; }
+  .terminal-yield-curve {
+    transform-origin: 0 88px;
+    animation: terminal-yield-shift 16s ease-in-out infinite;
   }
-  .market-curve { animation: market-curve-change 12s linear infinite; }
-  .market-bar {
-    transform-box: fill-box;
-    transform-origin: center bottom;
-    animation: market-bar-change 7s ease-in-out infinite;
-  }
+  .terminal-yield-secondary { animation-delay: -7s; animation-duration: 19s; }
   .scene-motion {
     animation-play-state: paused;
   }
@@ -2194,24 +2192,19 @@ progress.audio-progress::-moz-progress-bar {
     animation-play-state: running;
   }
 }
-@keyframes market-quote-change {
-  0% { opacity: 1; }
-  33.333333%, 100% { opacity: 0; }
+@keyframes terminal-cell-change {
+  0%, 33.333% { opacity: 1; }
+  33.334%, 100% { opacity: 0; }
 }
-@keyframes market-curve-change {
-  0%, 20%, 100% { opacity: 1; }
-  33.333333%, 86.666667% { opacity: 0; }
-}
-@keyframes market-bar-change {
-  0%, 100% { transform: scaleY(0.85); }
-  35% { transform: scaleY(1.03); }
-  70% { transform: scaleY(0.65); }
+@keyframes terminal-yield-shift {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.96); }
 }
 @media (min-width: 2000px) {
   .closing-art { height: max(600px, 24vw); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .terminal-effects { display: none; }
+  .terminal-market .scene-motion { animation: none; }
 }
 .article-body h2 {
   font-size: clamp(28px, 3vw, 38px);
