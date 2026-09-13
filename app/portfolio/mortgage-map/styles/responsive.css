@@ -124,32 +124,17 @@
   .atlas-canvas {
     height: clamp(300px, 48dvh, 440px);
   }
-  .atlas-canvas-caption {
-    left: 17px;
-    top: 19px;
-    max-width: 85%;
-  }
   .atlas-canvas-caption span {
     font-size: 8px;
   }
   .atlas-canvas-caption p {
     font-size: 17px;
   }
-  .atlas-canvas-bottom {
-    left: 14px;
-    bottom: 15px;
-  }
   .atlas-zoom button {
     width: 42px;
   }
   .atlas-zoom > span:not(.atlas-control-divider) {
     min-width: 33px;
-  }
-  .atlas-minimap {
-    width: 72px;
-    height: 53px;
-    right: 13px;
-    bottom: 75px;
   }
   .atlas-legend {
     padding: 8px 13px;
@@ -253,4 +238,3 @@
     will-change: auto;
   }
 }
-

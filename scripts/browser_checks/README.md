@@ -1,11 +1,9 @@
-# Mortgage focus regression
+# Site browser regression
 
-Every pull request and push to main runs this journey in the Site checks workflow.
+Every pull request and push to main runs these journeys in the Site checks workflow.
 It runs against that checkout’s production build in a local Wrangler server,
 with independent Chromium contexts at desktop (1440×900), mobile CSS viewport
-(390×844), and short desktop (1280×720). It never calls the live site or remote
-services. A browser assertion or server-start failure fails the job. On failure,
-GitHub retains the report, screenshot and trace for seven days.
+(390×844), and short desktop (1280×720). Tests use local pages and assets. Record preview requests are intercepted with a valid, generated PCM WAV; no live media service is called. A browser assertion or server-start failure fails the job. GitHub retains `site-browser-evidence` for seven days: the report and homepage/collection screenshots on every run, plus failure screenshots and traces when an assertion fails.
 
 ## Local development or CI
 
@@ -49,3 +47,12 @@ These are Chromium layout and keyboard checks, not physical touch, Safari,
 screen-reader, corporate-network or production-browser coverage. Record the
 actual full source revision and run result in the PR. Running `--list` only
 checks discovery and is not a browser test pass.
+
+## Additional coverage
+
+- `mortgage_camera.spec.ts`: keyboard pan/zoom/Home, selected-concept centering, reader close, List → Map and expansion resize.
+- `records.spec.ts`: no autoplay or initial source, decoded audio with an advancing media clock, pause/resume, next/previous wrap, one audio element across section navigation, unavailable-preview feedback and recovery on another record. The generated twelve-second WAV tests actual browser media controls; it does **not** verify Apple CDN availability or the audio content of live previews.
+- `bookshelf.spec.ts`: real mouse movement and pointer capture, reordering without opening a dialog, Escape cancellation restoring order, arrow-key ordering and Enter/Escape focus restoration. Mouse gestures run at all three CSS viewports. Native touch semantics remain covered by `book_touch.test.mjs`; this is not a physical touchscreen test.
+- `home_layout.spec.ts`: eight unobscured navigation links, four-column/two-row mobile navigation, complete first-fold invitation and heading, no horizontal overflow, loaded hero/player/book artwork, ten records/books and expected shelf rows. Each viewport attaches first-fold, player and shelf screenshots after fonts/images are ready with reduced motion. These are asserted geometry/asset contracts with visual evidence, not pixel-by-pixel golden-image comparisons.
+
+New visual expectations require review against the actual design. Do not auto-accept screenshots as a passing baseline. Trace/screenshot retention supports diagnosis; it never substitutes for an executed assertion.
