@@ -6,16 +6,18 @@ The website is maintained through reviewed source changes. Substack hosts the cu
 
 Edit `content/newsletter_links.json`, the runtime input to `lib/publishing.ts`. Each entry has `slug`, `title`, ISO `date`, `kind` (`Essay`, `Note`, or `Letter`), `status` (`draft` or `published`) and a verified HTTPS `external_url`. Preserve the author’s approved title, date and destination. Add an entry only for an actual owner-approved article.
 
-- `/journal` lists visible article links.
+- `/journal` permanently redirects to the configured Substack publication, without an intermediate listing page. It returns 404 if no publication is configured.
 - `/journal/[slug]` redirects to the visible entry’s external article; it does not render an essay from local blocks.
-- `/feed.xml` includes visible entries and their external destinations.
-- The sitemap includes visible Journal routes.
+- `/feed.xml` includes visible entries and their external destinations; its channel link points directly to the publication.
+- The sitemap includes the homepage and Mortgage Map, omitting redirected Journal routes.
 - `lib/post_visibility.ts` filters drafts and future dates. Visibility is resolved at request time, not at Worker initialization.
 - `lib/newsletter_schema.ts` validates the same link-only records in the build and runtime: trimmed titles, unique kebab-case slugs, real `YYYY-MM-DD` dates, supported kind/status and HTTPS destinations on the configured provider origin. Unknown fields, including prose, are rejected. A build error names the record; runtime filtering removes malformed records and every conflicting duplicate without exposing them publicly.
 
 `content/posts.json` contains legacy, owner-approved essay text. It is not the current Journal source. Preserve that text and do not import it into client components or restore it to public pages as part of routine maintenance. A draft flag controls site visibility, not source-repository privacy.
 
 `content/profile.json` has the real `newsletterUrl` and profile links. Substack owns subscriber storage and email delivery. The website does not collect email addresses or send newsletters. There is no automatic feed-import or scheduled email job in this repository.
+
+The first three homepage navigation links open YouTube, the verified podcast destination and the newsletter directly in new tabs. Channel cards and footer links share those destinations. Newsletter links appear only when a publication is configured.
 
 ## Projects
 

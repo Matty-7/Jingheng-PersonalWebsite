@@ -161,9 +161,11 @@ export default function Home() {
           <BrandMark />
         </a>
         <div className="nav-links">
-          <a href="#youtube">YouTube</a>
-          <a href="#podcast">Podcast</a>
-          <Link href="/journal">Newsletter</Link>
+          <a href={channels.youtube.url} target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href={channels.podcast.url} target="_blank" rel="noopener noreferrer">Podcast</a>
+          {newsletterUrl ? (
+            <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">Newsletter</a>
+          ) : null}
           <a href="#projects">Projects</a>
           <a href="#records">Music</a>
           <a href="#films">Films</a>
@@ -273,11 +275,7 @@ export default function Home() {
                 >
                   Read on Substack
                 </a>
-              ) : (
-                <Link className="text-link" href="/journal">
-                  Read newsletters
-                </Link>
-              )}
+              ) : null}
             </article>
           </div>
         </section>
@@ -426,7 +424,7 @@ export default function Home() {
               <SocialIcon name="instagram" />
             </a>
             <a
-              href={profile.links.youtube}
+              href={channels.youtube.url}
               target="_blank"
               rel="noreferrer"
               aria-label="YouTube"
@@ -435,7 +433,7 @@ export default function Home() {
               <SocialIcon name="youtube" />
             </a>
             <a
-              href={profile.links.podcast}
+              href={channels.podcast.url}
               target="_blank"
               rel="noreferrer"
               aria-label="Talking Laughs podcast"
@@ -453,15 +451,7 @@ export default function Home() {
               >
                 <SocialIcon name="substack" />
               </a>
-            ) : (
-              <Link
-                href="/journal"
-                aria-label="Newsletters"
-                title="Newsletters"
-              >
-                <SocialIcon name="substack" />
-              </Link>
-            )}
+            ) : null}
           </nav>
           <p className="footer-small">JINGHENG HUAN</p>
         </footer>
