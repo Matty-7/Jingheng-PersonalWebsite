@@ -70,3 +70,12 @@ Normal reader, List, Paths, Compare and the mobile concept directory use documen
 `content/mortgage_context.ts` adds public date/quote context, original versus remaining maturity, nominal tenor labels, curve nodes and interpolation, constant-maturity references, Term SOFR, SOFR futures strips and Treasury STRIPS. Dates and Curves comparisons complement the existing maturity and currency tables. Tenor examples belong to named sources and measures; they are not universal provider or currency grids. Unverified internal abbreviations and employer-specific schemas are excluded.
 
 New typed, sourced and conditional relationships join SMM/CPR and PSA/WALA to prepayment analysis, and benchmark matching to nominal yield spreads. The analytical-connectivity test now traverses `mortgage_relationships` separately from reading links, including a bridge-removal case whose isolated nodes still have neighbors. One connected component is a coverage check, not proof that every financial relationship has been independently verified.
+
+
+## Interaction state and stylesheet ownership
+
+`lib/mortgage_state.ts` owns view, reader, history, hierarchy filters, paths and comparison selection through semantic reducer actions. History traversal moves the existing cursor without recording another visit; a new selection after Back replaces only the forward branch. The component retains camera/pointer handling, URL and clipboard effects, and DOM focus/scroll. `useAtlasExpansion` continues to own modal containment and focus restoration. A valid concept URL opens the concept title in Connections.
+
+Escape closes a visible search-results panel first, preserving the search text and focus. Subsequent Escape closes the reader, then the expanded map. Empty queries have no results panel and retain the existing reader/expanded sequence. The shared browser journey checks matching, empty and no-result searches in all three viewports.
+
+`mortgage_map.css` is the ordered entry point for seven sections in `styles/`: foundation/paths, navigation, canvas, reader/lists, responsive rules, expanded canvas and comparisons. Their concatenation preserves the previous stylesheet byte-for-byte, including media queries and later overrides. Keep that order when editing; splitting these files does not introduce cascade layers or a new visual system. Global homepage styling remains separately owned.

@@ -39,7 +39,9 @@ Do not start a different browser.
 
 The journey resets to overview and checks retained reader content, stable exit
 focus, restored body overflow, concept/history/section focus in normal and
-expanded modes, keyboard containment, and two-stage Escape. Focus must remain
+expanded modes, keyboard containment, and staged Escape. Search results consume the first Escape without closing the
+reader or expanded map; matching results, no results and an empty query are
+covered in normal and expanded layouts. Focus must remain
 on the expected control across several samples, so a delayed competing effect
 cannot pass just by restoring focus momentarily. DOM evaluation is read-only.
 

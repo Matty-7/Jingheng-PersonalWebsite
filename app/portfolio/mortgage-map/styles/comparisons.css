@@ -1,0 +1,290 @@
+.atlas-comparison {
+  padding: 0 26px 28px;
+  scroll-behavior: smooth;
+}
+.atlas-comparison-tabs {
+  display: flex;
+  gap: 0 24px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--atlas-line);
+  background: var(--atlas-paper);
+  z-index: 1;
+}
+.atlas-comparison-tabs button {
+  padding: 20px 2px 16px;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #65705f;
+  font-size: 13px;
+}
+.atlas-comparison-tabs button[aria-pressed='true'] {
+  color: var(--atlas-rust);
+  border-bottom-color: var(--atlas-rust);
+}
+.atlas-comparison-heading {
+  padding: 30px 0 24px;
+  animation: atlas-appear 200ms ease-out;
+}
+.atlas-comparison-heading h2 {
+  font:
+    normal clamp(26px, 2.5vw, 37px)/1.16 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+  margin: 11px 0 13px;
+  max-width: 700px;
+}
+.atlas-comparison-heading p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #526055;
+  max-width: 750px;
+  margin: 0;
+}
+.atlas-table-scroll {
+  overflow: auto;
+  border: 1px solid var(--atlas-line);
+}
+.atlas-comparison-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.atlas-comparison-table th,
+.atlas-comparison-table td {
+  padding: 17px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--atlas-line);
+}
+.atlas-comparison-table thead th {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  background: #e9edde;
+  color: #526055;
+  padding: 12px 16px;
+}
+.atlas-comparison-table th:first-child {
+  width: 18%;
+}
+.atlas-comparison-table tbody th {
+  background: #f1efdf;
+  font:
+    normal 19px/1.25 Georgia,
+    serif;
+}
+.atlas-comparison-table th button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  color: var(--atlas-ink);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0;
+  font: inherit;
+}
+.atlas-comparison-table th button svg {
+  flex-shrink: 0;
+  margin-top: 5px;
+  color: var(--atlas-rust);
+}
+.atlas-comparison-table td {
+  color: #526055;
+}
+.atlas-comparison-table tbody tr:hover td,
+.atlas-comparison-table tr.is-selected td {
+  background: #f4edd9;
+}
+.atlas-comparison-table tr.is-selected th {
+  background: #e8dfc5;
+}
+.atlas-comparison-table tr:last-child td,
+.atlas-comparison-table tr:last-child th {
+  border-bottom: 0;
+}
+.atlas-comparison-note {
+  border-left: 2px solid var(--atlas-rust);
+  padding: 2px 0 2px 18px;
+  margin-top: 24px;
+  max-width: 760px;
+}
+.atlas-comparison-note span {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--atlas-rust);
+}
+.atlas-comparison-note p {
+  margin: 9px 0 0;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.atlas-comparison ~ .atlas-legend {
+  display: none;
+}
+@media (min-width: 801px) {
+  .atlas-comparison-table td:nth-child(5) {
+    font-size: 11px;
+  }
+}
+@media (max-width: 800px) {
+  .atlas-graph-shell .atlas-canvas-caption {
+    padding: 10px 16px;
+    min-height: 48px;
+  }
+  .atlas-canvas-caption .atlas-scale-hint {
+    max-width: 105px;
+    font-size: 9px;
+  }
+  .atlas-canvas-dock {
+    padding: 10px 12px;
+    gap: 5px;
+  }
+  .atlas-canvas-dock .atlas-minimap {
+    width: 62px;
+    height: 40px;
+  }
+  .atlas-canvas-dock .atlas-pan-hint {
+    display: none;
+  }
+  .atlas-canvas-dock .atlas-zoom button {
+    width: 36px;
+  }
+  .atlas-view-toggle {
+    width: 100%;
+  }
+  .atlas-view-toggle button {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 6px;
+  }
+  .atlas-view-toggle button svg {
+    width: 14px;
+  }
+  .atlas-comparison {
+    padding: 0 16px 24px;
+  }
+  .atlas-comparison-tabs {
+    gap: 0 18px;
+  }
+  .atlas-comparison-tabs button {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .atlas-comparison-heading {
+    padding: 24px 0 20px;
+  }
+  .atlas-comparison-heading h2 {
+    font-size: 29px;
+  }
+  .atlas-comparison-table {
+    min-width: 0;
+    display: block;
+  }
+  .atlas-comparison-table caption {
+    display: none;
+  }
+  .atlas-comparison-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .atlas-comparison-table tbody,
+  .atlas-comparison-table tr {
+    display: block;
+  }
+  .atlas-comparison-table tbody th {
+    display: block;
+    width: auto;
+    padding: 15px;
+    border-top: 1px solid var(--atlas-line);
+  }
+  .atlas-comparison-table td {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    border: 0;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+  .atlas-comparison-table td::before {
+    content: attr(data-label);
+    font-size: 9px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #717b68;
+  }
+  .atlas-comparison-table td:last-child {
+    padding-bottom: 20px;
+  }
+  .atlas-math {
+    font-size: 15px;
+  }
+  .atlas-legend {
+    gap: 12px;
+    padding: 10px 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-graph-shell .atlas-world {
+    transition: none;
+  }
+  .atlas-node,
+  .atlas-relation,
+  .atlas-reader,
+  .atlas-comparison-heading {
+    animation: none;
+  }
+  .atlas-comparison {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .atlas-comparison-table tbody th:first-child {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.atlas-spread-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+}
+.atlas-spread-filters button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #c7bea9;
+  border-radius: 20px;
+  background: transparent;
+  color: #39443b;
+  font-size: 12px;
+  cursor: pointer;
+}
+.atlas-spread-filters button[aria-pressed='true'] {
+  background: #273a30;
+  color: #fff6df;
+  border-color: #273a30;
+}
+.atlas-spread-filters button:focus-visible {
+  outline: 2px solid #945127;
+  outline-offset: 3px;
+}
+.atlas-spread-filters > output {
+  margin-left: auto;
+  color: #655f53;
+  font-size: 12px;
+}

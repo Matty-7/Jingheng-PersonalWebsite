@@ -93,11 +93,58 @@ export async function check_mortgage_focus_surface(
   await expect_focus('button[aria-label="Expand map"]');
   assert.equal(await frame.getByRole('dialog').count(), 0);
   assert.equal(await overflow(), original_overflow);
+  for (const expanded of [false, true]) {
+    for (const [query, focus_result] of [
+      ['SMM', false],
+      ['SMM', true],
+      ['zzzz_nomatch', false],
+      ['', false],
+    ]) {
+      await choose('CPR');
+      if (expanded) {
+        await button('Expand map').press('Enter');
+        await expect_focus('button[aria-label="Exit expanded map"]');
+      }
+      const search = frame.getByRole('searchbox', {
+        name: 'Search mortgage concepts',
+      });
+      await search.fill(query);
+      if (query) {
+        await frame
+          .locator('#atlas-search-results')
+          .waitFor({ state: 'visible' });
+        if (focus_result) {
+          await search.press('Tab');
+          await expect_focus('#atlas-search-results button');
+          await frame
+            .locator('#atlas-search-results button:focus')
+            .press('Escape');
+        } else await search.press('Escape');
+        await frame
+          .locator('#atlas-search-results')
+          .waitFor({ state: 'detached' });
+        await expect_focus('input[type="search"]');
+        assert.equal(await reader.locator('h2').innerText(), 'CPR');
+        assert.equal(await frame.getByRole('dialog').count(), expanded ? 1 : 0);
+        assert.equal(await search.evaluate((el) => el.value), query);
+      }
+      await search.press('Escape');
+      await reader.waitFor({ state: 'detached' });
+      assert.equal(await frame.getByRole('dialog').count(), expanded ? 1 : 0);
+      if (expanded) {
+        assert.equal(await overflow(), 'hidden');
+        await frame.locator(':focus').press('Escape');
+        await expect_focus('button[aria-label="Expand map"]');
+      }
+      assert.equal(await overflow(), original_overflow);
+    }
+  }
   return {
     viewport,
     exit_focus: 'PASS',
     reader_navigation: 'PASS',
     focus_containment: 'PASS',
     escape: 'PASS',
+    search_escape: 'PASS (matching, no results, empty query)',
   };
 }

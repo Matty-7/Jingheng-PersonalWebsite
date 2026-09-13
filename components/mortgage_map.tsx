@@ -4,7 +4,7 @@
 // exposes the same content without spatial interaction.
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { MortgageCheck } from './mortgage_check';
 import { MortgageRelations } from './mortgage_relations';
 import { MortgageNavigator } from './mortgage_navigator';
@@ -55,14 +55,9 @@ import type { Camera, GraphNode } from '@/lib/mortgage_graph';
 import { atlas_comparisons } from '@/content/atlas_extensions';
 import { spread_groups } from '@/content/mortgage_spreads';
 import { mechanism_models } from '@/content/mortgage_mechanisms';
-import {
-  concept_hash,
-  read_concept_hash,
-  visit_concept,
-} from '@/lib/mortgage_reading';
-import type { ReadingTrail } from '@/lib/mortgage_reading';
+import { concept_hash, read_concept_hash } from '@/lib/mortgage_reading';
+import { initial_mortgage_state, mortgage_reducer } from '@/lib/mortgage_state';
 
-type View = 'map' | 'connections' | 'list' | 'compare' | 'paths';
 const branch_index = new Map(
   mortgage_branches.map((branch) => [branch.id, branch]),
 );
@@ -72,8 +67,23 @@ export function MortgageMap({
 }: {
   formulas: Record<string, { html: string; tex: string; variables: string }>;
 }) {
-  const [comparison_id, set_comparison_id] = useState('spreads');
-  const [spread_group, set_spread_group] = useState('all');
+  const [state, dispatch] = useReducer(
+    mortgage_reducer,
+    initial_mortgage_state,
+  );
+  const {
+    comparison_id,
+    spread_group,
+    depth,
+    branch_filter,
+    topic_filter,
+    view,
+    selected,
+    reader_open,
+    reader_section,
+    trail,
+    path_id,
+  } = state;
   const comparison = atlas_comparisons.find((c) => c.id === comparison_id)!;
   const active_spread_group = spread_groups.find((g) => g.id === spread_group)!;
   const comparison_rows =
@@ -82,22 +92,11 @@ export function MortgageMap({
           active_spread_group.concepts.includes(r.id),
         )
       : comparison.rows;
-  const [depth, set_depth] = useState(0);
-  const [branch_filter, set_branch_filter] = useState('all');
-  const [topic_filter, set_topic_filter] = useState('all');
-  const [view, set_view] = useState<View>('map');
-  const [selected, set_selected] = useState<string | null>(null);
-  const [reader_open, set_reader_open] = useState(false);
-  const [reader_section, set_reader_section] = useState<
-    'title' | 'connections'
-  >('title');
-  const [trail, set_trail] = useState<ReadingTrail>({ ids: [], cursor: -1 });
   const [location_ready, set_location_ready] = useState(false);
   const [link_status, set_link_status] = useState('');
   const [query, set_query] = useState('');
   const [search_open, set_search_open] = useState(false);
   const [search_cursor, set_search_cursor] = useState(0);
-  const [path_id, set_path_id] = useState('');
   const [camera, set_camera] = useState<Camera>({ x: 0, y: 0, scale: 0.5 });
   const [size, set_size] = useState({ width: 1000, height: 650 });
   const [is_dragging, set_is_dragging] = useState(false);
@@ -174,10 +173,7 @@ export function MortgageMap({
         new Set(concept_index.keys()),
       );
       if (id) {
-        set_selected(id);
-        set_trail((current) => visit_concept(current, id));
-        set_reader_open(true);
-        set_view('connections');
+        dispatch({ type: 'restore_concept', id });
       }
     };
     const frame = window.requestAnimationFrame(() => {
@@ -250,36 +246,34 @@ export function MortgageMap({
     }
   }, [reader_open, selected, reader_section]);
 
-  function choose_concept(id: string, trigger?: HTMLButtonElement) {
-    if (!concept_index.has(id)) return;
-    set_reader_section('title');
-    set_trail((current) => visit_concept(current, id));
+  function prepare_concept(id: string) {
+    const node = positions.get(id);
+    const layout_is_ready = depth === 2 && !!node;
     set_link_status('');
-    if (trigger) return_focus.current = trigger;
+    set_search_open(false);
+    set_query('');
     if (view === 'map') {
-      const node = positions.get(id);
-      const layout_is_ready = depth === 2 && node;
       pending_focus.current = layout_is_ready ? null : id;
-      set_depth(2);
-      if (!layout_is_ready) {
-        const next = concept_index.get(id)!;
-        set_branch_filter(next.branch);
-        set_topic_filter(next.topic);
-      }
       if (layout_is_ready)
         set_camera({
-          x: size.width / 2 - node.x,
-          y: size.height / 2 - node.y,
+          x: size.width / 2 - node!.x,
+          y: size.height / 2 - node!.y,
           scale: 1,
         });
     }
-    set_selected(id);
-    set_reader_open(true);
-    set_search_open(false);
-    set_query('');
+    return layout_is_ready;
+  }
+  function choose_concept(id: string, trigger?: HTMLButtonElement) {
+    if (!concept_index.has(id)) return;
+    if (trigger) return_focus.current = trigger;
+    dispatch({
+      type: 'select_concept',
+      id,
+      preserve_map_context: prepare_concept(id),
+    });
   }
   function close_reader() {
-    set_reader_open(false);
+    dispatch({ type: 'close_reader' });
     const target = return_focus.current?.isConnected
       ? return_focus.current
       : (canvas_ref.current ?? search_ref.current);
@@ -289,7 +283,7 @@ export function MortgageMap({
   useEffect(() => {
     if (!reader_open && !expanded) return;
     const on_escape = (event: globalThis.KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && !event.defaultPrevented) {
         if (reader_open) close_reader();
         else set_expanded(false);
       }
@@ -301,8 +295,11 @@ export function MortgageMap({
   function follow_history(offset: number) {
     const cursor = trail.cursor + offset;
     if (cursor < 0 || cursor >= trail.ids.length) return;
-    set_trail({ ...trail, cursor });
-    choose_concept(trail.ids[cursor]);
+    dispatch({
+      type: 'follow_history',
+      offset,
+      preserve_map_context: prepare_concept(trail.ids[cursor]),
+    });
   }
   async function copy_concept_link() {
     try {
@@ -324,13 +321,7 @@ export function MortgageMap({
       });
   }
   function overview() {
-    set_view('map');
-    set_depth(0);
-    set_branch_filter('all');
-    set_topic_filter('all');
-    set_path_id('');
-    set_selected(null);
-    set_reader_open(false);
+    dispatch({ type: 'overview' });
     pending_focus.current = null;
     set_camera(
       fit_camera(
@@ -341,18 +332,10 @@ export function MortgageMap({
     );
   }
   function open_branch(id: string) {
-    set_view('map');
-    set_branch_filter(id);
-    set_topic_filter('all');
-    set_depth(1);
-    set_reader_open(false);
-    set_selected(null);
-    set_path_id('');
+    dispatch({ type: 'open_branch', id });
   }
   function choose_path(id: string) {
-    set_path_id(id);
-    set_view('paths');
-    set_reader_open(false);
+    dispatch({ type: 'choose_path', id });
     requestAnimationFrame(() =>
       paths_ref.current
         ?.querySelector<HTMLElement>('h2')
@@ -363,12 +346,7 @@ export function MortgageMap({
     if (node.kind === 'concept') choose_concept(node.id, trigger);
     else if (node.kind === 'root') overview();
     else if (node.kind === 'topic') {
-      set_view('map');
-      set_branch_filter(node.branch!);
-      set_topic_filter(node.id);
-      set_depth(2);
-      set_selected(null);
-      set_reader_open(false);
+      dispatch({ type: 'open_topic', id: node.id, branch: node.branch! });
     } else open_branch(node.branch!);
   }
   function key_canvas(event: KeyboardEvent<HTMLDivElement>) {
@@ -455,6 +433,8 @@ export function MortgageMap({
     if (!pointers.current.size) set_is_dragging(false);
   }
   function search_keys(event: KeyboardEvent<HTMLInputElement>) {
+    dismiss_search(event);
+    if (event.defaultPrevented) return;
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       event.preventDefault();
       set_search_open(true);
@@ -470,7 +450,15 @@ export function MortgageMap({
     } else if (event.key === 'Enter' && results[search_cursor]) {
       event.preventDefault();
       choose_concept(results[search_cursor].id);
-    } else if (event.key === 'Escape') set_search_open(false);
+    }
+  }
+  function dismiss_search(event: KeyboardEvent<HTMLElement>) {
+    if (event.key === 'Escape' && search_open && query) {
+      event.preventDefault();
+      event.stopPropagation();
+      search_ref.current?.focus({ preventScroll: true });
+      set_search_open(false);
+    }
   }
   const visible_topics = mortgage_topics.filter(
     (t) => branch_filter === 'all' || t.branch === branch_filter,
@@ -572,6 +560,7 @@ export function MortgageMap({
                 <button
                   key={node.id}
                   className={index === search_cursor ? 'is-current' : ''}
+                  onKeyDown={dismiss_search}
                   onClick={(e) => choose_concept(node.id, e.currentTarget)}
                 >
                   <span>{node.title}</span>
@@ -588,44 +577,37 @@ export function MortgageMap({
         <div className="atlas-view-toggle" aria-label="Reading view">
           <button
             aria-pressed={view === 'paths'}
-            onClick={() => {
-              set_view('paths');
-              set_reader_open(false);
-            }}
+            onClick={() => dispatch({ type: 'change_view', view: 'paths' })}
           >
             <Route size={16} />
             <span>Paths</span>
           </button>
           <button
             aria-pressed={view === 'compare'}
-            onClick={() => {
-              set_view('compare');
-              set_reader_open(false);
-            }}
+            onClick={() => dispatch({ type: 'change_view', view: 'compare' })}
           >
             <Table2 size={16} />
             <span>Compare</span>
           </button>
-          <button aria-pressed={view === 'map'} onClick={() => set_view('map')}>
+          <button
+            aria-pressed={view === 'map'}
+            onClick={() => dispatch({ type: 'change_view', view: 'map' })}
+          >
             <Network size={16} />
             <span>Map</span>
           </button>
           <button
             aria-pressed={view === 'connections'}
-            onClick={() => {
-              if (!selected) {
-                set_selected('prepayments');
-                set_trail((current) => visit_concept(current, 'prepayments'));
-              }
-              set_view('connections');
-            }}
+            onClick={() =>
+              dispatch({ type: 'change_view', view: 'connections' })
+            }
           >
             <ArrowRight size={16} />
             <span>Connections</span>
           </button>
           <button
             aria-pressed={view === 'list'}
-            onClick={() => set_view('list')}
+            onClick={() => dispatch({ type: 'change_view', view: 'list' })}
           >
             <List size={16} />
             <span>List</span>
@@ -640,13 +622,7 @@ export function MortgageMap({
               <button
                 key={label}
                 aria-pressed={depth === i && view === 'map'}
-                onClick={() => {
-                  set_view('map');
-                  set_depth(i);
-                  set_topic_filter('all');
-                  set_selected(null);
-                  set_reader_open(false);
-                }}
+                onClick={() => dispatch({ type: 'set_depth', depth: i })}
               >
                 {label}
               </button>
@@ -656,15 +632,9 @@ export function MortgageMap({
             <span>Focus</span>
             <select
               value={branch_filter}
-              onChange={(e) => {
-                const id = e.target.value;
-                set_branch_filter(id);
-                set_topic_filter('all');
-                set_selected(null);
-                set_reader_open(false);
-                if (view !== 'list') set_view('map');
-                if (id !== 'all') set_depth(1);
-              }}
+              onChange={(e) =>
+                dispatch({ type: 'filter_domain', id: e.target.value })
+              }
               aria-label="Focus a domain"
             >
               <option value="all">All domains</option>
@@ -782,8 +752,7 @@ export function MortgageMap({
                     key={item.id}
                     aria-pressed={comparison_id === item.id}
                     onClick={() => {
-                      set_comparison_id(item.id);
-                      set_reader_open(false);
+                      dispatch({ type: 'choose_comparison', id: item.id });
                     }}
                   >
                     {item.id === 'spreads'
@@ -815,8 +784,7 @@ export function MortgageMap({
                       key={group.id}
                       aria-pressed={spread_group === group.id}
                       onClick={() => {
-                        set_spread_group(group.id);
-                        set_reader_open(false);
+                        dispatch({ type: 'filter_spreads', id: group.id });
                       }}
                     >
                       {group.title}
@@ -935,13 +903,9 @@ export function MortgageMap({
                   open_branch={open_branch}
                   overview={overview}
                   choose_concept={choose_concept}
-                  open_topic={(id, branch) => {
-                    set_branch_filter(branch);
-                    set_topic_filter(id);
-                    set_depth(2);
-                    set_selected(null);
-                    set_reader_open(false);
-                  }}
+                  open_topic={(id, branch) =>
+                    dispatch({ type: 'open_topic', id, branch })
+                  }
                 />
               )}
               <div className="atlas-canvas-caption">
@@ -1069,8 +1033,7 @@ export function MortgageMap({
                           aria-label={`Read all ${edge.relationships.length} relationships between ${concept_index.get(edge.source)?.title} and ${concept_index.get(edge.target)?.title}`}
                           onClick={(event) => {
                             return_focus.current = event.currentTarget;
-                            set_reader_open(true);
-                            set_reader_section('connections');
+                            dispatch({ type: 'read_connections' });
                           }}
                         >
                           {edge.label}
@@ -1327,8 +1290,7 @@ export function MortgageMap({
               <div className="atlas-reader-path">
                 <button
                   onClick={() => {
-                    set_view('paths');
-                    set_reader_open(false);
+                    dispatch({ type: 'change_view', view: 'paths' });
                   }}
                 >
                   <Route size={14} /> {path.title}
@@ -1393,8 +1355,7 @@ export function MortgageMap({
               relations={relations}
               choose_concept={choose_concept}
               explore={() => {
-                set_view('connections');
-                set_reader_section('connections');
+                dispatch({ type: 'read_connections', change_view: true });
               }}
             />
             <MortgageCheck
