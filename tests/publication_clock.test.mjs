@@ -16,7 +16,7 @@ test('publication visibility follows request time after a zero-clock Worker star
   const fixtures = [
     ...posts,
     { ...posts[0], slug: 'private-draft', status: 'draft', date: '2026-09-01' },
-    { ...posts[0], slug: 'scheduled', status: 'published', date: '2026-09-10' },
+    { ...posts[0], slug: 'scheduled', status: 'published', date: '2026-09-14' },
   ];
   let now = 0;
   const exports = {};
@@ -47,14 +47,14 @@ test('publication visibility follows request time after a zero-clock Worker star
     },
   });
   assert.equal(exports.get_visible_posts().length, 0);
-  now = Date.parse('2026-09-09T12:00:00Z');
+  now = Date.parse('2026-09-13T12:00:00Z');
   assert.deepEqual(
     exports.get_visible_posts().map((post) => post.slug),
     posts
       .filter((post) => post.status === 'published')
       .map((post) => post.slug),
   );
-  now = Date.parse('2026-09-10T00:00:00Z');
+  now = Date.parse('2026-09-14T00:00:00Z');
   assert.equal(exports.get_visible_posts()[0].slug, 'scheduled');
   assert.ok(
     !exports.get_visible_posts().some((post) => post.slug === 'private-draft'),

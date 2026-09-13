@@ -72,6 +72,7 @@ export function MortgageCanvas({
   } = controls;
   const concept = selected ? concept_index.get(selected) : undefined;
   const compact_overview = view === 'map' && depth === 0 && camera.scale < 0.85;
+  const show_navigator = view === 'map' && (depth > 0 || camera.scale < 0.55);
   const relations = useMemo(
     () => (selected ? study_edges(selected) : []),
     [selected],
@@ -88,36 +89,41 @@ export function MortgageCanvas({
 
   return (
     <div className="atlas-graph-shell">
-      {view === 'map' && (depth > 0 || camera.scale < 0.55) && (
+      {show_navigator && (
         <MortgageNavigator
+          key={`${depth === 0 ? 'overview' : 'detail'}:${branch_filter}:${topic_filter}`}
           branch={branch_filter}
           topic={topic_filter}
+          expanded_by_default={depth === 0 && camera.scale < 0.55}
+          show_scale_hint={camera.scale < 0.55}
           open_branch={open_branch}
           overview={overview}
           choose_concept={choose_concept}
           open_topic={(id, branch) => open_topic(id, branch)}
         />
       )}
-      <div className="atlas-canvas-caption">
-        <p>
-          {view === 'connections'
-            ? concept?.title
-            : branch_filter === 'all'
-              ? depth === 0
-                ? 'All domains'
-                : depth === 1
-                  ? 'All topics'
-                  : 'All concepts'
-              : topic_filter === 'all'
-                ? branch_index.get(branch_filter)?.title
-                : topic_index.get(topic_filter)?.title}
-        </p>
-        {camera.scale < 0.55 && (
-          <small className="atlas-scale-hint">
-            Zoom in to read, or switch to List.
-          </small>
-        )}
-      </div>
+      {!show_navigator && (
+        <div className="atlas-canvas-caption">
+          <p>
+            {view === 'connections'
+              ? concept?.title
+              : branch_filter === 'all'
+                ? depth === 0
+                  ? 'All domains'
+                  : depth === 1
+                    ? 'All topics'
+                    : 'All concepts'
+                : topic_filter === 'all'
+                  ? branch_index.get(branch_filter)?.title
+                  : topic_index.get(topic_filter)?.title}
+          </p>
+          {camera.scale < 0.55 && (
+            <small className="atlas-scale-hint">
+              Zoom in to read, or switch to List.
+            </small>
+          )}
+        </div>
+      )}
       <div
         ref={canvas_ref}
         className={`atlas-canvas ${is_dragging ? 'is-dragging' : ''}`}

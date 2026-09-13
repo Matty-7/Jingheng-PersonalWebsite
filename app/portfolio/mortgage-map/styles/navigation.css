@@ -233,14 +233,8 @@
 }
 .atlas-start {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 4px 16px;
-  padding: 4px 24px;
-  border-top: 1px solid var(--atlas-line);
   font-size: 0.875rem;
-  color: #526055;
 }
 .atlas-start button {
   display: inline-flex;
@@ -289,4 +283,36 @@
   padding: 0 28px 0 12px;
   font-size: 12px;
   max-width: 240px;
+}
+.atlas-map-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 16px;
+  padding: 4px 24px;
+  border-top: 1px solid var(--atlas-line);
+}
+.atlas-disclosure {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--atlas-ink);
+  font-size: 14px !important;
+  text-align: left;
+}
+.atlas-disclosure[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+.atlas-settings-state {
+  font-size: 13px;
+  color: #526055;
+}
+.atlas-options[hidden],
+.atlas-browse-panel[hidden] {
+  display: none;
 }

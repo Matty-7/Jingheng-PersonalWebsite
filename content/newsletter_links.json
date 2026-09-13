@@ -1,10 +1,42 @@
 [
   {
-    "slug": "something-of-my-own",
-    "title": "Something of My Own",
-    "date": "2026-09-07",
+    "date": "2026-09-12",
+    "external_url": "https://jinghenghuan.substack.com/p/september-11-in-new-york",
     "kind": "Essay",
+    "slug": "september-11-in-new-york",
     "status": "published",
-    "external_url": "https://jinghenghuan.substack.com/p/something-of-my-own"
+    "title": "September 11 in New York"
+  },
+  {
+    "date": "2026-09-12",
+    "external_url": "https://jinghenghuan.substack.com/p/which-rate",
+    "kind": "Essay",
+    "slug": "which-rate",
+    "status": "published",
+    "title": "Which Rate?"
+  },
+  {
+    "date": "2026-09-10",
+    "external_url": "https://jinghenghuan.substack.com/p/from-the-stands",
+    "kind": "Essay",
+    "slug": "from-the-stands",
+    "status": "published",
+    "title": "From the Stands"
+  },
+  {
+    "date": "2026-09-09",
+    "external_url": "https://jinghenghuan.substack.com/p/across-the-water",
+    "kind": "Essay",
+    "slug": "across-the-water",
+    "status": "published",
+    "title": "Across the Water"
+  },
+  {
+    "date": "2026-09-08",
+    "external_url": "https://jinghenghuan.substack.com/p/something-of-my-own",
+    "kind": "Essay",
+    "slug": "something-of-my-own",
+    "status": "published",
+    "title": "Something of My Own"
   }
 ]

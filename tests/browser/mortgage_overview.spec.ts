@@ -63,6 +63,12 @@ test('overview offers readable domains without zooming', async ({
       .getByRole('button', { name: 'Explore Cash flows & value', exact: true })
       .click();
   }
+  const browse = page.getByRole('button', {
+    name: 'Browse topics',
+    exact: true,
+  });
+  if ((await browse.getAttribute('aria-expanded')) === 'false')
+    await browse.click();
   await expect(page.locator('.atlas-browse-question')).toHaveText(
     'How does future money become today’s value?',
   );

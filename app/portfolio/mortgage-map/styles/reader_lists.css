@@ -219,7 +219,17 @@
 }
 .atlas-browse {
   border-bottom: 1px solid var(--atlas-line);
-  padding: 12px 18px 16px;
+  padding: 6px 18px;
+}
+.atlas-browse-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 16px;
+}
+.atlas-browse-panel {
+  padding-bottom: 10px;
 }
 .atlas-browse-trail {
   display: flex;
@@ -233,6 +243,7 @@
   border: 0;
   color: #476043;
   padding: 8px 0;
+  min-height: 44px;
   font: inherit;
   cursor: pointer;
   text-decoration: underline;
