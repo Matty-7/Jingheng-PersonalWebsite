@@ -39,7 +39,6 @@ const structuredData = (html) =>
 
 for (const path of [
   '/',
-  '/journal',
   '/portfolio/mortgage-map',
 ]) {
   const { response, body } = await read(path);
@@ -82,12 +81,6 @@ for (const path of [
       ),
     );
     assert.ok(body.includes('also known as Matty Huan'));
-  } else if (path === '/journal') {
-    for (const post of published) {
-      assert.ok(body.includes(`href="${post.external_url}"`));
-      assert.ok(body.includes(post.title));
-    }
-    assert.ok(!body.includes('href="/journal/'));
   }
   for (const post of archived_posts) {
     assert.ok(!body.includes(post.blocks[0].text), 'Archived prose must not be rendered');
@@ -96,6 +89,11 @@ for (const path of [
     }
   }
 }
+const journal = await read('/journal');
+assert.equal(journal.response.status, 308);
+assert.equal(journal.response.headers.get('location'), profile.newsletterUrl);
+assert.ok(!journal.body.includes('journal-entries'));
+
 for (const post of published) {
   const { response, body } = await read(`/journal/${post.slug}`);
   assert.equal(response.status, 308, post.slug);
@@ -106,6 +104,7 @@ for (const post of published) {
 const feed = await read('/feed.xml');
 assert.equal(feed.response.status, 200);
 assert.ok(feed.response.headers.get('content-type')?.includes('xml'));
+assert.ok(feed.body.includes(`<link>${profile.newsletterUrl}</link>`));
 assert.equal([...feed.body.matchAll(/<item>/g)].length, published.length);
 for (const post of published) {
   assert.ok(feed.body.includes(`<link>${post.external_url}</link>`));
@@ -131,7 +130,6 @@ assert.deepEqual(
   urls,
   [
     `${canonical}/`,
-    `${canonical}/journal`,
     `${canonical}/portfolio/mortgage-map`,
   ].sort((a, b) => a.localeCompare(b)),
 );

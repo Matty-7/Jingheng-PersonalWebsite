@@ -100,10 +100,14 @@ test('RSS matches the published archive without prose; sitemap lists internal la
   const feed = load_module('app/feed.xml/route.ts', {
     '@/lib/publishing': { get_visible_posts: visible },
     '@/content/profile.json': {
-      default: { siteUrl: 'https://www.jinghenghuan.com' },
+      default: {
+        siteUrl: 'https://www.jinghenghuan.com',
+        newsletterUrl: 'https://jinghenghuan.substack.com',
+      },
     },
   });
   const body = await feed.GET().text();
+  assert.ok(body.includes('<link>https://jinghenghuan.substack.com</link>'));
   assert.equal([...body.matchAll(/<item>/g)].length, visible().length);
   for (const post of visible())
     assert.ok(body.includes(`<link>${post.external_url}</link>`));
@@ -117,7 +121,6 @@ test('RSS matches the published archive without prose; sitemap lists internal la
     JSON.stringify(sitemap.default().map((entry) => entry.url)),
     JSON.stringify([
       'https://www.jinghenghuan.com/',
-      'https://www.jinghenghuan.com/journal',
       'https://www.jinghenghuan.com/portfolio/mortgage-map',
     ]),
   );

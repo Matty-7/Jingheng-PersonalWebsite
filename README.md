@@ -1,6 +1,6 @@
 # Jingheng Huan
 
-Jingheng's English personal website: selected work, YouTube, Talking Laughs, a journal, and an illustrated living room with ten records, ten films, and ten books.
+Jingheng's English personal website: selected work, direct links to YouTube, Talking Laughs and Substack, and an illustrated living room with ten records, ten films, and ten books.
 
 Visit **[www.jinghenghuan.com](https://www.jinghenghuan.com/)**.
 
