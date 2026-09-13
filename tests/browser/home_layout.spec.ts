@@ -54,7 +54,10 @@ test('home keeps navigation, hero invitation and collection artwork visible', as
         document.documentElement.clientWidth,
     );
   expect(await overflow()).toBe(0);
-  await expect_loaded_images(page, '.arrival img');
+  // Reduced motion deliberately hides lazy decorative layers. Verify the
+  // visible artwork and the disabled effects rather than requiring hidden loads.
+  await expect_loaded_images(page, '.arrival .room-background');
+  await expect(page.locator('.room-effects')).toHaveCSS('display', 'none');
   await test_info.attach('home-first-fold', {
     body: await page.screenshot({ animations: 'disabled' }),
     contentType: 'image/png',

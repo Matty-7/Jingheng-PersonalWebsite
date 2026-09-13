@@ -10,6 +10,20 @@ test('camera pans, zooms, fits and recenters after reader and view changes', asy
     page.getByRole('complementary', { name: 'Concept reader' }),
   ).toBeVisible();
   await page.getByRole('button', { name: 'Map', exact: true }).click();
+  // A direct link restores Connections without changing the overview depth.
+  // Select through the real search flow to reveal the concept in the hierarchy.
+  const search = page.getByRole('searchbox', {
+    name: 'Search mortgage concepts',
+  });
+  await search.fill('CPR');
+  await expect(
+    page.getByRole('button', {
+      name: 'CPR Prepayment / Measuring a speed',
+      exact: true,
+    }),
+  ).toBeVisible();
+  await search.press('Enter');
+  await expect(page.locator('[data-node-id="cpr"]')).toBeVisible();
   const canvas = page.getByRole('application');
   const transform = () =>
     page.locator('.atlas-world').evaluate((el) => {
