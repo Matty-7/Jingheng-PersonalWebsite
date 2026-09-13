@@ -1,6 +1,7 @@
 // The keyboard canvas is paired with a non-spatial List view.
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
 import { useMemo } from 'react';
+import type { CSSProperties } from 'react';
 import { ArrowUpRight, Focus, Maximize2, Minus, Plus } from 'lucide-react';
 import {
   mortgage_branches,
@@ -70,6 +71,7 @@ export function MortgageCanvas({
     pointer_up,
   } = controls;
   const concept = selected ? concept_index.get(selected) : undefined;
+  const compact_overview = view === 'map' && depth === 0 && camera.scale < 0.85;
   const relations = useMemo(
     () => (selected ? study_edges(selected) : []),
     [selected],
@@ -130,10 +132,13 @@ export function MortgageCanvas({
         onPointerCancel={pointer_up}
       >
         <div
-          className="atlas-world"
-          style={{
-            transform: `translate(${camera.x}px, ${camera.y}px) scale(${camera.scale})`,
-          }}
+          className={`atlas-world ${compact_overview ? 'is-compact-overview' : ''}`}
+          style={
+            {
+              transform: `translate(${camera.x}px, ${camera.y}px) scale(${camera.scale})`,
+              '--atlas-overview-title-size': `${Math.min(32, Math.max(20, 16 / camera.scale))}px`,
+            } as CSSProperties
+          }
         >
           <svg className="atlas-edges" aria-hidden="true">
             <defs>

@@ -192,6 +192,15 @@
   margin-top: 4px;
   color: #78846a;
 }
+.is-compact-overview .node-branch strong {
+  font-size: var(--atlas-overview-title-size);
+  padding-right: 0;
+}
+.is-compact-overview
+  .node-branch
+  :is(small, .atlas-branch-count, .atlas-node-number) {
+  display: none;
+}
 .node-branch[data-branch='prepayment'],
 .node-branch[data-branch='risk'] {
   background: #f0e2ce;

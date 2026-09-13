@@ -41,11 +41,15 @@ export function MortgageNavigator({
           </>
         )}
       </div>
+      {domain && <p className="atlas-browse-question">{domain.question}</p>}
       <div className="atlas-browse-items">
         {!domain
           ? mortgage_branches.map((b) => (
               <button key={b.id} onClick={() => open_branch(b.id)}>
-                {b.title}
+                <span className="atlas-browse-domain">
+                  <strong>{b.title}</strong>
+                  <small>{b.question}</small>
+                </span>
                 <ArrowUpRight size={14} />
               </button>
             ))

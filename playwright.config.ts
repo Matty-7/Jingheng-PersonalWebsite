@@ -19,6 +19,14 @@ export default defineConfig({
     { name: 'desktop', use: { viewport: { width: 1440, height: 900 } } },
     { name: 'mobile', use: { viewport: { width: 390, height: 844 } } },
     { name: 'short', use: { viewport: { width: 1280, height: 720 } } },
+    {
+      name: 'webkit_desktop',
+      use: { browserName: 'webkit', viewport: { width: 1440, height: 900 } },
+    },
+    {
+      name: 'webkit_mobile',
+      use: { browserName: 'webkit', viewport: { width: 390, height: 844 } },
+    },
   ],
   webServer: {
     command: 'npm run start -- --ip 127.0.0.1 --port 4173',
