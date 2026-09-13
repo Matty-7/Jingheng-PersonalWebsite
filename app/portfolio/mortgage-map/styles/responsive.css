@@ -86,10 +86,19 @@
   }
   .atlas-view-toggle {
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   .atlas-view-toggle button {
-    flex: 1;
+    grid-column: span 2;
+    padding: 0 6px;
     min-height: 44px;
+  }
+  .atlas-view-toggle button:nth-child(n + 4) {
+    grid-column: span 3;
+  }
+  .atlas-map-tools {
+    padding: 4px 16px;
   }
   .atlas-options {
     padding: 8px 12px;

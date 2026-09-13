@@ -64,6 +64,7 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
   const [search_open, set_search_open] = useState(false);
   const [search_cursor, set_search_cursor] = useState(0);
   const [show_help, set_show_help] = useState(false);
+  const [show_options, set_show_options] = useState(false);
   const [expanded, set_expanded] = useState(false);
   const atlas_ref = useRef<HTMLElement>(null);
   const expand_ref = useRef<HTMLButtonElement>(null);
@@ -322,49 +323,71 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
           </button>
         </div>
       </div>
-      {view === 'map' &&
-        depth === 0 &&
-        branch_filter === 'all' &&
-        !reader_open && (
-          <div className="atlas-start">
-            <span>Follow a mechanism, one concept at a time.</span>
-            <button onClick={() => choose_path('')}>
-              Start with a reading path <ArrowRight size={16} />
-            </button>
-          </div>
-        )}
       {(view === 'map' || view === 'list') && (
-        <div className="atlas-options">
-          <div className="atlas-depth" aria-label="Map detail level">
-            <Layers size={15} aria-hidden="true" />
-            {['Overview', 'Topics', 'All concepts'].map((label, i) => (
-              <button
-                key={label}
-                aria-pressed={depth === i && view === 'map'}
-                onClick={() => dispatch({ type: 'set_depth', depth: i })}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-          <label className="atlas-domain-select">
-            <span>Focus</span>
-            <select
-              value={branch_filter}
-              onChange={(e) =>
-                dispatch({ type: 'filter_domain', id: e.target.value })
-              }
-              aria-label="Focus a domain"
+        <>
+          <div className="atlas-map-tools">
+            <button
+              className="atlas-disclosure"
+              aria-expanded={show_options}
+              aria-controls="atlas-map-options"
+              onClick={() => set_show_options(!show_options)}
             >
-              <option value="all">All domains</option>
-              {mortgage_branches.map((branch) => (
-                <option value={branch.id} key={branch.id}>
-                  {branch.title}
-                </option>
+              Map settings <ChevronDown size={15} />
+            </button>
+            {view === 'map' &&
+            depth === 0 &&
+            branch_filter === 'all' &&
+            !reader_open ? (
+              <div className="atlas-start">
+                <button onClick={() => choose_path('')}>
+                  Start with a reading path <ArrowRight size={16} />
+                </button>
+              </div>
+            ) : (
+              <span className="atlas-settings-state">
+                {view === 'map'
+                  ? `${['Overview', 'Topics', 'All concepts'][depth]} · `
+                  : ''}
+                {branch_index.get(branch_filter)?.title ?? 'All domains'}
+              </span>
+            )}
+          </div>
+          <div
+            className="atlas-options"
+            id="atlas-map-options"
+            hidden={!show_options}
+          >
+            <div className="atlas-depth" aria-label="Map detail level">
+              <Layers size={15} aria-hidden="true" />
+              {['Overview', 'Topics', 'All concepts'].map((label, i) => (
+                <button
+                  key={label}
+                  aria-pressed={depth === i && view === 'map'}
+                  onClick={() => dispatch({ type: 'set_depth', depth: i })}
+                >
+                  {label}
+                </button>
               ))}
-            </select>
-          </label>
-        </div>
+            </div>
+            <label className="atlas-domain-select">
+              <span>Focus</span>
+              <select
+                value={branch_filter}
+                onChange={(e) =>
+                  dispatch({ type: 'filter_domain', id: e.target.value })
+                }
+                aria-label="Focus a domain"
+              >
+                <option value="all">All domains</option>
+                {mortgage_branches.map((branch) => (
+                  <option value={branch.id} key={branch.id}>
+                    {branch.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </>
       )}
       <div
         className={`atlas-workspace ${reader_open && concept ? 'has-reader' : ''}`}

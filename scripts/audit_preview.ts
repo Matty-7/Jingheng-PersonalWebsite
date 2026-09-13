@@ -11,6 +11,7 @@ export function audit_preview(): Plugin {
     '/__audit/mortgage_desktop': [1440, 900],
     '/__audit/mortgage_short': [1280, 720],
     '/__audit/mortgage_mobile': [390, 844],
+    '/__audit/mortgage_narrow': [320, 844],
   };
   return {
     name: 'site-audit-preview',
