@@ -3,7 +3,7 @@ import { check_mortgage_focus_surface } from '../../scripts/browser_checks/mortg
 
 test('concept reading preserves focus, scroll and staged Escape', async ({
   page,
-}, test_info) => {
+}) => {
   const page_errors: string[] = [];
   page.on('pageerror', (error) => page_errors.push(error.message));
   await page.route('**/*', (route) => {
@@ -22,6 +22,8 @@ test('concept reading preserves focus, scroll and staged Escape', async ({
   await expect(
     page.getByRole('searchbox', { name: 'Search mortgage concepts' }),
   ).toBeVisible();
-  await check_mortgage_focus_surface(page, test_info.project.name);
+  const viewport =
+    (await page.evaluate(() => innerWidth)) <= 800 ? 'mobile' : 'desktop';
+  await check_mortgage_focus_surface(page, viewport);
   expect(page_errors).toEqual([]);
 });
