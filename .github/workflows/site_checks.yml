@@ -26,13 +26,13 @@ jobs:
       - run: npm run build
       - name: Install browser
         run: npx playwright install --with-deps chromium
-      - name: Check Mortgage Map browser flows
+      - name: Check map and home browser flows
         run: npm run test:browser
-      - name: Save browser failure evidence
-        if: failure()
+      - name: Save browser report and visual evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: mortgage-browser-failure
+          name: site-browser-evidence
           path: |
             playwright-report/
             test-results/
