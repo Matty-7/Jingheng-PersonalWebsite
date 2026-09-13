@@ -91,7 +91,7 @@ export function MortgageCanvas({
     <div className="atlas-graph-shell">
       {show_navigator && (
         <MortgageNavigator
-          key={`${branch_filter}:${topic_filter}`}
+          key={`${depth === 0 ? 'overview' : 'detail'}:${branch_filter}:${topic_filter}`}
           branch={branch_filter}
           topic={topic_filter}
           expanded_by_default={depth === 0 && camera.scale < 0.55}

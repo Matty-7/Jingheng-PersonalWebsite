@@ -15,6 +15,18 @@ test('compact navigation keeps settings, sibling reading and focus accessible', 
   await expect(domain).toBeHidden();
   await settings.press('Enter');
   await expect(domain).toBeVisible();
+  await page.getByRole('button', { name: 'Topics', exact: true }).click();
+  const domains = page.getByRole('button', {
+    name: 'Browse domains',
+    exact: true,
+  });
+  await expect(domains).toBeVisible();
+  if ((await domains.getAttribute('aria-expanded')) === 'true')
+    await domains.click();
+  await page.getByRole('button', { name: 'Overview', exact: true }).click();
+  if ((page.viewportSize()?.width ?? 0) <= 1280) {
+    await expect(domains).toHaveAttribute('aria-expanded', 'true');
+  }
   await domain.selectOption({ label: 'Curves & spreads' });
   await page.getByRole('button', { name: 'All concepts', exact: true }).click();
   await settings.press('Enter');
