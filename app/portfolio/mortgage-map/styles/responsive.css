@@ -1,0 +1,256 @@
+@media (min-width: 1600px) {
+  .map-page {
+    padding: 0 5vw 48px;
+  }
+  .atlas-workspace.has-reader {
+    grid-template-columns: minmax(0, 1fr) 480px;
+  }
+}
+@media (max-width: 1100px) {
+  .map-page {
+    padding: 0 24px 35px;
+  }
+  .map-header {
+    gap: 12px 28px;
+  }
+  .atlas-workspace.has-reader {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+  .atlas-reader {
+    padding: 0 18px 25px;
+  }
+  .atlas-pan-hint {
+    display: none;
+  }
+  .atlas-path-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .atlas-canvas-caption p {
+    font-size: 18px;
+  }
+  .atlas-legend {
+    gap: 14px;
+    padding: 8px 16px;
+  }
+  .atlas-legend > button {
+    font-size: 0;
+    gap: 0;
+  }
+  .atlas-legend > button svg {
+    width: 16px;
+  }
+  .atlas-view-toggle button {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 800px) {
+  .map-page {
+    padding: 0 16px 25px;
+  }
+  .map-nav {
+    height: 66px;
+  }
+  .map-header {
+    display: block;
+    padding: 18px 0;
+  }
+  .map-header h1 {
+    font-size: 52px;
+    margin: 4px 0 12px;
+  }
+  .map-header > p:last-child {
+    font-size: 14px;
+    max-width: 500px;
+  }
+  .atlas-intro {
+    padding: 10px 16px;
+  }
+  .atlas-intro p {
+    font-size: 10px;
+  }
+  .atlas-intro p > span {
+    padding: 0 4px;
+  }
+  .atlas-intro .atlas-text-button {
+    font-size: 10px !important;
+    gap: 3px;
+  }
+  .atlas-kicker {
+    font-size: 9px;
+  }
+  .atlas-toolbar {
+    flex-wrap: wrap;
+    padding: 0 16px 14px;
+    gap: 12px;
+  }
+  .atlas-search {
+    max-width: none;
+    flex: 1 1 100%;
+  }
+  .atlas-view-toggle {
+    width: 100%;
+  }
+  .atlas-view-toggle button {
+    flex: 1;
+    min-height: 44px;
+  }
+  .atlas-options {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .atlas-depth {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .atlas-depth > svg {
+    display: none;
+  }
+  .atlas-depth button {
+    padding: 0 13px;
+  }
+  .atlas-domain-select {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 4px;
+  }
+  .atlas-domain-select select {
+    max-width: 75%;
+    width: 220px;
+  }
+  .atlas-workspace.has-reader {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .atlas-canvas {
+    height: clamp(300px, 48dvh, 440px);
+  }
+  .atlas-canvas-caption {
+    left: 17px;
+    top: 19px;
+    max-width: 85%;
+  }
+  .atlas-canvas-caption span {
+    font-size: 8px;
+  }
+  .atlas-canvas-caption p {
+    font-size: 17px;
+  }
+  .atlas-canvas-bottom {
+    left: 14px;
+    bottom: 15px;
+  }
+  .atlas-zoom button {
+    width: 42px;
+  }
+  .atlas-zoom > span:not(.atlas-control-divider) {
+    min-width: 33px;
+  }
+  .atlas-minimap {
+    width: 72px;
+    height: 53px;
+    right: 13px;
+    bottom: 75px;
+  }
+  .atlas-legend {
+    padding: 8px 13px;
+    gap: 12px;
+    font-size: 8px;
+    min-height: 45px;
+  }
+  .atlas-legend i {
+    width: 13px;
+  }
+  .atlas-legend > button {
+    min-width: 28px;
+    margin-left: auto;
+  }
+  .atlas-reader {
+    border-left: 0;
+    border-top: 1px solid var(--atlas-line);
+    padding: 0 22px 25px;
+  }
+  .atlas-reader h2 {
+    font-size: 32px;
+  }
+  .atlas-reader-summary {
+    font-size: 14px;
+  }
+  .atlas-reader-top {
+    padding-top: 6px;
+  }
+  .atlas-list {
+    padding: 20px 16px;
+  }
+  .atlas-list-topic {
+    margin-left: 0;
+  }
+  .atlas-list-topic > div {
+    grid-template-columns: 1fr;
+  }
+  .atlas-list-domain h2 {
+    font-size: 23px;
+  }
+  .atlas-list-domain > header {
+    grid-template-columns: 23px 1fr;
+  }
+  .atlas-paths {
+    padding: 25px 16px;
+  }
+  .atlas-path-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .atlas-path-heading h2 {
+    font-size: 29px;
+  }
+  .atlas-path-heading label,
+  .atlas-path-heading select {
+    width: 100%;
+    max-width: none;
+  }
+  .atlas-path-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+  .atlas-path-cards button {
+    min-height: 185px;
+    padding: 13px 12px;
+  }
+  .atlas-path-cards strong {
+    font-size: 19px;
+  }
+  .atlas-path-cards small {
+    font-size: 10px;
+  }
+  .atlas-active-path li {
+    margin-right: 4px;
+    gap: 5px;
+  }
+  .atlas-active-path li > button {
+    font-size: 11px;
+    padding: 9px 10px;
+    gap: 8px;
+  }
+  .atlas-active-path > p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .atlas-help {
+    padding: 12px 17px;
+    font-size: 12px;
+  }
+  .map-scope {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-node,
+  .atlas-path-cards button {
+    transition: none;
+  }
+  .atlas-world {
+    will-change: auto;
+  }
+}
+
