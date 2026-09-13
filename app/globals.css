@@ -2359,6 +2359,12 @@ progress.audio-progress::-moz-progress-bar {
   min-height: 44px;
 }
 @media (max-width: 759px) {
+  :root {
+    --home-nav-height: 112px;
+  }
+  html {
+    scroll-padding-top: calc(var(--home-nav-height) + 8px);
+  }
   .site-nav {
     height: auto;
     min-height: 74px;
@@ -2384,16 +2390,22 @@ progress.audio-progress::-moz-progress-bar {
   .site-nav.home-nav {
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr);
+    height: var(--home-nav-height);
+    min-height: var(--home-nav-height);
     gap: 16px;
     padding: 12px 5vw;
   }
   .home-nav ~ main > section[id] {
-    scroll-margin-top: 96px;
+    scroll-margin-top: calc(var(--home-nav-height) + 8px);
+  }
+  .home-nav ~ main > .arrival {
+    height: calc(100svh - var(--home-nav-height));
+    min-height: calc(100svh - var(--home-nav-height));
   }
   .home-nav .nav-links {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0 8px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 6px;
     min-width: 0;
   }
   .home-nav .nav-links > a {
@@ -2521,7 +2533,7 @@ progress.audio-progress::-moz-progress-bar {
 .publishing-card[id], #portfolio { scroll-margin-top: 170px; }
 @media (min-width: 760px) and (max-width: 1000px) { .home-nav { padding-inline: 4vw; }.home-nav .nav-links { gap: 14px; }.home-nav .nav-links > a { font-size: 13px; } }
 @media (max-width: 759px) {
-  .home-nav .nav-links { gap: 0 8px; }
+  .home-nav .nav-links { gap: 0 6px; }
   .projects-section { padding: 48px 6vw 56px; }
   .projects-entry { grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 26px 0; }
   .projects-copy > p { font-size: 16px; }
