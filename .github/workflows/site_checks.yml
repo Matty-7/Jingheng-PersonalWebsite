@@ -24,8 +24,8 @@ jobs:
       - run: npm test
       - run: node scripts/check-content.mjs
       - run: npm run build
-      - name: Install browser
-        run: npx playwright install --with-deps chromium
+      - name: Install browsers
+        run: npx playwright install --with-deps chromium webkit
       - name: Check map and home browser flows
         run: npm run test:browser
       - name: Save browser report and visual evidence

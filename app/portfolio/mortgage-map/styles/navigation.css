@@ -231,6 +231,28 @@
   padding: 8px 24px;
   gap: 14px;
 }
+.atlas-start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 4px 24px;
+  border-top: 1px solid var(--atlas-line);
+  font-size: 0.875rem;
+  color: #526055;
+}
+.atlas-start button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--atlas-rust);
+  text-align: left;
+}
 .atlas-depth {
   display: flex;
   align-items: center;
@@ -259,8 +281,7 @@
   font-size: 11px;
   color: #687367;
 }
-.atlas-domain-select select,
-.atlas-path-heading select {
+.atlas-domain-select select {
   background: #fffdf6;
   color: var(--atlas-ink);
   border: 1px solid var(--atlas-line);

@@ -322,6 +322,17 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
           </button>
         </div>
       </div>
+      {view === 'map' &&
+        depth === 0 &&
+        branch_filter === 'all' &&
+        !reader_open && (
+          <div className="atlas-start">
+            <span>Follow a mechanism, one concept at a time.</span>
+            <button onClick={() => choose_path('')}>
+              Start with a reading path <ArrowRight size={16} />
+            </button>
+          </div>
+        )}
       {(view === 'map' || view === 'list') && (
         <div className="atlas-options">
           <div className="atlas-depth" aria-label="Map detail level">

@@ -504,15 +504,6 @@
   gap: 10vw;
   overflow: hidden;
 }
-.cast-sleeve {
-  transform: rotate(-7deg);
-  box-shadow: 18px 20px 0 #702b20;
-  max-width: 450px;
-}
-.cast-sleeve img {
-  width: 100%;
-  height: auto;
-}
 .broadway-copy h2 {
   font-size: clamp(48px, 5.4vw, 82px);
   margin: 26px 0;
@@ -535,39 +526,6 @@
   border-bottom: 1px solid currentColor;
   padding-bottom: 5px;
   margin-top: 30px;
-}
-.city-section {
-  min-height: 650px;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  background: #dbc692;
-  overflow: hidden;
-}
-.city-window {
-  overflow: hidden;
-  position: relative;
-  min-height: 650px;
-}
-.city-window img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: 85% center;
-}
-.city-copy {
-  align-self: center;
-  padding: 65px 7vw;
-}
-.city-copy h2 {
-  font-size: clamp(50px, 5.5vw, 85px);
-  margin: 25px 0 30px;
-}
-.city-signoff {
-  display: block;
-  font:
-    italic 30px Georgia,
-    serif;
-  margin-top: 40px;
 }
 footer {
   background: #273a30;
@@ -848,29 +806,8 @@ footer h2 {
     padding: 80px 9vw;
     gap: 70px;
   }
-  .cast-sleeve {
-    max-width: 330px;
-    width: 85%;
-    margin: auto;
-  }
   .broadway-copy h2 {
     font-size: 55px;
-  }
-  .city-section {
-    grid-template-columns: 1fr;
-  }
-  .city-window {
-    min-height: 0;
-    height: 340px;
-  }
-  .city-copy {
-    padding: 60px 7vw 75px;
-  }
-  .city-copy h2 {
-    font-size: 59px;
-  }
-  .city-signoff {
-    margin-top: 30px;
   }
   footer {
     grid-template-columns: 1fr;

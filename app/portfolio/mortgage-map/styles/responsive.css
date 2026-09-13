@@ -22,9 +22,6 @@
   .atlas-pan-hint {
     display: none;
   }
-  .atlas-path-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
   .atlas-canvas-caption p {
     font-size: 18px;
   }
@@ -178,49 +175,6 @@
   .atlas-list-domain > header {
     grid-template-columns: 23px 1fr;
   }
-  .atlas-paths {
-    padding: 25px 16px;
-  }
-  .atlas-path-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .atlas-path-heading h2 {
-    font-size: 29px;
-  }
-  .atlas-path-heading label,
-  .atlas-path-heading select {
-    width: 100%;
-    max-width: none;
-  }
-  .atlas-path-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-  }
-  .atlas-path-cards button {
-    min-height: 185px;
-    padding: 13px 12px;
-  }
-  .atlas-path-cards strong {
-    font-size: 19px;
-  }
-  .atlas-path-cards small {
-    font-size: 10px;
-  }
-  .atlas-active-path li {
-    margin-right: 4px;
-    gap: 5px;
-  }
-  .atlas-active-path li > button {
-    font-size: 11px;
-    padding: 9px 10px;
-    gap: 8px;
-  }
-  .atlas-active-path > p {
-    font-size: 12px;
-    line-height: 1.7;
-  }
   .atlas-help {
     padding: 12px 17px;
     font-size: 12px;
@@ -230,8 +184,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .atlas-node,
-  .atlas-path-cards button {
+  .atlas-node {
     transition: none;
   }
   .atlas-world {
