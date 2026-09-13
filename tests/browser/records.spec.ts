@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import music from '../../content/music.json';
+import music from '../../content/music.json' with { type: 'json' };
 import { open_home } from './home_helpers';
 
 test.use({ reducedMotion: 'reduce' });

@@ -1,5 +1,5 @@
 import { expect, type Page } from '@playwright/test';
-import music from '../../content/music.json';
+import music from '../../content/music.json' with { type: 'json' };
 
 // A real, twelve-second PCM WAV. Chromium decodes and plays it normally;
 // tests never replace HTMLMediaElement methods or synthesize media events.
