@@ -10,6 +10,12 @@ The source registry was checked against public CFPB, Fannie Mae, New York Fed, S
 
 The source inventory did not recover a verifiable complete list of the owner's previously shared mortgage newsletters. Do not claim those articles have been integrated. Add an article only after reading the actual public source and attaching its URL to the relevant concepts. Never publish private screenshots, employer material, personal notes, restricted book PDFs or full newsletter text under this authorization.
 
+## Analytics context
+
+`content/mortgage_analytics.ts` adds public explanations of historical measurement, scenario schedules, collateral allocation and model context. Its three explained paths and Metrics comparison use the existing reader and navigation. I-spread retains the general bond-market swap convention, explicitly scoped across the reader, formula, relationship and comparison. A provider’s letter label alone is not a universal calculation definition.
+
+Source checks distinguish the SIFMA age-dependent ABS speed convention from a blanket original-dollar-balance interpretation, and the cited trustee report’s liquidation-based MDR from other default-event definitions. The report’s single-month CDR annualization is used; its inconsistent displayed multi-month average expression is not reproduced. Normal/lognormal volatility units cite the original author’s public preprint; rate-model and calibration explanations cite the CFA public overview. Public sources remain linked, not mirrored. No provider-specific model codes, curve identifiers or execution syntax are added.
+
 ## Interaction
 
 The home entry remains between Channels and Music. The map now uses an explicit root → domain → topic → concept hierarchy. Overview, Topics and All concepts expose successive levels; selecting a domain or topic scopes the canvas. Search includes aliases and ranks exact concepts first. Connections reorganizes a selected concept and its incoming/outgoing relationships into a readable study, separate from the complete hierarchy. Causal mechanisms, definitions, measurements and comparisons are typed in the data. The old related-reading links remain associations and are not silently promoted to causal edges.
