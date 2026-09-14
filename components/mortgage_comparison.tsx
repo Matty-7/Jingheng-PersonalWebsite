@@ -50,7 +50,9 @@ export function MortgageComparison({
                     ? 'Dates'
                     : item.id === 'curves'
                       ? 'Curves'
-                      : 'Currencies'}
+                      : item.id === 'metrics'
+                        ? 'Metrics'
+                        : 'Currencies'}
           </button>
         ))}
       </div>

@@ -1,6 +1,7 @@
 import { spread_topics, spread_sources, spread_concepts, spread_relationships } from './mortgage_spreads.ts';
 import { foundational_relationships } from './mortgage_relationships.ts';
 import { context_topics, context_sources, context_concepts, context_relationships, context_paths } from './mortgage_context.ts';
+import { analytics_topics, analytics_sources, analytics_concepts, analytics_relationships, analytics_paths } from './mortgage_analytics.ts';
 import {
   atlas_topics,
   atlas_sources,
@@ -219,6 +220,7 @@ export const mortgage_topics = [
   ...mechanism_topics,
   ...spread_topics,
   ...context_topics,
+  ...analytics_topics,
 ];
 
 export const mortgage_sources: Record<
@@ -229,6 +231,7 @@ export const mortgage_sources: Record<
   ...mechanism_sources,
   ...spread_sources,
   ...context_sources,
+  ...analytics_sources,
   cfpb: {
     publisher: 'CFPB',
     title: 'How does paying down a mortgage work?',
@@ -1079,7 +1082,7 @@ const original_concepts: MortgageConcept[] = [
         "P₀ = 100, P₋ = 100.4, P₊ = 99.6 and Δy = 0.001 imply duration ≈ 4.",
     },
     distinction:
-      "Holding cash flows fixed measures a different sensitivity. WAL does not substitute for duration.",
+      "Holding cash flows fixed measures a different sensitivity. For a constant-OAS curve shock, hold OAS fixed and reprice option-sensitive payments consistently. WAL does not substitute for duration.",
     links: [
       {
         id: "dv01",
@@ -2383,13 +2386,13 @@ const original_concepts: MortgageConcept[] = [
     title: "Option-adjusted spread",
     subtitle: "A spread inside an option model",
     summary:
-      "OAS is the spread that reconciles price with modeled cash flows across interest-rate scenarios, allowing the borrower’s option to change those cash flows.",
+      "OAS reconciles price with cash flows under a specified rate and option model. Relevant options can include mortgage borrower prepayment or an issuer’s contractual call, depending on the instrument.",
     distinction:
-      "OAS is model-dependent and is not a pure measurement of credit risk.",
+      "OAS is model-dependent, not a pure credit-risk measurement. A tree can value some callable bonds; Monte Carlo is not required for every OAS calculation.",
     question: "Can two models report different OAS for the same price?",
     answer:
       "Yes. Rate dynamics, volatility, prepayment behavior and other assumptions can differ.",
-    sources: ["fed_spreads", "cfa_risk"],
+    sources: ["fed_spreads", "embedded_options"],
     links: [
       {
         id: "model_risk",
@@ -3287,9 +3290,9 @@ const formula_additions: Record<
       'Use a named same-currency government reference and comparable conventions.',
   },
   i_spread: {
-    expression: 'I-spread = bond yield minus an interpolated swap par rate.',
+    expression: 'General bond-market I-spread = bond yield minus an interpolated swap par rate.',
     assumptions:
-      'State the swap family, currency and comparison tenor. This is not cash-flow-by-cash-flow zero-curve discounting.',
+      'This is the map’s general bond-market convention. State the swap family, currency and comparison tenor; other product/provider labels require their own definitions. It is not cash-flow-by-cash-flow zero-curve discounting.',
   },
   swap_spread: {
     expression:
@@ -3310,6 +3313,7 @@ const formula_additions: Record<
   },
 };
 export const mortgage_concepts: MortgageConcept[] = [
+  ...analytics_concepts,
   ...context_concepts,
   ...mechanism_concepts,
   ...spread_concepts,
@@ -3329,10 +3333,11 @@ export const mortgage_concepts: MortgageConcept[] = [
 }));
 
 export const mortgage_relationships: MortgageRelationship[] = [
+  ...analytics_relationships,
   ...context_relationships,
   ...foundational_relationships,
   { id: 'spreads__nominal_spread', source: 'spreads', target: 'nominal_spread', label: 'compares two yields', reason: 'A nominal spread subtracts a stated benchmark yield from the security yield under aligned conventions.', kind: 'definition' },
-  { id: 'nominal_spread__i_spread', source: 'nominal_spread', target: 'i_spread', label: 'uses a swap reference', reason: 'I-spread is a yield comparison using an interpolated swap par rate.', kind: 'definition' },
+  { id: 'nominal_spread__i_spread', source: 'nominal_spread', target: 'i_spread', label: 'uses the stated swap convention', reason: 'In the general bond-market convention used here, I-spread compares yield with an interpolated swap par rate. Check another product or provider’s definition before transferring this label.', kind: 'definition', sources: ['interpolated_swap_spread'] },
   { id: 'spreads__z_spread', source: 'spreads', target: 'z_spread', label: 'discounts a fixed payment path', reason: 'Z-spread fits price with every projected cash flow under a stated scenario and zero curve.', kind: 'definition' },
   { id: 'spreads__oas', source: 'spreads', target: 'oas', label: 'models option-sensitive payments', reason: 'OAS fits price while allowing modeled payment behavior to change across rate paths.', kind: 'definition' },
   { id: 'spreads__asset_swap', source: 'spreads', target: 'asset_swap', label: 'values a bond and swap package', reason: 'Asset-swap spread depends on the package cash flows and upfront convention rather than simple yield subtraction.', kind: 'comparison' },
@@ -4000,6 +4005,7 @@ export const mortgage_relationships: MortgageRelationship[] = [
 ];
 
 export const mortgage_paths = [
+  ...analytics_paths,
   ...context_paths,
   ...mechanism_models,
   ...atlas_paths,

@@ -5,6 +5,14 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    conditional_default_rate: {
+      tex: String.raw`\mathrm{CDR}=1-(1-\mathrm{MDR})^{12}`,
+      variables: 'MDR and CDR are decimal rates. Identify the default or liquidation event and eligible balance before annualizing.',
+    },
+    effective_convexity: {
+      tex: String.raw`C_{\mathrm{eff}}\approx\frac{P_-+P_+-2P_0}{P_0(\Delta y)^2}`,
+      variables: 'P₋ / P₊: full prices after equal down / up parallel curve shifts at fixed OAS; P₀: base full price; Δy: positive rate shift as a decimal. With annual rates, convexity has units of years squared.',
+    },
     cds_bond_basis: {
       tex: String.raw`b_{\mathrm{bp}}=s_{\mathrm{CDS,bp}}-s_{\mathrm{bond,bp}}`,
       variables: 'b: basis; s: spread in basis points. Align reference entity, seniority, currency and maturity; identify the bond-spread method.',
@@ -159,7 +167,7 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
     i_spread: {
       tex: String.raw`s_I=y_{\mathrm{bond}}-k_{\mathrm{swap}}(T)`,
       variables:
-        'k: interpolated swap par rate at comparison tenor T; y: bond yield. Use the same currency and comparable rate conventions.',
+        'General bond-market convention used here. k: interpolated swap par rate at comparison tenor T; y: bond yield. Align currency and rate conventions; verify other product/provider labels separately.',
     },
     swap_spread: {
       tex: String.raw`s_{\mathrm{swap}}=k_{\mathrm{swap}}(T)-y_{\mathrm{govt}}(T)`,

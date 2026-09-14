@@ -5,6 +5,7 @@ import {
   mortgage_relationships,
 } from '@/content/mortgage_concepts';
 import { mechanism_models } from '@/content/mortgage_mechanisms';
+import { analytics_paths } from '@/content/mortgage_analytics';
 import { concept_index } from '@/lib/mortgage_graph';
 
 export function MortgagePaths({
@@ -23,7 +24,7 @@ export function MortgagePaths({
   choose_concept: (id: string, trigger?: HTMLButtonElement) => void;
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
-  const model = mechanism_models.find((item) => item.id === path_id);
+  const model = [...mechanism_models, ...analytics_paths].find((item) => item.id === path_id);
   return (
     <section
       className="atlas-models"

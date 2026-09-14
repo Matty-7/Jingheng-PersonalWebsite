@@ -3,6 +3,7 @@ import type {
   MortgageRelationship,
 } from './mortgage_concepts.ts';
 import { context_comparisons } from './mortgage_context.ts';
+import { analytics_comparisons } from './mortgage_analytics.ts';
 
 // Public financial concepts only. Currency, collateral, guarantee and coupon are
 // separate dimensions, not interchangeable levels in a product taxonomy.
@@ -615,17 +616,18 @@ const entries: Entry[] = [
   [
     'i_spread',
     'I-spread',
-    'Bond yield minus an interpolated swap rate',
-    'I-spread compares the bond’s yield to an interpolated swap par rate at a stated tenor. Specify the swap benchmark family and currency. It provides a convenient relative-yield quotation without individually discounting every bond cash flow against the zero curve.',
-    'The swap par rate is not the zero rate. I-spread and Z-spread can differ even when both reference the same broad swap market.',
+    'The general bond-market swap convention',
+    'In the general bond-market convention used here, I-spread compares bond yield with an interpolated swap par rate. State the reference family, currency and comparison tenor.',
+    'Product and provider labels need their own definitions; the letter alone is not a calculation contract. A swap par rate is also different from a zero rate.',
     [
       ['swap_curve', 'The swap par curve supplies the comparison rate.'],
+      ['spread_conventions', 'The scope of the convention must accompany the name.'],
       [
         'z_spread',
         'Z-spread instead fits price using the full projected cash-flow schedule.',
       ],
     ],
-    ['spreads_public'],
+    ['interpolated_swap_spread', 'spreads_public'],
     ['I spread', 'interpolated spread'],
   ],
   [
@@ -1001,7 +1003,7 @@ export const atlas_relationships: MortgageRelationship[] =
             clo: ['Coverage triggers', 'Coupon resets'],
             callable: ['Value the option', 'Compare early repayment'],
             discount_margin: ['Required vs contractual', 'Spread sensitivity'],
-            i_spread: ['Par-rate reference', 'One yield vs all cash flows'],
+            i_spread: ['Par-rate reference', 'Convention scope', 'One yield vs all cash flows'],
             fx_hedging: ['Hedging cost', 'Residual mismatch'],
           } as Record<string, string[]>
         )[c.id]?.[index] ??
@@ -1110,10 +1112,10 @@ export const atlas_comparisons: ComparisonSet[] = [
         id: 'i_spread',
         cells: [
           'I-spread',
-          'Interpolated swap par rate',
+          'Interpolated swap par rate in the general bond-market convention',
           'One yield comparison; no option adjustment',
           'How much above this swap reference?',
-          'Par curve, not zero curve.',
+          'Check product/provider definitions; a shared letter is not a shared method.',
         ],
       },
       {
@@ -1460,7 +1462,7 @@ export const atlas_comparisons: ComparisonSet[] = [
   },
 ];
 
-atlas_comparisons.push(...context_comparisons);
+atlas_comparisons.push(...context_comparisons, ...analytics_comparisons);
 
 export const atlas_paths = [
   {
