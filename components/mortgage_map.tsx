@@ -187,12 +187,14 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
       className={`mortgage-atlas ${expanded ? 'is-expanded' : ''}`}
       aria-label="Interactive mortgage knowledge map"
     >
+      <div className="atlas-subject-header">
       <fieldset className="atlas-lenses" aria-label="Atlas subject">
         {atlas_lenses.map(item => <button key={item.id} aria-pressed={lens === item.id} onClick={() => { dispatch({ type: 'change_lens', lens: item.id }); set_query(''); set_search_open(false); }}>
           {item.title}
         </button>)}
       </fieldset>
-      <output className="atlas-lens-description">{lens_info.description} <span>{catalog.concepts.length} of {mortgage_concepts.length} concepts in this lens.</span></output>
+      <output className="atlas-lens-description"><span className="atlas-lens-summary">{lens_info.description}</span> <span className="atlas-lens-count">{catalog.concepts.length} of {mortgage_concepts.length} concepts in this lens.</span></output>
+      </div>
       <div className="atlas-intro">
         <div>
           <p>
