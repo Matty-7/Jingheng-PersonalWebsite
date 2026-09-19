@@ -1,5 +1,7 @@
+import { lens_definition, type AtlasLens } from '@/content/fixed_income_lenses';
+import { expansion_paths } from '@/content/fixed_income_expansion';
 import type { RefObject } from 'react';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import {
   mortgage_paths,
   mortgage_relationships,
@@ -9,6 +11,7 @@ import { analytics_paths } from '@/content/mortgage_analytics';
 import { concept_index } from '@/lib/mortgage_graph';
 
 export function MortgagePaths({
+  lens,
   path_id,
   selected,
   reader_open,
@@ -16,6 +19,7 @@ export function MortgagePaths({
   choose_path,
   choose_concept,
 }: {
+  lens: AtlasLens;
   path_id: string;
   selected: string | null;
   reader_open: boolean;
@@ -24,7 +28,10 @@ export function MortgagePaths({
   choose_concept: (id: string, trigger?: HTMLButtonElement) => void;
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
-  const model = [...mechanism_models, ...analytics_paths].find((item) => item.id === path_id);
+  const model = [...mechanism_models, ...analytics_paths, ...expansion_paths].find((item) => item.id === path_id);
+  const recommended = new Set<string>(lens_definition(lens).paths);
+  const ordered_paths = [...mortgage_paths].sort((a, b) => Number(recommended.has(b.id)) - Number(recommended.has(a.id)));
+  const step_index = Math.max(0, path?.steps.indexOf(selected ?? '') ?? 0);
   return (
     <section
       className="atlas-models"
@@ -41,6 +48,20 @@ export function MortgagePaths({
           <p className="atlas-model-premise">
             {model?.premise ?? path.description}
           </p>
+          {model && <div className="atlas-path-stepper" aria-label="Guided path controls">
+            <div className="atlas-stepper-top">
+              <span>Step {step_index + 1} of {path.steps.length}</span>
+              <div>
+                <button aria-label="Previous guided step" disabled={step_index === 0} onClick={() => choose_concept(path.steps[step_index - 1])}><ArrowLeft size={16} /></button>
+                <button aria-label="Next guided step" disabled={step_index === path.steps.length - 1} onClick={() => choose_concept(path.steps[step_index + 1])}><ArrowRight size={16} /></button>
+              </div>
+            </div>
+            <progress max={path.steps.length} value={step_index + 1} aria-label="Path position" />
+            <div className="atlas-step-detail" key={path.steps[step_index]}>
+              <button onClick={(e) => choose_concept(path.steps[step_index], e.currentTarget)}>{concept_index.get(path.steps[step_index])?.title}<ArrowUpRight size={16} /></button>
+              <p>{model.explanations[step_index]}</p>
+            </div>
+          </div>}
           <ol className="atlas-model-steps">
             {path.steps.map((id, index) => {
               const node = concept_index.get(id)!;
@@ -51,7 +72,7 @@ export function MortgagePaths({
                   (e.source === id && e.target === previous),
               );
               return (
-                <li key={id}>
+                <li key={id} className={index === step_index ? 'is-active-step' : undefined}>
                   <span className="atlas-step-number">
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -84,16 +105,17 @@ export function MortgagePaths({
       ) : (
         <>
           <h2 tabIndex={-1}>Follow a mechanism.</h2>
+          <p className="atlas-path-recommendation">Suggested starting points for {lens_definition(lens).title.toLowerCase()} appear first. Every path stays available.</p>
           <div className="atlas-model-cards">
-            {mortgage_paths.map((item, index) => (
-              <button key={item.id} onClick={() => choose_path(item.id)}>
+            {ordered_paths.map((item, index) => (
+              <button key={item.id} className={recommended.has(item.id) ? 'is-recommended' : undefined} onClick={() => choose_path(item.id)}>
                 <span>
                   {String(index + 1).padStart(2, '0')}
                   <ArrowUpRight size={17} />
                 </span>
                 <strong>{item.title}</strong>
                 <p>{item.description}</p>
-                <small>{item.steps.length} concepts</small>
+                <small>{recommended.has(item.id) ? 'Suggested · ' : ''}{item.steps.length} concepts</small>
               </button>
             ))}
           </div>

@@ -17,6 +17,7 @@ export function useMortgageCamera({
   selected,
   depth,
   branch_filter,
+  lens,
   topic_filter,
 }: {
   graph: GraphNode[];
@@ -24,6 +25,7 @@ export function useMortgageCamera({
   selected: string | null;
   depth: number;
   branch_filter: string;
+  lens: string;
   topic_filter: string;
 }) {
   const [camera, set_camera] = useState<Camera>({ x: 0, y: 0, scale: 0.5 });
@@ -62,7 +64,7 @@ export function useMortgageCamera({
     return () => observer.disconnect();
   }, [view]);
   useEffect(() => {
-    const key = `${view}:${connection_selection}:${depth}:${branch_filter}:${topic_filter}`;
+    const key = `${lens}:${view}:${connection_selection}:${depth}:${branch_filter}:${topic_filter}`;
     const previous = previous_layout.current;
     const focus = pending_focus.current
       ? positions.get(pending_focus.current)
@@ -94,6 +96,7 @@ export function useMortgageCamera({
     connection_selection,
     depth,
     branch_filter,
+    lens,
     topic_filter,
   ]);
   function prepare_concept(id: string) {

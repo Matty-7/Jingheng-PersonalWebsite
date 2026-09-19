@@ -5,6 +5,18 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    breakeven_inflation: {
+      tex: String.raw`\mathrm{BE}\approx y_{\mathrm{nominal}}-y_{\mathrm{real}}`,
+      variables: 'Annual yields as decimals at comparable maturity and conventions; multiply the difference by 10,000 for basis points. Includes risk and liquidity compensation.',
+    },
+    curve_slope: {
+      tex: String.raw`s_{\mathrm{bp}}=(y_{\mathrm{long}}-y_{\mathrm{short}})\times10^4`,
+      variables: 'Same currency, observation time and comparable yield conventions. A rise in this difference is steepening, even if the curve remains inverted.',
+    },
+    cltv: {
+      tex: String.raw`\mathrm{CLTV}=\frac{B_{\mathrm{first}}+B_{\mathrm{subordinate}}}{V_{\mathrm{prescribed}}}`,
+      variables: 'Balances and prescribed property value are in the same currency. Use the program’s treatment of drawn HELOC balances; HCLTV substitutes full HELOC credit lines under the cited convention.',
+    },
     conditional_default_rate: {
       tex: String.raw`\mathrm{CDR}=1-(1-\mathrm{MDR})^{12}`,
       variables: 'MDR and CDR are decimal rates. Identify the default or liquidation event and eligible balance before annualizing.',

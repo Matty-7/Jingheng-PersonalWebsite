@@ -1,3 +1,5 @@
+import { type AtlasLens } from '@/content/fixed_income_lenses';
+import { lens_catalog } from '@/lib/mortgage_graph';
 // The keyboard canvas is paired with a non-spatial List view.
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
 import { useMemo } from 'react';
@@ -5,8 +7,6 @@ import type { CSSProperties } from 'react';
 import { ArrowUpRight, Focus, Maximize2, Minus, Plus } from 'lucide-react';
 import {
   mortgage_branches,
-  mortgage_concepts,
-  mortgage_topics,
 } from '@/content/mortgage_concepts';
 import {
   concept_index,
@@ -25,6 +25,7 @@ const branch_index = new Map(
 );
 
 export function MortgageCanvas({
+  lens,
   graph,
   controls,
   view,
@@ -39,6 +40,7 @@ export function MortgageCanvas({
   activate_node,
   read_connections,
 }: {
+  lens: AtlasLens;
   graph: GraphNode[];
   controls: MortgageCamera;
   view: MortgageView;
@@ -53,6 +55,7 @@ export function MortgageCanvas({
   activate_node: (node: GraphNode, trigger: HTMLButtonElement) => void;
   read_connections: (trigger: HTMLButtonElement) => void;
 }) {
+  const { concepts: mortgage_concepts, topics: mortgage_topics } = lens_catalog(lens);
   const {
     camera,
     size,
@@ -91,7 +94,8 @@ export function MortgageCanvas({
     <div className="atlas-graph-shell">
       {show_navigator && (
         <MortgageNavigator
-          key={`${depth === 0 ? 'overview' : 'detail'}:${branch_filter}:${topic_filter}`}
+          lens={lens}
+          key={`${lens}:${depth === 0 ? 'overview' : 'detail'}:${branch_filter}:${topic_filter}`}
           branch={branch_filter}
           topic={topic_filter}
           expanded_by_default={depth === 0 && camera.scale < 0.55}
@@ -259,9 +263,9 @@ export function MortgageCanvas({
               {node.kind === 'root' ? (
                 <>
                   <strong>
-                    Mortgage <em>Map.</em>
+                    {node.title}
                   </strong>
-                  <small>Borrowers, securities and risk</small>
+                  <small>{node.subtitle}</small>
                 </>
               ) : (
                 <>

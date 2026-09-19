@@ -1,3 +1,4 @@
+import { expansion_topics, expansion_sources, expansion_concepts, expansion_relationships, expansion_paths } from './fixed_income_expansion.ts';
 import { spread_topics, spread_sources, spread_concepts, spread_relationships } from './mortgage_spreads.ts';
 import { foundational_relationships } from './mortgage_relationships.ts';
 import { context_topics, context_sources, context_concepts, context_relationships, context_paths } from './mortgage_context.ts';
@@ -221,6 +222,7 @@ export const mortgage_topics = [
   ...spread_topics,
   ...context_topics,
   ...analytics_topics,
+  ...expansion_topics,
 ];
 
 export const mortgage_sources: Record<
@@ -232,6 +234,7 @@ export const mortgage_sources: Record<
   ...spread_sources,
   ...context_sources,
   ...analytics_sources,
+  ...expansion_sources,
   cfpb: {
     publisher: 'CFPB',
     title: 'How does paying down a mortgage work?',
@@ -3314,6 +3317,7 @@ const formula_additions: Record<
 };
 export const mortgage_concepts: MortgageConcept[] = [
   ...analytics_concepts,
+  ...expansion_concepts,
   ...context_concepts,
   ...mechanism_concepts,
   ...spread_concepts,
@@ -3334,6 +3338,7 @@ export const mortgage_concepts: MortgageConcept[] = [
 
 export const mortgage_relationships: MortgageRelationship[] = [
   ...analytics_relationships,
+  ...expansion_relationships,
   ...context_relationships,
   ...foundational_relationships,
   { id: 'spreads__nominal_spread', source: 'spreads', target: 'nominal_spread', label: 'compares two yields', reason: 'A nominal spread subtracts a stated benchmark yield from the security yield under aligned conventions.', kind: 'definition' },
@@ -4006,6 +4011,7 @@ export const mortgage_relationships: MortgageRelationship[] = [
 
 export const mortgage_paths = [
   ...analytics_paths,
+  ...expansion_paths,
   ...context_paths,
   ...mechanism_models,
   ...atlas_paths,

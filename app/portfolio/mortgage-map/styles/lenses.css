@@ -1,0 +1,34 @@
+.atlas-lenses { display: flex; gap: 6px; padding: 18px 22px 0; flex-wrap: wrap; border: 0; margin: 0; min-width: 0; }
+.atlas-lenses button { min-height: 44px; border: 1px solid var(--atlas-line); border-radius: 3px; padding: 9px 18px; color: var(--atlas-ink); background: transparent; font-size: 15px; transition: background 180ms, color 180ms; }
+.atlas-lenses button[aria-pressed='true'] { background: var(--atlas-ink); color: var(--atlas-paper); border-color: var(--atlas-ink); }
+.atlas-lenses button:focus-visible, .atlas-path-stepper button:focus-visible { outline: 2px solid var(--atlas-rust); outline-offset: 3px; }
+.atlas-lens-description { display: block; margin: 12px 22px 8px; font-size: 15px; line-height: 1.55; }
+.atlas-lens-description span { display: block; font-size: 13px; color: #526055; }
+.atlas-global-scope { margin: 0; padding: 10px 22px; font-size: 14px; border-top: 1px solid var(--atlas-line); background: #eff1e8; }
+.atlas-path-recommendation { font-size: 15px; line-height: 1.6; margin: -6px 0 22px; }
+.atlas-model-cards > button.is-recommended { border-top: 3px solid var(--atlas-rust); }
+.atlas-path-stepper { max-width: 820px; border: 1px solid var(--atlas-line); background: #eff1e8; padding: 18px 22px; margin: 22px 0; }
+.atlas-stepper-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; }
+.atlas-stepper-top > div { display: flex; gap: 8px; }
+.atlas-stepper-top button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--atlas-line); background: var(--atlas-paper); }
+.atlas-stepper-top button:disabled { opacity: .35; cursor: default; }
+.atlas-path-stepper progress { width: 100%; height: 4px; margin: 14px 0 18px; accent-color: var(--atlas-rust); }
+.atlas-step-detail { animation: atlas-step-reveal 200ms ease-out; }
+.atlas-step-detail > button { display: flex; align-items: center; gap: 12px; text-align: left; font: normal 24px/1.25 Georgia, serif; }
+.atlas-step-detail p { font-size: 16px; line-height: 1.65; margin: 12px 0 0; }
+.atlas-model-steps li { transition: background 180ms; }
+.atlas-model-steps li.is-active-step { background: #eff1e8; }
+.atlas-shared-label { display: inline-block; font-size: 13px; letter-spacing: .02em; color: var(--atlas-rust); border-bottom: 1px solid #a73e2033; margin: 0 0 12px; padding-bottom: 5px; }
+.atlas-reader-step-explanation { font-size: 15px; line-height: 1.6; color: var(--atlas-ink); margin: 12px 0; }
+@keyframes atlas-step-reveal { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) {
+  .atlas-lenses { padding: 14px 14px 0; gap: 4px; }
+  .atlas-lenses button { flex: 1 1 auto; padding: 9px 10px; font-size: 14px; }
+  .atlas-lens-description { margin: 10px 14px; }
+  .atlas-path-stepper { padding: 14px; }
+  .atlas-step-detail > button { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-step-detail { animation: none; }
+  .atlas-lenses button, .atlas-model-steps li { transition: none; }
+}

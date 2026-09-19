@@ -1,3 +1,4 @@
+import { concept_in_lens, lens_definition, type AtlasLens } from '../content/fixed_income_lenses.ts';
 import {
   mortgage_branches,
   mortgage_topics,
@@ -31,34 +32,45 @@ export const topic_index = new Map(
   mortgage_topics.map((topic) => [topic.id, topic]),
 );
 
+export function lens_catalog(lens: AtlasLens) {
+  const concepts = mortgage_concepts.filter(c => concept_in_lens(c, lens));
+  const ids = new Set(concepts.map(c => c.id));
+  const topics = mortgage_topics.map(t => ({ ...t, concepts: t.concepts.filter(id => ids.has(id)) })).filter(t => t.concepts.length);
+  const branches = mortgage_branches.filter(b => topics.some(t => t.branch === b.id));
+  return { concepts, topics, branches };
+}
+
 // Deterministic layout. The parent's allocated vertical span includes every child.
 // Nothing depends on browser font metrics, timers or a force simulation.
 export function build_mortgage_graph(
   depth: number,
   branch_filter = 'all',
   topic_filter = 'all',
+  lens: AtlasLens = 'fixed_income',
 ): GraphNode[] {
+  const catalog = lens_catalog(lens);
+  const visible_topics = new Map(catalog.topics.map(t => [t.id, t]));
   const nodes: GraphNode[] = [
     {
       id: 'mortgages',
       kind: 'root',
-      title: 'Mortgage Map',
-      subtitle: 'Loans → cash flows → decisions',
+      title: `${lens_definition(lens).title} Map`,
+      subtitle: lens === 'rates' ? 'Curves → instruments → mortgage risk' : 'Loans → cash flows → decisions',
       x: 0,
       y: 0,
       width: 250,
       height: 102,
     },
   ];
-  const branches = mortgage_branches.filter(
+  const branches = catalog.branches.filter(
     (b) => branch_filter === 'all' || b.id === branch_filter,
   );
   const topic_span = (id: string) =>
-    depth >= 2 ? (topic_index.get(id)?.concepts.length ?? 0) * 84 + 26 : 114;
+    depth >= 2 ? (visible_topics.get(id)?.concepts.length ?? 0) * 84 + 26 : 114;
   const branch_span = (id: string) =>
     depth === 0
       ? 160
-      : mortgage_topics
+      : catalog.topics
           .filter(
             (t) =>
               t.branch === id &&
@@ -69,8 +81,8 @@ export function build_mortgage_graph(
     const side_branches = branches.filter((b) =>
       branch_filter !== 'all'
         ? side === 1
-        : (mortgage_branches.indexOf(b) <
-          Math.ceil(mortgage_branches.length / 2)
+        : (catalog.branches.indexOf(b) <
+          Math.ceil(catalog.branches.length / 2)
             ? -1
             : 1) === side,
     );
@@ -79,7 +91,7 @@ export function build_mortgage_graph(
     for (const branch of side_branches) {
       const span = branch_span(branch.id);
       const center = cursor + span / 2;
-      const topics = mortgage_topics.filter(
+      const topics = catalog.topics.filter(
         (t) =>
           t.branch === branch.id &&
           (topic_filter === 'all' || t.id === topic_filter),
