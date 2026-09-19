@@ -1,12 +1,11 @@
+import type { AtlasLens } from '@/content/fixed_income_lenses';
+import { lens_catalog } from '@/lib/mortgage_graph';
 import { useEffect, useId, useState } from 'react';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
-import {
-  mortgage_branches,
-  mortgage_topics,
-} from '@/content/mortgage_concepts';
 import { concept_index } from '@/lib/mortgage_graph';
 
 export function MortgageNavigator({
+  lens,
   branch,
   topic,
   expanded_by_default,
@@ -16,6 +15,7 @@ export function MortgageNavigator({
   choose_concept,
   overview,
 }: {
+  lens: AtlasLens;
   branch: string;
   topic: string;
   expanded_by_default: boolean;
@@ -25,6 +25,7 @@ export function MortgageNavigator({
   choose_concept: (id: string, trigger?: HTMLButtonElement) => void;
   overview: () => void;
 }) {
+  const { branches: mortgage_branches, topics: mortgage_topics } = lens_catalog(lens);
   const domain = mortgage_branches.find((b) => b.id === branch);
   const group = mortgage_topics.find((t) => t.id === topic);
   const [browse_open, set_browse_open] = useState(expanded_by_default);
