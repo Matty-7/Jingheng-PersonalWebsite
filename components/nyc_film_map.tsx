@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore
 import Image from 'next/image';
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Film, MapPin, Maximize2, Search, X } from 'lucide-react';
 import type * as Leaflet from 'leaflet';
-import { google_maps_url, film_catalog, film_locations, film_sources, search_locations, type FilmLocation, type FilmScene } from '@/lib/nyc_film_map';
+import { google_film_embed_url, google_maps_url, film_catalog, film_locations, film_sources, search_locations, type FilmLocation, type FilmScene } from '@/lib/nyc_film_map';
 
 type MapState = { active: boolean; leaflet: typeof Leaflet; map: Leaflet.Map; layer: Leaflet.LayerGroup; markers: Map<string, Leaflet.Marker> };
 
@@ -14,7 +14,8 @@ function SceneStill({ scene, thumbnail = false }: { scene: FilmScene; thumbnail?
   return <Image src={thumbnail ? scene.still.thumbnail : scene.still.src} alt={thumbnail ? '' : scene.still.alt} width={scene.still.width} height={scene.still.height} unoptimized loading="lazy" onError={() => set_failed(true)} />;
 }
 
-function SceneDetails({ location, film_id }: { location: FilmLocation; film_id: string }) {
+function SceneDetails({ location, film_id, selected, google_maps_key }: { location: FilmLocation; film_id: string; selected: boolean; google_maps_key: string }) {
+  const embed_url = selected ? google_film_embed_url(location, google_maps_key) : null;
   const scenes = location.scenes.filter((scene) => film_id === 'all' || scene.film_id === film_id);
   return <div className="cinema-details">
     {scenes.map((scene) => {
@@ -29,7 +30,7 @@ function SceneDetails({ location, film_id }: { location: FilmLocation; film_id: 
         </div>
       </div>;
     })}
-    <div className="cinema-visit-info"><p className="cinema-address"><MapPin size={16} aria-hidden="true" />{location.address}</p><p className="cinema-visit"><strong>{location.access}</strong> · {location.visit_note}</p><a className="cinema-google-link" href={google_maps_url(location)} target="_blank" rel="noopener noreferrer">Open in Google Maps <ArrowUpRight size={17} aria-hidden="true" /></a></div>
+    <div className="cinema-visit-info"><p className="cinema-address"><MapPin size={16} aria-hidden="true" />{location.address}</p><p className="cinema-visit"><strong>{location.access}</strong> · {location.visit_note}</p>{embed_url && <iframe className="cinema-google-map" title={`Google Maps: ${location.name}`} src={embed_url} referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />}<a className="cinema-google-link" href={google_maps_url(location)} target="_blank" rel="noopener noreferrer">Open in Google Maps <ArrowUpRight size={17} aria-hidden="true" /></a></div>
   </div>;
 }
 
@@ -38,7 +39,7 @@ const subscribe_to_readiness = () => () => {};
 const client_ready = () => true;
 const server_ready = () => false;
 
-export function NycFilmMap() {
+export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
   const interactive = useSyncExternalStore(subscribe_to_readiness, client_ready, server_ready);
   const [film_id, set_film_id] = useState('all');
   const [query, set_query] = useState('');
@@ -252,7 +253,7 @@ export function NycFilmMap() {
                 <span className="cinema-place-thumbnail"><SceneStill scene={preview_scene} thumbnail /><span>{String(index + 1).padStart(2, '0')}</span></span><span className="cinema-place-copy"><strong>{location.name}</strong><span>{titles}</span><small>{location.neighborhood} · {location.borough}</small></span><ChevronRight className="cinema-place-chevron" size={17} aria-hidden="true" />
               </summary>
               <section className="cinema-selected" aria-label={`Details for ${location.name}`} tabIndex={-1} ref={(element) => { if (element) details_elements.current.set(location.id, element); else details_elements.current.delete(location.id); }}>
-                <div className="cinema-selected-title"><h3>{location.name}</h3><button aria-label="Close location details" onClick={() => { set_selected_id(null); details_elements.current.get(location.id)?.parentElement?.querySelector('summary')?.focus(); }}><X size={17} /></button></div><SceneDetails location={location} film_id={film_id} />
+                <div className="cinema-selected-title"><h3>{location.name}</h3><button aria-label="Close location details" onClick={() => { set_selected_id(null); details_elements.current.get(location.id)?.parentElement?.querySelector('summary')?.focus(); }}><X size={17} /></button></div><SceneDetails location={location} film_id={film_id} selected={selected} google_maps_key={google_maps_key} />
               </section>
             </details>
           </li>;

@@ -1,8 +1,10 @@
 import { expect, test } from '@playwright/test';
 
 test('literary choices keep the Google destination and sourced passage together without the embedded map', async ({ page }) => {
-  await page.route('https://www.google.com/maps?**', (route) => route.abort());
+  let intercepted_maps = 0;
+  await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => { intercepted_maps += 1; return route.abort(); });
   await page.goto('/portfolio/nyc-literary-map');
+  await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
   await expect(page.getByRole('heading', { name: 'NYC Literary Map.' })).toBeVisible();
   await page.locator('.literary-catalog > summary').press('Enter');
   await page.getByRole('button', { name: 'The Great Gatsby F. Scott Fitzgerald 1925 · Book' }).press('Enter');
@@ -28,8 +30,10 @@ test('literary choices keep the Google destination and sourced passage together 
 
 
 test('literary search keeps focus, filters locally, handles no results and restores the collection', async ({ page }) => {
-  await page.route('https://www.google.com/maps?**', (route) => route.abort());
+  let intercepted_maps = 0;
+  await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => { intercepted_maps += 1; return route.abort(); });
   await page.goto('/portfolio/nyc-literary-map');
+  await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
   await expect(page.locator('.literary-catalog')).not.toHaveAttribute('open');
   await expect(page.locator('.literary-places')).not.toHaveAttribute('open');
   const search = page.getByRole('searchbox', { name: 'Search this collection' });

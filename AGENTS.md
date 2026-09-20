@@ -15,7 +15,6 @@
 - Audio controls must operate real playback. Default is user-initiated Apple preview streaming and links to full songs. Keep one audio element across section changes, and label previews honestly.
 - Do not add geographic slogans to the hero or restore the removed city chapter. Never add a home street address. Preserve geographic detail in owner-authored essays.
 - Keep secrets and private signing keys out of source, media, logs and Git history.
-- On September 20, 2026, Jingheng required Google map features to remain free with no Google charges. Keep keyless map embeds and Maps URLs; do not add metered Maps JavaScript, Places, Geocoding, Routes, or APIs relying on a free allowance. Possession of an API key does not authorize billing changes. Keep any stored key secret and unused unless the integration and API restrictions meet this constraint.
 - Preserve keyboard use, readable static content, responsive layouts and reduced-motion behavior.
 - Run npm run lint, npx tsc --noEmit, npm test, node scripts/check-content.mjs and npm run build after substantive changes. Vendored components/ui and hooks/use-mobile.ts are excluded from application lint and should not be edited for routine styling.
 - Do not claim animation, MusicKit integration, or browser checks that were not implemented or performed.
@@ -35,3 +34,7 @@ Use `docs/agent_workflow.md` and the role briefs in `docs/agent_roles.md`. Keep 
 Observe the exact merged revision and terminal deployment result before beginning the next critique. Respect platform access controls and branch protection; report a concrete blocker if they prevent completion. Do not change permissions or bypass a rejected action. This standing merge and publish authorization remains in effect until Jingheng changes it.
 
 On September 8, 2026, Jingheng requested optimization of the workflow itself and authorized the proposed actual browser inspection. Follow `docs/site_audit.md`: the parent performs supported browser checks and supplies evidence to the read-only agents. Distinguish production HTTP checks from source-preview interaction tests. Keep merge-triggered publication separate from the recurring audit. NO_CHANGE ends one dated audit, never the recurring task; an incomplete inspection is PARTIAL or BLOCKED. Future routine audits may not rewrite these gates, automation configuration, permissions or their own acceptance criteria to obtain a pass.
+
+## Google Maps cost constraint
+
+On September 20, 2026, Jingheng explicitly required all Literary, Music and Film Map Google features to use the same configured key and incur **$0 Google Maps charges**. Only the currently no-charge Maps Embed API and keyless Maps URLs are allowed. Do not introduce Maps JavaScript, Places, Geocoding, Routes, Static Maps, paid Street View APIs, or any metered fallback. Free-tier allowances and credits do not satisfy this requirement. Keep the actual key in the Sites environment as GOOGLE_MAPS_EMBED_API_KEY, never in Git. Preserve this constraint in future iterations; see docs/google_maps.md.
