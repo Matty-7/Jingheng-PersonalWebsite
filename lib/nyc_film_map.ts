@@ -4,6 +4,7 @@ export type FilmScene = {
   film_id: string;
   scene: string;
   source_ids: string[];
+  still?: { src: string; thumbnail: string; alt: string; credit: string; source_url: string; image_url: string; width: number; height: number };
 };
 
 export type FilmLocation = {
@@ -15,6 +16,7 @@ export type FilmLocation = {
   coordinates: [number, number];
   access: string;
   visit_note: string;
+  maps_query?: string;
   scenes: FilmScene[];
 };
 
@@ -28,7 +30,18 @@ export function locations_for_film(film_id: string) {
   );
 }
 
-export function directions_url(location: FilmLocation) {
-  const destination = `${location.name}, ${location.address}, New York`;
-  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}&travelmode=walking`;
+export function google_maps_url(location: FilmLocation) {
+  const query = location.maps_query ?? `${location.address}, ${location.borough}, New York`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+export function search_locations(film_id: string, query: string) {
+  const terms = query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+  return locations_for_film(film_id).filter((location) => {
+    const films = location.scenes.filter((scene) => film_id === 'all' || scene.film_id === film_id)
+      .map((scene) => film_catalog.find((film) => film.id === scene.film_id))
+      .map((film) => `${film?.title} ${film?.director} ${film?.year}`);
+    const text = [location.name, location.address, location.neighborhood, location.borough, ...films].join(' ').toLocaleLowerCase();
+    return terms.every((term) => text.includes(term));
+  });
 }
