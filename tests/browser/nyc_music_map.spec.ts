@@ -25,8 +25,10 @@ test('music selection keeps the recording, place and Google map together', async
 
 test('failed preview and map requests leave usable links and silent selection', async ({ page }) => {
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) => route.abort());
-  await page.route('https://www.google.com/maps?**', (route) => route.abort());
+  let intercepted_maps = 0;
+  await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => { intercepted_maps += 1; return route.abort(); });
   await page.goto('/portfolio/nyc-music-map');
+  await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
   await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
   await expect(page.getByText('This preview is unavailable. You can still open the song on Apple Music.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Listen on Apple Music', exact: true })).toBeVisible();

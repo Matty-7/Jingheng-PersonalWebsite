@@ -11,11 +11,12 @@ function AlbumCover({ track, small = false }: { track: MusicTrack; small?: boole
   return <Image src={track.artwork_url} alt={small ? '' : `${track.album} album cover`} width={small ? 100 : 240} height={small ? 100 : 240} unoptimized loading={small ? 'lazy' : 'eager'} onError={() => set_failed(true)} />;
 }
 
-function GoogleMusicMap({ place }: { place: MusicPlace }) {
+function GoogleMusicMap({ place, google_maps_key }: { place: MusicPlace; google_maps_key: string }) {
+  const embed_url = google_music_embed_url(place, google_maps_key);
   return <section className="sound-map-panel" aria-label={`Map of ${place.name}`}>
     <div className="sound-map-heading"><span><MapPin size={16} aria-hidden="true" />{place.name}</span><span>Selected place</span></div>
     <div className="sound-map-frame">
-      <iframe title={`Google Maps: ${place.name}`} src={google_music_embed_url(place)} referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
+      {embed_url ? <iframe title={`Google Maps: ${place.name}`} src={embed_url} referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> : <p className="sound-location-note">The map is unavailable. Use the Google Maps link below.</p>}
 
     </div>
     <div className="sound-map-footer"><div><span className="sound-label">{place.precision}</span><p>{place.area}</p></div><a href={google_music_url(place)} target="_blank" rel="noopener noreferrer">Open in Google Maps <ArrowUpRight size={17} aria-hidden="true" /></a></div>
@@ -23,7 +24,7 @@ function GoogleMusicMap({ place }: { place: MusicPlace }) {
   </section>;
 }
 
-export function NycMusicMap() {
+export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
   const [query, set_query] = useState('');
   const [track_id, set_track_id] = useState<string | null>(music_tracks[0].id);
   const [place_id, set_place_id] = useState(music_tracks[0].place_ids[0]);
@@ -133,7 +134,7 @@ export function NycMusicMap() {
     {track && place ? <>
       <div className="sound-place-picker"><span className="sound-label">Places in this song</span><div>{places.map((item) => <button key={item.id} aria-pressed={place.id === item.id} onClick={() => set_place_id(item.id)}><MapPin size={15} aria-hidden="true" />{item.name}</button>)}</div></div>
       <div className="sound-workspace">
-        <GoogleMusicMap key={place.id} place={place} />
+        <GoogleMusicMap key={place.id} place={place} google_maps_key={google_maps_key} />
         <article className={`sound-record${playing ? ' is-playing' : ''}`} aria-label="Selected song">
           <div className="sound-record-top"><a className="sound-selected-cover" href={track.apple_music_url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${track.album} on Apple Music`}><AlbumCover key={track.id} track={track} /></a><div><p className="sound-label">{track.year} · {track.genre}</p><h2>{track.title}</h2><p className="sound-artist">{track.artist}</p><p className="sound-album-name">{track.album}</p></div></div>
           <div className="sound-player"><button className="sound-play" onClick={() => void toggle_preview()} aria-label={loading ? 'Cancel loading preview' : playing ? 'Pause preview' : `Play preview of ${track.title}`}><span>{loading || playing ? <Pause size={20} aria-hidden="true" /> : <Play size={20} aria-hidden="true" />}</span>{loading ? 'Loading preview…' : playing ? 'Pause preview' : 'Play preview'}</button><Disc3 className="sound-playback-disc" size={30} aria-hidden="true" /><div className="sound-progress"><progress value={elapsed} max={duration || 1} aria-label="Preview playback progress" /><span>{preview_time(elapsed)} <span>/ {duration ? preview_time(duration) : 'preview'}</span></span></div></div>

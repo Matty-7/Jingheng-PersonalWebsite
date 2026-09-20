@@ -1,3 +1,4 @@
+import { google_place_embed_url, google_place_url } from './google_maps';
 import catalog from '../content/nyc_music_map.json';
 
 export type MusicTrack = (typeof catalog.tracks)[number];
@@ -18,11 +19,11 @@ export function search_music(query: string): MusicTrack[] {
 }
 
 export function google_music_url(place: MusicPlace): string {
-  return `https://www.google.com/maps/search/?${new URLSearchParams({ api: '1', query: place.map_query })}`;
+  return google_place_url(place.map_query);
 }
 
-export function google_music_embed_url(place: MusicPlace): string {
-  return `https://www.google.com/maps?${new URLSearchParams({ q: place.map_query, output: 'embed', z: place.precision === 'Borough' ? '11' : place.precision === 'Area' ? '13' : place.precision === 'Neighborhood' ? '14' : '16' })}`;
+export function google_music_embed_url(place: MusicPlace, api_key: string): string | null {
+  return google_place_embed_url(place.map_query, api_key, place.precision === 'Borough' ? 11 : place.precision === 'Area' ? 13 : place.precision === 'Neighborhood' ? 14 : 16);
 }
 
 export function preview_time(seconds: number): string {
