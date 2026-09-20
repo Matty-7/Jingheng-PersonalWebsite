@@ -191,7 +191,7 @@ export function NycFilmMap() {
     if (selected_id && reveal_selection.current) {
       const details = details_elements.current.get(selected_id);
       details?.focus({ preventScroll: true });
-      details?.scrollIntoView({ block: 'nearest', behavior: reduce_motion() ? 'instant' : 'smooth' });
+      details?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
     }
   }, [selected_id, map_state, filtered_locations]);
 

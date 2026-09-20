@@ -45,10 +45,10 @@ test('real scene frames have local derivatives and matching provenance; missing 
       assert.ok(!originals.has(still.image_url), `Frame reused for a different scene: ${place.id}`);
       originals.add(still.image_url);
       for (const asset of [still.src, still.thumbnail]) {
-        assert.match(asset, /^\/images\/film-map\/[a-z0-9-]+\.webp$/);
+        assert.match(asset, /^\/images\/film-map\/[a-z0-9-]+\.jpg$/);
         const bytes = readFileSync(new URL(`../public${asset}`, import.meta.url));
-        assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
-        assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
+        assert.equal(bytes.subarray(0, 3).toString('hex'), 'ffd8ff');
+        assert.equal(bytes.subarray(-2).toString('hex'), 'ffd9');
       }
     }
   }
