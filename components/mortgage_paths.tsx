@@ -1,4 +1,3 @@
-import { lens_definition, type AtlasLens } from '@/content/fixed_income_lenses';
 import { expansion_paths } from '@/content/fixed_income_expansion';
 import type { RefObject } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
@@ -11,7 +10,6 @@ import { analytics_paths } from '@/content/mortgage_analytics';
 import { concept_index } from '@/lib/mortgage_graph';
 
 export function MortgagePaths({
-  lens,
   path_id,
   selected,
   reader_open,
@@ -19,7 +17,6 @@ export function MortgagePaths({
   choose_path,
   choose_concept,
 }: {
-  lens: AtlasLens;
   path_id: string;
   selected: string | null;
   reader_open: boolean;
@@ -29,9 +26,8 @@ export function MortgagePaths({
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
   const model = [...mechanism_models, ...analytics_paths, ...expansion_paths].find((item) => item.id === path_id);
-  const recommended = new Set<string>(lens_definition(lens).paths);
-  const ordered_paths = [...mortgage_paths].sort((a, b) => Number(recommended.has(b.id)) - Number(recommended.has(a.id)));
-  const step_index = Math.max(0, path?.steps.indexOf(selected ?? '') ?? 0);
+  const selected_step = path && selected ? path.steps.indexOf(selected) : -1;
+  const step_index = Math.max(0, selected_step);
   return (
     <section
       className="atlas-models"
@@ -105,17 +101,16 @@ export function MortgagePaths({
       ) : (
         <>
           <h2 tabIndex={-1}>Follow a mechanism.</h2>
-          <p className="atlas-path-recommendation">Suggested starting points for {lens_definition(lens).title.toLowerCase()} appear first. Every path stays available.</p>
           <div className="atlas-model-cards">
-            {ordered_paths.map((item, index) => (
-              <button key={item.id} className={recommended.has(item.id) ? 'is-recommended' : undefined} onClick={() => choose_path(item.id)}>
+            {mortgage_paths.map((item, index) => (
+              <button key={item.id} onClick={() => choose_path(item.id)}>
                 <span>
                   {String(index + 1).padStart(2, '0')}
                   <ArrowUpRight size={17} />
                 </span>
                 <strong>{item.title}</strong>
                 <p>{item.description}</p>
-                <small>{recommended.has(item.id) ? 'Suggested · ' : ''}{item.steps.length} concepts</small>
+                <small>{item.steps.length} concepts</small>
               </button>
             ))}
           </div>

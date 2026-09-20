@@ -1,4 +1,3 @@
-import { concept_in_lens, type AtlasLens } from '../content/fixed_income_lenses.ts';
 import { concept_index } from './mortgage_graph.ts';
 import { visit_concept, type ReadingTrail } from './mortgage_reading.ts';
 
@@ -6,7 +5,6 @@ export type MortgageView = 'map' | 'connections' | 'list' | 'compare' | 'paths';
 type ReaderSection = 'title' | 'connections';
 
 export type MortgageState = {
-  lens: AtlasLens;
   view: MortgageView;
   selected: string | null;
   reader_open: boolean;
@@ -21,7 +19,6 @@ export type MortgageState = {
 };
 
 export const initial_mortgage_state: MortgageState = {
-  lens: 'mortgage',
   view: 'map',
   selected: null,
   reader_open: false,
@@ -36,7 +33,6 @@ export const initial_mortgage_state: MortgageState = {
 };
 
 export type MortgageAction =
-  | { type: 'change_lens'; lens: AtlasLens }
   | { type: 'select_concept'; id: string; preserve_map_context: boolean }
   | { type: 'follow_history'; offset: number; preserve_map_context: boolean }
   | { type: 'restore_concept'; id: string }
@@ -61,7 +57,6 @@ function select_concept(
   if (!concept) return state;
   return {
     ...state,
-    lens: concept_in_lens(concept, state.lens) ? state.lens : 'fixed_income',
     selected: id,
     reader_open: true,
     reader_section: 'title',
@@ -80,8 +75,6 @@ export function mortgage_reducer(
   action: MortgageAction,
 ): MortgageState {
   switch (action.type) {
-    case 'change_lens':
-      return { ...state, lens: action.lens, view: 'map', depth: 0, branch_filter: 'all', topic_filter: 'all', path_id: '', selected: null, reader_open: false };
     case 'select_concept': {
       const next = select_concept(
         state,
@@ -106,7 +99,6 @@ export function mortgage_reducer(
       return {
         ...state,
         view: 'connections',
-        lens: concept_in_lens(concept_index.get(action.id)!, state.lens) ? state.lens : 'fixed_income',
         selected: action.id,
         reader_open: true,
         reader_section: 'title',
@@ -168,7 +160,7 @@ export function mortgage_reducer(
     case 'change_view': {
       const selected =
         action.view === 'connections' && !state.selected
-          ? state.lens === 'rates' ? 'interest_rate_swap' : 'prepayments'
+          ? 'prepayments'
           : state.selected;
       return {
         ...state,
