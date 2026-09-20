@@ -8,8 +8,8 @@ import './mortgage_map.css';
 import { render_mortgage_math } from '@/lib/mortgage_math';
 
 export const metadata: Metadata = pageMetadata(
-  'Mortgage Map — Jingheng Huan',
-  'Explore mortgages and fixed income through connected concepts, financial comparisons, formulas and reading paths, with public sources.',
+  'Mortgage Map | Jingheng Huan',
+  'Explore mortgage cash flows, interest rates and structured credit in one connected Mortgage Map, with formulas, comparisons, reading paths and public sources.',
   '/portfolio/mortgage-map',
 );
 
@@ -26,13 +26,13 @@ export default function MortgageMapPage() {
         <h1>
           Mortgage <em>Map.</em>
         </h1>
-        <p>Mortgages, markets and the mechanics of fixed income.</p>
+        <p>Mortgage cash flows, interest rates and structured credit.</p>
       </header>
       <MortgageMap formulas={render_mortgage_math()} />
       <p className="map-scope">
-        An evolving guide to mortgages, MBS and the ideas around them, including
-        commercial property and structured credit. Original explanations link to
-        public references. Connections distinguish mechanisms, definitions,
+        An evolving guide to mortgages and MBS, connecting interest rates,
+        commercial property, funding and credit within one map. Original
+        explanations link to public references. Connections distinguish mechanisms, definitions,
         measurements and comparisons; examples are illustrative.
       </p>
     </main>

@@ -63,12 +63,7 @@ test('compact navigation keeps settings, sibling reading and focus accessible', 
     const atlas = await page.getByRole('dialog').boundingBox();
     const canvas = await page.getByRole('application').boundingBox();
     expect(canvas!.y - atlas!.y).toBeLessThanOrEqual(300);
-    const lenses = await page.getByRole('group', { name: 'Atlas subject' }).boundingBox();
-    const count = await page.locator('.atlas-lens-count').boundingBox();
-    expect(count!.x).toBeGreaterThan(lenses!.x + lenses!.width);
-    expect(count!.y).toBeGreaterThanOrEqual(lenses!.y);
-    expect(count!.y + count!.height).toBeLessThanOrEqual(lenses!.y + lenses!.height);
-    expect(count!.x + count!.width).toBeLessThanOrEqual(atlas!.x + atlas!.width);
+    await expect(page.getByRole('group', { name: 'Atlas subject' })).toHaveCount(0);
     await test_info.attach('expanded-navigation', { body: await page.screenshot(), contentType: 'image/png' });
     await browse.press('Enter');
   }

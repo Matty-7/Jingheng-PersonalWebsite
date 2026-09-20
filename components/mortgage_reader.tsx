@@ -1,5 +1,4 @@
 import { expansion_paths } from '@/content/fixed_income_expansion';
-import { concept_in_lens } from '@/content/fixed_income_lenses';
 import type { RefObject } from 'react';
 import {
   ArrowLeft,
@@ -58,7 +57,6 @@ export function MortgageReader({
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
   const model = expansion_paths.find(item => item.id === path_id);
-  const shared_with_rates = concept_in_lens(concept, 'rates') && concept_in_lens(concept, 'mortgage');
   const relations = study_edges(concept.id);
   return (
     <aside
@@ -99,7 +97,6 @@ export function MortgageReader({
         {topic_index.get(concept.topic)?.title}
       </p>
       <h2 tabIndex={-1}>{concept.title}</h2>
-      {shared_with_rates && <p className="atlas-shared-label">Mortgage ↔ Rates</p>}
       <p className="atlas-reader-subtitle">{concept.subtitle}</p>
       <p className="atlas-reader-summary">{concept.summary}</p>
       {path && path.steps.includes(concept.id) && (

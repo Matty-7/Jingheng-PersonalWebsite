@@ -32,12 +32,10 @@ test('roll cash flows, prepayments, delivery and repo are explicit sourced graph
   }
 });
 
-test('a rates repo reader can follow the mortgage roll comparison without losing history', () => {
-  let state = mortgage_reducer(initial_mortgage_state, { type: 'change_lens', lens: 'rates' });
+test('a repo reader can follow the mortgage roll comparison without losing history', () => {
+  let state = initial_mortgage_state;
   state = mortgage_reducer(state, { type: 'select_concept', id: 'repo', preserve_map_context: false });
-  assert.equal(state.lens, 'rates');
   state = mortgage_reducer(state, { type: 'select_concept', id: 'rolls', preserve_map_context: false });
-  assert.equal(state.lens, 'fixed_income');
   state = mortgage_reducer(state, { type: 'follow_history', offset: -1, preserve_map_context: false });
   assert.equal(state.selected, 'repo');
   state = mortgage_reducer(state, { type: 'follow_history', offset: 1, preserve_map_context: false });
