@@ -1,0 +1,364 @@
+{
+  "reviewed_on": "2026-09-20",
+  "tracks": [
+    {
+      "id": "new-york-state-of-mind",
+      "title": "New York State of Mind",
+      "artist": "Billy Joel",
+      "album": "Turnstiles",
+      "year": 1976,
+      "genre": "Soul / pop",
+      "track_id": 259213690,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/20/9c/8f/209c8fd8-6cdd-6567-74e2-3e62b2803713/888880156822.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/26/77/22/2677221c-2be4-2d89-c7ef-41478a122233/mzaf_5211588923829341321.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-state-of-mind/259213439?i=259213690&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Billy+Joel+New+York+State+of+Mind&entity=song&country=us&limit=15",
+      "place_ids": [
+        "chinatown",
+        "riverside"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "Chinatown or on Riverside",
+      "source_url": "https://www.billyjoel.com/song/new-york-state-mind/",
+      "source_label": "Billy Joel · official lyrics",
+      "note": "Two names turn a city-wide homecoming into something local: Chinatown downtown, Riverside on the west side."
+    },
+    {
+      "id": "59th-street-bridge",
+      "title": "The 59th Street Bridge Song (Feelin' Groovy)",
+      "artist": "Simon & Garfunkel",
+      "album": "Parsley, Sage, Rosemary and Thyme",
+      "year": 1966,
+      "genre": "Folk",
+      "track_id": 1467438682,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/06/f4/d2/06f4d208-642e-75c0-d905-1ac98e7d441c/886447797075.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7d/6c/30/7d6c3072-5741-4fee-e2e6-c90252790d8b/mzaf_14006162220073692321.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-59th-street-bridge-song-feelin-groovy/1467438660?i=1467438682&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Simon+Garfunkel+59th+Street+Bridge&entity=song&country=us&limit=15",
+      "place_ids": [
+        "queensboro-bridge"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://www.youtube.com/watch?v=-xhJcQEfD5s",
+      "source_label": "Simon & Garfunkel · official audio",
+      "note": "The bridge is in the title. The song itself stays with the pace of a morning walk, giving a familiar crossing a different tempo."
+    },
+    {
+      "id": "chelsea-hotel",
+      "title": "Chelsea Hotel #2",
+      "artist": "Leonard Cohen",
+      "album": "New Skin for the Old Ceremony",
+      "year": 1974,
+      "genre": "Folk",
+      "track_id": 511065474,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/ef/ca/44/efca444c-6a8d-7034-2e94-7e430b3a5638/dj.uavlisiy.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/1b/9c/b31b9c8f-e851-10ff-519c-d96bb32ecfe3/mzaf_1196503042295796787.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/chelsea-hotel-2/511065006?i=511065474&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Leonard+Cohen+Chelsea+Hotel+2&entity=song&country=us&limit=15",
+      "place_ids": [
+        "chelsea-hotel"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://www.leonardcohen.com/track/chelsea-hotel-2",
+      "source_label": "Leonard Cohen · official song page",
+      "note": "A specific hotel becomes the setting for a private memory. The title keeps that memory attached to West 23rd Street."
+    },
+    {
+      "id": "cornelia-street",
+      "title": "Cornelia Street",
+      "artist": "Taylor Swift",
+      "album": "Lover",
+      "year": 2019,
+      "genre": "Pop",
+      "track_id": 1468058184,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/49/3d/ab/493dab54-f920-9043-6181-80993b8116c9/19UMGIM53909.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6a/f9/32/6af93277-3dca-7a00-edd0-5386ce4dd123/mzaf_18277705604040396242.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/cornelia-street/1468058165?i=1468058184&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Taylor+Swift+Cornelia+Street&entity=song&country=us&limit=15",
+      "place_ids": [
+        "cornelia-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "A short street carries the weight of a relationship. This entry follows the street named in the song, without turning a private home into a destination.",
+      "source_url": "https://music.apple.com/us/album/cornelia-street/1468058165?i=1468058184&uo=4",
+      "source_label": "Apple Music · recording & lyrics"
+    },
+    {
+      "id": "53rd-and-3rd",
+      "title": "53rd & 3rd",
+      "artist": "Ramones",
+      "album": "Ramones (Deluxe Edition)",
+      "year": 1976,
+      "genre": "Punk",
+      "track_id": 312355558,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features4/v4/e0/34/88/e03488bc-be97-55a9-6d9e-2dccab02c3b7/dj.quodxoxa.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9b/72/a4/9b72a46a-bef0-14bc-cc0f-cf71b4c0eac9/mzaf_13856823675389761563.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/53rd-3rd/312355529?i=312355558&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ramones+53rd+3rd&entity=song&country=us&limit=15",
+      "place_ids": [
+        "53rd-and-3rd"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title reads like directions: one cross street, one avenue. It gives this Midtown corner a very different identity from the office blocks around it.",
+      "source_url": "https://music.apple.com/us/album/53rd-3rd/312355529?i=312355558&uo=4",
+      "source_label": "Apple Music · recording & lyrics"
+    },
+    {
+      "id": "across-110th-street",
+      "title": "Across 110th Street",
+      "artist": "Bobby Womack & Peace",
+      "album": "Across 110th Street (Original Motion Picture Soundtrack)",
+      "year": 1972,
+      "genre": "Soul",
+      "track_id": 285172503,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f4/08/5e/f4085e67-c4e9-b48a-abf0-4677dae461a2/mzi.snvzmdgu.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/39/00/04/39000407-e2e1-94db-5eee-d9b0be77446a/mzaf_15555109385215952010.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/across-110th-street/285172357?i=285172503&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bobby+Womack+Across+110th+Street&entity=song&country=us&limit=15",
+      "place_ids": [
+        "110th-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The street works as a boundary in the title of this soul soundtrack recording. Here the map stays with the named street, rather than inventing a single scene.",
+      "source_url": "https://music.apple.com/us/album/across-110th-street/285172357?i=285172503&uo=4",
+      "source_label": "Apple Music · recording & lyrics"
+    },
+    {
+      "id": "spanish-harlem",
+      "title": "Spanish Harlem",
+      "artist": "Ben E. King",
+      "album": "Spanish Harlem",
+      "year": 1960,
+      "genre": "Soul",
+      "track_id": 68100329,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/b9/87/eb/b987ebf3-fe34-4e57-56db-16fcb22c6bb4/dj.rxcukmuq.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/c7/91/85c79123-6955-a2c5-96f7-cedd749a6850/mzaf_9355366450888081940.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/spanish-harlem/68100481?i=68100329&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ben+E+King+Spanish+Harlem&entity=song&country=us&limit=15",
+      "place_ids": [
+        "spanish-harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The neighborhood gives the song its name. Its image of a rose is intimate, but it does not identify a real flower bed to visit.",
+      "source_url": "https://music.apple.com/us/album/spanish-harlem/68100481?i=68100329&uo=4",
+      "source_label": "Apple Music · recording & lyrics"
+    },
+    {
+      "id": "bleecker-street",
+      "title": "Bleecker Street",
+      "artist": "Simon & Garfunkel",
+      "album": "Wednesday Morning, 3 A.M.",
+      "year": 1964,
+      "genre": "Folk",
+      "track_id": 203925189,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/03/ef/18/03ef1813-a39e-965c-0a1b-18df7254d1ed/074640904929.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e3/44/e6/e344e6c0-0a9e-e713-919a-3062714d837f/mzaf_4575571691922051475.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/bleecker-street/203925134?i=203925189&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Simon+Garfunkel+Bleecker+Street&entity=song&country=us&limit=15",
+      "place_ids": [
+        "bleecker-street"
+      ],
+      "relation": "Title & lyrics",
+      "excerpt": "Like a shroud, it covers Bleecker Street",
+      "source_url": "https://www.paulsimon.com/song/bleecker-street/",
+      "source_label": "Paul Simon · official lyrics",
+      "note": "Fog, rented rooms and voices from a café give the street a lived-in texture. The named street is certain; the café remains unnamed."
+    },
+    {
+      "id": "coney-island-baby",
+      "title": "Coney Island Baby",
+      "artist": "Lou Reed",
+      "album": "Coney Island Baby",
+      "year": 1976,
+      "genre": "Rock",
+      "track_id": 976827040,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/f9/4c/c8/f94cc8d5-c4a9-3d8c-4b68-637d3ee76f90/886445160307.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/e8/60/b0e860c2-e779-9825-f2de-4bbcb04f0022/mzaf_16614789043117337493.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/coney-island-baby/976826778?i=976827040&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Lou+Reed+Coney+Island+Baby&entity=song&country=us&limit=15",
+      "place_ids": [
+        "coney-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Lou Reed puts Coney Island in the title of a song about belonging. The place is a broad association, not a set of directions to one attraction.",
+      "source_url": "https://music.apple.com/us/album/coney-island-baby/976826778?i=976827040&uo=4",
+      "source_label": "Apple Music · recording & lyrics"
+    },
+    {
+      "id": "no-sleep-till-brooklyn",
+      "title": "No Sleep Till Brooklyn",
+      "artist": "Beastie Boys",
+      "album": "Licensed to Ill",
+      "year": 1986,
+      "genre": "Hip-hop",
+      "track_id": 1440912354,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e4/d7/81/e4d781e8-bd3f-486a-cd18-e9b3a7d12b34/00731452735126.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/38/f0/22/38f022c8-a187-a078-1c96-7e4bc2abe579/mzaf_17812634625468836235.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/no-sleep-till-brooklyn/1440912031?i=1440912354&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Beastie+Boys+No+Sleep+Till+Brooklyn&entity=song&country=us&limit=15",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Brooklyn is the destination. Keeping the whole borough on the map is more faithful to the title than selecting an arbitrary club or street.",
+      "source_url": "https://music.apple.com/us/album/no-sleep-till-brooklyn/1440912031?i=1440912354&uo=4",
+      "source_label": "Apple Music · recording & lyrics"
+    },
+    {
+      "id": "52nd-street",
+      "title": "52nd Street",
+      "artist": "Billy Joel",
+      "album": "52nd Street",
+      "year": 1978,
+      "genre": "Jazz / pop",
+      "track_id": 259573701,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d6/02/07/d60207ae-a49f-8f20-c8e6-d58e794b9ae5/dj.lzzblgca.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/3b/5c/b33b5c41-2016-7bea-5e89-7124151ff10c/mzaf_8039879625112550260.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/52nd-street/259573387?i=259573701&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Billy+Joel+52nd+Street&entity=song&country=us&limit=15",
+      "place_ids": [
+        "52nd-street"
+      ],
+      "relation": "Title & lyrics",
+      "excerpt": "On Fifty Second Street",
+      "source_url": "https://www.billyjoel.com/song/52nd-street/",
+      "source_label": "Billy Joel · official lyrics",
+      "note": "A named Manhattan street anchors the title track of the album. The words turn rhythm and a little parade into a street-level image."
+    },
+    {
+      "id": "talkin-new-york",
+      "title": "Talkin' New York",
+      "artist": "Bob Dylan",
+      "album": "Bob Dylan",
+      "year": 1962,
+      "genre": "Folk",
+      "track_id": 159476032,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/e0/8c/a0/mzi.pnnnzihh.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/91/bb/0e/91bb0ee0-462b-0686-cc0f-d02e9e4942c2/mzaf_10382402411023064101.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/talkin-new-york/159476000?i=159476032&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bob+Dylan+Talkin+New+York&entity=song&country=us&limit=15",
+      "place_ids": [
+        "greenwich-village"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "I landed up on the downtown side / Greenwich Village",
+      "source_url": "https://www.bobdylan.com/songs/talkin-new-york/",
+      "source_label": "Bob Dylan · official lyrics",
+      "note": "A subway ride brings the narrator to Greenwich Village and a search for work in coffee houses. The lyric names the neighborhood directly."
+    }
+  ],
+  "places": [
+    {
+      "id": "chinatown",
+      "name": "Chinatown",
+      "area": "Lower Manhattan",
+      "map_query": "Chinatown, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The lyric names Chinatown as a whole. The map shows the neighborhood, not a particular building."
+    },
+    {
+      "id": "riverside",
+      "name": "Riverside",
+      "area": "Upper West Side",
+      "map_query": "Riverside Drive and West 79th Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "Riverside is the word in the lyric. This point on Riverside Drive is an interpretive reference, not an address specified by the song."
+    },
+    {
+      "id": "queensboro-bridge",
+      "name": "Queensboro Bridge",
+      "area": "Manhattan / Queens",
+      "map_query": "Ed Koch Queensboro Bridge, New York, NY",
+      "precision": "Landmark",
+      "note": "The 59th Street Bridge is the Queensboro Bridge. The map identifies the bridge, not a particular spot where the song was written."
+    },
+    {
+      "id": "chelsea-hotel",
+      "name": "Hotel Chelsea",
+      "area": "Chelsea, Manhattan",
+      "map_query": "Hotel Chelsea, 222 West 23rd Street, New York, NY",
+      "precision": "Venue",
+      "note": "The hotel named in the song stands on West 23rd Street. The pin marks the building; it does not identify a room or imply public access."
+    },
+    {
+      "id": "cornelia-street",
+      "name": "Cornelia Street",
+      "area": "West Village, Manhattan",
+      "map_query": "Cornelia Street and Bleecker Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The title names this short West Village street. The map uses its Bleecker Street end, rather than identifying a private residence."
+    },
+    {
+      "id": "53rd-and-3rd",
+      "name": "53rd Street & Third Avenue",
+      "area": "Midtown East, Manhattan",
+      "map_query": "East 53rd Street and Third Avenue, Manhattan, New York, NY",
+      "precision": "Intersection",
+      "note": "A named intersection rather than a general New York setting. The title supplies both streets."
+    },
+    {
+      "id": "110th-street",
+      "name": "110th Street",
+      "area": "Harlem, Manhattan",
+      "map_query": "Central Park North and Malcolm X Boulevard, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The title names the street. This map point is on Central Park North at Malcolm X Boulevard; the song does not specify that intersection."
+    },
+    {
+      "id": "spanish-harlem",
+      "name": "Spanish Harlem",
+      "area": "East Harlem, Manhattan",
+      "map_query": "East Harlem, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "Spanish Harlem is a name for East Harlem. The song describes a neighborhood, not a single identifiable garden or doorway."
+    },
+    {
+      "id": "bleecker-street",
+      "name": "Bleecker Street",
+      "area": "Greenwich Village, Manhattan",
+      "map_query": "Bleecker Street and MacDougal Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "Bleecker Street is explicit in the title and lyric. The map uses the MacDougal Street intersection as a reference, not a verified café from the song."
+    },
+    {
+      "id": "coney-island",
+      "name": "Coney Island",
+      "area": "Brooklyn",
+      "map_query": "Coney Island, Brooklyn, New York, NY",
+      "precision": "Neighborhood",
+      "note": "Coney Island is named in the title. The map locates the neighborhood; it does not claim a specific boardwalk scene or filming site."
+    },
+    {
+      "id": "brooklyn",
+      "name": "Brooklyn",
+      "area": "New York City",
+      "map_query": "Brooklyn, New York, NY",
+      "precision": "Borough",
+      "note": "The destination is the whole borough. No more precise street or landmark is claimed by this entry."
+    },
+    {
+      "id": "52nd-street",
+      "name": "52nd Street",
+      "area": "Midtown, Manhattan",
+      "map_query": "West 52nd Street and Sixth Avenue, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The title and lyric name 52nd Street. Sixth Avenue is a convenient map reference along it, not an intersection specified in the lyric."
+    },
+    {
+      "id": "greenwich-village",
+      "name": "Greenwich Village",
+      "area": "Lower Manhattan",
+      "map_query": "Greenwich Village, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "Dylan explicitly names Greenwich Village after a subway journey. The coffee house in this passage is unnamed, so no particular venue is pinned."
+    }
+  ]
+}
