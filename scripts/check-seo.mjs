@@ -42,6 +42,7 @@ for (const path of [
   '/portfolio/mortgage-map',
   '/portfolio/nyc-film-map',
   '/portfolio/nyc-literary-map',
+  '/portfolio/nyc-music-map',
 ]) {
   const { response, body } = await read(path);
   assert.equal(response.status, 200, path);
@@ -135,6 +136,7 @@ assert.deepEqual(
     `${canonical}/portfolio/mortgage-map`,
     `${canonical}/portfolio/nyc-film-map`,
     `${canonical}/portfolio/nyc-literary-map`,
+    `${canonical}/portfolio/nyc-music-map`,
   ].sort((a, b) => a.localeCompare(b)),
 );
 const withdrawn_mortgage = await read('/lab/mortgage');

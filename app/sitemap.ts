@@ -7,5 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl('/portfolio/mortgage-map') },
     { url: absoluteUrl('/portfolio/nyc-film-map') },
     { url: absoluteUrl('/portfolio/nyc-literary-map') },
+    { url: absoluteUrl('/portfolio/nyc-music-map') },
   ];
 }
