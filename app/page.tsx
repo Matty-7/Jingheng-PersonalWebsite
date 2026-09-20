@@ -325,6 +325,22 @@ export default function Home() {
               <span className="project-film-footer">{film_map_summary.film_count} films · {film_map_summary.place_count} places <span aria-hidden="true">↗</span></span>
             </Link>
           </article>
+          <article className="projects-entry projects-literary-entry" data-reveal>
+            <div className="projects-copy">
+              <h3>NYC Literary Map</h3>
+              <p>Read New York through the places in its books and magazines. Explore original passages, real covers and the streets behind the words.</p>
+              <Link href="/portfolio/nyc-literary-map" className="text-link">Explore literary places <span aria-hidden="true">↗</span></Link>
+            </div>
+            <Link className="project-literary-preview" href="/portfolio/nyc-literary-map" aria-label="Open NYC Literary Map">
+              <span>NEW YORK, IN PRINT</span>
+              <div className="project-literary-covers">
+                <Image unoptimized src="/images/literary-map/washington-square.webp" width={100} height={150} alt="Washington Square by Henry James" loading="lazy" />
+                <Image unoptimized src="/images/literary-map/great-gatsby.webp" width={100} height={150} alt="The Great Gatsby by F. Scott Fitzgerald" loading="lazy" />
+                <Image unoptimized src="/images/literary-map/new-yorker-1940-04-13.webp" width={100} height={150} alt="The New Yorker, April 13, 1940" loading="lazy" />
+              </div>
+              <span>Books, magazines &amp; the city <span aria-hidden="true">↗</span></span>
+            </Link>
+          </article>
         </section>
         <section className="projects-section projects-music-section" aria-labelledby="music-map-project-heading">
           <article className="projects-entry" data-reveal>
