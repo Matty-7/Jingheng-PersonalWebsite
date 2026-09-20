@@ -1,0 +1,88 @@
+.cinema-page { --cinema-paper: #fcf7eb; --cinema-ink: #273a30; --cinema-red: #a73e20; color: var(--cinema-ink); padding: 0 4vw; }
+.cinema-nav { display: flex; justify-content: space-between; align-items: center; min-height: 76px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.cinema-nav > a { display: inline-flex; align-items: center; min-height: 44px; }
+.cinema-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 28px 0; }
+.cinema-kicker { font: 12px/1.5 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.cinema-heading h1 { font-size: clamp(40px, 4.5vw, 70px); margin-top: 6px; }
+.cinema-heading h1 em { color: var(--cinema-red); }
+.cinema-heading > p { font-size: 16px; line-height: 1.6; padding-bottom: 2px; }
+.cinema-picker { padding: 17px 0 20px; border-top: 1px solid var(--border); }
+.cinema-picker-label { display: flex; align-items: center; gap: 9px; font-size: 12px; letter-spacing: .08em; margin-bottom: 12px; }
+.cinema-picker-label > span:last-child { margin-left: auto; letter-spacing: 0; font-size: 14px; }
+.cinema-film-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.cinema-film-buttons button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 1px solid #273a3060; padding: 9px 13px; background: transparent; color: inherit; font-size: 14px; cursor: pointer; }
+.cinema-film-buttons button[aria-pressed='true'] { background: var(--cinema-ink); color: #fff8e7; border-color: var(--cinema-ink); }
+.cinema-film-buttons button:hover { border-color: var(--cinema-red); }
+.cinema-film-buttons small { font-size: 12px; opacity: .78; }
+.cinema-workspace { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(320px, 1fr); border: 1px solid #273a3055; background: var(--cinema-paper); align-items: start; }
+.cinema-map-panel { min-width: 0; position: sticky; top: 0; }
+.cinema-map-toolbar { min-height: 49px; display: flex; align-items: center; justify-content: space-between; padding-left: 18px; background: var(--cinema-ink); color: #fff8e7; font-size: 14px; gap: 8px; }
+.cinema-map-toolbar button { display: flex; align-items: center; gap: 7px; font-size: 13px; min-height: 49px; padding: 10px 16px; background: transparent; border: 0; color: inherit; cursor: pointer; }
+.cinema-map-toolbar button:disabled { opacity: .5; cursor: default; }
+.cinema-map { height: clamp(460px, 64vh, 760px); width: 100%; z-index: 0; background: #e5e4d7; font-family: Arial, sans-serif; }
+.cinema-map .leaflet-tile-pane { filter: saturate(.55); }
+.cinema-map .leaflet-control-attribution { font-size: 12px; background: #fffdf6ed; color: #273a30; }
+.cinema-map .leaflet-control-attribution a { color: #273a30; text-decoration: underline; }
+.cinema-map .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 42px; color: var(--cinema-ink); background: #fcf7eb; }
+.cinema-marker { display: grid; place-items: center; border-radius: 50%; background: #273a30; color: #fff; border: 2px solid #fff; box-shadow: 0 2px 6px #0005; font: 700 14px/1 Arial, sans-serif; }
+.cinema-marker.is-selected { background: var(--cinema-red); outline: 4px solid #a73e2040; }
+.cinema-marker:focus-visible { outline: 4px solid #a73e20; outline-offset: 3px; }
+.cinema-map-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 18px; min-height: 48px; border-top: 1px solid var(--border); font-size: 12px; }
+.cinema-map-caption > span:first-child { letter-spacing: .1em; white-space: nowrap; }
+.cinema-map-message { position: absolute; z-index: 5; top: 70px; left: 16px; right: 16px; max-width: 390px; background: #fcf7eb; padding: 14px 18px; box-shadow: 0 2px 14px #0002; font-size: 14px; }
+.cinema-map-message button { display: block; min-height: 44px; background: none; border: 0; text-decoration: underline; color: var(--cinema-red); cursor: pointer; }
+.cinema-places { min-width: 0; border-left: 1px solid #273a3055; }
+.cinema-list-heading { padding: 24px; background: #efe5cc; }
+.cinema-list-heading h2 { font-size: clamp(28px, 2.5vw, 38px); line-height: 1.08; margin: 10px 0; }
+.cinema-list-heading > p:last-child { font-size: 14px; line-height: 1.6; }
+.cinema-place-list { margin: 0; padding: 0; list-style: none; }
+.cinema-place-list > li { border-top: 1px solid var(--border); }
+.cinema-place-button { width: 100%; display: flex; text-align: left; gap: 14px; padding: 20px 22px 12px; align-items: flex-start; border: 0; color: inherit; background: transparent; cursor: pointer; }
+.cinema-place-button[aria-pressed='true'] { background: #a73e2010; }
+.cinema-place-number { color: var(--cinema-red); font: 14px/1.5 monospace; min-width: 24px; margin-top: 3px; }
+.cinema-place-button > span:nth-child(2) { flex: 1; min-width: 0; }
+.cinema-place-button strong { display: block; font: 22px/1.2 Georgia, serif; }
+.cinema-place-button > span > span { display: block; font-size: 13px; margin-top: 6px; }
+.cinema-place-button > svg { flex: 0 0 18px; margin-top: 4px; }
+.cinema-list-details { padding: 0 22px 10px 60px; }
+.cinema-list-details > summary { font-size: 13px; min-height: 44px; display: list-item; align-content: center; cursor: pointer; }
+.cinema-list-details > summary:focus-visible { outline: 2px solid var(--cinema-red); outline-offset: 2px; }
+.cinema-selected { padding: 22px; border-top: 3px solid var(--cinema-red); background: #fffaf0; }
+.cinema-selected:focus { outline: none; }
+.cinema-selected:focus-visible { outline: 2px solid var(--cinema-red); outline-offset: -2px; }
+.cinema-selected-title { display: flex; align-items: start; gap: 10px; justify-content: space-between; }
+.cinema-selected-title h3 { font-size: 30px; line-height: 1.12; }
+.cinema-selected-title button { flex: 0 0 44px; height: 44px; display: grid; place-items: center; background: none; border: 1px solid var(--border); cursor: pointer; color: inherit; }
+.cinema-details { font-size: 16px; line-height: 1.6; }
+.cinema-address { display: flex; gap: 6px; align-items: start; margin: 12px 0 18px; font-size: 14px; }
+.cinema-address svg { flex-shrink: 0; margin-top: 3px; }
+.cinema-scene { margin: 16px 0; }
+.cinema-film-label { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6a5037; margin-bottom: 5px; }
+.cinema-sources { display: flex; flex-wrap: wrap; gap: 0 12px; margin-top: 8px; }
+.cinema-sources a { display: inline-flex; align-items: center; gap: 3px; min-height: 44px; font-size: 13px; color: var(--cinema-red); text-decoration: underline; text-underline-offset: 3px; }
+.cinema-visit { font-size: 14px; background: #efe5cc; padding: 12px; margin: 14px 0; }
+.cinema-directions { display: flex; align-items: center; gap: 9px; min-height: 46px; font-size: 14px; border-bottom: 1px solid var(--cinema-ink); width: fit-content; }
+.cinema-footnote { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 22px 0 36px; font-size: 13px; line-height: 1.7; color: #5b6256; }
+@media (max-width: 759px) {
+  .cinema-page { padding: 0 5vw; }
+  .cinema-heading { display: block; padding: 22px 0; }
+  .cinema-heading > p { margin-top: 14px; font-size: 14px; }
+  .cinema-heading > p br { display: none; }
+  .cinema-workspace { display: block; }
+  .cinema-map-panel { position: relative; }
+  .cinema-map { height: 45svh; min-height: 310px; }
+  .cinema-map-toolbar { padding-left: 10px; font-size: 12px; }
+  .cinema-map-toolbar button { padding: 8px 10px; font-size: 12px; }
+  .cinema-map-caption { align-items: start; padding: 10px 12px; font-size: 12px; }
+  .cinema-map-caption > span:last-child { text-align: right; }
+  .cinema-picker-label { flex-wrap: wrap; font-size: 12px; }
+  .cinema-picker-label > span:last-child { font-size: 12px; }
+  .cinema-film-buttons { gap: 6px; }
+  .cinema-film-buttons button { padding: 8px 10px; font-size: 13px; }
+  .cinema-places { border-left: 0; border-top: 1px solid var(--border); }
+  .cinema-list-heading, .cinema-selected { padding: 20px; }
+  .cinema-place-button { padding-left: 18px; padding-right: 18px; }
+  .cinema-list-details { padding-left: 56px; padding-right: 18px; }
+  .cinema-footnote { grid-template-columns: 1fr; gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .cinema-page *, .cinema-page *::before, .cinema-page *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
