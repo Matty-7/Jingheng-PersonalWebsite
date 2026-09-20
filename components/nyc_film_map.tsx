@@ -69,7 +69,7 @@ export function NycFilmMap() {
       const reduced = reduce_motion();
       map = leaflet.map(map_element.current, {
         center: [40.75, -73.98], zoom: 12, minZoom: 10, maxZoom: 19,
-        scrollWheelZoom: false, zoomControl: false, zoomAnimation: !reduced,
+        scrollWheelZoom: false, zoomControl: false, zoomAnimation: false,
         fadeAnimation: !reduced, markerZoomAnimation: !reduced,
       });
       leaflet.control.zoom({ position: 'bottomright' }).addTo(map);
@@ -108,7 +108,7 @@ export function NycFilmMap() {
     markers.forEach((marker) => marker.closeTooltip());
     map_state.layer.clearLayers();
     const layer = filtered_locations.length > 8 ? leaflet.markerClusterGroup({
-      maxClusterRadius: 64, showCoverageOnHover: false, animate: !reduce_motion(),
+      maxClusterRadius: 64, disableClusteringAtZoom: 16, showCoverageOnHover: false, animate: !reduce_motion(),
       iconCreateFunction: (cluster) => {
         const count = cluster.getChildCount();
         cluster.options.title = `${count} filming locations. Zoom to expand.`;
@@ -161,6 +161,7 @@ export function NycFilmMap() {
         element?.setAttribute('aria-pressed', String(marker.options.zIndexOffset === 1000));
         element?.addEventListener('focus', () => marker.openTooltip());
         element?.addEventListener('blur', () => { if (!element.classList.contains('is-selected')) marker.closeTooltip(); });
+        if (marker.options.zIndexOffset === 1000) marker.openTooltip();
       });
       marker.addTo(layer);
       markers.set(location.id, marker);
@@ -176,25 +177,15 @@ export function NycFilmMap() {
 
   useEffect(() => {
     if (!map_state?.active) return;
-    let current_selection = true;
+    if (selected_id) map_state.map.stop();
     map_state.markers.forEach((marker, location_id) => {
       const selected = location_id === selected_id;
       marker.getElement()?.classList.toggle('is-selected', selected);
       marker.getElement()?.setAttribute('aria-pressed', String(selected));
       marker.setZIndexOffset(selected ? 1000 : 0);
       if (selected) {
-        map_state.map.stop();
-        const reveal_marker = () => {
-          if (!map_state.active || !current_selection) return;
-          marker.getElement()?.classList.add('is-selected');
-          marker.getElement()?.setAttribute('aria-pressed', 'true');
-          map_state.map.flyTo(marker.getLatLng(), Math.max(15, map_state.map.getZoom()), { animate: !reduce_motion(), duration: .5 });
-          marker.openTooltip();
-        };
-        const visible_layer = map_state.layer.getLayers()[0];
-        if (visible_layer instanceof map_state.leaflet.MarkerClusterGroup) {
-          visible_layer.zoomToShowLayer(marker, reveal_marker);
-        } else reveal_marker();
+        map_state.map.flyTo(marker.getLatLng(), Math.max(16, map_state.map.getZoom()), { animate: !reduce_motion(), duration: .5 });
+        marker.openTooltip();
       } else marker.closeTooltip();
     });
     if (selected_id && reveal_selection.current) {
@@ -202,7 +193,6 @@ export function NycFilmMap() {
       details?.focus({ preventScroll: true });
       details?.scrollIntoView({ block: 'nearest', behavior: reduce_motion() ? 'instant' : 'smooth' });
     }
-    return () => { current_selection = false; };
   }, [selected_id, map_state, filtered_locations]);
 
   function choose_film(next_id: string) {
@@ -215,7 +205,7 @@ export function NycFilmMap() {
     if (!map_state?.active || !filtered_locations.length) return;
     const bounds = map_state.leaflet.latLngBounds(filtered_locations.map((location) => location.coordinates));
     map_state.map.stop();
-    map_state.map.fitBounds(bounds, { padding: [42, 42], maxZoom: 15, animate: !reduce_motion(), duration: .5 });
+    map_state.map.flyToBounds(bounds, { padding: [42, 42], maxZoom: 15, animate: !reduce_motion(), duration: .5 });
   }
 
   function scroll_films(direction: number) {
