@@ -14,6 +14,8 @@ export function audit_preview(): Plugin {
     '/__audit/mortgage_narrow': [320, 844],
     '/__audit/film_desktop': [1440, 900],
     '/__audit/film_mobile': [390, 844],
+    '/__audit/music_desktop': [1440, 1000],
+    '/__audit/music_mobile': [390, 844],
   };
   return {
     name: 'site-audit-preview',
@@ -26,7 +28,9 @@ export function audit_preview(): Plugin {
           return;
         }
         const [width, height] = viewport;
-        const route = (request.url ?? '').startsWith('/__audit/mortgage_')
+        const route = (request.url ?? '').startsWith('/__audit/music_')
+          ? '/portfolio/nyc-music-map'
+          : (request.url ?? '').startsWith('/__audit/mortgage_')
           ? '/portfolio/mortgage-map'
           : (request.url ?? '').startsWith('/__audit/film_')
             ? '/portfolio/nyc-film-map'
