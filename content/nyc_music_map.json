@@ -781,6 +781,512 @@
       "source_label": "Apple Music · recording & title",
       "note": "Doris Day gives Broadway a different hour and tempo from the Drifters. Both songs share the same representative theater-district location; neither entry claims one named theater.",
       "metadata_release_date": "1951-04-01T12:00:00Z"
+    },
+    {
+      "id": "chelsea-morning",
+      "title": "Chelsea Morning",
+      "artist": "Joni Mitchell",
+      "album": "Clouds",
+      "year": 1969,
+      "genre": "Folk",
+      "track_id": 74769080,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/28/c5/39/28c53912-64f7-3ec7-b51e-011a518e8088/075992744621.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/76/1b/ea761bf2-a378-cfbb-6f29-cc6345fed928/mzaf_6369884517764698712.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/chelsea-morning/74769392?i=74769080&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Joni+Mitchell+Chelsea+Morning&entity=song&country=us&limit=10",
+      "metadata_release_date": "1969-05-01T07:00:00Z",
+      "place_ids": [
+        "chelsea"
+      ],
+      "relation": "Title and lyrics",
+      "excerpt": "Woke up, it was a Chelsea morning",
+      "note": "Chelsea wakes slowly in this bright acoustic song. The neighborhood is the reference; no private apartment is marked.",
+      "source_url": "https://jonimitchell.com/music/song.cfm?id=89",
+      "source_label": "Lyrics and context · Joni Mitchell"
+    },
+    {
+      "id": "chelsea-girls",
+      "title": "Chelsea Girls",
+      "artist": "Nico",
+      "album": "Chelsea Girl",
+      "year": 1967,
+      "genre": "Art rock",
+      "track_id": 1469551659,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4a/c2/bf/4ac2bff7-e9e6-faec-37e0-1ec13e3778bf/06UMGIM07204.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c5/a6/00/c5a60077-fb64-34e1-a044-01504d9bd9c7/mzaf_10632419290234153666.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/chelsea-girls/1469551646?i=1469551659&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Nico+Chelsea+Girls&entity=song&country=us&limit=10",
+      "metadata_release_date": "1967-10-01T12:00:00Z",
+      "place_ids": [
+        "chelsea-hotel"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The Chelsea Hotel becomes a cast of characters in Nico’s recording. This shares the hotel landmark with Leonard Cohen’s song, without assigning the stories to particular rooms.",
+      "source_url": "https://en.wikipedia.org/wiki/Chelsea_Girls_(song)",
+      "source_label": "Song and hotel reference"
+    },
+    {
+      "id": "harlem-river-blues",
+      "title": "Harlem River Blues",
+      "artist": "Justin Townes Earle",
+      "album": "Harlem River Blues",
+      "year": 2010,
+      "genre": "Americana",
+      "track_id": 1881187698,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/be/1d/0a/be1d0a51-cbeb-7558-5b1e-9053742e2a97/111037.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e0/79/4b/e0794bf2-cba8-7225-9250-5c97f23b5d6b/mzaf_5328272724242878720.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-river-blues/1881187692?i=1881187698&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Justin+Townes+Earle+Harlem+River+Blues&entity=song&country=us&limit=10",
+      "metadata_release_date": "2010-06-29T12:00:00Z",
+      "place_ids": [
+        "harlem-river"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "A river dividing Manhattan and the Bronx supplies the title. The buoyant arrangement sits against a troubled narrator; the marker represents the waterway, not a recommended swimming spot.",
+      "source_url": "https://music.apple.com/us/album/harlem-river-blues/1881187692?i=1881187698&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "harlem-river-kevin-morby",
+      "title": "Harlem River",
+      "artist": "Kevin Morby",
+      "album": "Harlem River",
+      "year": 2013,
+      "genre": "Indie rock",
+      "track_id": 1763116598,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/79/6a/74/796a7467-85eb-184b-69fa-fd16a5ae314b/8109.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/6c/a3/4c6ca357-ce86-dc47-3420-ee83e0ef8d70/mzaf_3955966894626838685.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-river/1763116295?i=1763116598&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Kevin+Morby+Harlem+River&entity=song&country=us&limit=10",
+      "metadata_release_date": "2013-11-26T12:00:00Z",
+      "place_ids": [
+        "harlem-river"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Morby stretches the river’s name into a long, unhurried refrain. The shared river marker lets two very different recordings meet at the same waterway.",
+      "source_url": "https://kevinmorby.bandcamp.com/album/harlem-river",
+      "source_label": "Album and song · Kevin Morby"
+    },
+    {
+      "id": "brooklyn-roads",
+      "title": "Brooklyn Roads",
+      "artist": "Neil Diamond",
+      "album": "Velvet Gloves and Spit",
+      "year": 1968,
+      "genre": "Pop",
+      "track_id": 1440902017,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c1/2d/c4/c12dc446-c761-9145-9188-3f2f5c321d6b/00602557178944.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fd/d3/35/fdd33518-78a1-8363-c86b-29f12b80ee7e/mzaf_11462676725415096544.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-roads/1440901825?i=1440902017&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Neil+Diamond+Brooklyn+Roads&entity=song&country=us&limit=10",
+      "metadata_release_date": "1968-10-15T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Brooklyn is remembered through the scale of childhood streets. The title supplies the borough; this entry does not identify a childhood home.",
+      "source_url": "https://music.apple.com/us/album/brooklyn-roads/1440901825?i=1440902017&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "brooklyn-steely-dan",
+      "title": "Brooklyn (Owes The Charmer Under Me)",
+      "artist": "Steely Dan",
+      "album": "Can't Buy A Thrill",
+      "year": 1972,
+      "genre": "Jazz rock",
+      "track_id": 1650885308,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/08/f3/f1/08f3f17c-e92a-516f-57c0-0a5d250c6cdc/22UM1IM01200.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/e3/ee/eae3ee04-22b1-4ffe-e4ec-62dffb17e88d/mzaf_4209047008852168730.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-owes-the-charmer-under-me/1650885288?i=1650885308&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Steely+Dan+Brooklyn+Owes+The+Charmer&entity=song&country=us&limit=10",
+      "metadata_release_date": "1972-11-01T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Brooklyn sits inside the title’s strange parenthetical promise. The borough is explicit, but the downstairs neighbor is not assigned a real address.",
+      "source_url": "https://music.apple.com/us/album/brooklyn-owes-the-charmer-under-me/1650885288?i=1650885308&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "one-more-night-in-brooklyn",
+      "title": "One More Night In Brooklyn",
+      "artist": "Justin Townes Earle",
+      "album": "Harlem River Blues",
+      "year": 2010,
+      "genre": "Americana",
+      "track_id": 1881187699,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/be/1d/0a/be1d0a51-cbeb-7558-5b1e-9053742e2a97/111037.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/18/08/43/180843a3-589e-68fe-c3e1-8308ded4c800/mzaf_14334895255174893649.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/one-more-night-in-brooklyn/1881187692?i=1881187699&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Justin+Townes+Earle+Harlem+River+Blues&entity=song&country=us&limit=10",
+      "metadata_release_date": "2010-09-14T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "A small domestic song carries Brooklyn in its title. Its geography remains at borough scale, leaving the unnamed room unnamed.",
+      "source_url": "https://music.apple.com/us/album/one-more-night-in-brooklyn/1881187692?i=1881187699&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "manhattan-sara-bareilles",
+      "title": "Manhattan",
+      "artist": "Sara Bareilles",
+      "album": "The Blessed Unrest",
+      "year": 2013,
+      "genre": "Pop",
+      "track_id": 1440505333,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8e/6d/82/8e6d82f3-b795-d68a-ecba-aebeec214b22/886443982444.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/09/39/0b/09390b72-2c3f-0725-ae4b-287415338dad/mzaf_17350515021211843106.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/manhattan/1440504715?i=1440505333&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sara+Bareilles+Manhattan&entity=song&country=us&limit=10",
+      "metadata_release_date": "2013-07-16T07:00:00Z",
+      "place_ids": [
+        "manhattan"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Manhattan becomes something two people can no longer share. The song’s borough-wide frame stays intact here, without turning the breakup into a tourist address.",
+      "source_url": "https://music.apple.com/us/album/manhattan/1440504715?i=1440505333&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-new-york-sinatra",
+      "title": "Theme From New York, New York",
+      "artist": "Frank Sinatra",
+      "album": "Trilogy: Past, Present & Future",
+      "year": 1980,
+      "genre": "Vocal jazz",
+      "track_id": 1457081016,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/71/45/df/7145df87-a85f-9307-e0b2-cced10a3f74e/00602577610516.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/e4/f1/b9e4f1b6-147d-38cb-b5b9-1a805c3c910b/mzaf_10217970548519718462.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/theme-from-new-york-new-york/1457080954?i=1457081016&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Frank+Sinatra+Theme+From+New+York+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "1980-03-26T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Sinatra’s city-sized arrival anthem is mapped at city scale. The selected recording comes from Trilogy; its sweeping promise does not establish a particular street corner.",
+      "source_url": "https://music.apple.com/us/album/theme-from-new-york-new-york/1457080954?i=1457081016&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "englishman-in-new-york",
+      "title": "Englishman In New York",
+      "artist": "Sting",
+      "album": "...Nothing Like the Sun",
+      "year": 1987,
+      "genre": "Pop / jazz",
+      "track_id": 1650882898,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/2b/4e/ec/2b4eec10-07f0-8f54-857e-44e9155b3091/22UM1IM21288.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/78/fa/d3/78fad391-c635-5141-016e-adc17da854c5/mzaf_7879647988605505312.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/englishman-in-new-york/1650882889?i=1650882898&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sting+Englishman+In+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "1987-10-05T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Sting makes an outsider’s daily presence the center of a New York song. This title-level entry marks the city rather than a private residence.",
+      "source_url": "https://music.apple.com/us/album/englishman-in-new-york/1650882889?i=1650882898&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-groove",
+      "title": "New York Groove",
+      "artist": "Ace Frehley",
+      "album": "Kiss: Ace Frehley",
+      "year": 1978,
+      "genre": "Rock",
+      "track_id": 1440855387,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/af/a2/65afa265-d0dd-4707-626a-9dfbf8d558a6/00602537855742.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b7/35/19/b735192e-7b67-96f4-914f-eba79d9cba68/mzaf_14047502544750808636.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-groove/1440854859?i=1440855387&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ace+Frehley+New+York+Groove&entity=song&country=us&limit=10",
+      "metadata_release_date": "1978-09-18T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Ace Frehley’s recording gives returning to New York a stomping rhythm. The city named in the title is the destination.",
+      "source_url": "https://music.apple.com/us/album/new-york-groove/1440854859?i=1440855387&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "fairytale-of-new-york",
+      "title": "Fairytale of New York (feat. Kirsty MacColl)",
+      "artist": "The Pogues",
+      "album": "If I Should Fall from Grace with God (Expanded Edition)",
+      "year": 1987,
+      "genre": "Folk rock",
+      "track_id": 189233734,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/03/ca/f9/03caf99f-f9dd-b9b6-56f4-16a21b96c4b4/mzi.mxyznycs.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/19/39/2f/19392fdc-636d-8669-f21f-35a349e66993/mzaf_16734697280617122245.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/fairytale-of-new-york-feat-kirsty-maccoll/189233622?i=189233734&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Pogues+Fairytale+of+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "1987-11-23T08:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The Pogues and Kirsty MacColl turn New York into the setting for a sharply divided duet. The city is mapped as a whole; the title does not locate a particular bar.",
+      "source_url": "https://music.apple.com/us/album/fairytale-of-new-york-feat-kirsty-maccoll/189233622?i=189233734&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "nyc-interpol",
+      "title": "NYC",
+      "artist": "Interpol",
+      "album": "Turn On the Bright Lights",
+      "year": 2002,
+      "genre": "Indie rock",
+      "track_id": 1589272593,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/be/ef/aa/beefaad1-64ba-1288-d2ce-95a5964a020b/744861054566.png/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f2/e3/ae/f2e3ae41-fb80-fd45-7bfa-8c9c5ddacc8c/mzaf_11278259320241561852.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/nyc/1589272584?i=1589272593&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Interpol+NYC&entity=song&country=us&limit=10",
+      "metadata_release_date": "2002-08-19T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Three letters name the city in Interpol’s spare, slow-building recording. The map keeps that broad association rather than assigning it to a guessed subway station.",
+      "source_url": "https://music.apple.com/us/album/nyc/1589272584?i=1589272593&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-i-love-you",
+      "title": "New York, I Love You But You're Bringing Me Down",
+      "artist": "LCD Soundsystem",
+      "album": "Sound of Silver",
+      "year": 2007,
+      "genre": "Alternative",
+      "track_id": 742434985,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/fb/fe/a5/fbfea51a-0130-d557-c1f4-9e5e98b7bab8/094638511359.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f0/29/fd/f029fd0f-209d-908c-f95a-18b30c54d768/mzaf_3161069024874199241.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-i-love-you-but-youre-bringing-me-down/742432549?i=742434985&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=LCD+Soundsystem+New+York+I+Love+You&entity=song&country=us&limit=10",
+      "metadata_release_date": "2007-03-12T07:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "LCD Soundsystem addresses New York as a difficult relationship. The full title holds affection and frustration together; the marker represents the city, not the location of a music video.",
+      "source_url": "https://music.apple.com/us/album/new-york-i-love-you-but-youre-bringing-me-down/742432549?i=742434985&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-u2",
+      "title": "New York",
+      "artist": "U2",
+      "album": "All That You Can't Leave Behind",
+      "year": 2000,
+      "genre": "Rock",
+      "track_id": 1443101319,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/05/78/89/0578893b-9dac-d88a-ee9b-3c42ac40b6a0/17UMGIM95495.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/07/e0/64/07e0649d-fd2d-6895-dc97-7b75d0ea671a/mzaf_9676415780819610428.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york/1443100430?i=1443101319&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=U2+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "2000-10-30T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "U2 puts New York directly in the title. This city-wide reference pairs with other recordings that make the entire city their subject.",
+      "source_url": "https://music.apple.com/us/album/new-york/1443100430?i=1443101319&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-cat-power",
+      "title": "New York",
+      "artist": "Cat Power",
+      "album": "Jukebox",
+      "year": 2008,
+      "genre": "Alternative / soul",
+      "track_id": 1589246742,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/0c/d8/99/0cd899e1-9b8f-21dc-a75c-99cba5db17fe/744861075462.png/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/60/91/e1/6091e10f-d10e-d319-51cf-51e17e2325fb/mzaf_7621415558748188674.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york/1589246739?i=1589246742&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Cat+Power+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "2008-01-21T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Cat Power’s Jukebox recording offers another reading of the New York standard. It shares a city marker with Sinatra while retaining its own cover, recording and preview.",
+      "source_url": "https://music.apple.com/us/album/new-york/1589246739?i=1589246742&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-city-serenade",
+      "title": "New York City Serenade",
+      "artist": "Bruce Springsteen",
+      "album": "The Wild, The Innocent & the E Street Shuffle",
+      "year": 1973,
+      "genre": "Rock",
+      "track_id": 186150313,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d3/44/7d/d3447d43-bb3e-477a-6de6-f27f616b0824/074643243223.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c1/ec/bc/c1ecbc4c-2665-0b4c-d7a8-5d07aa3e59d6/mzaf_13211646287547734222.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-city-serenade/186149850?i=186150313&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bruce+Springsteen+New+York+City+Serenade&entity=song&country=us&limit=10",
+      "metadata_release_date": "1973-09-11T07:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Springsteen’s long serenade uses New York City as its title and frame. This entry preserves that city-scale connection without presenting an invented scene location.",
+      "source_url": "https://music.apple.com/us/album/new-york-city-serenade/186149850?i=186150313&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "only-living-boy-in-new-york",
+      "title": "The Only Living Boy In New York",
+      "artist": "Simon & Garfunkel",
+      "album": "Bridge Over Troubled Water",
+      "year": 1970,
+      "genre": "Folk rock",
+      "track_id": 324127941,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a3/84/0a/a3840a6d-44e8-0afe-fc3e-316c517dddfe/5099749521421.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4d/7f/35/4d7f3569-4a53-40fe-538e-113feb05983f/mzaf_6730437907561360872.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-only-living-boy-in-new-york/324127933?i=324127941&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Simon+%26+Garfunkel+The+Only+Living+Boy+in+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "1970-01-26T08:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title imagines solitude at the scale of a crowded city. No apartment, studio or private address is inferred from it.",
+      "source_url": "https://music.apple.com/us/album/the-only-living-boy-in-new-york/324127933?i=324127941&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "welcome-to-new-york",
+      "title": "Welcome To New York",
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "year": 2014,
+      "genre": "Pop",
+      "track_id": 1440935802,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/4a/4a/894a4ab9-b0b0-9ea5-ca41-8da0b9b79453/14UMDIM03405.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/f2/da/44f2daa3-2376-438a-02e8-bdb3ce32b37c/mzaf_13441752673723468494.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/welcome-to-new-york/1440935467?i=1440935802&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Taylor+Swift+Welcome+To+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "2014-10-20T07:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The opening track of 1989 makes arrival in New York its invitation. This is the original recording, distinct from the later Taylor’s Version.",
+      "source_url": "https://music.apple.com/us/album/welcome-to-new-york/1440935467?i=1440935802&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-telephone-conversation",
+      "title": "New York Telephone Conversation",
+      "artist": "Lou Reed",
+      "album": "Transformer",
+      "year": 1972,
+      "genre": "Art rock",
+      "track_id": 976828530,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2a/e7/69/2ae76967-b94e-3b80-a079-93202eeb6157/886445151930.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4b/07/b5/4b07b5f0-97e9-c707-1d71-e17f3d4977a6/mzaf_4441474070296187877.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-telephone-conversation/976826793?i=976828530&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Lou+Reed+New+York+Telephone+Conversation&entity=song&country=us&limit=10",
+      "metadata_release_date": "1972-11-08T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Lou Reed compresses city life into a brief telephone exchange. New York is explicit in the title; the callers are not given real-world addresses.",
+      "source_url": "https://music.apple.com/us/album/new-york-telephone-conversation/976826793?i=976828530&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "big-man-on-mulberry-street",
+      "title": "Big Man on Mulberry Street",
+      "artist": "Billy Joel",
+      "album": "The Bridge",
+      "year": 1986,
+      "genre": "Jazz / pop",
+      "track_id": 192816699,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1d/eb/8d/1deb8d11-8240-09da-5412-a47e4311ba4f/dj.qsmuygjj.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/09/0d/f9/090df902-35bb-51d7-22b9-4a7db5facb64/mzaf_1774443758688560590.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/big-man-on-mulberry-street/192816208?i=192816699&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Billy+Joel+Big+Man+on+Mulberry+Street&entity=song&country=us&limit=10",
+      "metadata_release_date": "1986-07-09T07:00:00Z",
+      "place_ids": [
+        "mulberry-street"
+      ],
+      "relation": "Title and lyrics",
+      "excerpt": "I’m a big man on Mulberry street",
+      "note": "Joel’s nighttime narrator moves through the streets around Little Italy. Mulberry Street is named directly; the marker sits along the street and does not identify a particular restaurant.",
+      "source_url": "https://www.billyjoel.com/song/big-man-mulberry-street/",
+      "source_label": "Lyrics · Billy Joel"
+    },
+    {
+      "id": "first-we-take-manhattan",
+      "title": "First We Take Manhattan",
+      "artist": "Leonard Cohen",
+      "album": "I'm Your Man",
+      "year": 1988,
+      "genre": "Synth-pop",
+      "track_id": 511065879,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/24/a0/e9/24a0e901-deba-6c60-c8e1-b69711f60885/dj.uejuaywe.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/16/50/e9/1650e948-6f8e-17f6-674e-0f3798dc2ae9/mzaf_7393158031908954763.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/first-we-take-manhattan/511065875?i=511065879&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Leonard+Cohen+First+We+Take+Manhattan&entity=song&country=us&limit=10",
+      "metadata_release_date": "1988-01-01T12:00:00Z",
+      "place_ids": [
+        "manhattan"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Manhattan appears as a symbolic destination in Cohen’s title. The borough marker records that reference without treating the song as a literal itinerary.",
+      "source_url": "https://music.apple.com/us/album/first-we-take-manhattan/511065875?i=511065879&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "new-york-city-lennon",
+      "title": "New York City",
+      "artist": "John Lennon",
+      "album": "Some Time in New York City",
+      "year": 1972,
+      "genre": "Rock",
+      "track_id": 1440858531,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/7b/ed/79/7bed79c1-d09c-21f0-f07f-888160a473ef/00602537945368.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/ba/99/32ba990c-749a-290b-0b36-66208b7f0af6/mzaf_16573393882156767263.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-city/1440858026?i=1440858531&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=John+Lennon+New+York+City&entity=song&country=us&limit=10",
+      "metadata_release_date": "1972-09-15T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Lennon’s New York City supplies an explicit city-level title. The map uses that broad association rather than pinning a home or claiming a recording location.",
+      "source_url": "https://music.apple.com/us/album/new-york-city/1440858026?i=1440858531&uo=4",
+      "source_label": "Recording and title · Apple Music"
     }
   ],
   "places": [
@@ -790,7 +1296,12 @@
       "area": "Lower Manhattan",
       "map_query": "Chinatown, Manhattan, New York, NY",
       "precision": "Neighborhood",
-      "note": "The lyric names Chinatown as a whole. The map shows the neighborhood, not a particular building."
+      "note": "The lyric names Chinatown as a whole. The map shows the neighborhood, not a particular building.",
+      "coordinates": [
+        40.7157,
+        -73.997
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7157&mlon=-73.997#map=16/40.7157/-73.997"
     },
     {
       "id": "riverside",
@@ -798,7 +1309,12 @@
       "area": "Upper West Side",
       "map_query": "Riverside Drive and West 79th Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "Riverside is the word in the lyric. This point on Riverside Drive is an interpretive reference, not an address specified by the song."
+      "note": "Riverside is the word in the lyric. This point on Riverside Drive is an interpretive reference, not an address specified by the song.",
+      "coordinates": [
+        40.7861,
+        -73.9812
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7861&mlon=-73.9812#map=16/40.7861/-73.9812"
     },
     {
       "id": "queensboro-bridge",
@@ -806,7 +1322,12 @@
       "area": "Manhattan / Queens",
       "map_query": "Ed Koch Queensboro Bridge, New York, NY",
       "precision": "Landmark",
-      "note": "The 59th Street Bridge is the Queensboro Bridge. The map identifies the bridge, not a particular spot where the song was written."
+      "note": "The 59th Street Bridge is the Queensboro Bridge. The map identifies the bridge, not a particular spot where the song was written.",
+      "coordinates": [
+        40.7563,
+        -73.9543
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7563&mlon=-73.9543#map=16/40.7563/-73.9543"
     },
     {
       "id": "chelsea-hotel",
@@ -814,7 +1335,12 @@
       "area": "Chelsea, Manhattan",
       "map_query": "Hotel Chelsea, 222 West 23rd Street, New York, NY",
       "precision": "Venue",
-      "note": "The hotel named in the song stands on West 23rd Street. The pin marks the building; it does not identify a room or imply public access."
+      "note": "The hotel named in the song stands on West 23rd Street. The pin marks the building; it does not identify a room or imply public access.",
+      "coordinates": [
+        40.7444,
+        -73.9967
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7444&mlon=-73.9967#map=16/40.7444/-73.9967"
     },
     {
       "id": "cornelia-street",
@@ -822,7 +1348,12 @@
       "area": "West Village, Manhattan",
       "map_query": "Cornelia Street and Bleecker Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "The title names this short West Village street. The map uses its Bleecker Street end, rather than identifying a private residence."
+      "note": "The title names this short West Village street. The map uses its Bleecker Street end, rather than identifying a private residence.",
+      "coordinates": [
+        40.731,
+        -74.0021
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.731&mlon=-74.0021#map=16/40.731/-74.0021"
     },
     {
       "id": "53rd-and-3rd",
@@ -830,7 +1361,12 @@
       "area": "Midtown East, Manhattan",
       "map_query": "East 53rd Street and Third Avenue, Manhattan, New York, NY",
       "precision": "Intersection",
-      "note": "A named intersection rather than a general New York setting. The title supplies both streets."
+      "note": "A named intersection rather than a general New York setting. The title supplies both streets.",
+      "coordinates": [
+        40.757,
+        -73.9694
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.757&mlon=-73.9694#map=16/40.757/-73.9694"
     },
     {
       "id": "110th-street",
@@ -838,7 +1374,12 @@
       "area": "Harlem, Manhattan",
       "map_query": "Central Park North and Malcolm X Boulevard, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "The title names the street. This map point is on Central Park North at Malcolm X Boulevard; the song does not specify that intersection."
+      "note": "The title names the street. This map point is on Central Park North at Malcolm X Boulevard; the song does not specify that intersection.",
+      "coordinates": [
+        40.7982,
+        -73.9526
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7982&mlon=-73.9526#map=16/40.7982/-73.9526"
     },
     {
       "id": "spanish-harlem",
@@ -846,7 +1387,12 @@
       "area": "East Harlem, Manhattan",
       "map_query": "East Harlem, Manhattan, New York, NY",
       "precision": "Neighborhood",
-      "note": "Spanish Harlem is a name for East Harlem. The song describes a neighborhood, not a single identifiable garden or doorway."
+      "note": "Spanish Harlem is a name for East Harlem. The song describes a neighborhood, not a single identifiable garden or doorway.",
+      "coordinates": [
+        40.793,
+        -73.943
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.793&mlon=-73.943#map=16/40.793/-73.943"
     },
     {
       "id": "bleecker-street",
@@ -854,7 +1400,12 @@
       "area": "Greenwich Village, Manhattan",
       "map_query": "Bleecker Street and MacDougal Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "The map uses the MacDougal Street intersection as a representative point along Bleecker Street. It does not identify a particular cafe."
+      "note": "The map uses the MacDougal Street intersection as a representative point along Bleecker Street. It does not identify a particular cafe.",
+      "coordinates": [
+        40.7292,
+        -74.0014
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7292&mlon=-74.0014#map=16/40.7292/-74.0014"
     },
     {
       "id": "coney-island",
@@ -862,7 +1413,12 @@
       "area": "Brooklyn",
       "map_query": "Coney Island, Brooklyn, New York, NY",
       "precision": "Neighborhood",
-      "note": "The map locates the Brooklyn neighborhood. It does not identify a particular bench, boardwalk scene or filming site."
+      "note": "The map locates the Brooklyn neighborhood. It does not identify a particular bench, boardwalk scene or filming site.",
+      "coordinates": [
+        40.5755,
+        -73.9707
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5755&mlon=-73.9707#map=16/40.5755/-73.9707"
     },
     {
       "id": "brooklyn",
@@ -870,7 +1426,12 @@
       "area": "New York City",
       "map_query": "Brooklyn, New York, NY",
       "precision": "Borough",
-      "note": "The reference is the whole borough. Individual songs do not establish a precise street, venue or zoo for this shared entry."
+      "note": "The reference is the whole borough. Individual songs do not establish a precise street, venue or zoo for this shared entry.",
+      "coordinates": [
+        40.65,
+        -73.95
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.65&mlon=-73.95#map=16/40.65/-73.95"
     },
     {
       "id": "52nd-street",
@@ -878,7 +1439,12 @@
       "area": "Midtown, Manhattan",
       "map_query": "West 52nd Street and Sixth Avenue, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "The title and lyric name 52nd Street. Sixth Avenue is a convenient map reference along it, not an intersection specified in the lyric."
+      "note": "The title and lyric name 52nd Street. Sixth Avenue is a convenient map reference along it, not an intersection specified in the lyric.",
+      "coordinates": [
+        40.7613,
+        -73.9797
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7613&mlon=-73.9797#map=16/40.7613/-73.9797"
     },
     {
       "id": "greenwich-village",
@@ -886,7 +1452,12 @@
       "area": "Lower Manhattan",
       "map_query": "Greenwich Village, Manhattan, New York, NY",
       "precision": "Neighborhood",
-      "note": "Dylan explicitly names Greenwich Village after a subway journey. The coffee house in this passage is unnamed, so no particular venue is pinned."
+      "note": "Dylan explicitly names Greenwich Village after a subway journey. The coffee house in this passage is unnamed, so no particular venue is pinned.",
+      "coordinates": [
+        40.7336,
+        -74.0027
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7336&mlon=-74.0027#map=16/40.7336/-74.0027"
     },
     {
       "id": "tompkins-square-park",
@@ -894,7 +1465,12 @@
       "area": "East Village, Manhattan",
       "map_query": "Tompkins Square Park, Manhattan, New York, NY",
       "precision": "Landmark",
-      "note": "The map identifies the public park as a whole. No particular entrance or bench is claimed."
+      "note": "The map identifies the public park as a whole. No particular entrance or bench is claimed.",
+      "coordinates": [
+        40.7265,
+        -73.9815
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7265&mlon=-73.9815#map=16/40.7265/-73.9815"
     },
     {
       "id": "washington-square",
@@ -902,7 +1478,12 @@
       "area": "Greenwich Village, Manhattan",
       "map_query": "Washington Square Park, Manhattan, New York, NY",
       "precision": "Landmark",
-      "note": "This is the Greenwich Village park. The location represents the park, not a particular performance spot."
+      "note": "This is the Greenwich Village park. The location represents the park, not a particular performance spot.",
+      "coordinates": [
+        40.7308,
+        -73.9973
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7308&mlon=-73.9973#map=16/40.7308/-73.9973"
     },
     {
       "id": "central-park-west",
@@ -910,7 +1491,12 @@
       "area": "Upper West Side, Manhattan",
       "map_query": "Central Park West and West 72nd Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "West 72nd Street provides a reference along Central Park West. It is not a song-specified address or building."
+      "note": "West 72nd Street provides a reference along Central Park West. It is not a song-specified address or building.",
+      "coordinates": [
+        40.7764,
+        -73.9762
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7764&mlon=-73.9762#map=16/40.7764/-73.9762"
     },
     {
       "id": "central-park",
@@ -918,7 +1504,12 @@
       "area": "Manhattan",
       "map_query": "Central Park, Manhattan, New York, NY",
       "precision": "Landmark",
-      "note": "The named place is the whole park. The map does not identify a performance site or a particular path."
+      "note": "The named place is the whole park. The map does not identify a performance site or a particular path.",
+      "coordinates": [
+        40.7829,
+        -73.9654
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7829&mlon=-73.9654#map=16/40.7829/-73.9654"
     },
     {
       "id": "harlem",
@@ -926,7 +1517,12 @@
       "area": "Manhattan",
       "map_query": "Harlem, Manhattan, New York, NY",
       "precision": "Neighborhood",
-      "note": "The map represents Harlem at neighborhood scale. Song-specific stories do not identify an exact club, church or residence here."
+      "note": "The map represents Harlem at neighborhood scale. Song-specific stories do not identify an exact club, church or residence here.",
+      "coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8116&mlon=-73.9465#map=16/40.8116/-73.9465"
     },
     {
       "id": "broadway",
@@ -934,7 +1530,12 @@
       "area": "Theater District, Manhattan",
       "map_query": "Broadway and West 45th Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "This theater-district intersection is a reference along Broadway. It is not an exact street corner specified by the songs."
+      "note": "This theater-district intersection is a reference along Broadway. It is not an exact street corner specified by the songs.",
+      "coordinates": [
+        40.7581,
+        -73.9853
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7581&mlon=-73.9853#map=16/40.7581/-73.9853"
     },
     {
       "id": "rockaway-beach",
@@ -942,7 +1543,12 @@
       "area": "Queens",
       "map_query": "Rockaway Beach, Queens, New York, NY",
       "precision": "Neighborhood",
-      "note": "The map locates the Rockaway Beach neighborhood and its beachfront context. It does not claim a particular boardwalk entrance."
+      "note": "The map locates the Rockaway Beach neighborhood and its beachfront context. It does not claim a particular boardwalk entrance.",
+      "coordinates": [
+        40.586,
+        -73.8127
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.586&mlon=-73.8127#map=16/40.586/-73.8127"
     },
     {
       "id": "jamaica",
@@ -950,7 +1556,12 @@
       "area": "Queens",
       "map_query": "Jamaica, Queens, New York, NY",
       "precision": "Neighborhood",
-      "note": "This is the Queens neighborhood, not the Caribbean island. The map does not identify a private home."
+      "note": "This is the Queens neighborhood, not the Caribbean island. The map does not identify a private home.",
+      "coordinates": [
+        40.7027,
+        -73.7889
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7027&mlon=-73.7889#map=16/40.7027/-73.7889"
     },
     {
       "id": "queens",
@@ -958,7 +1569,12 @@
       "area": "New York City",
       "map_query": "Queens, New York, NY",
       "precision": "Borough",
-      "note": "The reference is the whole borough. No particular housing development, block or venue is implied."
+      "note": "The reference is the whole borough. No particular housing development, block or venue is implied.",
+      "coordinates": [
+        40.7282,
+        -73.7949
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7282&mlon=-73.7949#map=16/40.7282/-73.7949"
     },
     {
       "id": "south-bronx",
@@ -966,7 +1582,12 @@
       "area": "Bronx",
       "map_query": "South Bronx, Bronx, New York, NY",
       "precision": "Area",
-      "note": "South Bronx describes an area spanning several neighborhoods. The map is an area reference, not a precise boundary or a performance venue."
+      "note": "South Bronx describes an area spanning several neighborhoods. The map is an area reference, not a precise boundary or a performance venue.",
+      "coordinates": [
+        40.8175,
+        -73.9182
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8175&mlon=-73.9182#map=16/40.8175/-73.9182"
     },
     {
       "id": "staten-island",
@@ -974,7 +1595,12 @@
       "area": "New York City",
       "map_query": "Staten Island, New York, NY",
       "precision": "Borough",
-      "note": "The map identifies Staten Island as a borough. No more specific street, ferry terminal or venue is claimed."
+      "note": "The map identifies Staten Island as a borough. No more specific street, ferry terminal or venue is claimed.",
+      "coordinates": [
+        40.5795,
+        -74.1502
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5795&mlon=-74.1502#map=16/40.5795/-74.1502"
     },
     {
       "id": "bronx",
@@ -982,7 +1608,12 @@
       "area": "New York City",
       "map_query": "The Bronx, New York, NY",
       "precision": "Borough",
-      "note": "The reference covers the borough as a whole, rather than a specific neighborhood or jazz venue."
+      "note": "The reference covers the borough as a whole, rather than a specific neighborhood or jazz venue.",
+      "coordinates": [
+        40.8448,
+        -73.8648
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8448&mlon=-73.8648#map=16/40.8448/-73.8648"
     },
     {
       "id": "manhattan",
@@ -990,7 +1621,12 @@
       "area": "New York City",
       "map_query": "Manhattan, New York, NY",
       "precision": "Borough",
-      "note": "The title-level association is the borough. This map does not turn it into a single address."
+      "note": "The title-level association is the borough. This map does not turn it into a single address.",
+      "coordinates": [
+        40.7831,
+        -73.9712
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7831&mlon=-73.9712#map=16/40.7831/-73.9712"
     },
     {
       "id": "birdland-original",
@@ -998,7 +1634,12 @@
       "area": "Midtown, Manhattan",
       "map_query": "Broadway and West 52nd Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "The original Birdland was at Broadway and 52nd Street and closed in 1965. This is an approximate historical location; the present club is on West 44th Street."
+      "note": "The original Birdland was at Broadway and 52nd Street and closed in 1965. This is an approximate historical location; the present club is on West 44th Street.",
+      "coordinates": [
+        40.7623,
+        -73.9831
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7623&mlon=-73.9831#map=16/40.7623/-73.9831"
     },
     {
       "id": "sugar-hill",
@@ -1006,7 +1647,12 @@
       "area": "Harlem, Manhattan",
       "map_query": "Sugar Hill, Manhattan, New York, NY",
       "precision": "Neighborhood",
-      "note": "The map shows the Harlem neighborhood named in the song. It does not mark Ellington’s home or claim a particular subway exit."
+      "note": "The map shows the Harlem neighborhood named in the song. It does not mark Ellington’s home or claim a particular subway exit.",
+      "coordinates": [
+        40.8268,
+        -73.9439
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8268&mlon=-73.9439#map=16/40.8268/-73.9439"
     },
     {
       "id": "ludlow-street",
@@ -1014,7 +1660,12 @@
       "area": "Lower East Side, Manhattan",
       "map_query": "Ludlow Street and Rivington Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "Rivington Street provides a reference along Ludlow Street. This intersection is not specified in the song."
+      "note": "Rivington Street provides a reference along Ludlow Street. This intersection is not specified in the song.",
+      "coordinates": [
+        40.7208,
+        -73.9883
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7208&mlon=-73.9883#map=16/40.7208/-73.9883"
     },
     {
       "id": "bleecker-macdougal",
@@ -1022,7 +1673,12 @@
       "area": "Greenwich Village, Manhattan",
       "map_query": "Bleecker Street and MacDougal Street, Manhattan, New York, NY",
       "precision": "Intersection",
-      "note": "This is the meeting of the two named streets. It is a distinct intersection entry alongside the broader Bleecker Street reference."
+      "note": "This is the meeting of the two named streets. It is a distinct intersection entry alongside the broader Bleecker Street reference.",
+      "coordinates": [
+        40.7292,
+        -74.0014
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7292&mlon=-74.0014#map=16/40.7292/-74.0014"
     },
     {
       "id": "brooklyn-bridge",
@@ -1030,7 +1686,64 @@
       "area": "Manhattan / Brooklyn",
       "map_query": "Brooklyn Bridge, New York, NY",
       "precision": "Landmark",
-      "note": "The bridge connects Manhattan and Brooklyn. The map identifies the landmark, not a recording location or a specific point on its walkway."
+      "note": "The bridge connects Manhattan and Brooklyn. The map identifies the landmark, not a recording location or a specific point on its walkway.",
+      "coordinates": [
+        40.7061,
+        -73.9969
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7061&mlon=-73.9969#map=16/40.7061/-73.9969"
+    },
+    {
+      "id": "chelsea",
+      "name": "Chelsea",
+      "area": "Manhattan",
+      "map_query": "Chelsea, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The reference is the neighborhood. Its overview pin is a representative point, not a private apartment or a specific room.",
+      "coordinates": [
+        40.7465,
+        -74.0014
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7465&mlon=-74.0014#map=16/40.7465/-74.0014"
+    },
+    {
+      "id": "harlem-river",
+      "name": "Harlem River",
+      "area": "Manhattan / Bronx",
+      "map_query": "Harlem River, New York, NY",
+      "precision": "Area",
+      "note": "The song titles name the waterway. The overview uses a representative point near the High Bridge, not a song-specified crossing or access point.",
+      "coordinates": [
+        40.842,
+        -73.9324
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.842&mlon=-73.9324#map=16/40.842/-73.9324"
+    },
+    {
+      "id": "mulberry-street",
+      "name": "Mulberry Street",
+      "area": "Little Italy, Manhattan",
+      "map_query": "Mulberry Street and Hester Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The marker is a reference along Mulberry Street at Hester Street. The song names the street and surrounding blocks, without identifying a restaurant.",
+      "coordinates": [
+        40.7173,
+        -73.998
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7173&mlon=-73.998#map=16/40.7173/-73.998"
+    },
+    {
+      "id": "new-york-city",
+      "name": "New York City",
+      "area": "Five boroughs",
+      "map_query": "New York City, New York",
+      "precision": "City",
+      "note": "The title refers to New York City as a whole. The overview point near City Hall is a city-scale locator, not a claim that the song names or takes place at City Hall.",
+      "coordinates": [
+        40.7128,
+        -74.006
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7128&mlon=-74.006#map=16/40.7128/-74.006"
     }
   ]
 }

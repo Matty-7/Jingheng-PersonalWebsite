@@ -22,7 +22,7 @@ export function google_music_url(place: MusicPlace): string {
 }
 
 export function google_music_embed_url(place: MusicPlace): string {
-  return `https://www.google.com/maps?${new URLSearchParams({ q: place.map_query, output: 'embed', z: place.precision === 'Borough' ? '11' : place.precision === 'Area' ? '13' : place.precision === 'Neighborhood' ? '14' : '16' })}`;
+  return `https://www.google.com/maps?${new URLSearchParams({ q: place.map_query, output: 'embed', z: place.precision === 'City' ? '10' : place.precision === 'Borough' ? '11' : place.precision === 'Area' ? '13' : place.precision === 'Neighborhood' ? '14' : '16' })}`;
 }
 
 export function preview_time(seconds: number): string {
