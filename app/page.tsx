@@ -319,7 +319,7 @@ export default function Home() {
               <Link href="/portfolio/nyc-film-map" className="text-link">Explore film locations <span aria-hidden="true">↗</span></Link>
             </div>
             <Link className="project-film-preview" href="/portfolio/nyc-film-map" aria-label="Open NYC Film Map">
-              <Image className="project-film-still" src="/images/film-map/manhattan--sutton-square.webp" alt="Isaac and Mary looking toward the Queensboro Bridge in Manhattan (1979)" width={565} height={240} unoptimized loading="lazy" />
+              <Image className="project-film-still" src="/images/film-map/manhattan--sutton-square.jpg" alt="Isaac and Mary looking toward the Queensboro Bridge in Manhattan (1979)" width={565} height={240} unoptimized loading="lazy" />
               <span>ON LOCATION / NEW YORK CITY</span>
               <strong>From the screen<br /><em>to the street.</em></strong>
               <span className="project-film-pair"><span>Manhattan<small>WOODY ALLEN · 1979</small></span><span>Film frame<small>VIA otsoNY</small></span></span>

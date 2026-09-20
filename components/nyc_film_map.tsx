@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import Image from 'next/image';
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Film, MapPin, Maximize2, Search, X } from 'lucide-react';
 import type * as Leaflet from 'leaflet';
@@ -33,7 +33,13 @@ function SceneDetails({ location, film_id }: { location: FilmLocation; film_id: 
   </div>;
 }
 
+// Keep React-only controls inactive until their event handlers can receive input.
+const subscribe_to_readiness = () => () => {};
+const client_ready = () => true;
+const server_ready = () => false;
+
 export function NycFilmMap() {
+  const interactive = useSyncExternalStore(subscribe_to_readiness, client_ready, server_ready);
   const [film_id, set_film_id] = useState('all');
   const [query, set_query] = useState('');
   const [selected_id, set_selected_id] = useState<string | null>(null);
@@ -191,7 +197,7 @@ export function NycFilmMap() {
     if (selected_id && reveal_selection.current) {
       const details = details_elements.current.get(selected_id);
       details?.focus({ preventScroll: true });
-      details?.scrollIntoView({ block: 'nearest', behavior: reduce_motion() ? 'instant' : 'smooth' });
+      details?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
     }
   }, [selected_id, map_state, filtered_locations]);
 
@@ -215,14 +221,14 @@ export function NycFilmMap() {
   return <>
     <section className="cinema-picker" aria-label="Choose a film">
       <div className="cinema-controls"><div className="cinema-collection-label"><Film size={18} aria-hidden="true" /><span>THE COLLECTION</span><small>{film_catalog.length} films · {film_locations.length} places</small></div>
-        <label className="cinema-search"><Search size={18} aria-hidden="true" /><span className="sr-only">Search films, directors or places</span><input type="search" value={query} placeholder="Film, director or place" onChange={(event) => { set_query(event.target.value); set_film_id('all'); set_selected_id(null); }} />{query && <button aria-label="Clear search" onClick={() => set_query('')}><X size={17} /></button>}</label>
-        <div className="cinema-strip-arrows"><button aria-label="Previous films" onClick={() => scroll_films(-1)}><ChevronLeft size={19} /></button><button aria-label="More films" onClick={() => scroll_films(1)}><ChevronRight size={19} /></button></div>
+        <label className="cinema-search"><Search size={18} aria-hidden="true" /><span className="sr-only">Search films, directors or places</span><input type="search" disabled={!interactive} value={query} placeholder="Film, director or place" onChange={(event) => { set_query(event.target.value); set_film_id('all'); set_selected_id(null); }} />{query && <button disabled={!interactive} aria-label="Clear search" onClick={() => set_query('')}><X size={17} /></button>}</label>
+        <div className="cinema-strip-arrows"><button disabled={!interactive} aria-label="Previous films" onClick={() => scroll_films(-1)}><ChevronLeft size={19} /></button><button disabled={!interactive} aria-label="More films" onClick={() => scroll_films(1)}><ChevronRight size={19} /></button></div>
       </div>
       <div className="cinema-filmstrip" ref={filmstrip_element}>
-        <button className="cinema-all-films" aria-label="All films" aria-pressed={film_id === 'all'} onClick={() => choose_film('all')}><span className="cinema-all-art"><Film size={26} strokeWidth={1.2} /><span>NEW YORK<br /><em>on film.</em></span></span><span className="cinema-film-card-label">All films <small>{film_catalog.length}</small></span>{film_id === 'all' && <Check className="cinema-film-check" size={16} aria-hidden="true" />}</button>
+        <button disabled={!interactive} className="cinema-all-films" aria-label="All films" aria-pressed={film_id === 'all'} onClick={() => choose_film('all')}><span className="cinema-all-art"><Film size={26} strokeWidth={1.2} /><span>NEW YORK<br /><em>on film.</em></span></span><span className="cinema-film-card-label">All films <small>{film_catalog.length}</small></span>{film_id === 'all' && <Check className="cinema-film-check" size={16} aria-hidden="true" />}</button>
         {strip_films.map((film) => {
           const scene = film_locations.flatMap((location) => location.scenes).find((scene) => scene.film_id === film.id && scene.still);
-          return <button className="cinema-film-card" key={film.id} aria-label={`${film.title} ${film.year}`} aria-pressed={film_id === film.id} onClick={() => choose_film(film.id)}><span className="cinema-film-card-image">{scene ? <SceneStill scene={scene} thumbnail /> : <span className="cinema-film-year">{film.year}</span>}</span><span className="cinema-film-card-label">{film.title}<small>{film.year}</small></span>{film_id === film.id && <Check className="cinema-film-check" size={16} aria-hidden="true" />}</button>;
+          return <button disabled={!interactive} className="cinema-film-card" key={film.id} aria-label={`${film.title} ${film.year}`} aria-pressed={film_id === film.id} onClick={() => choose_film(film.id)}><span className="cinema-film-card-image">{scene ? <SceneStill scene={scene} thumbnail /> : <span className="cinema-film-year">{film.year}</span>}</span><span className="cinema-film-card-label">{film.title}<small>{film.year}</small></span>{film_id === film.id && <Check className="cinema-film-check" size={16} aria-hidden="true" />}</button>;
         })}
       </div>
     </section>
@@ -234,7 +240,7 @@ export function NycFilmMap() {
         <div className="cinema-map-caption"><span aria-live="polite">{filtered_locations.length} {filtered_locations.length === 1 ? 'place' : 'places'} on the map</span><span>Select a pin to find its films</span></div>
       </section>
       <aside className="cinema-places" aria-label="Film locations"><div className="cinema-list-heading"><p className="cinema-kicker">{selected_film ? `${selected_film.year} / ${selected_film.director}` : 'SCENES IN THE CITY'}</p><h2>{selected_film?.title ?? (query ? `Results for “${query}”` : 'Find your scene.')}</h2><p>{selected_film?.note ?? 'Real places. Familiar frames.'}</p></div>
-        {!filtered_locations.length && <div className="cinema-empty"><p>No places match this search.</p><button onClick={() => choose_film('all')}>Explore all films</button></div>}
+        {!filtered_locations.length && <div className="cinema-empty"><p>No places match this search.</p><button disabled={!interactive} onClick={() => choose_film('all')}>Explore all films</button></div>}
         <ol className="cinema-place-list">{filtered_locations.map((location, index) => {
           const scenes = location.scenes.filter((scene) => film_id === 'all' || scene.film_id === film_id);
           const preview_scene = scenes.find((scene) => scene.still) ?? scenes[0];
