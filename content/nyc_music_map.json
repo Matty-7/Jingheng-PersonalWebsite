@@ -253,6 +253,534 @@
       "source_url": "https://www.bobdylan.com/songs/talkin-new-york/",
       "source_label": "Bob Dylan · official lyrics",
       "note": "A subway ride brings the narrator to Greenwich Village and a search for work in coffee houses. The lyric names the neighborhood directly."
+    },
+    {
+      "id": "tompkins-square-park",
+      "title": "Tompkins Square Park",
+      "artist": "Mumford & Sons",
+      "album": "Wilder Mind",
+      "year": 2015,
+      "genre": "Indie rock",
+      "track_id": 1771725528,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/24/47/dc/2447dc0a-89c4-03ac-2833-d3dcb0997294/0602547279446_Cover.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/36/56/72/36567235-10cd-43ac-fa33-a4b07c7da4d7/mzaf_17053345807219728592.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/tompkins-square-park/1771725527?i=1771725528&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Mumford+Sons+Tompkins+Square+Park&entity=song&country=us&limit=5",
+      "place_ids": [
+        "tompkins-square-park"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/Tompkins_Square_Park_(song)",
+      "source_label": "Song reference · title & setting",
+      "note": "The East Village park becomes a meeting place at the edge of a breakup. The park is named; no particular bench or entrance is identified.",
+      "metadata_release_date": "2015-05-01T12:00:00Z"
+    },
+    {
+      "id": "washington-square",
+      "title": "Washington Square",
+      "artist": "The Village Stompers",
+      "album": "The Original Washington Square",
+      "year": 1963,
+      "genre": "Jazz / instrumental",
+      "track_id": 755044244,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/4c/82/0f/4c820f7a-2768-64fc-bf10-40a41921b2c0/886444353151.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/fb/53/0e/fb530e9c-fa33-765c-0f3b-cc7cfa74e5e0/mzaf_447945482079037409.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/washington-square/755044243?i=755044244&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Village+Stompers+Washington+Square&entity=song&country=us&limit=5",
+      "place_ids": [
+        "washington-square"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/Washington_Square_(composition)",
+      "source_label": "Composition reference · New York park",
+      "note": "A banjo-led instrumental carries the name of the Greenwich Village park. First released in 1963, it appears here on a later digital edition.",
+      "metadata_release_date": "2006-07-18T12:00:00Z"
+    },
+    {
+      "id": "central-park-west",
+      "title": "Central Park West",
+      "artist": "John Coltrane",
+      "album": "Coltrane's Sound",
+      "year": 1964,
+      "genre": "Jazz / instrumental",
+      "track_id": 962194526,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/75/ff/6b/75ff6b2d-db7c-7242-3b70-4ae59d9bedd8/603497893133.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e7/a4/3a/e7a43aa5-acd1-2767-7cea-7c040adef7c2/mzaf_1201185584046976624.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/central-park-west/962194510?i=962194526&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=John+Coltrane+Central+Park+West&entity=song&country=us&limit=5",
+      "place_ids": [
+        "central-park-west"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/central-park-west/962194510?i=962194526&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Coltrane gives this quiet instrumental the name of the avenue along the park. Its connection is in the title, without a lyric or a specific building.",
+      "metadata_release_date": "1964-01-01T12:00:00Z"
+    },
+    {
+      "id": "central-park-blues",
+      "title": "Central Park Blues (2021 - Stereo Remaster)",
+      "artist": "Nina Simone",
+      "album": "Little Girl Blue (2021 - Stereo Remaster)",
+      "year": 1959,
+      "genre": "Jazz / instrumental",
+      "track_id": 1568988857,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/96/91/02/969102f0-5629-ca7d-f952-6856248b935e/4050538685794.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/63/c3/00/63c30043-5ab5-9952-c106-be311d456f46/mzaf_10644185223835425386.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/central-park-blues-2021-stereo-remaster/1568988846?i=1568988857&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Nina+Simone+Central+Park+Blues&entity=song&country=us&limit=5",
+      "place_ids": [
+        "central-park"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/central-park-blues-2021-stereo-remaster/1568988846?i=1568988857&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Simone lets the piano do the describing. Central Park appears in the title of this instrumental, without naming a path, lawn or landmark inside it.",
+      "metadata_release_date": "1959-02-01T12:00:00Z"
+    },
+    {
+      "id": "harlem",
+      "title": "Harlem",
+      "artist": "Bill Withers",
+      "album": "Just As I Am",
+      "year": 1971,
+      "genre": "Soul",
+      "track_id": 293521572,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1b/b9/16/1bb9167c-e0eb-5418-960d-e9adb61d0fdd/mzi.kqpazwnw.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/8d/f9/fa/8df9fa9b-cc56-0a5d-8aee-bf507990f82b/mzaf_13882496750502832918.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem/293521570?i=293521572&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bill+Withers+Harlem&entity=song&country=us&limit=5",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title & lyrics",
+      "excerpt": "Summer night in Harlem",
+      "source_url": "https://billwithers.com/lyrics/harlem/",
+      "source_label": "Bill Withers · official lyrics",
+      "note": "Summer heat, winter cold, Saturday nightlife and Sunday morning unfold in the same neighborhood. Withers keeps returning to Harlem as daily life changes around it.",
+      "metadata_release_date": "1971-05-01T07:00:00Z"
+    },
+    {
+      "id": "harlem-shuffle",
+      "title": "Harlem Shuffle",
+      "artist": "The Rolling Stones",
+      "album": "Dirty Work (2009 Remaster)",
+      "year": 1986,
+      "genre": "Rock / R&B",
+      "track_id": 1440860835,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/23/2b/57/232b57ff-9778-b427-15fc-f9b9d3cf3454/08UMGIM15740.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/dd/ab/aaddabfa-a3c5-bcc9-c664-f5a682016cf2/mzaf_2700028139868422756.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-shuffle/1440860751?i=1440860835&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Rolling+Stones+Harlem+Shuffle&entity=song&country=us&limit=15&explicit=Yes",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-shuffle/1440860751?i=1440860835&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Harlem enters through the name of a dance. This Rolling Stones recording of the song belongs to the neighborhood-level map, without assigning its dance floor to a particular club.",
+      "metadata_release_date": "1986-02-28T12:00:00Z"
+    },
+    {
+      "id": "drop-me-off-in-harlem",
+      "title": "Drop Me off in Harlem (feat. Duke Ellington and His Orchestra)",
+      "artist": "Ella Fitzgerald",
+      "album": "Ella Fitzgerald Sings: The Duke Ellington Songbook (Expanded Edition)",
+      "year": 1957,
+      "genre": "Jazz / vocal",
+      "track_id": 1440098712,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/5d/72/0c/5d720c85-aea2-5389-e372-56118febe10e/00602567848943.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e2/66/00/e2660047-c6c0-f4e1-3b0c-2b4cbb117b20/mzaf_5264764203898992357.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/drop-me-off-in-harlem-feat-duke-ellington-and-his-orchestra/1440098385?i=1440098712&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Duke+Ellington+Drop+Me+Off+In+Harlem&entity=song&country=us&limit=5",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/drop-me-off-in-harlem-feat-duke-ellington-and-his-orchestra/1440098385?i=1440098712&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Fitzgerald sings the neighborhood as a destination, accompanied by Ellington and his orchestra. The title asks for Harlem as a whole, rather than one doorstep.",
+      "metadata_release_date": "1957-01-01T12:00:00Z"
+    },
+    {
+      "id": "on-broadway",
+      "title": "On Broadway",
+      "artist": "The Drifters",
+      "album": "Under the Boardwalk",
+      "year": 1964,
+      "genre": "Soul",
+      "track_id": 59403259,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/eb/9d/90/eb9d90c6-1a37-a543-1642-2b7a6e579c3d/s06.cnofqvlt.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4e/91/3a/4e913a65-e02b-caed-60c5-d222579b1e4d/mzaf_11886167110196266554.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/on-broadway/59403291?i=59403259&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Drifters+On+Broadway&entity=song&country=us&limit=5",
+      "place_ids": [
+        "broadway"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/On_Broadway_(song)",
+      "source_label": "Song reference · Broadway",
+      "note": "Bright lights and the hope of making a living turn Broadway into a test of ambition. The map uses a representative point in the theater district.",
+      "metadata_release_date": "1964-06-01T12:00:00Z"
+    },
+    {
+      "id": "rockaway-beach",
+      "title": "Rockaway Beach",
+      "artist": "Ramones",
+      "album": "Rocket to Russia (Deluxe Edition)",
+      "year": 1977,
+      "genre": "Punk",
+      "track_id": 77816965,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/e6/0b/f2/e60bf2bf-68d5-e014-e873-99c611fb6744/dj.zmwcwcur.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/59/08/9c/59089c0f-2f9a-a657-47a6-37056f33fc55/mzaf_14472883374600291337.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/rockaway-beach/77817086?i=77816965&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ramones+Rockaway+Beach&entity=song&country=us&limit=5",
+      "place_ids": [
+        "rockaway-beach"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/Rockaway_Beach_(song)",
+      "source_label": "Song reference · Queens beach",
+      "note": "A beach escape gives this fast, compact Ramones song its destination. It adds the Atlantic edge of Queens to the collection without pretending to identify one stretch of sand.",
+      "metadata_release_date": "1977-11-04T08:00:00Z"
+    },
+    {
+      "id": "funkin-for-jamaica",
+      "title": "Funkin' for Jamaica",
+      "artist": "Tom Browne",
+      "album": "Love Approach (Bonus Track)",
+      "year": 1980,
+      "genre": "Jazz / funk",
+      "track_id": 1290542346,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/60/07/8b/60078bc2-ab7d-f719-1bcb-fe8f63ebd1b6/886446537733.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/6e/1a/3b6e1ae1-b297-9de1-2580-b013c5eecd23/mzaf_8155123107059810058.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/funkin-for-jamaica/1290541766?i=1290542346&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Tom+Browne+Funkin+for+Jamaica&entity=song&country=us&limit=5",
+      "place_ids": [
+        "jamaica"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/Funkin%27_for_Jamaica_(N.Y.)",
+      "source_label": "Song reference · Jamaica, Queens",
+      "note": "Jamaica here is the Queens neighborhood where Browne grew up. Trumpet, keyboards and vocals make a neighborhood tribute, with no individual house pinned.",
+      "metadata_release_date": "1979-01-01T12:00:00Z"
+    },
+    {
+      "id": "queens-get-the-money",
+      "title": "Queens Get the Money",
+      "artist": "Nas",
+      "album": "Nas",
+      "year": 2008,
+      "genre": "Hip-hop",
+      "track_id": 1443166416,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/11/dd/d2/11ddd272-3848-7656-1373-4fca58542f90/00602517801851.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bd/54/d0/bd54d02f-4054-e194-79a5-122d94fc7c58/mzaf_2618501312082902848.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/queens-get-the-money/1443166414?i=1443166416&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Nas+Queens+Get+the+Money&entity=song&country=us&limit=5",
+      "place_ids": [
+        "queens"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/queens-get-the-money/1443166414?i=1443166416&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "The borough is right in the title. This entry stays at that scale rather than substituting Queensbridge or a personal address for the wider place Nas names.",
+      "metadata_release_date": "2008-07-15T12:00:00Z"
+    },
+    {
+      "id": "south-bronx",
+      "title": "South Bronx (Live at SOB's, NYC, NY - 1990)",
+      "artist": "Boogie Down Productions",
+      "album": "Live Hardcore Worldwide",
+      "year": 1991,
+      "genre": "Hip-hop",
+      "track_id": 304776403,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/c9/6a/73/mzi.rlmkfful.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/27/c6/c4/27c6c4e8-8057-e7c5-abe5-bb95f4010169/mzaf_12009526827024480214.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/south-bronx-live-at-sobs-nyc-ny-1990/304776295?i=304776403&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=South+Bronx&entity=song&country=us&limit=15&explicit=Yes&attribute=songTerm",
+      "place_ids": [
+        "south-bronx"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/south-bronx-live-at-sobs-nyc-ny-1990/304776295?i=304776403&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "The South Bronx is the declaration at the center of the song. This is the live recording at SOB’s included on Live Hardcore Worldwide; the mapped place is the South Bronx, not the performance venue.",
+      "metadata_release_date": "1991-03-12T12:00:00Z"
+    },
+    {
+      "id": "brooklyn-baby",
+      "title": "Brooklyn Baby",
+      "artist": "Lana Del Rey",
+      "album": "Ultraviolence",
+      "year": 2014,
+      "genre": "Indie pop",
+      "track_id": 1442879917,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/83/1c/52/831c528b-caa0-dc8e-bc33-5547a9f7db4a/14UMGIM20260.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f8/fa/e5/f8fae5a9-98d9-c189-0ae3-bd1a75d8d51b/mzaf_11055930379400269583.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-baby/1442879908?i=1442879917&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Lana+Del+Rey+Brooklyn+Baby&entity=song&country=us&limit=12",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/brooklyn-baby/1442879908?i=1442879917&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Brooklyn becomes part of a carefully performed identity. The title names the borough; it does not supply a particular apartment, club or street.",
+      "metadata_release_date": "2014-06-08T12:00:00Z"
+    },
+    {
+      "id": "brooklyn-zoo",
+      "title": "Brooklyn Zoo",
+      "artist": "Ol' Dirty Bastard",
+      "album": "The Definitive Ol' Dirty Bastard Story (Remastered)",
+      "year": 1995,
+      "genre": "Hip-hop",
+      "track_id": 457969344,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/9f/16/41/mzi.sstwygni.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/57/06/79/5706795f-1c10-5dcf-e6cb-a25e88e372ad/mzaf_8109053167986944349.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-zoo/457969275?i=457969344&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ol+Dirty+Bastard+Brooklyn+Zoo&entity=song&country=us&limit=12",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/Brooklyn_Zoo_(song)",
+      "source_label": "Song reference · Brooklyn",
+      "note": "Brooklyn gives the song its name and force. This entry keeps the title association at borough scale. First released in 1995, the selected recording comes from a later remastered compilation.",
+      "metadata_release_date": "2005-06-20T12:00:00Z"
+    },
+    {
+      "id": "staten-island-groove",
+      "title": "Staten Island Groove",
+      "artist": "Down to the Bone",
+      "album": "Classic Album Series",
+      "year": 1997,
+      "genre": "Jazz / funk",
+      "track_id": 1453079785,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e8/60/79/e8607986-2674-257a-7d1a-572ea52286f9/193483487366.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/5d/a0/6c/5da06cf8-97a7-cf9e-334c-4383d12db474/mzaf_1741567059059328011.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/staten-island-groove/1453079761?i=1453079785&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Down+To+The+Bone+Staten+Island+Groove&entity=song&country=us&limit=12",
+      "place_ids": [
+        "staten-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/staten-island-groove/1453079761?i=1453079785&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "An instrumental brings Staten Island into the record collection through its title. The map shows the borough, without inventing a ferry, venue or street connection.",
+      "metadata_release_date": "1997-01-01T12:00:00Z"
+    },
+    {
+      "id": "bronx-blues",
+      "title": "Bronx Blues",
+      "artist": "Stan Getz & Oscar Peterson Trio",
+      "album": "Stan Getz And The Oscar Peterson Trio",
+      "year": 1957,
+      "genre": "Jazz / instrumental",
+      "track_id": 1494035799,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/cd/91/0f/cd910f5d-ed10-19b6-9337-eb1cf01ce077/19UM1IM13294.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d7/11/c8/d711c853-e508-1e7f-7f59-122a2ebf92b1/mzaf_7162227545128132043.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/bronx-blues/1494035461?i=1494035799&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Stan+Getz+Oscar+Peterson+Bronx+Blues&entity=song&country=us&limit=15&explicit=Yes",
+      "place_ids": [
+        "bronx"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/bronx-blues/1494035461?i=1494035799&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "The Bronx gets a jazz entry as well as a hip-hop one. This instrumental names the borough without supplying a smaller destination.",
+      "metadata_release_date": "1957-01-01T12:00:00Z"
+    },
+    {
+      "id": "manhattan",
+      "title": "Manhattan",
+      "artist": "Ella Fitzgerald",
+      "album": "Ella Fitzgerald Sings The Rodgers And Hart Song Book",
+      "year": 1956,
+      "genre": "Jazz / vocal",
+      "track_id": 1882891742,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6a/6c/c2/6a6cc2db-9f45-ec3b-af02-21ccc25e4ab7/12UMGIM11050.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8e/5d/a1/8e5da121-fa33-4c9e-5ee5-f9cae34c5cba/mzaf_10096623596044143691.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/manhattan/1882891163?i=1882891742&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ella+Fitzgerald+Manhattan&entity=song&country=us&limit=12",
+      "place_ids": [
+        "manhattan"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/manhattan/1882891163?i=1882891742&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Rodgers and Hart’s city song gives Fitzgerald a whole borough to sing about. This entry follows the title at that broad scale, leaving its many possible stops open.",
+      "metadata_release_date": "1956-10-01T12:00:00Z"
+    },
+    {
+      "id": "lullaby-of-birdland",
+      "title": "Lullaby of Birdland",
+      "artist": "Sarah Vaughan & Clifford Brown",
+      "album": "Sarah Vaughan",
+      "year": 1954,
+      "genre": "Jazz / vocal",
+      "track_id": 1434889302,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/2e/ab/51/2eab51c2-0da6-18f7-4796-674871ee58b4/06UMGIM17900.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/67/a6/3b67a68d-590e-542f-2335-95388579f216/mzaf_5644192801090319390.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/lullaby-of-birdland/1434889193?i=1434889302&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sarah+Vaughan+Lullaby+of+Birdland&entity=song&country=us&limit=12",
+      "place_ids": [
+        "birdland-original"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://www.birdlandjazz.com/about/",
+      "source_label": "Birdland · official club history",
+      "note": "The standard takes its name from the New York jazz club. The map refers to the original Broadway location associated with the song, rather than the later West 44th Street venue.",
+      "metadata_release_date": "1954-12-01T12:00:00Z"
+    },
+    {
+      "id": "take-the-a-train",
+      "title": "Take the 'A' Train",
+      "artist": "Duke Ellington",
+      "album": "Ellington Uptown",
+      "year": 1953,
+      "genre": "Jazz / vocal",
+      "track_id": 204123464,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/3e/dc/57/3edc575c-53e7-8b80-b91f-b78fc2dfa06c/dj.gayvfeal.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/af/20/e0/af20e005-b32c-893d-ca9e-78bd86f6e0eb/mzaf_9241079014584746206.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/take-the-a-train/204123042?i=204123464&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Duke+Ellington+Take+the+A+Train&entity=song&country=us&limit=12",
+      "place_ids": [
+        "sugar-hill"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "To go to Sugar Hill way up in Harlem.",
+      "source_url": "https://americanhistory.si.edu/documentsgallery/exhibitions/ellington_strayhorn_6.html",
+      "source_label": "Smithsonian · song history & lyrics",
+      "note": "The Ellington Uptown recording includes vocals by Betty Roché. The song’s subway directions lead to Sugar Hill in Harlem; the map shows that neighborhood rather than a private home.",
+      "metadata_release_date": "1953-01-01T12:00:00Z"
+    },
+    {
+      "id": "coney-island-taylor-swift",
+      "title": "coney island (feat. The National)",
+      "artist": "Taylor Swift",
+      "album": "evermore",
+      "year": 2020,
+      "genre": "Indie folk",
+      "track_id": 1544268354,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/bd/dd/54/bddd543b-4e0f-007b-1398-5fef90b963c3/20UM1IM14847.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/35/50/3f3550de-aa10-18bd-25d1-2428dce96a97/mzaf_655924781443992380.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/coney-island-feat-the-national/1544268281?i=1544268354&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Taylor+Swift+coney+island&entity=song&country=us&limit=12",
+      "place_ids": [
+        "coney-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://en.wikipedia.org/wiki/Coney_Island_(Taylor_Swift_song)",
+      "source_label": "Song reference · Coney Island",
+      "note": "Swift and the National return to Coney Island as a place of regret and absence. It shares the same neighborhood entry as Lou Reed, without identifying a real bench from the lyric.",
+      "metadata_release_date": "2020-12-11T12:00:00Z"
+    },
+    {
+      "id": "ludlow-st",
+      "title": "Ludlow St.",
+      "artist": "Julian Casablancas",
+      "album": "Phrazes for the Young",
+      "year": 2009,
+      "genre": "Indie rock",
+      "track_id": 335804206,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7b/56/ea/7b56ea38-c04c-722e-36f9-37c26576ffc6/mzi.ldksrmnn.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/85/2f/4d/852f4d31-532b-098c-f9d6-87a583c2e26a/mzaf_4497612206849104901.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/ludlow-st/335804043?i=335804206&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Julian+Casablancas+Ludlow+St&entity=song&country=us&limit=12",
+      "place_ids": [
+        "ludlow-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://pitchfork.com/news/37014-julian-casablancas-talks-solo-lp-strokes-video-games/",
+      "source_label": "Julian Casablancas · interview",
+      "note": "Casablancas connected this song to a changing Lower East Side in his Pitchfork interview. The street becomes a way to ask whether a familiar neighborhood still feels like home.",
+      "metadata_release_date": "2009-09-29T12:00:00Z"
+    },
+    {
+      "id": "bleecker-and-macdougal",
+      "title": "Bleecker & MacDougal",
+      "artist": "Fred Neil",
+      "album": "Bleecker and McDougal",
+      "year": 1965,
+      "genre": "Folk / blues",
+      "track_id": 59389389,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cc/1e/58/cc1e58a3-199e-8e58-249e-8d3023c85eb0/s06.hltlbezu.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/bc/75/d2/bc75d23d-9def-d9d8-76fc-266ad32b48e3/mzaf_14951452194032770182.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/bleecker-macdougal/59389440?i=59389389&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Fred+Neil+Bleecker+MacDougal&entity=song&country=us&limit=12",
+      "place_ids": [
+        "bleecker-macdougal"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/bleecker-macdougal/59389440?i=59389389&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Two street names make the title unusually precise. The map marks their Greenwich Village intersection, without claiming that a particular cafe is the song’s setting.",
+      "metadata_release_date": "1965-08-01T07:00:00Z"
+    },
+    {
+      "id": "brooklyn-bridge-to-chorus",
+      "title": "Brooklyn Bridge To Chorus",
+      "artist": "The Strokes",
+      "album": "The New Abnormal",
+      "year": 2020,
+      "genre": "Indie rock",
+      "track_id": 1498121722,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/62/a6/ff/62a6ff2a-95c9-5302-31f4-2dcca9e40323/886448281085.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9f/56/75/9f5675a8-c19e-1a9a-83a3-b1a3b24e1f92/mzaf_8513775954963459622.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-bridge-to-chorus/1498121188?i=1498121722&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Strokes+Brooklyn+Bridge+to+Chorus&entity=song&country=us&limit=12",
+      "place_ids": [
+        "brooklyn-bridge"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/brooklyn-bridge-to-chorus/1498121188?i=1498121722&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "The bridge appears in the title, where a physical crossing sits beside a musical one. This entry makes no claim that the recording or music video was made on the bridge.",
+      "metadata_release_date": "2020-04-06T07:00:00Z"
+    },
+    {
+      "id": "lullaby-of-broadway",
+      "title": "Lullaby of Broadway",
+      "artist": "Doris Day",
+      "album": "Lullaby of Broadway",
+      "year": 1951,
+      "genre": "Traditional pop",
+      "track_id": 1237993166,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music117/v4/aa/b5/4b/aab54bb3-168e-a459-d2b0-f2f7a1806ee3/886445839555.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/5a/08/8d/5a088d77-6787-ebbc-f883-66d1ae4ad484/mzaf_7360137848180466932.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/lullaby-of-broadway/1237992918?i=1237993166&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Doris+Day+Lullaby+of+Broadway&entity=song&country=us&limit=15&explicit=Yes",
+      "place_ids": [
+        "broadway"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/lullaby-of-broadway/1237992918?i=1237993166&uo=4",
+      "source_label": "Apple Music · recording & title",
+      "note": "Doris Day gives Broadway a different hour and tempo from the Drifters. Both songs share the same representative theater-district location; neither entry claims one named theater.",
+      "metadata_release_date": "1951-04-01T12:00:00Z"
     }
   ],
   "places": [
@@ -326,7 +854,7 @@
       "area": "Greenwich Village, Manhattan",
       "map_query": "Bleecker Street and MacDougal Street, Manhattan, New York, NY",
       "precision": "Representative point",
-      "note": "Bleecker Street is explicit in the title and lyric. The map uses the MacDougal Street intersection as a reference, not a verified café from the song."
+      "note": "The map uses the MacDougal Street intersection as a representative point along Bleecker Street. It does not identify a particular cafe."
     },
     {
       "id": "coney-island",
@@ -334,7 +862,7 @@
       "area": "Brooklyn",
       "map_query": "Coney Island, Brooklyn, New York, NY",
       "precision": "Neighborhood",
-      "note": "Coney Island is named in the title. The map locates the neighborhood; it does not claim a specific boardwalk scene or filming site."
+      "note": "The map locates the Brooklyn neighborhood. It does not identify a particular bench, boardwalk scene or filming site."
     },
     {
       "id": "brooklyn",
@@ -342,7 +870,7 @@
       "area": "New York City",
       "map_query": "Brooklyn, New York, NY",
       "precision": "Borough",
-      "note": "The destination is the whole borough. No more precise street or landmark is claimed by this entry."
+      "note": "The reference is the whole borough. Individual songs do not establish a precise street, venue or zoo for this shared entry."
     },
     {
       "id": "52nd-street",
@@ -359,6 +887,150 @@
       "map_query": "Greenwich Village, Manhattan, New York, NY",
       "precision": "Neighborhood",
       "note": "Dylan explicitly names Greenwich Village after a subway journey. The coffee house in this passage is unnamed, so no particular venue is pinned."
+    },
+    {
+      "id": "tompkins-square-park",
+      "name": "Tompkins Square Park",
+      "area": "East Village, Manhattan",
+      "map_query": "Tompkins Square Park, Manhattan, New York, NY",
+      "precision": "Landmark",
+      "note": "The map identifies the public park as a whole. No particular entrance or bench is claimed."
+    },
+    {
+      "id": "washington-square",
+      "name": "Washington Square Park",
+      "area": "Greenwich Village, Manhattan",
+      "map_query": "Washington Square Park, Manhattan, New York, NY",
+      "precision": "Landmark",
+      "note": "This is the Greenwich Village park. The location represents the park, not a particular performance spot."
+    },
+    {
+      "id": "central-park-west",
+      "name": "Central Park West",
+      "area": "Upper West Side, Manhattan",
+      "map_query": "Central Park West and West 72nd Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "West 72nd Street provides a reference along Central Park West. It is not a song-specified address or building."
+    },
+    {
+      "id": "central-park",
+      "name": "Central Park",
+      "area": "Manhattan",
+      "map_query": "Central Park, Manhattan, New York, NY",
+      "precision": "Landmark",
+      "note": "The named place is the whole park. The map does not identify a performance site or a particular path."
+    },
+    {
+      "id": "harlem",
+      "name": "Harlem",
+      "area": "Manhattan",
+      "map_query": "Harlem, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The map represents Harlem at neighborhood scale. Song-specific stories do not identify an exact club, church or residence here."
+    },
+    {
+      "id": "broadway",
+      "name": "Broadway",
+      "area": "Theater District, Manhattan",
+      "map_query": "Broadway and West 45th Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "This theater-district intersection is a reference along Broadway. It is not an exact street corner specified by the songs."
+    },
+    {
+      "id": "rockaway-beach",
+      "name": "Rockaway Beach",
+      "area": "Queens",
+      "map_query": "Rockaway Beach, Queens, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The map locates the Rockaway Beach neighborhood and its beachfront context. It does not claim a particular boardwalk entrance."
+    },
+    {
+      "id": "jamaica",
+      "name": "Jamaica",
+      "area": "Queens",
+      "map_query": "Jamaica, Queens, New York, NY",
+      "precision": "Neighborhood",
+      "note": "This is the Queens neighborhood, not the Caribbean island. The map does not identify a private home."
+    },
+    {
+      "id": "queens",
+      "name": "Queens",
+      "area": "New York City",
+      "map_query": "Queens, New York, NY",
+      "precision": "Borough",
+      "note": "The reference is the whole borough. No particular housing development, block or venue is implied."
+    },
+    {
+      "id": "south-bronx",
+      "name": "South Bronx",
+      "area": "Bronx",
+      "map_query": "South Bronx, Bronx, New York, NY",
+      "precision": "Area",
+      "note": "South Bronx describes an area spanning several neighborhoods. The map is an area reference, not a precise boundary or a performance venue."
+    },
+    {
+      "id": "staten-island",
+      "name": "Staten Island",
+      "area": "New York City",
+      "map_query": "Staten Island, New York, NY",
+      "precision": "Borough",
+      "note": "The map identifies Staten Island as a borough. No more specific street, ferry terminal or venue is claimed."
+    },
+    {
+      "id": "bronx",
+      "name": "The Bronx",
+      "area": "New York City",
+      "map_query": "The Bronx, New York, NY",
+      "precision": "Borough",
+      "note": "The reference covers the borough as a whole, rather than a specific neighborhood or jazz venue."
+    },
+    {
+      "id": "manhattan",
+      "name": "Manhattan",
+      "area": "New York City",
+      "map_query": "Manhattan, New York, NY",
+      "precision": "Borough",
+      "note": "The title-level association is the borough. This map does not turn it into a single address."
+    },
+    {
+      "id": "birdland-original",
+      "name": "Birdland (original site)",
+      "area": "Midtown, Manhattan",
+      "map_query": "Broadway and West 52nd Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The original Birdland was at Broadway and 52nd Street and closed in 1965. This is an approximate historical location; the present club is on West 44th Street."
+    },
+    {
+      "id": "sugar-hill",
+      "name": "Sugar Hill",
+      "area": "Harlem, Manhattan",
+      "map_query": "Sugar Hill, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The map shows the Harlem neighborhood named in the song. It does not mark Ellington’s home or claim a particular subway exit."
+    },
+    {
+      "id": "ludlow-street",
+      "name": "Ludlow Street",
+      "area": "Lower East Side, Manhattan",
+      "map_query": "Ludlow Street and Rivington Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "Rivington Street provides a reference along Ludlow Street. This intersection is not specified in the song."
+    },
+    {
+      "id": "bleecker-macdougal",
+      "name": "Bleecker & MacDougal",
+      "area": "Greenwich Village, Manhattan",
+      "map_query": "Bleecker Street and MacDougal Street, Manhattan, New York, NY",
+      "precision": "Intersection",
+      "note": "This is the meeting of the two named streets. It is a distinct intersection entry alongside the broader Bleecker Street reference."
+    },
+    {
+      "id": "brooklyn-bridge",
+      "name": "Brooklyn Bridge",
+      "area": "Manhattan / Brooklyn",
+      "map_query": "Brooklyn Bridge, New York, NY",
+      "precision": "Landmark",
+      "note": "The bridge connects Manhattan and Brooklyn. The map identifies the landmark, not a recording location or a specific point on its walkway."
     }
   ]
 }
