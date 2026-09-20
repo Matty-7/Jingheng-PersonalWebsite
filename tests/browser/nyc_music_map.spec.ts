@@ -107,3 +107,70 @@ test('album motion advances without playing and stops for manual and reduced mot
   await expect(page.getByRole('button', { name: 'Album scrolling off: reduced motion', exact: true })).toBeDisabled();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
+
+test('album motion pauses for hover, focus and touch, and reverses at the end', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/portfolio/nyc-music-map');
+  const shelf = page.locator('.sound-shelf');
+  const position = () => shelf.evaluate((element) => element.scrollLeft);
+  await expect.poll(position).toBeGreaterThan(3);
+  await shelf.hover();
+  const hovered = await position();
+  await page.waitForTimeout(200);
+  expect(await position()).toBe(hovered);
+  await page.mouse.move(0, 0);
+  await expect.poll(position).toBeGreaterThan(hovered + 2);
+  await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).focus();
+  const focused = await position();
+  await page.waitForTimeout(200);
+  expect(await position()).toBe(focused);
+  await page.getByRole('button', { name: 'Show all places', exact: true }).focus();
+  await expect.poll(position).toBeGreaterThan(focused + 2);
+  await shelf.dispatchEvent('pointerdown', { pointerType: 'touch', bubbles: true });
+  await expect(page.getByRole('button', { name: 'Resume album scrolling', exact: true })).toBeVisible();
+  await shelf.evaluate((element) => { element.scrollLeft = element.scrollWidth; });
+  const end = await position();
+  await page.getByRole('button', { name: 'Resume album scrolling', exact: true }).click();
+  await expect.poll(position).toBeLessThan(end - 2);
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+});
+
+test('overview remains selectable when tiles fail and keyboard clusters expand', async ({ page }) => {
+  await page.route('https://tile.openstreetmap.org/**', (route) => route.abort());
+  await page.goto('/portfolio/nyc-music-map');
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  await expect(page.getByText('Map tiles unavailable.', { exact: false })).toBeVisible();
+  const cluster = page.getByRole('button', { name: /music places. Zoom to expand./ }).first();
+  await expect(cluster).toBeVisible();
+  const first_tile = await page.locator('.sound-overview .leaflet-tile').first().getAttribute('src');
+  await cluster.press('Space');
+  await expect.poll(() => page.locator('.sound-overview .leaflet-tile').first().getAttribute('src')).not.toBe(first_tile);
+  await expect(page.locator('.sound-overview')).toBeFocused();
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  await page.getByRole('button', { name: 'Retry map', exact: true }).click();
+  await expect(page.getByRole('button', { name: /^Coney Island: Coney Island Baby/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Selected place', exact: true }).click();
+  await expect(page.getByRole('link', { name: 'Open in Google Maps', exact: true })).toBeVisible();
+});
+
+test('changing a place preserves a playing preview and changing the song clears it', async ({ page }) => {
+  const sample_count = 8000 * 10;
+  const wav = Buffer.alloc(44 + sample_count * 2);
+  wav.write('RIFF', 0); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt ', 8);
+  wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(8000, 24); wav.writeUInt32LE(16000, 28); wav.writeUInt16LE(2, 32);
+  wav.writeUInt16LE(16, 34); wav.write('data', 36); wav.writeUInt32LE(sample_count * 2, 40);
+  await page.route('https://audio-ssl.itunes.apple.com/**', (route) => route.fulfill({ status: 200, contentType: 'audio/wav', body: wav }));
+  await page.goto('/portfolio/nyc-music-map');
+  await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
+  await expect.poll(() => page.locator('audio').evaluate((audio) => audio.currentTime)).toBeGreaterThan(0);
+  const audio_src = await page.locator('audio').getAttribute('src');
+  await page.getByRole('button', { name: 'Riverside', exact: true }).click();
+  await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
+  expect(await page.locator('audio').evaluate((audio) => audio.paused)).toBe(false);
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
+  expect(await page.locator('audio').evaluate((audio) => audio.paused)).toBe(false);
+  await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+});
