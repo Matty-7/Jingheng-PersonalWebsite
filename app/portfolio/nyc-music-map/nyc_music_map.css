@@ -1,3 +1,4 @@
+html:has(.sound-page) { scroll-behavior: auto; }
 .sound-page { --sound-paper: #fcf7eb; --sound-ink: #273a30; --sound-red: #a73e20; padding: 0 4vw; color: var(--sound-ink); }
 .sound-nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
 .sound-nav a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -15,8 +16,8 @@
 .sound-search button { border: 0; }
 .sound-shelf-controls { display: flex; gap: 6px; }
 .sound-search-status { display: block; font-size: 13px; color: #596252; margin: 5px 0 8px; }
-.sound-shelf { display: flex; gap: 18px; overflow-x: auto; padding: 8px 4px 16px; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #273a3060 transparent; }
-.sound-album { flex: 0 0 128px; min-width: 0; text-align: left; border: 0; padding: 0; background: none; color: inherit; cursor: pointer; scroll-snap-align: start; }
+.sound-shelf { display: flex; gap: 18px; overflow-x: auto; padding: 8px 4px 16px; scroll-snap-type: none; scrollbar-width: thin; scrollbar-color: #273a3060 transparent; }
+.sound-album { flex: 0 0 128px; min-width: 0; text-align: left; border: 0; padding: 0; background: none; color: inherit; cursor: pointer; }
 .sound-album-art { display: block; width: 128px; height: 128px; position: relative; box-shadow: 0 4px 8px #273a3025; transition: transform .2s ease, box-shadow .2s ease; }
 .sound-album-art img { width: 100%; height: 100%; object-fit: cover; }
 .sound-album:hover .sound-album-art { transform: translateY(-3px); }
@@ -104,7 +105,6 @@
 @media (max-width: 359px) { .sound-record { padding: 16px; } .sound-record-top { grid-template-columns: 72px minmax(0,1fr); gap: 12px; } .sound-selected-cover { width: 72px; height: 72px; } .sound-record h2 { font-size: 24px; } .sound-playback-disc { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .sound-page *, .sound-page *::before, .sound-page *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
 
-.sound-shelf.is-scrolling { scroll-snap-type: none; }
 .sound-shelf-controls button:disabled { opacity: .45; cursor: default; }
 .sound-map-controls { border: 0; padding: 0; min-width: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .sound-map-controls button { min-height: 44px; padding: 9px 14px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid #273a3055; background: transparent; color: inherit; font-size: 14px; cursor: pointer; }
