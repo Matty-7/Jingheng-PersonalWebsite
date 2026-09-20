@@ -4,9 +4,12 @@ test('film selection keeps map, details and directions in sync', async ({ page }
   await page.goto('/portfolio/nyc-film-map');
   await expect(page.getByRole('heading', { name: 'NYC Film Map.' })).toBeVisible();
   await expect(page.locator('.cinema-marker')).toHaveCount(6);
-  await page.getByRole('button', { name: '2. Café Lalo', exact: true }).click();
+  await page.getByRole('button', { name: '2. Café Lalo', exact: true }).press('Enter');
   const details = page.getByRole('region', { name: 'Details for Café Lalo' });
   await expect(details).toContainText('vacated this address in 2024');
+  await page.getByRole('button', { name: 'Close location details' }).click();
+  await page.getByRole('button', { name: '2. Café Lalo', exact: true }).press('Space');
+  await expect(details).toBeVisible();
   await expect(details.getByRole('link', { name: 'Walking directions' })).toHaveAttribute('href', /destination=.*201%20West%2083rd/);
   await page.getByRole('button', { name: 'Anora 2024', exact: true }).click();
   await expect(page.locator('.cinema-marker')).toHaveCount(5);

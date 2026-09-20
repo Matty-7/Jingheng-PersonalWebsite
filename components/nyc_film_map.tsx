@@ -105,6 +105,12 @@ export function NycFilmMap() {
         title: `${index + 1}. ${location.name}`, alt: location.name, keyboard: true,
       });
       marker.on('click', () => select_location(location.id));
+      marker.on('keydown', (event: Leaflet.LeafletKeyboardEvent) => {
+        if (event.originalEvent.key === 'Enter' || event.originalEvent.key === ' ') {
+          leaflet.DomEvent.stop(event.originalEvent);
+          select_location(location.id);
+        }
+      });
       marker.addTo(layer);
       marker.getElement()?.setAttribute('aria-label', `${index + 1}. ${location.name}`);
       markers.set(location.id, marker);

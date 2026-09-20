@@ -138,11 +138,11 @@
       "neighborhood": "Upper West Side",
       "borough": "Manhattan",
       "coordinates": [
-        40.7936,
-        -73.9776
+        40.7935,
+        -73.9785
       ],
       "access": "Park",
-      "visit_note": "Use the park paths to reach the garden.",
+      "visit_note": "Use the park paths to reach the garden on the promenade between West 90th and 91st Streets.",
       "scenes": [
         {
           "film_id": "youve-got-mail",
