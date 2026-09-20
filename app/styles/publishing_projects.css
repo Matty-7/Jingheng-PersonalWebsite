@@ -378,8 +378,10 @@
 }
 
 .projects-film-entry { border-top: 0; }
-.project-film-preview { display: block; background: #273a30; color: #fff2da; padding: clamp(24px, 3vw, 40px); }
-.project-film-preview > span:first-child { font-size: 12px; letter-spacing: .13em; }
+.project-film-preview { display: block; position: relative; isolation: isolate; overflow: hidden; background: #172a22; color: #fff2da; padding: clamp(24px, 3vw, 40px); }
+.project-film-preview .project-film-still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .36; z-index: -2; }
+.project-film-preview::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #14271fd9, #14271f05 85%); z-index: -1; }
+.project-film-preview > span:first-of-type { font-size: 12px; letter-spacing: .13em; }
 .project-film-preview > strong { display: block; margin: 24px 0 28px; font: 42px/1.08 Georgia, serif; letter-spacing: -.035em; }
 .project-film-preview > strong em { color: #e5b95f; }
 .project-film-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid #fff2da50; padding: 18px 0; }
