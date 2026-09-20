@@ -5,6 +5,10 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    rolls: {
+      tex: String.raw`D=P_{\mathrm{near}}-P_{\mathrm{far}}`,
+      variables: 'D: drop in price points per $100 current face; P: comparable clean TBA prices for near and far settlement. Not a percentage return or annualized rate.',
+    },
     breakeven_inflation: {
       tex: String.raw`\mathrm{BE}\approx y_{\mathrm{nominal}}-y_{\mathrm{real}}`,
       variables: 'Annual yields as decimals at comparable maturity and conventions; multiply the difference by 10,000 for basis points. Includes risk and liquidity compensation.',

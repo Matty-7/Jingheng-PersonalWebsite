@@ -270,6 +270,11 @@ export const mortgage_sources: Record<
     title: 'TBA Trading and Liquidity in the Agency MBS Market',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/epr/2013/1212vick.pdf',
   },
+  dollar_roll_faq: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'Agency MBS FAQs · August 2014 archive, dollar-roll mechanics',
+    url: 'https://www.newyorkfed.org/markets/ambs/ambs_faq.html',
+  },
   convexity: {
     publisher: 'Federal Reserve Bank of New York',
     title: 'Convexity Event Risks in a Rising Interest Rate Environment',
@@ -878,11 +883,19 @@ const original_concepts: MortgageConcept[] = [
     id: "rolls",
     branch: "trading",
     title: "Dollar rolls",
-    subtitle: "Exchanging delivery months",
-    aliases: ["dollar roll", "drop", "settlement"],
+    subtitle: "A price drop is not a financing rate",
+    aliases: ["dollar roll", "roll drop", "drop", "settlement", "implied financing"],
     summary:
-      "A dollar roll pairs a sale for one settlement month with a purchase of similar TBA securities for a later month, or the reverse.",
-    distinction: "The price difference alone is not the complete return.",
+      "From the sell-near / buy-far perspective, a dollar roll sells TBA securities for earlier settlement and buys similar eligible securities for later settlement. The seller gives up the intervening principal and interest entitlement; the returning pools can differ. The drop is the near-month price minus the far-month price.",
+    distinction:
+      "The drop is a price difference, not a return or annualized financing rate. A financing comparison needs expected prepayments, payment timing, accrued interest, the settlement interval and a comparable funding alternative. Principal received by a holder reduces the remaining balance; it is not all profit.",
+    formula: {
+      expression: "D = P_near − P_far",
+      assumptions:
+        "Both prices use clean-price points per $100 current face for comparable eligible TBA contracts. A negative drop is possible. This quotation identity excludes accrued interest and does not calculate settlement cash or financing cost.",
+      example:
+        "Illustrative: 99.625 − 99.375 = 0.250 price points. That is not a 0.25% investment return.",
+    },
     links: [
       {
         id: "tba",
@@ -892,10 +905,19 @@ const original_concepts: MortgageConcept[] = [
         id: "cash_flows",
         reason: "Payments forgone between settlements affect the comparison.",
       },
+      {
+        id: "repo",
+        reason: "Compare financing while retaining the collateral’s economic cash flows.",
+      },
+      {
+        id: "cheapest_deliverable",
+        reason: "Later allocation can change the collateral received.",
+      },
     ],
-    question: "Must the same pools return?",
-    answer: "No. Later delivery can use different eligible pools.",
-    sources: ["tba"],
+    question: "Does a positive drop alone prove attractive financing?",
+    answer:
+      "No. Forgone payments can outweigh the drop and any funding benefit. Prepayment assumptions and the characteristics of the pools delivered later also affect the comparison.",
+    sources: ["tba", "dollar_roll_faq", "basics", "repo_public"],
     topic: "market_mechanics",
   },
   {
