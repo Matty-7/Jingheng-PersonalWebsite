@@ -1,6 +1,6 @@
 {
   "verified_date": "2026-09-20",
-  "verification": "Original source covers visually inspected. Display copies scaled to at most 600 by 900 pixels and encoded as WebP; no generated or semantic changes.",
+  "verification": "Original source covers visually inspected. Display copies scaled to at most 600 by 900 pixels and encoded as optimized progressive JPEG from the verified originals; no generated or semantic changes.",
   "books": [
     {
       "id": "washington-square",
@@ -18,7 +18,7 @@
       "credit": "Wikimedia Commons; historical cover scan from NYU Libraries",
       "rights_note": "Wikimedia Commons marks this image public domain in the United States.",
       "alt": "Historical cloth cover of Washington Square by Henry James, with gilt title and an engraved street scene.",
-      "site_file": "/images/literary-map/washington-square.webp"
+      "site_file": "/images/literary-map/washington-square.jpg"
     },
     {
       "id": "age-of-innocence",
@@ -35,7 +35,7 @@
       "credit": "Wikimedia Commons; anonymous original cover artist",
       "rights_note": "Wikimedia Commons marks this reproduction public domain.",
       "alt": "The Age of Innocence first-edition jacket, a pale yellow cover with handwritten-style title and a woman in a pink dress.",
-      "site_file": "/images/literary-map/age-of-innocence.webp"
+      "site_file": "/images/literary-map/age-of-innocence.jpg"
     },
     {
       "id": "great-gatsby",
@@ -52,7 +52,7 @@
       "credit": "Cover illustration by Francis Cugat; digital restoration by Wikimedia Commons user Flask",
       "rights_note": "Wikimedia Commons marks this image public domain in the United States. The source identifies the scan as digitally restored and enhanced.",
       "alt": "Francis Cugat's original Great Gatsby jacket, with luminous eyes above a brightly lit city against a dark blue sky.",
-      "site_file": "/images/literary-map/great-gatsby.webp"
+      "site_file": "/images/literary-map/great-gatsby.jpg"
     },
     {
       "id": "moby-dick",
@@ -70,7 +70,7 @@
       "credit": "Standard Ebooks; cover adapted from The Flying Dutchman (1887) by Albert Pinkham Ryder",
       "rights_note": "Standard Ebooks dedicates its own production to CC0. This is the genuine modern Standard Ebooks cover, not an 1851 first-edition cover.",
       "alt": "Standard Ebooks cover of Moby Dick, with a storm-tossed ship from Albert Pinkham Ryder's The Flying Dutchman and the book title below.",
-      "site_file": "/images/literary-map/moby-dick.webp"
+      "site_file": "/images/literary-map/moby-dick.jpg"
     },
     {
       "id": "four-million",
@@ -88,7 +88,7 @@
       "credit": "Wikimedia Commons; original scan from The Portal to Texas History, University of North Texas",
       "rights_note": "Wikimedia Commons marks this image public domain in the United States.",
       "alt": "First-edition cover of The Four Million by O. Henry, in red cloth with gilt lettering.",
-      "site_file": "/images/literary-map/four-million.webp"
+      "site_file": "/images/literary-map/four-million.jpg"
     },
     {
       "id": "leaves-of-grass",
@@ -108,7 +108,7 @@
       "edition_source": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass/text/colophon",
       "passage_source": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass/text/crossing-brooklyn-ferry",
       "editorial_note": "Replaces the 1855 cover because Crossing Brooklyn Ferry first appeared in 1856; the Standard Ebooks source is based on the 1892 edition and explicitly includes the poem.",
-      "site_file": "/images/literary-map/leaves-of-grass-later.webp"
+      "site_file": "/images/literary-map/leaves-of-grass-later.jpg"
     }
   ],
   "magazine": {
@@ -135,6 +135,6 @@
     "alt": "The New Yorker cover dated April 13, 1940, showing a ceremonial street tree planting with photographers and onlookers.",
     "editorial_note": "Use the article's actual title, The Old House at Home. McSorley's Wonderful Saloon is the title of Mitchell's later collection, not the title of this New Yorker article. The print issue date is confirmed both by the article footer and the issue contents.",
     "excerpt_count_verification": "22 whitespace-delimited words; punctuation attached to words does not add words.",
-    "site_file": "/images/literary-map/new-yorker-1940-04-13.webp"
+    "site_file": "/images/literary-map/new-yorker-1940-04-13.jpg"
   }
 }
