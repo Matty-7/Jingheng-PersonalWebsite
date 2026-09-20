@@ -1,0 +1,271 @@
+{
+  "reviewed_on": "2026-09-20",
+  "works": [
+    {
+      "id": "washington",
+      "title": "Washington Square",
+      "author": "Henry James",
+      "year": 1880,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/2870",
+      "text_url": "https://www.gutenberg.org/cache/epub/2870/pg2870-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/washington-square.webp",
+        "alt": "Historical cloth cover of Washington Square by Henry James, with gilt title and an engraved street scene.",
+        "edition": "Harper & Brothers edition dated 1881",
+        "source_url": "https://commons.wikimedia.org/wiki/File:James_Washington_Square_cover.JPG",
+        "credit": "Wikimedia Commons; historical cover scan from NYU Libraries"
+      }
+    },
+    {
+      "id": "innocence",
+      "title": "The Age of Innocence",
+      "author": "Edith Wharton",
+      "year": 1920,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/541",
+      "text_url": "https://www.gutenberg.org/cache/epub/541/pg541-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/age-of-innocence.webp",
+        "alt": "The Age of Innocence first-edition jacket, a pale yellow cover with handwritten-style title and a woman in a pink dress.",
+        "edition": "1920 first-edition dust jacket, D. Appleton & Company",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Age_of_Innocence_(1st_ed_dust_jacket).jpg",
+        "credit": "Wikimedia Commons; anonymous original cover artist"
+      }
+    },
+    {
+      "id": "gatsby",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year": 1925,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/64317",
+      "text_url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/great-gatsby.webp",
+        "alt": "Francis Cugat's original Great Gatsby jacket, with luminous eyes above a brightly lit city against a dark blue sky.",
+        "edition": "1925 first-edition dust jacket, Charles Scribner's Sons; digitally restored scan",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Great_Gatsby_Cover_1925_Retouched.jpg",
+        "credit": "Cover illustration by Francis Cugat; digital restoration by Wikimedia Commons user Flask"
+      }
+    },
+    {
+      "id": "moby",
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "year": 1851,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/2701",
+      "text_url": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/moby-dick.webp",
+        "alt": "Standard Ebooks cover of Moby Dick, with a storm-tossed ship from Albert Pinkham Ryder's The Flying Dutchman and the book title below.",
+        "edition": "Standard Ebooks edition, first released March 27, 2018",
+        "source_url": "https://standardebooks.org/ebooks/herman-melville/moby-dick",
+        "credit": "Standard Ebooks; cover adapted from The Flying Dutchman (1887) by Albert Pinkham Ryder"
+      }
+    },
+    {
+      "id": "four_million",
+      "title": "The Four Million",
+      "author": "O. Henry",
+      "year": 1906,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/2776",
+      "text_url": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/four-million.webp",
+        "alt": "First-edition cover of The Four Million by O. Henry, in red cloth with gilt lettering.",
+        "edition": "1906 first edition, McClure, Phillips and Company",
+        "source_url": "https://commons.wikimedia.org/wiki/File:TheFourMillion.png",
+        "credit": "Wikimedia Commons; original scan from The Portal to Texas History, University of North Texas"
+      }
+    },
+    {
+      "id": "leaves",
+      "title": "Leaves of Grass",
+      "author": "Walt Whitman",
+      "year": 1855,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/1322",
+      "text_url": "https://www.gutenberg.org/cache/epub/1322/pg1322-images.html",
+      "rights": "Public domain in the United States; the collection began in 1855, and “Crossing Brooklyn Ferry” first appeared in 1856 as “Sun-Down Poem”",
+      "cover": {
+        "src": "/images/literary-map/leaves-of-grass-later.webp",
+        "alt": "Standard Ebooks cover of Leaves of Grass, with Margaret C. Cook's painted figures gazing at the sky above a cliff and the book title below.",
+        "edition": "Standard Ebooks edition, first released January 2, 2024; based on the 1892 deathbed edition",
+        "source_url": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass",
+        "credit": "Standard Ebooks; cover adapted from The Sun and Stars That Float in the Open Air (1913) by Margaret C. Cook"
+      }
+    },
+    {
+      "id": "mcsorleys",
+      "title": "The Old House at Home",
+      "author": "Joseph Mitchell",
+      "year": 1940,
+      "kind": "The New Yorker",
+      "source_url": "https://www.newyorker.com/magazine/1940/04/13/the-old-house-at-home",
+      "text_url": "https://www.newyorker.com/magazine/1940/04/13/the-old-house-at-home",
+      "rights": "Copyrighted article; brief quotation",
+      "cover": {
+        "src": "/images/literary-map/new-yorker-1940-04-13.webp",
+        "alt": "The New Yorker cover dated April 13, 1940, showing a ceremonial street tree planting with photographers and onlookers.",
+        "edition": "The New Yorker, April 13, 1940 issue",
+        "source_url": "https://www.newyorker.com/magazine/1940/04/13",
+        "credit": "The New Yorker / Condé Nast, April 13, 1940 issue"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "washington-square",
+      "work_id": "washington",
+      "place": "Washington Square",
+      "area": "Greenwich Village, Manhattan",
+      "coordinates": [
+        40.7312,
+        -73.9971
+      ],
+      "map_query": "Washington Square Park New York",
+      "locator": "Chapter XVI",
+      "source_url": "https://www.gutenberg.org/cache/epub/2870/pg2870-images.html#page102",
+      "excerpt": "So he walked with her through the devious ways of the west side of the town, and through the bustle of gathering nightfall in populous streets, to the quiet precinct of Washington Square. They lingered a moment at the foot of Dr. Sloper’s white marble steps, above which a spotless white door, adorned with a glittering silver plate, seemed to figure, for Morris, the closed portal of happiness; and then Mrs. Penniman’s companion rested a melancholy eye upon a lighted window in the upper part of the house.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "James moves from the crowded streets into a quiet square. The white door of the fictional Sloper house becomes a boundary between Morris Townsend and the life he hopes to enter.",
+      "precision": "Area described. The pin marks the square, not an identified address for the fictional house.",
+      "visit_note": "Explore the square and its north-side streets from public paths."
+    },
+    {
+      "id": "met-museum",
+      "work_id": "innocence",
+      "place": "The Metropolitan Museum of Art",
+      "area": "Upper East Side, Manhattan",
+      "coordinates": [
+        40.7794,
+        -73.9632
+      ],
+      "map_query": "Metropolitan Museum of Art New York",
+      "locator": "Chapter XXXI",
+      "source_url": "https://www.gutenberg.org/cache/epub/541/pg541-images.html#chap31",
+      "excerpt": "Avoiding the popular \"Wolfe collection,\" whose anecdotic canvases filled one of the main galleries of the queer wilderness of cast-iron and encaustic tiles known as the Metropolitan Museum, they had wandered down a passage to the room where the \"Cesnola antiquities\" mouldered in unvisited loneliness.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Archer and Ellen find privacy among antiquities. Wharton makes the museum feel secluded and faintly melancholy, a refuge from the social scrutiny outside.",
+      "precision": "Named institution. The historical gallery arrangement in the novel is not a guide to the museum today.",
+      "visit_note": "The museum is at 1000 Fifth Avenue. Check admission and opening hours before visiting."
+    },
+    {
+      "id": "queensboro-bridge",
+      "work_id": "gatsby",
+      "place": "Queensboro Bridge",
+      "area": "East River, Manhattan / Queens",
+      "coordinates": [
+        40.7571,
+        -73.9543
+      ],
+      "map_query": "Ed Koch Queensboro Bridge New York",
+      "locator": "Chapter IV",
+      "source_url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html#chapter-4",
+      "excerpt": "Over the great bridge, with the sunlight through the girders making a constant flicker upon the moving cars, with the city rising up across the river in white heaps and sugar lumps all built with a wish out of nonolfactory money. The city seen from the Queensboro Bridge is always the city seen for the first time, in its first wild promise of all the mystery and the beauty in the world.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Nick approaches Manhattan with Gatsby. The bridge turns the familiar skyline into a promise of reinvention, just as Gatsby is presenting his own story.",
+      "precision": "Named bridge. The pin identifies the crossing, not a precise viewpoint or pedestrian entrance.",
+      "visit_note": "Use Google Maps for a current pedestrian approach; the passage describes a journey by car."
+    },
+    {
+      "id": "central-park",
+      "work_id": "gatsby",
+      "place": "Central Park",
+      "area": "Central Park South, Manhattan",
+      "coordinates": [
+        40.7663,
+        -73.9774
+      ],
+      "map_query": "Central Park South New York",
+      "locator": "Chapter IV, after Jordan’s story at the Plaza",
+      "source_url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html#chapter-4",
+      "excerpt": "When Jordan Baker had finished telling all this we had left the Plaza for half an hour and were driving in a victoria through Central Park. The sun had gone down behind the tall apartments of the movie stars in the West Fifties, and the clear voices of children, already gathered like crickets on the grass, rose through the hot twilight:",
+      "excerpt_kind": "Paragraph leading into a quoted song",
+      "note": "After Jordan tells Nick about Daisy and Gatsby, the city softens into evening. Children’s voices and a carriage ride briefly replace the novel’s parties and display.",
+      "precision": "Area described. The novel gives no exact carriage route; the pin marks the park’s southern edge.",
+      "visit_note": "Start at Central Park South. The text does not identify a particular path."
+    },
+    {
+      "id": "the-battery",
+      "work_id": "moby",
+      "place": "The Battery",
+      "area": "Lower Manhattan",
+      "coordinates": [
+        40.7033,
+        -74.017
+      ],
+      "map_query": "The Battery New York",
+      "locator": "Chapter 1, “Loomings”",
+      "source_url": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html#link2HCH0001",
+      "excerpt": "There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Before Ishmael goes to sea, he watches New Yorkers drawn to the waterfront. The Battery becomes the city’s threshold to an ocean that seems to pull people out of their everyday lives.",
+      "precision": "Area described. The pin is on the present-day waterfront; the shoreline has changed since Melville wrote.",
+      "visit_note": "Follow the public waterfront paths; this is not a reconstructed nineteenth-century viewpoint."
+    },
+    {
+      "id": "madison-square",
+      "work_id": "four_million",
+      "place": "Madison Square Park",
+      "area": "Flatiron, Manhattan",
+      "coordinates": [
+        40.7421,
+        -73.9878
+      ],
+      "map_query": "Madison Square Park New York",
+      "locator": "“The Cop and the Anthem,” opening paragraph",
+      "source_url": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html#chap09",
+      "excerpt": "On his bench in Madison Square Soapy moved uneasily. When wild geese honk high of nights, and when women without sealskin coats grow kind to their husbands, and when Soapy moves uneasily on his bench in the park, you may know that winter is near at hand.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "The park bench is Soapy’s home, and the first signs of winter are an urgent problem. O. Henry measures the changing season from the perspective of someone who has nowhere warm to go.",
+      "precision": "Named park. Soapy’s bench is fictional and has no identified present-day location.",
+      "visit_note": "Visit the public park between Fifth Avenue, Madison Avenue, 23rd and 26th Streets."
+    },
+    {
+      "id": "fulton-ferry",
+      "work_id": "leaves",
+      "place": "Fulton Ferry Landing",
+      "area": "Brooklyn waterfront",
+      "coordinates": [
+        40.7024,
+        -73.9945
+      ],
+      "map_query": "Fulton Ferry Landing Brooklyn New York",
+      "locator": "“Crossing Brooklyn Ferry,” section 1; later collected text",
+      "source_url": "https://www.gutenberg.org/cache/epub/1322/pg1322-images.html#link2H_4_0085",
+      "excerpt": "Flood-tide below me! I see you face to face!\nClouds of the west—sun there half an hour high—I see you also face to face.\nCrowds of men and women attired in the usual costumes, how curious you are to me!\nOn the ferry-boats the hundreds and hundreds that cross, returning home, are more curious to me than you suppose,\nAnd you that shall cross from shore to shore years hence are more to me, and more in my meditations, than you might suppose.",
+      "excerpt_kind": "Complete opening section",
+      "note": "Whitman looks at commuters on the river and addresses people who will cross it long after him. The shared view becomes a connection between strangers across generations.",
+      "precision": "Historical crossing. The pin marks the Brooklyn landing associated with the Fulton Ferry, not the poet’s exact position.",
+      "visit_note": "Read from the public waterfront. The old crossing and today’s ferry services are different.",
+      "place_source_url": "https://brooklynbridgepark.org/places-to-see/fulton-ferry-landing/"
+    },
+    {
+      "id": "mcsorleys-ale-house",
+      "work_id": "mcsorleys",
+      "place": "McSorley’s Old Ale House",
+      "area": "East Village, Manhattan",
+      "coordinates": [
+        40.7287,
+        -73.9897
+      ],
+      "map_query": "McSorleys Old Ale House 15 East 7th Street New York",
+      "locator": "Opening sentence; The New Yorker, April 13, 1940 issue",
+      "source_url": "https://www.newyorker.com/magazine/1940/04/13/the-old-house-at-home",
+      "excerpt": "McSorley’s occupies the ground floor of a red brick tenement at 15 Seventh Street, just off Cooper Square, where the Bowery ends.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Mitchell begins with the building and the street. His profile makes a neighborhood saloon the subject of close observation, preserving the texture of an ordinary New York gathering place.",
+      "precision": "Named venue and street address. The description belongs to the 1940 article, not a report on the bar today.",
+      "visit_note": "15 East 7th Street. Check the venue’s current visitor information before going."
+    }
+  ]
+}
