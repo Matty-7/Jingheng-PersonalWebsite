@@ -23,7 +23,7 @@ export function google_music_url(place: MusicPlace): string {
 }
 
 export function google_music_embed_url(place: MusicPlace, api_key: string): string | null {
-  return google_place_embed_url(place.map_query, api_key, place.precision === 'Borough' ? 11 : place.precision === 'Area' ? 13 : place.precision === 'Neighborhood' ? 14 : 16);
+  return google_place_embed_url(place.map_query, api_key, place.precision === 'City' ? 10 : place.precision === 'Borough' ? 11 : place.precision === 'Area' ? 13 : place.precision === 'Neighborhood' ? 14 : 16);
 }
 
 export function preview_time(seconds: number): string {

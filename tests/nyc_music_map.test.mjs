@@ -29,8 +29,13 @@ test('music places have traceable relations and bounded excerpts', () => {
   for (const place of catalog.places) {
     assert.ok(place.note.length > 30);
     assert.ok(used_places.has(place.id), `${place.id}: unused place`);
-    assert.ok(['Venue', 'Landmark', 'Intersection', 'Representative point', 'Neighborhood', 'Borough', 'Area'].includes(place.precision));
+    assert.ok(['Venue', 'Landmark', 'Intersection', 'Representative point', 'Neighborhood', 'Borough', 'Area', 'City'].includes(place.precision));
     assert.match(place.map_query, /New York/);
+    assert.equal(place.coordinates.length, 2);
+    assert.ok(place.coordinates.every(Number.isFinite));
+    assert.ok(place.coordinates[0] > 40.45 && place.coordinates[0] < 40.95);
+    assert.ok(place.coordinates[1] > -74.3 && place.coordinates[1] < -73.7);
+    assert.equal(new URL(place.coordinate_reference).hostname, 'www.openstreetmap.org');
   }
 });
 
