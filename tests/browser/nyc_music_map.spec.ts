@@ -69,3 +69,41 @@ test('expanded catalog exposes new boroughs and the end of the collection', asyn
   await expect(page.getByRole('article', { name: 'Selected song' })).toContainText('Doris Day');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test('all places include shared recordings and survive catalog filtering', async ({ page }) => {
+  await page.goto('/portfolio/nyc-music-map');
+  await page.getByRole('searchbox').fill('Harlem River');
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  await expect(page.getByRole('searchbox')).toHaveValue('');
+  await expect(page.getByRole('region', { name: 'Map of all songs' })).toBeVisible();
+  const island = page.getByRole('button', { name: /^Coney Island: Coney Island Baby/ });
+  await island.press('Enter');
+  await page.getByRole('button', { name: 'Choose coney island (feat. The National) by Taylor Swift at Coney Island', exact: true }).click();
+  await expect(page.getByRole('article', { name: 'Selected song' })).toContainText('Taylor Swift');
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+  await page.getByRole('button', { name: 'Selected place', exact: true }).click();
+  await expect(page.getByRole('region', { name: 'Map of Coney Island' })).toBeVisible();
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  await page.getByRole('searchbox').fill('zzzz-no-music');
+  await expect(page.getByRole('region', { name: 'Map of all songs' })).toBeVisible();
+  await expect(page.getByRole('status').filter({ hasText: '0 matching songs' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('album motion advances without playing and stops for manual and reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/portfolio/nyc-music-map');
+  const shelf = page.locator('.sound-shelf');
+  await expect.poll(() => shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(4);
+  await page.getByRole('button', { name: 'Pause album scrolling', exact: true }).click();
+  const stopped = await shelf.evaluate((element) => element.scrollLeft);
+  await page.waitForTimeout(250);
+  expect(await shelf.evaluate((element) => element.scrollLeft)).toBe(stopped);
+  await page.getByRole('button', { name: 'Resume album scrolling', exact: true }).click();
+  await expect.poll(() => shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(stopped + 3);
+  await page.getByRole('button', { name: 'More songs', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Resume album scrolling', exact: true })).toBeVisible();
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.getByRole('button', { name: 'Album scrolling off: reduced motion', exact: true })).toBeDisabled();
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+});
