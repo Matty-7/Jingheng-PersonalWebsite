@@ -1,3 +1,4 @@
+html:has(.cinema-page) { scroll-behavior: auto; }
 .cinema-page { --cinema-paper: #fcf7eb; --cinema-ink: #233a31; --cinema-muted: #62716a; --cinema-gold: #bfa36a; --cinema-line: #243b3124; --cinema-map-height: clamp(470px, 66svh, 740px); background: #f8f5ed; color: var(--cinema-ink); min-height: 100svh; padding: 0 clamp(18px, 3.3vw, 64px); }
 .cinema-page button, .cinema-page input, .cinema-page summary { -webkit-tap-highlight-color: transparent; }
 .cinema-page button, .cinema-page a, .cinema-page summary { touch-action: manipulation; }
