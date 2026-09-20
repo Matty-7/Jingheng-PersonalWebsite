@@ -14,6 +14,8 @@ export function audit_preview(): Plugin {
     '/__audit/mortgage_narrow': [320, 844],
     '/__audit/film_desktop': [1440, 900],
     '/__audit/film_mobile': [390, 844],
+    '/__audit/literary_desktop': [1280, 900],
+    '/__audit/literary_mobile': [390, 844],
   };
   return {
     name: 'site-audit-preview',
@@ -28,6 +30,8 @@ export function audit_preview(): Plugin {
         const [width, height] = viewport;
         const route = (request.url ?? '').startsWith('/__audit/mortgage_')
           ? '/portfolio/mortgage-map'
+          : (request.url ?? '').startsWith('/__audit/literary_')
+            ? '/portfolio/nyc-literary-map'
           : (request.url ?? '').startsWith('/__audit/film_')
             ? '/portfolio/nyc-film-map'
             : '/';

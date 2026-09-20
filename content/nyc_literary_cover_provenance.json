@@ -1,0 +1,140 @@
+{
+  "verified_date": "2026-09-20",
+  "verification": "Original source covers visually inspected. Display copies scaled to at most 600 by 900 pixels and encoded as WebP; no generated or semantic changes.",
+  "books": [
+    {
+      "id": "washington-square",
+      "title": "Washington Square",
+      "author": "Henry James",
+      "original_publication_year": 1880,
+      "cover_edition": "Harper & Brothers edition dated 1881",
+      "dimensions": [
+        359,
+        504
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File:James_Washington_Square_cover.JPG",
+      "original_source_in_record": "http://www.nyu.edu/library/bobst/collections/exhibits/bobst/washsq/voices/volumes/wsquare/html/cover.html",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/James_Washington_Square_cover.JPG",
+      "credit": "Wikimedia Commons; historical cover scan from NYU Libraries",
+      "rights_note": "Wikimedia Commons marks this image public domain in the United States.",
+      "alt": "Historical cloth cover of Washington Square by Henry James, with gilt title and an engraved street scene.",
+      "site_file": "/images/literary-map/washington-square.webp"
+    },
+    {
+      "id": "age-of-innocence",
+      "title": "The Age of Innocence",
+      "author": "Edith Wharton",
+      "original_publication_year": 1920,
+      "cover_edition": "1920 first-edition dust jacket, D. Appleton & Company",
+      "dimensions": [
+        242,
+        366
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File:Age_of_Innocence_(1st_ed_dust_jacket).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Age_of_Innocence_%281st_ed_dust_jacket%29.jpg",
+      "credit": "Wikimedia Commons; anonymous original cover artist",
+      "rights_note": "Wikimedia Commons marks this reproduction public domain.",
+      "alt": "The Age of Innocence first-edition jacket, a pale yellow cover with handwritten-style title and a woman in a pink dress.",
+      "site_file": "/images/literary-map/age-of-innocence.webp"
+    },
+    {
+      "id": "great-gatsby",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "original_publication_year": 1925,
+      "cover_edition": "1925 first-edition dust jacket, Charles Scribner's Sons; digitally restored scan",
+      "dimensions": [
+        1129,
+        1600
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_Great_Gatsby_Cover_1925_Retouched.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+      "credit": "Cover illustration by Francis Cugat; digital restoration by Wikimedia Commons user Flask",
+      "rights_note": "Wikimedia Commons marks this image public domain in the United States. The source identifies the scan as digitally restored and enhanced.",
+      "alt": "Francis Cugat's original Great Gatsby jacket, with luminous eyes above a brightly lit city against a dark blue sky.",
+      "site_file": "/images/literary-map/great-gatsby.webp"
+    },
+    {
+      "id": "moby-dick",
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "original_publication_year": 1851,
+      "cover_edition": "Standard Ebooks edition, first released March 27, 2018",
+      "dimensions": [
+        1400,
+        2100
+      ],
+      "source_page": "https://standardebooks.org/ebooks/herman-melville/moby-dick",
+      "edition_source": "https://standardebooks.org/ebooks/herman-melville/moby-dick/text/colophon",
+      "image_url": "https://standardebooks.org/ebooks/herman-melville/moby-dick/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from The Flying Dutchman (1887) by Albert Pinkham Ryder",
+      "rights_note": "Standard Ebooks dedicates its own production to CC0. This is the genuine modern Standard Ebooks cover, not an 1851 first-edition cover.",
+      "alt": "Standard Ebooks cover of Moby Dick, with a storm-tossed ship from Albert Pinkham Ryder's The Flying Dutchman and the book title below.",
+      "site_file": "/images/literary-map/moby-dick.webp"
+    },
+    {
+      "id": "four-million",
+      "title": "The Four Million",
+      "author": "O. Henry",
+      "original_publication_year": 1906,
+      "cover_edition": "1906 first edition, McClure, Phillips and Company",
+      "dimensions": [
+        1500,
+        2217
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File:TheFourMillion.png",
+      "original_source_in_record": "https://texashistory.unt.edu/ark:/67531/metapth139379/m1/1/",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/TheFourMillion.png",
+      "credit": "Wikimedia Commons; original scan from The Portal to Texas History, University of North Texas",
+      "rights_note": "Wikimedia Commons marks this image public domain in the United States.",
+      "alt": "First-edition cover of The Four Million by O. Henry, in red cloth with gilt lettering.",
+      "site_file": "/images/literary-map/four-million.webp"
+    },
+    {
+      "id": "leaves-of-grass",
+      "title": "Leaves of Grass",
+      "author": "Walt Whitman",
+      "original_publication_year": 1855,
+      "cover_edition": "Standard Ebooks edition, first released January 2, 2024; based on the 1892 deathbed edition",
+      "dimensions": [
+        1400,
+        2100
+      ],
+      "source_page": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass",
+      "image_url": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from The Sun and Stars That Float in the Open Air (1913) by Margaret C. Cook",
+      "rights_note": "Standard Ebooks dedicates its own production to CC0. Genuine modern publisher cover for an edition containing Crossing Brooklyn Ferry.",
+      "alt": "Standard Ebooks cover of Leaves of Grass, with Margaret C. Cook's painted figures gazing at the sky above a cliff and the book title below.",
+      "edition_source": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass/text/colophon",
+      "passage_source": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass/text/crossing-brooklyn-ferry",
+      "editorial_note": "Replaces the 1855 cover because Crossing Brooklyn Ferry first appeared in 1856; the Standard Ebooks source is based on the 1892 edition and explicitly includes the poem.",
+      "site_file": "/images/literary-map/leaves-of-grass-later.webp"
+    }
+  ],
+  "magazine": {
+    "publication": "The New Yorker",
+    "article_title": "The Old House at Home",
+    "author": "Joseph Mitchell",
+    "section": "Profiles",
+    "print_issue_date": "1940-04-13",
+    "web_display_date": "1940-04-06",
+    "place_name": "McSorley's Old Ale House",
+    "place_address_in_article": "15 Seventh Street, just off Cooper Square",
+    "excerpt": "McSorley’s occupies the ground floor of a red brick tenement at 15 Seventh Street, just off Cooper Square, where the Bowery ends.",
+    "excerpt_word_count": 22,
+    "excerpt_locator": "First sentence of article body",
+    "article_url": "https://www.newyorker.com/magazine/1940/04/13/the-old-house-at-home",
+    "issue_url": "https://www.newyorker.com/magazine/1940/04/13",
+    "dimensions": [
+      640,
+      880
+    ],
+    "image_url": "https://media.newyorker.com/photos/59094ecfc14b3c606c1030ea/master/w_640,c_limit/1940_04_13.jpg",
+    "cover_credit": "The New Yorker / Condé Nast, April 13, 1940 issue",
+    "rights_note": "Publisher-hosted historical magazine cover; not identified as public domain. Preserve credit and source link.",
+    "alt": "The New Yorker cover dated April 13, 1940, showing a ceremonial street tree planting with photographers and onlookers.",
+    "editorial_note": "Use the article's actual title, The Old House at Home. McSorley's Wonderful Saloon is the title of Mitchell's later collection, not the title of this New Yorker article. The print issue date is confirmed both by the article footer and the issue contents.",
+    "excerpt_count_verification": "22 whitespace-delimited words; punctuation attached to words does not add words.",
+    "site_file": "/images/literary-map/new-yorker-1940-04-13.webp"
+  }
+}

@@ -123,6 +123,7 @@ test('RSS matches the published archive without prose; sitemap lists internal la
       'https://www.jinghenghuan.com/',
       'https://www.jinghenghuan.com/portfolio/mortgage-map',
       'https://www.jinghenghuan.com/portfolio/nyc-film-map',
+      'https://www.jinghenghuan.com/portfolio/nyc-literary-map',
     ]),
   );
 });
