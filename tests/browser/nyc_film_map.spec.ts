@@ -1,35 +1,82 @@
 import { test, expect } from '@playwright/test';
 
-test('film selection keeps map, details and directions in sync', async ({ page }) => {
+const scene_summary = (name: string) => `summary.cinema-place-button[aria-label*="${name}"]`;
+
+test('film selection connects real frames, keyboard pins and Google place links', async ({ page }) => {
   await page.goto('/portfolio/nyc-film-map');
-  await expect(page.getByRole('heading', { name: 'NYC Film Map.' })).toBeVisible();
+  await expect(page.getByText('58 places on the map')).toBeVisible();
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(58);
+  await expect(page.locator('.cinema-cluster').first()).toBeVisible();
+  const cluster_name = await page.locator('.cinema-cluster').evaluateAll((clusters) => clusters.map((cluster) => cluster.getAttribute('aria-label')!).sort((a, b) => parseInt(b) - parseInt(a))[0]);
+  expect(cluster_name).toMatch(/filming locations. Zoom to expand/);
+  await page.getByRole('button', { name: cluster_name!, exact: true }).press('Space');
+  await expect(page.getByRole('button', { name: cluster_name!, exact: true })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Show all places' }).click();
+  await page.locator(scene_summary('The Plaza Hotel')).click();
+  await expect(page.locator('.cinema-marker.is-selected')).toHaveAttribute('aria-label', /The Plaza Hotel/);
+  const plaza = page.getByRole('region', { name: 'Details for The Plaza Hotel' });
+  await expect(plaza.locator('.cinema-still img')).toHaveCount(2);
+  expect(await plaza.locator('.cinema-still img').evaluateAll((images) => new Set(images.map((image) => image.getAttribute('src'))).size)).toBe(2);
+  await page.getByRole('button', { name: "You've Got Mail 1998", exact: true }).click();
   await expect(page.locator('.cinema-marker')).toHaveCount(6);
-  await page.getByRole('button', { name: '2. Café Lalo', exact: true }).press('Enter');
+  await page.getByRole('button', { name: "2. Café Lalo — You've Got Mail", exact: true }).press('Enter');
   const details = page.getByRole('region', { name: 'Details for Café Lalo' });
   await expect(details).toContainText('vacated this address in 2024');
+  await expect.poll(() => details.locator('.cinema-still img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  await expect(details.getByRole('link', { name: 'Open in Google Maps' })).toHaveAttribute('href', /^https:\/\/www.google.com\/maps\/search\/\?api=1&query=201%20West%2083rd/);
   await page.getByRole('button', { name: 'Close location details' }).click();
-  await page.getByRole('button', { name: '2. Café Lalo', exact: true }).press('Space');
+  await page.getByRole('button', { name: "2. Café Lalo — You've Got Mail", exact: true }).press('Space');
   await expect(details).toBeVisible();
-  await expect(details.getByRole('link', { name: 'Walking directions' })).toHaveAttribute('href', /destination=.*201%20West%2083rd/);
   await page.getByRole('button', { name: 'Anora 2024', exact: true }).click();
-  await expect(page.locator('.cinema-marker')).toHaveCount(5);
   await expect(page.locator('.cinema-place-list > li')).toHaveCount(5);
   await expect(details).toHaveCount(0);
-  await page.getByRole('button', { name: /01 Tatiana Restaurant/ }).click();
-  await expect(page.getByRole('region', { name: 'Details for Tatiana Restaurant & Nightclub' })).toContainText('3152 Brighton 6th Street');
-  await page.getByRole('button', { name: 'All films', exact: true }).click();
-  await expect(page.locator('.cinema-marker')).toHaveCount(26);
-  await expect(page.locator('.cinema-place-list > li')).toHaveCount(26);
+  await page.locator(scene_summary('Tatiana Restaurant')).click();
+  const tatiana = page.getByRole('region', { name: 'Details for Tatiana Restaurant & Nightclub' });
+  await expect(tatiana).toContainText('3152 Brighton 6th Street');
+  await expect(tatiana).toContainText('A matching frame has not yet been confirmed');
+  await expect(tatiana.locator('.cinema-still img')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test('unavailable street tiles retain usable scene references and directions', async ({ page }) => {
+test('Woody Allen collection, search reset and reduced motion remain usable', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/portfolio/nyc-film-map');
+  const search = page.getByRole('searchbox', { name: 'Search films, directors or places' });
+  await search.fill('Woody Allen');
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(14);
+  await expect(page.getByText('14 places on the map')).toBeVisible();
+  await page.getByRole('button', { name: 'Manhattan 1979', exact: true }).click();
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(4);
+  await expect(page.locator('.cinema-marker')).toHaveCount(4);
+  await page.getByRole('button', { name: '1. Sutton Square — Manhattan', exact: true }).press('Enter');
+  const sutton = page.getByRole('region', { name: 'Details for Sutton Square' });
+  await expect(sutton.locator('.cinema-still img')).toBeVisible();
+  await expect(sutton.getByRole('link', { name: 'Frame source' })).toHaveAttribute('href', 'https://onthesetofnewyork.com/manhattan.html');
+  await expect(sutton).toHaveCSS('animation-name', 'none');
+  await search.fill('no such filming location');
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(0);
+  await expect(page.getByText('No places match this search.')).toBeVisible();
+  await expect(page.locator('.cinema-marker-label')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Show all places' })).toBeDisabled();
+  await page.getByRole('button', { name: 'Explore all films' }).click();
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(58);
+  await expect(page.locator('.cinema-cluster').first()).toBeVisible();
+  const before = await page.locator('.cinema-cluster').evaluateAll((clusters) => clusters.map((cluster) => cluster.getAttribute('aria-label')!).sort((a, b) => parseInt(b) - parseInt(a))[0]);
+  await page.getByRole('button', { name: before!, exact: true }).press('Enter');
+  await expect(page.getByRole('button', { name: before!, exact: true })).toHaveCount(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('failed tiles and frames retain usable scene references and Google links', async ({ page }) => {
   await page.route('https://tile.openstreetmap.org/**', (route) => route.abort());
+  await page.route('**/images/film-map/*shop-around-corner*', (route) => route.abort());
   await page.goto('/portfolio/nyc-film-map');
   await expect(page.getByText('The street map couldn’t load.', { exact: false })).toBeVisible({ timeout: 15000 });
-  await page.getByRole('button', { name: /03 The Shop Around the Corner/ }).click();
+  await page.getByRole('button', { name: "You've Got Mail 1998", exact: true }).click();
+  await page.locator(scene_summary('The Shop Around the Corner')).click();
   const details = page.getByRole('region', { name: 'Details for The Shop Around the Corner' });
   await expect(details).toContainText('106 West 69th Street');
-  await expect(details.getByRole('link', { name: 'Walking directions' })).toBeVisible();
+  await expect(details).toContainText('Image unavailable. The filming reference is linked below.');
+  await expect(details.getByRole('link', { name: 'Open in Google Maps' })).toBeVisible();
   await expect(details.getByRole('link', { name: 'Filming reference' })).toHaveAttribute('href', 'https://onthesetofnewyork.com/youvegotmail.html');
 });

@@ -12,6 +12,7 @@ import { TerminalScene } from '@/components/terminal_scene';
 import { PlaybillCollection } from '@/components/playbill_collection';
 import { SocialIcon } from '@/components/social_icon';
 import films from '@/content/films.json';
+import film_map_summary from '@/content/nyc_film_map_summary.json';
 import { Bookshelf } from '@/components/bookshelf';
 import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
@@ -313,14 +314,15 @@ export default function Home() {
           <article className="projects-entry projects-film-entry" data-reveal>
             <div className="projects-copy">
               <h3>NYC Film Map</h3>
-              <p>Find the New York places behind familiar film scenes. Pick a film, explore its locations, and take a walk through the city.</p>
+              <p>New York through the movies. Explore real filming locations, match the scene to the street, and open each place in Google Maps.</p>
               <Link href="/portfolio/nyc-film-map" className="text-link">Explore film locations <span aria-hidden="true">↗</span></Link>
             </div>
             <Link className="project-film-preview" href="/portfolio/nyc-film-map" aria-label="Open NYC Film Map">
+              <Image className="project-film-still" src="/images/film-map/manhattan--sutton-square.webp" alt="Isaac and Mary looking toward the Queensboro Bridge in Manhattan (1979)" width={565} height={240} unoptimized loading="lazy" />
               <span>ON LOCATION / NEW YORK CITY</span>
               <strong>From the screen<br /><em>to the street.</em></strong>
-              <span className="project-film-pair"><span>You’ve Got Mail<small>UPPER WEST SIDE</small></span><span>Anora<small>SOUTH BROOKLYN</small></span></span>
-              <span className="project-film-footer">8 films · 26 places <span aria-hidden="true">↗</span></span>
+              <span className="project-film-pair"><span>Manhattan<small>WOODY ALLEN · 1979</small></span><span>Film frame<small>VIA otsoNY</small></span></span>
+              <span className="project-film-footer">{film_map_summary.film_count} films · {film_map_summary.place_count} places <span aria-hidden="true">↗</span></span>
             </Link>
           </article>
           <article className="projects-entry projects-literary-entry" data-reveal>
