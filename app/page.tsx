@@ -324,6 +324,19 @@ export default function Home() {
             </Link>
           </article>
         </section>
+        <section className="projects-section projects-music-section" aria-labelledby="music-map-project-heading">
+          <article className="projects-entry" data-reveal>
+            <div className="projects-copy">
+              <h3 id="music-map-project-heading">NYC Music Map</h3>
+              <p>Find the places named in songs, from Bleecker Street to the Queensboro Bridge. Hear a preview and explore the city on Google Maps.</p>
+              <Link href="/portfolio/nyc-music-map" className="text-link">Explore songs and places <span aria-hidden="true">↗</span></Link>
+            </div>
+            <Link href="/portfolio/nyc-music-map" className="project-music-preview" aria-label="Open NYC Music Map">
+              <Image src="/images/records/new-york-state-of-mind.jpg" alt="" width={180} height={180} unoptimized loading="lazy" />
+              <span><small>NEW YORK, ON RECORD</small><strong>Find the places<br /><em>inside the songs.</em></strong><span>12 songs · 13 places <span aria-hidden="true">↗</span></span></span>
+            </Link>
+          </article>
+        </section>
         <RecordsPlayer />
         <section
           id="films"
