@@ -1,19 +1,15 @@
 import { test, expect } from '@playwright/test';
 
-test('dollar-roll cash-flow comparison survives keyboard, cross-lens history and deep links', async ({ page }, test_info) => {
+test('dollar-roll cash-flow comparison survives keyboard, reading history and deep links', async ({ page }, test_info) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/portfolio/mortgage-map');
-  const subjects = page.getByRole('group', { name: 'Atlas subject' });
-  await subjects.getByRole('button', { name: 'Rates', exact: true }).click();
   const search = page.getByRole('searchbox', { name: 'Search mortgage concepts' });
   await search.fill('repo');
   await search.press('Enter');
   const reader = page.getByRole('complementary', { name: 'Concept reader' });
   await expect(reader.getByRole('heading', { level: 2 })).toHaveText('Repurchase financing');
-  await expect(subjects.getByRole('button', { name: 'Rates', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await reader.getByRole('button', { name: 'Dollar rolls', exact: true }).press('Enter');
   await expect(reader.getByRole('heading', { level: 2 })).toHaveText('Dollar rolls');
-  await expect(subjects.getByRole('button', { name: 'All fixed income', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(reader).toContainText('not a 0.25% investment return');
   await expect(reader.locator('.katex-mathml')).toHaveCount(1);
   await reader.getByRole('button', { name: 'Reveal answer', exact: true }).press('Enter');

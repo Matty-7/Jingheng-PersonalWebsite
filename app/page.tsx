@@ -287,7 +287,7 @@ export default function Home() {
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
               <h3>Mortgage Map</h3>
-              <p>An interactive guide to mortgages and fixed income: the cash flows, the markets, and the decisions that connect them.</p>
+              <p>Explore mortgage cash flows, interest rates and structured credit through connected concepts, reading paths and public sources.</p>
               <Link href="/portfolio/mortgage-map" className="text-link">Explore the map <span aria-hidden="true">↗</span></Link>
             </div>
             <div className="project-map-preview" aria-label="Explore the Mortgage Map">

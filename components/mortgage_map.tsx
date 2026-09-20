@@ -1,7 +1,5 @@
 'use client';
 
-import { atlas_lenses, lens_definition } from '@/content/fixed_income_lenses';
-import { lens_catalog } from '@/lib/mortgage_graph';
 import { useMemo, useReducer, useRef, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import {
@@ -50,7 +48,6 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
     initial_mortgage_state,
   );
   const {
-    lens,
     comparison_id,
     spread_group,
     depth,
@@ -63,8 +60,6 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
     trail,
     path_id,
   } = state;
-  const catalog = useMemo(() => lens_catalog(lens), [lens]);
-  const lens_info = lens_definition(lens);
   const [query, set_query] = useState('');
   const [search_open, set_search_open] = useState(false);
   const [search_cursor, set_search_cursor] = useState(0);
@@ -83,12 +78,11 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
     () =>
       view === 'connections' && connection_selection
         ? build_connection_graph(connection_selection)
-        : build_mortgage_graph(depth, branch_filter, topic_filter, lens),
-    [view, connection_selection, depth, branch_filter, topic_filter, lens],
+        : build_mortgage_graph(depth, branch_filter, topic_filter),
+    [view, connection_selection, depth, branch_filter, topic_filter],
   );
   const spatial = useMortgageCamera({
     graph,
-    lens,
     view,
     selected,
     depth,
@@ -187,14 +181,6 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
       className={`mortgage-atlas ${expanded ? 'is-expanded' : ''}`}
       aria-label="Interactive mortgage knowledge map"
     >
-      <div className="atlas-subject-header">
-      <fieldset className="atlas-lenses" aria-label="Atlas subject">
-        {atlas_lenses.map(item => <button key={item.id} aria-pressed={lens === item.id} onClick={() => { dispatch({ type: 'change_lens', lens: item.id }); set_query(''); set_search_open(false); }}>
-          {item.title}
-        </button>)}
-      </fieldset>
-      <output className="atlas-lens-description"><span className="atlas-lens-summary">{lens_info.description}</span> <span className="atlas-lens-count">{catalog.concepts.length} of {mortgage_concepts.length} concepts in this lens.</span></output>
-      </div>
       <div className="atlas-intro">
         <div>
           <p>
@@ -231,7 +217,8 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
             <strong>Map</strong> shows the hierarchy;{' '}
             <strong>Connections</strong> puts one concept between what informs
             it and what it affects. <strong>Compare</strong> puts spreads,
-            products and currencies side by side. Search covers the whole atlas and opens All fixed income when a concept sits outside your lens. <strong>List</strong> lets you
+            products and currencies side by side. Search finds concepts across
+            every domain in Mortgage Map. <strong>List</strong> lets you
             browse without moving the canvas.
           </p>
           <p>
@@ -393,7 +380,7 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
                 aria-label="Focus a domain"
               >
                 <option value="all">All domains</option>
-                {catalog.branches.map((branch) => (
+                {mortgage_branches.map((branch) => (
                   <option value={branch.id} key={branch.id}>
                     {branch.title}
                   </option>
@@ -403,7 +390,6 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
           </div>
         </>
       )}
-      {(view === 'compare' || view === 'connections') && <p className="atlas-global-scope">{view === 'compare' ? 'Comparisons cover the whole atlas.' : 'Connections include every related domain, across all lenses.'}</p>}
       <div
         className={`atlas-workspace ${reader_open && concept ? 'has-reader' : ''}`}
       >
@@ -412,7 +398,6 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
         >
           {view === 'paths' ? (
             <MortgagePaths
-              lens={lens}
               path_id={path_id}
               selected={selected}
               reader_open={reader_open}
@@ -434,14 +419,12 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
             />
           ) : view === 'list' ? (
             <MortgageList
-              lens={lens}
               branch_filter={branch_filter}
               selected={selected}
               choose_concept={choose_concept}
             />
           ) : (
             <MortgageCanvas
-              lens={lens}
               graph={graph}
               controls={spatial}
               view={view}

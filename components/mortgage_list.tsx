@@ -1,20 +1,16 @@
-import type { AtlasLens } from '@/content/fixed_income_lenses';
-import { lens_catalog } from '@/lib/mortgage_graph';
+import { mortgage_branches, mortgage_topics } from '@/content/mortgage_concepts';
 import { ArrowUpRight } from 'lucide-react';
 import { concept_index } from '@/lib/mortgage_graph';
 
 export function MortgageList({
-  lens,
   branch_filter,
   selected,
   choose_concept,
 }: {
-  lens: AtlasLens;
   branch_filter: string;
   selected: string | null;
   choose_concept: (id: string, trigger?: HTMLButtonElement) => void;
 }) {
-  const { branches: mortgage_branches, topics: mortgage_topics } = lens_catalog(lens);
   const visible_topics = mortgage_topics.filter(
     (t) => branch_filter === 'all' || t.branch === branch_filter,
   );
