@@ -1,0 +1,719 @@
+{
+  "reviewed_on": "2026-09-20",
+  "films": [
+    {
+      "id": "youve-got-mail",
+      "title": "You've Got Mail",
+      "year": 1998,
+      "director": "Nora Ephron",
+      "note": "Bookshops, brownstones and a meeting by the Hudson."
+    },
+    {
+      "id": "anora",
+      "title": "Anora",
+      "year": 2024,
+      "director": "Sean Baker",
+      "note": "A search through the restaurants and streets of South Brooklyn."
+    },
+    {
+      "id": "when-harry-met-sally",
+      "title": "When Harry Met Sally",
+      "year": 1989,
+      "director": "Rob Reiner",
+      "note": "Conversations over lunch and walks through Central Park."
+    },
+    {
+      "id": "ghostbusters",
+      "title": "Ghostbusters",
+      "year": 1984,
+      "director": "Ivan Reitman",
+      "note": "A firehouse, a library and a very unusual apartment building."
+    },
+    {
+      "id": "breakfast-at-tiffanys",
+      "title": "Breakfast at Tiffany’s",
+      "year": 1961,
+      "director": "Blake Edwards",
+      "note": "Window-shopping on Fifth Avenue and an East Side brownstone."
+    },
+    {
+      "id": "home-alone-2",
+      "title": "Home Alone 2",
+      "year": 1992,
+      "director": "Chris Columbus",
+      "note": "Kevin’s first New York adventure, from the Plaza to the park."
+    },
+    {
+      "id": "north-by-northwest",
+      "title": "North by Northwest",
+      "year": 1959,
+      "director": "Alfred Hitchcock",
+      "note": "Mistaken identity in Midtown."
+    },
+    {
+      "id": "spider-man",
+      "title": "Spider-Man",
+      "year": 2002,
+      "director": "Sam Raimi",
+      "note": "A city seen from the rooftops and the Roosevelt Island tram."
+    }
+  ],
+  "sources": [
+    {
+      "id": "youve-got-mail",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/youvegotmail.html"
+    },
+    {
+      "id": "anora",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/anora.html"
+    },
+    {
+      "id": "when-harry-met-sally",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/whenharrymetsally.html"
+    },
+    {
+      "id": "ghostbusters",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/ghostbusters.html"
+    },
+    {
+      "id": "breakfast-at-tiffanys",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/breakfastattiffanys.html"
+    },
+    {
+      "id": "home-alone-2",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/homealone2.html"
+    },
+    {
+      "id": "north-by-northwest",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/northbynorthwest.html"
+    },
+    {
+      "id": "spider-man",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/spiderman.html"
+    },
+    {
+      "id": "anora-interview",
+      "label": "Director interview · Condé Nast Traveler",
+      "url": "https://www.cntraveler.com/story/on-location-anora"
+    },
+    {
+      "id": "anora-diner",
+      "label": "Location interview · New York Post",
+      "url": "https://nypost.com/2025/03/05/us-news/after-oscars-sweep-anora-brooklyn-filming-locations-get-their-moment-in-the-spotlight/"
+    },
+    {
+      "id": "tatiana",
+      "label": "Venue · Tatiana",
+      "url": "https://www.tatianarestaurantnyc.com/"
+    },
+    {
+      "id": "ocean-view",
+      "label": "Venue · Ocean View Cafe",
+      "url": "https://www.oceanviewcafeny.com/index.php/extensions"
+    },
+    {
+      "id": "lalo-closure",
+      "label": "Closure report · West Side Rag",
+      "url": "https://www.westsiderag.com/2024/10/31/cafe-lalo-will-not-reopen-in-its-longtime-uws-home-building-owner"
+    },
+    {
+      "id": "parkview-venue",
+      "label": "Venue · Parkview Diner",
+      "url": "https://parkviewdinerbk.com/"
+    }
+  ],
+  "locations": [
+    {
+      "id": "riverside-garden",
+      "name": "91st Street Garden",
+      "address": "Riverside Park at West 91st Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7936,
+        -73.9776
+      ],
+      "access": "Park",
+      "visit_note": "Use the park paths to reach the garden.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Kathleen and Joe finally meet as their online selves in the riverside garden.",
+          "source_ids": [
+            "youve-got-mail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cafe-lalo",
+      "name": "Café Lalo",
+      "address": "201 West 83rd Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7859,
+        -73.9766
+      ],
+      "access": "Former café / exterior",
+      "visit_note": "Café Lalo vacated this address in 2024. Visit the former filming location from the sidewalk.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Kathleen waits with a book and a rose for her anonymous correspondent.",
+          "source_ids": [
+            "youve-got-mail",
+            "lalo-closure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop-around-corner",
+      "name": "The Shop Around the Corner",
+      "address": "106 West 69th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7754,
+        -73.9806
+      ],
+      "access": "Changed storefront",
+      "visit_note": "The fictional bookstore was created inside an existing shop. View the address from the sidewalk.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "The small shop used for Kathleen’s bookstore; it was never a real children’s bookstore.",
+          "source_ids": [
+            "youve-got-mail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kathleen-apartment",
+      "name": "Kathleen’s brownstone",
+      "address": "328 West 89th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7912,
+        -73.9778
+      ],
+      "access": "Residential exterior",
+      "visit_note": "Stay on the public sidewalk; the residence is not a visitor attraction.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "The exterior used for Kathleen Kelly’s home.",
+          "source_ids": [
+            "youve-got-mail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zabars",
+      "name": "Zabar’s",
+      "address": "2245 Broadway",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7849,
+        -73.9796
+      ],
+      "access": "Shop",
+      "visit_note": "Visit as a customer and check current hours.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "The grocery-store checkout scene brings Kathleen and Joe face to face.",
+          "source_ids": [
+            "youve-got-mail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verdi-square",
+      "name": "Verdi Square",
+      "address": "Broadway at West 72nd Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7788,
+        -73.9821
+      ],
+      "access": "Public square",
+      "visit_note": "A street-level stop near the subway entrances.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "The neighborhood square appears in the film’s Upper West Side streetscapes.",
+          "source_ids": [
+            "youve-got-mail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tatiana",
+      "name": "Tatiana Restaurant & Nightclub",
+      "address": "3152 Brighton 6th Street",
+      "neighborhood": "Brighton Beach",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.5754,
+        -73.9612
+      ],
+      "access": "Restaurant",
+      "visit_note": "Check with the venue for dining and show access.",
+      "scenes": [
+        {
+          "film_id": "anora",
+          "scene": "Ani and the men look for Ivan at the boardwalk restaurant.",
+          "source_ids": [
+            "anora-interview",
+            "tatiana"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "williams-candy",
+      "name": "Williams Candy",
+      "address": "1318 Surf Avenue",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.5754,
+        -73.9819
+      ],
+      "access": "Shop",
+      "visit_note": "Visit during business hours; the shop is a working business.",
+      "scenes": [
+        {
+          "film_id": "anora",
+          "scene": "The search for Ivan erupts into a confrontation among the candy counters.",
+          "source_ids": [
+            "anora-interview",
+            "anora-diner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocean-view",
+      "name": "Ocean View Cafe",
+      "address": "290 Brighton Beach Avenue",
+      "neighborhood": "Brighton Beach",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.5767,
+        -73.9642
+      ],
+      "access": "Café",
+      "visit_note": "Check current opening hours with the venue.",
+      "scenes": [
+        {
+          "film_id": "anora",
+          "scene": "During the search, a woman in the café suggests Ivan has been kidnapped.",
+          "source_ids": [
+            "anora-interview",
+            "ocean-view"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parkview-diner",
+      "name": "Parkview Diner",
+      "address": "2939 Cropsey Avenue",
+      "neighborhood": "Gravesend",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.5835,
+        -73.9862
+      ],
+      "access": "Diner",
+      "visit_note": "Visit as a customer; confirm current hours before making a special trip.",
+      "scenes": [
+        {
+          "film_id": "anora",
+          "scene": "The diner appears during the long search through South Brooklyn.",
+          "source_ids": [
+            "anora-diner",
+            "parkview-venue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coney-boardwalk",
+      "name": "Coney Island Boardwalk",
+      "address": "Riegelmann Boardwalk at West 12th Street",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.5734,
+        -73.979
+      ],
+      "access": "Public boardwalk",
+      "visit_note": "The pin is a public access point for the broader filming area.",
+      "scenes": [
+        {
+          "film_id": "anora",
+          "scene": "The oceanfront boardwalk is one of the film’s South Brooklyn exterior locations.",
+          "source_ids": [
+            "anora"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katz",
+      "name": "Katz’s Delicatessen",
+      "address": "205 East Houston Street",
+      "neighborhood": "Lower East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7222,
+        -73.9875
+      ],
+      "access": "Restaurant",
+      "visit_note": "Visit as a customer; allow time for a queue.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Harry and Sally’s famous lunchtime conversation unfolds at a deli table.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boathouse",
+      "name": "Central Park Boathouse",
+      "address": "East 72nd Street entrance, Central Park",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7753,
+        -73.9687
+      ],
+      "access": "Restaurant / park",
+      "visit_note": "The lakeside paths offer an outdoor stop; dining access is separate.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Sally talks with her friends beside the lake at the Boathouse.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "met",
+      "name": "The Metropolitan Museum of Art",
+      "address": "1000 Fifth Avenue",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7794,
+        -73.9632
+      ],
+      "access": "Museum",
+      "visit_note": "Museum admission is required for the galleries. The pin marks the main entrance.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Harry and Sally talk while walking through the museum’s Egyptian galleries.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bethesda",
+      "name": "Bethesda Terrace",
+      "address": "Mid-Park at 72nd Street, Central Park",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7742,
+        -73.9708
+      ],
+      "access": "Park",
+      "visit_note": "Reach the terrace from the park’s pedestrian paths.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Bethesda Terrace and nearby paths appear during their Central Park walks.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "firehouse",
+      "name": "Hook & Ladder 8",
+      "address": "14 North Moore Street",
+      "neighborhood": "Tribeca",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7197,
+        -74.0066
+      ],
+      "access": "Exterior stop",
+      "visit_note": "Keep the firehouse entrance and vehicle access clear.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "The real firehouse supplies the headquarters exterior; the interior was filmed in Los Angeles.",
+          "source_ids": [
+            "ghostbusters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "name": "New York Public Library",
+      "address": "476 Fifth Avenue",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.753,
+        -73.9818
+      ],
+      "access": "Library / exterior",
+      "visit_note": "Start at the Fifth Avenue entrance; check visitor access for interiors.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "The team investigates a ghost at the library in the opening sequence.",
+          "source_ids": [
+            "ghostbusters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dana-apartment",
+      "name": "Dana’s apartment building",
+      "address": "55 Central Park West",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7724,
+        -73.979
+      ],
+      "access": "Residential exterior",
+      "visit_note": "View from the public sidewalk; the building is residential.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "Dana’s building exterior. The rooftop and destructive finale also relied on sets and effects.",
+          "source_ids": [
+            "ghostbusters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiffany",
+      "name": "Tiffany & Co.",
+      "address": "727 Fifth Avenue",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7627,
+        -73.974
+      ],
+      "access": "Storefront",
+      "visit_note": "The exterior can be seen from Fifth Avenue.",
+      "scenes": [
+        {
+          "film_id": "breakfast-at-tiffanys",
+          "scene": "Holly stops at the windows with her breakfast in the opening scene.",
+          "source_ids": [
+            "breakfast-at-tiffanys"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "holly-apartment",
+      "name": "Holly Golightly’s brownstone",
+      "address": "169 East 71st Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7696,
+        -73.9619
+      ],
+      "access": "Residential exterior",
+      "visit_note": "View from the sidewalk. Interior and fire-escape scenes used studio sets.",
+      "scenes": [
+        {
+          "film_id": "breakfast-at-tiffanys",
+          "scene": "The real exterior is number 169, although the film shows the number 167.",
+          "source_ids": [
+            "breakfast-at-tiffanys"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plaza",
+      "name": "The Plaza Hotel",
+      "address": "750 Fifth Avenue",
+      "neighborhood": "Central Park South",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7645,
+        -73.9745
+      ],
+      "access": "Hotel / exterior",
+      "visit_note": "The street exterior is the simplest stop; interior access depends on hotel policies.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin checks into the Plaza during his unplanned trip to New York.",
+          "source_ids": [
+            "home-alone-2"
+          ]
+        },
+        {
+          "film_id": "north-by-northwest",
+          "scene": "Roger Thornhill’s mistaken-identity adventure begins at the Plaza.",
+          "source_ids": [
+            "north-by-northwest"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gapstow",
+      "name": "Gapstow Bridge & The Pond",
+      "address": "Central Park near East 62nd Street",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7669,
+        -73.9737
+      ],
+      "access": "Park",
+      "visit_note": "The pin marks the bridge beside the pond.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin encounters the Pigeon Lady around the pond in Central Park.",
+          "source_ids": [
+            "home-alone-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rockefeller",
+      "name": "Rockefeller Center",
+      "address": "30 Rockefeller Plaza",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7588,
+        -73.9788
+      ],
+      "access": "Public plaza",
+      "visit_note": "The Christmas tree is seasonal; the plaza can be visited separately.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin reunites with his mother beneath the Christmas tree.",
+          "source_ids": [
+            "home-alone-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grand-central",
+      "name": "Grand Central Terminal",
+      "address": "89 East 42nd Street",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "access": "Station",
+      "visit_note": "Use the public concourse; follow station access rules.",
+      "scenes": [
+        {
+          "film_id": "north-by-northwest",
+          "scene": "Thornhill makes his escape from New York through Grand Central.",
+          "source_ids": [
+            "north-by-northwest"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tram",
+      "name": "Roosevelt Island Tramway",
+      "address": "Second Avenue at East 60th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7612,
+        -73.9639
+      ],
+      "access": "Transit",
+      "visit_note": "The pin marks the Manhattan station. Riding requires a fare; check current service.",
+      "scenes": [
+        {
+          "film_id": "spider-man",
+          "scene": "The tramway is part of the Green Goblin’s climactic threat to Mary Jane and the passengers.",
+          "source_ids": [
+            "spider-man"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "times-square",
+      "name": "Times Square",
+      "address": "Broadway at West 44th Street",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7573,
+        -73.9858
+      ],
+      "access": "Public square",
+      "visit_note": "The pin marks the pedestrian area; the sequence also uses effects.",
+      "scenes": [
+        {
+          "film_id": "spider-man",
+          "scene": "The Green Goblin interrupts the World Unity Festival in Times Square.",
+          "source_ids": [
+            "spider-man"
+          ]
+        }
+      ]
+    }
+  ]
+}

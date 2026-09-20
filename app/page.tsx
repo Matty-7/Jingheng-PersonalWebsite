@@ -310,6 +310,19 @@ export default function Home() {
               </div>
             </div>
           </article>
+          <article className="projects-entry projects-film-entry" data-reveal>
+            <div className="projects-copy">
+              <h3>NYC Film Map</h3>
+              <p>Find the New York places behind familiar film scenes. Pick a film, explore its locations, and take a walk through the city.</p>
+              <Link href="/portfolio/nyc-film-map" className="text-link">Explore film locations <span aria-hidden="true">↗</span></Link>
+            </div>
+            <Link className="project-film-preview" href="/portfolio/nyc-film-map" aria-label="Open NYC Film Map">
+              <span>ON LOCATION / NEW YORK CITY</span>
+              <strong>From the screen<br /><em>to the street.</em></strong>
+              <span className="project-film-pair"><span>You’ve Got Mail<small>UPPER WEST SIDE</small></span><span>Anora<small>SOUTH BROOKLYN</small></span></span>
+              <span className="project-film-footer">8 films · 26 places <span aria-hidden="true">↗</span></span>
+            </Link>
+          </article>
         </section>
         <RecordsPlayer />
         <section

@@ -12,6 +12,8 @@ export function audit_preview(): Plugin {
     '/__audit/mortgage_short': [1280, 720],
     '/__audit/mortgage_mobile': [390, 844],
     '/__audit/mortgage_narrow': [320, 844],
+    '/__audit/film_desktop': [1440, 900],
+    '/__audit/film_mobile': [390, 844],
   };
   return {
     name: 'site-audit-preview',
@@ -26,7 +28,9 @@ export function audit_preview(): Plugin {
         const [width, height] = viewport;
         const route = (request.url ?? '').startsWith('/__audit/mortgage_')
           ? '/portfolio/mortgage-map'
-          : '/';
+          : (request.url ?? '').startsWith('/__audit/film_')
+            ? '/portfolio/nyc-film-map'
+            : '/';
         response.setHeader('Content-Type', 'text/html; charset=utf-8');
         response.setHeader('Cache-Control', 'no-store');
         response.end(
