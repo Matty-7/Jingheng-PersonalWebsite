@@ -45,3 +45,27 @@ test('reduced motion and keyboard selection remain usable', async ({ page }) => 
   expect(await page.locator('.sound-story').evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
+
+test('expanded catalog exposes new boroughs and the end of the collection', async ({ page }) => {
+  await page.goto('/portfolio/nyc-music-map');
+  const search = page.getByRole('searchbox');
+  for (const [query, song, place] of [
+    ['Queens', 'Select Queens Get the Money by Nas', 'Queens'],
+    ['Bronx', 'Select Bronx Blues by Stan Getz & Oscar Peterson Trio', 'The Bronx'],
+    ['Staten Island', 'Select Staten Island Groove by Down to the Bone', 'Staten Island'],
+    ['Lullaby of Broadway', 'Select Lullaby of Broadway by Doris Day', 'Broadway'],
+  ]) {
+    await search.fill(query);
+    await page.getByRole('button', { name: song, exact: true }).press('Enter');
+    await expect(page.getByRole('region', { name: `Map of ${place}`, exact: true })).toBeVisible();
+    const external_query = new URL((await page.getByRole('link', { name: 'Open in Google Maps', exact: true }).getAttribute('href'))!).searchParams.get('query');
+    expect(new URL((await page.locator('iframe').getAttribute('src'))!).searchParams.get('q')).toBe(external_query);
+    await expect(page.locator('audio')).not.toHaveAttribute('src');
+  }
+  await search.fill('Jazz');
+  await expect(page.getByRole('button', { name: 'Select Central Park West by John Coltrane', exact: true })).toHaveCount(1);
+  await search.fill('');
+  await page.getByRole('button', { name: 'Select Lullaby of Broadway by Doris Day', exact: true }).press('Space');
+  await expect(page.getByRole('article', { name: 'Selected song' })).toContainText('Doris Day');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});

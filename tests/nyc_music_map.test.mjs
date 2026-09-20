@@ -8,9 +8,15 @@ test('music places have traceable relations and bounded excerpts', () => {
   const place_ids = new Set(catalog.places.map((place) => place.id));
   assert.equal(place_ids.size, catalog.places.length);
   assert.equal(new Set(catalog.tracks.map((track) => track.id)).size, catalog.tracks.length);
+  assert.equal(new Set(catalog.tracks.map((track) => track.track_id)).size, catalog.tracks.length);
+  const used_places = new Set();
   for (const track of catalog.tracks) {
     assert.ok(track.place_ids.length > 0);
-    for (const id of track.place_ids) assert.ok(place_ids.has(id), `${track.id}: unknown place ${id}`);
+    assert.equal(new Set(track.place_ids).size, track.place_ids.length);
+    for (const id of track.place_ids) {
+      assert.ok(place_ids.has(id), `${track.id}: unknown place ${id}`);
+      used_places.add(id);
+    }
     assert.ok(track.excerpt.split(/\s+/).filter((word) => /\w/.test(word)).length <= 10, `${track.id}: excerpt too long`);
     assert.ok(track.source_url.startsWith('https://'));
     assert.ok(track.source_label);
@@ -22,7 +28,8 @@ test('music places have traceable relations and bounded excerpts', () => {
   }
   for (const place of catalog.places) {
     assert.ok(place.note.length > 30);
-    assert.ok(['Venue', 'Landmark', 'Intersection', 'Representative point', 'Neighborhood', 'Borough'].includes(place.precision));
+    assert.ok(used_places.has(place.id), `${place.id}: unused place`);
+    assert.ok(['Venue', 'Landmark', 'Intersection', 'Representative point', 'Neighborhood', 'Borough', 'Area'].includes(place.precision));
     assert.match(place.map_query, /New York/);
   }
 });
