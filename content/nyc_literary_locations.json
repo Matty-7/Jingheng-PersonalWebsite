@@ -119,6 +119,210 @@
         "source_url": "https://www.newyorker.com/magazine/1940/04/13",
         "credit": "The New Yorker / Condé Nast, April 13, 1940 issue"
       }
+    },
+    {
+      "id": "quicksand",
+      "title": "Quicksand",
+      "author": "Nella Larsen",
+      "year": 1928,
+      "kind": "Book",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand",
+      "text_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/quicksand.jpg",
+        "alt": "Published Standard Ebooks cover of Quicksand by Nella Larsen.",
+        "edition": "Standard Ebooks edition, first released 2024-12-06",
+        "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand",
+        "credit": "Standard Ebooks; cover adapted from Jossa (1915–1918) by Christian Krohg"
+      }
+    },
+    {
+      "id": "excolored",
+      "title": "The Autobiography of an Ex-Colored Man",
+      "author": "James Weldon Johnson",
+      "year": 1912,
+      "kind": "Book",
+      "source_url": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man",
+      "text_url": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man/text/single-page",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/autobiography-of-an-ex-colored-man.jpg",
+        "alt": "Published Standard Ebooks cover of The Autobiography of an Ex-Colored Man by James Weldon Johnson.",
+        "edition": "Standard Ebooks edition, first released 2020-08-17",
+        "source_url": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man",
+        "credit": "Standard Ebooks; cover adapted from A Man Leaning on a Parapet (c. 1881) by Georges Seurat"
+      }
+    },
+    {
+      "id": "mirth",
+      "title": "The House of Mirth",
+      "author": "Edith Wharton",
+      "year": 1905,
+      "kind": "Book",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth",
+      "text_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/house-of-mirth.jpg",
+        "alt": "Published Standard Ebooks cover of The House of Mirth by Edith Wharton.",
+        "edition": "Standard Ebooks edition, first released 2018-07-26",
+        "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth",
+        "credit": "Standard Ebooks; cover adapted from Mrs. Lloyd (1776) by Joshua Reynolds"
+      }
+    },
+    {
+      "id": "beautiful",
+      "title": "The Beautiful and Damned",
+      "author": "F. Scott Fitzgerald",
+      "year": 1922,
+      "kind": "Book",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned",
+      "text_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/beautiful-and-damned.jpg",
+        "alt": "Published Standard Ebooks cover of The Beautiful and Damned by F. Scott Fitzgerald.",
+        "edition": "Standard Ebooks edition, first released 2021-02-04",
+        "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned",
+        "credit": "Standard Ebooks; cover adapted from The Dancing Couple (1903) by J. C. Leyendecker"
+      }
+    },
+    {
+      "id": "levinsky",
+      "title": "The Rise of David Levinsky",
+      "author": "Abraham Cahan",
+      "year": 1917,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/2803",
+      "text_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/rise-of-david-levinsky.jpg",
+        "alt": "Penguin Classics cover of The Rise of David Levinsky by Abraham Cahan, with a historical New York street-market photograph.",
+        "edition": "Penguin Classics paperback edition, March 1, 1993; edited with introduction and notes by Jules Chametzky",
+        "source_url": "https://www.penguinrandomhouse.com/books/328839/the-rise-of-david-levinsky-by-abraham-cahan-edited-with-an-introduction-and-notes-by-jules-chametzky/",
+        "credit": "Penguin Classics / Penguin Random House; official publisher cover"
+      }
+    },
+    {
+      "id": "yekl",
+      "title": "Yekl: A Tale of the New York Ghetto",
+      "author": "Abraham Cahan",
+      "year": 1896,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/36715",
+      "text_url": "https://www.gutenberg.org/cache/epub/36715/pg36715-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/yekl.jpg",
+        "alt": "Published cover of Yekl by Abraham Cahan, showing tenement balconies and hanging laundry above the title.",
+        "edition": "The Floating Press ebook edition, May 1, 2015",
+        "source_url": "https://www.kobo.com/in/en/ebook/yekl-1",
+        "credit": "The Floating Press; publisher-supplied ebook cover via Rakuten Kobo"
+      }
+    },
+    {
+      "id": "hungry",
+      "title": "Hungry Hearts",
+      "author": "Anzia Yezierska",
+      "year": 1920,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/41232",
+      "text_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/hungry-hearts.jpg",
+        "alt": "Original cloth cover of Hungry Hearts by Anzia Yezierska, with blue title lettering, hearts, and torch motifs.",
+        "edition": "1920 edition, Houghton Mifflin Company, Boston and New York",
+        "source_url": "https://archive.org/details/hungryhearts00yezi_0",
+        "credit": "Boston Public Library / Internet Archive; Houghton Mifflin Collection"
+      }
+    },
+    {
+      "id": "harlem",
+      "title": "Harlem Shadows",
+      "author": "Claude McKay",
+      "year": 1922,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/64989",
+      "text_url": "https://www.gutenberg.org/cache/epub/64989/pg64989-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/harlem-shadows.jpg",
+        "alt": "Original 1922 dust jacket of Harlem Shadows by Claude McKay, with green typography and an introduction credited to Max Eastman.",
+        "edition": "1922 first edition, first printing, Harcourt Brace and Company, New York; original dust jacket",
+        "source_url": "https://www.burnsiderarebooks.com/pages/books/140945278/claude-mckay-max-eastman-introduction/harlem-shadows",
+        "credit": "Burnside Rare Books, item 140945278; 1922 Harcourt Brace first-edition dust jacket"
+      }
+    },
+    {
+      "id": "maggie",
+      "title": "Maggie: A Girl of the Streets",
+      "author": "Stephen Crane",
+      "year": 1893,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/447",
+      "text_url": "https://www.gutenberg.org/cache/epub/447/pg447-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/maggie.jpg",
+        "alt": "1896 cloth cover of Maggie by Stephen Crane, with a black title plaque and red ornaments.",
+        "edition": "1896 first trade edition, D. Appleton and Company, New York",
+        "source_url": "https://archive.org/details/maggiegirlofstre00cranrich",
+        "credit": "University of California Libraries / Internet Archive; 1896 Appleton binding"
+      }
+    },
+    {
+      "id": "voice",
+      "title": "The Voice of the City",
+      "author": "O. Henry",
+      "year": 1908,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/1444",
+      "text_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/voice-of-the-city.jpg",
+        "alt": "1908 red cloth first-edition cover and spine of The Voice of the City by O. Henry, with gilt lettering.",
+        "edition": "1908 first edition, first printing, first binding, The McClure Company, New York",
+        "source_url": "https://www.biblio.com/book/voice-city-further-stories-four-million/d/1615662886",
+        "credit": "Sumner & Stillman, inventory 15585, via Biblio; 1908 McClure first-edition binding"
+      }
+    },
+    {
+      "id": "custom",
+      "title": "The Custom of the Country",
+      "author": "Edith Wharton",
+      "year": 1913,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/11052",
+      "text_url": "https://www.gutenberg.org/cache/epub/11052/pg11052-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/custom-of-the-country.jpg",
+        "alt": "Original burgundy cloth cover of The Custom of the Country, with Edith Wharton's name and the title in gilt.",
+        "edition": "1913 edition, Charles Scribner's Sons, New York",
+        "source_url": "https://archive.org/details/customofcountry00whar_4",
+        "credit": "Getty Research Institute / Internet Archive; 1913 Scribner's binding"
+      }
+    },
+    {
+      "id": "carrie",
+      "title": "Sister Carrie",
+      "author": "Theodore Dreiser",
+      "year": 1900,
+      "kind": "Book",
+      "source_url": "https://www.gutenberg.org/ebooks/233",
+      "text_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/sister-carrie.jpg",
+        "alt": "Standard Ebooks cover of Sister Carrie by Theodore Dreiser, with a woman standing beside snowy New York streets.",
+        "edition": "Standard Ebooks edition, first released October 13, 2021",
+        "source_url": "https://standardebooks.org/ebooks/theodore-dreiser/sister-carrie",
+        "credit": "Standard Ebooks; cover adapted from New York Street (1902) by Childe Hassam"
+      }
     }
   ],
   "entries": [
@@ -138,7 +342,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "James moves from the crowded streets into a quiet square. The white door of the fictional Sloper house becomes a boundary between Morris Townsend and the life he hopes to enter.",
       "precision": "Area described. The pin marks the square, not an identified address for the fictional house.",
-      "visit_note": "Explore the square and its north-side streets from public paths."
+      "visit_note": "Explore the square and its north-side streets from public paths.",
+      "place_id": "washington-square"
     },
     {
       "id": "met-museum",
@@ -156,7 +361,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Archer and Ellen find privacy among antiquities. Wharton makes the museum feel secluded and faintly melancholy, a refuge from the social scrutiny outside.",
       "precision": "Named institution. The historical gallery arrangement in the novel is not a guide to the museum today.",
-      "visit_note": "The museum is at 1000 Fifth Avenue. Check admission and opening hours before visiting."
+      "visit_note": "The museum is at 1000 Fifth Avenue. Check admission and opening hours before visiting.",
+      "place_id": "met-museum"
     },
     {
       "id": "queensboro-bridge",
@@ -174,7 +380,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Nick approaches Manhattan with Gatsby. The bridge turns the familiar skyline into a promise of reinvention, just as Gatsby is presenting his own story.",
       "precision": "Named bridge. The pin identifies the crossing, not a precise viewpoint or pedestrian entrance.",
-      "visit_note": "Use Google Maps for a current pedestrian approach; the passage describes a journey by car."
+      "visit_note": "Use Google Maps for a current pedestrian approach; the passage describes a journey by car.",
+      "place_id": "queensboro-bridge"
     },
     {
       "id": "central-park",
@@ -192,7 +399,8 @@
       "excerpt_kind": "Paragraph leading into a quoted song",
       "note": "After Jordan tells Nick about Daisy and Gatsby, the city softens into evening. Children’s voices and a carriage ride briefly replace the novel’s parties and display.",
       "precision": "Area described. The novel gives no exact carriage route; the pin marks the park’s southern edge.",
-      "visit_note": "Start at Central Park South. The text does not identify a particular path."
+      "visit_note": "Start at Central Park South. The text does not identify a particular path.",
+      "place_id": "central-park"
     },
     {
       "id": "the-battery",
@@ -210,7 +418,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Before Ishmael goes to sea, he watches New Yorkers drawn to the waterfront. The Battery becomes the city’s threshold to an ocean that seems to pull people out of their everyday lives.",
       "precision": "Area described. The pin is on the present-day waterfront; the shoreline has changed since Melville wrote.",
-      "visit_note": "Follow the public waterfront paths; this is not a reconstructed nineteenth-century viewpoint."
+      "visit_note": "Follow the public waterfront paths; this is not a reconstructed nineteenth-century viewpoint.",
+      "place_id": "the-battery"
     },
     {
       "id": "madison-square",
@@ -228,7 +437,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "The park bench is Soapy’s home, and the first signs of winter are an urgent problem. O. Henry measures the changing season from the perspective of someone who has nowhere warm to go.",
       "precision": "Named park. Soapy’s bench is fictional and has no identified present-day location.",
-      "visit_note": "Visit the public park between Fifth Avenue, Madison Avenue, 23rd and 26th Streets."
+      "visit_note": "Visit the public park between Fifth Avenue, Madison Avenue, 23rd and 26th Streets.",
+      "place_id": "madison-square"
     },
     {
       "id": "fulton-ferry",
@@ -247,7 +457,8 @@
       "note": "Whitman looks at commuters on the river and addresses people who will cross it long after him. The shared view becomes a connection between strangers across generations.",
       "precision": "Historical crossing. The pin marks the Brooklyn landing associated with the Fulton Ferry, not the poet’s exact position.",
       "visit_note": "Read from the public waterfront. The old crossing and today’s ferry services are different.",
-      "place_source_url": "https://brooklynbridgepark.org/places-to-see/fulton-ferry-landing/"
+      "place_source_url": "https://brooklynbridgepark.org/places-to-see/fulton-ferry-landing/",
+      "place_id": "fulton-ferry"
     },
     {
       "id": "mcsorleys-ale-house",
@@ -265,7 +476,673 @@
       "excerpt_kind": "Brief excerpt",
       "note": "Mitchell begins with the building and the street. His profile makes a neighborhood saloon the subject of close observation, preserving the texture of an ordinary New York gathering place.",
       "precision": "Named venue and street address. The description belongs to the 1940 article, not a report on the bar today.",
-      "visit_note": "15 East 7th Street. Check the venue’s current visitor information before going."
+      "visit_note": "15 East 7th Street. Check the venue’s current visitor information before going.",
+      "place_id": "mcsorleys-ale-house"
+    },
+    {
+      "id": "quicksand-lenox-avenue",
+      "place_id": "lenox-avenue",
+      "work_id": "quicksand",
+      "place": "Lenox Avenue",
+      "area": "Harlem, Manhattan",
+      "coordinates": [
+        40.8075,
+        -73.9454
+      ],
+      "map_query": "Lenox Avenue Harlem New York",
+      "locator": "Chapter VII",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page#chapter-7",
+      "excerpt": "Turning out of the park into the broad thoroughfare of Lenox Avenue, Mrs. Hayes-Rore said in a too carefully casual manner: “And, by the way, I wouldn’t mention that my people are white, if I were you. Colored people won’t understand it, and after all it’s your own business. When you’ve lived as long as I have, you’ll know that what others don’t know can’t hurt you. I’ll just tell Anne that you’re a friend of mine whose mother’s dead. That’ll place you well enough and it’s all true. I never tell lies. She can fill in the gaps to suit herself and anyone else curious enough to ask.”",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Entering Harlem, Helga receives advice about concealing her white family. The avenue is a threshold into a community whose welcome carries its own rules.",
+      "precision": "Named avenue. The passage gives no cross street; the map marks the avenue in Harlem.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "quicksand-harlem",
+      "place_id": "harlem",
+      "work_id": "quicksand",
+      "place": "Harlem",
+      "area": "Harlem, Manhattan",
+      "coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "map_query": "Harlem New York",
+      "locator": "Chapter VIII",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page#chapter-8",
+      "excerpt": "A year thick with various adventures had sped by since that spring day on which Helga Crane had set out away from Chicago’s indifferent unkindness for New York in the company of Mrs. Hayes-Rore. New York she had found not so unkind, not so unfriendly, not so indifferent. There she had been happy, and secured work, had made acquaintances and another friend. Again she had had that strange transforming experience, this time not so fleetingly, that magic sense of having come home. Harlem, teeming black Harlem, had welcomed her and lulled her into something that was, she was certain, peace and contentment.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Helga initially experiences Harlem as an arrival home. Larsen makes the neighborhood a place of work, friendship and provisional peace.",
+      "precision": "Neighborhood described, not a particular house or venue.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "quicksand-st-nicholas-park",
+      "place_id": "st-nicholas-park",
+      "work_id": "quicksand",
+      "place": "St. Nicholas Park",
+      "area": "Harlem, Manhattan",
+      "coordinates": [
+        40.817,
+        -73.9506
+      ],
+      "map_query": "Saint Nicholas Park Manhattan New York",
+      "locator": "Chapter VIII",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page#chapter-8",
+      "excerpt": "Always her forehead wrinkled in distaste whenever, involuntarily, which was somehow frequently, her mind turned on the speculative gray eyes and visionary uplifting plans of Dr. Anderson. That other, James Vayle, had slipped absolutely from her consciousness. Of him she never thought. Helga Crane meant, now, to have a home and perhaps laughing, appealing dark-eyed children in Harlem. Her existence was bounded by Central Park, Fifth Avenue, St. Nicholas Park, and One Hundred and Forty-fifth street. Not at all a narrow life, as Negroes live it, as Helga Crane knew it. Everything was there, vice and goodness, sadness and gayety, ignorance and wisdom, ugliness and beauty, poverty and richness. And it seemed to her that somehow of goodness, gayety, wisdom, and beauty always there was a little more than of vice, sadness, ignorance, and ugliness. It was only riches that did not quite transcend poverty.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Helga names the edges of a world that seems to contain everything she needs. St. Nicholas Park appears as one boundary of that imagined completeness.",
+      "precision": "Named park used as a neighborhood boundary. This passage does not place Helga at a specific spot inside it.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "excolored-coney-island",
+      "place_id": "coney-island",
+      "work_id": "excolored",
+      "place": "Coney Island",
+      "area": "Coney Island, Brooklyn",
+      "coordinates": [
+        40.5755,
+        -73.9707
+      ],
+      "map_query": "Coney Island Brooklyn New York",
+      "locator": "Chapter XI",
+      "source_url": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man/text/single-page#chapter-11",
+      "excerpt": "By reason of the fact that my living expenses in the South had been very small, I still had nearly four hundred dollars of my capital left. In contemplation of this, my natural and acquired Bohemian tastes asserted themselves, and I decided to have a couple of weeks’ good time before worrying seriously about the future. I went to Coney Island and the other resorts, took in the preseason shows along Broadway, and ate at first-class restaurants; but I shunned the old Sixth Avenue district as though it were pest-infected. My few days of pleasure made appalling inroads upon what cash I had, and caused me to see that it required a good deal of money to live in New York as I wished to live and that I should have to find, very soon, some more or less profitable employment. I was sure that unknown, without friends or prestige, it would be useless to try to establish myself as a teacher of music; so I gave that means of earning a livelihood scarcely any consideration. And even had I considered it possible to secure pupils, as I then felt, I should have hesitated about taking up a work in which the chances for any considerable financial success are necessarily so small. I had made up my mind that since I was not going to be a Negro, I would avail myself of every possible opportunity to make a white man’s success; and that, if it can be summed up in any one word, means “money.”",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Returning to New York, the narrator spends his savings on the city’s pleasures. Coney Island belongs to a brief holiday before his search for financial security.",
+      "precision": "Named resort district. The narrator identifies no particular attraction.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "mirth-grand-central",
+      "place_id": "grand-central",
+      "work_id": "mirth",
+      "place": "Grand Central",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "map_query": "Grand Central Terminal New York",
+      "locator": "Book I, Chapter I",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-1-1",
+      "excerpt": "Selden paused in surprise. In the afternoon rush of the Grand Central Station his eyes had been refreshed by the sight of Miss Lily Bart.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "The novel opens with a glance across the station crowd. Public transit becomes the stage on which Selden first studies Lily Bart.",
+      "precision": "Historical station site. The 1905 novel predates the present Grand Central Terminal, which opened in 1913.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "mirth-madison-avenue",
+      "place_id": "madison-avenue",
+      "work_id": "mirth",
+      "place": "Madison Avenue",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7554,
+        -73.9762
+      ],
+      "map_query": "Madison Avenue and East 45th Street New York",
+      "locator": "Book I, Chapter I",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-1-1",
+      "excerpt": "They turned into Madison Avenue and began to stroll northward. As she moved beside him, with her long light step, Selden was conscious of taking a luxurious pleasure in her nearness: in the modelling of her little ear, the crisp upward wave of her hair⁠—was it ever so slightly brightened by art?⁠—and the thick planting of her straight black lashes. Everything about her was at once vigorous and exquisite, at once strong and fine. He had a confused sense that she must have cost a great deal to make, that a great many dull and ugly people must, in some mysterious way, have been sacrificed to produce her. He was aware that the qualities distinguishing her from the herd of her sex were chiefly external: as though a fine glaze of beauty and fastidiousness had been applied to vulgar clay. Yet the analogy left him unsatisfied, for a coarse texture will not take a high finish; and was it not possible that the material was fine, but that circumstance had fashioned it into a futile shape?",
+      "excerpt_kind": "Complete paragraph",
+      "note": "As Lily and Selden stroll north, his admiration turns into an inventory of the expense and labor behind her beauty. The avenue frames a gaze shaped by class.",
+      "precision": "Named avenue. The map marks a representative point near Grand Central, not a documented stopping place.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "mirth-wall-street",
+      "place_id": "wall-street",
+      "work_id": "mirth",
+      "place": "Wall Street",
+      "area": "Financial District, Manhattan",
+      "coordinates": [
+        40.706,
+        -74.0088
+      ],
+      "map_query": "Wall Street New York",
+      "locator": "Book I, Chapter VII",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-1-7",
+      "excerpt": "Lily’s mind had reverted from the intrusive personality of Mr. Rosedale to the train of thought set in motion by Trenor’s first words. This vast mysterious Wall Street world of “tips” and “deals”⁠—might she not find in it the means of escape from her dreary predicament? She had often heard of women making money in this way through their friends: she had no more notion than most of her sex of the exact nature of the transaction, and its vagueness seemed to diminish its indelicacy. She could not, indeed, imagine herself, in any extremity, stooping to extract a “tip” from Mr. Rosedale; but at her side was a man in possession of that precious commodity, and who, as the husband of her dearest friend, stood to her in a relation of almost fraternal intimacy.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "For Lily, Wall Street is an obscure system that might rescue her finances. Its apparent distance from her social life disguises how closely the two worlds are tied.",
+      "precision": "Named financial district used as a metaphor for investing. Lily is thinking about Wall Street here, not walking along it.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "mirth-bryant-park",
+      "place_id": "bryant-park",
+      "work_id": "mirth",
+      "place": "Bryant Park",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7536,
+        -73.9832
+      ],
+      "map_query": "Bryant Park New York",
+      "locator": "Book II, Chapter XIII",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-2-13",
+      "excerpt": "Lily walked on unconscious of her surroundings. She was still treading the buoyant ether which emanates from the high moments of life. But gradually it shrank away from her and she felt the dull pavement beneath her feet. The sense of weariness returned with accumulated force, and for a moment she felt that she could walk no farther. She had reached the corner of Forty-first Street and Fifth Avenue, and she remembered that in Bryant Park there were seats where she might rest.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Exhausted after leaving Selden, Lily remembers the park’s benches. A public resting place takes on a new importance when private security has slipped away.",
+      "precision": "Named park. The text identifies her approach at Forty-first Street and Fifth Avenue, but no exact bench.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "beautiful-fifth-avenue",
+      "place_id": "fifth-avenue",
+      "work_id": "beautiful",
+      "place": "Fifth Avenue",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.759,
+        -73.9765
+      ],
+      "map_query": "Fifth Avenue and West 52nd Street New York",
+      "locator": "Book I, Chapter I",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-1-3",
+      "excerpt": "Fifth and Sixth Avenues, it seemed to Anthony, were the uprights of a gigantic ladder stretching from Washington Square to Central Park. Coming uptown on top of a bus toward Fifty-Second Street invariably gave him the sensation of hoisting himself hand by hand on a series of treacherous rungs, and when the bus jolted to a stop at his own rung he found something akin to relief as he descended the reckless metal steps to the sidewalk.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Anthony imagines Fifth and Sixth Avenues as a ladder. A routine bus ride turns the city’s grid into an anxious climb toward his apartment.",
+      "precision": "Named avenues and Fifty-second Street. The pin marks Fifth Avenue at that cross street, not a fictional apartment.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "beautiful-grand-central",
+      "place_id": "grand-central",
+      "work_id": "beautiful",
+      "place": "Grand Central",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "map_query": "Grand Central Terminal New York",
+      "locator": "Book I, Chapter III",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-3-3",
+      "excerpt": "Reaching the ground floor they naively avoided the hotel candy counter, descended the wide front staircase, and walking through several corridors found a drugstore in the Grand Central Station. After an intense examination of the perfume counter she made her purchase. Then on some mutual unmentioned impulse they strolled, arm in arm, not in the direction from which they had come, but out into Forty-Third Street.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Anthony and Gloria drift from a hotel into the station to buy perfume. The concourse becomes an intimate detour through a busy public building.",
+      "precision": "Named station. The historical drugstore is not identified as a current business.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "beautiful-plaza-hotel",
+      "place_id": "plaza-hotel",
+      "work_id": "beautiful",
+      "place": "The Plaza",
+      "area": "Central Park South, Manhattan",
+      "coordinates": [
+        40.7645,
+        -73.9743
+      ],
+      "map_query": "The Plaza Hotel New York",
+      "locator": "Book I, Chapter III",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-3-11",
+      "excerpt": "All the newest and most beautiful designs in automobiles were out on Fifth Avenue, and ahead of them the Plaza loomed up rather unusually white and attractive. The supple, indolent Gloria walked a short shadow’s length ahead of him, pouring out lazy casual comments that floated a moment on the dazzling air before they reached his ear.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Bright cars, the white hotel and Gloria’s indolent walk form a scene of effortless display. Fitzgerald makes the streetscape an extension of the couple’s desire.",
+      "precision": "Named hotel exterior, seen while approaching along Fifth Avenue. No particular room is implied.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "levinsky-state-street",
+      "place_id": "state-street",
+      "work_id": "levinsky",
+      "place": "State Street",
+      "area": "Lower Manhattan",
+      "coordinates": [
+        40.7033,
+        -74.0143
+      ],
+      "map_query": "State Street and Battery Place New York",
+      "locator": "Book V, Chapter I",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00600",
+      "excerpt": "I led the way out of the big Immigrant Station. As we reached the park outside we were pounced down upon by two evil-looking men, representatives of boarding-houses for immigrants. They pulled us so roughly and their general appearance and manner were so uninviting that we struggled and protested until they let us go—not without some parting curses. Then I led the way across Battery Park and under the Elevated railway to State Street.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "After reaching the immigrant station, David crosses the Battery into a city of touts and elevated trains. State Street marks the beginning of his uncertain life ashore.",
+      "precision": "Named street reached from Battery Park. The elevated railway in the passage is historical.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "levinsky-park-row",
+      "place_id": "park-row",
+      "work_id": "levinsky",
+      "place": "Park Row",
+      "area": "Civic Center, Manhattan",
+      "coordinates": [
+        40.7125,
+        -74.0075
+      ],
+      "map_query": "Park Row Manhattan New York",
+      "locator": "Book V, Chapter I",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00600",
+      "excerpt": "\"Walk straight ahead,\" he said to me, waving his hand toward Park Row. \"Just keep walking until you see a lot of Jewish people. It isn't far from here.\" With which he slipped a silver quarter into my hand and made Gitelson bid me good-by",
+      "excerpt_kind": "Complete paragraph",
+      "note": "A brief instruction and a small coin send David toward the immigrant neighborhood. Park Row functions as a direction of travel, rather than a settled destination.",
+      "precision": "Named street indicated by another character. The passage does not identify the exact point from which he gestures.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "levinsky-east-broadway",
+      "place_id": "east-broadway",
+      "work_id": "levinsky",
+      "place": "East Broadway",
+      "area": "Lower East Side, Manhattan",
+      "coordinates": [
+        40.7137,
+        -73.9875
+      ],
+      "map_query": "East Broadway Manhattan New York",
+      "locator": "Book VI, Chapter IV",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00916",
+      "excerpt": "Or else we would start on a ramble, usually through Grand Street to East River and back again through East Broadway. His favorite topics during these walks were civics, American history, and his own history",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Walks to the river and back become David’s informal education. His companion combines civic history with stories of his own life.",
+      "precision": "Named walking route. The map marks East Broadway; the novel gives no complete route or precise turning point.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "levinsky-grand-street",
+      "place_id": "grand-street",
+      "work_id": "levinsky",
+      "place": "Grand Street",
+      "area": "Lower East Side, Manhattan",
+      "coordinates": [
+        40.7152,
+        -73.9896
+      ],
+      "map_query": "Grand Street and Essex Street New York",
+      "locator": "Book VII, Chapter I",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id01019",
+      "excerpt": "ONE Friday evening in September I stood on Grand Street with my eyes raised to the big open windows of a dance-hall on the second floor of a brick building on the opposite side of the lively thoroughfare. Only the busts of the dancers could be seen. This and the distance that divided me from the hall enveloped the scene in mystery. As the couples floated by, as though borne along on waves of the music, the girls clinging to the men, their fantastic figures held me spellbound. Several other people were watching the dancers from the street, mostly women, who gazed at the appearing and disappearing images with envying eyes",
+      "excerpt_kind": "Complete paragraph",
+      "note": "David watches dancers through second-floor windows. The distance between pavement and ballroom turns ordinary entertainment into a vision of a life he cannot yet enter.",
+      "precision": "Named street. The dance hall has no verified address in this passage; the pin is a representative point on Grand Street.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "levinsky-canal-street",
+      "place_id": "canal-street",
+      "work_id": "levinsky",
+      "place": "Canal Street",
+      "area": "Lower Manhattan",
+      "coordinates": [
+        40.716,
+        -73.9972
+      ],
+      "map_query": "Canal Street and Orchard Street New York",
+      "locator": "Book XIII, Chapter I",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id03511",
+      "excerpt": "I MADE it my business to visit a well-known Hebrew book-store on Canal Street. I asked for Tevkin's works. It appeared that before he emigrated to America he had published three small volumes of verse and prose, that they had once aroused much interest, but that they were now practically out of print. I tried two other stores, with the same result. I was referred to the Astor Library, whose Hebrew department was becoming one of the richest in the world. Sitting down in a public library to read a book seemed to be an undignified proceeding for a manufacturer to engage in, but my curiosity was beyond considerations of this sort. Whenever I thought of Miss Tevkin I beheld the image of those three books—the only things related to her with which I was able to come in contact",
+      "excerpt_kind": "Complete paragraph",
+      "note": "A search for Tevkin’s books takes David from Hebrew bookshops toward the Astor Library. Literary curiosity momentarily disturbs his assumptions about a businessman’s dignity.",
+      "precision": "Named street with unidentified bookshops. The map marks Canal Street, not a claim that a particular store survives.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "yekl-suffolk-street",
+      "place_id": "suffolk-street",
+      "work_id": "yekl",
+      "place": "Suffolk Street",
+      "area": "Lower East Side, Manhattan",
+      "coordinates": [
+        40.7172,
+        -73.9851
+      ],
+      "map_query": "Suffolk Street and Delancey Street New York",
+      "locator": "Chapter II, “The New York Ghetto”",
+      "source_url": "https://www.gutenberg.org/cache/epub/36715/pg36715-images.html#II",
+      "excerpt": "And so the “stoops,” sidewalks, and pavements of Suffolk Street were thronged with panting, chattering, or frisking multitudes. In one spot the scene received a kind of weird picturesqueness from children dancing on the pavement to the strident music hurled out into the tumultuous din from a row of the open and brightly illuminated windows of what appeared to be a new tenement house. Some of the young women on the sidewalk opposite raised a longing eye to these windows, for floating, by through the dazzling light within were young women like themselves with masculine arms round their waists.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "The street, stoops and dance hall share one crowded summer evening. Cahan moves between people watching from outside and couples turning in the bright windows above.",
+      "precision": "Named street. The fictional dancing academy is not assigned a real building number.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "yekl-essex-street",
+      "place_id": "essex-street",
+      "work_id": "yekl",
+      "place": "Essex Street",
+      "area": "Lower East Side, Manhattan",
+      "coordinates": [
+        40.7183,
+        -73.988
+      ],
+      "map_query": "Essex Street and Delancey Street New York",
+      "locator": "Chapter III, “In the Grip of His Past”",
+      "source_url": "https://www.gutenberg.org/cache/epub/36715/pg36715-images.html#III",
+      "excerpt": "Jake had never even vaguely abandoned the idea of supplying his wife and child with the means of coming to join him. He was more or less prompt in remitting her monthly allowance of ten rubles, and the visit to the draft and passage office had become part of the routine of his life. It had the invariable effect of arousing his dormant scruples, and he hardly ever left the office without ascertaining the price of a steerage voyage from Hamburg to New York. But no sooner did he emerge from the dingy basement into the noisy scenes of Essex Street, than he would consciously let his mind wander off to other topics.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "The passage office briefly awakens Jake’s responsibility to his wife and child. Once he returns to noisy Essex Street, he deliberately lets it fade.",
+      "precision": "Named street. The remittance and ticket office is not given a verified street number.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "hungry-delancey-street",
+      "place_id": "delancey-street",
+      "work_id": "hungry",
+      "place": "Delancey Street",
+      "area": "Lower East Side, Manhattan",
+      "coordinates": [
+        40.7185,
+        -73.9876
+      ],
+      "map_query": "Delancey Street and Essex Street New York",
+      "locator": "“The Lost ‘Beautifulness’,” p. 96",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_96",
+      "excerpt": "Private Abraham Safransky, with the look in his eyes and the swing of his shoulders of all the boys who come back from overseas, edged his way through the wet Delancey Street crowds with the skill of one born to these streets and the assurance of the United States Army. Fresh from the ship, with a twenty-four-hour leave stowed safely in his pocket, he hastened to see his people after nearly two years’ separation.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "A soldier returns from overseas carrying both military confidence and a local’s bodily knowledge of the street. His homecoming enters the story through the crowd.",
+      "precision": "Named street. The passage identifies a neighborhood homecoming, not a particular doorway.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "hungry-hester-street",
+      "place_id": "hester-street",
+      "work_id": "hungry",
+      "place": "Hester Street",
+      "area": "Lower Manhattan",
+      "coordinates": [
+        40.7161,
+        -73.9911
+      ],
+      "map_query": "Hester Street and Orchard Street New York",
+      "locator": "“The Miracle,” p. 131",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_131",
+      "excerpt": "“If you want to listen to sense from a friend, so I have a good match for you,” he said, following me to the door. “I have on my list a widower with not more than five or six children. He has a grand business, a herring-stand on Hester Street. He don’t ask for no money, and he don’t make an objection if the girl is in years, so long as she knows how to cook well for him.”",
+      "excerpt_kind": "Complete paragraph",
+      "note": "A matchmaker measures a prospective husband through his market business and domestic needs. Hester Street places the proposed bargain in a working neighborhood economy.",
+      "precision": "Named street and a fictional herring stand without a known address.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "hungry-west-29th-street",
+      "place_id": "west-29th-street",
+      "work_id": "hungry",
+      "place": "West 29th Street",
+      "area": "Garment District, Manhattan",
+      "coordinates": [
+        40.7488,
+        -73.9927
+      ],
+      "map_query": "West 29th Street and 7th Avenue New York",
+      "locator": "“The Fat of the Land,” p. 200",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_200",
+      "excerpt": "“You heard how my husband died with consumption,” replied Hanneh Breineh. “The five hundred dollars lodge money gave me the first lift in life, and I opened a little grocery store. Then my son Abe married himself to a girl with a thousand dollars. That started him in business, and now he has the biggest shirt-waist factory on West Twenty-Ninth Street.”",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Hanneh Breineh traces her son’s success from a marriage settlement to a shirtwaist factory. The street is one point on a family’s account of economic ascent.",
+      "precision": "Named street. The factory is a character’s description, not an identified surviving business.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "hungry-riverside-drive",
+      "place_id": "riverside-drive",
+      "work_id": "hungry",
+      "place": "Riverside Drive",
+      "area": "Upper West Side, Manhattan",
+      "coordinates": [
+        40.7991,
+        -73.9735
+      ],
+      "map_query": "Riverside Drive Upper West Side New York",
+      "locator": "“The Fat of the Land,” p. 211",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_211",
+      "excerpt": "But the most unendurable part of the stifling life on Riverside Drive was being forced to eat in the public dining-room. No matter how hard she tried to learn polite table manners, she always found people staring at her, and her daughter rebuking her for eating with the wrong fork or guzzling the soup or staining the cloth.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Comfort brings Hanneh Breineh little freedom when every meal exposes her to judgment. Riverside Drive becomes a setting for the painful distance between mother and children.",
+      "precision": "Named residential avenue. The apartment house is unspecified; the map marks the avenue rather than a fictional address.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "maggie-bowery",
+      "place_id": "bowery",
+      "work_id": "maggie",
+      "place": "The Bowery",
+      "area": "Lower Manhattan",
+      "coordinates": [
+        40.7221,
+        -73.9938
+      ],
+      "map_query": "Bowery and East Houston Street New York",
+      "locator": "Chapter VII",
+      "source_url": "https://www.gutenberg.org/cache/epub/447/pg447-images.html#chap07",
+      "excerpt": "The dancer's smile of stereotyped enthusiasm was turned for ten minutes upon the faces of her audience. In the finale she fell into some of those grotesque attitudes which were at the time popular among the dancers in the theatres up-town, giving to the Bowery public the phantasies of the aristocratic theatre-going public, at reduced rates.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Crane describes a commercial imitation of fashionable entertainment. The dancer and the audience inhabit a Bowery world sold its own version of uptown spectacle.",
+      "precision": "Named entertainment district. The music hall is not identified by street number.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "maggie-central-park-zoo",
+      "place_id": "central-park-zoo",
+      "work_id": "maggie",
+      "place": "Central Park Menagerie",
+      "area": "Central Park, Manhattan",
+      "coordinates": [
+        40.7678,
+        -73.9718
+      ],
+      "map_query": "Central Park Zoo New York",
+      "locator": "Chapter VIII",
+      "source_url": "https://www.gutenberg.org/cache/epub/447/pg447-images.html#chap08",
+      "excerpt": "Pete, raking his brains for amusement, discovered the Central Park Menagerie and the Museum of Arts. Sunday afternoons would sometimes find them at these places. Pete did not appear to be particularly interested in what he saw. He stood around looking heavy, while Maggie giggled in glee.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Maggie delights in Sunday outings while Pete performs indifference. The menagerie briefly opens a wider city beyond her tenement neighborhood.",
+      "precision": "Historical institution associated with today’s Central Park Zoo. The passage does not describe the current zoo layout.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "voice-eighth-avenue-48th",
+      "place_id": "eighth-avenue-48th",
+      "work_id": "voice",
+      "place": "Eighth Avenue at 48th Street",
+      "area": "Hell’s Kitchen, Manhattan",
+      "coordinates": [
+        40.761,
+        -73.9878
+      ],
+      "map_query": "8th Avenue and West 48th Street New York",
+      "locator": "“A Lickpenny Lover”",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_3",
+      "excerpt": "\"Say,\" suggested Masie, with a bright-idea look in her peach-blow face; \"I guess Thursday night will about suit me. Suppose you come to the corner of Eighth Avenue and Forty-eighth Street at 7:30. I live right near the corner. But I've got to be back home by eleven. Ma never lets me stay out after eleven.\"",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Masie fixes an exact corner and a strict return time for a date. The practical terms of a working woman’s evening puncture her suitor’s grander imagination.",
+      "precision": "Named intersection. The nearby fictional home is not given a street number.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "voice-union-square",
+      "place_id": "union-square",
+      "work_id": "voice",
+      "place": "Union Square",
+      "area": "Union Square, Manhattan",
+      "coordinates": [
+        40.7359,
+        -73.9906
+      ],
+      "map_query": "Union Square Park New York",
+      "locator": "“The Harbinger”",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_6",
+      "excerpt": "Ere the first violet blew, Mr. Peters, Mr. Ragsdale and Mr. Kidd sat together on a bench in Union Square and conspired. Mr. Peters was the D'Artagnan of the loafers there. He was the dingiest, the laziest, the sorriest brown blot against the green background of any bench in the park. But just then he was the most important of the trio.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Three men on a park bench plan around a hoped-for dollar. O. Henry sets their small conspiracy inside the seasonal revival of the city.",
+      "precision": "Named park. No particular bench is identified.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "voice-broadway-23rd",
+      "place_id": "broadway-23rd",
+      "work_id": "voice",
+      "place": "Broadway at 23rd Street",
+      "area": "Flatiron District, Manhattan",
+      "coordinates": [
+        40.7411,
+        -73.9897
+      ],
+      "map_query": "Broadway and West 23rd Street New York",
+      "locator": "“Squaring the Circle”",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_14",
+      "excerpt": "And in the angles of Broadway, Fifth Avenue and Twenty-third Street the Cumberland feudists shook hands.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "A feud brought from Kentucky ends with a handshake at an angular Manhattan crossroads. The city’s unfamiliar geometry helps rearrange an inherited conflict.",
+      "precision": "Named intersection of Broadway, Fifth Avenue and Twenty-third Street.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "custom-west-72nd-street",
+      "place_id": "west-72nd-street",
+      "work_id": "custom",
+      "place": "West 72nd Street",
+      "area": "Upper West Side, Manhattan",
+      "coordinates": [
+        40.7766,
+        -73.9789
+      ],
+      "map_query": "West 72nd Street and Central Park West New York",
+      "locator": "Chapter II",
+      "source_url": "https://www.gutenberg.org/cache/epub/11052/pg11052-images.html#id00098",
+      "excerpt": "Undine's white and gold bedroom, with sea-green panels and old rose carpet, looked along Seventy-second Street toward the leafless tree-tops of the Central Park.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "From her hotel bedroom, Undine looks toward the park and the society beyond it. The view gives her ambition a physical direction across Manhattan.",
+      "precision": "Named street west of Central Park. The fictional Stentorian hotel is not treated as a present-day hotel.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "custom-central-park",
+      "place_id": "central-park",
+      "work_id": "custom",
+      "place": "Central Park",
+      "area": "Central Park, Manhattan",
+      "coordinates": [
+        40.7751,
+        -73.9768
+      ],
+      "map_query": "Central Park West New York",
+      "locator": "Chapter IX",
+      "source_url": "https://www.gutenberg.org/cache/epub/11052/pg11052-images.html#id00472",
+      "excerpt": "Undine, late the next day, waited alone under the leafless trellising of a wistaria arbour on the west side of the Central Park. She had put on her plainest dress, and wound a closely, patterned veil over her least vivid hat; but even thus toned down to the situation she was conscious of blazing out from it inconveniently.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Undine tries to dress inconspicuously for a meeting, yet still imagines herself as a blaze of color. The bare arbor offers seclusion without quieting her self-consciousness.",
+      "precision": "Area described on the park’s west side. The wistaria arbor is not identified with a verified present-day structure.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "carrie-spuyten-duyvil",
+      "place_id": "spuyten-duyvil",
+      "work_id": "carrie",
+      "place": "Spuyten Duyvil",
+      "area": "Spuyten Duyvil, Bronx",
+      "coordinates": [
+        40.878,
+        -73.9218
+      ],
+      "map_query": "Spuyten Duyvil Bronx New York",
+      "locator": "Chapter XXIX",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap29",
+      "excerpt": "As the train turned east at Spuyten Duyvil and followed the east bank of the Harlem River, Hurstwood nervously called her attention to the fact that they were on the edge of the city. After her experience with Chicago, she expected long lines of cars—a great highway of tracks—and noted the difference. The sight of a few boats in the Harlem and more in the East River tickled her young heart. It was the first sign of the great sea. Next came a plain street with five-story brick flats, and then the train plunged into the tunnel.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Carrie reads the rivers and railway as signs of arrival, while Hurstwood watches with fear. The same approach to New York holds two incompatible futures.",
+      "precision": "Named waterway and railway approach. The map marks the district, not a claim about the current railway alignment.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "carrie-amsterdam-78th",
+      "place_id": "amsterdam-78th",
+      "work_id": "carrie",
+      "place": "Amsterdam Avenue at 78th Street",
+      "area": "Upper West Side, Manhattan",
+      "coordinates": [
+        40.7823,
+        -73.9786
+      ],
+      "map_query": "Amsterdam Avenue and West 78th Street New York",
+      "locator": "Chapter XXX",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap30",
+      "excerpt": "That was not before he had become settled, however. Carrie and he went looking for a flat, as arranged, and found one in Seventy-eighth Street near Amsterdam Avenue. It was a five-story building, and their flat was on the third floor. Owing to the fact that the street was not yet built up solidly, it was possible to see east to the green tops of the trees in Central Park and west to the broad waters of the Hudson, a glimpse of which was to be had out of the west windows. For the privilege of six rooms and a bath, running in a straight line, they were compelled to pay thirty-five dollars a month—an average, and yet exorbitant, rent for a home at the time. Carrie noticed the difference between the size of the rooms here and in Chicago and mentioned it.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Their first New York flat offers glimpses of park and river, but its narrow rooms and rent bring a new measure of the city’s expense.",
+      "precision": "Named street near Amsterdam Avenue. The fictional flat has no verified building number.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "carrie-west-13th-street",
+      "place_id": "west-13th-street",
+      "work_id": "carrie",
+      "place": "West 13th Street",
+      "area": "Greenwich Village, Manhattan",
+      "coordinates": [
+        40.737,
+        -73.9995
+      ],
+      "map_query": "West 13th Street and 6th Avenue New York",
+      "locator": "Chapter XXXIII",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap33",
+      "excerpt": "The new flat was located in Thirteenth Street, a half block west of Sixth Avenue, and contained only four rooms. The new neighbourhood did not appeal to Carrie as much. There were no trees here, no west view of the river. The street was solidly built up. There were twelve families here, respectable enough, but nothing like the Vances. Richer people required more space.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "The move to a smaller flat turns lost income into lost space and light. Carrie reads the neighborhood through the comfort she has had to surrender.",
+      "precision": "The text places the flat half a block west of Sixth Avenue. The pin marks the vicinity, not an identified building.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "carrie-warren-hudson",
+      "place_id": "warren-hudson",
+      "work_id": "carrie",
+      "place": "Warren and Hudson Streets",
+      "area": "Tribeca, Manhattan",
+      "coordinates": [
+        40.7149,
+        -74.0099
+      ],
+      "map_query": "Warren Street and Hudson Street New York",
+      "locator": "Chapter XXXIII",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap33",
+      "excerpt": "He looked, and there was the notice. Mr. August Viele had yesterday registered the transfer of the lot, 25 x 75 feet, at the corner of Warren and Hudson Streets, to J. F. Slawson for the sum of $57,000.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "A newspaper property notice gives Hurstwood’s growing insecurity a precise location and price. The city keeps trading even as his prospects shrink.",
+      "precision": "Named intersection and a transaction reported within the novel. It is not presented as a verified historical sale.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "harlem-broadway",
+      "place_id": "broadway",
+      "work_id": "harlem",
+      "place": "Broadway",
+      "area": "Theater District, Manhattan",
+      "coordinates": [
+        40.758,
+        -73.9855
+      ],
+      "map_query": "Broadway Times Square New York",
+      "locator": "“On Broadway,” first stanza, p. 12",
+      "source_url": "https://www.gutenberg.org/cache/epub/64989/pg64989-images.html#ON_BROADWAY",
+      "excerpt": "About me young and careless feet\nLinger along the garish street;\nAbove, a hundred shouting signs\nShed down their bright fantastic glow\nUpon the merry crowd and lines\nOf moving carriages below.\nOh wonderful is Broadway—only\nMy heart, my heart is lonely.",
+      "excerpt_kind": "Complete opening stanza",
+      "note": "Bright signs and moving crowds sharpen the speaker’s loneliness. McKay lets the refrain interrupt Broadway’s invitation to be delighted.",
+      "precision": "Named avenue. The Times Square area is a representative point for its theater lights; the poem names no exact corner.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+    },
+    {
+      "id": "harlem-harlem",
+      "place_id": "harlem",
+      "work_id": "harlem",
+      "place": "Harlem",
+      "area": "Harlem, Manhattan",
+      "coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "map_query": "Harlem New York",
+      "locator": "“Harlem Shadows,” first stanza, p. 22",
+      "source_url": "https://www.gutenberg.org/cache/epub/64989/pg64989-images.html#HARLEM_SHADOWS",
+      "excerpt": "I hear the halting footsteps of a lass\nIn Negro Harlem when the night lets fall\nIts veil. I see the shapes of girls who pass\nTo bend and barter at desire’s call.\nAh, little dark girls who in slippered feet\nGo prowling through the night from street to street!",
+      "excerpt_kind": "Complete opening stanza",
+      "note": "The speaker watches young women passing through the night. McKay turns the neighborhood’s darkness toward labor, exposure and compassion.",
+      "precision": "Neighborhood named in the poem. No individual street or doorway is specified.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
     }
   ]
 }

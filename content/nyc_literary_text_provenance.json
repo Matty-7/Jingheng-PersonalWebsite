@@ -1,0 +1,286 @@
+{
+  "reviewed_on": "2026-09-20",
+  "method": "Public-domain primary editions downloaded and paragraphs checked against the source HTML; whitespace is normalized; poem line breaks are retained. Interpretation and location precision are separately authored. Existing eight passages retain their original source notes.",
+  "entries": [
+    {
+      "entry_id": "quicksand-lenox-avenue",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page#chapter-7",
+      "source_paragraph_index": 228,
+      "source_file_sha256": "513cce098972ad71f4403fe9c7a92c0c6ea40f312b2b2780fca3821dd664e262",
+      "excerpt_sha256": "5397277df499e33d3c664b022190f81b0ef81be29122044f95195d2061c7757c",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "quicksand-harlem",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page#chapter-8",
+      "source_paragraph_index": 232,
+      "source_file_sha256": "513cce098972ad71f4403fe9c7a92c0c6ea40f312b2b2780fca3821dd664e262",
+      "excerpt_sha256": "f62f786fe5758cfd3a79c3a9e0dda6e0e38c349cb425e99aa0ab85c674f131f3",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "quicksand-st-nicholas-park",
+      "source_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/text/single-page#chapter-8",
+      "source_paragraph_index": 241,
+      "source_file_sha256": "513cce098972ad71f4403fe9c7a92c0c6ea40f312b2b2780fca3821dd664e262",
+      "excerpt_sha256": "2cdfa5f72084c5a6dcce6d956249216665d9442eae12d141572ca5e9ec2b495c",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "excolored-coney-island",
+      "source_url": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man/text/single-page#chapter-11",
+      "source_paragraph_index": 280,
+      "source_file_sha256": "8b772a59dec7a6a0e4cb2bbb5c36c89dcfa0ed90a93ddedb7fc6af65d1a3293d",
+      "excerpt_sha256": "ae2b9780c32fce9352bbf13f874984e300cf9fe785466f028a52f93be2e5ab3d",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "mirth-grand-central",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-1-1",
+      "source_paragraph_index": 9,
+      "source_file_sha256": "67affc6de6c06bedd2a7499e6f089e48f724948330c03aa3512dcdafca0e8f78",
+      "excerpt_sha256": "7c2b2a4831390805c78f68639e10efb0babb16fb1e19069bcf3af185802f7610",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "mirth-madison-avenue",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-1-1",
+      "source_paragraph_index": 29,
+      "source_file_sha256": "67affc6de6c06bedd2a7499e6f089e48f724948330c03aa3512dcdafca0e8f78",
+      "excerpt_sha256": "c4cdf9e966a8f224e0e6b32ebc961ad5d8a4ffaf13cfaf8d10aaab0c1a8e9590",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "mirth-wall-street",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-1-7",
+      "source_paragraph_index": 567,
+      "source_file_sha256": "67affc6de6c06bedd2a7499e6f089e48f724948330c03aa3512dcdafca0e8f78",
+      "excerpt_sha256": "b2a703386b2b93f12a0920da4ee67989879d27dfb1adb98b36ad0738234fc754",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "mirth-bryant-park",
+      "source_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/text/single-page#chapter-2-13",
+      "source_paragraph_index": 1811,
+      "source_file_sha256": "67affc6de6c06bedd2a7499e6f089e48f724948330c03aa3512dcdafca0e8f78",
+      "excerpt_sha256": "8ba855542058247ac6a0b5e5e0d4d216a46c6e08bdb782a6504fb1da38d336dd",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "beautiful-fifth-avenue",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-1-3",
+      "source_paragraph_index": 35,
+      "source_file_sha256": "a2554662851e8b9f3486163207ec06786bc355a9db260fc8d44714d24e2bc8c1",
+      "excerpt_sha256": "31d24de18a0f6482c1884ee8f03786189dab6a601a04b31eb77911121037ad03",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "beautiful-grand-central",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-3-3",
+      "source_paragraph_index": 776,
+      "source_file_sha256": "a2554662851e8b9f3486163207ec06786bc355a9db260fc8d44714d24e2bc8c1",
+      "excerpt_sha256": "d241aa6692a8fa8ade4556f9930f8d8a363c2898cafa8b917c1248e59508d4e6",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "beautiful-plaza-hotel",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-3-11",
+      "source_paragraph_index": 970,
+      "source_file_sha256": "a2554662851e8b9f3486163207ec06786bc355a9db260fc8d44714d24e2bc8c1",
+      "excerpt_sha256": "8118c0ec3d06e9709dfa79da28ae1b3f03abb34954cf444e5ec8c7800f48f24a",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "levinsky-state-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00600",
+      "source_paragraph_index": 626,
+      "source_file_sha256": "a1f1a49034de0b15b27ef0ebe02c232dd4beb224bf7bcd2412aff2669d847f73",
+      "excerpt_sha256": "b37fa4df93b28d6afdeebb084a889732c13d82825572d708f9fdcaba68a61d91",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "levinsky-park-row",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00600",
+      "source_paragraph_index": 646,
+      "source_file_sha256": "a1f1a49034de0b15b27ef0ebe02c232dd4beb224bf7bcd2412aff2669d847f73",
+      "excerpt_sha256": "d11044f695e18b26d880fce74f85721b894a6628ad48ce2fdff7168fe4e59c18",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "levinsky-east-broadway",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00916",
+      "source_paragraph_index": 952,
+      "source_file_sha256": "a1f1a49034de0b15b27ef0ebe02c232dd4beb224bf7bcd2412aff2669d847f73",
+      "excerpt_sha256": "f27b8c9a1b7073145212625165bfb379c17bc01890354333b985a5b81caf1a3d",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "levinsky-grand-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id01019",
+      "source_paragraph_index": 1015,
+      "source_file_sha256": "a1f1a49034de0b15b27ef0ebe02c232dd4beb224bf7bcd2412aff2669d847f73",
+      "excerpt_sha256": "98471a53ccd6766422935146ea962418c526f386f28189af3f502cd48e3b6004",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "levinsky-canal-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id03511",
+      "source_paragraph_index": 3495,
+      "source_file_sha256": "a1f1a49034de0b15b27ef0ebe02c232dd4beb224bf7bcd2412aff2669d847f73",
+      "excerpt_sha256": "441ee5ae2b333845bf73c49f1a64c47f8bd2004aa89c1fe97a0cbf4e97cc8fe0",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "yekl-suffolk-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/36715/pg36715-images.html#II",
+      "source_paragraph_index": 97,
+      "source_file_sha256": "37c9f4f09c58b5165f497d758a6046fdc1e497a8432383ee1346c1edef454c26",
+      "excerpt_sha256": "8942fc61e5d2fb1e0d246236f2a919cc28f6cce350232b5b3d3a605f8dd30e74",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "yekl-essex-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/36715/pg36715-images.html#III",
+      "source_paragraph_index": 177,
+      "source_file_sha256": "37c9f4f09c58b5165f497d758a6046fdc1e497a8432383ee1346c1edef454c26",
+      "excerpt_sha256": "ac8fa3e3f93085323ccf71a31f302342c03d563a57bfa258272ccea134b8396f",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "hungry-delancey-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_96",
+      "source_paragraph_index": 516,
+      "source_file_sha256": "8134ce93800bfb5f80700435ae36de4ca34323470d9264fa82fcb3e181a9aef6",
+      "excerpt_sha256": "4aab27998e385c5f1df202ba618f6a2e0004832472317b97c2dec3c414ac1873",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "hungry-hester-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_131",
+      "source_paragraph_index": 667,
+      "source_file_sha256": "8134ce93800bfb5f80700435ae36de4ca34323470d9264fa82fcb3e181a9aef6",
+      "excerpt_sha256": "3e413c0d542db4de0696b692c80d4ca17b7119d0beaf17108cdb275ccb5b83af",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "hungry-west-29th-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_200",
+      "source_paragraph_index": 1014,
+      "source_file_sha256": "8134ce93800bfb5f80700435ae36de4ca34323470d9264fa82fcb3e181a9aef6",
+      "excerpt_sha256": "44b75f6887638e9a2de6faecd290a6ad32757b62408e0a133a57f1b032287d77",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "hungry-riverside-drive",
+      "source_url": "https://www.gutenberg.org/cache/epub/41232/pg41232-images.html#Page_211",
+      "source_paragraph_index": 1072,
+      "source_file_sha256": "8134ce93800bfb5f80700435ae36de4ca34323470d9264fa82fcb3e181a9aef6",
+      "excerpt_sha256": "38ab6d99e823300f0f2ad2864d5a0dada5a623fdca1d3611e31236a3633e32df",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "maggie-bowery",
+      "source_url": "https://www.gutenberg.org/cache/epub/447/pg447-images.html#chap07",
+      "source_paragraph_index": 232,
+      "source_file_sha256": "4465fdcf596fd1cfcb9a4ceda0cf6fc1ef1a9c73474142764d90c217aa9a1e5f",
+      "excerpt_sha256": "9ca97a508da6ddb7ecc16c09ad10542de3ea0c5289952ea3292178849273bba7",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "maggie-central-park-zoo",
+      "source_url": "https://www.gutenberg.org/cache/epub/447/pg447-images.html#chap08",
+      "source_paragraph_index": 268,
+      "source_file_sha256": "4465fdcf596fd1cfcb9a4ceda0cf6fc1ef1a9c73474142764d90c217aa9a1e5f",
+      "excerpt_sha256": "e09203980d48f35e78e407f50277d91ff37deda330ced8c35caacd57175f6dce",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "voice-eighth-avenue-48th",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_3",
+      "source_paragraph_index": 152,
+      "source_file_sha256": "a0885f70c5214923a69231b4e4aa928f1f0fdc3ea2c929337d4522babd132cfb",
+      "excerpt_sha256": "bb539e9b659207ff9a956c8e3de2371402370f3d09242d1f3f1abebd8fd1950b",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "voice-union-square",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_6",
+      "source_paragraph_index": 299,
+      "source_file_sha256": "a0885f70c5214923a69231b4e4aa928f1f0fdc3ea2c929337d4522babd132cfb",
+      "excerpt_sha256": "1e55543d8e65379b6ea95dc37afef36db3aabd8194bf820e2957b48d8dbb57b3",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "voice-broadway-23rd",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_14",
+      "source_paragraph_index": 737,
+      "source_file_sha256": "a0885f70c5214923a69231b4e4aa928f1f0fdc3ea2c929337d4522babd132cfb",
+      "excerpt_sha256": "c2e24361422ffbef632a38a8c608a79620a86ee5c4d49ad5307689c62fd0ffea",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "custom-west-72nd-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/11052/pg11052-images.html#id00098",
+      "source_paragraph_index": 105,
+      "source_file_sha256": "3c70c3030f633ac414501cd3fcdaebcc0ba91afdeb3db1f6d546a89f782cefb3",
+      "excerpt_sha256": "431d9cd71fa7734ef2b0b888c0f8ce0abff95f5c3349a4449c90ca7307441bf1",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "custom-central-park",
+      "source_url": "https://www.gutenberg.org/cache/epub/11052/pg11052-images.html#id00472",
+      "source_paragraph_index": 479,
+      "source_file_sha256": "3c70c3030f633ac414501cd3fcdaebcc0ba91afdeb3db1f6d546a89f782cefb3",
+      "excerpt_sha256": "350aaecc884910a94be496aa031aae71352d9cd12d93e6fffb0c654fb310c2b0",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "carrie-spuyten-duyvil",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap29",
+      "source_paragraph_index": 2689,
+      "source_file_sha256": "0515c7480fefe5d4aa85a6e3a9daac0cf02a16dfebc555e94a10a95c6ae4e2ba",
+      "excerpt_sha256": "9744807ce1a797e2f501ff14fa5d188502b6555681dee853b7ee8932c5a7be01",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "carrie-amsterdam-78th",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap30",
+      "source_paragraph_index": 2710,
+      "source_file_sha256": "0515c7480fefe5d4aa85a6e3a9daac0cf02a16dfebc555e94a10a95c6ae4e2ba",
+      "excerpt_sha256": "b7aa6b2f9fc28819908594784c4e629d6440ce31d0aec00a9d6fb31d6e7f4d72",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "carrie-west-13th-street",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap33",
+      "source_paragraph_index": 2964,
+      "source_file_sha256": "0515c7480fefe5d4aa85a6e3a9daac0cf02a16dfebc555e94a10a95c6ae4e2ba",
+      "excerpt_sha256": "01925e39d0ef22cf51a6dbe75f96551f7fa2d9a37ef90a12ad16508620a3e28f",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "carrie-warren-hudson",
+      "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap33",
+      "source_paragraph_index": 2972,
+      "source_file_sha256": "0515c7480fefe5d4aa85a6e3a9daac0cf02a16dfebc555e94a10a95c6ae4e2ba",
+      "excerpt_sha256": "6c3a1e77da1f310128a06e26b007b180695ebedb986aafa62a5dce9b2c63250a",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "harlem-broadway",
+      "source_url": "https://www.gutenberg.org/cache/epub/64989/pg64989-images.html#ON_BROADWAY",
+      "source_paragraph_index": null,
+      "source_file_sha256": "7e3a360f1ab276ae81e76071db2065f55864a099e6529c86fe531c6cbadee9b1",
+      "excerpt_sha256": "e035a5ed18f6c03729dbe200ac756cc67ed7a4b2fa4a55b50f70903437a842e4",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "harlem-harlem",
+      "source_url": "https://www.gutenberg.org/cache/epub/64989/pg64989-images.html#HARLEM_SHADOWS",
+      "source_paragraph_index": null,
+      "source_file_sha256": "7e3a360f1ab276ae81e76071db2065f55864a099e6529c86fe531c6cbadee9b1",
+      "excerpt_sha256": "3ccd5b0c9a18f59511de06be04a6ca8ad5eb0857328de718f9dcd6726f3d1939",
+      "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    }
+  ]
+}
