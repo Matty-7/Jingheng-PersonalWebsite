@@ -11,7 +11,7 @@
       "text_url": "https://www.gutenberg.org/cache/epub/2870/pg2870-images.html",
       "rights": "Public domain in the United States",
       "cover": {
-        "src": "/images/literary-map/washington-square.webp",
+        "src": "/images/literary-map/washington-square.jpg",
         "alt": "Historical cloth cover of Washington Square by Henry James, with gilt title and an engraved street scene.",
         "edition": "Harper & Brothers edition dated 1881",
         "source_url": "https://commons.wikimedia.org/wiki/File:James_Washington_Square_cover.JPG",
@@ -28,7 +28,7 @@
       "text_url": "https://www.gutenberg.org/cache/epub/541/pg541-images.html",
       "rights": "Public domain in the United States",
       "cover": {
-        "src": "/images/literary-map/age-of-innocence.webp",
+        "src": "/images/literary-map/age-of-innocence.jpg",
         "alt": "The Age of Innocence first-edition jacket, a pale yellow cover with handwritten-style title and a woman in a pink dress.",
         "edition": "1920 first-edition dust jacket, D. Appleton & Company",
         "source_url": "https://commons.wikimedia.org/wiki/File:Age_of_Innocence_(1st_ed_dust_jacket).jpg",
@@ -45,7 +45,7 @@
       "text_url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html",
       "rights": "Public domain in the United States",
       "cover": {
-        "src": "/images/literary-map/great-gatsby.webp",
+        "src": "/images/literary-map/great-gatsby.jpg",
         "alt": "Francis Cugat's original Great Gatsby jacket, with luminous eyes above a brightly lit city against a dark blue sky.",
         "edition": "1925 first-edition dust jacket, Charles Scribner's Sons; digitally restored scan",
         "source_url": "https://commons.wikimedia.org/wiki/File:The_Great_Gatsby_Cover_1925_Retouched.jpg",
@@ -62,7 +62,7 @@
       "text_url": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html",
       "rights": "Public domain in the United States",
       "cover": {
-        "src": "/images/literary-map/moby-dick.webp",
+        "src": "/images/literary-map/moby-dick.jpg",
         "alt": "Standard Ebooks cover of Moby Dick, with a storm-tossed ship from Albert Pinkham Ryder's The Flying Dutchman and the book title below.",
         "edition": "Standard Ebooks edition, first released March 27, 2018",
         "source_url": "https://standardebooks.org/ebooks/herman-melville/moby-dick",
@@ -79,7 +79,7 @@
       "text_url": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html",
       "rights": "Public domain in the United States",
       "cover": {
-        "src": "/images/literary-map/four-million.webp",
+        "src": "/images/literary-map/four-million.jpg",
         "alt": "First-edition cover of The Four Million by O. Henry, in red cloth with gilt lettering.",
         "edition": "1906 first edition, McClure, Phillips and Company",
         "source_url": "https://commons.wikimedia.org/wiki/File:TheFourMillion.png",
@@ -96,7 +96,7 @@
       "text_url": "https://www.gutenberg.org/cache/epub/1322/pg1322-images.html",
       "rights": "Public domain in the United States; the collection began in 1855, and “Crossing Brooklyn Ferry” first appeared in 1856 as “Sun-Down Poem”",
       "cover": {
-        "src": "/images/literary-map/leaves-of-grass-later.webp",
+        "src": "/images/literary-map/leaves-of-grass-later.jpg",
         "alt": "Standard Ebooks cover of Leaves of Grass, with Margaret C. Cook's painted figures gazing at the sky above a cliff and the book title below.",
         "edition": "Standard Ebooks edition, first released January 2, 2024; based on the 1892 deathbed edition",
         "source_url": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass",
@@ -113,7 +113,7 @@
       "text_url": "https://www.newyorker.com/magazine/1940/04/13/the-old-house-at-home",
       "rights": "Copyrighted article; brief quotation",
       "cover": {
-        "src": "/images/literary-map/new-yorker-1940-04-13.webp",
+        "src": "/images/literary-map/new-yorker-1940-04-13.jpg",
         "alt": "The New Yorker cover dated April 13, 1940, showing a ceremonial street tree planting with photographers and onlookers.",
         "edition": "The New Yorker, April 13, 1940 issue",
         "source_url": "https://www.newyorker.com/magazine/1940/04/13",

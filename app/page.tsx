@@ -335,9 +335,9 @@ export default function Home() {
             <Link className="project-literary-preview" href="/portfolio/nyc-literary-map" aria-label="Open NYC Literary Map">
               <span>NEW YORK, IN PRINT</span>
               <div className="project-literary-covers">
-                <Image unoptimized src="/images/literary-map/washington-square.webp" width={100} height={150} alt="Washington Square by Henry James" loading="lazy" />
-                <Image unoptimized src="/images/literary-map/great-gatsby.webp" width={100} height={150} alt="The Great Gatsby by F. Scott Fitzgerald" loading="lazy" />
-                <Image unoptimized src="/images/literary-map/new-yorker-1940-04-13.webp" width={100} height={150} alt="The New Yorker, April 13, 1940" loading="lazy" />
+                <Image unoptimized src="/images/literary-map/washington-square.jpg" width={100} height={150} alt="Washington Square by Henry James" loading="lazy" />
+                <Image unoptimized src="/images/literary-map/great-gatsby.jpg" width={100} height={150} alt="The Great Gatsby by F. Scott Fitzgerald" loading="lazy" />
+                <Image unoptimized src="/images/literary-map/new-yorker-1940-04-13.jpg" width={100} height={150} alt="The New Yorker, April 13, 1940" loading="lazy" />
               </div>
               <span>Books, magazines &amp; the city <span aria-hidden="true">↗</span></span>
             </Link>
