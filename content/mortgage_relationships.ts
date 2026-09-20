@@ -8,6 +8,34 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'rolls__cash_flows', source: 'rolls', target: 'cash_flows',
+    kind: 'mechanism', label: 'transfers interim payment rights',
+    reason: 'Selling the near leg gives up intervening principal and interest entitlement.',
+    conditions: 'Compare payment timing and remaining balance, not just coupon income.',
+    sources: ['tba', 'basics'],
+  },
+  {
+    id: 'prepayments__rolls', source: 'prepayments', target: 'rolls',
+    kind: 'mechanism', label: 'changes the financing comparison',
+    reason: 'Expected paydowns change payments forgone and the balance retained by a cash holder.',
+    conditions: 'Hold the quotation and settlement conventions consistent; principal is not profit.',
+    sources: ['tba', 'basics'],
+  },
+  {
+    id: 'rolls__cheapest_deliverable', source: 'rolls', target: 'cheapest_deliverable',
+    kind: 'mechanism', label: 'reopens pool selection',
+    reason: 'The later purchase permits different eligible pools with different prepayment characteristics.',
+    conditions: 'Similar delivery terms do not guarantee identical collateral economics.',
+    sources: ['tba'],
+  },
+  {
+    id: 'rolls__repo', source: 'rolls', target: 'repo',
+    kind: 'comparison', label: 'compares funding and payment rights',
+    reason: 'Repo financing preserves the collateral seller’s economic payment entitlement; a dollar roll transfers the intervening payments.',
+    conditions: 'Contract terms govern income processing and collateral substitution. These are not identical trades.',
+    sources: ['tba', 'repo_public'],
+  },
+  {
     id: 'fixed_arm__principal_interest',
     source: 'fixed_arm',
     target: 'principal_interest',
