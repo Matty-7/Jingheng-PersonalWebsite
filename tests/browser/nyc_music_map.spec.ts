@@ -163,14 +163,14 @@ test('changing a place preserves a playing preview and changing the song clears 
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) => route.fulfill({ status: 200, contentType: 'audio/wav', body: wav }));
   await page.goto('/portfolio/nyc-music-map');
   await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
-  await expect.poll(() => page.locator('audio').evaluate((audio) => audio.currentTime)).toBeGreaterThan(0);
+  await expect.poll(() => page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
   const audio_src = await page.locator('audio').getAttribute('src');
   await page.getByRole('button', { name: 'Riverside', exact: true }).click();
   await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
-  expect(await page.locator('audio').evaluate((audio) => audio.paused)).toBe(false);
+  expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
   await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
-  expect(await page.locator('audio').evaluate((audio) => audio.paused)).toBe(false);
+  expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
   await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
