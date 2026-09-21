@@ -1,4 +1,14 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+// Real pointer browsing enters the static shelf before aiming at a moving card.
+async function approach_shelf(page: Page) {
+  await page.getByRole('heading', { name: 'NYC Music Map.' }).hover();
+  const shelf = page.locator('.sound-shelf');
+  await shelf.hover();
+  const paused = await shelf.evaluate((element) => element.scrollLeft);
+  await page.waitForTimeout(200);
+  expect(await shelf.evaluate((element) => element.scrollLeft)).toBe(paused);
+}
 
 test('music selection keeps the recording, place and Google map together', async ({ page }) => {
   await page.goto('/portfolio/nyc-music-map');
@@ -12,6 +22,7 @@ test('music selection keeps the recording, place and Google map together', async
   const external_query = new URL((await map_link.getAttribute('href'))!).searchParams.get('query');
   expect(new URL((await map_frame.getAttribute('src'))!).searchParams.get('q')).toBe(external_query);
   await expect(page.getByRole('region', { name: 'Map of Riverside' })).toContainText('Representative point');
+  await approach_shelf(page);
   await page.getByRole('button', { name: 'Select Cornelia Street by Taylor Swift', exact: true }).click();
   await expect(page.getByRole('article', { name: 'Selected song' })).toContainText('Taylor Swift');
   await expect(page.locator('iframe[title="Google Maps: Cornelia Street"]')).toBeVisible();
@@ -35,6 +46,7 @@ test('failed preview and map requests leave usable links and silent selection', 
   await expect(page.getByText('This preview is unavailable. You can still open the song on Apple Music.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Listen on Apple Music', exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Open in Google Maps', exact: true })).toBeVisible();
+  await approach_shelf(page);
   await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
   await expect(page.getByRole('button', { name: 'Play preview of Chelsea Hotel #2', exact: true })).toBeVisible();
@@ -163,14 +175,6 @@ test('overview remains selectable when tiles fail and keyboard clusters expand',
 });
 
 test('changing a place preserves a playing preview and changing the song clears it', async ({ page }) => {
-  const approach_shelf = async () => {
-    await page.getByRole('heading', { name: 'NYC Music Map.' }).hover();
-    const shelf = page.locator('.sound-shelf');
-    await shelf.hover();
-    const paused = await shelf.evaluate((element) => element.scrollLeft);
-    await page.waitForTimeout(200);
-    expect(await shelf.evaluate((element) => element.scrollLeft)).toBe(paused);
-  };
   const sample_count = 8000 * 30;
   const wav = Buffer.alloc(44 + sample_count * 2);
   wav.write('RIFF', 0); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt ', 8);
@@ -189,13 +193,13 @@ test('changing a place preserves a playing preview and changing the song clears 
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
   await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
   expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
-  await approach_shelf();
+  await approach_shelf(page);
   await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Riverside: New York State of Mind/ })).toHaveClass(/is-selected/);
   await expect(page.getByRole('button', { name: 'Riverside', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
   expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
-  await approach_shelf();
+  await approach_shelf(page);
   await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
@@ -206,6 +210,7 @@ test('manual wheel and arrow browsing resume automatically while the pointer sta
   await page.goto('/portfolio/nyc-music-map');
   const shelf = page.locator('.sound-shelf');
   const position = () => shelf.evaluate((element) => element.scrollLeft);
+  await approach_shelf(page);
   await shelf.locator('button').first().click();
   await shelf.hover();
   const before = await position();
