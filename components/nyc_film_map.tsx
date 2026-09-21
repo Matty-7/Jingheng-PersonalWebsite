@@ -302,7 +302,8 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
             maxClusterRadius: 64,
             disableClusteringAtZoom: 16,
             showCoverageOnHover: false,
-            animate: !reduce_motion(),
+            // Keep cluster mounting synchronous while the camera handles motion.
+            animate: false,
             iconCreateFunction: (cluster) => {
               const count = cluster.getChildCount();
               cluster.options.title = `${count} filming locations. Zoom to expand.`;
