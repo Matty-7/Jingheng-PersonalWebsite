@@ -108,7 +108,7 @@ test('all places include shared recordings and survive catalog filtering', async
   await expect(page.getByRole('searchbox')).toHaveValue('');
   await expect(page.getByRole('region', { name: 'Map of all songs' })).toBeVisible();
   await page.getByRole('button', { name: 'Select Coney Island Baby by Lou Reed', exact: true }).press('Enter');
-  const island = page.getByRole('button', { name: /^Coney Island: Coney Island Baby/ });
+  const island = page.getByRole('button', { name: /^Coney Island:/ });
   await island.press('Enter');
   await page.getByRole('button', { name: 'Choose coney island (feat. The National) by Taylor Swift at Coney Island', exact: true }).click();
   await expect(page.getByRole('article', { name: 'Selected song' })).toContainText('Taylor Swift');
