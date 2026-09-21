@@ -1381,7 +1381,7 @@
       "title": "Harlem On My Mind",
       "artist": "Ethel Waters",
       "album": "The Incomparable Ethel Waters",
-      "year": 1926,
+      "year": null,
       "genre": "Vocal Jazz",
       "track_id": 197884527,
       "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/92/16/1c/mzi.hnqkdysf.jpg/600x600bb.jpg",
@@ -2085,7 +2085,7 @@
       "title": "Grand Central (feat. John Coltrane)",
       "artist": "Cannonball Adderley Quintet",
       "album": "Ultimate Cannonball Adderley",
-      "year": 1937,
+      "year": null,
       "genre": "Jazz",
       "track_id": 1434886339,
       "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/1a/e5/4e/1ae54e60-e713-8d87-e1c1-fddcc771157f/00602567828464.rgb.jpg/600x600bb.jpg",
@@ -2101,50 +2101,6 @@
       "source_url": "https://music.apple.com/us/album/grand-central-feat-john-coltrane/1434886212?i=1434886339&uo=4",
       "source_label": "Apple Music · recording and title",
       "note": "Cannonball Adderley’s quintet, with John Coltrane, names Grand Central in this instrumental. The title association does not imply a performance in the terminal."
-    },
-    {
-      "id": "east-river-drive-grover-washington-jr",
-      "title": "East River Drive",
-      "artist": "Grover Washington, Jr.",
-      "album": "Love Songs",
-      "year": 1981,
-      "genre": "Jazz",
-      "track_id": 310528151,
-      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/74/bc/84/74bc8404-2438-8dea-8e55-1be0d7d68149/mzi.slifsmno.jpg/600x600bb.jpg",
-      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b1/21/77/b1217723-d967-0a6b-8dc7-825db629da15/mzaf_17748867860798291520.plus.aac.p.m4a",
-      "apple_music_url": "https://music.apple.com/us/album/east-river-drive/310527525?i=310528151&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=Grover+Washington+Jr+East+River+Drive&entity=song&country=us&limit=20",
-      "metadata_release_date": "1981-11-20T12:00:00Z",
-      "place_ids": [
-        "east-river-drive"
-      ],
-      "relation": "Title",
-      "excerpt": "",
-      "source_url": "https://music.apple.com/us/album/east-river-drive/310527525?i=310528151&uo=4",
-      "source_label": "Apple Music · recording and title",
-      "note": "Grover Washington, Jr. performs East River Drive. The older road name is represented by the FDR Drive corridor along Manhattan’s East Side."
-    },
-    {
-      "id": "east-river-drive-stanley-clarke",
-      "title": "East River Drive",
-      "artist": "Stanley Clarke",
-      "album": "EAST RIVER DRIVE",
-      "year": 1993,
-      "genre": "Jazz",
-      "track_id": 272693795,
-      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/8e/05/c1/8e05c1e8-067c-c572-c457-b335473118dd/mzi.jntpdfhj.jpg/600x600bb.jpg",
-      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/20/ff/3f/20ff3f3f-f45c-b59f-59b2-f0571f84255b/mzaf_11930454629533745225.plus.aac.p.m4a",
-      "apple_music_url": "https://music.apple.com/us/album/east-river-drive/272693726?i=272693795&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=Stanley+Clarke+East+River+Drive&entity=song&country=us&limit=20",
-      "metadata_release_date": "1993-08-24T07:00:00Z",
-      "place_ids": [
-        "east-river-drive"
-      ],
-      "relation": "Title",
-      "excerpt": "",
-      "source_url": "https://music.apple.com/us/album/east-river-drive/272693726?i=272693795&uo=4",
-      "source_label": "Apple Music · recording and title",
-      "note": "Stanley Clarke’s performance shares the East River Drive title and road marker with Grover Washington, Jr. It is a different recording, not an additional geographic claim."
     },
     {
       "id": "east-river-the-brecker-brothers",
@@ -2886,19 +2842,6 @@
         -73.9772
       ],
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7527&mlon=-73.9772#map=16/40.7527/-73.9772"
-    },
-    {
-      "id": "east-river-drive",
-      "name": "East River Drive / FDR Drive",
-      "area": "East Side, Manhattan",
-      "precision": "Representative point",
-      "map_query": "East River Drive / FDR Drive, East Side, Manhattan, New York, NY",
-      "note": "East River Drive is the older name associated with FDR Drive. This representative point marks the road corridor, not an invitation to enter the roadway.",
-      "coordinates": [
-        40.7487,
-        -73.9674
-      ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7487&mlon=-73.9674#map=16/40.7487/-73.9674"
     },
     {
       "id": "east-river",

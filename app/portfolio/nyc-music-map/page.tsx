@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { BrandMark } from '@/components/brand_mark';
 import { NycMusicMap } from '@/components/nyc_music_map';
+import { google_maps_embed_key } from '@/lib/google_maps_config';
 import { pageMetadata } from '@/lib/seo';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
@@ -12,7 +13,7 @@ export default function NycMusicMapPage() {
   return <main className="sound-page">
     <nav className="sound-nav" aria-label="Projects navigation"><Link href="/" className="brand-link" aria-label="Jingheng Huan home"><BrandMark /></Link><span>JINGHENG HUAN / PROJECTS</span><Link href="/#projects">← Projects</Link></nav>
     <header className="sound-heading"><h1>NYC Music <em>Map.</em></h1><p>Find the places inside the songs.</p></header>
-    <NycMusicMap />
+    <NycMusicMap google_maps_key={google_maps_embed_key()} />
     <footer className="sound-footnote"><p>A growing collection of places named in song titles and lyrics. Show all places to explore the collection together, or open a selected place in Google Maps. Street and neighborhood references are labeled with their geographic scope.</p><p>Discover the full recordings on Apple Music. Previews are streamed from Apple and may vary by region. Short excerpts are linked to their sources. Reviewed September 20, 2026.</p><Link href="/portfolio/nyc-film-map">Explore the NYC Film Map <span aria-hidden="true">↗</span></Link></footer>
   </main>;
 }

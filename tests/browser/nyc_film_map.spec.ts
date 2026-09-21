@@ -80,3 +80,31 @@ test('failed tiles and frames retain usable scene references and Google links', 
   await expect(details.getByRole('link', { name: 'Open in Google Maps' })).toBeVisible();
   await expect(details.getByRole('link', { name: 'Filming reference' })).toHaveAttribute('href', 'https://onthesetofnewyork.com/youvegotmail.html');
 });
+
+
+test('selected film place uses one free Google embed and retains its keyless link', async ({ page }) => {
+  let intercepted_maps = 0;
+  await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => { intercepted_maps += 1; return route.abort(); });
+  await page.goto('/portfolio/nyc-film-map');
+  const frames = page.locator('iframe.cinema-google-map');
+  await expect(frames).toHaveCount(0);
+  await page.locator('.cinema-place-button').first().click();
+  await expect(frames).toHaveCount(1);
+  await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
+  const frame_url = new URL((await frames.getAttribute('src'))!);
+  expect(frame_url.origin).toBe('https://www.google.com');
+  expect(frame_url.pathname).toBe('/maps/embed/v1/place');
+  expect(frame_url.searchParams.get('key')).toBe('maps-embed-test-only');
+  expect(frame_url.searchParams.get('zoom')).toBe('16');
+  const link_url = new URL((await page.locator('details[open] .cinema-google-link').getAttribute('href'))!);
+  expect(link_url.searchParams.has('key')).toBe(false);
+  expect(link_url.searchParams.get('query')).toBe(frame_url.searchParams.get('q'));
+  await page.locator('.cinema-place-button').nth(1).click();
+  await expect(frames).toHaveCount(1);
+  await page.locator('details[open]').getByRole('button', { name: 'Close location details' }).click();
+  await expect(frames).toHaveCount(0);
+  await page.locator('.cinema-place-button').first().click();
+  await expect(frames).toHaveCount(1);
+  await page.getByRole('searchbox').fill('zzzz-no-location');
+  await expect(frames).toHaveCount(0);
+});
