@@ -11,6 +11,7 @@ import { RoomScene } from '@/components/room_scene';
 import { TerminalScene } from '@/components/terminal_scene';
 import { PlaybillCollection } from '@/components/playbill_collection';
 import { SocialIcon } from '@/components/social_icon';
+import { ProjectMapPreview } from '@/components/project_map_preview';
 import films from '@/content/films.json';
 import film_map_summary from '@/content/nyc_film_map_summary.json';
 import { Bookshelf } from '@/components/bookshelf';
@@ -318,10 +319,15 @@ export default function Home() {
               <p>Find the places named in songs, from Bleecker Street to the Queensboro Bridge. Hear a preview and explore the city on Google Maps.</p>
               <Link href="/portfolio/nyc-music-map" className="text-link">Explore songs and places <span aria-hidden="true">↗</span></Link>
             </div>
-            <Link href="/portfolio/nyc-music-map" className="project-music-preview" aria-label="Open NYC Music Map">
-              <Image src="/images/records/new-york-state-of-mind.jpg" alt="" width={180} height={180} unoptimized loading="lazy" />
-              <span><small>NEW YORK, ON RECORD</small><strong>Find the places<br /><em>inside the songs.</em></strong><span>{music_catalog.tracks.length} songs · {music_catalog.places.length} places <span aria-hidden="true">↗</span></span></span>
-            </Link>
+            <ProjectMapPreview
+              href="/portfolio/nyc-music-map"
+              label="Open NYC Music Map"
+              artwork={{ src: '/images/records/new-york-state-of-mind.jpg', alt: 'Turnstiles by Billy Joel', width: 600, height: 600 }}
+              eyebrow="NEW YORK, ON RECORD"
+              headline="Find the places"
+              emphasis="inside the songs."
+              summary={`${music_catalog.tracks.length} songs · ${music_catalog.places.length} places`}
+            />
           </article>
           <article className="projects-entry projects-film-entry" data-reveal>
             <div className="projects-copy">
@@ -329,13 +335,15 @@ export default function Home() {
               <p>New York through the movies. Explore real filming locations, match the scene to the street, and open each place in Google Maps.</p>
               <Link href="/portfolio/nyc-film-map" className="text-link">Explore film locations <span aria-hidden="true">↗</span></Link>
             </div>
-            <Link className="project-film-preview" href="/portfolio/nyc-film-map" aria-label="Open NYC Film Map">
-              <Image className="project-film-still" src="/images/film-map/manhattan--sutton-square.jpg" alt="Isaac and Mary looking toward the Queensboro Bridge in Manhattan (1979)" width={565} height={240} unoptimized loading="lazy" />
-              <span>ON LOCATION / NEW YORK CITY</span>
-              <strong>From the screen<br /><em>to the street.</em></strong>
-              <span className="project-film-pair"><span>Manhattan<small>WOODY ALLEN · 1979</small></span><span>Film frame<small>VIA otsoNY</small></span></span>
-              <span className="project-film-footer">{film_map_summary.film_count} films · {film_map_summary.place_count} places <span aria-hidden="true">↗</span></span>
-            </Link>
+            <ProjectMapPreview
+              href="/portfolio/nyc-film-map"
+              label="Open NYC Film Map"
+              artwork={{ src: '/images/films/north-by-northwest.jpg', alt: 'North by Northwest poster with a light impressionist treatment', width: 500, height: 759 }}
+              eyebrow="NEW YORK, ON SCREEN"
+              headline="From the screen"
+              emphasis="to the street."
+              summary={`${film_map_summary.film_count} films · ${film_map_summary.place_count} places`}
+            />
           </article>
           <article className="projects-entry projects-literary-entry" data-reveal>
             <div className="projects-copy">
@@ -343,15 +351,15 @@ export default function Home() {
               <p>Read New York through the places in its books and magazines. Explore original passages, real covers and the streets behind the words.</p>
               <Link href="/portfolio/nyc-literary-map" className="text-link">Explore literary places <span aria-hidden="true">↗</span></Link>
             </div>
-            <Link className="project-literary-preview" href="/portfolio/nyc-literary-map" aria-label="Open NYC Literary Map">
-              <span>NEW YORK, IN PRINT</span>
-              <div className="project-literary-covers">
-                <Image unoptimized src="/images/literary-map/washington-square.jpg" width={100} height={150} alt="Washington Square by Henry James" loading="lazy" />
-                <Image unoptimized src="/images/literary-map/great-gatsby.jpg" width={100} height={150} alt="The Great Gatsby by F. Scott Fitzgerald" loading="lazy" />
-                <Image unoptimized src="/images/literary-map/new-yorker-1940-04-13.jpg" width={100} height={150} alt="The New Yorker, April 13, 1940" loading="lazy" />
-              </div>
-              <span>Books, magazines &amp; the city <span aria-hidden="true">↗</span></span>
-            </Link>
+            <ProjectMapPreview
+              href="/portfolio/nyc-literary-map"
+              label="Open NYC Literary Map"
+              artwork={{ src: '/images/literary-map/great-gatsby.jpg', alt: 'The Great Gatsby by F. Scott Fitzgerald', width: 600, height: 850 }}
+              eyebrow="NEW YORK, IN PRINT"
+              headline="Read the city"
+              emphasis="through its pages."
+              summary="Books, magazines & the city"
+            />
           </article>
         </section>
         <RecordsPlayer />
