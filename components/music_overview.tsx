@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import type * as Leaflet from 'leaflet';
 import { music_places, music_tracks, type MusicTrack } from '@/lib/nyc_music_map';
 
+export type MusicFocus = { place_id: string };
+
 type OverviewState = { map: Leaflet.Map; markers: Map<string, Leaflet.Marker> };
 
-export function MusicOverview({ selected_place_id, fit_request, on_select }: { selected_place_id: string; fit_request: number; on_select: (track: MusicTrack, place_id: string) => void }) {
+export function MusicOverview({ selected_place_id, fit_request, focus_request, on_select }: { selected_place_id: string; fit_request: number; focus_request: MusicFocus | null; on_select: (track: MusicTrack, place_id: string) => void }) {
   const container = useRef<HTMLDivElement>(null);
   const selection = useRef(on_select);
   const selected_id = useRef(selected_place_id);
@@ -33,7 +35,7 @@ export function MusicOverview({ selected_place_id, fit_request, on_select }: { s
       tiles.on('tileload', () => { loaded_tiles++; if (!disposed) set_status('ready'); });
       tiles.on('load', () => { clearTimeout(timeout); if (!disposed) set_status(loaded_tiles ? 'ready' : 'error'); });
       tiles.addTo(map);
-      const cluster = leaflet.markerClusterGroup({ showCoverageOnHover: false, animate: !reduce_motion, maxClusterRadius: 32, spiderfyOnMaxZoom: true, iconCreateFunction: (group) => {
+      const cluster = leaflet.markerClusterGroup({ showCoverageOnHover: false, animate: false, maxClusterRadius: 32, spiderfyOnMaxZoom: true, iconCreateFunction: (group) => {
         const count = group.getChildCount();
         group.options.title = `${count} music places. Zoom to expand.`;
         const icon = leaflet.divIcon({ className: 'sound-cluster', html: `<span aria-hidden="true">${count}<small>places</small></span>`, iconSize: [46, 46] });
@@ -51,7 +53,7 @@ export function MusicOverview({ selected_place_id, fit_request, on_select }: { s
         if (keyboard_event.originalEvent.key !== ' ') return;
         leaflet.DomEvent.stop(keyboard_event.originalEvent);
         if (map!.getZoom() === map!.getMaxZoom()) keyboard_event.propagatedFrom.spiderfy();
-        else keyboard_event.propagatedFrom.zoomToBounds({ animate: !reduce_motion });
+        else keyboard_event.propagatedFrom.zoomToBounds({ animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches });
         map!.getContainer().focus({ preventScroll: true });
       });
       const markers = new Map<string, Leaflet.Marker>();
@@ -95,9 +97,29 @@ export function MusicOverview({ selected_place_id, fit_request, on_select }: { s
 
   useEffect(() => {
     if (!instance || !container.current?.classList.contains('leaflet-container')) return;
+    instance.map.stop();
     instance.map.closePopup();
     instance.map.fitBounds(music_places.map((place) => place.coordinates as [number, number]), { padding: [32, 32], maxZoom: 13, animate: false });
   }, [instance, fit_request]);
+
+  useEffect(() => {
+    if (!instance || !focus_request) return;
+    const place = music_places.find((item) => item.id === focus_request.place_id);
+    if (!place) return;
+    const reduce_motion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const zoom = place.precision === 'City' ? 10 : place.precision === 'Borough' ? 11 : place.precision === 'Area' ? 13 : place.precision === 'Neighborhood' ? 14 : 16;
+    instance.map.stop();
+    if (reduce_motion) instance.map.setView(place.coordinates as [number, number], zoom, { animate: false });
+    else instance.map.flyTo(place.coordinates as [number, number], zoom, { duration: .5 });
+  }, [instance, focus_request]);
+
+  useEffect(() => {
+    if (!instance) return;
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => { if (media.matches) instance.map.stop(); };
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, [instance]);
 
   useEffect(() => {
     instance?.markers.forEach((marker, id) => {
