@@ -86,7 +86,9 @@ test('literary links restore reading and search without losing Back and Forward'
 test('music links restore a place and allow pointer and keyboard selections after reload', async ({
   page,
 }) => {
-  await page.goto('/portfolio/nyc-music-map?place=riverside');
+  await page.goto(
+    '/portfolio/nyc-music-map?track=new-york-state-of-mind&place=riverside',
+  );
   await expect(
     page.getByRole('button', { name: 'Riverside', exact: true }),
   ).toHaveAttribute('aria-pressed', 'true');
@@ -133,7 +135,7 @@ test('music links restore a place and allow pointer and keyboard selections afte
   );
   await expect(
     page.getByRole('button', {
-      name: 'Select New York State of Mind by Billy Joel',
+      name: 'Select Bushwick Blues by Delta Spirit',
     }),
   ).toHaveAttribute('aria-pressed', 'true');
 });
@@ -158,7 +160,7 @@ test('music history keeps same-song playback and stops it when the recording cha
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) =>
     route.fulfill({ status: 200, contentType: 'audio/wav', body: wav }),
   );
-  await page.goto('/portfolio/nyc-music-map');
+  await page.goto('/portfolio/nyc-music-map?track=new-york-state-of-mind');
   await expect(page.getByRole('searchbox')).toBeEnabled();
   await page
     .getByRole('button', {
@@ -200,7 +202,9 @@ test('music history keeps same-song playback and stops it when the recording cha
 test('cross-map history preserves the destination map parameters after reload', async ({
   page,
 }) => {
-  await page.goto('/portfolio/nyc-music-map?place=riverside');
+  await page.goto(
+    '/portfolio/nyc-music-map?track=new-york-state-of-mind&place=riverside',
+  );
   await expect(
     page.getByRole('button', { name: 'Riverside', exact: true }),
   ).toHaveAttribute('aria-pressed', 'true');

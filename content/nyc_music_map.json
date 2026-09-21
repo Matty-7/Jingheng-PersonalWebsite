@@ -2,6 +2,407 @@
   "reviewed_on": "2026-09-20",
   "tracks": [
     {
+      "id": "bushwick-blues",
+      "title": "Bushwick Blues",
+      "artist": "Delta Spirit",
+      "album": "History from Below",
+      "year": 2010,
+      "genre": "Blues",
+      "track_id": 1443137632,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/15/5f/d8/155fd875-0c57-4de2-a2f9-036d7f6a86c3/00011661909823.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d4/ad/5c/d4ad5cee-8886-47ab-3b06-44776607a0fc/mzaf_3211218902829159549.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/bushwick-blues/1443137474?i=1443137632&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Delta+Spirit+Bushwick+Blues&entity=song&country=us&limit=10",
+      "metadata_release_date": "2010-01-01T12:00:00Z",
+      "place_ids": [
+        "bushwick"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Bushwick enters by name in the title. The map stays at neighborhood scale, leaving the song’s remembered relationship without an invented address.",
+      "source_url": "https://music.apple.com/us/album/bushwick-blues/1443137474?i=1443137632&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "queensbridge-politics-nas",
+      "title": "QueensBridge Politics",
+      "artist": "Nas",
+      "album": "The Lost Tapes 2",
+      "year": 2019,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 1472443714,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a1/8a/a3/a18aa3e9-f9ba-ffd0-e865-b0bf87008c68/19UMGIM64346.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5d/8b/48/5d8b4835-2910-e941-0ac0-830e73558563/mzaf_17003179206174379857.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/queensbridge-politics/1472443662?i=1472443714&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Nas+Queensbridge+Politics&entity=song&country=us&limit=8",
+      "metadata_release_date": "2019-07-19T07:00:00Z",
+      "place_ids": [
+        "queensbridge"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/queensbridge-politics/1472443662?i=1472443714&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Nas narrows the map from Queens to Queensbridge. The title identifies a neighborhood, not an individual residential building."
+    },
+    {
+      "id": "luckiest-guy-lower-east-side",
+      "title": "The Luckiest Guy on the Lower East Side",
+      "artist": "The Magnetic Fields",
+      "album": "69 Love Songs",
+      "year": 1999,
+      "genre": "Rock",
+      "track_id": 1839158722,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c3/58/a5/c358a5e7-f4de-b068-e831-fb2ac7de53d2/57123.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ee/1d/f3/ee1df3da-7300-9976-20fe-710d36c9e8fe/mzaf_8407374706440801066.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-luckiest-guy-on-the-lower-east-side/1839158450?i=1839158722&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Magnetic+Fields+The+Luckiest+Guy+on+the+Lower+East+Side&entity=song&country=us&limit=10",
+      "metadata_release_date": "1999-09-07T12:00:00Z",
+      "place_ids": [
+        "lower-east-side"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title gives the romantic narrator a neighborhood: the Lower East Side. His particular route and parking spot remain unmarked.",
+      "source_url": "https://music.apple.com/us/album/the-luckiest-guy-on-the-lower-east-side/1839158450?i=1839158722&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "me-and-julio",
+      "title": "Me and Julio Down by the Schoolyard",
+      "artist": "Paul Simon",
+      "album": "Paul Simon (Bonus Tracks Edition)",
+      "year": 1972,
+      "genre": "Folk",
+      "track_id": 380588841,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/f1/e8/7af1e8d1-1fa6-4e18-0359-2f412a1fd352/ticket.gjprexdn.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b7/ea/ee/b7eaee87-b461-94ee-0d4e-381787cacd83/mzaf_58376405716878275.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/me-and-julio-down-by-the-schoolyard/380588824?i=380588841&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Paul+Simon+Me+and+Julio+Down+by+the+Schoolyard&entity=song&country=us&limit=10",
+      "metadata_release_date": "1972-01-24T08:00:00Z",
+      "place_ids": [
+        "corona"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "the Queen of Corona",
+      "note": "Rosie’s title points to Corona in Queens. The lyric supplies a neighborhood but never names the schoolyard, so the map does not invent one.",
+      "source_url": "https://www.paulsimon.com/song/me-and-julio-down-by-the-schoolyard/",
+      "source_label": "Paul Simon · official lyrics"
+    },
+    {
+      "id": "bed-stuy-is-burning",
+      "title": "Bed-Stuy is Burning (feat. Hypnotic Brass Ensemble)",
+      "artist": "Skyzoo",
+      "album": "All the Brilliant Things",
+      "year": 2021,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 6793293301,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a9/bd/09/a9bd09fd-c1ef-fcc1-6296-7844e90efc8f/196006027094.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/bc/f3/aabcf325-ae3b-8dbd-9630-533f93fbd5e0/mzaf_889732985027154227.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/bed-stuy-is-burning-feat-hypnotic-brass-ensemble/6793293026?i=6793293301&uo=4",
+      "metadata_source": "https://itunes.apple.com/lookup?id=6793293026&entity=song&country=us",
+      "metadata_release_date": "2021-04-28T12:00:00Z",
+      "place_ids": [
+        "bed-stuy"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Skyzoo centers Bedford-Stuyvesant and the changing community around him. The neighborhood is the subject; no single address stands in for its residents.",
+      "source_url": "https://mmg-skyzoo.bandcamp.com/track/bed-stuy-is-burning-feat-hypnotic-brass-ensemble",
+      "source_label": "Skyzoo / Mello Music Group · song and lyrics"
+    },
+    {
+      "id": "christmas-in-hollis",
+      "title": "Christmas In Hollis",
+      "artist": "Run-DMC",
+      "album": "Tougher Than Leather (Expanded Edition)",
+      "year": 1987,
+      "genre": "Holiday",
+      "track_id": 251085737,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d2/2f/33/d22f33bc-55e6-182c-182e-d0b609d8174e/828766955927.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/70/36/a57036e2-b7ba-1c19-13b9-7025a3f2cd3f/mzaf_15175093160605342765.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/christmas-in-hollis/251085283?i=251085737&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=RUN+DMC+Christmas+in+Hollis&entity=song&country=us&limit=8",
+      "metadata_release_date": "1987-11-25T08:00:00Z",
+      "place_ids": [
+        "hollis"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Run-DMC gives the holiday a Queens address at neighborhood scale. Hollis is the named setting, without turning the family story into a home tour.",
+      "source_url": "https://en.wikipedia.org/wiki/Christmas_in_Hollis",
+      "source_label": "Song and Hollis background"
+    },
+    {
+      "id": "utopia-parkway",
+      "title": "Utopia Parkway",
+      "artist": "Fountains Of Wayne",
+      "album": "Utopia Parkway",
+      "year": 1999,
+      "genre": "Pop",
+      "track_id": 281709710,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/67/15/69/mzi.mzhoidsj.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3a/ee/1f/3aee1f24-439a-0cf5-9226-055493242939/mzaf_17579287240055312441.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/utopia-parkway/281709694?i=281709710&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Fountains+of+Wayne+Utopia+Parkway&entity=song&country=us&limit=10",
+      "metadata_release_date": "1990-01-01T12:00:00Z",
+      "place_ids": [
+        "utopia-parkway"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title follows the Queens road running through the area between Flushing and Jamaica. The marker is one reference along it, not the narrator’s exact location.",
+      "source_url": "https://www.untappedcities.com/history-of-streets-queens-utopia-parkway-is-more-than-just-a-pop-album/",
+      "source_label": "Utopia Parkway · street and song history"
+    },
+    {
+      "id": "canal-street-rocky",
+      "title": "Canal St. (feat. Bones)",
+      "artist": "A$AP Rocky",
+      "album": "AT.LONG.LAST.A$AP",
+      "year": 2015,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 994721490,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9f/9b/4c/9f9b4cbc-5910-51fb-8486-adf3b89bc973/886444594837.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/4a/bf/d84abfc1-0463-e933-6935-dc223d417138/mzaf_5582411017893804354.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/canal-st-feat-bones/994721471?i=994721490&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=ASAP+Rocky+Canal+St&entity=song&country=us&limit=8",
+      "metadata_release_date": "2015-05-26T07:00:00Z",
+      "place_ids": [
+        "canal-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Canal Street supplies the title’s specific downtown reference. The map marks the street rather than claiming a particular shop or scene.",
+      "source_url": "https://music.apple.com/us/album/canal-st-feat-bones/994721471?i=994721490&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "toms-diner",
+      "title": "Tom's Diner (A Cappella)",
+      "artist": "Suzanne Vega",
+      "album": "Solitude Standing",
+      "year": 1987,
+      "genre": "Rock",
+      "track_id": 1444012604,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/1a/a6/b4/1aa6b49e-6018-f8ba-c346-713d3c4ba24b/00075021513624.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/b8/b5/39b8b5c0-418b-abc5-d99a-e5d58bd5eb91/mzaf_16795076917487923449.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/toms-diner-a-cappella/1444012381?i=1444012604&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Suzanne+Vega+Tom%27s+Diner&entity=song&country=us&limit=10",
+      "metadata_release_date": "1987-01-01T12:00:00Z",
+      "place_ids": [
+        "toms-restaurant"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Vega’s diner is Tom’s Restaurant at Broadway and West 112th Street in Morningside Heights. This recording is the a cappella version, rather than the later DNA remix.",
+      "source_url": "https://en.wikipedia.org/wiki/Tom%27s_Diner",
+      "source_label": "Song background · Tom’s Restaurant"
+    },
+    {
+      "id": "east-broadway-run-down",
+      "title": "East Broadway Run Down",
+      "artist": "Sonny Rollins",
+      "album": "East Broadway Run Down",
+      "year": 1966,
+      "genre": "Jazz",
+      "track_id": 1458070071,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/50/26/d8/5026d800-d959-e3ac-1164-db3eeeccb251/00602577650116.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/34/af/bb/34afbb37-62cd-266c-f052-34270e5b238f/mzaf_16447145861190533880.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/east-broadway-run-down/1458070067?i=1458070071&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sonny+Rollins+East+Broadway+Run+Down&entity=song&country=us&limit=10",
+      "metadata_release_date": "1966-01-01T12:00:00Z",
+      "place_ids": [
+        "east-broadway"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Rollins puts East Broadway on the record sleeve. This instrumental contributes a street-level title association, without a lyric or an invented performance venue.",
+      "source_url": "https://music.apple.com/us/album/east-broadway-run-down/1458070067?i=1458070071&uo=4",
+      "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "sixth-avenue-heartache",
+      "title": "6th Avenue Heartache",
+      "artist": "The Wallflowers",
+      "album": "Bringing Down the Horse",
+      "year": 1996,
+      "genre": "Rock",
+      "track_id": 1440842488,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/83/b6/3a/83b63a4d-2e5b-5471-c5ca-9ac9120c1811/00602547759221.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c4/90/8d/c4908dc8-01cc-c3b0-387e-31ace811d700/mzaf_11156775137647734191.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/6th-avenue-heartache/1440842473?i=1440842488&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Wallflowers+Sixth+Avenue+Heartache&entity=song&country=us&limit=10",
+      "metadata_release_date": "1996-01-01T12:00:00Z",
+      "place_ids": [
+        "sixth-avenue"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title names Sixth Avenue, and the song’s New York background is documented. The map keeps the reference on the avenue without guessing which window or building supplied the story.",
+      "source_url": "https://en.wikipedia.org/wiki/6th_Avenue_Heartache",
+      "source_label": "Song background · Sixth Avenue"
+    },
+    {
+      "id": "23rd-street-lullaby",
+      "title": "23rd Street Lullaby",
+      "artist": "Patti Scialfa",
+      "album": "23rd Street Lullaby",
+      "year": 2004,
+      "genre": "Rock",
+      "track_id": 158744173,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features/d4/8c/ac/dj.ffqynvuu.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/08/a6/6b/08a66b25-8aeb-63f6-44b0-c541e1593355/mzaf_10942363814390612382.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/23rd-street-lullaby/158744168?i=158744173&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Patti+Scialfa+23rd+Street+Lullaby&entity=song&country=us&limit=10",
+      "metadata_release_date": "2004-05-21T12:00:00Z",
+      "place_ids": [
+        "23rd-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "Scialfa’s title returns to 23rd Street and her earlier New York life. A street reference keeps that memory local without identifying a former apartment.",
+      "source_url": "https://www.keranews.org/2004-07-27/patti-scialfa-from-e-street-to-23rd-street",
+      "source_label": "Patti Scialfa · NPR interview"
+    },
+    {
+      "id": "mermaids-avenue",
+      "title": "Mermaid's Avenue",
+      "artist": "The Klezmatics",
+      "album": "Wonder Wheel",
+      "year": 2006,
+      "genre": "Worldwide",
+      "track_id": 665687373,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/ce/eb/ed/ceebed24-0f31-aed9-cd97-3e45268d302a/888002667939.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/70/59/92/7059921d-9840-baae-2297-ffafecb88663/mzaf_11895217268336353452.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/mermaids-avenue/665687371?i=665687373&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Klezmatics+Mermaid%27s+Avenue&entity=song&country=us&limit=10",
+      "metadata_release_date": "2006-07-25T12:00:00Z",
+      "place_ids": [
+        "mermaid-avenue"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The Klezmatics set Woody Guthrie’s Mermaid Avenue words to music. The reference is the Coney Island street, not the separately titled Billy Bragg and Wilco album.",
+      "source_url": "https://en.wikipedia.org/wiki/Mermaid%27s_Avenue",
+      "source_label": "Song and Coney Island street background"
+    },
+    {
+      "id": "coney-island-steeplechase-the-velvet-underground",
+      "title": "Coney Island Steeplechase",
+      "artist": "The Velvet Underground",
+      "album": "Another View",
+      "year": 1986,
+      "genre": "Rock",
+      "track_id": 1469552711,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/69/41/40/69414077-7f61-2382-7d4f-a6001423cac4/06UMGIM03554.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/53/35/14/53351446-fa09-d693-4926-d700000a2290/mzaf_18411366663193066493.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/coney-island-steeplechase/1469552322?i=1469552711&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Velvet+Underground+Coney+Island+Steeplechase&entity=song&country=us&limit=8",
+      "metadata_release_date": "1986-01-01T12:00:00Z",
+      "place_ids": [
+        "steeplechase-park",
+        "coney-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/coney-island-steeplechase/1469552322?i=1469552711&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Velvet Underground adds another Coney Island title. The map uses the neighborhood rather than inventing a precise surviving attraction. The separate Steeplechase marker represents the former amusement park site."
+    },
+    {
+      "id": "hard-times-new-york-town",
+      "title": "Hard Times In New York Town",
+      "artist": "Bob Dylan",
+      "album": "The Bootleg Series, Vol. 9: The Witmark Demos: 1962-1964",
+      "year": 2010,
+      "genre": "Rock",
+      "track_id": 396044982,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/c0/a2/fe/c0a2fed1-6277-1565-29ff-47a30ddd8f40/dj.clsnsfsb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/43/f6/7d/43f67d0d-5667-e0bc-7e65-f8c61a46e089/mzaf_5575653852912953415.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/hard-times-in-new-york-town/396044980?i=396044982&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bob+Dylan+Hard+Times+in+New+York+Town&entity=song&country=us&limit=10",
+      "metadata_release_date": "2010-10-18T12:00:00Z",
+      "place_ids": [
+        "washington-heights",
+        "harlem",
+        "rockefeller-plaza",
+        "staten-island-ferry"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "From Washington Heights to Harlem on down",
+      "note": "Dylan moves from Washington Heights and Harlem to Rockefeller Plaza and the Staten Island Ferry. Those named places give this city-titled song several distinct locations.",
+      "source_url": "https://www.bobdylan.com/songs/hard-times-new-york-town/",
+      "source_label": "Bob Dylan · official lyrics"
+    },
+    {
+      "id": "bus-stop-82nd-street",
+      "title": "Does This Bus Stop at 82nd Street?",
+      "artist": "Bruce Springsteen",
+      "album": "Greetings from Asbury Park, N.J.",
+      "year": 1973,
+      "genre": "Rock",
+      "track_id": 285119973,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d0/4a/a2/d04aa204-3210-0ef9-6bac-cbb0905fc467/074643190329.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/86/b9/a6/86b9a6f2-3680-5878-9dcc-8534cb3415ae/mzaf_8575011102267965798.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/does-this-bus-stop-at-82nd-street/285119967?i=285119973&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bruce+Springsteen+Does+This+Bus+Stop+at+82nd+Street&entity=song&country=us&limit=10",
+      "metadata_release_date": "1973-01-05T08:00:00Z",
+      "place_ids": [
+        "82nd-street",
+        "harlem"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "Uptown in Harlem",
+      "note": "The title names 82nd Street, while the lyric reaches Harlem. The street marker is representative: it does not identify an actual bus stop or establish an exact route.",
+      "source_url": "https://brucespringsteen.net/track/does-this-bus-stop-at-82nd-street/",
+      "source_label": "Bruce Springsteen · official lyrics"
+    },
+    {
+      "id": "stompin-at-the-savoy-benny-goodman",
+      "title": "Stompin' at the Savoy",
+      "artist": "Benny Goodman",
+      "album": "B.G. in Hi-Fi",
+      "year": 1954,
+      "genre": "Jazz",
+      "track_id": 724307375,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/2e/cf/67/2ecf67c8-58cc-0ffd-b6a0-dfcb7f573288/00077779286454.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2b/73/1d/2b731d52-20a8-2bb3-23da-53fedd8cba82/mzaf_2527827360580796352.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/stompin-at-the-savoy/724305368?i=724307375&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Benny+Goodman+Stompin+at+the+Savoy&entity=song&country=us&limit=20",
+      "metadata_release_date": "1954-01-01T12:00:00Z",
+      "place_ids": [
+        "savoy-ballroom"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/stompin-at-the-savoy/724305368?i=724307375&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Savoy in this jazz standard is Harlem’s historic ballroom. The building is gone; the marker identifies its former site, not a current music venue."
+    },
+    {
+      "id": "42nd-street",
+      "title": "42nd Street",
+      "artist": "Ruby Keeler & Dick Powell",
+      "album": "1932 - 1933 In The Movies (Remastered)",
+      "year": 2010,
+      "genre": "Pop",
+      "track_id": 383888347,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/73/36/2f/mzi.vvtjbrqy.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/Music2/v4/d9/d8/dc/d9d8dcc2-480b-94d1-910f-72ec4f56407c/mzaf_1362213233814745392.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/42nd-street/383888345?i=383888347&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Dick+Powell+42nd+Street&entity=song&country=us&limit=10",
+      "metadata_release_date": "2010-07-01T12:00:00Z",
+      "place_ids": [
+        "42nd-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title song from the backstage musical celebrates 42nd Street. Its map reference is the theater-district street, without claiming the film was shot on that corner.",
+      "source_url": "https://en.wikipedia.org/wiki/42nd_Street_(song)",
+      "source_label": "42nd Street · song and musical background"
+    },
+    {
       "id": "new-york-state-of-mind",
       "title": "New York State of Mind",
       "artist": "Billy Joel",
@@ -1575,28 +1976,6 @@
       "note": "Tom Waits’s Coney Island Baby is a different composition from the Lou Reed song already on the map. Both use the Brooklyn place name in the title."
     },
     {
-      "id": "coney-island-steeplechase-the-velvet-underground",
-      "title": "Coney Island Steeplechase",
-      "artist": "The Velvet Underground",
-      "album": "Another View",
-      "year": 1986,
-      "genre": "Rock",
-      "track_id": 1469552711,
-      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/69/41/40/69414077-7f61-2382-7d4f-a6001423cac4/06UMGIM03554.rgb.jpg/600x600bb.jpg",
-      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/53/35/14/53351446-fa09-d693-4926-d700000a2290/mzaf_18411366663193066493.plus.aac.p.m4a",
-      "apple_music_url": "https://music.apple.com/us/album/coney-island-steeplechase/1469552322?i=1469552711&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=The+Velvet+Underground+Coney+Island+Steeplechase&entity=song&country=us&limit=8",
-      "metadata_release_date": "1986-01-01T12:00:00Z",
-      "place_ids": [
-        "coney-island"
-      ],
-      "relation": "Title",
-      "excerpt": "",
-      "source_url": "https://music.apple.com/us/album/coney-island-steeplechase/1469552322?i=1469552711&uo=4",
-      "source_label": "Apple Music · recording and title",
-      "note": "The Velvet Underground adds another Coney Island title. The map uses the neighborhood rather than inventing a precise surviving attraction."
-    },
-    {
       "id": "coney-island-death-cab-for-cutie",
       "title": "Coney Island",
       "artist": "Death Cab for Cutie",
@@ -1749,28 +2128,6 @@
       "source_url": "https://music.apple.com/us/album/flatbush-waltz/1478938138?i=1478938139&uo=4",
       "source_label": "Apple Music · recording and title",
       "note": "Flatbush is explicit in the instrumental’s title. The neighborhood marker gives this klezmer recording a Brooklyn setting without fabricating lyrics."
-    },
-    {
-      "id": "queensbridge-politics-nas",
-      "title": "QueensBridge Politics",
-      "artist": "Nas",
-      "album": "The Lost Tapes 2",
-      "year": 2019,
-      "genre": "Hip-Hop/Rap",
-      "track_id": 1472443714,
-      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a1/8a/a3/a18aa3e9-f9ba-ffd0-e865-b0bf87008c68/19UMGIM64346.rgb.jpg/600x600bb.jpg",
-      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5d/8b/48/5d8b4835-2910-e941-0ac0-830e73558563/mzaf_17003179206174379857.plus.aac.p.m4a",
-      "apple_music_url": "https://music.apple.com/us/album/queensbridge-politics/1472443662?i=1472443714&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=Nas+Queensbridge+Politics&entity=song&country=us&limit=8",
-      "metadata_release_date": "2019-07-19T07:00:00Z",
-      "place_ids": [
-        "queensbridge"
-      ],
-      "relation": "Title",
-      "excerpt": "",
-      "source_url": "https://music.apple.com/us/album/queensbridge-politics/1472443662?i=1472443714&uo=4",
-      "source_label": "Apple Music · recording and title",
-      "note": "Nas narrows the map from Queens to Queensbridge. The title identifies a neighborhood, not an individual residential building."
     },
     {
       "id": "ludlow-street-suzanne-vega",
@@ -2145,28 +2502,6 @@
       "source_url": "https://music.apple.com/us/album/grand-street/1444161578?i=1444161748&uo=4",
       "source_label": "Apple Music · recording and title",
       "note": "Sonny Rollins names Grand Street in this instrumental. The Lower East Side street is represented without marking an individual residence."
-    },
-    {
-      "id": "stompin-at-the-savoy-benny-goodman",
-      "title": "Stompin' at the Savoy",
-      "artist": "Benny Goodman",
-      "album": "B.G. in Hi-Fi",
-      "year": 1954,
-      "genre": "Jazz",
-      "track_id": 724307375,
-      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/2e/cf/67/2ecf67c8-58cc-0ffd-b6a0-dfcb7f573288/00077779286454.jpg/600x600bb.jpg",
-      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2b/73/1d/2b731d52-20a8-2bb3-23da-53fedd8cba82/mzaf_2527827360580796352.plus.aac.p.m4a",
-      "apple_music_url": "https://music.apple.com/us/album/stompin-at-the-savoy/724305368?i=724307375&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=Benny+Goodman+Stompin+at+the+Savoy&entity=song&country=us&limit=20",
-      "metadata_release_date": "1954-01-01T12:00:00Z",
-      "place_ids": [
-        "savoy-ballroom"
-      ],
-      "relation": "Title",
-      "excerpt": "",
-      "source_url": "https://music.apple.com/us/album/stompin-at-the-savoy/724305368?i=724307375&uo=4",
-      "source_label": "Apple Music · recording and title",
-      "note": "The Savoy in this jazz standard is Harlem’s historic ballroom. The building is gone; the marker identifies its former site, not a current music venue."
     },
     {
       "id": "the-man-from-harlem-cab-calloway",
@@ -2894,6 +3229,227 @@
         -73.9754
       ],
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.787&mlon=-73.9754#map=16/40.787/-73.9754"
+    },
+    {
+      "id": "bushwick",
+      "name": "Bushwick",
+      "area": "Brooklyn",
+      "map_query": "Bushwick, Brooklyn, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A neighborhood-scale locator near Myrtle Avenue. The song does not identify this corner or a particular apartment.",
+      "coordinates": [
+        40.6958,
+        -73.9171
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6958&mlon=-73.9171#map=16/40.6958/-73.9171"
+    },
+    {
+      "id": "bed-stuy",
+      "name": "Bedford-Stuyvesant",
+      "area": "Brooklyn",
+      "map_query": "Bedford-Stuyvesant, Brooklyn, New York, NY",
+      "precision": "Neighborhood",
+      "note": "Bed-Stuy means Bedford-Stuyvesant. The marker represents the neighborhood, not an individual home or the boundaries of redevelopment.",
+      "coordinates": [
+        40.6872,
+        -73.9418
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6872&mlon=-73.9418#map=16/40.6872/-73.9418"
+    },
+    {
+      "id": "corona",
+      "name": "Corona",
+      "area": "Queens",
+      "map_query": "Corona, Queens, New York, NY",
+      "precision": "Neighborhood",
+      "note": "Corona is named in the lyric. The representative point near Corona Plaza does not identify the song’s unnamed schoolyard.",
+      "coordinates": [
+        40.7465,
+        -73.8648
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7465&mlon=-73.8648#map=16/40.7465/-73.8648"
+    },
+    {
+      "id": "hollis",
+      "name": "Hollis",
+      "area": "Queens",
+      "map_query": "Hollis, Queens, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The title names the Queens neighborhood. This neighborhood locator does not identify a family home or a music-video address.",
+      "coordinates": [
+        40.7104,
+        -73.7662
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7104&mlon=-73.7662#map=16/40.7104/-73.7662"
+    },
+    {
+      "id": "utopia-parkway",
+      "name": "Utopia Parkway",
+      "area": "Fresh Meadows, Queens",
+      "map_query": "Utopia Parkway and 73rd Avenue, Queens, New York, NY",
+      "precision": "Representative point",
+      "note": "The marker is a representative point on the long Queens road, near 73rd Avenue. The song does not specify this intersection.",
+      "coordinates": [
+        40.7295,
+        -73.7933
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7295&mlon=-73.7933#map=16/40.7295/-73.7933"
+    },
+    {
+      "id": "lower-east-side",
+      "name": "Lower East Side",
+      "area": "Manhattan",
+      "map_query": "Lower East Side, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "The title names the neighborhood. The marker does not locate the narrator’s car, a private home or a particular encounter.",
+      "coordinates": [
+        40.7186,
+        -73.9879
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7186&mlon=-73.9879#map=16/40.7186/-73.9879"
+    },
+    {
+      "id": "canal-street",
+      "name": "Canal Street",
+      "area": "Chinatown / SoHo, Manhattan",
+      "map_query": "Canal Street and Broadway, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "Broadway is a representative reference along Canal Street. The song does not specify this intersection or a storefront.",
+      "coordinates": [
+        40.7181,
+        -74.0008
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7181&mlon=-74.0008#map=16/40.7181/-74.0008"
+    },
+    {
+      "id": "toms-restaurant",
+      "name": "Tom’s Restaurant",
+      "area": "Morningside Heights, Manhattan",
+      "map_query": "Toms Restaurant, Broadway and West 112th Street, New York, NY",
+      "precision": "Venue",
+      "note": "The song’s diner is Tom’s Restaurant at Broadway and West 112th Street. The pin identifies the public-facing restaurant, not a particular table.",
+      "coordinates": [
+        40.8054,
+        -73.9654
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8054&mlon=-73.9654#map=16/40.8054/-73.9654"
+    },
+    {
+      "id": "east-broadway",
+      "name": "East Broadway",
+      "area": "Chinatown / Lower East Side, Manhattan",
+      "map_query": "East Broadway and Rutgers Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "East Broadway is distinct from Broadway. Rutgers Street provides a representative point; the instrumental title does not specify an exact corner.",
+      "coordinates": [
+        40.7139,
+        -73.9901
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7139&mlon=-73.9901#map=16/40.7139/-73.9901"
+    },
+    {
+      "id": "sixth-avenue",
+      "name": "Sixth Avenue",
+      "area": "Manhattan",
+      "map_query": "Sixth Avenue and West 14th Street, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The marker represents Sixth Avenue at West 14th Street. It does not identify Jakob Dylan’s former window or the man described in the song.",
+      "coordinates": [
+        40.7382,
+        -73.9965
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7382&mlon=-73.9965#map=16/40.7382/-73.9965"
+    },
+    {
+      "id": "23rd-street",
+      "name": "23rd Street",
+      "area": "Chelsea, Manhattan",
+      "map_query": "West 23rd Street and Seventh Avenue, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "Seventh Avenue is an editorial reference along West 23rd Street. No former private apartment is identified.",
+      "coordinates": [
+        40.7443,
+        -73.9953
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7443&mlon=-73.9953#map=16/40.7443/-73.9953"
+    },
+    {
+      "id": "mermaid-avenue",
+      "name": "Mermaid Avenue",
+      "area": "Coney Island, Brooklyn",
+      "map_query": "Mermaid Avenue and West 20th Street, Brooklyn, New York, NY",
+      "precision": "Representative point",
+      "note": "A representative point along Mermaid Avenue. The song names the street; this map does not direct visitors to a former private home.",
+      "coordinates": [
+        40.5764,
+        -73.9864
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5764&mlon=-73.9864#map=16/40.5764/-73.9864"
+    },
+    {
+      "id": "steeplechase-park",
+      "name": "Steeplechase Park (former site)",
+      "area": "Coney Island, Brooklyn",
+      "map_query": "Steeplechase Park, Coney Island, Brooklyn, New York, NY",
+      "precision": "Representative point",
+      "note": "An approximate historical reference for the former Coney Island amusement park. It is not a claim that its rides still operate or that the recording was made here.",
+      "coordinates": [
+        40.5746,
+        -73.9837
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5746&mlon=-73.9837#map=16/40.5746/-73.9837"
+    },
+    {
+      "id": "washington-heights",
+      "name": "Washington Heights",
+      "area": "Manhattan",
+      "map_query": "Washington Heights, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "Dylan names the neighborhood. The marker represents its general area rather than a particular street or a private residence.",
+      "coordinates": [
+        40.8417,
+        -73.9394
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8417&mlon=-73.9394#map=16/40.8417/-73.9394"
+    },
+    {
+      "id": "rockefeller-plaza",
+      "name": "Rockefeller Plaza",
+      "area": "Midtown, Manhattan",
+      "map_query": "Rockefeller Plaza, Manhattan, New York, NY",
+      "precision": "Landmark",
+      "note": "The plaza is named in the lyric. This map identifies the public landmark without claiming access to a building or observation deck.",
+      "coordinates": [
+        40.7587,
+        -73.9787
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7587&mlon=-73.9787#map=16/40.7587/-73.9787"
+    },
+    {
+      "id": "staten-island-ferry",
+      "name": "Staten Island Ferry",
+      "area": "Manhattan / Staten Island",
+      "map_query": "Staten Island Ferry, New York, NY",
+      "precision": "Area",
+      "note": "The lyric names the ferry service. The overview uses a representative point on the harbor crossing, not a song-specified terminal or boarding location.",
+      "coordinates": [
+        40.66,
+        -74.048
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.66&mlon=-74.048#map=16/40.66/-74.048"
+    },
+    {
+      "id": "82nd-street",
+      "name": "82nd Street",
+      "area": "Upper West Side, Manhattan",
+      "map_query": "West 82nd Street and Broadway, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "The title supplies 82nd Street. Broadway is an editorial locator, not a verified bus stop or proof of the exact side of Manhattan in the song.",
+      "coordinates": [
+        40.7852,
+        -73.9775
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7852&mlon=-73.9775#map=16/40.7852/-73.9775"
     }
   ]
 }

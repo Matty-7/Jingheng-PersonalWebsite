@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { MusicOverview } from './music_overview';
+import { MusicOverview, type MusicFocus } from './music_overview';
 import { MusicPlaylist } from './music_playlist';
 import { useAlbumScroll } from './use_album_scroll';
 import { useMemo, useRef, useState } from 'react';
@@ -64,6 +64,7 @@ function GoogleMusicMap({
   place,
   overview,
   fit_request,
+  focus_request,
   on_select,
   google_maps_key,
 }: {
@@ -71,6 +72,7 @@ function GoogleMusicMap({
   google_maps_key: string;
   overview: boolean;
   fit_request: number;
+  focus_request: MusicFocus | null;
   on_select: (track: MusicTrack, place_id: string) => void;
 }) {
   const embed_url = google_music_embed_url(place, google_maps_key);
@@ -95,6 +97,7 @@ function GoogleMusicMap({
           <MusicOverview
             selected_place_id={place.id}
             fit_request={fit_request}
+            focus_request={focus_request}
             on_select={on_select}
           />
         ) : embed_url ? (
@@ -135,6 +138,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
   const { state, update, ready } = useMapLocation(music_location);
   const { query, overview, track_id, place_id } = state;
   const [fit_request, set_fit_request] = useState(0);
+  const [focus_request, set_focus_request] = useState<MusicFocus | null>(null);
   const shelf = useRef<HTMLDivElement>(null);
   const results = useMemo(() => search_music(query), [query]);
   const album_scroll = useAlbumScroll(
@@ -168,7 +172,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
   }
 
   function select_map_track(next_track: MusicTrack, next_place_id: string) {
-    album_scroll.pause();
+    album_scroll.defer();
     if (next_track.id !== track_id) stop_preview();
     update({
       ...state,
@@ -176,18 +180,21 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
       track_id: next_track.id,
       place_id: next_place_id,
     });
-    requestAnimationFrame(() =>
+    set_focus_request({ place_id: next_place_id });
+    requestAnimationFrame(() => {
       shelf.current
         ?.querySelector<HTMLElement>(`[data-track-id="${next_track.id}"]`)
         ?.scrollIntoView({
           block: 'nearest',
           inline: 'center',
           behavior: 'instant',
-        }),
-    );
+        });
+      album_scroll.defer();
+    });
   }
 
   function show_all_places() {
+    set_focus_request(null);
     update({ ...state, query: '', overview: true });
     set_fit_request((value) => value + 1);
   }
@@ -201,7 +208,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
   }
 
   function move_shelf(direction: number) {
-    album_scroll.pause();
+    album_scroll.defer();
     const reduced = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches;
@@ -291,7 +298,12 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
             className="sound-album"
             aria-pressed={track_id === item.id}
             aria-label={`Select ${item.title} by ${item.artist}`}
-            onClick={() => select_track(item)}
+            onClick={() => {
+              const target_place =
+                item.id === track_id ? place_id : item.place_ids[0];
+              select_track(item);
+              set_focus_request({ place_id: target_place });
+            }}
           >
             <span className="sound-album-art">
               <AlbumCover track={item} small />
@@ -305,6 +317,9 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
             </span>
             <strong>{item.title}</strong>
             <span>{item.artist}</span>
+            <span className="sound-album-place">
+              {track_places(item)[0].name}
+            </span>
           </button>
         ))}
       </div>
@@ -335,7 +350,10 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
                 <button
                   key={item.id}
                   aria-pressed={place.id === item.id}
-                  onClick={() => update({ ...state, place_id: item.id })}
+                  onClick={() => {
+                    update({ ...state, place_id: item.id });
+                    set_focus_request({ place_id: item.id });
+                  }}
                 >
                   <MapPin size={15} aria-hidden="true" />
                   {item.name}
@@ -348,6 +366,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
               place={place}
               overview={overview}
               fit_request={fit_request}
+              focus_request={focus_request}
               on_select={select_map_track}
               google_maps_key={google_maps_key}
             />
@@ -355,7 +374,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
               className={`sound-record${playing ? ' is-playing' : ''}`}
               aria-label="Selected song"
             >
-              <div className="sound-record-top">
+              <div className="sound-record-top" key={`cover-${track.id}`}>
                 <a
                   className="sound-selected-cover"
                   href={track.apple_music_url}
