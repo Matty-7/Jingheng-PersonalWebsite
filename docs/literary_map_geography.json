@@ -1,0 +1,1127 @@
+{
+  "audit_date": "2026-09-21",
+  "baseline_commit": "551f95f49b3228fd87fad4bbb5f2ce82e0c4d9d3",
+  "coordinate_order": "latitude, longitude (WGS84 / EPSG:4326)",
+  "summary": {
+    "entries_reviewed": 43,
+    "coordinate_revisions": 16,
+    "correct_status": 15,
+    "approximate_historical_reference_status": 1,
+    "keep_representative_status": 27
+  },
+  "methods": [
+    "Checked each entry’s source-linked excerpt, place, coordinates, query and precision against its stated geographic scope.",
+    "Used public NYC DCP LION street endpoints and shared node topology in EPSG:4326 for current intersections; used centerlines for representative avenues.",
+    "Used NYC Parks polygons exposed by NYC DCP for park membership; used DCP GeoSearch PAD address matches for named institutions and 2020 NTA polygons for broad neighborhoods.",
+    "Small offsets consistent with stated representative scope were retained instead of changing every point.",
+    "Historical coastline, railway alignment, fictional addresses and vanished structures were not inferred from present-day GIS."
+  ],
+  "source_catalog": {
+    "lion": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer",
+    "lion_nodes": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer",
+    "parks": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0",
+    "pad": "https://geosearch.planninglabs.nyc/v2/search",
+    "nta": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/2020_NTAs/FeatureServer/0"
+  },
+  "limitations": [
+    "This is a 43-entry editorial geography audit, not 43 survey-precise or historically reconstructed scene locations.",
+    "Fulton Ferry operator reference returned HTTP 403 on re-fetch; its broad existing historical waterfront association was retained, not independently resurveyed.",
+    "The Battery park ownership polygon and Spuyten Duyvil land-only NTA query do not independently establish an exact point; both remain approximate waterfront/approach references.",
+    "Warren/Hudson is preserved as the novel’s wording, with nearby current Warren/West Broadway explicitly labeled an orientation point. No historical intersection or property transaction is certified.",
+    "No Google Cloud billing or API restrictions were inspected or changed. The website continues to use only the no-charge Embed endpoint and keyless Maps URLs."
+  ],
+  "entries": [
+    {
+      "id": "washington-square",
+      "baseline_coordinates": [
+        40.7312,
+        -73.9971
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside Washington Square Park. Retain as a park representative, without locating the fictional Sloper home.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1140,
+          "parks_property_id": "M098",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1140&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7312,
+        -73.9971
+      ],
+      "map_query": "Washington Square Park New York",
+      "precision": "Area described. The pin marks the square, not an identified address for the fictional house."
+    },
+    {
+      "id": "met-museum",
+      "baseline_coordinates": [
+        40.7794,
+        -73.9632
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Within the Metropolitan Museum institution site. No historical gallery arrangement is inferred.",
+      "evidence": [
+        {
+          "source": "NYC DCP GeoSearch v2 / PAD address data, version 26c",
+          "url": "https://geosearch.planninglabs.nyc/v2/search?text=1000+5+Avenue+Manhattan&size=1",
+          "address": "1000 5 Avenue Manhattan",
+          "reference_coordinates": [
+            40.779393,
+            -73.963409
+          ],
+          "pad_id": 134466,
+          "method": "Official address search matches the named present-day institution. Small differences within the institution or street frontage are retained."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7794,
+        -73.9632
+      ],
+      "map_query": "Metropolitan Museum of Art New York",
+      "precision": "Named institution. The historical gallery arrangement in the novel is not a guide to the museum today."
+    },
+    {
+      "id": "queensboro-bridge",
+      "baseline_coordinates": [
+        40.7571,
+        -73.9543
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Approximately 26 m from the bridge centerline and 19 m from the bicycle path. Appropriate crossing representative; not a pedestrian entrance or precise viewpoint.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 108390,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=108390&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        },
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 105838,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=105838&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7571,
+        -73.9543
+      ],
+      "map_query": "Ed Koch Queensboro Bridge New York",
+      "precision": "Named bridge. The pin identifies the crossing, not a precise viewpoint or pedestrian entrance."
+    },
+    {
+      "id": "central-park",
+      "baseline_coordinates": [
+        40.7663,
+        -73.9774
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 12 m from the Central Park South street centerline. Retain the expressly described southern-edge representative; it need not lie within the park property polygon.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 114222,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=114222&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7663,
+        -73.9774
+      ],
+      "map_query": "Central Park South New York",
+      "precision": "Area described. The novel gives no exact carriage route; the pin marks the park’s southern edge."
+    },
+    {
+      "id": "the-battery",
+      "baseline_coordinates": [
+        40.7033,
+        -74.017
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Retain the broad present-day Battery / Castle Clinton waterfront orientation. Current NYC Parks ownership geometry alone does not verify this exact waterfront point; the existing text already warns that the shoreline changed.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "parks_property_id": "M005",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?where=variable_id%3D%27M005%27&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7033,
+        -74.017
+      ],
+      "map_query": "The Battery New York",
+      "precision": "Area described. The pin is on the present-day waterfront; the shoreline has changed since Melville wrote."
+    },
+    {
+      "id": "madison-square",
+      "baseline_coordinates": [
+        40.7421,
+        -73.9878
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside Madison Square Park. No fictional bench is assigned.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1097,
+          "parks_property_id": "M052",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1097&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7421,
+        -73.9878
+      ],
+      "map_query": "Madison Square Park New York",
+      "precision": "Named park. Soapy’s bench is fictional and has no identified present-day location."
+    },
+    {
+      "id": "fulton-ferry",
+      "baseline_coordinates": [
+        40.7024,
+        -73.9945
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Retain as a representative Brooklyn landing/waterfront point. Exact historical pier edges and the poet’s position remain unverified. The modern ferry facility point is not substituted for the historical landing.",
+      "evidence": [
+        {
+          "source": "Brooklyn Bridge Park, Fulton Ferry Landing",
+          "url": "https://brooklynbridgepark.org/places-to-see/fulton-ferry-landing/",
+          "method": "Existing authoritative operator reference retained; this audit encountered HTTP 403 on direct re-fetch and did not independently survey the historical pier."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7024,
+        -73.9945
+      ],
+      "map_query": "Fulton Ferry Landing Brooklyn New York",
+      "precision": "Historical crossing. The pin marks the Brooklyn landing associated with the Fulton Ferry, not the poet’s exact position."
+    },
+    {
+      "id": "mcsorleys-ale-house",
+      "baseline_coordinates": [
+        40.7287,
+        -73.9897
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 14 m from the official address point for 15 East 7th Street; retain the named venue location.",
+      "evidence": [
+        {
+          "source": "NYC DCP GeoSearch v2 / PAD address data, version 26c",
+          "url": "https://geosearch.planninglabs.nyc/v2/search?text=15+East+7+Street+Manhattan&size=1",
+          "address": "15 East 7 Street Manhattan",
+          "reference_coordinates": [
+            40.728822,
+            -73.989664
+          ],
+          "pad_id": 43331,
+          "method": "Official address search matches the named present-day institution. Small differences within the institution or street frontage are retained."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7287,
+        -73.9897
+      ],
+      "map_query": "McSorleys Old Ale House 15 East 7th Street New York",
+      "precision": "Named venue and street address. The description belongs to the 1940 article, not a report on the bar today."
+    },
+    {
+      "id": "quicksand-lenox-avenue",
+      "baseline_coordinates": [
+        40.8075,
+        -73.9454
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 13 m from the Lenox Avenue centerline. The passage gives no cross street, so retain this avenue representative.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 96521,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=96521&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.8075,
+        -73.9454
+      ],
+      "map_query": "Lenox Avenue Harlem New York",
+      "precision": "Named avenue. The passage gives no cross street; the map marks the avenue in Harlem."
+    },
+    {
+      "id": "quicksand-harlem",
+      "baseline_coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside the contemporary Harlem (North) neighborhood polygon. Keep a neighborhood representative, not a fictional home.",
+      "evidence": [
+        {
+          "source": "NYC DCP 2020 Neighborhood Tabulation Areas",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/2020_NTAs/FeatureServer/0/query?where=NTA2020%3D%27MN1002%27&outFields=NTA2020%2CNTAName&outSR=4326&f=pjson",
+          "nta2020": "MN1002",
+          "name": "Harlem (North)",
+          "method": "Point lies inside this contemporary neighborhood polygon; this does not delimit the historical literary neighborhood."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "map_query": "Harlem New York",
+      "precision": "Neighborhood described, not a particular house or venue."
+    },
+    {
+      "id": "quicksand-st-nicholas-park",
+      "baseline_coordinates": [
+        40.817,
+        -73.9506
+      ],
+      "status": "CORRECT",
+      "assessment": "Old point falls outside St. Nicholas Park property. The replacement lies inside the park. The park remains a neighborhood-boundary reference and does not imply Helga stood at the pin.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1120,
+          "parks_property_id": "M077",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1120&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Park membership verified; no character-position claim.",
+      "coordinates": [
+        40.817,
+        -73.9495
+      ],
+      "map_query": "Saint Nicholas Park Manhattan New York",
+      "precision": "Named park used as a neighborhood boundary. This passage does not place Helga at a specific spot inside it."
+    },
+    {
+      "id": "excolored-coney-island",
+      "baseline_coordinates": [
+        40.5755,
+        -73.9707
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside Coney Island-Sea Gate. Keep a resort-district representative, not an identified attraction.",
+      "evidence": [
+        {
+          "source": "NYC DCP 2020 Neighborhood Tabulation Areas",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/2020_NTAs/FeatureServer/0/query?where=NTA2020%3D%27BK1302%27&outFields=NTA2020%2CNTAName&outSR=4326&f=pjson",
+          "nta2020": "BK1302",
+          "name": "Coney Island-Sea Gate",
+          "method": "Point lies inside this contemporary neighborhood polygon; this does not delimit the historical literary neighborhood."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.5755,
+        -73.9707
+      ],
+      "map_query": "Coney Island Brooklyn New York",
+      "precision": "Named resort district. The narrator identifies no particular attraction."
+    },
+    {
+      "id": "mirth-grand-central",
+      "baseline_coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Matches the present station site. Existing precision correctly distinguishes the 1905 novel from the terminal opened in 1913.",
+      "evidence": [
+        {
+          "source": "NYC DCP GeoSearch v2 / PAD address data, version 26c",
+          "url": "https://geosearch.planninglabs.nyc/v2/search?text=89+East+42+Street+Manhattan&size=1",
+          "address": "89 East 42 Street Manhattan",
+          "reference_coordinates": [
+            40.752732,
+            -73.977218
+          ],
+          "pad_id": 166532,
+          "method": "Official address search matches the named present-day institution. Small differences within the institution or street frontage are retained."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "map_query": "Grand Central Terminal New York",
+      "precision": "Historical station site. The 1905 novel predates the present Grand Central Terminal, which opened in 1913."
+    },
+    {
+      "id": "mirth-madison-avenue",
+      "baseline_coordinates": [
+        40.7554,
+        -73.9762
+      ],
+      "status": "CORRECT",
+      "assessment": "Madison Avenue at East 45th Street; original coordinate was about 159 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 22506,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D22506&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.754737,
+        -73.9778763
+      ],
+      "map_query": "Madison Avenue and East 45th Street New York",
+      "precision": "Named avenue. The map marks a representative point near Grand Central, not a documented stopping place."
+    },
+    {
+      "id": "mirth-wall-street",
+      "baseline_coordinates": [
+        40.706,
+        -74.0088
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 1 m from the Wall Street centerline. Keep the explicitly metaphorical financial-district reference; do not imply Lily walks here.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 98909,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=98909&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.706,
+        -74.0088
+      ],
+      "map_query": "Wall Street New York",
+      "precision": "Named financial district used as a metaphor for investing. Lily is thinking about Wall Street here, not walking along it."
+    },
+    {
+      "id": "mirth-bryant-park",
+      "baseline_coordinates": [
+        40.7536,
+        -73.9832
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside Bryant Park. The passage gives an approach but does not identify a bench.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1056,
+          "parks_property_id": "M008",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1056&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7536,
+        -73.9832
+      ],
+      "map_query": "Bryant Park New York",
+      "precision": "Named park. The text identifies her approach at Forty-first Street and Fifth Avenue, but no exact bench."
+    },
+    {
+      "id": "beautiful-fifth-avenue",
+      "baseline_coordinates": [
+        40.759,
+        -73.9765
+      ],
+      "status": "CORRECT",
+      "assessment": "Fifth Avenue at West 52nd Street; original coordinate was about 90 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 22525,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D22525&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.759795,
+        -73.9762901
+      ],
+      "map_query": "Fifth Avenue and West 52nd Street New York",
+      "precision": "Named avenues and Fifty-second Street. The pin marks Fifth Avenue at that cross street, not a fictional apartment."
+    },
+    {
+      "id": "beautiful-grand-central",
+      "baseline_coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Matches the station site; retain the existing warning that the historical drugstore is not identified as a current business.",
+      "evidence": [
+        {
+          "source": "NYC DCP GeoSearch v2 / PAD address data, version 26c",
+          "url": "https://geosearch.planninglabs.nyc/v2/search?text=89+East+42+Street+Manhattan&size=1",
+          "address": "89 East 42 Street Manhattan",
+          "reference_coordinates": [
+            40.752732,
+            -73.977218
+          ],
+          "pad_id": 166532,
+          "method": "Official address search matches the named present-day institution. Small differences within the institution or street frontage are retained."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "map_query": "Grand Central Terminal New York",
+      "precision": "Named station. The historical drugstore is not identified as a current business."
+    },
+    {
+      "id": "beautiful-plaza-hotel",
+      "baseline_coordinates": [
+        40.7645,
+        -73.9743
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Within the hotel/frontage vicinity, about 17 m from the official address point. Retain the named exterior, without inventing a room.",
+      "evidence": [
+        {
+          "source": "NYC DCP GeoSearch v2 / PAD address data, version 26c",
+          "url": "https://geosearch.planninglabs.nyc/v2/search?text=768+5+Avenue+Manhattan&size=1",
+          "address": "768 5 Avenue Manhattan",
+          "reference_coordinates": [
+            40.76446,
+            -73.97449
+          ],
+          "pad_id": 165226,
+          "method": "Official address search matches the named present-day institution. Small differences within the institution or street frontage are retained."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7645,
+        -73.9743
+      ],
+      "map_query": "The Plaza Hotel New York",
+      "precision": "Named hotel exterior, seen while approaching along Fifth Avenue. No particular room is implied."
+    },
+    {
+      "id": "levinsky-state-street",
+      "baseline_coordinates": [
+        40.7033,
+        -74.0143
+      ],
+      "status": "CORRECT",
+      "assessment": "State Street at Battery Place; original coordinate was about 140 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 9030777,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D9030777&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7045573,
+        -74.0142907
+      ],
+      "map_query": "State Street and Battery Place New York",
+      "precision": "Named street reached from Battery Park. The elevated railway in the passage is historical."
+    },
+    {
+      "id": "levinsky-park-row",
+      "baseline_coordinates": [
+        40.7125,
+        -74.0075
+      ],
+      "status": "CORRECT",
+      "assessment": "Park Row at Spruce Street, on the east side of City Hall Park. The old point was on the wrong side of the park.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 87486,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D87486&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7120167,
+        -74.0060706
+      ],
+      "map_query": "Park Row and Spruce Street New York",
+      "precision": "Named street indicated by another character. The pin is a representative point on Park Row at Spruce Street, not the exact point from which he gestures."
+    },
+    {
+      "id": "levinsky-east-broadway",
+      "baseline_coordinates": [
+        40.7137,
+        -73.9875
+      ],
+      "status": "CORRECT",
+      "assessment": "East Broadway at Clinton Street; a traceable representative street intersection replaces a point south of the street.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 15940,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D15940&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7143203,
+        -73.9871677
+      ],
+      "map_query": "East Broadway and Clinton Street New York",
+      "precision": "Named walking route. The pin is a representative point on East Broadway at Clinton Street; the novel gives no complete route or precise turning point."
+    },
+    {
+      "id": "levinsky-grand-street",
+      "baseline_coordinates": [
+        40.7152,
+        -73.9896
+      ],
+      "status": "CORRECT",
+      "assessment": "Grand Street at Essex Street; original coordinate was about 173 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20755,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20755&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7167169,
+        -73.9891561
+      ],
+      "map_query": "Grand Street and Essex Street New York",
+      "precision": "Named street. The dance hall has no verified address in this passage; the pin is a representative point on Grand Street."
+    },
+    {
+      "id": "levinsky-canal-street",
+      "baseline_coordinates": [
+        40.716,
+        -73.9972
+      ],
+      "status": "CORRECT",
+      "assessment": "Canal Street at Orchard Street; original coordinate was about 464 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 15822,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D15822&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7149069,
+        -73.9918913
+      ],
+      "map_query": "Canal Street and Orchard Street New York",
+      "precision": "Named street with unidentified bookshops. The map marks Canal Street, not a claim that a particular store survives."
+    },
+    {
+      "id": "yekl-suffolk-street",
+      "baseline_coordinates": [
+        40.7172,
+        -73.9851
+      ],
+      "status": "CORRECT",
+      "assessment": "Suffolk Street at Delancey Street; original coordinate was about 154 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20763,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20763&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7180111,
+        -73.986587
+      ],
+      "map_query": "Suffolk Street and Delancey Street New York",
+      "precision": "Named street. The fictional dancing academy is not assigned a real building number."
+    },
+    {
+      "id": "yekl-essex-street",
+      "baseline_coordinates": [
+        40.7183,
+        -73.988
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Within approximately 28–39 m of the mapped Essex/Delancey junction nodes. Accept as a named-street vicinity, not a ticket-office address.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20770,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20770&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        },
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 78243,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D78243&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7183,
+        -73.988
+      ],
+      "map_query": "Essex Street and Delancey Street New York",
+      "precision": "Named street. The remittance and ticket office is not given a verified street number."
+    },
+    {
+      "id": "hungry-delancey-street",
+      "baseline_coordinates": [
+        40.7185,
+        -73.9876
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Approximately 50 m from the junction nodes, within the broad Delancey street/intersection vicinity. Keep a representative homecoming location, not a doorway.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20770,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20770&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        },
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 78243,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D78243&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7185,
+        -73.9876
+      ],
+      "map_query": "Delancey Street and Essex Street New York",
+      "precision": "Named street. The passage identifies a neighborhood homecoming, not a particular doorway."
+    },
+    {
+      "id": "hungry-hester-street",
+      "baseline_coordinates": [
+        40.7161,
+        -73.9911
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 19 m from the Hester/Orchard junction. Retain the street representative; no herring-stand address is verified.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20663,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20663&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7161,
+        -73.9911
+      ],
+      "map_query": "Hester Street and Orchard Street New York",
+      "precision": "Named street and a fictional herring stand without a known address."
+    },
+    {
+      "id": "hungry-west-29th-street",
+      "baseline_coordinates": [
+        40.7488,
+        -73.9927
+      ],
+      "status": "CORRECT",
+      "assessment": "West 29th Street at Seventh Avenue; original coordinate was about 106 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 21334,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D21334&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7478632,
+        -73.9929107
+      ],
+      "map_query": "West 29th Street and 7th Avenue New York",
+      "precision": "Named street. The factory is a character’s description, not an identified surviving business."
+    },
+    {
+      "id": "hungry-riverside-drive",
+      "baseline_coordinates": [
+        40.7991,
+        -73.9735
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 11 m from the Riverside Drive centerline. Retain the avenue representative, not a fictional apartment address.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 111509,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=111509&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7991,
+        -73.9735
+      ],
+      "map_query": "Riverside Drive Upper West Side New York",
+      "precision": "Named residential avenue. The apartment house is unspecified; the map marks the avenue rather than a fictional address."
+    },
+    {
+      "id": "maggie-bowery",
+      "baseline_coordinates": [
+        40.7221,
+        -73.9938
+      ],
+      "status": "CORRECT",
+      "assessment": "Bowery at East Houston Street; original coordinate was about 249 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20695,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20695&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7241447,
+        -73.9926047
+      ],
+      "map_query": "Bowery and East Houston Street New York",
+      "precision": "Named entertainment district. The music hall is not identified by street number."
+    },
+    {
+      "id": "maggie-central-park-zoo",
+      "baseline_coordinates": [
+        40.7678,
+        -73.9718
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside Central Park near the menagerie / present zoo area. Keep the historical institution reference, not a claim about the current zoo layout.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1058,
+          "parks_property_id": "M010",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1058&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7678,
+        -73.9718
+      ],
+      "map_query": "Central Park Zoo New York",
+      "precision": "Historical institution associated with today’s Central Park Zoo. The passage does not describe the current zoo layout."
+    },
+    {
+      "id": "voice-eighth-avenue-48th",
+      "baseline_coordinates": [
+        40.761,
+        -73.9878
+      ],
+      "status": "CORRECT",
+      "assessment": "Eighth Avenue at West 48th Street; original coordinate was about 66 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 21418,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D21418&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7610456,
+        -73.9870166
+      ],
+      "map_query": "8th Avenue and West 48th Street New York",
+      "precision": "Named intersection. The nearby fictional home is not given a street number."
+    },
+    {
+      "id": "voice-union-square",
+      "baseline_coordinates": [
+        40.7359,
+        -73.9906
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside Union Square Park. No particular bench is identified.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1130,
+          "parks_property_id": "M089",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1130&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7359,
+        -73.9906
+      ],
+      "map_query": "Union Square Park New York",
+      "precision": "Named park. No particular bench is identified."
+    },
+    {
+      "id": "voice-broadway-23rd",
+      "baseline_coordinates": [
+        40.7411,
+        -73.9897
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Retain as a representative part of the broad Broadway/Fifth Avenue/23rd Street junction. Current pedestrian and road geometry makes the nearest modeled Broadway/East 23rd node about 55 m away; do not claim survey-level precision or an exact handshake position.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 20847,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D20847&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7411,
+        -73.9897
+      ],
+      "map_query": "Broadway and West 23rd Street New York",
+      "precision": "Named intersection of Broadway, Fifth Avenue and Twenty-third Street."
+    },
+    {
+      "id": "custom-west-72nd-street",
+      "baseline_coordinates": [
+        40.7766,
+        -73.9789
+      ],
+      "status": "CORRECT",
+      "assessment": "West 72nd Street at Central Park West; original coordinate was about 251 m from its stated query target.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 23266,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D23266&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.776228,
+        -73.9759566
+      ],
+      "map_query": "West 72nd Street and Central Park West New York",
+      "precision": "Named street west of Central Park. The fictional Stentorian hotel is not treated as a present-day hotel."
+    },
+    {
+      "id": "custom-central-park",
+      "baseline_coordinates": [
+        40.7751,
+        -73.9768
+      ],
+      "status": "CORRECT",
+      "assessment": "Old point falls outside the Central Park property polygon. The replacement lies inside the park on its west side. The fictional wistaria arbor is not located or claimed to survive.",
+      "evidence": [
+        {
+          "source": "NYC DCP Green Fast Track open spaces, NYC Parks property polygon",
+          "object_id": 1058,
+          "parks_property_id": "M010",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/v_GFT_Open_Spaces/FeatureServer/0/query?objectIds=1058&outFields=OBJECTID%2Cvariable_type%2Cvariable_id&outSR=4326&f=pjson",
+          "method": "WGS84 point-in-polygon check against the NYC Parks property geometry; identifies geographic park membership, not a literary scene."
+        }
+      ],
+      "geographic_confidence": "Park membership verified; exact arbor unverified.",
+      "coordinates": [
+        40.77525,
+        -73.97605
+      ],
+      "map_query": "Central Park west side near West 71st Street New York",
+      "precision": "Representative point inside the park’s west side. The wistaria arbor is not identified with a verified present-day structure."
+    },
+    {
+      "id": "carrie-spuyten-duyvil",
+      "baseline_coordinates": [
+        40.878,
+        -73.9218
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Keep the approximate Spuyten Duyvil waterway/rail approach. Neither a historical railway alignment nor a pedestrian access point has been established by this audit.",
+      "evidence": [
+        {
+          "source": "NYC DCP 2020 Neighborhood Tabulation Areas",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/2020_NTAs/FeatureServer/0",
+          "method": "The coordinate did not intersect the land-only NTA polygon query. Retain only as a broad waterway/railway approach reference, not a verified land-based district centroid."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.878,
+        -73.9218
+      ],
+      "map_query": "Spuyten Duyvil Bronx New York",
+      "precision": "Named waterway and railway approach. The map marks the district, not a claim about the current railway alignment."
+    },
+    {
+      "id": "carrie-amsterdam-78th",
+      "baseline_coordinates": [
+        40.7823,
+        -73.9786
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 27 m from Amsterdam Avenue / West 78th Street. Appropriate street-corner vicinity; no fictional building number is inferred.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 23271,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D23271&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.7823,
+        -73.9786
+      ],
+      "map_query": "Amsterdam Avenue and West 78th Street New York",
+      "precision": "Named street near Amsterdam Avenue. The fictional flat has no verified building number."
+    },
+    {
+      "id": "carrie-west-13th-street",
+      "baseline_coordinates": [
+        40.737,
+        -73.9995
+      ],
+      "status": "CORRECT",
+      "assessment": "Use a representative midpoint along the named block. The prior query selected the corner although the passage places the flat half a block west of Sixth Avenue.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 95520,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=95520&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson",
+          "from_node": 20556,
+          "to_node": 20557,
+          "from_coordinates": [
+            40.7366761503561,
+            -73.9973427754029
+          ],
+          "to_coordinates": [
+            40.7378731981784,
+            -74.0001845362895
+          ],
+          "method": "Midpoint of the West 13th Street segment between Sixth and Seventh Avenues, matching the passage’s half-block-west relation without assigning a building."
+        }
+      ],
+      "geographic_confidence": "Street segment verified; fictional building unverified.",
+      "coordinates": [
+        40.7372747,
+        -73.9987637
+      ],
+      "map_query": "West 13th Street between Sixth and Seventh Avenues New York",
+      "precision": "The text places the flat half a block west of Sixth Avenue. The pin marks a representative point along that block, not an identified building."
+    },
+    {
+      "id": "carrie-warren-hudson",
+      "baseline_coordinates": [
+        40.7149,
+        -74.0099
+      ],
+      "status": "APPROXIMATE_HISTORICAL_REFERENCE",
+      "assessment": "Current Warren Street at West Broadway is a nearby orientation point. Warren and Hudson do not share a node in the current street network; Hudson ends farther north at Chambers Street, node 15285. No historical intersection or transaction is asserted.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 15283,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D15283&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        },
+        {
+          "source": "NYC DCP LION shared street node",
+          "node_id": 15285,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION_Node/FeatureServer/0/query?where=NODEID%3D15285&outFields=NODEID&outSR=4326&f=pjson",
+          "method": "Coordinate derived from matching street endpoints sharing this node in NYC DCP LION. The node identifies the current geographic target, not a fictional building."
+        }
+      ],
+      "geographic_confidence": "Current geographic target checked against official street topology; literary certainty remains limited by the quoted passage.",
+      "coordinates": [
+        40.7149592,
+        -74.0096912
+      ],
+      "map_query": "Warren Street and West Broadway New York",
+      "precision": "The novel names Warren and Hudson Streets, which do not intersect in today’s street network. The pin marks nearby Warren Street at West Broadway as an approximate orientation point, not a verified historical corner or property."
+    },
+    {
+      "id": "harlem-broadway",
+      "baseline_coordinates": [
+        40.758,
+        -73.9855
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "About 3 m from the Broadway centerline. Keep the explicitly representative theater-lights location because the poem names no exact corner.",
+      "evidence": [
+        {
+          "source": "NYC DCP LION street centerline",
+          "object_id": 101163,
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/LION/FeatureServer/0/query?objectIds=101163&outFields=OBJECTID%2CStreet%2CNodeIDFrom%2CNodeIDTo%2CSegmentID&outSR=4326&f=pjson"
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.758,
+        -73.9855
+      ],
+      "map_query": "Broadway Times Square New York",
+      "precision": "Named avenue. The Times Square area is a representative point for its theater lights; the poem names no exact corner."
+    },
+    {
+      "id": "harlem-harlem",
+      "baseline_coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "status": "KEEP_REPRESENTATIVE",
+      "assessment": "Inside contemporary Harlem (North). Retain a neighborhood representative without assigning a street or doorway.",
+      "evidence": [
+        {
+          "source": "NYC DCP 2020 Neighborhood Tabulation Areas",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/2020_NTAs/FeatureServer/0/query?where=NTA2020%3D%27MN1002%27&outFields=NTA2020%2CNTAName&outSR=4326&f=pjson",
+          "nta2020": "MN1002",
+          "name": "Harlem (North)",
+          "method": "Point lies inside this contemporary neighborhood polygon; this does not delimit the historical literary neighborhood."
+        }
+      ],
+      "geographic_confidence": "Accepted at the representative-place precision stated here; not an exact historical-scene certification.",
+      "coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "map_query": "Harlem New York",
+      "precision": "Neighborhood named in the poem. No individual street or doorway is specified."
+    }
+  ]
+}
