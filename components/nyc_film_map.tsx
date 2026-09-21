@@ -479,7 +479,9 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
       if (!current()) return;
       if (
         map.getZoom() < target_zoom ||
-        map.getCenter().distanceTo(marker.getLatLng()) > 2
+        map
+          .latLngToContainerPoint(marker.getLatLng())
+          .distanceTo(map.getSize().divideBy(2)) > 3
       )
         return;
       map.off('moveend', reveal_marker);
