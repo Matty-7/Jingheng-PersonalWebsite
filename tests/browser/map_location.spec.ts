@@ -2,6 +2,16 @@ import { expect, test } from '@playwright/test';
 
 test.use({ reducedMotion: 'reduce' });
 
+// Keep real iframe navigation while isolating these history tests from Google uptime.
+test.beforeEach(async ({ page }) => {
+  await page.route('https://www.google.com/maps/embed/**', (route) =>
+    route.fulfill({
+      contentType: 'text/html',
+      body: '<!doctype html><title>Map preview fixture</title>',
+    }),
+  );
+});
+
 test('film links restore a scene and preserve browser history and unrelated URL fields', async ({
   page,
 }) => {

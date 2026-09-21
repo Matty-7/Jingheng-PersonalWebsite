@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('Mortgage Mind Map unifies all domains, reading history and guided paths', async ({ page }, test_info) => {
   await page.goto('/portfolio/mortgage-map');
   await expect(page.getByRole('group', { name: 'Atlas subject' })).toHaveCount(0);
-  await expect(page.locator('.node-root strong')).toHaveText('Mortgage Mind Map');
+  await expect(page.locator('.node-root strong')).toHaveText('Mortgage');
   await page.getByRole('button', { name: 'List', exact: true }).click();
   await expect(page.getByRole('button', { name: /Corporate bonds/ })).toHaveCount(1);
   await expect(page.getByRole('button', { name: /Collateralized loan obligations/ })).toHaveCount(1);

@@ -99,6 +99,7 @@ function GoogleMusicMap({
           />
         ) : embed_url ? (
           <iframe
+            key={place.id}
             title={`Google Maps: ${place.name}`}
             src={embed_url}
             referrerPolicy="strict-origin-when-cross-origin"

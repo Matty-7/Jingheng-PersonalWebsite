@@ -42,7 +42,7 @@ export function build_mortgage_graph(
     {
       id: 'mortgages',
       kind: 'root',
-      title: 'Mortgage Mind Map',
+      title: 'Mortgage',
       subtitle: 'Loans → cash flows → decisions',
       x: 0,
       y: 0,

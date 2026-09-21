@@ -42,6 +42,7 @@ test('failed preview and map requests leave usable links and silent selection', 
 test('reduced motion and keyboard selection remain usable', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/portfolio/nyc-music-map');
+  await expect(page.getByRole('button', { name: 'Select Bleecker Street by Simon & Garfunkel', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Select Bleecker Street by Simon & Garfunkel', exact: true }).press('Space');
   await expect(page.getByRole('heading', { name: 'Bleecker Street', exact: true })).toBeVisible();
   expect(await page.locator('.sound-story').evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
