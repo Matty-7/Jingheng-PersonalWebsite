@@ -16,7 +16,7 @@ import film_map_summary from '@/content/nyc_film_map_summary.json';
 import { Bookshelf } from '@/components/bookshelf';
 import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
-import music_catalog from '@/content/nyc_music_map.json';
+import music_summary from '@/content/nyc_music_map_summary.json';
 import { mortgage_domains, mortgage_preview_path } from '@/content/mortgage_domains';
 import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
 const newsletterUrl = profile.newsletterUrl as string | null;
@@ -320,7 +320,7 @@ export default function Home() {
             </div>
             <Link href="/portfolio/nyc-music-map" className="project-music-preview" aria-label="Open NYC Music Map">
               <Image src="/images/records/new-york-state-of-mind.jpg" alt="" width={180} height={180} unoptimized loading="lazy" />
-              <span><small>NEW YORK, ON RECORD</small><strong>Find the places<br /><em>inside the songs.</em></strong><span>{music_catalog.tracks.length} songs · {music_catalog.places.length} places <span aria-hidden="true">↗</span></span></span>
+              <span><small>NEW YORK, ON RECORD</small><strong>Find the places<br /><em>inside the songs.</em></strong><span>{music_summary.track_count} songs · {music_summary.place_count} places <span aria-hidden="true">↗</span></span></span>
             </Link>
           </article>
           <article className="projects-entry projects-film-entry" data-reveal>
