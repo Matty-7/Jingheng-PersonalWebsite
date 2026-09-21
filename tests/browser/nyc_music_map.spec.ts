@@ -15,6 +15,7 @@ test('music selection keeps the recording, place and Google map together', async
   page.on('pageerror', (error) => page_errors.push(error.message));
   await page.goto('/portfolio/nyc-music-map');
   await expect(page.getByRole('heading', { name: 'NYC Music Map.' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
   await expect(page.locator('audio')).toHaveCount(1);
   await expect(page.locator('audio')).not.toHaveAttribute('src');
@@ -55,6 +56,7 @@ test('failed preview and map requests leave usable links and silent selection', 
   let intercepted_maps = 0;
   await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => { intercepted_maps += 1; return route.abort(); });
   await page.goto('/portfolio/nyc-music-map');
+  await expect(page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
   await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
   await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
@@ -71,6 +73,7 @@ test('failed preview and map requests leave usable links and silent selection', 
 test('reduced motion and keyboard selection remain usable', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/portfolio/nyc-music-map');
+  await expect(page.getByRole('button', { name: 'Select Bleecker Street by Simon & Garfunkel', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Select Bleecker Street by Simon & Garfunkel', exact: true }).press('Space');
   await expect(page.getByRole('heading', { name: 'Bleecker Street', exact: true })).toBeVisible();
   expect(await page.locator('.sound-story').evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
@@ -198,6 +201,7 @@ test('changing a place preserves a playing preview and changing the song clears 
   wav.writeUInt16LE(16, 34); wav.write('data', 36); wav.writeUInt32LE(sample_count * 2, 40);
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) => route.fulfill({ status: 200, contentType: 'audio/wav', body: wav }));
   await page.goto('/portfolio/nyc-music-map');
+  await expect(page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
   await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
   await expect.poll(() => page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
