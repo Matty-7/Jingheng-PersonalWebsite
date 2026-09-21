@@ -1,0 +1,15 @@
+[
+  {
+    "film_id": "manhattan",
+    "title": "Manhattan",
+    "year": 1979,
+    "source_page": "https://www.ingresso.com/filme/manhattan",
+    "source_image": "https://ingresso-a.akamaihd.net/img/cinema/cartaz/21121-cartaz.jpg",
+    "display_asset": "/images/film-map/manhattan-poster.jpg",
+    "width": 640,
+    "height": 940,
+    "credit": "Copyright 1979 United Artists Corporation; original theatrical artwork reproduced by Ingresso.com.",
+    "treatment": "Unmodified source poster; original credits retained.",
+    "usage": "Homepage NYC Film Map entry, selected for its Queensboro Bridge scene and Manhattan skyline lettering."
+  }
+]
