@@ -18,7 +18,7 @@ npm run dev
 ## Content and publishing
 
 - `content/profile.json`: identity, profile links, site origin, optional newsletter URL.
-- `app/page.tsx`: the current Projects section. Its Mortgage Map preview metadata is in `content/mortgage_domains.ts`. The legacy `content/projects.json` is not a live homepage source.
+- `app/page.tsx`: the current Projects section. Its Mortgage Mind Map preview metadata is in `content/mortgage_domains.ts`. The legacy `content/projects.json` is not a live homepage source.
 - `content/channels.json`: YouTube and podcast information, with verified podcast episode links. English episode titles are editorial translations of the original Mandarin titles.
 - `content/newsletter_links.json`: the live Journal index. `lib/publishing.ts` filters draft and future entries at request time. `/journal/[slug]` redirects to the entry’s `external_url`; `/feed.xml` lists those external articles. Legacy essay text in `content/posts.json` is not rendered by these routes and must stay out of client imports.
 - `lib/newsletter_schema.ts`: the shared build/runtime boundary for link metadata, real calendar dates, unique slugs and provider URLs. The build rejects invalid records; the runtime excludes invalid records and all members of a duplicate-slug group.

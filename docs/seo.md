@@ -4,7 +4,7 @@ The canonical site is https://www.jinghenghuan.com/. The apex domain and the pre
 
 ## Implemented
 
-- Server-rendered page titles, descriptions and canonical URLs for the home page and Mortgage Map. The homepage description identifies the author, writing topics, map and collections; HTML, Open Graph, Twitter and WebSite structured data share the same source in `content/profile.json`.
+- Server-rendered page titles, descriptions and canonical URLs for the home page and Mortgage Mind Map. The homepage description identifies the author, writing topics, map and collections; HTML, Open Graph, Twitter and WebSite structured data share the same source in `content/profile.json`.
 - Person, WebSite and ProfilePage structured data connect Jingheng Huan with Matty Huan and his public profiles, including Substack.
 - `/robots.txt` allows crawling and points to `/sitemap.xml`.
 - The sitemap contains only the canonical homepage and `/portfolio/mortgage-map`, the two indexable local pages.
@@ -16,7 +16,7 @@ The canonical site is https://www.jinghenghuan.com/. The apex domain and the pre
 
 The project records verification of the `jinghenghuan.com` Domain property through a Porkbun DNS TXT record on September 7, 2026. Keep the `google-site-verification` TXT record in DNS so ownership stays verified. It covers the apex, www and both HTTP/HTTPS schemes. The September 13 SEO review did not reverify account ownership or read private Search Console reports.
 
-Check that https://www.jinghenghuan.com/sitemap.xml is submitted successfully in the Sitemaps report. Use URL Inspection for the canonical homepage and Mortgage Map to check indexing, last crawl time and Google's selected canonical. Run a live test and request indexing when a page is absent or its indexed copy is outdated. A successful submission is a request, not proof that Google has indexed or ranked the site.
+Check that https://www.jinghenghuan.com/sitemap.xml is submitted successfully in the Sitemaps report. Use URL Inspection for the canonical homepage and Mortgage Mind Map to check indexing, last crawl time and Google's selected canonical. Run a live test and request indexing when a page is absent or its indexed copy is outdated. A successful submission is a request, not proof that Google has indexed or ranked the site.
 
 Substack is a separate property: use the URL-prefix property `https://jinghenghuan.substack.com/` and a verification method supported by both its current settings and Search Console. Ownership of `jinghenghuan.com` does not verify the Substack subdomain. Check the publication's actual sitemap before submitting it. Google Analytics measures visits; configuring it is not an indexing request.
 

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { MusicOverview } from './music_overview';
+import { MusicPlaylist } from './music_playlist';
 import { useAlbumScroll } from './use_album_scroll';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Disc3, MapPin, Pause, Play, Search, X } from 'lucide-react';
@@ -146,6 +147,7 @@ export function NycMusicMap() {
   }
 
   return <div className="sound-explorer">
+    <MusicPlaylist />
     <div className="sound-catalog-heading"><div><Disc3 size={18} aria-hidden="true" /><span>{music_tracks.length} songs · {music_places.length} places</span></div><label className="sound-search"><Search size={17} aria-hidden="true" /><input type="search" value={query} onChange={(event) => change_query(event.target.value)} placeholder="Song, artist or place" aria-label="Search songs, artists or places" />{query && <button aria-label="Clear search" onClick={() => change_query('')}><X size={16} aria-hidden="true" /></button>}</label><div className="sound-shelf-controls"><button disabled={album_scroll.reduced} aria-label={album_scroll.reduced ? 'Album scrolling off: reduced motion' : album_scroll.scrolling ? 'Pause album scrolling' : 'Resume album scrolling'} title={album_scroll.reduced ? 'Reduced motion is enabled' : album_scroll.scrolling ? 'Pause album scrolling' : 'Resume album scrolling'} onClick={album_scroll.toggle}>{album_scroll.scrolling ? <Pause size={17} aria-hidden="true" /> : <Play size={17} aria-hidden="true" />}</button><button aria-label="Previous songs" onClick={() => move_shelf(-1)}><ChevronLeft size={19} aria-hidden="true" /></button><button aria-label="More songs" onClick={() => move_shelf(1)}><ChevronRight size={19} aria-hidden="true" /></button></div></div>
     <output className="sound-search-status">{query ? `${results.length} matching ${results.length === 1 ? 'song' : 'songs'}` : 'Choose a record to find its places.'}</output>
     <div className={`sound-shelf${album_scroll.scrolling ? ' is-scrolling' : ''}`} ref={shelf} aria-label="Song collection">
