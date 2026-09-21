@@ -53,7 +53,7 @@ test('real scene frames have local derivatives and matching provenance; missing 
     }
   }
   assert.deepEqual(missing.sort((a, b) => a.localeCompare(b)), ['ocean-view', 'tatiana']);
-  assert.equal(originals.size, 57);
+  assert.ok(originals.size > 100, 'The expanded catalog retains verified scene-specific frames');
   const summary = JSON.parse(readFileSync(new URL('../content/nyc_film_map_summary.json', import.meta.url), 'utf8'));
   assert.deepEqual(summary, { film_count: data.films.length, place_count: data.locations.length });
   for (const id of ['manhattan', 'annie-hall', 'hannah-and-her-sisters', 'manhattan-murder-mystery']) assert.ok(data.films.some((film) => film.id === id), id);

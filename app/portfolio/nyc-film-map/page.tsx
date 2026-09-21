@@ -28,7 +28,7 @@ export default function NycFilmMapPage() {
       <NycFilmMap google_maps_key={google_maps_embed_key()} />
       <footer className="cinema-footnote">
         <p>A growing collection of sourced filming locations. Pins mark venues or public approaches, not camera positions. Film frames are shown with source credits. Scene descriptions may contain spoilers.</p>
-        <p>Check current opening hours and admission before visiting. Residential locations are for viewing from the public sidewalk only. Sources reviewed September 20, 2026.</p>
+        <p>Check current opening hours and admission before visiting. Residential locations are for viewing from the public sidewalk only. Sources reviewed September 21, 2026.</p>
       </footer>
     </main>
   );

@@ -12,10 +12,14 @@ import {
   Film,
   MapPin,
   Maximize2,
+  Pause,
+  Play,
+  Tag,
   Search,
   X,
 } from 'lucide-react';
 import type * as Leaflet from 'leaflet';
+import { useAlbumScroll } from '@/components/use_album_scroll';
 import {
   google_film_embed_url,
   google_maps_url,
@@ -170,6 +174,7 @@ function SceneDetails({
 export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
   const { state, update, ready: interactive } = useMapLocation(film_location);
   const { film_id, query, selected_id } = state;
+  const [show_labels, set_show_labels] = useState(false);
   const [map_state, set_map_state] = useState<MapState | null>(null);
   const [map_status, set_map_status] = useState<'loading' | 'ready' | 'error'>(
     'loading',
@@ -177,6 +182,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
   const [retry_count, set_retry_count] = useState(0);
   const map_element = useRef<HTMLDivElement>(null);
   const filmstrip_element = useRef<HTMLDivElement>(null);
+  const shelf_motion = useAlbumScroll(filmstrip_element, query);
   const details_elements = useRef(new Map<string, HTMLElement>());
   const reveal_selection = useRef(false);
   const initial_fit = useRef(true);
@@ -387,7 +393,11 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
         );
         element?.addEventListener('focus', () => marker.openTooltip());
         element?.addEventListener('blur', () => {
-          if (!element.classList.contains('is-selected')) marker.closeTooltip();
+          if (
+            !marker.getTooltip()?.options.permanent &&
+            !element.classList.contains('is-selected')
+          )
+            marker.closeTooltip();
         });
         if (marker.options.zIndexOffset === 1000) marker.openTooltip();
       });
@@ -413,6 +423,23 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
 
   useEffect(() => {
     if (!map_state?.active) return;
+    map_state.markers.forEach((marker) => {
+      const tooltip = marker.getTooltip();
+      const content = tooltip?.getContent();
+      if (!tooltip || !content) return;
+      if (tooltip.options.permanent !== show_labels) {
+        const options = { ...tooltip.options, permanent: show_labels };
+        marker.unbindTooltip();
+        marker.bindTooltip(content, options);
+      }
+      if (show_labels || marker.options.zIndexOffset === 1000)
+        marker.openTooltip();
+      else marker.closeTooltip();
+    });
+  }, [show_labels, map_state, filtered_locations]);
+
+  useEffect(() => {
+    if (!map_state?.active) return;
     if (selected_id) map_state.map.stop();
     map_state.markers.forEach((marker, location_id) => {
       const selected = location_id === selected_id;
@@ -426,7 +453,8 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
           { animate: !reduce_motion(), duration: 0.5 },
         );
         marker.openTooltip();
-      } else marker.closeTooltip();
+      } else if (marker.getTooltip()?.options.permanent) marker.openTooltip();
+      else marker.closeTooltip();
     });
     if (selected_id && reveal_selection.current) {
       reveal_selection.current = false;
@@ -455,6 +483,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
   }
 
   function scroll_films(direction: number) {
+    shelf_motion.defer();
     filmstrip_element.current?.scrollBy({
       left: direction * 420,
       behavior: reduce_motion() ? 'instant' : 'smooth',
@@ -494,6 +523,21 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
           </label>
           <div className="cinema-strip-arrows">
             <button
+              disabled={!interactive || shelf_motion.reduced}
+              aria-label={
+                shelf_motion.scrolling
+                  ? 'Pause film scrolling'
+                  : 'Resume film scrolling'
+              }
+              onClick={shelf_motion.toggle}
+            >
+              {shelf_motion.scrolling ? (
+                <Pause size={17} />
+              ) : (
+                <Play size={17} />
+              )}
+            </button>
+            <button
               disabled={!interactive}
               aria-label="Previous films"
               onClick={() => scroll_films(-1)}
@@ -528,6 +572,9 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
             <span className="cinema-film-card-label">
               All films <small>{film_catalog.length}</small>
             </span>
+            <span className="cinema-film-card-count">
+              {film_locations.length} places
+            </span>
             {film_id === 'all' && (
               <Check
                 className="cinema-film-check"
@@ -537,6 +584,9 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
             )}
           </button>
           {strip_films.map((film) => {
+            const place_count = film_locations.filter((location) =>
+              location.scenes.some((scene) => scene.film_id === film.id),
+            ).length;
             const scene = film_locations
               .flatMap((location) => location.scenes)
               .find((scene) => scene.film_id === film.id && scene.still);
@@ -560,6 +610,9 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
                   {film.title}
                   <small>{film.year}</small>
                 </span>
+                <span className="cinema-film-card-count">
+                  {place_count} {place_count === 1 ? 'place' : 'places'}
+                </span>
                 {film_id === film.id && (
                   <Check
                     className="cinema-film-check"
@@ -582,13 +635,24 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
                   (query ? 'Search results' : 'New York City')}
               </strong>
             </span>
-            <button
-              onClick={fit_locations}
-              disabled={!map_state?.active || !filtered_locations.length}
-            >
-              <Maximize2 size={16} aria-hidden="true" />
-              Show all places
-            </button>
+            <div className="cinema-map-actions">
+              <button
+                className="cinema-label-toggle"
+                aria-pressed={show_labels}
+                onClick={() => set_show_labels((value) => !value)}
+                disabled={!interactive}
+              >
+                <Tag size={16} aria-hidden="true" />
+                Film labels
+              </button>
+              <button
+                onClick={fit_locations}
+                disabled={!map_state?.active || !filtered_locations.length}
+              >
+                <Maximize2 size={16} aria-hidden="true" />
+                Show all places
+              </button>
+            </div>
           </div>
           <div
             ref={map_element}

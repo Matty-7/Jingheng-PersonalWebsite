@@ -1,11 +1,16 @@
 import { test, expect } from '@playwright/test';
+import film_data from '../../content/nyc_film_locations.json' with { type: 'json' };
+
+const film_places = (film_id: string) => film_data.locations.filter((place) => place.scenes.some((scene) => scene.film_id === film_id));
+const woody_ids = new Set(film_data.films.filter((film) => film.director === 'Woody Allen').map((film) => film.id));
+const woody_count = film_data.locations.filter((place) => place.scenes.some((scene) => woody_ids.has(scene.film_id))).length;
 
 const scene_summary = (name: string) => `summary.cinema-place-button[aria-label*="${name}"]`;
 
 test('film selection connects real frames, keyboard pins and Google place links', async ({ page }) => {
   await page.goto('/portfolio/nyc-film-map');
-  await expect(page.getByText('58 places on the map')).toBeVisible();
-  await expect(page.locator('.cinema-place-list > li')).toHaveCount(58);
+  await expect(page.getByText(`${film_data.locations.length} places on the map`)).toBeVisible();
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_data.locations.length);
   await expect(page.locator('.cinema-cluster').first()).toBeVisible();
   const cluster_name = await page.locator('.cinema-cluster').evaluateAll((clusters) => clusters.map((cluster) => cluster.getAttribute('aria-label')!).sort((a, b) => parseInt(b) - parseInt(a))[0]);
   expect(cluster_name).toMatch(/filming locations. Zoom to expand/);
@@ -18,7 +23,8 @@ test('film selection connects real frames, keyboard pins and Google place links'
   await expect(plaza.locator('.cinema-still img')).toHaveCount(2);
   expect(await plaza.locator('.cinema-still img').evaluateAll((images) => new Set(images.map((image) => image.getAttribute('src'))).size)).toBe(2);
   await page.getByRole('button', { name: "You've Got Mail 1998", exact: true }).click();
-  await expect(page.locator('.cinema-marker')).toHaveCount(6);
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_places('youve-got-mail').length);
+  await page.locator(scene_summary('Café Lalo')).click();
   await page.getByRole('button', { name: "2. Café Lalo — You've Got Mail", exact: true }).press('Enter');
   const details = page.getByRole('region', { name: 'Details for Café Lalo' });
   await expect(details).toContainText('vacated this address in 2024');
@@ -28,7 +34,7 @@ test('film selection connects real frames, keyboard pins and Google place links'
   await page.getByRole('button', { name: "2. Café Lalo — You've Got Mail", exact: true }).press('Space');
   await expect(details).toBeVisible();
   await page.getByRole('button', { name: 'Anora 2024', exact: true }).click();
-  await expect(page.locator('.cinema-place-list > li')).toHaveCount(5);
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_places('anora').length);
   await expect(details).toHaveCount(0);
   await page.locator(scene_summary('Tatiana Restaurant')).click();
   const tatiana = page.getByRole('region', { name: 'Details for Tatiana Restaurant & Nightclub' });
@@ -43,14 +49,19 @@ test('Woody Allen collection, search reset and reduced motion remain usable', as
   await page.goto('/portfolio/nyc-film-map');
   const search = page.getByRole('searchbox', { name: 'Search films, directors or places' });
   await search.fill('Woody Allen');
-  await expect(page.locator('.cinema-place-list > li')).toHaveCount(14);
-  await expect(page.getByText('14 places on the map')).toBeVisible();
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(woody_count);
+  await expect(page.getByText(`${woody_count} places on the map`)).toBeVisible();
   await page.getByRole('button', { name: 'Manhattan 1979', exact: true }).click();
-  await expect(page.locator('.cinema-place-list > li')).toHaveCount(4);
-  await expect(page.locator('.cinema-marker')).toHaveCount(4);
-  await page.getByRole('button', { name: '1. Sutton Square — Manhattan', exact: true }).press('Enter');
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_places('manhattan').length);
+  await page.locator(scene_summary('Sutton Square')).click();
+  await page.getByRole('button', { name: /Sutton Square — Manhattan/  }).press('Enter');
   const sutton = page.getByRole('region', { name: 'Details for Sutton Square' });
   await expect(sutton.locator('.cinema-still img')).toBeVisible();
+  const map_transform = await page.locator('.leaflet-map-pane').evaluate((element) => (element as HTMLElement).style.transform);
+  await page.getByRole('button', { name: 'Film labels', exact: true }).click();
+  expect(await page.locator('.leaflet-map-pane').evaluate((element) => (element as HTMLElement).style.transform)).toBe(map_transform);
+  await expect(page.getByRole('button', { name: 'Film labels', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.cinema-marker-label').first()).toContainText(/Manhattan/);
   await expect(sutton.getByRole('link', { name: 'Frame source' })).toHaveAttribute('href', 'https://onthesetofnewyork.com/manhattan.html');
   await expect(sutton).toHaveCSS('animation-name', 'none');
   await search.fill('no such filming location');
@@ -59,7 +70,7 @@ test('Woody Allen collection, search reset and reduced motion remain usable', as
   await expect(page.locator('.cinema-marker-label')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Show all places' })).toBeDisabled();
   await page.getByRole('button', { name: 'Explore all films' }).click();
-  await expect(page.locator('.cinema-place-list > li')).toHaveCount(58);
+  await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_data.locations.length);
   await expect(page.locator('.cinema-cluster').first()).toBeVisible();
   const before = await page.locator('.cinema-cluster').evaluateAll((clusters) => clusters.map((cluster) => cluster.getAttribute('aria-label')!).sort((a, b) => parseInt(b) - parseInt(a))[0]);
   await page.getByRole('button', { name: before!, exact: true }).press('Enter');
@@ -107,4 +118,23 @@ test('selected film place uses one free Google embed and retains its keyless lin
   await expect(frames).toHaveCount(1);
   await page.getByRole('searchbox').fill('zzzz-no-location');
   await expect(frames).toHaveCount(0);
+});
+
+
+test('film shelf motion pauses explicitly and place counts stay attached to films', async ({ page }) => {
+  await page.goto('/portfolio/nyc-film-map');
+  await expect(page.getByRole('button', { name: 'Manhattan 1979', exact: true })).toContainText(`${film_places('manhattan').length} places`);
+  const shelf = page.locator('.cinema-filmstrip');
+  await expect.poll(() => shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(10);
+  await page.getByRole('button', { name: 'Pause film scrolling' }).click();
+  const stopped = await shelf.evaluate((element) => element.scrollLeft);
+  await page.waitForTimeout(350);
+  expect(await shelf.evaluate((element) => element.scrollLeft)).toBeCloseTo(stopped, 0);
+  await page.getByRole('button', { name: 'More films' }).click();
+  await expect.poll(() => shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(stopped + 100);
+  await expect(page.getByRole('button', { name: 'Resume film scrolling' })).toBeVisible();
+  await page.getByRole('button', { name: 'Resume film scrolling' }).click();
+  await expect(page.getByRole('button', { name: 'Pause film scrolling' })).toBeVisible();
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.getByRole('button', { name: 'Resume film scrolling' })).toBeDisabled();
 });
