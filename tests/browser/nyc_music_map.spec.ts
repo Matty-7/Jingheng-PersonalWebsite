@@ -11,6 +11,8 @@ async function approach_shelf(page: Page) {
 }
 
 test('music selection keeps the recording, place and Google map together', async ({ page }) => {
+  const page_errors: string[] = [];
+  page.on('pageerror', (error) => page_errors.push(error.message));
   await page.goto('/portfolio/nyc-music-map');
   await expect(page.getByRole('heading', { name: 'NYC Music Map.' })).toBeVisible();
   await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
@@ -31,7 +33,20 @@ test('music selection keeps the recording, place and Google map together', async
   await expect(page.getByRole('heading', { name: 'No songs found.' })).toBeVisible();
   await expect(page.locator('iframe')).toHaveCount(0);
   await page.getByRole('button', { name: 'Show all songs', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Select Bushwick Blues by Delta Spirit' })).toHaveAttribute('aria-pressed', 'true');
+  try {
+    await expect(page.getByRole('button', { name: 'Select Bushwick Blues by Delta Spirit' })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByRole('searchbox')).toHaveValue('');
+  } catch (error) {
+    console.log('Music reset diagnostics', { page_errors, state: await page.evaluate(() => ({
+      query: document.querySelector<HTMLInputElement>('.sound-search input')?.value,
+      albums: document.querySelectorAll('.sound-album').length,
+      selected: document.querySelector('.sound-album[aria-pressed="true"]')?.getAttribute('aria-label'),
+      empty: document.querySelector('.sound-empty')?.textContent,
+      active: document.activeElement?.tagName,
+      scroll_y: window.scrollY,
+    })) });
+    throw error;
+  }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
@@ -240,8 +255,11 @@ test('synthetic held touch and trailing scroll events postpone automatic motion 
   await page.goto('/portfolio/nyc-music-map');
   const shelf = page.locator('.sound-shelf');
   const position = () => shelf.evaluate((element) => element.scrollLeft);
+  const initial = await position();
+  await expect.poll(position).toBeGreaterThan(initial + 8);
   await shelf.dispatchEvent('pointerdown', { pointerType: 'touch', pointerId: 11, bubbles: true });
   await shelf.evaluate((element) => { element.scrollLeft = 250; });
+  await expect.poll(position).toBe(250);
   const held = await position();
   await page.waitForTimeout(2200);
   expect(await position()).toBe(held);
