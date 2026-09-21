@@ -163,7 +163,15 @@ test('overview remains selectable when tiles fail and keyboard clusters expand',
 });
 
 test('changing a place preserves a playing preview and changing the song clears it', async ({ page }) => {
-  const sample_count = 8000 * 10;
+  const approach_shelf = async () => {
+    await page.getByRole('heading', { name: 'NYC Music Map.' }).hover();
+    const shelf = page.locator('.sound-shelf');
+    await shelf.hover();
+    const paused = await shelf.evaluate((element) => element.scrollLeft);
+    await page.waitForTimeout(200);
+    expect(await shelf.evaluate((element) => element.scrollLeft)).toBe(paused);
+  };
+  const sample_count = 8000 * 30;
   const wav = Buffer.alloc(44 + sample_count * 2);
   wav.write('RIFF', 0); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt ', 8);
   wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
@@ -181,11 +189,13 @@ test('changing a place preserves a playing preview and changing the song clears 
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
   await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
   expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
+  await approach_shelf();
   await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Riverside: New York State of Mind/ })).toHaveClass(/is-selected/);
   await expect(page.getByRole('button', { name: 'Riverside', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
   expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
+  await approach_shelf();
   await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
