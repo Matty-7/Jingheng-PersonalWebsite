@@ -1,0 +1,242 @@
+{
+  "reviewed_on": "2026-09-21",
+  "city_tracks": [
+    {
+      "track_id": "new-york-new-york-sinatra",
+      "place_ids": [
+        "upper-east-side"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://www.cbsnews.com/newyork/news/frank-sinatras-former-east-72nd-street-penthouse-for-sale/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "englishman-in-new-york",
+      "place_ids": [
+        "fifth-avenue"
+      ],
+      "decision": "song_lyrics",
+      "source_url": "https://genius.com/Sting-englishman-in-new-york-lyrics",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-groove",
+      "place_ids": [
+        "bronx"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://www.bronxwalkoffame.com/inductees/paul-ace-frehley",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "fairytale-of-new-york",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "decision": "retained_city",
+      "source_url": "https://music.apple.com/us/album/fairytale-of-new-york-feat-kirsty-maccoll/189233622?i=189233734&uo=4",
+      "note": "No independently verified NYC home or finer song location established in this review."
+    },
+    {
+      "track_id": "nyc-interpol",
+      "place_ids": [
+        "east-village"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://redlightmanagement.com/paul-banks-tours-his-bright-east-village-apartment/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-i-love-you",
+      "place_ids": [
+        "williamsburg"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://drownedinsound.com/in_depth/2028629-dis-meets-james-murphy-asks-about-daft-punk-gets-the-brush-off",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-u2",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "decision": "retained_city",
+      "source_url": "https://music.apple.com/us/album/new-york/1443100430?i=1443101319&uo=4",
+      "note": "No independently verified NYC home or finer song location established in this review."
+    },
+    {
+      "track_id": "new-york-cat-power",
+      "place_ids": [
+        "east-village"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://nymag.com/nymetro/arts/music/15528/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-city-serenade",
+      "place_ids": [
+        "broadway"
+      ],
+      "decision": "song_lyrics",
+      "source_url": "https://brucespringsteen.net/track/new-york-city-serenade/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "only-living-boy-in-new-york",
+      "place_ids": [
+        "forest-hills"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://www.simonandgarfunkel.com/biography/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "welcome-to-new-york",
+      "place_ids": [
+        "tribeca"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://streeteasy.com/blog/taylor-swifts-nyc-apartments-a-small-part-of-her-real-estate-empire/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-telephone-conversation",
+      "place_ids": [
+        "west-village"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://villagepreservation.org/2015/03/02/happy-birthday-lou-reed/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-city-lennon",
+      "place_ids": [
+        "greenwich-village"
+      ],
+      "decision": "song_lyrics",
+      "source_url": "https://www.johnlennon.com/music/albums/sometime-in-new-york-city-2/",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "autumn-in-new-york-billie-holiday",
+      "place_ids": [
+        "upper-west-side"
+      ],
+      "decision": "artist_connection",
+      "source_url": "https://www.architecturaldigest.com/story/billie-holidays-former-upper-west-side-townhouse-is-back-on-the-market",
+      "note": "See the catalog’s source and relation note."
+    },
+    {
+      "track_id": "new-york-city-blues-peggy-lee",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "decision": "retained_city",
+      "source_url": "https://music.apple.com/us/album/new-york-city-blues/738341377?i=738341529&uo=4",
+      "note": "No independently verified NYC home or finer song location established in this review."
+    }
+  ],
+  "coordinate_review": {
+    "method": "OpenStreetMap street geometry and shared intersection nodes; representative neighborhood locations remain approximate.",
+    "corrections": [
+      {
+        "place_id": "park-avenue",
+        "coordinates": [
+          40.7578528,
+          -73.9736145
+        ],
+        "source_url": "https://www.openstreetmap.org/node/596775876"
+      },
+      {
+        "place_id": "riverside",
+        "coordinates": [
+          40.7849764,
+          -73.9826519
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42422592"
+      },
+      {
+        "place_id": "53rd-and-3rd",
+        "coordinates": [
+          40.7577077,
+          -73.9694066
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42436707"
+      },
+      {
+        "place_id": "cornelia-street",
+        "coordinates": [
+          40.7311376,
+          -74.0029381
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42429701"
+      },
+      {
+        "place_id": "ludlow-street",
+        "coordinates": [
+          40.7200786,
+          -73.9883599
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42437096"
+      },
+      {
+        "place_id": "mulberry-street",
+        "coordinates": [
+          40.7181633,
+          -73.9979382
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42435456"
+      },
+      {
+        "place_id": "canal-street",
+        "coordinates": [
+          40.7194015,
+          -74.0018814
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42428433"
+      },
+      {
+        "place_id": "sixth-avenue",
+        "coordinates": [
+          40.737361,
+          -73.99684
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42430253"
+      },
+      {
+        "place_id": "utopia-parkway",
+        "coordinates": [
+          40.7300485,
+          -73.7935894
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42923373"
+      },
+      {
+        "place_id": "central-park-north",
+        "coordinates": [
+          40.7982754,
+          -73.9525303
+        ],
+        "source_url": "https://www.openstreetmap.org/node/3099327964"
+      },
+      {
+        "place_id": "82nd-street",
+        "coordinates": [
+          40.7858381,
+          -73.9786335
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42428661"
+      },
+      {
+        "place_id": "fifth-avenue",
+        "coordinates": [
+          40.7579096,
+          -73.9776624
+        ],
+        "source_url": "https://www.openstreetmap.org/node/42432580"
+      }
+    ],
+    "coverage": "All 66 earlier places received a coarse geography review; 18 street/intersection references received a geometry check. Eleven existing street markers were corrected. The new Fifth Avenue marker was also aligned with its road. This is not address-level certification of every neighborhood or venue."
+  }
+}

@@ -1,6 +1,6 @@
 # NYC Music Map
 
-Route: `/portfolio/nyc-music-map`. The 118-recording, 66-place catalog is separate from the ten homepage records. The original 59 recordings remain intact and retain their relative order. The concurrent 103-recording expansion is retained. Eighteen researched neighborhood/street/landmark selections lead the shelf: three overlap that expansion and are deduplicated by Apple track ID, so this change adds 15 unique recordings and 17 unique places. The specific places include Bushwick, Bed-Stuy, Queensbridge, Corona, Hollis, Utopia Parkway, the Lower East Side, Canal Street and Mermaid Avenue. Album captions expose the first mapped place.
+Route: `/portfolio/nyc-music-map`. The 118-recording, 73-place catalog is separate from the ten homepage records. The original 59 recordings remain intact and retain their relative order. The concurrent 103-recording expansion is retained. Eighteen researched neighborhood/street/landmark selections lead the shelf: three overlap that expansion and are deduplicated by Apple track ID, so this change adds 15 unique recordings and 17 unique places. The specific places include Bushwick, Bed-Stuy, Queensbridge, Corona, Hollis, Utopia Parkway, the Lower East Side, Canal Street and Mermaid Avenue. Album captions expose the first mapped place.
 
 ## Recording and geographic provenance
 
@@ -14,11 +14,11 @@ Neighborhoods, boroughs, streets, rivers and routes use approximate editorial co
 
 ## Maps and selection
 
-Show all places clears search and fits all 66 places; later shelf filtering leaves the full map intact. Nearby markers cluster by unique place count. A popup lists every related recording and artist, and choosing one retains that clicked place. Clusters support pointer, Enter and Space; marker popups support keyboard selection and Escape focus return. Tile failure exposes retry while the catalog and external Google links remain usable.
+Show all places clears search and fits all 73 places; later shelf filtering leaves the full map intact. Nearby markers cluster by unique place count. A popup lists every related recording and artist, and choosing one retains that clicked place. Clusters support pointer, Enter and Space; marker popups support keyboard selection and Escape focus return. Tile failure exposes retry while the catalog and external Google links remain usable.
 
 Explicit song/place selection moves the overview to that location in 0.5 seconds. Search alone never moves it. Show all places cancels a pending movement and restores the full bounds. Reduced motion uses an immediate view change and stops an active flight when the preference changes. Cluster icon transitions are disabled. OpenStreetMap attribution remains visible and map wheel zoom is disabled so normal page scrolling works.
 
-Google Maps embeds the selected place through the shared free Maps Embed API helper and opens the same query through keyless Maps URLs. Literary, Music and Film Map share one runtime-configured browser key. Missing configuration omits the iframe while preserving the external link and location description. See [the Google Maps cost policy](google_maps.md). The overview uses existing Leaflet dependencies and public OpenStreetMap tiles; this change adds no Google JavaScript API, geocoding API or metered service. The external link and readable place description remain if the cross-origin embed fails. Iframe load events do not certify that Google's map rendered.
+Google Maps embeds the selected location with a full offline-computed Plus Code and an explicit coordinate center; keyless Maps URLs and the Leaflet overview use the same stored coordinates. Text-name ambiguity cannot send the embed to an unrelated overseas place. Literary, Music and Film Map share one runtime-configured browser key. Missing configuration omits the iframe while preserving the external link and location description. See [the Google Maps cost policy](google_maps.md). The overview uses existing Leaflet dependencies and public OpenStreetMap tiles; this change adds no Google JavaScript API, geocoding API or metered service. The external link and readable place description remain if the cross-origin embed fails. Iframe load events do not certify that Google's map rendered.
 
 ## Album motion and playback
 
@@ -43,7 +43,7 @@ Recording-specific title, lyric, background and metadata sources are retained in
 
 ## Integration with the full song list
 
-The three shared recordings retain their existing IDs and Apple metadata: QueensBridge Politics, Coney Island Steeplechase and Stompin' at the Savoy. Coney Island Steeplechase retains its Coney Island relation and adds the more specific former park site as its first place. Existing shared place objects are preserved. All 103 earlier recordings remain available; the full links, copy and CSV export now contain all 118. New catalog bounds and exports are covered by the combined browser suite.
+The three shared recordings retain their existing IDs and Apple metadata: QueensBridge Politics, Coney Island Steeplechase and Stompin' at the Savoy. Coney Island Steeplechase retains its Coney Island relation and adds the more specific former park site as its first place. Existing place IDs are preserved; the September 21 review corrects selected coordinates and neutralizes place notes reused for artist biography. All 103 earlier recordings remain available; the full links, copy and CSV export now contain all 118. New catalog bounds and exports are covered by the combined browser suite.
 
 ## Earlier expansion and Apple Music handoff
 
@@ -62,3 +62,13 @@ Accepted review scope: MUSIC-SCALE-01, MUSIC-PLAYLIST-01, PROJECT-ORDER-01. Proj
 All 88 newly added artwork and preview endpoints returned HTTP 200 during the September 20 expansion check. This verifies availability, not full playback across every device or region.
 
 Independent provenance review removed Grover Washington Jr.’s East River Drive because reporting identifies a Philadelphia road, and removed Stanley Clarke’s same-title recording because no independent NYC basis was established. The unused road marker was removed. Apple returned impossible or conflicting dates for Ethel Waters’s Harlem On My Mind (1926) and Cannonball Adderley’s Grand Central with John Coltrane (1937); their public year is null and reads “Year unverified,” while the raw API release date is retained for traceability. No precise replacement recording date is asserted.
+
+## September 21 geography review
+
+Accepted scope: MUSIC-GEO-01, MUSIC-GEO-02 and MUSIC-GEO-03. All 15 formerly city-only tracks were reviewed. Nine now use sourced artist connections (former homes, hometowns or a birth borough); three use more specific lyric locations. The Pogues, U2 and Peggy Lee retain a visibly city-wide reference because a finer connection was not independently verified. See `music_geography_review.json` for the disposition and source of every entry. This preserves all 118 recording identities, media links and their order.
+
+An artist connection belongs to a recording/place pair, not to the shared place object. Shelf captions, overview popups and the detail card identify it as an Artist connection. Its biographical note and source are separate from the original song commentary. Home connections use representative neighborhood points, never a private-home destination. Ace Frehley remains at borough precision because only Bronx birth was verified.
+
+Park Avenue was both vulnerable to an overseas text-search match and offset toward Madison Avenue. Eleven existing street points now follow checked OpenStreetMap road/intersection nodes; the new Fifth Avenue point was checked too. All earlier places received a coarse review and 18 street/intersection references received geometry checks. Broader neighborhoods, routes and venues are not all independently certified to address precision.
+
+Independent decoding tests verify every stored full Plus Code contains its coordinate; official decoding fixtures verify the test decoder. Browser coverage exercises Park Avenue, Forest Hills artist labeling, overview selection, coordinate agreement and CSV output. A stubbed Maps iframe verifies URL contracts, not Google’s cross-origin rendering.
