@@ -6,8 +6,9 @@ test('literary choices keep the Google destination and sourced passage together 
   await page.goto('/portfolio/nyc-literary-map');
   await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
   await expect(page.getByRole('heading', { name: 'NYC Literary Map.' })).toBeVisible();
+  await page.locator('.literary-catalog > summary').press('Enter');
   await page.getByRole('button', { name: 'The Great Gatsby F. Scott Fitzgerald 1925 · Book' }).press('Enter');
-  await expect(page.getByRole('navigation', { name: 'Literary places' }).getByRole('button')).toHaveCount(2);
+  await expect(page.locator('.literary-place-index button')).toHaveCount(2);
   const reader = page.getByRole('article');
   await expect(reader).toContainText('The city seen from the Queensboro Bridge');
   await expect(page.locator('.literary-google-map')).toHaveAttribute('src', /q=Ed%20Koch%20Queensboro%20Bridge/);
@@ -22,7 +23,38 @@ test('literary choices keep the Google destination and sourced passage together 
   await expect(page.locator('.literary-google-map')).toHaveCount(0);
   await expect(reader.locator('blockquote')).toContainText('McSorley’s');
   await page.getByRole('button', { name: 'All works Books & magazines' }).click();
-  await expect(page.getByRole('navigation', { name: 'Literary places' }).getByRole('button')).toHaveCount(8);
-  await expect(reader.getByRole('heading', { level: 2 })).toHaveText('Washington Square');
+  await expect(page.locator('.literary-place-index button')).toHaveCount(43);
+  await expect(reader.getByRole('heading', { level: 2 })).toHaveText('McSorley’s Old Ale House');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+
+test('literary search keeps focus, filters locally, handles no results and restores the collection', async ({ page }) => {
+  let intercepted_maps = 0;
+  await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => { intercepted_maps += 1; return route.abort(); });
+  await page.goto('/portfolio/nyc-literary-map');
+  await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
+  await expect(page.locator('.literary-catalog')).not.toHaveAttribute('open');
+  await expect(page.locator('.literary-places')).not.toHaveAttribute('open');
+  const search = page.getByRole('searchbox', { name: 'Search this collection' });
+  await search.fill('LARSEN Harlem');
+  await expect(search).toBeFocused();
+  await expect(page.getByRole('status')).toHaveText('3 matching passages');
+  await expect(page.getByRole('article').getByRole('heading', { level: 2 })).toHaveText('Lenox Avenue');
+  await page.getByRole('button', { name: 'Next passage' }).click();
+  await expect(page.getByRole('article').getByRole('heading', { level: 2 })).toHaveText('Harlem');
+  await expect(page.locator('.literary-google-map')).toHaveAttribute('src', /q=Harlem%20New%20York/);
+  await page.locator('.literary-catalog > summary').press('Enter');
+  await page.getByRole('button', { name: 'Harlem Shadows Claude McKay 1922 · Book' }).click();
+  await expect(page.getByRole('heading', { name: 'No passages found' })).toBeVisible();
+  await expect(page.getByRole('article')).toHaveCount(0);
+  await expect(page.locator('.literary-google-map')).toHaveCount(0);
+  await page.getByRole('region', { name: 'No matching passages' }).getByRole('button', { name: 'Clear filters' }).press('Enter');
+  await expect(search).toHaveValue('');
+  await expect(page.getByRole('status')).toHaveText('43 matching passages');
+  await expect(page.getByRole('article').getByRole('heading', { level: 2 })).toHaveText('Washington Square');
+  await search.fill('Spuyten');
+  await expect(page.getByRole('article')).toContainText('Chapter XXIX');
+  await expect(page.getByRole('article').getByRole('link', { name: 'Open in Google Maps' })).toHaveAttribute('href', /Spuyten%20Duyvil%20Bronx/);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

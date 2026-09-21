@@ -18,10 +18,26 @@ test('literary places connect identifiable works, real covers and locatable orig
   }
   for (const entry of catalog.entries) {
     assert.ok(works.has(entry.work_id));
-    assert.ok(entry.excerpt && entry.locator && entry.precision && entry.note && entry.map_query);
+    assert.ok(entry.place_id && entry.excerpt && entry.locator && entry.precision && entry.note && entry.map_query);
     assert.equal(new URL(entry.source_url).protocol, 'https:');
     const [lat, lng] = entry.coordinates;
     assert.ok(lat > 40.49 && lat < 40.93 && lng > -74.26 && lng < -73.68);
   }
   assert.ok(catalog.works.some((work) => work.kind === 'The New Yorker'));
+});
+
+
+test('expanded readings have primary-source provenance and count repeated places once', () => {
+  const provenance = JSON.parse(readFileSync(new URL('../content/nyc_literary_text_provenance.json', import.meta.url), 'utf8'));
+  assert.equal(catalog.works.length, 19);
+  assert.equal(catalog.entries.length, 43);
+  assert.equal(new Set(catalog.entries.map((entry) => entry.place_id)).size, 40);
+  const evidence = new Map(provenance.entries.map((entry) => [entry.entry_id, entry]));
+  for (const entry of catalog.entries.slice(8)) {
+    assert.equal(evidence.get(entry.id)?.source_url, entry.source_url, entry.id);
+    assert.match(evidence.get(entry.id)?.source_file_sha256 ?? '', /^[a-f0-9]{64}$/);
+  }
+  for (const work of catalog.works) assert.match(work.cover.src, /\.jpg$/);
+  const shared = catalog.entries.filter((entry) => entry.place_id === 'harlem');
+  assert.deepEqual(new Set(shared.map((entry) => entry.work_id)), new Set(['quicksand', 'harlem']));
 });

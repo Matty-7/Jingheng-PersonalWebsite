@@ -109,6 +109,210 @@
       "passage_source": "https://standardebooks.org/ebooks/walt-whitman/leaves-of-grass/text/crossing-brooklyn-ferry",
       "editorial_note": "Replaces the 1855 cover because Crossing Brooklyn Ferry first appeared in 1856; the Standard Ebooks source is based on the 1892 edition and explicitly includes the poem.",
       "site_file": "/images/literary-map/leaves-of-grass-later.jpg"
+    },
+    {
+      "id": "quicksand",
+      "title": "Quicksand",
+      "author": "Nella Larsen",
+      "original_publication_year": 1928,
+      "cover_edition": "Standard Ebooks edition, first released 2024-12-06",
+      "dimensions": [
+        600,
+        900
+      ],
+      "source_page": "https://standardebooks.org/ebooks/nella-larsen/quicksand",
+      "image_url": "https://standardebooks.org/ebooks/nella-larsen/quicksand/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from Jossa (1915–1918) by Christian Krohg",
+      "rights_note": "Standard Ebooks production dedicated to CC0; underlying historical art identified in colophon.",
+      "alt": "Published Standard Ebooks cover of Quicksand by Nella Larsen.",
+      "site_file": "/images/literary-map/quicksand.jpg"
+    },
+    {
+      "id": "autobiography-of-an-ex-colored-man",
+      "title": "The Autobiography of an Ex-Colored Man",
+      "author": "James Weldon Johnson",
+      "original_publication_year": 1912,
+      "cover_edition": "Standard Ebooks edition, first released 2020-08-17",
+      "dimensions": [
+        600,
+        900
+      ],
+      "source_page": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man",
+      "image_url": "https://standardebooks.org/ebooks/james-weldon-johnson/the-autobiography-of-an-ex-colored-man/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from A Man Leaning on a Parapet (c. 1881) by Georges Seurat",
+      "rights_note": "Standard Ebooks production dedicated to CC0; underlying historical art identified in colophon.",
+      "alt": "Published Standard Ebooks cover of The Autobiography of an Ex-Colored Man by James Weldon Johnson.",
+      "site_file": "/images/literary-map/autobiography-of-an-ex-colored-man.jpg"
+    },
+    {
+      "id": "house-of-mirth",
+      "title": "The House of Mirth",
+      "author": "Edith Wharton",
+      "original_publication_year": 1905,
+      "cover_edition": "Standard Ebooks edition, first released 2018-07-26",
+      "dimensions": [
+        600,
+        900
+      ],
+      "source_page": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth",
+      "image_url": "https://standardebooks.org/ebooks/edith-wharton/the-house-of-mirth/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from Mrs. Lloyd (1776) by Joshua Reynolds",
+      "rights_note": "Standard Ebooks production dedicated to CC0; underlying historical art identified in colophon.",
+      "alt": "Published Standard Ebooks cover of The House of Mirth by Edith Wharton.",
+      "site_file": "/images/literary-map/house-of-mirth.jpg"
+    },
+    {
+      "id": "beautiful-and-damned",
+      "title": "The Beautiful and Damned",
+      "author": "F. Scott Fitzgerald",
+      "original_publication_year": 1922,
+      "cover_edition": "Standard Ebooks edition, first released 2021-02-04",
+      "dimensions": [
+        600,
+        900
+      ],
+      "source_page": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned",
+      "image_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from The Dancing Couple (1903) by J. C. Leyendecker",
+      "rights_note": "Standard Ebooks production dedicated to CC0; underlying historical art identified in colophon.",
+      "alt": "Published Standard Ebooks cover of The Beautiful and Damned by F. Scott Fitzgerald.",
+      "site_file": "/images/literary-map/beautiful-and-damned.jpg"
+    },
+    {
+      "id": "rise-of-david-levinsky",
+      "title": "The Rise of David Levinsky",
+      "author": "Abraham Cahan",
+      "original_publication_year": 1917,
+      "cover_edition": "Penguin Classics paperback edition, March 1, 1993; edited with introduction and notes by Jules Chametzky",
+      "dimensions": [
+        589,
+        900
+      ],
+      "source_page": "https://www.penguinrandomhouse.com/books/328839/the-rise-of-david-levinsky-by-abraham-cahan-edited-with-an-introduction-and-notes-by-jules-chametzky/",
+      "image_url": "https://images.penguinrandomhouse.com/cover/tif/9780140186871",
+      "credit": "Penguin Classics / Penguin Random House; official publisher cover",
+      "rights_note": "Modern published cover; retain publisher and source attribution.",
+      "alt": "Penguin Classics cover of The Rise of David Levinsky by Abraham Cahan, with a historical New York street-market photograph.",
+      "site_file": "/images/literary-map/rise-of-david-levinsky.jpg"
+    },
+    {
+      "id": "yekl",
+      "title": "Yekl: A Tale of the New York Ghetto",
+      "author": "Abraham Cahan",
+      "original_publication_year": 1896,
+      "cover_edition": "The Floating Press ebook edition, May 1, 2015",
+      "dimensions": [
+        594,
+        900
+      ],
+      "source_page": "https://www.kobo.com/in/en/ebook/yekl-1",
+      "image_url": "https://cdn.kobo.com/book-images/28b4af95-9d0d-430d-b775-97e15fab8490/1200/1200/False/yekl-1.jpg",
+      "credit": "The Floating Press; publisher-supplied ebook cover via Rakuten Kobo",
+      "rights_note": "Modern published cover; retain publisher and source attribution.",
+      "alt": "Published cover of Yekl by Abraham Cahan, showing tenement balconies and hanging laundry above the title.",
+      "site_file": "/images/literary-map/yekl.jpg"
+    },
+    {
+      "id": "hungry-hearts",
+      "title": "Hungry Hearts",
+      "author": "Anzia Yezierska",
+      "original_publication_year": 1920,
+      "cover_edition": "1920 edition, Houghton Mifflin Company, Boston and New York",
+      "dimensions": [
+        568,
+        900
+      ],
+      "source_page": "https://archive.org/details/hungryhearts00yezi_0",
+      "image_url": "https://iiif.archive.org/iiif/hungryhearts00yezi_0$1/full/600,/0/default.jpg",
+      "credit": "Boston Public Library / Internet Archive; Houghton Mifflin Collection",
+      "rights_note": "Historical 1920 cover scan.",
+      "alt": "Original cloth cover of Hungry Hearts by Anzia Yezierska, with blue title lettering, hearts, and torch motifs.",
+      "site_file": "/images/literary-map/hungry-hearts.jpg"
+    },
+    {
+      "id": "harlem-shadows",
+      "title": "Harlem Shadows",
+      "author": "Claude McKay",
+      "original_publication_year": 1922,
+      "cover_edition": "1922 first edition, first printing, Harcourt Brace and Company, New York; original dust jacket",
+      "dimensions": [
+        600,
+        885
+      ],
+      "source_page": "https://www.burnsiderarebooks.com/pages/books/140945278/claude-mckay-max-eastman-introduction/harlem-shadows",
+      "image_url": "https://burnsiderarebooks.cdn.bibliopolis.com/pictures/140945278.jpg",
+      "credit": "Burnside Rare Books, item 140945278; 1922 Harcourt Brace first-edition dust jacket",
+      "rights_note": "Historical dust-jacket artwork; source photograph credited to Burnside Rare Books.",
+      "alt": "Original 1922 dust jacket of Harlem Shadows by Claude McKay, with green typography and an introduction credited to Max Eastman.",
+      "site_file": "/images/literary-map/harlem-shadows.jpg"
+    },
+    {
+      "id": "maggie",
+      "title": "Maggie: A Girl of the Streets",
+      "author": "Stephen Crane",
+      "original_publication_year": 1893,
+      "cover_edition": "1896 first trade edition, D. Appleton and Company, New York",
+      "dimensions": [
+        587,
+        900
+      ],
+      "source_page": "https://archive.org/details/maggiegirlofstre00cranrich",
+      "image_url": "https://iiif.archive.org/iiif/maggiegirlofstre00cranrich$1/full/600,/0/default.jpg",
+      "credit": "University of California Libraries / Internet Archive; 1896 Appleton binding",
+      "rights_note": "Internet Archive item marked NOT_IN_COPYRIGHT in the United States.",
+      "alt": "1896 cloth cover of Maggie by Stephen Crane, with a black title plaque and red ornaments.",
+      "site_file": "/images/literary-map/maggie.jpg"
+    },
+    {
+      "id": "voice-of-the-city",
+      "title": "The Voice of the City: Further Stories of the Four Million",
+      "author": "O. Henry",
+      "original_publication_year": 1908,
+      "cover_edition": "1908 first edition, first printing, first binding, The McClure Company, New York",
+      "dimensions": [
+        400,
+        482
+      ],
+      "source_page": "https://www.biblio.com/book/voice-city-further-stories-four-million/d/1615662886",
+      "image_url": "https://d3525k1ryd2155.cloudfront.net/h/886/662/1615662886.0.l.jpg",
+      "credit": "Sumner & Stillman, inventory 15585, via Biblio; 1908 McClure first-edition binding",
+      "rights_note": "Historical cover artwork; source photograph credited to Sumner & Stillman.",
+      "alt": "1908 red cloth first-edition cover and spine of The Voice of the City by O. Henry, with gilt lettering.",
+      "site_file": "/images/literary-map/voice-of-the-city.jpg"
+    },
+    {
+      "id": "custom-of-the-country",
+      "title": "The Custom of the Country",
+      "author": "Edith Wharton",
+      "original_publication_year": 1913,
+      "cover_edition": "1913 edition, Charles Scribner's Sons, New York",
+      "dimensions": [
+        536,
+        900
+      ],
+      "source_page": "https://archive.org/details/customofcountry00whar_4",
+      "image_url": "https://iiif.archive.org/iiif/customofcountry00whar_4$1/full/600,/0/default.jpg",
+      "credit": "Getty Research Institute / Internet Archive; 1913 Scribner's binding",
+      "rights_note": "Historical 1913 cover scan.",
+      "alt": "Original burgundy cloth cover of The Custom of the Country, with Edith Wharton's name and the title in gilt.",
+      "site_file": "/images/literary-map/custom-of-the-country.jpg"
+    },
+    {
+      "id": "sister-carrie",
+      "title": "Sister Carrie",
+      "author": "Theodore Dreiser",
+      "original_publication_year": 1900,
+      "cover_edition": "Standard Ebooks edition, first released October 13, 2021",
+      "dimensions": [
+        600,
+        900
+      ],
+      "source_page": "https://standardebooks.org/ebooks/theodore-dreiser/sister-carrie",
+      "image_url": "https://standardebooks.org/ebooks/theodore-dreiser/sister-carrie/downloads/cover.jpg",
+      "credit": "Standard Ebooks; cover adapted from New York Street (1902) by Childe Hassam",
+      "rights_note": "Standard Ebooks production dedicated to CC0; historical artwork identified in colophon.",
+      "alt": "Standard Ebooks cover of Sister Carrie by Theodore Dreiser, with a woman standing beside snowy New York streets.",
+      "site_file": "/images/literary-map/sister-carrie.jpg"
     }
   ],
   "magazine": {
