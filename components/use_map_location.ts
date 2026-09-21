@@ -8,9 +8,14 @@ export function useMapLocation<State>(codec: MapLocationCodec<State>) {
   const [ready, set_ready] = useState(false);
   const current = useRef(codec.initial_state);
   const initialized = useRef(false);
+  const owner_path = useRef<string | null>(null);
 
   useEffect(() => {
+    const pathname = window.location.pathname;
+    owner_path.current = pathname;
     const restore = () => {
+      // A route transition can dispatch popstate before this map unmounts.
+      if (window.location.pathname !== pathname) return;
       const next = codec.read(new URL(window.location.href).searchParams);
       current.current = next;
       set_state(next);
@@ -20,7 +25,7 @@ export function useMapLocation<State>(codec: MapLocationCodec<State>) {
         codec.write(next),
       );
       if (url.href !== window.location.href) {
-        window.history.replaceState(window.history.state, '', url);
+        window.history.replaceState(null, '', url);
       }
       initialized.current = true;
       set_ready(true);
@@ -35,7 +40,11 @@ export function useMapLocation<State>(codec: MapLocationCodec<State>) {
       change: State | ((previous: State) => State),
       history_mode: 'push' | 'replace' = 'push',
     ) => {
-      if (!initialized.current) return;
+      if (
+        !initialized.current ||
+        window.location.pathname !== owner_path.current
+      )
+        return;
       const requested =
         typeof change === 'function'
           ? (change as (previous: State) => State)(current.current)
@@ -47,8 +56,9 @@ export function useMapLocation<State>(codec: MapLocationCodec<State>) {
         codec.write(next),
       );
       if (url.href !== window.location.href) {
+        // Let the framework's public History API preserve its routing metadata.
         window.history[history_mode === 'push' ? 'pushState' : 'replaceState'](
-          window.history.state,
+          null,
           '',
           url,
         );

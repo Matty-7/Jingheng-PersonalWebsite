@@ -95,7 +95,10 @@ export function useMusicPreview(track: MusicTrack | undefined) {
   }
 
   const audio_events = {
-    onEmptied: reset_progress,
+    onEmptied() {
+      // load() also emits emptied when starting a new, still-pending preview.
+      if (!audio.current?.hasAttribute('src')) reset_progress();
+    },
     onPlaying() {
       if (audio.current?.dataset.track === track?.id) {
         set_playing(true);

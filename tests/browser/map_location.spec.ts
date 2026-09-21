@@ -186,3 +186,93 @@ test('music history keeps same-song playback and stops it when the recording cha
     await audio.evaluate((element: HTMLAudioElement) => element.paused),
   ).toBe(true);
 });
+
+test('cross-map history preserves the destination map parameters after reload', async ({
+  page,
+}) => {
+  await page.goto('/portfolio/nyc-music-map?place=riverside');
+  await expect(
+    page.getByRole('button', { name: 'Riverside', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('link', { name: 'Explore the NYC Film Map' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Manhattan 1979', exact: true }),
+  ).toBeEnabled();
+  await page.reload();
+  await expect(
+    page.getByRole('button', { name: 'Manhattan 1979', exact: true }),
+  ).toBeEnabled();
+  await page.goBack();
+  await expect(
+    page.getByRole('button', { name: 'Riverside', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  expect(new URL(page.url()).searchParams.get('place')).toBe('riverside');
+  await page.goForward();
+  await expect(
+    page.getByRole('button', { name: 'Manhattan 1979', exact: true }),
+  ).toBeEnabled();
+});
+
+test('a pending preview can be cancelled and cannot revive after history changes the song', async ({
+  page,
+}) => {
+  let request_count = 0;
+  let release_preview: (() => void) | undefined;
+  await page.route('https://audio-ssl.itunes.apple.com/**', async (route) => {
+    request_count += 1;
+    await new Promise<void>((resolve) => {
+      release_preview = resolve;
+    });
+    await route.abort();
+  });
+  await page.goto('/portfolio/nyc-music-map?track=cornelia-street');
+  await expect(page.getByRole('searchbox')).toBeEnabled();
+  await page
+    .getByRole('button', {
+      name: 'Play preview of Cornelia Street',
+      exact: true,
+    })
+    .click();
+  await expect.poll(() => request_count).toBe(1);
+  const cancel = page.getByRole('button', {
+    name: 'Cancel loading preview',
+    exact: true,
+  });
+  await expect(cancel).toBeVisible();
+  await cancel.click();
+  await expect(
+    page.getByRole('button', {
+      name: 'Play preview of Cornelia Street',
+      exact: true,
+    }),
+  ).toBeVisible();
+  release_preview?.();
+  await expect(page.locator('audio')).toHaveJSProperty('paused', true);
+  await page
+    .getByRole('button', {
+      name: 'Select New York State of Mind by Billy Joel',
+      exact: true,
+    })
+    .press('Space');
+  await page
+    .getByRole('button', {
+      name: 'Play preview of New York State of Mind',
+      exact: true,
+    })
+    .click();
+  await expect.poll(() => request_count).toBe(2);
+  await expect(cancel).toBeVisible();
+  await page.goBack();
+  await expect(
+    page.getByRole('article', { name: 'Selected song' }),
+  ).toContainText('Taylor Swift');
+  release_preview?.();
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+  await expect(page.locator('audio')).toHaveJSProperty('paused', true);
+  await expect(
+    page.getByRole('button', {
+      name: 'Play preview of Cornelia Street',
+      exact: true,
+    }),
+  ).toBeVisible();
+});
