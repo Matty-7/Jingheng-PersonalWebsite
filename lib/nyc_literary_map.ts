@@ -26,6 +26,7 @@ export type LiteraryEntry = {
   place: string;
   area: string;
   coordinates: number[];
+  plus_code: string;
   map_query: string;
   locator: string;
   source_url: string;
@@ -60,9 +61,12 @@ export function search_literary_entries(work_id: string, query: string) {
 }
 
 export function literary_maps_url(entry: LiteraryEntry) {
-  return google_place_url(entry.map_query);
+  return google_place_url(entry.coordinates.join(','));
 }
 
 export function literary_embed_url(entry: LiteraryEntry, api_key: string) {
-  return google_place_embed_url(entry.map_query, api_key, 15);
+  const url = google_place_embed_url(entry.plus_code, api_key, 15);
+  return url
+    ? `${url}&center=${encodeURIComponent(entry.coordinates.join(','))}`
+    : null;
 }

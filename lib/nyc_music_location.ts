@@ -35,11 +35,9 @@ export const music_location: MapLocationCodec<MusicSelection> = {
     };
   },
   write(state) {
-    const track = music_tracks.find((item) => item.id === state.track_id);
     return {
-      track:
-        state.track_id === music_tracks[0].id ? '' : (state.track_id ?? ''),
-      place: state.place_id === track?.place_ids[0] ? '' : state.place_id,
+      track: state.track_id ?? '',
+      place: state.place_id,
       q: state.query,
       view: state.overview ? 'all' : '',
     };

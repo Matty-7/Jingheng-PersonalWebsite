@@ -36,8 +36,7 @@ export const literary_location: MapLocationCodec<LiterarySelection> = {
   write(state) {
     return {
       work: state.work_id === 'all' ? '' : state.work_id,
-      passage:
-        state.selected_id === literary_entries[0].id ? '' : state.selected_id,
+      passage: state.selected_id,
       q: state.query,
     };
   },

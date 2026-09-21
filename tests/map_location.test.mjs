@@ -100,3 +100,13 @@ test('music links keep places within a recording and preserve overview during em
     overview,
   );
 });
+
+test('shared links explicitly identify the selected recording and passage even when they are first in the catalog', () => {
+  const music = music_location.read(new URLSearchParams());
+  const music_link = new URLSearchParams(music_location.write(music));
+  assert.equal(music_link.get('track'), music.track_id);
+  assert.equal(music_link.get('place'), music.place_id);
+  const literary = literary_location.read(new URLSearchParams());
+  const literary_link = new URLSearchParams(literary_location.write(literary));
+  assert.equal(literary_link.get('passage'), literary.selected_id);
+});

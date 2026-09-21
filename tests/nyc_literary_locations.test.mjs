@@ -41,3 +41,36 @@ test('expanded readings have primary-source provenance and count repeated places
   const shared = catalog.entries.filter((entry) => entry.place_id === 'harlem');
   assert.deepEqual(new Set(shared.map((entry) => entry.work_id)), new Set(['quicksand', 'harlem']));
 });
+
+
+// Independent pair-code decoder, in integer 1/8000-degree units. Only the
+// full ten-digit codes used by this catalog are accepted; no locality lookup.
+function decode_pair_code(code) {
+  assert.match(code, /^[23456789CFGHJMPQRVWX]{8}\+[23456789CFGHJMPQRVWX]{2}$/);
+  const alphabet = '23456789CFGHJMPQRVWX';
+  const digits = code.replace('+', '');
+  const low = [-90 * 8000, -180 * 8000];
+  for (const [pair, scale] of [160000, 8000, 400, 20, 1].entries()) {
+    for (let axis = 0; axis < 2; axis++) low[axis] += alphabet.indexOf(digits[pair * 2 + axis]) * scale;
+  }
+  return [low[0] / 8000, low[1] / 8000, (low[0] + 1) / 8000, (low[1] + 1) / 8000];
+}
+
+test('Plus Code validation agrees with official Open Location Code decoding vectors', () => {
+  // https://github.com/google/open-location-code/blob/main/test_data/decoding.csv
+  const fixtures = [
+    ['7FG49QCJ+2V', [20.37, 2.782125, 20.370125, 2.78225]],
+    ['8FVC2222+22', [47, 8, 47.000125, 8.000125]],
+    ['4VCPPQGP+Q9', [-41.273125, 174.785875, -41.273, 174.786]],
+    ['22222222+22', [-90, -180, -89.999875, -179.999875]],
+  ];
+  for (const [code, cell] of fixtures) assert.deepEqual(decode_pair_code(code), cell);
+});
+
+test('all literary pins use full Plus Codes containing the reviewed coordinates', () => {
+  for (const entry of catalog.entries) {
+    const [south, west, north, east] = decode_pair_code(entry.plus_code);
+    const [latitude, longitude] = entry.coordinates;
+    assert.ok(latitude >= south && latitude <= north && longitude >= west && longitude <= east, entry.id);
+  }
+});
