@@ -8,8 +8,8 @@ import './mortgage_map.css';
 import { render_mortgage_math } from '@/lib/mortgage_math';
 
 export const metadata: Metadata = pageMetadata(
-  'Mortgage Map | Jingheng Huan',
-  'Explore mortgage cash flows, interest rates and structured credit in one connected Mortgage Map, with formulas, comparisons, reading paths and public sources.',
+  'Mortgage Mind Map | Jingheng Huan',
+  'Explore mortgage cash flows, interest rates and structured credit in one connected Mortgage Mind Map, with formulas, comparisons, reading paths and public sources.',
   '/portfolio/mortgage-map',
 );
 
@@ -24,7 +24,7 @@ export default function MortgageMapPage() {
       </nav>
       <header className="map-header">
         <h1>
-          Mortgage <em>Map.</em>
+          Mortgage <em>Mind Map.</em>
         </h1>
         <p>Mortgage cash flows, interest rates and structured credit.</p>
       </header>

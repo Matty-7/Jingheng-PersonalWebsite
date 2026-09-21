@@ -24,7 +24,7 @@
       "source_label": "Recording and title · Apple Music"
     },
     {
-      "id": "queensbridge-politics",
+      "id": "queensbridge-politics-nas",
       "title": "QueensBridge Politics",
       "artist": "Nas",
       "album": "The Lost Tapes 2",
@@ -34,16 +34,16 @@
       "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a1/8a/a3/a18aa3e9-f9ba-ffd0-e865-b0bf87008c68/19UMGIM64346.rgb.jpg/600x600bb.jpg",
       "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5d/8b/48/5d8b4835-2910-e941-0ac0-830e73558563/mzaf_17003179206174379857.plus.aac.p.m4a",
       "apple_music_url": "https://music.apple.com/us/album/queensbridge-politics/1472443662?i=1472443714&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=Nas+Queensbridge+Politics&entity=song&country=us&limit=10",
+      "metadata_source": "https://itunes.apple.com/search?term=Nas+Queensbridge+Politics&entity=song&country=us&limit=8",
       "metadata_release_date": "2019-07-19T07:00:00Z",
       "place_ids": [
         "queensbridge"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "Nas names Queensbridge directly. This is the Queens community, not the nearby bridge and not the whole borough.",
       "source_url": "https://music.apple.com/us/album/queensbridge-politics/1472443662?i=1472443714&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Apple Music · recording and title",
+      "note": "Nas narrows the map from Queens to Queensbridge. The title identifies a neighborhood, not an individual residential building."
     },
     {
       "id": "luckiest-guy-lower-east-side",
@@ -288,7 +288,7 @@
       "source_label": "Song and Coney Island street background"
     },
     {
-      "id": "coney-island-steeplechase",
+      "id": "coney-island-steeplechase-the-velvet-underground",
       "title": "Coney Island Steeplechase",
       "artist": "The Velvet Underground",
       "album": "Another View",
@@ -298,16 +298,17 @@
       "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/69/41/40/69414077-7f61-2382-7d4f-a6001423cac4/06UMGIM03554.rgb.jpg/600x600bb.jpg",
       "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/53/35/14/53351446-fa09-d693-4926-d700000a2290/mzaf_18411366663193066493.plus.aac.p.m4a",
       "apple_music_url": "https://music.apple.com/us/album/coney-island-steeplechase/1469552322?i=1469552711&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=The+Velvet+Underground+Coney+Island+Steeplechase&entity=song&country=us&limit=10",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Velvet+Underground+Coney+Island+Steeplechase&entity=song&country=us&limit=8",
       "metadata_release_date": "1986-01-01T12:00:00Z",
       "place_ids": [
-        "steeplechase-park"
+        "steeplechase-park",
+        "coney-island"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "The title narrows Coney Island to its former Steeplechase amusement park. The location is historical; the record does not turn the present site into a surviving attraction.",
       "source_url": "https://music.apple.com/us/album/coney-island-steeplechase/1469552322?i=1469552711&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Apple Music · recording and title",
+      "note": "The Velvet Underground adds another Coney Island title. The map uses the neighborhood rather than inventing a precise surviving attraction. The separate Steeplechase marker represents the former amusement park site."
     },
     {
       "id": "hard-times-new-york-town",
@@ -358,7 +359,7 @@
       "source_label": "Bruce Springsteen · official lyrics"
     },
     {
-      "id": "stompin-at-savoy",
+      "id": "stompin-at-the-savoy-benny-goodman",
       "title": "Stompin' at the Savoy",
       "artist": "Benny Goodman",
       "album": "B.G. in Hi-Fi",
@@ -368,16 +369,16 @@
       "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/2e/cf/67/2ecf67c8-58cc-0ffd-b6a0-dfcb7f573288/00077779286454.jpg/600x600bb.jpg",
       "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2b/73/1d/2b731d52-20a8-2bb3-23da-53fedd8cba82/mzaf_2527827360580796352.plus.aac.p.m4a",
       "apple_music_url": "https://music.apple.com/us/album/stompin-at-the-savoy/724305368?i=724307375&uo=4",
-      "metadata_source": "https://itunes.apple.com/search?term=Benny+Goodman+Stompin+at+the+Savoy&entity=song&country=us&limit=10",
+      "metadata_source": "https://itunes.apple.com/search?term=Benny+Goodman+Stompin+at+the+Savoy&entity=song&country=us&limit=20",
       "metadata_release_date": "1954-01-01T12:00:00Z",
       "place_ids": [
         "savoy-ballroom"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "This swing standard takes its name from Harlem’s Savoy Ballroom. Goodman’s recording supplies the music; the map marks the former venue rather than a current club.",
-      "source_url": "https://en.wikipedia.org/wiki/Stompin%27_at_the_Savoy",
-      "source_label": "Jazz standard · Savoy Ballroom background"
+      "source_url": "https://music.apple.com/us/album/stompin-at-the-savoy/724305368?i=724307375&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Savoy in this jazz standard is Harlem’s historic ballroom. The building is gone; the marker identifies its former site, not a current music venue."
     },
     {
       "id": "42nd-street",
@@ -1687,6 +1688,908 @@
       "note": "Lennon’s New York City supplies an explicit city-level title. The map uses that broad association rather than pinning a home or claiming a recording location.",
       "source_url": "https://music.apple.com/us/album/new-york-city/1440858026?i=1440858531&uo=4",
       "source_label": "Recording and title · Apple Music"
+    },
+    {
+      "id": "harlem-river-drive-bobbi-humphrey",
+      "title": "Harlem River Drive",
+      "artist": "Bobbi Humphrey",
+      "album": "Blacks and Blues",
+      "year": 1974,
+      "genre": "Jazz",
+      "track_id": 723475629,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/fd/7e/ba/fd7eba42-9b4f-10b2-f985-1defdd6e8a49/00724349854253.tif/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/21/9f/b0219f35-f955-e21b-a466-01782fcd6716/mzaf_2569824065893908703.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-river-drive/723475087?i=723475629&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bobbi+Humphrey+Harlem+River+Drive&entity=song&country=us&limit=8",
+      "metadata_release_date": "1974-04-01T07:00:00Z",
+      "place_ids": [
+        "harlem-river-drive"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-river-drive/723475087?i=723475629&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The road, rather than the river itself, gives this flute-led recording its title. The map follows Harlem River Drive along the east side of Manhattan."
+    },
+    {
+      "id": "harlem-air-shaft-duke-ellington",
+      "title": "Harlem Air Shaft",
+      "artist": "Duke Ellington",
+      "album": "Piano In the Background",
+      "year": 1960,
+      "genre": "Jazz",
+      "track_id": 198108617,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/e1/cf/f4/e1cff4b5-2143-19b1-2ba4-132c078da29c/dj.qgtrzgcl.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8d/cf/2c/8dcf2cc1-d150-c42e-8716-d9dc25d7dd9b/mzaf_2078697586403651273.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-air-shaft/198108476?i=198108617&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Duke+Ellington+Harlem+Air+Shaft&entity=song&country=us&limit=8",
+      "metadata_release_date": "1960-01-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-air-shaft/198108476?i=198108617&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "An air shaft becomes a Harlem title. The association is with the neighborhood; no particular apartment block is claimed."
+    },
+    {
+      "id": "harlem-nocturne-earl-bostic",
+      "title": "Harlem Nocturne",
+      "artist": "Earl Bostic",
+      "album": "25 Years of Rhythm and Blues Hits",
+      "year": 2005,
+      "genre": "R&B/Soul",
+      "track_id": 365536602,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/69/ee/01/69ee01dd-3c08-bd92-8efa-88248ecbed1d/127.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ed/41/cb/ed41cb75-50bb-0f0d-0a87-829e913a51e4/mzaf_18113584622449489422.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-nocturne/365536181?i=365536602&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Earl+Bostic+Harlem+Nocturne&entity=song&country=us&limit=8",
+      "metadata_release_date": "2005-01-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-nocturne/365536181?i=365536602&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The title places this instrumental nocturne in Harlem. Its geography stays at neighborhood scale."
+    },
+    {
+      "id": "harlem-blues-cynda-williams-branford-marsalis-quartet-terence-blanchard",
+      "title": "Harlem Blues",
+      "artist": "Cynda Williams, Branford Marsalis Quartet & Terence Blanchard",
+      "album": "Mo' Better Blues (feat. Terence Blanchard) [Soundtrack from the Motion Picture]",
+      "year": 1990,
+      "genre": "Soundtrack",
+      "track_id": 193653874,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/77/57/85/mzi.fkqdlgcp.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/13/4f/31/134f31c1-de3b-d88e-53ca-db9735c3ec68/mzaf_7891805918895641797.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-blues/193653812?i=193653874&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Cynda+Williams+Harlem+Blues&entity=song&country=us&limit=8",
+      "metadata_release_date": "1990-07-31T07:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-blues/193653812?i=193653874&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "A vocal recording from the Mo’ Better Blues soundtrack. Harlem is explicit in the title, without a single address to attach to it."
+    },
+    {
+      "id": "harlem-on-my-mind-ethel-waters",
+      "title": "Harlem On My Mind",
+      "artist": "Ethel Waters",
+      "album": "The Incomparable Ethel Waters",
+      "year": null,
+      "genre": "Vocal Jazz",
+      "track_id": 197884527,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/92/16/1c/mzi.hnqkdysf.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/62/b5/56/62b55612-1753-f294-c390-394446eebb9e/mzaf_14791789301744149017.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-on-my-mind/197884049?i=197884527&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ethel+Waters+Harlem+on+My+Mind&entity=song&country=us&limit=8",
+      "metadata_release_date": "1926-01-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-on-my-mind/197884049?i=197884527&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Harlem is the place held in the title’s memory. This recording brings an earlier vocal tradition into the neighborhood’s catalog."
+    },
+    {
+      "id": "angel-of-harlem-u2",
+      "title": "Angel of Harlem",
+      "artist": "U2",
+      "album": "Rattle and Hum",
+      "year": 1988,
+      "genre": "Rock",
+      "track_id": 1442802624,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b8/95/5e/b8955e8b-6993-2404-4ea5-442119be149c/17UMGIM95505.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9d/f9/16/9df916c8-a8b7-a53c-6be5-96f125af9cd2/mzaf_8639136664048427675.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/angel-of-harlem/1442801732?i=1442802624&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=U2+Angel+of+Harlem&entity=song&country=us&limit=8",
+      "metadata_release_date": "1988-10-10T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/angel-of-harlem/1442801732?i=1442802624&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "U2 puts Harlem in the title. The neighborhood is the reference here, rather than an invented venue for the song."
+    },
+    {
+      "id": "christmas-in-harlem-feat-prynce-cy-hi-teyana-taylor-kanye-west-cyhi-teyana-taylor",
+      "title": "Christmas In Harlem (feat. Prynce Cy Hi & Teyana Taylor)",
+      "artist": "Kanye West, CyHi & Teyana Taylor",
+      "album": "Christmas In Harlem - Single",
+      "year": 2010,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 1445024271,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a2/12/d4/a212d49f-c53d-7276-b830-cf1a9493b0a4/10UMGIM35006.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/77/b6/0a/77b60a41-21b9-18e2-6062-544b0e42678b/mzaf_7383399531696446884.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/christmas-in-harlem-feat-prynce-cy-hi-teyana-taylor/1445024268?i=1445024271&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Kanye+West+Christmas+In+Harlem&entity=song&country=us&limit=8",
+      "metadata_release_date": "2010-12-17T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/christmas-in-harlem-feat-prynce-cy-hi-teyana-taylor/1445024268?i=1445024271&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "A seasonal Harlem title shared by Kanye West, CyHi and Teyana Taylor. The marker represents the neighborhood as a whole."
+    },
+    {
+      "id": "spanish-harlem-incident-bob-dylan",
+      "title": "Spanish Harlem Incident",
+      "artist": "Bob Dylan",
+      "album": "Another Side of Bob Dylan",
+      "year": 1964,
+      "genre": "Singer/Songwriter",
+      "track_id": 198161776,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/0a/67/9f/mzi.siweleie.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/27/57/2d/27572d75-19c3-f795-61b0-92086b456262/mzaf_14834946474675379208.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/spanish-harlem-incident/198161466?i=198161776&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bob+Dylan+Spanish+Harlem+Incident&entity=song&country=us&limit=8",
+      "metadata_release_date": "1964-08-08T07:00:00Z",
+      "place_ids": [
+        "spanish-harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://www.bobdylan.com/songs/spanish-harlem-incident/",
+      "source_label": "Bob Dylan · official song page",
+      "note": "Dylan names Spanish Harlem in the title. His official song page supplies the text; the map does not invent an address for the encounter."
+    },
+    {
+      "id": "east-harlem-beirut",
+      "title": "East Harlem",
+      "artist": "Beirut",
+      "album": "The Rip Tide",
+      "year": 2011,
+      "genre": "Indie Rock",
+      "track_id": 1166641248,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d4/c3/aa/d4c3aa50-ca47-a748-aa6e-9cc7f036f936/655035012322.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9f/0d/97/9f0d97bb-d900-628a-e01b-44855d017722/mzaf_14679073146409008926.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/east-harlem/1166641216?i=1166641248&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Beirut+East+Harlem&entity=song&country=us&limit=8",
+      "metadata_release_date": "2011-06-07T12:00:00Z",
+      "place_ids": [
+        "spanish-harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/east-harlem/1166641216?i=1166641248&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Beirut uses East Harlem as the song’s title. East Harlem and Spanish Harlem share one neighborhood marker in this collection."
+    },
+    {
+      "id": "harlem-shuffle-original-single-version-bob-earl",
+      "title": "Harlem Shuffle (Original Single Version)",
+      "artist": "Bob & Earl",
+      "album": "Super 60s Hits",
+      "year": 2003,
+      "genre": "Rock",
+      "track_id": 283992204,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/cb/96/c5/mzi.qgfuvzlm.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/92/ac/e5/92ace535-9626-7814-fdcd-214b6bb61186/mzaf_7237051691723783470.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-shuffle-original-single-version/283991013?i=283992204&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bob+%26+Earl+Harlem+Shuffle&entity=song&country=us&limit=8",
+      "metadata_release_date": "2003-05-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-shuffle-original-single-version/283991013?i=283992204&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Bob & Earl’s original recording sits alongside the Rolling Stones’ later interpretation. These are different performances of the same composition, not separate places."
+    },
+    {
+      "id": "spanish-harlem-aretha-franklin",
+      "title": "Spanish Harlem",
+      "artist": "Aretha Franklin",
+      "album": "30 Greatest Hits",
+      "year": 1984,
+      "genre": "R&B/Soul",
+      "track_id": 933582142,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7b/60/02/7b6002d3-9b40-9852-4186-02cbe3cdb32d/603497895960.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d6/1a/52/d61a52c3-e0e2-0cfc-f916-2fe062280ed8/mzaf_6872138210369829725.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/spanish-harlem/933578756?i=933582142&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Aretha+Franklin+Spanish+Harlem&entity=song&country=us&limit=8",
+      "metadata_release_date": "1984-01-01T12:00:00Z",
+      "place_ids": [
+        "spanish-harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/spanish-harlem/933578756?i=933582142&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Aretha Franklin’s interpretation joins Ben E. King’s recording at the same Spanish Harlem marker. The shared place lets listeners compare the two performances."
+    },
+    {
+      "id": "chelsea-hotel-dan-bern",
+      "title": "Chelsea Hotel",
+      "artist": "Dan Bern",
+      "album": "Smartie Mine",
+      "year": 1999,
+      "genre": "Singer/Songwriter",
+      "track_id": 262642443,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/74/b4/39/mzi.ijyyvuus.tif/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d4/f1/f3/d4f1f3c7-c272-c5f4-1e17-0188f0accc03/mzaf_16174880558379655179.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/chelsea-hotel/262642282?i=262642443&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Dan+Bern+Chelsea+Hotel&entity=song&country=us&limit=8",
+      "metadata_release_date": "1999-03-09T12:00:00Z",
+      "place_ids": [
+        "chelsea-hotel"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/chelsea-hotel/262642282?i=262642443&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Dan Bern names the Chelsea Hotel directly. The hotel marker is a title association, not a claim about where this recording was made."
+    },
+    {
+      "id": "coney-island-baby-tom-waits",
+      "title": "Coney Island Baby",
+      "artist": "Tom Waits",
+      "album": "Blood Money (Remastered)",
+      "year": 2002,
+      "genre": "Alternative",
+      "track_id": 1485070288,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9b/1f/ec/9b1fecc3-7d55-0c81-8021-9bd33225ce73/0045778662937.png/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/0e/8b/c00e8be3-41f5-d9d4-fba1-e1adccca6f65/mzaf_15836897935907553305.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/coney-island-baby/1485070285?i=1485070288&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Tom+Waits+Coney+Island+Baby&entity=song&country=us&limit=8",
+      "metadata_release_date": "2002-05-07T07:00:00Z",
+      "place_ids": [
+        "coney-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/coney-island-baby/1485070285?i=1485070288&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Tom Waits’s Coney Island Baby is a different composition from the Lou Reed song already on the map. Both use the Brooklyn place name in the title."
+    },
+    {
+      "id": "coney-island-death-cab-for-cutie",
+      "title": "Coney Island",
+      "artist": "Death Cab for Cutie",
+      "album": "The Photo Album (Deluxe Edition)",
+      "year": 2001,
+      "genre": "Alternative",
+      "track_id": 1589270821,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2e/3b/9a/2e3b9ac7-1463-7658-d31b-e5fb49c14eaf/105471.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/42/80/69/4280693a-3d63-a968-06d8-030cf67bcf65/mzaf_5310600942978859289.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/coney-island/1589270811?i=1589270821&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Death+Cab+for+Cutie+Coney+Island&entity=song&country=us&limit=8",
+      "metadata_release_date": "2001-10-09T12:00:00Z",
+      "place_ids": [
+        "coney-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/coney-island/1589270811?i=1589270821&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Death Cab for Cutie’s Coney Island adds an indie-rock recording to the same Brooklyn location. No exact ride or boardwalk address is specified."
+    },
+    {
+      "id": "coney-island-dreaming-clint-mansell-kronos-quartet",
+      "title": "Coney Island Dreaming",
+      "artist": "Clint Mansell & Kronos Quartet",
+      "album": "Requiem for a Dream (Soundtrack from the Motion Picture)",
+      "year": 2000,
+      "genre": "Pop",
+      "track_id": 41228781,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/14/d0/b2/14d0b231-8af7-8153-77c1-8fe3130949b3/s06.kdhdxsrh.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f1/a1/9d/f1a19df3-a2fa-4ad8-47b9-dfddc6d0444e/mzaf_14578572848821894371.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/coney-island-dreaming/41228773?i=41228781&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Clint+Mansell+Coney+Island+Dreaming&entity=song&country=us&limit=8",
+      "metadata_release_date": "2000-10-03T12:00:00Z",
+      "place_ids": [
+        "coney-island"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/coney-island-dreaming/41228773?i=41228781&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "An instrumental cue from Requiem for a Dream. Coney Island is explicit in the cue’s title; it has no lyric excerpt."
+    },
+    {
+      "id": "avenue-a-the-dictators",
+      "title": "Avenue A",
+      "artist": "The Dictators",
+      "album": "D.F.F.D.",
+      "year": 2001,
+      "genre": "Punk",
+      "track_id": 1682290409,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/74/6f/91/746f91c5-b174-f993-a3ec-374f88640540/dffd.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c9/4d/d5/c94dd52e-caec-7de1-f3f0-aa06f339a922/mzaf_16493529460385524395.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/avenue-a/1682290182?i=1682290409&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Dictators+Avenue+A&entity=song&country=us&limit=8",
+      "metadata_release_date": "2001-01-01T12:00:00Z",
+      "place_ids": [
+        "avenue-a"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/avenue-a/1682290182?i=1682290409&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Dictators name Avenue A directly. This street reference brings the collection into the East Village without choosing an unsupported building."
+    },
+    {
+      "id": "brooklyn-in-the-summer-aloe-blacc",
+      "title": "Brooklyn In the Summer",
+      "artist": "Aloe Blacc",
+      "album": "Brooklyn In the Summer - Single",
+      "year": 2018,
+      "genre": "Pop",
+      "track_id": 1380370267,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f3/12/c6/f312c610-da22-7015-eaee-b68a58903f73/00602567665700.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ca/ce/e0/cacee072-0cc1-18a7-7ef4-1e6aa5373498/mzaf_9216308164182160984.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-in-the-summer/1380370261?i=1380370267&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Aloe+Blacc+Brooklyn+in+the+Summer&entity=song&country=us&limit=8",
+      "metadata_release_date": "2018-04-27T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/brooklyn-in-the-summer/1380370261?i=1380370267&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Brooklyn is the title’s setting for the season. The borough-wide marker preserves that breadth rather than assigning the song to a particular neighborhood."
+    },
+    {
+      "id": "brooklyn-bound-the-black-keys",
+      "title": "Brooklyn Bound",
+      "artist": "The Black Keys",
+      "album": "The Big Come Up",
+      "year": 2002,
+      "genre": "Alternative",
+      "track_id": 279535863,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f8/d2/1f/f8d21f63-f67e-c846-bae8-cec0354a69d5/mzi.titticbg.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ac/7e/7b/ac7e7bdf-45f0-6874-50c1-0db20d701960/mzaf_6054043540820401923.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-bound/279535830?i=279535863&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Black+Keys+Brooklyn+Bound&entity=song&country=us&limit=8",
+      "metadata_release_date": "2002-05-14T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/brooklyn-bound/279535830?i=279535863&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Black Keys put Brooklyn in the title. The map retains the borough scale without claiming a specific destination inside it."
+    },
+    {
+      "id": "brooklyn-youngblood-brass-band",
+      "title": "Brooklyn",
+      "artist": "Youngblood Brass Band",
+      "album": "Center: Level: Roar",
+      "year": 2003,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 128639277,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5e/b4/6d/5eb46df0-2bc7-013a-efe4-2914c7c9c482/600308890220_cover.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b8/10/1f/b8101f39-a227-252e-c718-9546334a3724/mzaf_16263682711469131691.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn/128639245?i=128639277&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Youngblood+Brass+Band+Brooklyn&entity=song&country=us&limit=8",
+      "metadata_release_date": "2003-04-22T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/brooklyn/128639245?i=128639277&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Youngblood Brass Band contributes a separate Brooklyn composition. The title names the borough, not a particular performance venue."
+    },
+    {
+      "id": "flatbush-waltz-andy-statman",
+      "title": "Flatbush Waltz",
+      "artist": "Andy Statman",
+      "album": "Flatbush Waltz",
+      "year": 1980,
+      "genre": "Bluegrass",
+      "track_id": 1478938139,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/93/eb/1e/93eb1ee5-e84a-1e21-ae72-4341962d970d/19CRGIM12464.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9a/a3/ae/9aa3ae4f-167b-3208-7b2e-92bae2277cfc/mzaf_12600136962037488893.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/flatbush-waltz/1478938138?i=1478938139&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Andy+Statman+Flatbush+Waltz&entity=song&country=us&limit=8",
+      "metadata_release_date": "1980-01-01T12:00:00Z",
+      "place_ids": [
+        "flatbush"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/flatbush-waltz/1478938138?i=1478938139&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Flatbush is explicit in the instrumental’s title. The neighborhood marker gives this klezmer recording a Brooklyn setting without fabricating lyrics."
+    },
+    {
+      "id": "ludlow-street-suzanne-vega",
+      "title": "Ludlow Street",
+      "artist": "Suzanne Vega",
+      "album": "Beauty & Crime",
+      "year": 2007,
+      "genre": "Rock",
+      "track_id": 716346035,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/13/5b/69/135b69fd-2ae4-ff75-6812-2a8aa89dc8f3/00094639659258.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b5/ae/eb/b5aeeb59-92a4-7aeb-0588-59efe6101721/mzaf_13135693907224263592.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/ludlow-street/716345530?i=716346035&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Suzanne+Vega+Ludlow+Street&entity=song&country=us&limit=8",
+      "metadata_release_date": "2007-01-01T12:00:00Z",
+      "place_ids": [
+        "ludlow-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/ludlow-street/716345530?i=716346035&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Suzanne Vega’s Ludlow Street shares a Lower East Side marker with Julian Casablancas’s recording. Their titles point to the same street, not the same composition."
+    },
+    {
+      "id": "park-avenue-petite-blue-mitchell",
+      "title": "Park Avenue Petite",
+      "artist": "Blue Mitchell",
+      "album": "Blue Soul",
+      "year": 1959,
+      "genre": "Jazz",
+      "track_id": 1444082029,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/5d/57/bf/5d57bfa1-dfae-7fab-861a-18e8de5c317c/00888072305083.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cd/24/1d/cd241d43-a07e-8e31-92d5-10bcb0535e0a/mzaf_15535436564998502948.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/park-avenue-petite/1444082021?i=1444082029&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Blue+Mitchell+Park+Avenue+Petite&entity=song&country=us&limit=8",
+      "metadata_release_date": "1959-01-01T12:00:00Z",
+      "place_ids": [
+        "park-avenue"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/park-avenue-petite/1444082021?i=1444082029&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The instrumental names Park Avenue. Its marker represents the avenue; the title alone does not place the music at a particular intersection."
+    },
+    {
+      "id": "incident-on-57th-street-bruce-springsteen",
+      "title": "Incident on 57th Street",
+      "artist": "Bruce Springsteen",
+      "album": "The Wild, The Innocent & the E Street Shuffle",
+      "year": 1973,
+      "genre": "Rock",
+      "track_id": 186150128,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d3/44/7d/d3447d43-bb3e-477a-6de6-f27f616b0824/074643243223.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/05/05/b5/0505b528-ae2c-1b84-023a-de595c6035c4/mzaf_16285805392295551029.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/incident-on-57th-street/186149850?i=186150128&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bruce+Springsteen+Incident+on+57th+Street&entity=song&country=us&limit=8",
+      "metadata_release_date": "1973-09-11T07:00:00Z",
+      "place_ids": [
+        "57th-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/incident-on-57th-street/186149850?i=186150128&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Springsteen names 57th Street in the title. The dramatic incident remains fiction, with a representative street marker rather than a claimed event location."
+    },
+    {
+      "id": "finale-42nd-street-reprise-bows-jerry-orbach-42nd-street-ensemble",
+      "title": "Finale: 42nd Street (Reprise); Bows",
+      "artist": "Jerry Orbach & 42nd Street Ensemble",
+      "album": "42nd Street - Original Broadway Cast Recording",
+      "year": 1980,
+      "genre": "Soundtrack",
+      "track_id": 261143771,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/88/e7/2f/mzi.crstxivh.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f4/5d/fe/f45dfe1a-fabd-c60c-3262-da9143a429b5/mzaf_6606281237226603474.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/finale-42nd-street-reprise-bows/261143507?i=261143771&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Jerry+Orbach+42nd+Street&entity=song&country=us&limit=8",
+      "metadata_release_date": "1980-12-09T12:00:00Z",
+      "place_ids": [
+        "42nd-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/finale-42nd-street-reprise-bows/261143507?i=261143771&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The original Broadway cast’s closing reprise brings 42nd Street onto the map. This is the finale recording, rather than a standalone studio version of the title song."
+    },
+    {
+      "id": "manhattan-skyline-a-ha",
+      "title": "Manhattan Skyline",
+      "artist": "a-ha",
+      "album": "The Singles 1984-2004 (Remastered)",
+      "year": 1986,
+      "genre": "Pop",
+      "track_id": 368555828,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/86/98/7d/86987d9d-320b-0246-4f4e-343b32056b8d/mzi.qmnpjmnr.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/1c/eb/b91cebe8-674e-c1e6-b2fb-9d91781c78b9/mzaf_9652352888017234588.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/manhattan-skyline/368555809?i=368555828&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=a-ha+Manhattan+Skyline&entity=song&country=us&limit=8",
+      "metadata_release_date": "1986-10-06T07:00:00Z",
+      "place_ids": [
+        "manhattan"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/manhattan-skyline/368555809?i=368555828&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "a-ha places Manhattan’s skyline in the title. The marker represents the borough, not a verified point from which the skyline was viewed."
+    },
+    {
+      "id": "manhattan-skyline-david-shire",
+      "title": "Manhattan Skyline",
+      "artist": "David Shire",
+      "album": "Saturday Night Fever (The Original Movie Soundtrack)",
+      "year": 1977,
+      "genre": "Pop",
+      "track_id": 1445668678,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/74/c1/73/74c17380-b75d-4d74-31d8-99f8e8b20c36/17UM1IM27905.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/82/c4/02/82c40288-a2a5-1311-f20d-23b54e54d60d/mzaf_8760409664699221437.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/manhattan-skyline/1445668458?i=1445668678&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=David+Shire+Manhattan+Skyline&entity=song&country=us&limit=8",
+      "metadata_release_date": "1977-11-15T12:00:00Z",
+      "place_ids": [
+        "manhattan"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/manhattan-skyline/1445668458?i=1445668678&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "David Shire’s Saturday Night Fever instrumental is a different composition from a-ha’s Manhattan Skyline. The shared title has a borough-scale marker."
+    },
+    {
+      "id": "brooklyn-boogie-louis-prima-and-his-orchestra",
+      "title": "Brooklyn Boogie",
+      "artist": "Louis Prima and His Orchestra",
+      "album": "Jumpin' With the Big Swing Bands",
+      "year": 2003,
+      "genre": "Jazz",
+      "track_id": 1442732547,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/6a/1b/1d/6a1b1d51-2383-95ca-235b-a6b28708e84b/00888072060722.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/78/8c/82/788c8229-2b7d-d2dd-1da8-162558d66729/mzaf_1396658609751824632.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn-boogie/1442732279?i=1442732547&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Louis+Prima+Brooklyn+Boogie&entity=song&country=us&limit=8",
+      "metadata_release_date": "2003-01-28T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/brooklyn-boogie/1442732279?i=1442732547&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Louis Prima’s orchestra supplies a Brooklyn title from the swing catalog. The recording does not justify narrowing the marker to one neighborhood."
+    },
+    {
+      "id": "underneath-the-harlem-moon-randy-newman",
+      "title": "Underneath the Harlem Moon",
+      "artist": "Randy Newman",
+      "album": "12 Songs",
+      "year": 1970,
+      "genre": "Rock",
+      "track_id": 730459083,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/c8/b6/0e/c8b60e9d-ea3d-e4a2-299a-a68feec805fd/075992744966.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/11/e2/53/11e253e6-5168-9a16-e6d2-5abc76b36fe4/mzaf_18123117996123053079.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/underneath-the-harlem-moon/730459075?i=730459083&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Randy+Newman+Underneath+the+Harlem+Moon&entity=song&country=us&limit=8",
+      "metadata_release_date": "1970-01-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/underneath-the-harlem-moon/730459075?i=730459083&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Harlem is explicit in the title of this historical song interpreted by Randy Newman. Its dated imagery belongs to the recording’s context, not to a contemporary description of the neighborhood."
+    },
+    {
+      "id": "autumn-in-new-york-billie-holiday",
+      "title": "Autumn In New York",
+      "artist": "Billie Holiday",
+      "album": "Recital",
+      "year": 1956,
+      "genre": "Jazz",
+      "track_id": 1469578315,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e6/65/b0/e665b009-f33f-36c1-dfd3-af30c48da11e/15UMGIM13873.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0a/ef/c7/0aefc73c-c635-1840-9324-c08fffcde458/mzaf_6277941926953452870.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/autumn-in-new-york/1469577526?i=1469578315&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Billie+Holiday+Autumn+in+New+York&entity=song&country=us&limit=8",
+      "metadata_release_date": "1956-01-01T12:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/autumn-in-new-york/1469577526?i=1469578315&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Billie Holiday’s performance adds the New York standard to the collection. The city-wide title is kept at city scale."
+    },
+    {
+      "id": "new-york-city-blues-peggy-lee",
+      "title": "New York City Blues",
+      "artist": "Peggy Lee",
+      "album": "Blues Cross Country",
+      "year": 1962,
+      "genre": "Pop",
+      "track_id": 738341529,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/28/dd/4b/28dd4bb0-a153-1627-b3ed-0b8306a3face/00724352008858.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8c/31/8c/8c318c81-80b9-98b2-4ff9-60a0bcc110f0/mzaf_14959533123656362973.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york-city-blues/738341377?i=738341529&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Peggy+Lee+New+York+City+Blues&entity=song&country=us&limit=8",
+      "metadata_release_date": "1962-06-11T07:00:00Z",
+      "place_ids": [
+        "new-york-city"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/new-york-city-blues/738341377?i=738341529&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Peggy Lee names New York City in this blues title. The city marker makes no claim about a specific street or club."
+    },
+    {
+      "id": "harlem-congo-chick-webb-and-his-orchestra",
+      "title": "Harlem Congo",
+      "artist": "Chick Webb and His Orchestra",
+      "album": "Spinnin' the Webb",
+      "year": 1945,
+      "genre": "Jazz",
+      "track_id": 1443140115,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d0/34/cc/d034ccc7-538a-cd1d-e38d-1b226c4cdb39/00011105063524.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c2/01/15/c201150a-f350-1dfb-d760-39b3087fe7a5/mzaf_9949460515002721451.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-congo/1443139361?i=1443140115&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Chick+Webb+Harlem+Congo&entity=song&country=us&limit=20",
+      "metadata_release_date": "1945-01-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-congo/1443139361?i=1443140115&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Chick Webb’s orchestra names Harlem in this swing composition. It is mapped to the neighborhood, without a claim about the recording venue."
+    },
+    {
+      "id": "harlem-hospitality-cab-calloway",
+      "title": "Harlem Hospitality",
+      "artist": "Cab Calloway",
+      "album": "Moonglow",
+      "year": 1990,
+      "genre": "Jazz",
+      "track_id": 471262006,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/89/7a/fd/mzi.hrzcqevi.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/59/5f/2d/595f2dee-a69c-d08b-57ff-fa9f25989f5e/mzaf_16192950211333958682.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/harlem-hospitality/471262005?i=471262006&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Cab+Calloway+Harlem+Hospitality&entity=song&country=us&limit=20",
+      "metadata_release_date": "1990-01-01T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/harlem-hospitality/471262005?i=471262006&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Cab Calloway’s Harlem Hospitality uses the neighborhood in its title. This selection is the studio catalog recording, not the separately listed live version."
+    },
+    {
+      "id": "lenox-avenue-breakdown-arthur-blythe",
+      "title": "Lenox Avenue Breakdown",
+      "artist": "Arthur Blythe",
+      "album": "Lenox Avenue Breakdown",
+      "year": 1978,
+      "genre": "Jazz",
+      "track_id": 1115381399,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music18/v4/0a/a5/ac/0aa5ac85-bcb4-7692-f36e-a2e5e8c1886a/886445781434.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/44/98/98/449898fe-34c2-4eb4-afd4-dcadc96e59f1/mzaf_710320681864409420.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/lenox-avenue-breakdown/1115380923?i=1115381399&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Arthur+Blythe+Lenox+Avenue+Breakdown&entity=song&country=us&limit=20",
+      "metadata_release_date": "1978-01-01T12:00:00Z",
+      "place_ids": [
+        "lenox-avenue"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/lenox-avenue-breakdown/1115380923?i=1115381399&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Arthur Blythe puts Lenox Avenue in the title of this extended jazz composition. The marker follows the avenue through Harlem rather than choosing an unsupported address."
+    },
+    {
+      "id": "central-park-north-mel-lewis-thad-jones",
+      "title": "Central Park North",
+      "artist": "Mel Lewis & Thad Jones",
+      "album": "Central Park North",
+      "year": 1969,
+      "genre": "Jazz",
+      "track_id": 715834610,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/80/91/0b/80910b8f-1007-cfab-c896-383bb82f270e/00724357685252.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6a/51/50/6a515084-8e16-9867-3c31-9fa4f9326c80/mzaf_9234281114806918629.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/central-park-north/715834199?i=715834610&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Thad+Jones+Central+Park+North&entity=song&country=us&limit=20",
+      "metadata_release_date": "1969-01-01T12:00:00Z",
+      "place_ids": [
+        "central-park-north"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/central-park-north/715834199?i=715834610&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Thad Jones and Mel Lewis recording names the park’s northern edge. It shares the 110th Street area while retaining its own street-level reference."
+    },
+    {
+      "id": "grand-central-feat-john-coltrane-cannonball-adderley-quintet",
+      "title": "Grand Central (feat. John Coltrane)",
+      "artist": "Cannonball Adderley Quintet",
+      "album": "Ultimate Cannonball Adderley",
+      "year": null,
+      "genre": "Jazz",
+      "track_id": 1434886339,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/1a/e5/4e/1ae54e60-e713-8d87-e1c1-fddcc771157f/00602567828464.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/05/7d/66/057d6661-0544-9cba-7332-60434308c44a/mzaf_1361298079061922679.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/grand-central-feat-john-coltrane/1434886212?i=1434886339&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=John+Coltrane+Grand+Central&entity=song&country=us&limit=20",
+      "metadata_release_date": "1937-08-10T12:00:00Z",
+      "place_ids": [
+        "grand-central"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/grand-central-feat-john-coltrane/1434886212?i=1434886339&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Cannonball Adderley’s quintet, with John Coltrane, names Grand Central in this instrumental. The title association does not imply a performance in the terminal."
+    },
+    {
+      "id": "east-river-the-brecker-brothers",
+      "title": "East River",
+      "artist": "The Brecker Brothers",
+      "album": "Heavy Metal Be-Bop (Live)",
+      "year": 1978,
+      "genre": "Fusion",
+      "track_id": 286063807,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/0f/cf/fb/0fcffb16-1683-069c-170b-1f3e71e5a211/dj.oplokkbb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5e/b8/a7/5eb8a7f4-8ff1-3204-4484-6a10c45036ec/mzaf_10454228835019076601.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/east-river/286063806?i=286063807&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Brecker+Brothers+East+River&entity=song&country=us&limit=20",
+      "metadata_release_date": "1978-09-01T07:00:00Z",
+      "place_ids": [
+        "east-river"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/east-river/286063806?i=286063807&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "The Brecker Brothers name the East River directly. This marker represents the waterway, without selecting a fictional address along its banks."
+    },
+    {
+      "id": "grand-street-sonny-rollins",
+      "title": "Grand Street",
+      "artist": "Sonny Rollins",
+      "album": "Brass / Trio",
+      "year": 1958,
+      "genre": "Jazz",
+      "track_id": 1444161748,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/ed/8c/45/ed8c4582-59b7-2629-d58a-253d60228119/00042281505621.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/cd/fd/ca/cdfdcabd-ffee-c727-3aeb-5e040095ac13/mzaf_9605465864895837893.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/grand-street/1444161578?i=1444161748&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sonny+Rollins+Grand+Street&entity=song&country=us&limit=20",
+      "metadata_release_date": "1958-01-01T12:00:00Z",
+      "place_ids": [
+        "grand-street"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/grand-street/1444161578?i=1444161748&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Sonny Rollins names Grand Street in this instrumental. The Lower East Side street is represented without marking an individual residence."
+    },
+    {
+      "id": "the-man-from-harlem-cab-calloway",
+      "title": "The Man from Harlem",
+      "artist": "Cab Calloway",
+      "album": "The Hepster Cat: The Very Best of 1920s-40s",
+      "year": 1932,
+      "genre": "Jazz",
+      "track_id": 1347618049,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/ac/8d/fc/ac8dfc40-646a-fe26-33d0-1fc76458a91a/Cab_Calloway_cover.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e2/f4/0f/e2f40ff4-c930-4c33-6728-41c6dfcbedfd/mzaf_11960666540893203343.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-man-from-harlem/1347617685?i=1347618049&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Cab+Calloway+Harlem+Breakdown&entity=song&country=us&limit=20",
+      "metadata_release_date": "1932-01-01T08:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/the-man-from-harlem/1347617685?i=1347618049&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Harlem is explicit in the title of this Cab Calloway recording. The map treats the historical song as a neighborhood reference, not a literal portrait of its present-day residents."
+    },
+    {
+      "id": "tarzan-of-harlem-cab-calloway",
+      "title": "Tarzan of Harlem",
+      "artist": "Cab Calloway",
+      "album": "Are You Hep to the Jive?",
+      "year": 1993,
+      "genre": "Jazz",
+      "track_id": 322825755,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/a8/de/aa/mzi.fphiqkwt.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/69/81/08/69810869-de63-b101-acf8-fe8b1150d9d8/mzaf_8011453055928197657.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/tarzan-of-harlem/322825637?i=322825755&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Cab+Calloway+Harlem+Breakdown&entity=song&country=us&limit=20",
+      "metadata_release_date": "1993-02-08T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/tarzan-of-harlem/322825637?i=322825755&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Harlem is explicit in the title of this Cab Calloway recording. The map treats the historical song as a neighborhood reference, not a literal portrait of its present-day residents."
+    },
+    {
+      "id": "old-man-harlem-edward-mallory-and-his-orchestra-ethel-waters",
+      "title": "Old Man Harlem",
+      "artist": "Edward Mallory and His Orchestra & Ethel Waters",
+      "album": "Stardust Melody (Remastered)",
+      "year": 2002,
+      "genre": "Jazz",
+      "track_id": 255262720,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/74/3a/de/mzi.qncnajlb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b9/10/13/b91013db-80e3-bbe3-a0b5-ceb1ad2e86e9/mzaf_10358720989398566161.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/old-man-harlem/255258555?i=255262720&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ethel+Waters+Harlem+on+My+Mind&entity=song&country=us&limit=8",
+      "metadata_release_date": "2002-04-23T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/old-man-harlem/255258555?i=255262720&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Ethel Waters and Edward Mallory’s orchestra contribute another distinct Harlem title. The neighborhood is the reference, without a claimed street address."
+    },
+    {
+      "id": "upper-west-side-matt-sucich",
+      "title": "Upper West Side",
+      "artist": "Matt Sucich",
+      "album": "Upper West Side - Single",
+      "year": 2023,
+      "genre": "Singer/Songwriter",
+      "track_id": 1669107029,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/29/13/c7/2913c7da-e0a1-c040-277c-c8b7b6297024/659783226666_cover.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/c5/ea/98/c5ea9895-f6b3-3408-63b4-e98bb4b60a59/mzaf_15253038034342570985.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/upper-west-side/1669107024?i=1669107029&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Upper+West+Side&entity=song&country=us&limit=20",
+      "metadata_release_date": "2023-02-24T12:00:00Z",
+      "place_ids": [
+        "upper-west-side"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "source_url": "https://music.apple.com/us/album/upper-west-side/1669107024?i=1669107029&uo=4",
+      "source_label": "Apple Music · recording and title",
+      "note": "Matt Sucich names the Upper West Side in the song’s title. The map uses a neighborhood marker rather than attaching the song to a private residence."
     }
   ],
   "places": [
@@ -2146,6 +3049,188 @@
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7128&mlon=-74.006#map=16/40.7128/-74.006"
     },
     {
+      "id": "harlem-river-drive",
+      "name": "Harlem River Drive",
+      "area": "Harlem, Manhattan",
+      "precision": "Representative point",
+      "map_query": "Harlem River Drive, Harlem, Manhattan, New York, NY",
+      "note": "The title names the road beside the Harlem River. This point locates the roadway, not a particular exit or a suggested place to stop.",
+      "coordinates": [
+        40.8194,
+        -73.9347
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8194&mlon=-73.9347#map=16/40.8194/-73.9347"
+    },
+    {
+      "id": "avenue-a",
+      "name": "Avenue A",
+      "area": "East Village, Manhattan",
+      "precision": "Representative point",
+      "map_query": "Avenue A, East Village, Manhattan, New York, NY",
+      "note": "A representative point on Avenue A beside Tompkins Square Park. A street title does not identify a particular building.",
+      "coordinates": [
+        40.7266,
+        -73.9825
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7266&mlon=-73.9825#map=16/40.7266/-73.9825"
+    },
+    {
+      "id": "flatbush",
+      "name": "Flatbush",
+      "area": "Brooklyn",
+      "precision": "Neighborhood",
+      "map_query": "Flatbush, Brooklyn, New York, NY",
+      "note": "Flatbush is a neighborhood-scale reference. The marker is an approximate locator, not an address supplied by the recording.",
+      "coordinates": [
+        40.6415,
+        -73.9594
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6415&mlon=-73.9594#map=16/40.6415/-73.9594"
+    },
+    {
+      "id": "queensbridge",
+      "name": "Queensbridge",
+      "area": "Long Island City, Queens",
+      "precision": "Neighborhood",
+      "map_query": "Queensbridge, Long Island City, Queens, New York, NY",
+      "note": "The Queensbridge neighborhood is the geographic reference. No individual apartment or private residence is identified by this marker.",
+      "coordinates": [
+        40.7553,
+        -73.9457
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7553&mlon=-73.9457#map=16/40.7553/-73.9457"
+    },
+    {
+      "id": "park-avenue",
+      "name": "Park Avenue",
+      "area": "Manhattan",
+      "precision": "Representative point",
+      "map_query": "Park Avenue, Manhattan, New York, NY",
+      "note": "Park Avenue runs through several neighborhoods. This representative Midtown point is not a claim about where the music was composed or recorded.",
+      "coordinates": [
+        40.7584,
+        -73.9749
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7584&mlon=-73.9749#map=16/40.7584/-73.9749"
+    },
+    {
+      "id": "57th-street",
+      "name": "57th Street",
+      "area": "Manhattan",
+      "precision": "Representative point",
+      "map_query": "57th Street, Manhattan, New York, NY",
+      "note": "The song title supplies a street, not a verified intersection. This Midtown marker represents 57th Street without treating its fictional incident as a real event.",
+      "coordinates": [
+        40.7646,
+        -73.9784
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7646&mlon=-73.9784#map=16/40.7646/-73.9784"
+    },
+    {
+      "id": "42nd-street",
+      "name": "42nd Street",
+      "area": "Midtown, Manhattan",
+      "precision": "Representative point",
+      "map_query": "42nd Street, Midtown, Manhattan, New York, NY",
+      "note": "The musical names 42nd Street. This Theater District point represents the street rather than the location of a specific performance or scene.",
+      "coordinates": [
+        40.756,
+        -73.987
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.756&mlon=-73.987#map=16/40.756/-73.987"
+    },
+    {
+      "id": "lenox-avenue",
+      "name": "Lenox Avenue",
+      "area": "Harlem, Manhattan",
+      "precision": "Representative point",
+      "map_query": "Lenox Avenue, Harlem, Manhattan, New York, NY",
+      "note": "Lenox Avenue is also known as Malcolm X Boulevard. This is an approximate street locator, not a specific address in the composition.",
+      "coordinates": [
+        40.808,
+        -73.9443
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.808&mlon=-73.9443#map=16/40.808/-73.9443"
+    },
+    {
+      "id": "central-park-north",
+      "name": "Central Park North",
+      "area": "Harlem, Manhattan",
+      "precision": "Representative point",
+      "map_query": "Central Park North, Harlem, Manhattan, New York, NY",
+      "note": "Central Park North follows the northern edge of the park along 110th Street. This marker represents that stretch, not an exact musical scene.",
+      "coordinates": [
+        40.7991,
+        -73.9527
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7991&mlon=-73.9527#map=16/40.7991/-73.9527"
+    },
+    {
+      "id": "grand-central",
+      "name": "Grand Central Terminal",
+      "area": "Midtown, Manhattan",
+      "precision": "Landmark",
+      "map_query": "Grand Central Terminal, Midtown, Manhattan, New York, NY",
+      "note": "The landmark is used as a title reference. The marker identifies the terminal without claiming that the recording was made inside it.",
+      "coordinates": [
+        40.7527,
+        -73.9772
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7527&mlon=-73.9772#map=16/40.7527/-73.9772"
+    },
+    {
+      "id": "east-river",
+      "name": "East River",
+      "area": "Manhattan / Brooklyn / Queens",
+      "precision": "Area",
+      "map_query": "East River, Manhattan / Brooklyn / Queens, New York, NY",
+      "note": "The East River is a long waterway, not a single destination. The marker is an approximate geographic reference and does not identify a lyric-specific viewpoint.",
+      "coordinates": [
+        40.707,
+        -73.986
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.707&mlon=-73.986#map=16/40.707/-73.986"
+    },
+    {
+      "id": "grand-street",
+      "name": "Grand Street",
+      "area": "Lower East Side, Manhattan",
+      "precision": "Representative point",
+      "map_query": "Grand Street, Lower East Side, Manhattan, New York, NY",
+      "note": "This marker represents the Lower East Side street associated with Sonny Rollins. It does not identify a private residence or a recording venue.",
+      "coordinates": [
+        40.7147,
+        -73.986
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7147&mlon=-73.986#map=16/40.7147/-73.986"
+    },
+    {
+      "id": "savoy-ballroom",
+      "name": "Savoy Ballroom (former site)",
+      "area": "Harlem, Manhattan",
+      "precision": "Venue",
+      "map_query": "Savoy Ballroom (former site), Harlem, Manhattan, New York, NY",
+      "note": "The historic Savoy Ballroom stood on Lenox Avenue between 140th and 141st Streets. It is no longer an operating ballroom; the marker identifies its former site.",
+      "coordinates": [
+        40.8207,
+        -73.9361
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8207&mlon=-73.9361#map=16/40.8207/-73.9361"
+    },
+    {
+      "id": "upper-west-side",
+      "name": "Upper West Side",
+      "area": "Manhattan",
+      "precision": "Neighborhood",
+      "map_query": "Upper West Side, Manhattan, New York, NY",
+      "note": "The Upper West Side is a neighborhood reference. The marker is representative and does not identify a private home mentioned or imagined in a song.",
+      "coordinates": [
+        40.787,
+        -73.9754
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.787&mlon=-73.9754#map=16/40.787/-73.9754"
+    },
+    {
       "id": "bushwick",
       "name": "Bushwick",
       "area": "Brooklyn",
@@ -2170,19 +3255,6 @@
         -73.9418
       ],
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6872&mlon=-73.9418#map=16/40.6872/-73.9418"
-    },
-    {
-      "id": "queensbridge",
-      "name": "Queensbridge",
-      "area": "Long Island City, Queens",
-      "map_query": "Queensbridge, Queens, New York, NY",
-      "precision": "Neighborhood",
-      "note": "Queensbridge here refers to the neighborhood and housing community. It is not a pin for the Queensboro Bridge or a private apartment.",
-      "coordinates": [
-        40.7557,
-        -73.9443
-      ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7557&mlon=-73.9443#map=16/40.7557/-73.9443"
     },
     {
       "id": "corona",
@@ -2378,32 +3450,6 @@
         -73.9775
       ],
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7852&mlon=-73.9775#map=16/40.7852/-73.9775"
-    },
-    {
-      "id": "savoy-ballroom",
-      "name": "Savoy Ballroom (former site)",
-      "area": "Harlem, Manhattan",
-      "map_query": "Savoy Ballroom site, Lenox Avenue and West 140th Street, New York, NY",
-      "precision": "Representative point",
-      "note": "The historic ballroom stood on Lenox Avenue between 140th and 141st Streets. This is an approximate site marker; the ballroom no longer operates.",
-      "coordinates": [
-        40.8175,
-        -73.938
-      ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8175&mlon=-73.938#map=17/40.8175/-73.938"
-    },
-    {
-      "id": "42nd-street",
-      "name": "42nd Street",
-      "area": "Theater District, Manhattan",
-      "map_query": "West 42nd Street and Broadway, Manhattan, New York, NY",
-      "precision": "Representative point",
-      "note": "Broadway is a reference along West 42nd Street, not a filming location or a specific theater identified by the song.",
-      "coordinates": [
-        40.7556,
-        -73.9865
-      ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7556&mlon=-73.9865#map=16/40.7556/-73.9865"
     }
   ]
 }

@@ -137,3 +137,26 @@ html:has(.sound-page) { scroll-behavior: auto; }
 .sound-marker.is-selected > span { box-shadow: 0 0 0 5px #a73e2025, 0 3px 9px #273a3040; }
 
 .sound-album .sound-album-place { font-size: 14px; color: var(--sound-red); margin-top: 4px; }
+.sound-playlist { margin-bottom: 16px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.sound-playlist-bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; padding: 8px 0; }
+.sound-playlist-toggle, .sound-export { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 8px 14px; border: 1px solid #273a3055; background: transparent; color: inherit; font: inherit; font-size: 14px; cursor: pointer; }
+.sound-playlist-toggle { background: var(--sound-ink); color: var(--sound-paper); border-color: var(--sound-ink); }
+.sound-playlist-toggle > span { border-left: 1px solid #fcf7eb60; padding-left: 10px; font-variant-numeric: tabular-nums; }
+.sound-playlist-content { padding: 22px 0; }
+.sound-playlist-intro { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
+.sound-playlist-intro > div { max-width: 680px; }
+.sound-playlist-intro h2 { font-size: 30px; margin-bottom: 8px; }
+.sound-playlist-intro p { font-size: 16px; line-height: 1.6; }
+.sound-playlist-intro .sound-playlist-note { font-size: 14px; color: #596252; margin-top: 8px; }
+.sound-playlist-intro .sound-export { flex-shrink: 0; }
+.sound-copy-status { display: block; margin: 8px 0; font-size: 14px; color: #596252; }
+.sound-copy-area { width: 100%; min-height: 160px; padding: 12px; color: inherit; background: var(--sound-paper); font-size: 16px; }
+.sound-playlist-tracks { max-height: 420px; overflow-y: auto; overscroll-behavior-y: contain; padding-left: 36px; scrollbar-width: thin; }
+.sound-playlist-tracks li { padding-left: 8px; border-bottom: 1px solid var(--border); font: 14px/1.5 monospace; }
+.sound-playlist-tracks a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 10px 8px; font-family: var(--font-sans), sans-serif; }
+.sound-playlist-tracks a > span { min-width: 0; }
+.sound-playlist-tracks strong { display: block; font-size: 16px; font-weight: 500; overflow-wrap: anywhere; }
+.sound-playlist-tracks a > span > span { display: block; color: #596252; font-size: 14px; overflow-wrap: anywhere; }
+.sound-playlist-tracks svg { flex-shrink: 0; }
+.sound-playlist-tracks a:hover { color: var(--sound-red); }
+@media (max-width: 759px) { .sound-playlist-intro { flex-direction: column; gap: 12px; } }

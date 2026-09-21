@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { MusicOverview, type MusicFocus } from './music_overview';
+import { MusicPlaylist } from './music_playlist';
 import { useAlbumScroll } from './use_album_scroll';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Disc3, MapPin, Pause, Play, Search, X } from 'lucide-react';
@@ -153,6 +154,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
   }
 
   return <div className="sound-explorer">
+    <MusicPlaylist />
     <div className="sound-catalog-heading"><div><Disc3 size={18} aria-hidden="true" /><span>{music_tracks.length} songs · {music_places.length} places</span></div><label className="sound-search"><Search size={17} aria-hidden="true" /><input type="search" value={query} onChange={(event) => change_query(event.target.value)} placeholder="Song, artist or place" aria-label="Search songs, artists or places" />{query && <button aria-label="Clear search" onClick={() => change_query('')}><X size={16} aria-hidden="true" /></button>}</label><div className="sound-shelf-controls"><button disabled={album_scroll.reduced} aria-label={album_scroll.reduced ? 'Album scrolling off: reduced motion' : album_scroll.scrolling ? 'Pause album scrolling' : 'Resume album scrolling'} title={album_scroll.reduced ? 'Reduced motion is enabled' : album_scroll.scrolling ? 'Pause album scrolling' : 'Resume album scrolling'} onClick={album_scroll.toggle}>{album_scroll.scrolling ? <Pause size={17} aria-hidden="true" /> : <Play size={17} aria-hidden="true" />}</button><button aria-label="Previous songs" onClick={() => move_shelf(-1)}><ChevronLeft size={19} aria-hidden="true" /></button><button aria-label="More songs" onClick={() => move_shelf(1)}><ChevronRight size={19} aria-hidden="true" /></button></div></div>
     <output className="sound-search-status">{query ? `${results.length} matching ${results.length === 1 ? 'song' : 'songs'}` : 'Choose a record to find its places.'}</output>
     <div className={`sound-shelf${album_scroll.scrolling ? ' is-scrolling' : ''}`} ref={shelf} aria-label="Song collection">
@@ -164,7 +166,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
       <div className="sound-workspace">
         <GoogleMusicMap place={place} overview={overview} fit_request={fit_request} focus_request={focus_request} on_select={select_map_track} google_maps_key={google_maps_key} />
         <article className={`sound-record${playing ? ' is-playing' : ''}`} aria-label="Selected song">
-          <div className="sound-record-top" key={`cover-${track.id}`}><a className="sound-selected-cover" href={track.apple_music_url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${track.album} on Apple Music`}><AlbumCover key={track.id} track={track} /></a><div><p className="sound-label">{track.year} · {track.genre}</p><h2>{track.title}</h2><p className="sound-artist">{track.artist}</p><p className="sound-album-name">{track.album}</p></div></div>
+          <div className="sound-record-top" key={`cover-${track.id}`}><a className="sound-selected-cover" href={track.apple_music_url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${track.album} on Apple Music`}><AlbumCover key={track.id} track={track} /></a><div><p className="sound-label">{track.year ?? 'Year unverified'} · {track.genre}</p><h2>{track.title}</h2><p className="sound-artist">{track.artist}</p><p className="sound-album-name">{track.album}</p></div></div>
           <div className="sound-player"><button className="sound-play" onClick={() => void toggle_preview()} aria-label={loading ? 'Cancel loading preview' : playing ? 'Pause preview' : `Play preview of ${track.title}`}><span>{loading || playing ? <Pause size={20} aria-hidden="true" /> : <Play size={20} aria-hidden="true" />}</span>{loading ? 'Loading preview…' : playing ? 'Pause preview' : 'Play preview'}</button><Disc3 className="sound-playback-disc" size={30} aria-hidden="true" /><div className="sound-progress"><progress value={elapsed} max={duration || 1} aria-label="Preview playback progress" /><span>{preview_time(elapsed)} <span>/ {duration ? preview_time(duration) : 'preview'}</span></span></div></div>
           <output className="sound-preview-message">{message || 'Song preview provided courtesy of iTunes.'}</output>
           <div className="sound-store-links"><a href={track.apple_music_url} target="_blank" rel="noopener noreferrer">Listen on Apple Music <ArrowUpRight size={15} aria-hidden="true" /></a><a href={track.apple_music_url} target="_blank" rel="noopener noreferrer" aria-label={`Download ${track.title} on iTunes`}><Image src="/images/music-map/itunes-badge.svg" alt="Download on iTunes" width={110} height={40} unoptimized /></a></div>

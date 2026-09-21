@@ -218,7 +218,7 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
             <strong>Connections</strong> puts one concept between what informs
             it and what it affects. <strong>Compare</strong> puts spreads,
             products and currencies side by side. Search finds concepts across
-            every domain in Mortgage Map. <strong>List</strong> lets you
+            every domain in Mortgage Mind Map. <strong>List</strong> lets you
             browse without moving the canvas.
           </p>
           <p>

@@ -1,4 +1,4 @@
-# Mortgage Map
+# Mortgage Mind Map
 
 On September 12, 2026, Jingheng explicitly requested a public interactive knowledge map in a real Projects section. This is a separate educational reading project. The withdrawn experiment is not restored, redirected or reused.
 
@@ -88,8 +88,8 @@ Escape closes a visible search-results panel first, preserving the search text a
 
 Browser CI retains the three-viewport reading journey and adds camera pan/zoom/Home, selected-concept centering after reader/layout changes, real media playback with a local WAV fixture, bookshelf drag/cancel/keyboard/focus, and geometric visual contracts for the homepage. Reports include three stable homepage/collection screenshots per viewport. See `scripts/browser_checks/README.md` for what these checks prove and their limits.
 
-## September 20: one Mortgage Map
+## September 20: one Mortgage Mind Map
 
-The user requested one integrated Mortgage Map. Subject switches, alternate root names and lens-specific membership are removed. Every existing concept, including interest-rate instruments, currencies and wider credit comparisons, is available through the same graph, domain directory and List. The root ID remains `mortgages`; concept and path IDs, references, formulas, comparisons and URL fragments are unchanged. Reader history, guided paths, expansion controls and reduced-motion behavior retain their existing semantics.
+The user requested one integrated Mortgage Mind Map. Subject switches, alternate root names and lens-specific membership are removed. Every existing concept, including interest-rate instruments, currencies and wider credit comparisons, is available through the same graph, domain directory and List. The root ID remains `mortgages`; concept and path IDs, references, formulas, comparisons and URL fragments are unchanged. Reader history, guided paths, expansion controls and reduced-motion behavior retain their existing semantics.
 
-The homepage and map metadata describe the same mortgage-centered scope. `styles/guided_paths.css` owns guided-step styling formerly bundled with the removed subject controls. Future research-inbox, public-evidence and assumption-review work belongs inside Mortgage Map; see `mortgage_atlas_roadmap.md` for the distinction between current and planned capabilities.
+The homepage and map metadata describe the same mortgage-centered scope. `styles/guided_paths.css` owns guided-step styling formerly bundled with the removed subject controls. Future research-inbox, public-evidence and assumption-review work belongs inside Mortgage Mind Map; see `mortgage_atlas_roadmap.md` for the distinction between current and planned capabilities.
