@@ -503,6 +503,8 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
     return () => {
       cancelled = true;
       map.off('moveend', reveal_marker);
+      // Settle the old selection before its focused marker can be replaced.
+      if (map_state.active) map.stop();
     };
   }, [selected_id, map_state, filtered_locations]);
 
