@@ -181,6 +181,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
   );
   const [retry_count, set_retry_count] = useState(0);
   const map_element = useRef<HTMLDivElement>(null);
+  const marker_group = useRef<Leaflet.LayerGroup | null>(null);
   const filmstrip_element = useRef<HTMLDivElement>(null);
   const shelf_motion = useAlbumScroll(filmstrip_element, query);
   const details_elements = useRef(new Map<string, HTMLElement>());
@@ -282,6 +283,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
     return () => {
       disposed = true;
       if (instance) instance.active = false;
+      marker_group.current = null;
       clearTimeout(load_timeout);
       resize_observer?.disconnect();
       map?.remove();
@@ -334,6 +336,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
         });
     });
     layer.addTo(map_state.layer);
+    marker_group.current = layer;
     markers.clear();
     filtered_locations.forEach((location, index) => {
       const scenes = location.scenes.filter(
@@ -440,28 +443,64 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
 
   useEffect(() => {
     if (!map_state?.active) return;
-    if (selected_id) map_state.map.stop();
+    const { map } = map_state;
+    const group = marker_group.current;
+    let cancelled = false;
     map_state.markers.forEach((marker, location_id) => {
       const selected = location_id === selected_id;
       marker.getElement()?.classList.toggle('is-selected', selected);
       marker.getElement()?.setAttribute('aria-pressed', String(selected));
       marker.setZIndexOffset(selected ? 1000 : 0);
-      if (selected) {
-        map_state.map.flyTo(
-          marker.getLatLng(),
-          Math.max(16, map_state.map.getZoom()),
-          { animate: !reduce_motion(), duration: 0.5 },
-        );
-        marker.openTooltip();
-      } else if (marker.getTooltip()?.options.permanent) marker.openTooltip();
-      else marker.closeTooltip();
+      if (!selected) {
+        if (marker.getTooltip()?.options.permanent) marker.openTooltip();
+        else marker.closeTooltip();
+      }
     });
-    if (selected_id && reveal_selection.current) {
-      reveal_selection.current = false;
-      const details = details_elements.current.get(selected_id);
-      details?.focus({ preventScroll: true });
-      details?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
-    }
+    const marker = selected_id ? map_state.markers.get(selected_id) : null;
+    if (!marker || !selected_id) return;
+    map.stop();
+    const target_zoom = Math.max(16, map.getZoom());
+    const reveal_details = reveal_selection.current;
+    reveal_selection.current = false;
+    const current = () =>
+      !cancelled && map_state.active && marker_group.current === group;
+    const finish_selection = () => {
+      if (!current()) return;
+      marker.getElement()?.classList.add('is-selected');
+      marker.getElement()?.setAttribute('aria-pressed', 'true');
+      marker.openTooltip();
+      if (reveal_details) {
+        const details = details_elements.current.get(selected_id);
+        details?.focus({ preventScroll: true });
+        details?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+      }
+    };
+    const reveal_marker = () => {
+      if (!current()) return;
+      if (
+        map.getZoom() < target_zoom ||
+        map.getCenter().distanceTo(marker.getLatLng()) > 2
+      )
+        return;
+      map.off('moveend', reveal_marker);
+      // A cluster may finish mounting its child after the camera flight ends.
+      // Its public reveal callback is the point at which the pin is usable.
+      if (group && 'zoomToShowLayer' in group) {
+        (group as Leaflet.MarkerClusterGroup).zoomToShowLayer(
+          marker,
+          finish_selection,
+        );
+      } else finish_selection();
+    };
+    map.on('moveend', reveal_marker);
+    map.flyTo(marker.getLatLng(), target_zoom, {
+      animate: !reduce_motion(),
+      duration: 0.5,
+    });
+    return () => {
+      cancelled = true;
+      map.off('moveend', reveal_marker);
+    };
   }, [selected_id, map_state, filtered_locations]);
 
   function choose_film(next_id: string) {

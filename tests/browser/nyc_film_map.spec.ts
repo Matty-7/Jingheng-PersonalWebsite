@@ -9,6 +9,7 @@ const scene_summary = (name: string) => `summary.cinema-place-button[aria-label*
 
 test('film selection connects real frames, keyboard pins and Google place links', async ({ page }) => {
   await page.goto('/portfolio/nyc-film-map');
+  await page.getByRole('button', { name: 'Pause film scrolling' }).click();
   await expect(page.getByText(`${film_data.locations.length} places on the map`)).toBeVisible();
   await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_data.locations.length);
   await expect(page.locator('.cinema-cluster').first()).toBeVisible();
@@ -24,8 +25,12 @@ test('film selection connects real frames, keyboard pins and Google place links'
   expect(await plaza.locator('.cinema-still img').evaluateAll((images) => new Set(images.map((image) => image.getAttribute('src'))).size)).toBe(2);
   await page.getByRole('button', { name: "You've Got Mail 1998", exact: true }).click();
   await expect(page.locator('.cinema-place-list > li')).toHaveCount(film_places('youve-got-mail').length);
+  await page.locator(scene_summary('The Shop Around the Corner')).click();
   await page.locator(scene_summary('Café Lalo')).click();
-  await page.getByRole('button', { name: "2. Café Lalo — You've Got Mail", exact: true }).press('Enter');
+  const cafe_pin = page.getByRole('button', { name: "2. Café Lalo — You've Got Mail", exact: true });
+  await expect(cafe_pin).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.cinema-marker-label')).toHaveText([/Café Lalo/]);
+  await cafe_pin.press('Enter');
   const details = page.getByRole('region', { name: 'Details for Café Lalo' });
   await expect(details).toContainText('vacated this address in 2024');
   await expect.poll(() => details.locator('.cinema-still img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
