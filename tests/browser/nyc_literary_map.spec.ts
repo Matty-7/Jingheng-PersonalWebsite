@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import catalog from '../../content/nyc_literary_locations.json';
+import catalog from '../../content/nyc_literary_locations.json' with { type: 'json' };
 
 test('literary choices keep the Google destination and sourced passage together without the embedded map', async ({ page }) => {
   let intercepted_maps = 0;
