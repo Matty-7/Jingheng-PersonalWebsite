@@ -12,7 +12,7 @@ test('one Mortgage Mind Map includes every domain and concept at every hierarchy
   for (const branch of mortgage_branches) assert.ok(mortgage_topics.some(t => t.branch === branch.id));
   for (const depth of [0, 1, 2]) {
     const nodes = build_mortgage_graph(depth);
-    assert.equal(nodes.find(n => n.kind === 'root').title, 'Mortgage Mind Map');
+    assert.equal(nodes.find(n => n.kind === 'root').title, 'Mortgage');
     assert.deepEqual(new Set(nodes.filter(n => n.kind === 'branch').map(n => n.id)), new Set(mortgage_branches.map(b => b.id)));
     if (depth === 2) assert.deepEqual(new Set(nodes.filter(n => n.kind === 'concept').map(n => n.id)), ids);
     for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
