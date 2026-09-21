@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 test('music selection keeps the recording, place and Google map together', async ({ page }) => {
   await page.goto('/portfolio/nyc-music-map');
   await expect(page.getByRole('heading', { name: 'NYC Music Map.' })).toBeVisible();
+  await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
   await expect(page.locator('audio')).toHaveCount(1);
   await expect(page.locator('audio')).not.toHaveAttribute('src');
   await page.getByRole('button', { name: 'Riverside', exact: true }).press('Enter');
@@ -19,7 +20,7 @@ test('music selection keeps the recording, place and Google map together', async
   await expect(page.getByRole('heading', { name: 'No songs found.' })).toBeVisible();
   await expect(page.locator('iframe')).toHaveCount(0);
   await page.getByRole('button', { name: 'Show all songs', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('button', { name: 'Select Bushwick Blues by Delta Spirit' })).toHaveAttribute('aria-pressed', 'true');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
@@ -27,6 +28,7 @@ test('failed preview and map requests leave usable links and silent selection', 
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) => route.abort());
   await page.route('https://www.google.com/maps?**', (route) => route.abort());
   await page.goto('/portfolio/nyc-music-map');
+  await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
   await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
   await expect(page.getByText('This preview is unavailable. You can still open the song on Apple Music.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Listen on Apple Music', exact: true })).toBeVisible();
@@ -76,6 +78,7 @@ test('all places include shared recordings and survive catalog filtering', async
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
   await expect(page.getByRole('searchbox')).toHaveValue('');
   await expect(page.getByRole('region', { name: 'Map of all songs' })).toBeVisible();
+  await page.getByRole('button', { name: 'Select Coney Island Baby by Lou Reed', exact: true }).press('Enter');
   const island = page.getByRole('button', { name: /^Coney Island: Coney Island Baby/ });
   await island.press('Enter');
   await page.getByRole('button', { name: 'Choose coney island (feat. The National) by Taylor Swift at Coney Island', exact: true }).click();
@@ -90,11 +93,14 @@ test('all places include shared recordings and survive catalog filtering', async
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test('album motion advances without playing and stops for manual and reduced motion', async ({ page }) => {
+test('album motion advances faster without playing and honors Pause and reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/portfolio/nyc-music-map');
   const shelf = page.locator('.sound-shelf');
   await expect.poll(() => shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(4);
+  const speed_start = await shelf.evaluate((element) => element.scrollLeft);
+  await page.waitForTimeout(600);
+  expect(await shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(speed_start + 14);
   await page.getByRole('button', { name: 'Pause album scrolling', exact: true }).click();
   const stopped = await shelf.evaluate((element) => element.scrollLeft);
   await page.waitForTimeout(250);
@@ -102,7 +108,7 @@ test('album motion advances without playing and stops for manual and reduced mot
   await page.getByRole('button', { name: 'Resume album scrolling', exact: true }).click();
   await expect.poll(() => shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(stopped + 3);
   await page.getByRole('button', { name: 'More songs', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Resume album scrolling', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Pause album scrolling', exact: true })).toBeVisible();
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(page.getByRole('button', { name: 'Album scrolling off: reduced motion', exact: true })).toBeDisabled();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
@@ -120,17 +126,18 @@ test('album motion pauses for hover, focus and touch, and reverses at the end', 
   expect(await position()).toBe(hovered);
   await page.mouse.move(0, 0);
   await expect.poll(position).toBeGreaterThan(hovered + 2);
-  await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).focus();
+  await page.getByRole('button', { name: 'Select Bushwick Blues by Delta Spirit', exact: true }).press('ArrowRight');
+  await page.waitForTimeout(150);
   const focused = await position();
   await page.waitForTimeout(200);
   expect(await position()).toBe(focused);
   await page.getByRole('button', { name: 'Show all places', exact: true }).focus();
   await expect.poll(position).toBeGreaterThan(focused + 2);
-  await shelf.dispatchEvent('pointerdown', { pointerType: 'touch', bubbles: true });
-  await expect(page.getByRole('button', { name: 'Resume album scrolling', exact: true })).toBeVisible();
+  await shelf.dispatchEvent('pointerdown', { pointerType: 'touch', pointerId: 10, bubbles: true });
+  await expect(page.getByRole('button', { name: 'Pause album scrolling', exact: true })).toBeVisible();
   await shelf.evaluate((element) => { element.scrollLeft = element.scrollWidth; });
   const end = await position();
-  await page.getByRole('button', { name: 'Resume album scrolling', exact: true }).click();
+  await shelf.dispatchEvent('pointerup', { pointerType: 'touch', pointerId: 10, bubbles: true });
   await expect.poll(position).toBeLessThan(end - 2);
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
@@ -148,7 +155,7 @@ test('overview remains selectable when tiles fail and keyboard clusters expand',
   await expect(page.locator('.sound-overview')).toBeFocused();
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
   await page.getByRole('button', { name: 'Retry map', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Coney Island: Coney Island Baby/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /music places. Zoom to expand./ }).first()).toBeVisible();
   await page.getByRole('button', { name: 'Selected place', exact: true }).click();
   await expect(page.getByRole('link', { name: 'Open in Google Maps', exact: true })).toBeVisible();
 });
@@ -162,6 +169,7 @@ test('changing a place preserves a playing preview and changing the song clears 
   wav.writeUInt16LE(16, 34); wav.write('data', 36); wav.writeUInt32LE(sample_count * 2, 40);
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) => route.fulfill({ status: 200, contentType: 'audio/wav', body: wav }));
   await page.goto('/portfolio/nyc-music-map');
+  await page.getByRole('button', { name: 'Select New York State of Mind by Billy Joel', exact: true }).press('Enter');
   await page.getByRole('button', { name: 'Play preview of New York State of Mind', exact: true }).click();
   await expect.poll(() => page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
   const audio_src = await page.locator('audio').getAttribute('src');
@@ -173,4 +181,79 @@ test('changing a place preserves a playing preview and changing the song clears 
   expect(await page.locator('audio').evaluate((audio) => (audio as HTMLAudioElement).paused)).toBe(false);
   await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
+});
+
+
+test('manual wheel and arrow browsing resume automatically while the pointer stays over the shelf', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/portfolio/nyc-music-map');
+  const shelf = page.locator('.sound-shelf');
+  const position = () => shelf.evaluate((element) => element.scrollLeft);
+  await shelf.locator('button').first().click();
+  await shelf.hover();
+  const before = await position();
+  await page.mouse.wheel(260, 0);
+  await expect.poll(position).toBeGreaterThan(before + 100);
+  await page.waitForTimeout(400);
+  const manual = await position();
+  await page.waitForTimeout(1000);
+  expect(Math.abs(await position() - manual)).toBeLessThan(2);
+  await expect.poll(position, { timeout: 4500 }).toBeGreaterThan(manual + 8);
+  await page.getByRole('button', { name: 'More songs', exact: true }).click();
+  await page.waitForTimeout(800);
+  const arrow = await position();
+  await expect.poll(position, { timeout: 4500 }).toBeGreaterThan(arrow + 8);
+  await page.getByRole('button', { name: 'Pause album scrolling', exact: true }).click();
+  await shelf.hover();
+  await page.mouse.wheel(180, 0);
+  await page.waitForTimeout(500);
+  const paused = await position();
+  await page.waitForTimeout(2300);
+  expect(await position()).toBe(paused);
+  await expect(page.getByRole('button', { name: 'Resume album scrolling', exact: true })).toBeVisible();
+});
+
+test('synthetic held touch and trailing scroll events postpone automatic motion until idle', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/portfolio/nyc-music-map');
+  const shelf = page.locator('.sound-shelf');
+  const position = () => shelf.evaluate((element) => element.scrollLeft);
+  await shelf.dispatchEvent('pointerdown', { pointerType: 'touch', pointerId: 11, bubbles: true });
+  await shelf.evaluate((element) => { element.scrollLeft = 250; });
+  const held = await position();
+  await page.waitForTimeout(2200);
+  expect(await position()).toBe(held);
+  await shelf.dispatchEvent('pointerup', { pointerType: 'touch', pointerId: 11, bubbles: true });
+  await page.waitForTimeout(1200);
+  await shelf.evaluate((element) => { element.scrollLeft += 80; });
+  await page.waitForTimeout(100);
+  const trailing = await position();
+  await page.waitForTimeout(1100);
+  expect(await position()).toBe(trailing);
+  await expect.poll(position, { timeout: 4000 }).toBeGreaterThan(trailing + 8);
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+});
+
+test('neighborhood selections focus the overview while search and Show all places preserve its scope', async ({ page }) => {
+  await page.goto('/portfolio/nyc-music-map');
+  await expect(page.getByRole('button', { name: 'Select Bushwick Blues by Delta Spirit', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.sound-catalog-heading')).toContainText('77 songs · 55 places');
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  const tile = page.locator('.sound-overview .leaflet-tile').first();
+  await expect(tile).toHaveAttribute('src', /tile.openstreetmap.org/);
+  const all_tile = await tile.getAttribute('src');
+  await page.getByRole('searchbox').fill('Queensbridge');
+  await expect(page.getByRole('button', { name: 'Select QueensBridge Politics by Nas', exact: true })).toBeVisible();
+  expect(await tile.getAttribute('src')).toBe(all_tile);
+  await page.getByRole('button', { name: 'Select QueensBridge Politics by Nas', exact: true }).press('Enter');
+  await expect.poll(() => tile.getAttribute('src')).not.toBe(all_tile);
+  await expect(page.getByRole('button', { name: /^Queensbridge:/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Show all places', exact: true }).click();
+  await expect.poll(() => tile.getAttribute('src')).toBe(all_tile);
+  await expect(page.getByRole('searchbox')).toHaveValue('');
+  await page.getByRole('searchbox').fill('Corona');
+  await page.getByRole('button', { name: 'Select Me and Julio Down by the Schoolyard by Paul Simon', exact: true }).press('Enter');
+  await expect(page.getByRole('article', { name: 'Selected song' })).toContainText('Queen of Corona');
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
