@@ -288,11 +288,11 @@ export default function Home() {
           </div>
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
-              <h3>Mortgage Map</h3>
+              <h3>Mortgage Mind Map</h3>
               <p>Explore mortgage cash flows, interest rates and structured credit through connected concepts, reading paths and public sources.</p>
               <Link href="/portfolio/mortgage-map" className="text-link">Explore the map <span aria-hidden="true">↗</span></Link>
             </div>
-            <div className="project-map-preview" aria-label="Explore the Mortgage Map">
+            <div className="project-map-preview" aria-label="Explore the Mortgage Mind Map">
               <div className="project-map-path" aria-label="From borrower decisions to valuation">
                 {mortgage_preview_path.map((step, i) => (
                   <Link href={`/portfolio/mortgage-map#concept=${step.id}`} key={step.id}>
@@ -311,6 +311,17 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </article>
+          <article className="projects-entry" data-reveal>
+            <div className="projects-copy">
+              <h3 id="music-map-project-heading">NYC Music Map</h3>
+              <p>Find the places named in songs, from Bleecker Street to the Queensboro Bridge. Hear a preview and explore the city on Google Maps.</p>
+              <Link href="/portfolio/nyc-music-map" className="text-link">Explore songs and places <span aria-hidden="true">↗</span></Link>
+            </div>
+            <Link href="/portfolio/nyc-music-map" className="project-music-preview" aria-label="Open NYC Music Map">
+              <Image src="/images/records/new-york-state-of-mind.jpg" alt="" width={180} height={180} unoptimized loading="lazy" />
+              <span><small>NEW YORK, ON RECORD</small><strong>Find the places<br /><em>inside the songs.</em></strong><span>{music_catalog.tracks.length} songs · {music_catalog.places.length} places <span aria-hidden="true">↗</span></span></span>
+            </Link>
           </article>
           <article className="projects-entry projects-film-entry" data-reveal>
             <div className="projects-copy">
@@ -340,19 +351,6 @@ export default function Home() {
                 <Image unoptimized src="/images/literary-map/new-yorker-1940-04-13.jpg" width={100} height={150} alt="The New Yorker, April 13, 1940" loading="lazy" />
               </div>
               <span>Books, magazines &amp; the city <span aria-hidden="true">↗</span></span>
-            </Link>
-          </article>
-        </section>
-        <section className="projects-section projects-music-section" aria-labelledby="music-map-project-heading">
-          <article className="projects-entry" data-reveal>
-            <div className="projects-copy">
-              <h3 id="music-map-project-heading">NYC Music Map</h3>
-              <p>Find the places named in songs, from Bleecker Street to the Queensboro Bridge. Hear a preview and explore the city on Google Maps.</p>
-              <Link href="/portfolio/nyc-music-map" className="text-link">Explore songs and places <span aria-hidden="true">↗</span></Link>
-            </div>
-            <Link href="/portfolio/nyc-music-map" className="project-music-preview" aria-label="Open NYC Music Map">
-              <Image src="/images/records/new-york-state-of-mind.jpg" alt="" width={180} height={180} unoptimized loading="lazy" />
-              <span><small>NEW YORK, ON RECORD</small><strong>Find the places<br /><em>inside the songs.</em></strong><span>{music_catalog.tracks.length} songs · {music_catalog.places.length} places <span aria-hidden="true">↗</span></span></span>
             </Link>
           </article>
         </section>

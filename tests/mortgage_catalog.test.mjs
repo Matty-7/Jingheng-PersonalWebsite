@@ -5,14 +5,14 @@ import { mortgage_branches, mortgage_topics, mortgage_concepts, mortgage_relatio
 import { build_mortgage_graph, build_connection_graph, search_concepts, concept_index } from '../lib/mortgage_graph.ts';
 import { initial_mortgage_state, mortgage_reducer } from '../lib/mortgage_state.ts';
 
-test('one Mortgage Map includes every domain and concept at every hierarchy depth without overlap', () => {
+test('one Mortgage Mind Map includes every domain and concept at every hierarchy depth without overlap', () => {
   const ids = new Set(mortgage_concepts.map(c => c.id));
   assert.equal(mortgage_topics.flatMap(t => t.concepts).length, ids.size);
   for (const topic of mortgage_topics) assert.ok(topic.concepts.length && topic.concepts.every(id => ids.has(id)));
   for (const branch of mortgage_branches) assert.ok(mortgage_topics.some(t => t.branch === branch.id));
   for (const depth of [0, 1, 2]) {
     const nodes = build_mortgage_graph(depth);
-    assert.equal(nodes.find(n => n.kind === 'root').title, 'Mortgage Map');
+    assert.equal(nodes.find(n => n.kind === 'root').title, 'Mortgage Mind Map');
     assert.deepEqual(new Set(nodes.filter(n => n.kind === 'branch').map(n => n.id)), new Set(mortgage_branches.map(b => b.id)));
     if (depth === 2) assert.deepEqual(new Set(nodes.filter(n => n.kind === 'concept').map(n => n.id)), ids);
     for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
@@ -29,7 +29,7 @@ test('one Mortgage Map includes every domain and concept at every hierarchy dept
   assert.equal(search_concepts('HELOC')[0].id, 'heloc');
 });
 
-test('search, reading history and URL restore retain concepts across every Mortgage Map domain', () => {
+test('search, reading history and URL restore retain concepts across every Mortgage Mind Map domain', () => {
   let state = initial_mortgage_state;
   const connections = mortgage_reducer(state, { type: 'change_view', view: 'connections' });
   assert.equal(connections.selected, 'prepayments');

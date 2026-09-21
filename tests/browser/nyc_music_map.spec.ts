@@ -176,3 +176,32 @@ test('changing a place preserves a playing preview and changing the song clears 
   await page.getByRole('button', { name: 'Select Chelsea Hotel #2 by Leonard Cohen', exact: true }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
+
+test('full song list stays complete during filtering and exports real Apple links', async ({ page, request }) => {
+  await page.goto('/portfolio/nyc-music-map');
+  const song_count = await page.locator('.sound-album').count();
+  expect(song_count).toBeGreaterThanOrEqual(100);
+  await page.getByRole('searchbox').fill('Queensbridge');
+  await page.getByRole('button', { name: /^Songs on Apple Music/ }).press('Enter');
+  await expect(page.locator('.sound-playlist-tracks a')).toHaveCount(song_count);
+  await expect(page.locator('.sound-playlist-intro')).toContainText(`All ${song_count} songs`);
+  await expect(page.locator('.sound-playlist-intro')).toContainText('does not create a playlist');
+  await expect(page.locator('audio')).not.toHaveAttribute('src');
+  const csv_response = await request.get('/api/music-playlist');
+  expect(csv_response.ok()).toBe(true);
+  expect(csv_response.headers()['content-type']).toContain('text/csv');
+  expect(csv_response.headers()['content-disposition']).toContain('nyc_music_map.csv');
+  const csv = await csv_response.text();
+  expect(csv.trim().split('\r\n')).toHaveLength(song_count + 1);
+  for (const link of await page.locator('.sound-playlist-tracks a').evaluateAll(links => links.map(link => link.getAttribute('href')))) {
+    expect(link).toMatch(/^https:\/\/music\.apple\.com\//);
+    expect(csv).toContain(link!);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('project order matches the music, film and book recommendations', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#projects h3')).toHaveText(['Mortgage Mind Map', 'NYC Music Map', 'NYC Film Map', 'NYC Literary Map']);
+  expect(await page.locator('main [id]').evaluateAll(elements => elements.map(element => element.id).filter(id => ['records', 'films', 'books'].includes(id)))).toEqual(['records', 'films', 'books']);
+});

@@ -9,7 +9,7 @@ Edit `content/newsletter_links.json`, the runtime input to `lib/publishing.ts`. 
 - `/journal` permanently redirects to the configured Substack publication, without an intermediate listing page. It returns 404 if no publication is configured.
 - `/journal/[slug]` redirects to the visible entry’s external article; it does not render an essay from local blocks.
 - `/feed.xml` includes visible entries and their external destinations; its channel link points directly to the publication.
-- The sitemap includes the homepage and Mortgage Map, omitting redirected Journal routes.
+- The sitemap includes the homepage and Mortgage Mind Map, omitting redirected Journal routes.
 - `lib/post_visibility.ts` filters drafts and future dates. Visibility is resolved at request time, not at Worker initialization.
 - `lib/newsletter_schema.ts` validates the same link-only records in the build and runtime: trimmed titles, unique kebab-case slugs, real `YYYY-MM-DD` dates, supported kind/status and HTTPS destinations on the configured provider origin. Unknown fields, including prose, are rejected. A build error names the record; runtime filtering removes malformed records and every conflicting duplicate without exposing them publicly.
 
@@ -23,7 +23,7 @@ The first three homepage navigation links open YouTube, the verified podcast des
 
 The current Projects section is authored in `app/page.tsx`. `content/mortgage_domains.ts` supplies its lightweight domain entrances and three-step map preview. The legacy `content/projects.json` does not automatically render on the homepage.
 
-Mortgage Map lives at `/portfolio/mortgage-map`; keep that established URL even though its visible navigation says Projects. Its concepts, comparisons and relationships are assembled by `content/mortgage_concepts.ts`; see [the map guide](mortgage_map.md). The withdrawn `/lab/mortgage` stays unlinked, absent from the sitemap and unavailable.
+Mortgage Mind Map lives at `/portfolio/mortgage-map`; keep that established URL even though its visible navigation says Projects. Its concepts, comparisons and relationships are assembled by `content/mortgage_concepts.ts`; see [the map guide](mortgage_map.md). The withdrawn `/lab/mortgage` stays unlinked, absent from the sitemap and unavailable.
 
 ## YouTube and Talking Laughs
 

@@ -39,3 +39,21 @@ Album cards move at 12 pixels per second and reverse at either end. There are no
 Accepted scope: MUSIC-OVERVIEW-01, MUSIC-MOTION-02, MUSIC-CATALOG-03. Source checks cover catalog identities, ≤10-word lyric excerpts, place relations, coordinate bounds and preservation of the ten homepage records. Browser/CI evidence is recorded with the PR; do not infer playback or live Google authorization from metadata/HTTP checks.
 
 The 46 new artwork/preview URLs returned HTTP 200 with media content types during this change. This confirms endpoint availability, not full playback in every browser or region. Overview coordinates are approximate editorial locators, not Google-geocoded or individually certified lyric coordinates.
+
+## Hundred-song catalog and Apple Music handoff
+
+The September 20, 2026 owner request expands the catalog to 103 recordings and 49 places, retaining the previous 59 entries and the ten featured homepage records. The 44 additions were resolved against Apple's public iTunes catalog, including exact track IDs, selected digital release dates, covers, preview URLs and full recording links. Thirty-six additions have street, neighborhood, venue or landmark references. New places include Avenue A, Flatbush, Queensbridge, Lenox Avenue, Central Park North, Grand Central and the Upper West Side. Harlem River Drive is its own road marker, separate from the river. Representative coordinates are approximate editorial locators, not geocoded lyric addresses. The Savoy marker represents a former venue. Titles establish the relation unless an explicit additional source is supplied; no new lyric excerpts are invented. Different artists' interpretations are identified as such in the notes, never counted as different geographic destinations. The year follows the selected digital release, including reissues.
+
+The collection-level `Songs on Apple Music` button opens a complete, accessible list of real full-song links. Search does not silently narrow the exported list. `Export song list` downloads UTF-8 CSV with title, artist, album, place names and the Apple URL; copy produces artist/title text with a selectable fallback when clipboard access fails. Quotes, Unicode and spreadsheet formula prefixes are handled. The API returns a CSV attachment and does not proxy or save audio.
+
+This is a song-list export, not a created Apple Music cloud playlist. Apple MusicKit requires developer credentials and listener authorization to create library playlists. This Site has no such configuration. A true collection-level Apple playlist link remains pending an actual published playlist; the unrelated Favorite Songs link must not be substituted. Apple's Mac XML import only retains songs already in the listener's library, so the CSV is not advertised as native Apple import.
+
+Official capability references:
+- https://developer.apple.com/musickit/
+- https://support.apple.com/guide/music/save-a-copy-of-your-playlists-mus27cd5060f/mac
+
+Accepted review scope: MUSIC-SCALE-01, MUSIC-PLAYLIST-01, PROJECT-ORDER-01. Projects now run Mortgage Mind Map, music, film, literary, with the same music/film/book sequence as the recommendations. The mortgage URL and concept IDs remain unchanged.
+
+All 88 newly added artwork and preview endpoints returned HTTP 200 during the September 20 expansion check. This verifies availability, not full playback across every device or region.
+
+Independent provenance review removed Grover Washington Jr.’s East River Drive because reporting identifies a Philadelphia road, and removed Stanley Clarke’s same-title recording because no independent NYC basis was established. The unused road marker was removed. Apple returned impossible or conflicting dates for Ethel Waters’s Harlem On My Mind (1926) and Cannonball Adderley’s Grand Central with John Coltrane (1937); their public year is null and reads “Year unverified,” while the raw API release date is retained for traceability. No precise replacement recording date is asserted.
