@@ -343,7 +343,8 @@
       "note": "James moves from the crowded streets into a quiet square. The white door of the fictional Sloper house becomes a boundary between Morris Townsend and the life he hopes to enter.",
       "precision": "Area described. The pin marks the square, not an identified address for the fictional house.",
       "visit_note": "Explore the square and its north-side streets from public paths.",
-      "place_id": "washington-square"
+      "place_id": "washington-square",
+      "plus_code": "87G8P2J3+F5"
     },
     {
       "id": "met-museum",
@@ -362,7 +363,8 @@
       "note": "Archer and Ellen find privacy among antiquities. Wharton makes the museum feel secluded and faintly melancholy, a refuge from the social scrutiny outside.",
       "precision": "Named institution. The historical gallery arrangement in the novel is not a guide to the museum today.",
       "visit_note": "The museum is at 1000 Fifth Avenue. Check admission and opening hours before visiting.",
-      "place_id": "met-museum"
+      "place_id": "met-museum",
+      "plus_code": "87G8Q2HP+QP"
     },
     {
       "id": "queensboro-bridge",
@@ -381,7 +383,8 @@
       "note": "Nick approaches Manhattan with Gatsby. The bridge turns the familiar skyline into a promise of reinvention, just as Gatsby is presenting his own story.",
       "precision": "Named bridge. The pin identifies the crossing, not a precise viewpoint or pedestrian entrance.",
       "visit_note": "Use Google Maps for a current pedestrian approach; the passage describes a journey by car.",
-      "place_id": "queensboro-bridge"
+      "place_id": "queensboro-bridge",
+      "plus_code": "87G8Q24W+R7"
     },
     {
       "id": "central-park",
@@ -400,7 +403,8 @@
       "note": "After Jordan tells Nick about Daisy and Gatsby, the city softens into evening. Children’s voices and a carriage ride briefly replace the novel’s parties and display.",
       "precision": "Area described. The novel gives no exact carriage route; the pin marks the park’s southern edge.",
       "visit_note": "Start at Central Park South. The text does not identify a particular path.",
-      "place_id": "central-park"
+      "place_id": "central-park",
+      "plus_code": "87G8Q28F+G2"
     },
     {
       "id": "the-battery",
@@ -419,7 +423,8 @@
       "note": "Before Ishmael goes to sea, he watches New Yorkers drawn to the waterfront. The Battery becomes the city’s threshold to an ocean that seems to pull people out of their everyday lives.",
       "precision": "Area described. The pin is on the present-day waterfront; the shoreline has changed since Melville wrote.",
       "visit_note": "Follow the public waterfront paths; this is not a reconstructed nineteenth-century viewpoint.",
-      "place_id": "the-battery"
+      "place_id": "the-battery",
+      "plus_code": "87G7PX3M+86"
     },
     {
       "id": "madison-square",
@@ -438,7 +443,8 @@
       "note": "The park bench is Soapy’s home, and the first signs of winter are an urgent problem. O. Henry measures the changing season from the perspective of someone who has nowhere warm to go.",
       "precision": "Named park. Soapy’s bench is fictional and has no identified present-day location.",
       "visit_note": "Visit the public park between Fifth Avenue, Madison Avenue, 23rd and 26th Streets.",
-      "place_id": "madison-square"
+      "place_id": "madison-square",
+      "plus_code": "87G8P2R6+RV"
     },
     {
       "id": "fulton-ferry",
@@ -458,7 +464,8 @@
       "precision": "Historical crossing. The pin marks the Brooklyn landing associated with the Fulton Ferry, not the poet’s exact position.",
       "visit_note": "Read from the public waterfront. The old crossing and today’s ferry services are different.",
       "place_source_url": "https://brooklynbridgepark.org/places-to-see/fulton-ferry-landing/",
-      "place_id": "fulton-ferry"
+      "place_id": "fulton-ferry",
+      "plus_code": "87G8P224+X6"
     },
     {
       "id": "mcsorleys-ale-house",
@@ -477,7 +484,8 @@
       "note": "Mitchell begins with the building and the street. His profile makes a neighborhood saloon the subject of close observation, preserving the texture of an ordinary New York gathering place.",
       "precision": "Named venue and street address. The description belongs to the 1940 article, not a report on the bar today.",
       "visit_note": "15 East 7th Street. Check the venue’s current visitor information before going.",
-      "place_id": "mcsorleys-ale-house"
+      "place_id": "mcsorleys-ale-house",
+      "plus_code": "87G8P2H6+F4"
     },
     {
       "id": "quicksand-lenox-avenue",
@@ -496,7 +504,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Entering Harlem, Helga receives advice about concealing her white family. The avenue is a threshold into a community whose welcome carries its own rules.",
       "precision": "Named avenue. The passage gives no cross street; the map marks the avenue in Harlem.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8R343+XR"
     },
     {
       "id": "quicksand-harlem",
@@ -515,7 +524,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Helga initially experiences Harlem as an arrival home. Larsen makes the neighborhood a place of work, friendship and provisional peace.",
       "precision": "Neighborhood described, not a particular house or venue.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8R363+JC"
     },
     {
       "id": "quicksand-st-nicholas-park",
@@ -525,7 +535,7 @@
       "area": "Harlem, Manhattan",
       "coordinates": [
         40.817,
-        -73.9506
+        -73.9495
       ],
       "map_query": "Saint Nicholas Park Manhattan New York",
       "locator": "Chapter VIII",
@@ -534,7 +544,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Helga names the edges of a world that seems to contain everything she needs. St. Nicholas Park appears as one boundary of that imagined completeness.",
       "precision": "Named park used as a neighborhood boundary. This passage does not place Helga at a specific spot inside it.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8R382+R6"
     },
     {
       "id": "excolored-coney-island",
@@ -553,7 +564,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Returning to New York, the narrator spends his savings on the city’s pleasures. Coney Island belongs to a brief holiday before his search for financial security.",
       "precision": "Named resort district. The narrator identifies no particular attraction.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8H2GH+6P"
     },
     {
       "id": "mirth-grand-central",
@@ -572,7 +584,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "The novel opens with a glance across the station crowd. Public transit becomes the stage on which Selden first studies Lily Bart.",
       "precision": "Historical station site. The 1905 novel predates the present Grand Central Terminal, which opened in 1913.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q23F+34"
     },
     {
       "id": "mirth-madison-avenue",
@@ -581,8 +594,8 @@
       "place": "Madison Avenue",
       "area": "Midtown, Manhattan",
       "coordinates": [
-        40.7554,
-        -73.9762
+        40.754737,
+        -73.9778763
       ],
       "map_query": "Madison Avenue and East 45th Street New York",
       "locator": "Book I, Chapter I",
@@ -591,7 +604,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "As Lily and Selden stroll north, his admiration turns into an inventory of the expense and labor behind her beauty. The avenue frames a gaze shaped by class.",
       "precision": "Named avenue. The map marks a representative point near Grand Central, not a documented stopping place.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q23C+VR"
     },
     {
       "id": "mirth-wall-street",
@@ -610,7 +624,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "For Lily, Wall Street is an obscure system that might rescue her finances. Its apparent distance from her social life disguises how closely the two worlds are tied.",
       "precision": "Named financial district used as a metaphor for investing. Lily is thinking about Wall Street here, not walking along it.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G7PX4R+CF"
     },
     {
       "id": "mirth-bryant-park",
@@ -629,7 +644,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Exhausted after leaving Selden, Lily remembers the park’s benches. A public resting place takes on a new importance when private security has slipped away.",
       "precision": "Named park. The text identifies her approach at Forty-first Street and Fifth Avenue, but no exact bench.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q238+CP"
     },
     {
       "id": "beautiful-fifth-avenue",
@@ -638,8 +654,8 @@
       "place": "Fifth Avenue",
       "area": "Midtown, Manhattan",
       "coordinates": [
-        40.759,
-        -73.9765
+        40.759795,
+        -73.9762901
       ],
       "map_query": "Fifth Avenue and West 52nd Street New York",
       "locator": "Book I, Chapter I",
@@ -648,7 +664,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Anthony imagines Fifth and Sixth Avenues as a ladder. A routine bus ride turns the city’s grid into an anxious climb toward his apartment.",
       "precision": "Named avenues and Fifty-second Street. The pin marks Fifth Avenue at that cross street, not a fictional apartment.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q25F+WF"
     },
     {
       "id": "beautiful-grand-central",
@@ -667,7 +684,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Anthony and Gloria drift from a hotel into the station to buy perfume. The concourse becomes an intimate detour through a busy public building.",
       "precision": "Named station. The historical drugstore is not identified as a current business.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q23F+34"
     },
     {
       "id": "beautiful-plaza-hotel",
@@ -686,7 +704,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Bright cars, the white hotel and Gloria’s indolent walk form a scene of effortless display. Fitzgerald makes the streetscape an extension of the couple’s desire.",
       "precision": "Named hotel exterior, seen while approaching along Fifth Avenue. No particular room is implied.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q27G+R7"
     },
     {
       "id": "levinsky-state-street",
@@ -695,8 +714,8 @@
       "place": "State Street",
       "area": "Lower Manhattan",
       "coordinates": [
-        40.7033,
-        -74.0143
+        40.7045573,
+        -74.0142907
       ],
       "map_query": "State Street and Battery Place New York",
       "locator": "Book V, Chapter I",
@@ -705,7 +724,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "After reaching the immigrant station, David crosses the Battery into a city of touts and elevated trains. State Street marks the beginning of his uncertain life ashore.",
       "precision": "Named street reached from Battery Park. The elevated railway in the passage is historical.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G7PX3P+R7"
     },
     {
       "id": "levinsky-park-row",
@@ -714,17 +734,18 @@
       "place": "Park Row",
       "area": "Civic Center, Manhattan",
       "coordinates": [
-        40.7125,
-        -74.0075
+        40.7120167,
+        -74.0060706
       ],
-      "map_query": "Park Row Manhattan New York",
+      "map_query": "Park Row and Spruce Street New York",
       "locator": "Book V, Chapter I",
       "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00600",
       "excerpt": "\"Walk straight ahead,\" he said to me, waving his hand toward Park Row. \"Just keep walking until you see a lot of Jewish people. It isn't far from here.\" With which he slipped a silver quarter into my hand and made Gitelson bid me good-by",
       "excerpt_kind": "Complete paragraph",
       "note": "A brief instruction and a small coin send David toward the immigrant neighborhood. Park Row functions as a direction of travel, rather than a settled destination.",
-      "precision": "Named street indicated by another character. The passage does not identify the exact point from which he gestures.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "precision": "Named street indicated by another character. The pin is a representative point on Park Row at Spruce Street, not the exact point from which he gestures.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G7PX6V+RH"
     },
     {
       "id": "levinsky-east-broadway",
@@ -733,17 +754,18 @@
       "place": "East Broadway",
       "area": "Lower East Side, Manhattan",
       "coordinates": [
-        40.7137,
-        -73.9875
+        40.7143203,
+        -73.9871677
       ],
-      "map_query": "East Broadway Manhattan New York",
+      "map_query": "East Broadway and Clinton Street New York",
       "locator": "Book VI, Chapter IV",
       "source_url": "https://www.gutenberg.org/cache/epub/2803/pg2803-images.html#id00916",
       "excerpt": "Or else we would start on a ramble, usually through Grand Street to East River and back again through East Broadway. His favorite topics during these walks were civics, American history, and his own history",
       "excerpt_kind": "Complete paragraph",
       "note": "Walks to the river and back become David’s informal education. His companion combines civic history with stories of his own life.",
-      "precision": "Named walking route. The map marks East Broadway; the novel gives no complete route or precise turning point.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "precision": "Named walking route. The pin is a representative point on East Broadway at Clinton Street; the novel gives no complete route or precise turning point.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P277+P4"
     },
     {
       "id": "levinsky-grand-street",
@@ -752,8 +774,8 @@
       "place": "Grand Street",
       "area": "Lower East Side, Manhattan",
       "coordinates": [
-        40.7152,
-        -73.9896
+        40.7167169,
+        -73.9891561
       ],
       "map_query": "Grand Street and Essex Street New York",
       "locator": "Book VII, Chapter I",
@@ -762,7 +784,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "David watches dancers through second-floor windows. The distance between pavement and ballroom turns ordinary entertainment into a vision of a life he cannot yet enter.",
       "precision": "Named street. The dance hall has no verified address in this passage; the pin is a representative point on Grand Street.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P286+M8"
     },
     {
       "id": "levinsky-canal-street",
@@ -771,8 +794,8 @@
       "place": "Canal Street",
       "area": "Lower Manhattan",
       "coordinates": [
-        40.716,
-        -73.9972
+        40.7149069,
+        -73.9918913
       ],
       "map_query": "Canal Street and Orchard Street New York",
       "locator": "Book XIII, Chapter I",
@@ -781,7 +804,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "A search for Tevkin’s books takes David from Hebrew bookshops toward the Astor Library. Literary curiosity momentarily disturbs his assumptions about a businessman’s dignity.",
       "precision": "Named street with unidentified bookshops. The map marks Canal Street, not a claim that a particular store survives.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P275+X6"
     },
     {
       "id": "yekl-suffolk-street",
@@ -790,8 +814,8 @@
       "place": "Suffolk Street",
       "area": "Lower East Side, Manhattan",
       "coordinates": [
-        40.7172,
-        -73.9851
+        40.7180111,
+        -73.986587
       ],
       "map_query": "Suffolk Street and Delancey Street New York",
       "locator": "Chapter II, “The New York Ghetto”",
@@ -800,7 +824,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "The street, stoops and dance hall share one crowded summer evening. Cahan moves between people watching from outside and couples turning in the bright windows above.",
       "precision": "Named street. The fictional dancing academy is not assigned a real building number.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P297+69"
     },
     {
       "id": "yekl-essex-street",
@@ -819,7 +844,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "The passage office briefly awakens Jake’s responsibility to his wife and child. Once he returns to noisy Essex Street, he deliberately lets it fade.",
       "precision": "Named street. The remittance and ticket office is not given a verified street number.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P296+8R"
     },
     {
       "id": "hungry-delancey-street",
@@ -838,7 +864,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "A soldier returns from overseas carrying both military confidence and a local’s bodily knowledge of the street. His homecoming enters the story through the crowd.",
       "precision": "Named street. The passage identifies a neighborhood homecoming, not a particular doorway.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P296+CX"
     },
     {
       "id": "hungry-hester-street",
@@ -857,7 +884,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "A matchmaker measures a prospective husband through his market business and domestic needs. Hester Street places the proposed bargain in a working neighborhood economy.",
       "precision": "Named street and a fictional herring stand without a known address.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P285+CH"
     },
     {
       "id": "hungry-west-29th-street",
@@ -866,8 +894,8 @@
       "place": "West 29th Street",
       "area": "Garment District, Manhattan",
       "coordinates": [
-        40.7488,
-        -73.9927
+        40.7478632,
+        -73.9929107
       ],
       "map_query": "West 29th Street and 7th Avenue New York",
       "locator": "“The Fat of the Land,” p. 200",
@@ -876,7 +904,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Hanneh Breineh traces her son’s success from a marriage settlement to a shirtwaist factory. The street is one point on a family’s account of economic ascent.",
       "precision": "Named street. The factory is a character’s description, not an identified surviving business.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P2X4+4R"
     },
     {
       "id": "hungry-riverside-drive",
@@ -895,7 +924,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Comfort brings Hanneh Breineh little freedom when every meal exposes her to judgment. Riverside Drive becomes a setting for the painful distance between mother and children.",
       "precision": "Named residential avenue. The apartment house is unspecified; the map marks the avenue rather than a fictional address.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q2XG+JJ"
     },
     {
       "id": "maggie-bowery",
@@ -904,8 +934,8 @@
       "place": "The Bowery",
       "area": "Lower Manhattan",
       "coordinates": [
-        40.7221,
-        -73.9938
+        40.7241447,
+        -73.9926047
       ],
       "map_query": "Bowery and East Houston Street New York",
       "locator": "Chapter VII",
@@ -914,7 +944,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Crane describes a commercial imitation of fashionable entertainment. The dancer and the audience inhabit a Bowery world sold its own version of uptown spectacle.",
       "precision": "Named entertainment district. The music hall is not identified by street number.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P2F4+MX"
     },
     {
       "id": "maggie-central-park-zoo",
@@ -933,7 +964,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Maggie delights in Sunday outings while Pete performs indifference. The menagerie briefly opens a wider city beyond her tenement neighborhood.",
       "precision": "Historical institution associated with today’s Central Park Zoo. The passage does not describe the current zoo layout.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q29H+47"
     },
     {
       "id": "voice-eighth-avenue-48th",
@@ -942,8 +974,8 @@
       "place": "Eighth Avenue at 48th Street",
       "area": "Hell’s Kitchen, Manhattan",
       "coordinates": [
-        40.761,
-        -73.9878
+        40.7610456,
+        -73.9870166
       ],
       "map_query": "8th Avenue and West 48th Street New York",
       "locator": "“A Lickpenny Lover”",
@@ -952,7 +984,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Masie fixes an exact corner and a strict return time for a date. The practical terms of a working woman’s evening puncture her suitor’s grander imagination.",
       "precision": "Named intersection. The nearby fictional home is not given a street number.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q267+C5"
     },
     {
       "id": "voice-union-square",
@@ -971,7 +1004,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Three men on a park bench plan around a hoped-for dollar. O. Henry sets their small conspiracy inside the seasonal revival of the city.",
       "precision": "Named park. No particular bench is identified.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P2P5+9Q"
     },
     {
       "id": "voice-broadway-23rd",
@@ -990,7 +1024,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "A feud brought from Kentucky ends with a handshake at an angular Manhattan crossroads. The city’s unfamiliar geometry helps rearrange an inherited conflict.",
       "precision": "Named intersection of Broadway, Fifth Avenue and Twenty-third Street.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P2R6+C4"
     },
     {
       "id": "custom-west-72nd-street",
@@ -999,8 +1034,8 @@
       "place": "West 72nd Street",
       "area": "Upper West Side, Manhattan",
       "coordinates": [
-        40.7766,
-        -73.9789
+        40.776228,
+        -73.9759566
       ],
       "map_query": "West 72nd Street and Central Park West New York",
       "locator": "Chapter II",
@@ -1009,7 +1044,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "From her hotel bedroom, Undine looks toward the park and the society beyond it. The view gives her ambition a physical direction across Manhattan.",
       "precision": "Named street west of Central Park. The fictional Stentorian hotel is not treated as a present-day hotel.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q2GF+FJ"
     },
     {
       "id": "custom-central-park",
@@ -1018,17 +1054,18 @@
       "place": "Central Park",
       "area": "Central Park, Manhattan",
       "coordinates": [
-        40.7751,
-        -73.9768
+        40.77525,
+        -73.97605
       ],
-      "map_query": "Central Park West New York",
+      "map_query": "Central Park west side near West 71st Street New York",
       "locator": "Chapter IX",
       "source_url": "https://www.gutenberg.org/cache/epub/11052/pg11052-images.html#id00472",
       "excerpt": "Undine, late the next day, waited alone under the leafless trellising of a wistaria arbour on the west side of the Central Park. She had put on her plainest dress, and wound a closely, patterned veil over her least vivid hat; but even thus toned down to the situation she was conscious of blazing out from it inconveniently.",
       "excerpt_kind": "Complete paragraph",
       "note": "Undine tries to dress inconspicuously for a meeting, yet still imagines herself as a blaze of color. The bare arbor offers seclusion without quieting her self-consciousness.",
-      "precision": "Area described on the park’s west side. The wistaria arbor is not identified with a verified present-day structure.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "precision": "Representative point inside the park’s west side. The wistaria arbor is not identified with a verified present-day structure.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q2GF+4H"
     },
     {
       "id": "carrie-spuyten-duyvil",
@@ -1047,7 +1084,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Carrie reads the rivers and railway as signs of arrival, while Hurstwood watches with fear. The same approach to New York holds two incompatible futures.",
       "precision": "Named waterway and railway approach. The map marks the district, not a claim about the current railway alignment.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8V3HH+67"
     },
     {
       "id": "carrie-amsterdam-78th",
@@ -1066,7 +1104,8 @@
       "excerpt_kind": "Complete paragraph",
       "note": "Their first New York flat offers glimpses of park and river, but its narrow rooms and rent bring a new measure of the city’s expense.",
       "precision": "Named street near Amsterdam Avenue. The fictional flat has no verified building number.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q2JC+WH"
     },
     {
       "id": "carrie-west-13th-street",
@@ -1075,17 +1114,18 @@
       "place": "West 13th Street",
       "area": "Greenwich Village, Manhattan",
       "coordinates": [
-        40.737,
-        -73.9995
+        40.7372747,
+        -73.9987637
       ],
-      "map_query": "West 13th Street and 6th Avenue New York",
+      "map_query": "West 13th Street between Sixth and Seventh Avenues New York",
       "locator": "Chapter XXXIII",
       "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap33",
       "excerpt": "The new flat was located in Thirteenth Street, a half block west of Sixth Avenue, and contained only four rooms. The new neighbourhood did not appeal to Carrie as much. There were no trees here, no west view of the river. The street was solidly built up. There were twelve families here, respectable enough, but nothing like the Vances. Richer people required more space.",
       "excerpt_kind": "Complete paragraph",
       "note": "The move to a smaller flat turns lost income into lost space and light. Carrie reads the neighborhood through the comfort she has had to surrender.",
-      "precision": "The text places the flat half a block west of Sixth Avenue. The pin marks the vicinity, not an identified building.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "precision": "The text places the flat half a block west of Sixth Avenue. The pin marks a representative point along that block, not an identified building.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8P2P2+WF"
     },
     {
       "id": "carrie-warren-hudson",
@@ -1094,17 +1134,18 @@
       "place": "Warren and Hudson Streets",
       "area": "Tribeca, Manhattan",
       "coordinates": [
-        40.7149,
-        -74.0099
+        40.7149592,
+        -74.0096912
       ],
-      "map_query": "Warren Street and Hudson Street New York",
+      "map_query": "Warren Street and West Broadway New York",
       "locator": "Chapter XXXIII",
       "source_url": "https://www.gutenberg.org/cache/epub/233/pg233-images.html#chap33",
       "excerpt": "He looked, and there was the notice. Mr. August Viele had yesterday registered the transfer of the lot, 25 x 75 feet, at the corner of Warren and Hudson Streets, to J. F. Slawson for the sum of $57,000.",
       "excerpt_kind": "Complete paragraph",
       "note": "A newspaper property notice gives Hurstwood’s growing insecurity a precise location and price. The city keeps trading even as his prospects shrink.",
-      "precision": "Named intersection and a transaction reported within the novel. It is not presented as a verified historical sale.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "precision": "The novel names Warren and Hudson Streets, which do not intersect in today’s street network. The pin marks nearby Warren Street at West Broadway as an approximate orientation point, not a verified historical corner or property.",
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G7PX7R+X4"
     },
     {
       "id": "harlem-broadway",
@@ -1123,7 +1164,8 @@
       "excerpt_kind": "Complete opening stanza",
       "note": "Bright signs and moving crowds sharpen the speaker’s loneliness. McKay lets the refrain interrupt Broadway’s invitation to be delighted.",
       "precision": "Named avenue. The Times Square area is a representative point for its theater lights; the poem names no exact corner.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8Q257+6R"
     },
     {
       "id": "harlem-harlem",
@@ -1142,7 +1184,8 @@
       "excerpt_kind": "Complete opening stanza",
       "note": "The speaker watches young women passing through the night. McKay turns the neighborhood’s darkness toward labor, exposure and compassion.",
       "precision": "Neighborhood named in the poem. No individual street or doorway is specified.",
-      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed."
+      "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
+      "plus_code": "87G8R363+JC"
     }
   ]
 }
