@@ -1,3 +1,4 @@
+import { google_place_embed_url, google_place_url } from './google_maps';
 import location_data from '@/content/nyc_film_locations.json';
 
 export type FilmScene = {
@@ -32,7 +33,11 @@ export function locations_for_film(film_id: string) {
 
 export function google_maps_url(location: FilmLocation) {
   const query = location.maps_query ?? `${location.address}, ${location.borough}, New York`;
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  return google_place_url(query);
+}
+
+export function google_film_embed_url(location: FilmLocation, api_key: string) {
+  return google_place_embed_url(location.maps_query ?? `${location.address}, ${location.borough}, New York`, api_key, 16);
 }
 
 export function search_locations(film_id: string, query: string) {

@@ -18,7 +18,7 @@ Show all places clears search and fits all 55 places; later shelf filtering leav
 
 Explicit song/place selection moves the overview to that location in 0.5 seconds. Search alone never moves it. Show all places cancels a pending movement and restores the full bounds. Reduced motion uses an immediate view change and stops an active flight when the preference changes. Cluster icon transitions are disabled. OpenStreetMap attribution remains visible and map wheel zoom is disabled so normal page scrolling works.
 
-Google Maps shows the selected place with the same query as its external link. The overview uses existing Leaflet dependencies and public OpenStreetMap tiles; this change adds no Google JavaScript API, geocoding API or metered service. The external link and readable place description remain if the cross-origin embed fails. Iframe load events do not certify that Google's map rendered.
+Google Maps embeds the selected place through the shared free Maps Embed API helper and opens the same query through keyless Maps URLs. Literary, Music and Film Map share one runtime-configured browser key. Missing configuration omits the iframe while preserving the external link and location description. See [the Google Maps cost policy](google_maps.md). The overview uses existing Leaflet dependencies and public OpenStreetMap tiles; this change adds no Google JavaScript API, geocoding API or metered service. The external link and readable place description remain if the cross-origin embed fails. Iframe load events do not certify that Google's map rendered.
 
 ## Album motion and playback
 

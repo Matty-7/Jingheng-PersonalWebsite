@@ -1,3 +1,4 @@
+import { google_place_embed_url, google_place_url } from './google_maps';
 import catalog from '../content/nyc_literary_locations.json';
 
 export type LiteraryCover = { src: string; alt: string; edition: string; source_url: string; credit: string };
@@ -12,9 +13,9 @@ export function entries_for_work(work_id: string) {
 }
 
 export function literary_maps_url(entry: LiteraryEntry) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(entry.map_query)}`;
+  return google_place_url(entry.map_query);
 }
 
-export function literary_embed_url(entry: LiteraryEntry) {
-  return `https://www.google.com/maps?q=${encodeURIComponent(entry.map_query)}&z=15&output=embed`;
+export function literary_embed_url(entry: LiteraryEntry, api_key: string) {
+  return google_place_embed_url(entry.map_query, api_key, 15);
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { BrandMark } from '@/components/brand_mark';
 import { NycFilmMap } from '@/components/nyc_film_map';
+import { google_maps_embed_key } from '@/lib/google_maps_config';
 import { pageMetadata } from '@/lib/seo';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
@@ -24,7 +25,7 @@ export default function NycFilmMapPage() {
         <h1>NYC Film <em>Map.</em></h1>
         <p>The city, as seen in the movies.</p>
       </header>
-      <NycFilmMap />
+      <NycFilmMap google_maps_key={google_maps_embed_key()} />
       <footer className="cinema-footnote">
         <p>A growing collection of sourced filming locations. Pins mark venues or public approaches, not camera positions. Film frames are shown with source credits. Scene descriptions may contain spoilers.</p>
         <p>Check current opening hours and admission before visiting. Residential locations are for viewing from the public sidewalk only. Sources reviewed September 20, 2026.</p>
