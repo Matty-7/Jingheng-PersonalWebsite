@@ -338,7 +338,7 @@ export default function Home() {
             <ProjectMapPreview
               href="/portfolio/nyc-film-map"
               label="Open NYC Film Map"
-              artwork={{ src: '/images/films/north-by-northwest.jpg', alt: 'North by Northwest poster with a light impressionist treatment', width: 500, height: 759 }}
+              artwork={{ src: '/images/film-map/manhattan-poster.jpg', alt: 'Manhattan (1979) poster with the Queensboro Bridge and skyline lettering', width: 640, height: 940 }}
               eyebrow="NEW YORK, ON SCREEN"
               headline="From the screen"
               emphasis="to the street."
