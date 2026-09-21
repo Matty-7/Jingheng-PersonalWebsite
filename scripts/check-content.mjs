@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { assert_newsletter_links } from '../lib/newsletter_schema.ts';
+import { check_music_map_summary } from './music_map_summary.mjs';
+await check_music_map_summary();
 const read = async (name) =>
   JSON.parse(
     await readFile(new URL(`../content/${name}.json`, import.meta.url), 'utf8'),
