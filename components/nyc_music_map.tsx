@@ -21,6 +21,7 @@ import {
   X,
 } from 'lucide-react';
 import {
+  artist_connection,
   google_music_embed_url,
   google_music_url,
   music_places,
@@ -319,6 +320,8 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
             <span>{item.artist}</span>
             <span className="sound-album-place">
               {track_places(item)[0].name}
+              {artist_connection(item, item.place_ids[0]) &&
+                ' · Artist connection'}
             </span>
           </button>
         ))}
@@ -344,7 +347,7 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
       {track && place ? (
         <>
           <div className="sound-place-picker">
-            <span className="sound-label">Places in this song</span>
+            <span className="sound-label">Related places</span>
             <div>
               {places.map((item) => (
                 <button
@@ -464,14 +467,41 @@ export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
                   />
                 </a>
               </div>
+              {artist_connection(track, place.id) && (
+                <div className="sound-story sound-connection">
+                  <p className="sound-label">
+                    Artist connection ·{' '}
+                    {artist_connection(track, place.id)!.kind}
+                  </p>
+                  <h3>{place.name}</h3>
+                  <p>{artist_connection(track, place.id)!.note}</p>
+                  <a
+                    className="sound-source"
+                    href={artist_connection(track, place.id)!.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {artist_connection(track, place.id)!.source_label}
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </a>
+                </div>
+              )}
               <div className="sound-story" key={track.id}>
                 <p className="sound-label">
-                  {track.excerpt ? 'In the lyrics' : 'In the title'}
+                  {artist_connection(track, place.id)
+                    ? 'About the song'
+                    : track.excerpt
+                      ? 'In the lyrics'
+                      : 'In the title'}
                 </p>
                 {track.excerpt ? (
                   <blockquote>“{track.excerpt}”</blockquote>
                 ) : (
-                  <h3>{place.name}</h3>
+                  <h3>
+                    {artist_connection(track, place.id)
+                      ? track.title
+                      : place.name}
+                  </h3>
                 )}
                 <p>{track.note}</p>
                 <a

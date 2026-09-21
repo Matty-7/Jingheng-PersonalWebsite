@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type * as Leaflet from 'leaflet';
-import { music_places, music_tracks, type MusicTrack } from '@/lib/nyc_music_map';
+import { artist_connection, music_places, music_tracks, type MusicTrack } from '@/lib/nyc_music_map';
 
 export type MusicFocus = { place_id: string };
 
@@ -59,7 +59,7 @@ export function MusicOverview({ selected_place_id, fit_request, focus_request, o
       const markers = new Map<string, Leaflet.Marker>();
       for (const place of music_places) {
         const tracks = music_tracks.filter((track) => track.place_ids.includes(place.id));
-        const title = `${place.name}: ${tracks.map((track) => `${track.title} by ${track.artist}`).join('; ')}`;
+        const title = `${place.name}: ${tracks.map((track) => `${track.title} by ${track.artist}${artist_connection(track, place.id) ? ' (Artist connection)' : ''}`).join('; ')}`;
         const marker = leaflet.marker(place.coordinates as [number, number], { title, alt: title, keyboard: true, icon: leaflet.divIcon({ className: 'sound-marker', html: `<span aria-hidden="true">♪<small>${tracks.length}</small></span>`, iconSize: [40, 40], iconAnchor: [20, 20] }) });
         const content = document.createElement('div');
         content.className = 'sound-map-popup';
@@ -72,7 +72,7 @@ export function MusicOverview({ selected_place_id, fit_request, focus_request, o
         for (const track of tracks) {
           const button = document.createElement('button');
           button.type = 'button';
-          button.textContent = `${track.title} · ${track.artist}`;
+          button.textContent = `${track.title} · ${track.artist}${artist_connection(track, place.id) ? ' · Artist connection' : ''}`;
           button.setAttribute('aria-label', `Choose ${track.title} by ${track.artist} at ${place.name}`);
           button.addEventListener('click', () => selection.current(track, place.id));
           content.appendChild(button);

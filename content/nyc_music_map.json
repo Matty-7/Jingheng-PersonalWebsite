@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-20",
+  "reviewed_on": "2026-09-21",
   "tracks": [
     {
       "id": "bushwick-blues",
@@ -1373,13 +1373,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Frank+Sinatra+Theme+From+New+York+New+York&entity=song&country=us&limit=10",
       "metadata_release_date": "1980-03-26T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "upper-east-side"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "Sinatra’s city-sized arrival anthem is mapped at city scale. The selected recording comes from Trilogy; its sweeping promise does not establish a particular street corner.",
+      "note": "Sinatra’s arrival anthem addresses New York as a whole. The selected recording comes from Trilogy.",
       "source_url": "https://music.apple.com/us/album/theme-from-new-york-new-york/1457080954?i=1457081016&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "upper-east-side",
+          "kind": "Former home neighborhood",
+          "note": "Sinatra lived on East 72nd Street. This neighborhood marker gives his city-wide anthem a biographical connection, not a lyric location.",
+          "source_url": "https://www.cbsnews.com/newyork/news/frank-sinatras-former-east-72nd-street-penthouse-for-sale/",
+          "source_label": "CBS New York · former home"
+        }
+      ]
     },
     {
       "id": "englishman-in-new-york",
@@ -1395,13 +1404,13 @@
       "metadata_source": "https://itunes.apple.com/search?term=Sting+Englishman+In+New+York&entity=song&country=us&limit=10",
       "metadata_release_date": "1987-10-05T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "fifth-avenue"
       ],
-      "relation": "Title",
-      "excerpt": "",
-      "note": "Sting makes an outsider’s daily presence the center of a New York song. This title-level entry marks the city rather than a private residence.",
-      "source_url": "https://music.apple.com/us/album/englishman-in-new-york/1650882889?i=1650882898&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "relation": "Lyrics",
+      "excerpt": "See me walking down Fifth Avenue",
+      "note": "Sting gives the walk a named avenue. The map represents Fifth Avenue; the lyric does not specify this block.",
+      "source_url": "https://genius.com/Sting-englishman-in-new-york-lyrics",
+      "source_label": "Genius · lyrics"
     },
     {
       "id": "new-york-groove",
@@ -1417,13 +1426,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Ace+Frehley+New+York+Groove&entity=song&country=us&limit=10",
       "metadata_release_date": "1978-09-18T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "bronx"
       ],
       "relation": "Title",
       "excerpt": "",
       "note": "Ace Frehley’s recording gives returning to New York a stomping rhythm. The city named in the title is the destination.",
       "source_url": "https://music.apple.com/us/album/new-york-groove/1440854859?i=1440855387&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "bronx",
+          "kind": "Birth borough",
+          "note": "Ace Frehley was born in the Bronx. This biographical connection is verified at borough scale; a more precise birth neighborhood has not been established here.",
+          "source_url": "https://www.bronxwalkoffame.com/inductees/paul-ace-frehley",
+          "source_label": "Bronx Tourism Council · biography"
+        }
+      ]
     },
     {
       "id": "fairytale-of-new-york",
@@ -1461,13 +1479,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Interpol+NYC&entity=song&country=us&limit=10",
       "metadata_release_date": "2002-08-19T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "east-village"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "Three letters name the city in Interpol’s spare, slow-building recording. The map keeps that broad association rather than assigning it to a guessed subway station.",
+      "note": "Interpol’s spare, slow-building recording addresses the city. The title alone does not identify a subway station or a street.",
       "source_url": "https://music.apple.com/us/album/nyc/1589272584?i=1589272593&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "east-village",
+          "kind": "Member’s home neighborhood",
+          "note": "A 2018 interview places Interpol singer Paul Banks in the East Village. This is his documented neighborhood connection, not a claim about where NYC was written.",
+          "source_url": "https://redlightmanagement.com/paul-banks-tours-his-bright-east-village-apartment/",
+          "source_label": "Red Light Management / The New York Times · Paul Banks"
+        }
+      ]
     },
     {
       "id": "new-york-i-love-you",
@@ -1483,13 +1510,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=LCD+Soundsystem+New+York+I+Love+You&entity=song&country=us&limit=10",
       "metadata_release_date": "2007-03-12T07:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "williamsburg"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "LCD Soundsystem addresses New York as a difficult relationship. The full title holds affection and frustration together; the marker represents the city, not the location of a music video.",
+      "note": "LCD Soundsystem addresses New York as a difficult relationship, holding affection and frustration together.",
       "source_url": "https://music.apple.com/us/album/new-york-i-love-you-but-youre-bringing-me-down/742432549?i=742434985&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "williamsburg",
+          "kind": "Home neighborhood in 2007",
+          "note": "In a 2007 interview, James Murphy described moving from Manhattan to Williamsburg. This biographical anchor accompanies LCD Soundsystem’s city-wide song, without claiming a filming or recording location.",
+          "source_url": "https://drownedinsound.com/in_depth/2028629-dis-meets-james-murphy-asks-about-daft-punk-gets-the-brush-off",
+          "source_label": "Drowned in Sound · James Murphy interview"
+        }
+      ]
     },
     {
       "id": "new-york-u2",
@@ -1527,13 +1563,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Cat+Power+New+York&entity=song&country=us&limit=10",
       "metadata_release_date": "2008-01-21T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "east-village"
       ],
       "relation": "Title",
       "excerpt": "",
-      "note": "Cat Power’s Jukebox recording offers another reading of the New York standard. It shares a city marker with Sinatra while retaining its own cover, recording and preview.",
+      "note": "Cat Power’s Jukebox recording revisits the New York standard, with its own phrasing and stripped-back arrangement.",
       "source_url": "https://music.apple.com/us/album/new-york/1589246739?i=1589246742&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "east-village",
+          "kind": "Former home neighborhood",
+          "note": "Chan Marshall moved to the East Village in 1992. This neighborhood connects the recording to the singer’s life, rather than claiming the standard was written or recorded here.",
+          "source_url": "https://nymag.com/nymetro/arts/music/15528/",
+          "source_label": "New York Magazine · Cat Power profile"
+        }
+      ]
     },
     {
       "id": "new-york-city-serenade",
@@ -1549,13 +1594,13 @@
       "metadata_source": "https://itunes.apple.com/search?term=Bruce+Springsteen+New+York+City+Serenade&entity=song&country=us&limit=10",
       "metadata_release_date": "1973-09-11T07:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "broadway"
       ],
-      "relation": "Title",
-      "excerpt": "",
-      "note": "Springsteen’s long serenade uses New York City as its title and frame. This entry preserves that city-scale connection without presenting an invented scene location.",
-      "source_url": "https://music.apple.com/us/album/new-york-city-serenade/186149850?i=186150313&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "relation": "Lyrics",
+      "excerpt": "Walk with me down Broadway",
+      "note": "The lyric names Broadway repeatedly. The map uses a representative point along the avenue, not an exact corner specified by the song.",
+      "source_url": "https://brucespringsteen.net/track/new-york-city-serenade/",
+      "source_label": "Bruce Springsteen · official lyrics"
     },
     {
       "id": "only-living-boy-in-new-york",
@@ -1571,13 +1616,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Simon+%26+Garfunkel+The+Only+Living+Boy+in+New+York&entity=song&country=us&limit=10",
       "metadata_release_date": "1970-01-26T08:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "forest-hills"
       ],
       "relation": "Title",
       "excerpt": "",
       "note": "The title imagines solitude at the scale of a crowded city. No apartment, studio or private address is inferred from it.",
       "source_url": "https://music.apple.com/us/album/the-only-living-boy-in-new-york/324127933?i=324127941&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "forest-hills",
+          "kind": "Hometown",
+          "note": "Simon & Garfunkel’s official biography identifies both musicians with Forest Hills, Queens. The pin marks their hometown connection; the song does not name this neighborhood.",
+          "source_url": "https://www.simonandgarfunkel.com/biography/",
+          "source_label": "Simon & Garfunkel · official biography"
+        }
+      ]
     },
     {
       "id": "welcome-to-new-york",
@@ -1593,13 +1647,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Taylor+Swift+Welcome+To+New+York&entity=song&country=us&limit=10",
       "metadata_release_date": "2014-10-20T07:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "tribeca"
       ],
       "relation": "Title",
       "excerpt": "",
       "note": "The opening track of 1989 makes arrival in New York its invitation. This is the original recording, distinct from the later Taylor’s Version.",
       "source_url": "https://music.apple.com/us/album/welcome-to-new-york/1440935467?i=1440935802&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "tribeca",
+          "kind": "Home neighborhood",
+          "note": "Taylor Swift established a home in Tribeca in 2014. This is a neighborhood-level artist connection, not an address or a place named in the lyrics.",
+          "source_url": "https://streeteasy.com/blog/taylor-swifts-nyc-apartments-a-small-part-of-her-real-estate-empire/",
+          "source_label": "StreetEasy · New York homes"
+        }
+      ]
     },
     {
       "id": "new-york-telephone-conversation",
@@ -1615,13 +1678,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Lou+Reed+New+York+Telephone+Conversation&entity=song&country=us&limit=10",
       "metadata_release_date": "1972-11-08T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "west-village"
       ],
       "relation": "Title",
       "excerpt": "",
       "note": "Lou Reed compresses city life into a brief telephone exchange. New York is explicit in the title; the callers are not given real-world addresses.",
       "source_url": "https://music.apple.com/us/album/new-york-telephone-conversation/976826793?i=976828530&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "source_label": "Recording and title · Apple Music",
+      "connections": [
+        {
+          "place_id": "west-village",
+          "kind": "Former home neighborhood",
+          "note": "Lou Reed lived in the West Village with Laurie Anderson. His neighborhood supplies a biographical connection; the callers in this song are not assigned real addresses.",
+          "source_url": "https://villagepreservation.org/2015/03/02/happy-birthday-lou-reed/",
+          "source_label": "Village Preservation · Lou Reed"
+        }
+      ]
     },
     {
       "id": "big-man-on-mulberry-street",
@@ -1681,13 +1753,13 @@
       "metadata_source": "https://itunes.apple.com/search?term=John+Lennon+New+York+City&entity=song&country=us&limit=10",
       "metadata_release_date": "1972-09-15T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "greenwich-village"
       ],
-      "relation": "Title",
-      "excerpt": "",
-      "note": "Lennon’s New York City supplies an explicit city-level title. The map uses that broad association rather than pinning a home or claiming a recording location.",
-      "source_url": "https://music.apple.com/us/album/new-york-city/1440858026?i=1440858531&uo=4",
-      "source_label": "Recording and title · Apple Music"
+      "relation": "Lyrics",
+      "excerpt": "Down in the Village",
+      "note": "The lyric names the Village, and Lennon’s official album notes place his life here during this period. The marker identifies the neighborhood, not his apartment.",
+      "source_url": "https://www.johnlennon.com/music/albums/sometime-in-new-york-city-2/",
+      "source_label": "John Lennon · official lyrics and album notes"
     },
     {
       "id": "harlem-river-drive-bobbi-humphrey",
@@ -2319,13 +2391,22 @@
       "metadata_source": "https://itunes.apple.com/search?term=Billie+Holiday+Autumn+in+New+York&entity=song&country=us&limit=8",
       "metadata_release_date": "1956-01-01T12:00:00Z",
       "place_ids": [
-        "new-york-city"
+        "upper-west-side"
       ],
       "relation": "Title",
       "excerpt": "",
       "source_url": "https://music.apple.com/us/album/autumn-in-new-york/1469577526?i=1469578315&uo=4",
       "source_label": "Apple Music · recording and title",
-      "note": "Billie Holiday’s performance adds the New York standard to the collection. The city-wide title is kept at city scale."
+      "note": "Billie Holiday gives the New York standard an intimate reading. Its city-wide title does not specify a street.",
+      "connections": [
+        {
+          "place_id": "upper-west-side",
+          "kind": "Former home neighborhood",
+          "note": "Billie Holiday lived on the Upper West Side late in her life. The neighborhood marker reflects her history, not a street named in this performance.",
+          "source_url": "https://www.architecturaldigest.com/story/billie-holidays-former-upper-west-side-townhouse-is-back-on-the-market",
+          "source_label": "Architectural Digest · former home"
+        }
+      ]
     },
     {
       "id": "new-york-city-blues-peggy-lee",
@@ -2604,7 +2685,8 @@
         40.7157,
         -73.997
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7157&mlon=-73.997#map=16/40.7157/-73.997"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7157&mlon=-73.997#map=16/40.7157/-73.997",
+      "plus_code": "87G8P283+76"
     },
     {
       "id": "riverside",
@@ -2614,10 +2696,12 @@
       "precision": "Representative point",
       "note": "Riverside is the word in the lyric. This point on Riverside Drive is an interpretive reference, not an address specified by the song.",
       "coordinates": [
-        40.7861,
-        -73.9812
+        40.7849764,
+        -73.9826519
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7861&mlon=-73.9812#map=16/40.7861/-73.9812"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42422592",
+      "plus_code": "87G8Q2M8+XW",
+      "geography_source_url": "https://www.openstreetmap.org/node/42422592"
     },
     {
       "id": "queensboro-bridge",
@@ -2630,7 +2714,8 @@
         40.7563,
         -73.9543
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7563&mlon=-73.9543#map=16/40.7563/-73.9543"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7563&mlon=-73.9543#map=16/40.7563/-73.9543",
+      "plus_code": "87G8Q24W+G7"
     },
     {
       "id": "chelsea-hotel",
@@ -2643,7 +2728,8 @@
         40.7444,
         -73.9967
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7444&mlon=-73.9967#map=16/40.7444/-73.9967"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7444&mlon=-73.9967#map=16/40.7444/-73.9967",
+      "plus_code": "87G8P2V3+Q8"
     },
     {
       "id": "cornelia-street",
@@ -2653,10 +2739,12 @@
       "precision": "Representative point",
       "note": "The title names this short West Village street. The map uses its Bleecker Street end, rather than identifying a private residence.",
       "coordinates": [
-        40.731,
-        -74.0021
+        40.7311376,
+        -74.0029381
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.731&mlon=-74.0021#map=16/40.731/-74.0021"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42429701",
+      "plus_code": "87G7PXJW+FR",
+      "geography_source_url": "https://www.openstreetmap.org/node/42429701"
     },
     {
       "id": "53rd-and-3rd",
@@ -2666,10 +2754,12 @@
       "precision": "Intersection",
       "note": "A named intersection rather than a general New York setting. The title supplies both streets.",
       "coordinates": [
-        40.757,
-        -73.9694
+        40.7577077,
+        -73.9694066
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.757&mlon=-73.9694#map=16/40.757/-73.9694"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42436707",
+      "plus_code": "87G8Q25J+36",
+      "geography_source_url": "https://www.openstreetmap.org/node/42436707"
     },
     {
       "id": "110th-street",
@@ -2682,7 +2772,8 @@
         40.7982,
         -73.9526
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7982&mlon=-73.9526#map=16/40.7982/-73.9526"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7982&mlon=-73.9526#map=16/40.7982/-73.9526",
+      "plus_code": "87G8Q2XW+7X"
     },
     {
       "id": "spanish-harlem",
@@ -2695,7 +2786,8 @@
         40.793,
         -73.943
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.793&mlon=-73.943#map=16/40.793/-73.943"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.793&mlon=-73.943#map=16/40.793/-73.943",
+      "plus_code": "87G8Q3V4+6R"
     },
     {
       "id": "bleecker-street",
@@ -2708,7 +2800,8 @@
         40.7292,
         -74.0014
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7292&mlon=-74.0014#map=16/40.7292/-74.0014"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7292&mlon=-74.0014#map=16/40.7292/-74.0014",
+      "plus_code": "87G7PXHX+MC"
     },
     {
       "id": "coney-island",
@@ -2721,7 +2814,8 @@
         40.5755,
         -73.9707
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5755&mlon=-73.9707#map=16/40.5755/-73.9707"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5755&mlon=-73.9707#map=16/40.5755/-73.9707",
+      "plus_code": "87G8H2GH+6P"
     },
     {
       "id": "brooklyn",
@@ -2734,7 +2828,8 @@
         40.65,
         -73.95
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.65&mlon=-73.95#map=16/40.65/-73.95"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.65&mlon=-73.95#map=16/40.65/-73.95",
+      "plus_code": "87G8M322+22"
     },
     {
       "id": "52nd-street",
@@ -2747,7 +2842,8 @@
         40.7613,
         -73.9797
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7613&mlon=-73.9797#map=16/40.7613/-73.9797"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7613&mlon=-73.9797#map=16/40.7613/-73.9797",
+      "plus_code": "87G8Q26C+G4"
     },
     {
       "id": "greenwich-village",
@@ -2755,12 +2851,13 @@
       "area": "Lower Manhattan",
       "map_query": "Greenwich Village, Manhattan, New York, NY",
       "precision": "Neighborhood",
-      "note": "Dylan explicitly names Greenwich Village after a subway journey. The coffee house in this passage is unnamed, so no particular venue is pinned.",
+      "note": "A neighborhood-scale locator for Greenwich Village. The songs’ unnamed rooms and coffee houses are not assigned to individual buildings.",
       "coordinates": [
         40.7336,
         -74.0027
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7336&mlon=-74.0027#map=16/40.7336/-74.0027"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7336&mlon=-74.0027#map=16/40.7336/-74.0027",
+      "plus_code": "87G7PXMW+CW"
     },
     {
       "id": "tompkins-square-park",
@@ -2773,7 +2870,8 @@
         40.7265,
         -73.9815
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7265&mlon=-73.9815#map=16/40.7265/-73.9815"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7265&mlon=-73.9815#map=16/40.7265/-73.9815",
+      "plus_code": "87G8P2G9+JC"
     },
     {
       "id": "washington-square",
@@ -2786,7 +2884,8 @@
         40.7308,
         -73.9973
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7308&mlon=-73.9973#map=16/40.7308/-73.9973"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7308&mlon=-73.9973#map=16/40.7308/-73.9973",
+      "plus_code": "87G8P2J3+83"
     },
     {
       "id": "central-park-west",
@@ -2799,7 +2898,8 @@
         40.7764,
         -73.9762
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7764&mlon=-73.9762#map=16/40.7764/-73.9762"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7764&mlon=-73.9762#map=16/40.7764/-73.9762",
+      "plus_code": "87G8Q2GF+HG"
     },
     {
       "id": "central-park",
@@ -2812,7 +2912,8 @@
         40.7829,
         -73.9654
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7829&mlon=-73.9654#map=16/40.7829/-73.9654"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7829&mlon=-73.9654#map=16/40.7829/-73.9654",
+      "plus_code": "87G8Q2MM+5R"
     },
     {
       "id": "harlem",
@@ -2825,7 +2926,8 @@
         40.8116,
         -73.9465
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8116&mlon=-73.9465#map=16/40.8116/-73.9465"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8116&mlon=-73.9465#map=16/40.8116/-73.9465",
+      "plus_code": "87G8R363+JC"
     },
     {
       "id": "broadway",
@@ -2838,7 +2940,8 @@
         40.7581,
         -73.9853
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7581&mlon=-73.9853#map=16/40.7581/-73.9853"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7581&mlon=-73.9853#map=16/40.7581/-73.9853",
+      "plus_code": "87G8Q257+6V"
     },
     {
       "id": "rockaway-beach",
@@ -2851,7 +2954,8 @@
         40.586,
         -73.8127
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.586&mlon=-73.8127#map=16/40.586/-73.8127"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.586&mlon=-73.8127#map=16/40.586/-73.8127",
+      "plus_code": "87G8H5PP+CW"
     },
     {
       "id": "jamaica",
@@ -2864,7 +2968,8 @@
         40.7027,
         -73.7889
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7027&mlon=-73.7889#map=16/40.7027/-73.7889"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7027&mlon=-73.7889#map=16/40.7027/-73.7889",
+      "plus_code": "87G8P636+3C"
     },
     {
       "id": "queens",
@@ -2877,7 +2982,8 @@
         40.7282,
         -73.7949
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7282&mlon=-73.7949#map=16/40.7282/-73.7949"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7282&mlon=-73.7949#map=16/40.7282/-73.7949",
+      "plus_code": "87G8P6H4+72"
     },
     {
       "id": "south-bronx",
@@ -2890,7 +2996,8 @@
         40.8175,
         -73.9182
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8175&mlon=-73.9182#map=16/40.8175/-73.9182"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8175&mlon=-73.9182#map=16/40.8175/-73.9182",
+      "plus_code": "87G8R39J+2P"
     },
     {
       "id": "staten-island",
@@ -2903,7 +3010,8 @@
         40.5795,
         -74.1502
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5795&mlon=-74.1502#map=16/40.5795/-74.1502"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5795&mlon=-74.1502#map=16/40.5795/-74.1502",
+      "plus_code": "87G7HRHX+RW"
     },
     {
       "id": "bronx",
@@ -2911,12 +3019,13 @@
       "area": "New York City",
       "map_query": "The Bronx, New York, NY",
       "precision": "Borough",
-      "note": "The reference covers the borough as a whole, rather than a specific neighborhood or jazz venue.",
+      "note": "A borough-scale locator for the Bronx. Song-title and artist-biography connections are explained separately for each recording.",
       "coordinates": [
         40.8448,
         -73.8648
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8448&mlon=-73.8648#map=16/40.8448/-73.8648"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8448&mlon=-73.8648#map=16/40.8448/-73.8648",
+      "plus_code": "87G8R4VP+W3"
     },
     {
       "id": "manhattan",
@@ -2929,7 +3038,8 @@
         40.7831,
         -73.9712
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7831&mlon=-73.9712#map=16/40.7831/-73.9712"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7831&mlon=-73.9712#map=16/40.7831/-73.9712",
+      "plus_code": "87G8Q2MH+6G"
     },
     {
       "id": "birdland-original",
@@ -2942,7 +3052,8 @@
         40.7623,
         -73.9831
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7623&mlon=-73.9831#map=16/40.7623/-73.9831"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7623&mlon=-73.9831#map=16/40.7623/-73.9831",
+      "plus_code": "87G8Q268+WQ"
     },
     {
       "id": "sugar-hill",
@@ -2955,7 +3066,8 @@
         40.8268,
         -73.9439
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8268&mlon=-73.9439#map=16/40.8268/-73.9439"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8268&mlon=-73.9439#map=16/40.8268/-73.9439",
+      "plus_code": "87G8R3G4+PC"
     },
     {
       "id": "ludlow-street",
@@ -2965,10 +3077,12 @@
       "precision": "Representative point",
       "note": "Rivington Street provides a reference along Ludlow Street. This intersection is not specified in the song.",
       "coordinates": [
-        40.7208,
-        -73.9883
+        40.7200786,
+        -73.9883599
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7208&mlon=-73.9883#map=16/40.7208/-73.9883"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42437096",
+      "plus_code": "87G8P2C6+2M",
+      "geography_source_url": "https://www.openstreetmap.org/node/42437096"
     },
     {
       "id": "bleecker-macdougal",
@@ -2981,7 +3095,8 @@
         40.7292,
         -74.0014
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7292&mlon=-74.0014#map=16/40.7292/-74.0014"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7292&mlon=-74.0014#map=16/40.7292/-74.0014",
+      "plus_code": "87G7PXHX+MC"
     },
     {
       "id": "brooklyn-bridge",
@@ -2994,7 +3109,8 @@
         40.7061,
         -73.9969
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7061&mlon=-73.9969#map=16/40.7061/-73.9969"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7061&mlon=-73.9969#map=16/40.7061/-73.9969",
+      "plus_code": "87G8P243+C6"
     },
     {
       "id": "chelsea",
@@ -3007,7 +3123,8 @@
         40.7465,
         -74.0014
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7465&mlon=-74.0014#map=16/40.7465/-74.0014"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7465&mlon=-74.0014#map=16/40.7465/-74.0014",
+      "plus_code": "87G7PXWX+JC"
     },
     {
       "id": "harlem-river",
@@ -3020,7 +3137,8 @@
         40.842,
         -73.9324
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.842&mlon=-73.9324#map=16/40.842/-73.9324"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.842&mlon=-73.9324#map=16/40.842/-73.9324",
+      "plus_code": "87G8R3R9+R2"
     },
     {
       "id": "mulberry-street",
@@ -3030,10 +3148,12 @@
       "precision": "Representative point",
       "note": "The marker is a reference along Mulberry Street at Hester Street. The song names the street and surrounding blocks, without identifying a restaurant.",
       "coordinates": [
-        40.7173,
-        -73.998
+        40.7181633,
+        -73.9979382
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7173&mlon=-73.998#map=16/40.7173/-73.998"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42435456",
+      "plus_code": "87G8P292+7R",
+      "geography_source_url": "https://www.openstreetmap.org/node/42435456"
     },
     {
       "id": "new-york-city",
@@ -3041,12 +3161,13 @@
       "area": "Five boroughs",
       "map_query": "New York City, New York",
       "precision": "City",
-      "note": "The title refers to New York City as a whole. The overview point near City Hall is a city-scale locator, not a claim that the song names or takes place at City Hall.",
+      "note": "This marker represents New York City as a whole. A more specific song or artist connection has not yet been verified for these recordings; it is not a City Hall association.",
       "coordinates": [
         40.7128,
         -74.006
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7128&mlon=-74.006#map=16/40.7128/-74.006"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7128&mlon=-74.006#map=16/40.7128/-74.006",
+      "plus_code": "87G7PX7V+4J"
     },
     {
       "id": "harlem-river-drive",
@@ -3059,7 +3180,8 @@
         40.8194,
         -73.9347
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8194&mlon=-73.9347#map=16/40.8194/-73.9347"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8194&mlon=-73.9347#map=16/40.8194/-73.9347",
+      "plus_code": "87G8R398+Q4"
     },
     {
       "id": "avenue-a",
@@ -3072,7 +3194,8 @@
         40.7266,
         -73.9825
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7266&mlon=-73.9825#map=16/40.7266/-73.9825"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7266&mlon=-73.9825#map=16/40.7266/-73.9825",
+      "plus_code": "87G8P2G9+J2"
     },
     {
       "id": "flatbush",
@@ -3085,7 +3208,8 @@
         40.6415,
         -73.9594
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6415&mlon=-73.9594#map=16/40.6415/-73.9594"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6415&mlon=-73.9594#map=16/40.6415/-73.9594",
+      "plus_code": "87G8J2RR+J6"
     },
     {
       "id": "queensbridge",
@@ -3098,20 +3222,23 @@
         40.7553,
         -73.9457
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7553&mlon=-73.9457#map=16/40.7553/-73.9457"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7553&mlon=-73.9457#map=16/40.7553/-73.9457",
+      "plus_code": "87G8Q343+4P"
     },
     {
       "id": "park-avenue",
       "name": "Park Avenue",
       "area": "Manhattan",
       "precision": "Representative point",
-      "map_query": "Park Avenue, Manhattan, New York, NY",
-      "note": "Park Avenue runs through several neighborhoods. This representative Midtown point is not a claim about where the music was composed or recorded.",
+      "map_query": "Park Avenue and East 51st Street, Manhattan, New York, NY",
+      "note": "A representative point on Park Avenue at East 51st Street. The instrumental title names the avenue, not this intersection or a recording location.",
       "coordinates": [
-        40.7584,
-        -73.9749
+        40.7578528,
+        -73.9736145
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7584&mlon=-73.9749#map=16/40.7584/-73.9749"
+      "coordinate_reference": "https://www.openstreetmap.org/node/596775876",
+      "geography_source_url": "https://www.openstreetmap.org/node/596775876",
+      "plus_code": "87G8Q25G+4H"
     },
     {
       "id": "57th-street",
@@ -3124,7 +3251,8 @@
         40.7646,
         -73.9784
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7646&mlon=-73.9784#map=16/40.7646/-73.9784"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7646&mlon=-73.9784#map=16/40.7646/-73.9784",
+      "plus_code": "87G8Q27C+RJ"
     },
     {
       "id": "42nd-street",
@@ -3137,7 +3265,8 @@
         40.756,
         -73.987
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.756&mlon=-73.987#map=16/40.756/-73.987"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.756&mlon=-73.987#map=16/40.756/-73.987",
+      "plus_code": "87G8Q247+C6"
     },
     {
       "id": "lenox-avenue",
@@ -3150,7 +3279,8 @@
         40.808,
         -73.9443
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.808&mlon=-73.9443#map=16/40.808/-73.9443"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.808&mlon=-73.9443#map=16/40.808/-73.9443",
+      "plus_code": "87G8R354+67"
     },
     {
       "id": "central-park-north",
@@ -3160,10 +3290,12 @@
       "map_query": "Central Park North, Harlem, Manhattan, New York, NY",
       "note": "Central Park North follows the northern edge of the park along 110th Street. This marker represents that stretch, not an exact musical scene.",
       "coordinates": [
-        40.7991,
-        -73.9527
+        40.7982754,
+        -73.9525303
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7991&mlon=-73.9527#map=16/40.7991/-73.9527"
+      "coordinate_reference": "https://www.openstreetmap.org/node/3099327964",
+      "plus_code": "87G8Q2XW+8X",
+      "geography_source_url": "https://www.openstreetmap.org/node/3099327964"
     },
     {
       "id": "grand-central",
@@ -3176,7 +3308,8 @@
         40.7527,
         -73.9772
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7527&mlon=-73.9772#map=16/40.7527/-73.9772"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7527&mlon=-73.9772#map=16/40.7527/-73.9772",
+      "plus_code": "87G8Q23F+34"
     },
     {
       "id": "east-river",
@@ -3189,7 +3322,8 @@
         40.707,
         -73.986
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.707&mlon=-73.986#map=16/40.707/-73.986"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.707&mlon=-73.986#map=16/40.707/-73.986",
+      "plus_code": "87G8P247+RJ"
     },
     {
       "id": "grand-street",
@@ -3202,7 +3336,8 @@
         40.7147,
         -73.986
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7147&mlon=-73.986#map=16/40.7147/-73.986"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7147&mlon=-73.986#map=16/40.7147/-73.986",
+      "plus_code": "87G8P277+VJ"
     },
     {
       "id": "savoy-ballroom",
@@ -3215,7 +3350,8 @@
         40.8207,
         -73.9361
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8207&mlon=-73.9361#map=16/40.8207/-73.9361"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8207&mlon=-73.9361#map=16/40.8207/-73.9361",
+      "plus_code": "87G8R3C7+7H"
     },
     {
       "id": "upper-west-side",
@@ -3228,7 +3364,8 @@
         40.787,
         -73.9754
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.787&mlon=-73.9754#map=16/40.787/-73.9754"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.787&mlon=-73.9754#map=16/40.787/-73.9754",
+      "plus_code": "87G8Q2PF+RR"
     },
     {
       "id": "bushwick",
@@ -3241,7 +3378,8 @@
         40.6958,
         -73.9171
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6958&mlon=-73.9171#map=16/40.6958/-73.9171"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6958&mlon=-73.9171#map=16/40.6958/-73.9171",
+      "plus_code": "87G8M3WM+85"
     },
     {
       "id": "bed-stuy",
@@ -3254,7 +3392,8 @@
         40.6872,
         -73.9418
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6872&mlon=-73.9418#map=16/40.6872/-73.9418"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6872&mlon=-73.9418#map=16/40.6872/-73.9418",
+      "plus_code": "87G8M3P5+V7"
     },
     {
       "id": "corona",
@@ -3267,7 +3406,8 @@
         40.7465,
         -73.8648
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7465&mlon=-73.8648#map=16/40.7465/-73.8648"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7465&mlon=-73.8648#map=16/40.7465/-73.8648",
+      "plus_code": "87G8P4WP+J3"
     },
     {
       "id": "hollis",
@@ -3280,7 +3420,8 @@
         40.7104,
         -73.7662
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7104&mlon=-73.7662#map=16/40.7104/-73.7662"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7104&mlon=-73.7662#map=16/40.7104/-73.7662",
+      "plus_code": "87G8P66M+5G"
     },
     {
       "id": "utopia-parkway",
@@ -3290,10 +3431,12 @@
       "precision": "Representative point",
       "note": "The marker is a representative point on the long Queens road, near 73rd Avenue. The song does not specify this intersection.",
       "coordinates": [
-        40.7295,
-        -73.7933
+        40.7300485,
+        -73.7935894
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7295&mlon=-73.7933#map=16/40.7295/-73.7933"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42923373",
+      "plus_code": "87G8P6J4+2H",
+      "geography_source_url": "https://www.openstreetmap.org/node/42923373"
     },
     {
       "id": "lower-east-side",
@@ -3306,7 +3449,8 @@
         40.7186,
         -73.9879
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7186&mlon=-73.9879#map=16/40.7186/-73.9879"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7186&mlon=-73.9879#map=16/40.7186/-73.9879",
+      "plus_code": "87G8P296+CR"
     },
     {
       "id": "canal-street",
@@ -3316,10 +3460,12 @@
       "precision": "Representative point",
       "note": "Broadway is a representative reference along Canal Street. The song does not specify this intersection or a storefront.",
       "coordinates": [
-        40.7181,
-        -74.0008
+        40.7194015,
+        -74.0018814
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7181&mlon=-74.0008#map=16/40.7181/-74.0008"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42428433",
+      "plus_code": "87G7PX9X+Q6",
+      "geography_source_url": "https://www.openstreetmap.org/node/42428433"
     },
     {
       "id": "toms-restaurant",
@@ -3332,7 +3478,8 @@
         40.8054,
         -73.9654
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8054&mlon=-73.9654#map=16/40.8054/-73.9654"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8054&mlon=-73.9654#map=16/40.8054/-73.9654",
+      "plus_code": "87G8R24M+5R"
     },
     {
       "id": "east-broadway",
@@ -3345,7 +3492,8 @@
         40.7139,
         -73.9901
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7139&mlon=-73.9901#map=16/40.7139/-73.9901"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7139&mlon=-73.9901#map=16/40.7139/-73.9901",
+      "plus_code": "87G8P275+HX"
     },
     {
       "id": "sixth-avenue",
@@ -3355,10 +3503,12 @@
       "precision": "Representative point",
       "note": "The marker represents Sixth Avenue at West 14th Street. It does not identify Jakob Dylan’s former window or the man described in the song.",
       "coordinates": [
-        40.7382,
-        -73.9965
+        40.737361,
+        -73.99684
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7382&mlon=-73.9965#map=16/40.7382/-73.9965"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42430253",
+      "plus_code": "87G8P2P3+W7",
+      "geography_source_url": "https://www.openstreetmap.org/node/42430253"
     },
     {
       "id": "23rd-street",
@@ -3371,7 +3521,8 @@
         40.7443,
         -73.9953
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7443&mlon=-73.9953#map=16/40.7443/-73.9953"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7443&mlon=-73.9953#map=16/40.7443/-73.9953",
+      "plus_code": "87G8P2V3+PV"
     },
     {
       "id": "mermaid-avenue",
@@ -3384,7 +3535,8 @@
         40.5764,
         -73.9864
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5764&mlon=-73.9864#map=16/40.5764/-73.9864"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5764&mlon=-73.9864#map=16/40.5764/-73.9864",
+      "plus_code": "87G8H2G7+HC"
     },
     {
       "id": "steeplechase-park",
@@ -3397,7 +3549,8 @@
         40.5746,
         -73.9837
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5746&mlon=-73.9837#map=16/40.5746/-73.9837"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.5746&mlon=-73.9837#map=16/40.5746/-73.9837",
+      "plus_code": "87G8H2F8+RG"
     },
     {
       "id": "washington-heights",
@@ -3410,7 +3563,8 @@
         40.8417,
         -73.9394
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8417&mlon=-73.9394#map=16/40.8417/-73.9394"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8417&mlon=-73.9394#map=16/40.8417/-73.9394",
+      "plus_code": "87G8R3R6+M6"
     },
     {
       "id": "rockefeller-plaza",
@@ -3423,7 +3577,8 @@
         40.7587,
         -73.9787
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7587&mlon=-73.9787#map=16/40.7587/-73.9787"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7587&mlon=-73.9787#map=16/40.7587/-73.9787",
+      "plus_code": "87G8Q25C+FG"
     },
     {
       "id": "staten-island-ferry",
@@ -3436,7 +3591,8 @@
         40.66,
         -74.048
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.66&mlon=-74.048#map=16/40.66/-74.048"
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.66&mlon=-74.048#map=16/40.66/-74.048",
+      "plus_code": "87G7MX62+2R"
     },
     {
       "id": "82nd-street",
@@ -3446,10 +3602,111 @@
       "precision": "Representative point",
       "note": "The title supplies 82nd Street. Broadway is an editorial locator, not a verified bus stop or proof of the exact side of Manhattan in the song.",
       "coordinates": [
-        40.7852,
-        -73.9775
+        40.7858381,
+        -73.9786335
       ],
-      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7852&mlon=-73.9775#map=16/40.7852/-73.9775"
+      "coordinate_reference": "https://www.openstreetmap.org/node/42428661",
+      "plus_code": "87G8Q2PC+8G",
+      "geography_source_url": "https://www.openstreetmap.org/node/42428661"
+    },
+    {
+      "id": "upper-east-side",
+      "name": "Upper East Side",
+      "area": "Manhattan",
+      "map_query": "Upper East Side, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A representative point in Upper East Side. The marker locates the neighborhood, not an artist’s apartment or a specific scene in a song.",
+      "coordinates": [
+        40.7736,
+        -73.9566
+      ],
+      "plus_code": "87G8Q2FV+C9",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7736&mlon=-73.9566#map=16/40.7736/-73.9566"
+    },
+    {
+      "id": "forest-hills",
+      "name": "Forest Hills",
+      "area": "Queens",
+      "map_query": "Forest Hills, Queens, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A representative point in Forest Hills. The marker locates the neighborhood, not an artist’s apartment or a specific scene in a song.",
+      "coordinates": [
+        40.7181,
+        -73.8448
+      ],
+      "plus_code": "87G8P594+63",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7181&mlon=-73.8448#map=16/40.7181/-73.8448"
+    },
+    {
+      "id": "tribeca",
+      "name": "Tribeca",
+      "area": "Manhattan",
+      "map_query": "Tribeca, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A representative point in Tribeca. The marker locates the neighborhood, not an artist’s apartment or a specific scene in a song.",
+      "coordinates": [
+        40.7163,
+        -74.0086
+      ],
+      "plus_code": "87G7PX8R+GH",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7163&mlon=-74.0086#map=16/40.7163/-74.0086"
+    },
+    {
+      "id": "west-village",
+      "name": "West Village",
+      "area": "Manhattan",
+      "map_query": "West Village, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A representative point in West Village. The marker locates the neighborhood, not an artist’s apartment or a specific scene in a song.",
+      "coordinates": [
+        40.7358,
+        -74.0036
+      ],
+      "plus_code": "87G7PXPW+8H",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7358&mlon=-74.0036#map=16/40.7358/-74.0036"
+    },
+    {
+      "id": "east-village",
+      "name": "East Village",
+      "area": "Manhattan",
+      "map_query": "East Village, Manhattan, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A representative point in East Village. The marker locates the neighborhood, not an artist’s apartment or a specific scene in a song.",
+      "coordinates": [
+        40.727,
+        -73.9858
+      ],
+      "plus_code": "87G8P2G7+RM",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.727&mlon=-73.9858#map=16/40.727/-73.9858"
+    },
+    {
+      "id": "williamsburg",
+      "name": "Williamsburg",
+      "area": "Brooklyn",
+      "map_query": "Williamsburg, Brooklyn, New York, NY",
+      "precision": "Neighborhood",
+      "note": "A representative point in Williamsburg. The marker locates the neighborhood, not an artist’s apartment or a specific scene in a song.",
+      "coordinates": [
+        40.714,
+        -73.961
+      ],
+      "plus_code": "87G8P27Q+JJ",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.714&mlon=-73.961#map=16/40.714/-73.961"
+    },
+    {
+      "id": "fifth-avenue",
+      "name": "Fifth Avenue",
+      "area": "Midtown, Manhattan",
+      "map_query": "Fifth Avenue, Midtown, Manhattan, New York, NY",
+      "precision": "Representative point",
+      "note": "An approximate point along Fifth Avenue in Midtown. The lyric names the avenue, not this particular block or a private residence.",
+      "coordinates": [
+        40.7579096,
+        -73.9776624
+      ],
+      "plus_code": "87G8Q25C+5W",
+      "coordinate_reference": "https://www.openstreetmap.org/node/42432580",
+      "geography_source_url": "https://www.openstreetmap.org/node/42432580"
     }
   ]
 }
