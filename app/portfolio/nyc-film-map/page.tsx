@@ -3,8 +3,6 @@ import { BrandMark } from '@/components/brand_mark';
 import { NycFilmMap } from '@/components/nyc_film_map';
 import { google_maps_embed_key } from '@/lib/google_maps_config';
 import { pageMetadata } from '@/lib/seo';
-import 'leaflet/dist/leaflet.css';
-import 'leaflet.markercluster/dist/MarkerCluster.css';
 import './nyc_film_map.css';
 
 export const metadata = pageMetadata(
