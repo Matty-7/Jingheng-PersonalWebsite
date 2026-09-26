@@ -50,3 +50,5 @@ Open a cloud Work conversation in the same ChatGPT account/workspace and ask to 
 GitHub remains the code review history. Sites stores source versions and serves the existing domain. Foreground iterations use the parent engineer and one independent reviewer; the daily visitor audit retains its separate critic/editor discovery and closure. Reviewed PRs with successful required checks merge into `main`. A separate merge-triggered publisher deploys the checked revision and verifies delivery. Jingheng has authorized these merges and deployments without a separate confirmation. Pushing an unmerged branch or saving a Site version alone does not deploy it. Read [the agent workflow](docs/agent_workflow.md) before substantive changes.
 
 Official guidance: https://learn.chatgpt.com/training/walkthroughs/working-on-your-phone
+
+<!-- Temporary CI routing verification; never merge this validation branch. -->
