@@ -26,11 +26,12 @@ test('Atlas unifies search and filters, preserves empty state and mobile layout'
       .getBoundingClientRect().top,
     map_top: document.querySelector('.atlas-map')!.getBoundingClientRect().top,
   }));
-  if (layout.width > 800) expect(layout.workspace_top).toBeLessThanOrEqual(260);
+  if (layout.width > 800) expect(layout.workspace_top).toBeLessThanOrEqual(250);
   else expect(layout.map_top).toBeLessThanOrEqual(400);
   const visiting = page.locator('.atlas-visiting');
   await expect(visiting.locator('p')).not.toBeVisible();
   await visiting.locator('summary').press('Enter');
+  await expect(visiting.locator('p')).toBeVisible();
   await expect(visiting.locator('p')).toContainText(
     'West 90th and 91st Streets',
   );
