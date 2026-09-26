@@ -6,6 +6,7 @@ import { useMemo, useRef, useState } from 'react';
 import {
   ArrowUpRight,
   BookOpen,
+  Check,
   ChevronLeft,
   ChevronRight,
   Film,
@@ -66,13 +67,20 @@ function MediumIcon({ medium }: { medium: AtlasEntry['medium'] }) {
 
 function SourceLink({
   href,
+  aria_label,
   children,
 }: {
   href: string;
+  aria_label?: string;
   children: React.ReactNode;
 }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      aria-label={aria_label}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children} <ArrowUpRight size={14} aria-hidden="true" />
     </a>
   );
@@ -101,16 +109,19 @@ function AtlasStory({ entry }: { entry: AtlasEntry }) {
           </figure>
         )}
         <p>{scene.scene}</p>
-        <div className="atlas-sources">
-          {scene.source_ids.map((id) => {
-            const source = film_sources.find((item) => item.id === id);
-            return source ? (
-              <SourceLink key={id} href={source.url}>
-                {source.label}
-              </SourceLink>
-            ) : null;
-          })}
-        </div>
+        <details className="atlas-notes">
+          <summary>Scene sources</summary>
+          <div className="atlas-sources">
+            {scene.source_ids.map((id) => {
+              const source = film_sources.find((item) => item.id === id);
+              return source ? (
+                <SourceLink key={id} href={source.url}>
+                  {source.label}
+                </SourceLink>
+              ) : null;
+            })}
+          </div>
+        </details>
       </div>
     );
   }
@@ -284,15 +295,14 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
       <div className="atlas-status">
         <output>
           {results.length} {results.length === 1 ? 'connection' : 'connections'}
-          {query ? ` matching “${query}”` : ' between works and places'}
+          {query ? ` matching “${query}”` : ''}
         </output>
-        <span>One place can hold many stories.</span>
       </div>
       {selected ? (
         <div className="atlas-workspace">
           <aside className="atlas-index" aria-label="Atlas results">
             <div className="atlas-index-heading">
-              <span>WORK / PLACE</span>
+              <span>Places &amp; works</span>
               <span>
                 {page_start + 1}–
                 {Math.min(page_start + page_size, results.length)}
@@ -308,14 +318,23 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
                   aria-pressed={entry.id === entry_id}
                   onClick={() => select_entry(entry.id)}
                 >
-                  <span className="atlas-result-medium">
+                  <span className="atlas-result-icon" aria-hidden="true">
                     <MediumIcon medium={entry.medium} />
-                    {atlas_labels[entry.medium]} ·{' '}
-                    {entry.year ?? 'Year unverified'}
                   </span>
-                  <strong>{entry.title}</strong>
-                  <span>{entry.creator}</span>
-                  <span className="atlas-result-place">{entry.place_name}</span>
+                  <span className="atlas-result-copy">
+                    <span className="sr-only">
+                      {atlas_labels[entry.medium]}:{' '}
+                    </span>
+                    <strong>{entry.place_name}</strong>
+                    <span>{entry.title}</span>
+                  </span>
+                  {entry.id === entry_id && (
+                    <Check
+                      className="atlas-selected-check"
+                      size={16}
+                      aria-hidden="true"
+                    />
+                  )}
                 </button>
               ))}
             </div>
@@ -345,7 +364,9 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
             </div>
           </aside>
           <div className="atlas-mobile-picker">
-            <label htmlFor="atlas-place-picker">Choose a work and place</label>
+            <label className="sr-only" htmlFor="atlas-place-picker">
+              Choose a work and place
+            </label>
             <select
               id="atlas-place-picker"
               value={entry_id ?? ''}
@@ -354,8 +375,8 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
             >
               {results.map((entry) => (
                 <option key={entry.id} value={entry.id}>
-                  {atlas_labels[entry.medium]} · {entry.title} ·{' '}
-                  {entry.place_name}
+                  {entry.place_name} · {entry.title} ·{' '}
+                  {atlas_labels[entry.medium]}
                 </option>
               ))}
             </select>
@@ -371,8 +392,11 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
                   {selected.place_name}
                 </h2>
               </div>
-              <SourceLink href={atlas_maps_url(selected)}>
-                Google Maps
+              <SourceLink
+                href={atlas_maps_url(selected)}
+                aria_label="Open in Google Maps"
+              >
+                Maps
               </SourceLink>
             </div>
             <div className="atlas-map" key={selected.id}>
@@ -394,9 +418,14 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
               )}
             </div>
             <div className="atlas-location-note">
-              <strong>{selected.relationship}</strong>
-              <p>{selected.precision}</p>
-              <p>{selected.visit_note}</p>
+              <div>
+                <strong>{selected.relationship}</strong>
+                <p>{selected.precision}</p>
+              </div>
+              <details className="atlas-visiting" key={selected.id}>
+                <summary>Visiting notes</summary>
+                <p>{selected.visit_note}</p>
+              </details>
             </div>
             <article className="atlas-detail" data-medium={selected.medium}>
               <header className="atlas-work-heading">
@@ -456,11 +485,13 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
                     ) : (
                       <Play size={18} />
                     )}
-                    {loading
-                      ? 'Loading preview…'
-                      : playing
-                        ? 'Pause preview'
-                        : 'Play preview'}
+                    <span className="sr-only">
+                      {loading
+                        ? 'Loading preview…'
+                        : playing
+                          ? 'Pause preview'
+                          : 'Play preview'}
+                    </span>
                   </button>
                   <progress
                     value={elapsed}
@@ -491,12 +522,7 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
             {related && related.entries.length > 0 && (
               <section className="atlas-related" aria-label="Related works">
                 <h3>{related.label}</h3>
-                {related.area && (
-                  <p>
-                    Related places in this area. Each connection keeps its own
-                    location and scope.
-                  </p>
-                )}
+                {related.area && <p>Works connected to nearby places.</p>}
                 <div>
                   {related.entries.map((entry) => (
                     <button

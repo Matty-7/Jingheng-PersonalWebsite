@@ -19,6 +19,23 @@ test('Atlas unifies search and filters, preserves empty state and mobile layout'
   await expect(page.locator('.atlas-map iframe')).toHaveCount(1);
   const search = page.getByRole('searchbox', { name: 'Search the atlas' });
   await expect(search).toBeEnabled();
+  const layout = await page.evaluate(() => ({
+    width: innerWidth,
+    workspace_top: document
+      .querySelector('.atlas-workspace')!
+      .getBoundingClientRect().top,
+    map_top: document.querySelector('.atlas-map')!.getBoundingClientRect().top,
+  }));
+  if (layout.width > 800) expect(layout.workspace_top).toBeLessThanOrEqual(260);
+  else expect(layout.map_top).toBeLessThanOrEqual(400);
+  const visiting = page.locator('.atlas-visiting');
+  await expect(visiting.locator('p')).not.toBeVisible();
+  await visiting.locator('summary').press('Enter');
+  await expect(visiting.locator('p')).toContainText(
+    'West 90th and 91st Streets',
+  );
+  await visiting.locator('summary').press('Enter');
+  await expect(visiting.locator('p')).not.toBeVisible();
   await search.fill('henry james');
   await expect(page.locator('.atlas-detail')).toContainText(
     'Washington Square',
@@ -126,6 +143,9 @@ test('Atlas links to an intact specialized collection and comes back', async ({
 }) => {
   await page.goto('/portfolio/new-york-atlas?medium=film&q=cafe+lalo');
   await expect(page.locator('.atlas-place-heading h2')).toHaveText('Café Lalo');
+  const sources = page.locator('.atlas-story details');
+  await sources.locator('summary').press('Enter');
+  await expect(sources.getByRole('link').first()).toBeVisible();
   await page.getByRole('link', { name: 'View in the film collection' }).click();
   await expect(
     page.getByRole('combobox', { name: 'Choose a filming location' }),
