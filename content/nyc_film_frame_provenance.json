@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-20",
+  "reviewed_on": "2026-09-21",
   "notes": [
     "Original low-resolution film frames are tied to specific scenes and credited.",
     "No open license or reuse permission is asserted.",
@@ -296,18 +296,6 @@
       "verification": "Visually inspected as a film frame, then matched to the location group on the cited source page.",
       "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=1703+2nd+Avenue+Manhattan&size=3",
       "coordinate_match": "1703 2 AVENUE, New York, NY, USA",
-      "coordinate_precision": "Approximate address or public approach; not the exact camera position.",
-      "rights": "No reuse permission or open license established; credit retained."
-    },
-    {
-      "film_id": "annie-hall",
-      "location_id": "annie-east-68",
-      "frame_status": "verified_frame",
-      "source_page": "https://onthesetofnewyork.com/anniehall.html",
-      "original_image": "https://onthesetofnewyork.com/locations/anniehall/anniehall01.jpg",
-      "verification": "Visually inspected as a film frame, then matched to the location group on the cited source page.",
-      "coordinate_source": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=East+68th+Street+and+Madison+Avenue+Manhattan&f=json&outFields=Match_addr%2CAddr_type&maxLocations=3",
-      "coordinate_match": "E 68th St & Madison Ave, New York, New York, 10065",
       "coordinate_precision": "Approximate address or public approach; not the exact camera position.",
       "rights": "No reuse permission or open license established; credit retained."
     },
@@ -634,6 +622,978 @@
       "coordinate_match": "Stuyvesant Ave & Lexington Ave, Brooklyn, New York, 11221",
       "coordinate_precision": "Approximate address or public approach; not the exact camera position.",
       "rights": "No reuse permission or open license established; credit retained."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "carnegie-deli",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose01.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "danny-broadway-office",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose05.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "brill-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose12.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "george-washington-bridge",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose15.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "broadway-west-73",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose19.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "hotel-west-73",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose20.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "broadway-columbus-circle",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose26.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "waldorf-astoria",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose27.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "pj-clarkes",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose29.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "location_id": "danny-apartment",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+      "original_image": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose35.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "madison-east-76",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan56.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "sixth-west-50",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan59.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "west-broadway-prince",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan60.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "guggenheim",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan75.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "fifth-avenue-993",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan91.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "cinema-studio",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan78.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "moma",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan80.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "dalton-school",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan83.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "lexington-candy-shop",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan93.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "central-park-lake",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan85.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "cranberry-columbia",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan90.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "gramercy-west-21",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan115.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "hannah-and-her-sisters",
+      "location_id": "mount-sinai",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/hannahandhersisters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters13.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "hannah-and-her-sisters",
+      "location_id": "sheep-meadow",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/hannahandhersisters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters19.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "hannah-and-her-sisters",
+      "location_id": "west-45-seventh",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/hannahandhersisters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters21.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "hannah-and-her-sisters",
+      "location_id": "metro-cinema",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/hannahandhersisters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters26.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "location_id": "madison-square-garden",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery02.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "location_id": "lincoln-center",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery05.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "location_id": "21-club",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery11.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "location_id": "larry-workplace",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery07.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "location_id": "hotel-waldron",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery18.jpg",
+      "verification": "Viewed downloaded frame in contact sheet; confirmed movie imagery, not the source page’s modern comparison photo.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "beekman-theater",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKp5uiSfAPoSeO7ZfLaPHt6sNsS9M6lUy66cUeiUIWUPCzt0QQU1wJ42TCL8fjO894oFV_J73pDYGEAgdc8xZ0NG_8O-4aSWgSO45z-BB2rT5In5XiSmCcRkLHuI-Ubp76yLjXE8BILsM/s400/BeekmanTheatre_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "wall-street-racquet-club",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiO8y4cy_cEf2KKcCM-0ErhIdh8dUYdaAlgWiN62go2_tjO04VU2XxPGI84fmzEPdHIlaTCMGy9NqQ270YbdnxvyQEldtRiiWc_JBdinq6EFjwaqIY-ZaSgdpXX43DcI8hTSx6JFuk_O3Y/s400/WallStRacquetClub2_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "central-park-zoo",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTSiZkuTeXXygjzKDUSppi2AtHbTpOoeruR5EPG1daxQ06BRALNjadph-EsDynHQj4O0m6NhyTd6K4prS1UIqpsQnYzLkgokwyT3S0oKrWMCEMj2W0Z79RkKaFtMbD1j2UZ6clB0pXQ6A/s400/CentralParkZoo_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "seaport-pier-16",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/anniehall.html",
+      "original_image": "https://onthesetofnewyork.com/locations/anniehall/anniehall06.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "washington-square-north",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxCW58C5rXUQV7BEx76jhuN9j3FFmSmJMHLTF-mdnxPtD5KJjUXqa-M5GrpK09bWxjkBhOyHSt1Ep_2JoNKJVTH-oMOGzjOInENexwu3ilFAn7hbbvFSoxKYif3CSkFUfhJbZcEk6A2rw/s400/WashingtonSquareNorth2_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "west-fourth-dialogue",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMW67H6DwUQ6bg5ntKlJKX5eAybPCjC6g6066AyaMQXjrJTFzlMPTaLvbdL-fqlrAMrFp5txoynjhj0BPPqeo-b5OBl2i1vOk8EuXb-fhdHIgTkVslx4K5HnpLKFC0nECLGsIqZV86rkk/s400/W4thStr2_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "paris-theater",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtJTjMvpM6JlPI2Cp9fBHb6bXBDpV3_jVhc0m3HO2NJIVOFNaL5vcjzIRHXg1qcwunr6IbTB5ORQw1j6wlPsTDgP3aR1bWgTJ7jMh0unCufrpDCsijyMTYw0DtiodyabFR1E50b_WRBH8/s400/ParisCinema1_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "seaport-pier-15",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsZGLQCN-0Tvdc9mhG2xSlFRiewCfai8yu8zOudyV4P6R5xtqrtU_-l9C8BaewYadAFr1gPL1X_xdYwwy9QmNEAeIt8YUQYcV3ubPupJ_GzXGnARQ7xTJPC6eMVTwHwNGrk_fPC8z7umQ/s400/Pier15_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "thalia-theater",
+      "frame_status": "verified_frame",
+      "source_page": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh81rJEerlchmE8-HLgbx7mg4RaqRxMhL5eGRUI1NGfrZoC8gVjc3GpfZdyj4uT8ZOlwPAmKVPcBuqdJSAj9lmG5Er5OOSMLwyrJ5pEax-O6umLyF2IUPwRSFiiUPLREBkQPR6iWBBncnM/s400/ThaliaTheater_AnnieHall.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "alvy-childhood-home",
+      "frame_status": "verified_frame",
+      "source_page": "https://popspotsnyc.com/annie_hall/",
+      "original_image": "https://popspotsnyc.com/annie_hall/ANNIE_pix_2/thunderbolt_house.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "youve-got-mail",
+      "location_id": "joe-riverside",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/youvegotmail.html",
+      "original_image": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail104.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "youve-got-mail",
+      "location_id": "mail-starbucks",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/youvegotmail.html",
+      "original_image": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail127.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "youve-got-mail",
+      "location_id": "barney-greengrass",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/youvegotmail.html",
+      "original_image": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail129.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "youve-got-mail",
+      "location_id": "boat-basin",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/youvegotmail.html",
+      "original_image": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail134.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "youve-got-mail",
+      "location_id": "ocean-grill",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/youvegotmail.html",
+      "original_image": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail164.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "youve-got-mail",
+      "location_id": "grays-papaya",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/youvegotmail.html",
+      "original_image": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail170.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "anora",
+      "location_id": "county-courthouse",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/anora.html",
+      "original_image": "https://onthesetofnewyork.com/locations/anora/anora10.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "location_id": "washington-square-arch",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/whenharrymetsally.html",
+      "original_image": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally108.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "location_id": "shakespeare-broadway",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/whenharrymetsally.html",
+      "original_image": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally120.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "location_id": "harry-east-11",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/whenharrymetsally.html",
+      "original_image": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally128.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "location_id": "cafe-luxembourg",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/whenharrymetsally.html",
+      "original_image": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally151.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "location_id": "jess-marie-home",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/whenharrymetsally.html",
+      "original_image": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally164.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "location_id": "puck-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/whenharrymetsally.html",
+      "original_image": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally172.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "ghostbusters",
+      "location_id": "columbia-campus",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/ghostbusters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_14.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "ghostbusters",
+      "location_id": "ghost-east-63",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/ghostbusters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_39.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "ghostbusters",
+      "location_id": "rockefeller",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/ghostbusters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_44.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "ghostbusters",
+      "location_id": "tavern-green",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/ghostbusters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_50.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "ghostbusters",
+      "location_id": "city-hall",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/ghostbusters.html",
+      "original_image": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_83.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "breakfast-at-tiffanys",
+      "location_id": "conservatory-water",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/breakfastattiffanys.html",
+      "original_image": "https://onthesetofnewyork.com/locations/breakfastattiffanys/breakfastattiffanys68.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "breakfast-at-tiffanys",
+      "location_id": "naumburg-bandshell",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/breakfastattiffanys.html",
+      "original_image": "https://onthesetofnewyork.com/locations/breakfastattiffanys/breakfastattiffanys28.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "breakfast-at-tiffanys",
+      "location_id": "library",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/breakfastattiffanys.html",
+      "original_image": "https://onthesetofnewyork.com/locations/breakfastattiffanys/breakfastattiffanys44.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "radio-city",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_109.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "mott-street-shop",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_113.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "battery-park",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_116.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "wollman-rink",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_156.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "bethesda",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_184.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "carnegie-hall",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_197.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "times-square",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_207.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "north-by-northwest",
+      "location_id": "cit-madison",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/northbynorthwest.html",
+      "original_image": "https://onthesetofnewyork.com/locations/northbynorthwest/northbynorthwest03.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "north-by-northwest",
+      "location_id": "un-headquarters",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/northbynorthwest.html",
+      "original_image": "https://onthesetofnewyork.com/locations/northbynorthwest/northbynorthwest08.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "spider-man",
+      "location_id": "columbia-campus",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/spiderman.html",
+      "original_image": "https://onthesetofnewyork.com/locations/spiderman/spider-man10.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "spider-man",
+      "location_id": "flatiron-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/spiderman.html",
+      "original_image": "https://onthesetofnewyork.com/locations/spiderman/spider-man47.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "spider-man",
+      "location_id": "moondance-diner",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/spiderman.html",
+      "original_image": "https://onthesetofnewyork.com/locations/spiderman/spider-man53.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "spider-man",
+      "location_id": "harry-broadway-loft",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/spiderman.html",
+      "original_image": "https://onthesetofnewyork.com/locations/spiderman/spider-man58.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "spider-man",
+      "location_id": "oscorp-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/spiderman.html",
+      "original_image": "https://onthesetofnewyork.com/locations/spiderman/spider-man61.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "taxi-driver",
+      "location_id": "taxi-cafeteria",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/taxidriver.html",
+      "original_image": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver27.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "taxi-driver",
+      "location_id": "hotel-olcott",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/taxidriver.html",
+      "original_image": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver34.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "taxi-driver",
+      "location_id": "lyric-theatre",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/taxidriver.html",
+      "original_image": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver53.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "taxi-driver",
+      "location_id": "st-regis",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/taxidriver.html",
+      "original_image": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver72.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "serendipity",
+      "location_id": "waldorf-astoria",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/serendipity.html",
+      "original_image": "https://onthesetofnewyork.com/locations/serendipity/Serendipity138.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "serendipity",
+      "location_id": "chelsea-pier-59",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/serendipity.html",
+      "original_image": "https://onthesetofnewyork.com/locations/serendipity/Serendipity142.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "serendipity",
+      "location_id": "waverly-apartment",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/serendipity.html",
+      "original_image": "https://onthesetofnewyork.com/locations/serendipity/Serendipity162.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "serendipity",
+      "location_id": "central-park-mall",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/serendipity.html",
+      "original_image": "https://onthesetofnewyork.com/locations/serendipity/Serendipity181.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "bubbys",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada224.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "craft-restaurant",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada247.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "holt-studio",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada261.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "smith-wollensky",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada280.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "st-regis",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada292.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "natural-history",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada303.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "lenox-hill",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada314.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "location_id": "cary-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+      "original_image": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada331.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "past-lives",
+      "location_id": "hester-orchard",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/pastlives.html",
+      "original_image": "https://onthesetofnewyork.com/locations/pastlives/pastlives42.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "past-lives",
+      "location_id": "mcnally-williamsburg",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/pastlives.html",
+      "original_image": "https://onthesetofnewyork.com/locations/pastlives/pastlives60.jpg",
+      "verification": "Downloaded film frame inspected in contact sheet against the source location block; modern comparison photographs excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "zabars",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan15.jpg",
+      "verification": "Viewed actual downloaded movie frame; modern comparison image excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan",
+      "location_id": "bloomingdales",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattan/manhattan66.jpg",
+      "verification": "Viewed actual downloaded movie frame; modern comparison image excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "location_id": "gramercy-west-21",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+      "original_image": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery16.jpg",
+      "verification": "Viewed actual downloaded movie frame; modern comparison image excluded.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "do-the-right-thing",
+      "location_id": "love-daddy-radio",
+      "frame_status": "verified_frame",
+      "source_page": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+      "original_image": "https://nycinfilm.com/wp-content/uploads/2023/04/ezgif.com-gif-maker.gif?w=879&h=478",
+      "verification": "Inspected GIF first frame: actual film frame, not its later modern comparison/fade. Saved exactly frame 0 as a static PNG.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "do-the-right-thing",
+      "location_id": "yes-jesus-church",
+      "frame_status": "verified_frame",
+      "source_page": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+      "original_image": "https://nycinfilm.com/wp-content/uploads/2023/04/doright-church.gif?w=843&h=475",
+      "verification": "Inspected GIF first frame: actual film frame, not its later modern comparison/fade. Saved exactly frame 0 as a static PNG.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "do-the-right-thing",
+      "location_id": "mookie-home",
+      "frame_status": "verified_frame",
+      "source_page": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+      "original_image": "https://nycinfilm.com/wp-content/uploads/2023/04/doright-mookie1.gif?w=775&h=420",
+      "verification": "Inspected GIF first frame: actual film frame, not its later modern comparison/fade. Saved exactly frame 0 as a static PNG.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "do-the-right-thing",
+      "location_id": "mother-sister-home",
+      "frame_status": "verified_frame",
+      "source_page": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+      "original_image": "https://nycinfilm.com/wp-content/uploads/2023/04/ezgif.com-optimize.gif?w=800&h=434",
+      "verification": "Inspected GIF first frame: actual film frame, not its later modern comparison/fade. Saved exactly frame 0 as a static PNG.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-godfather",
+      "location_id": "corleone-compound",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZ6GrafSVBkIyW84Mcbnipaf2Ev0zDctWysfwmwpja4acuX_reporN2Hg6cEGDkVvNqkQTQ7icv7QTsFXLcgSwH5L-LfPD_RBgVfhZSHw7D9XBbN0iEQpdx5bSKNZroEmGG9edv8i5nB4VNp49atLooT-s9RYWrNUYL49BmKtA_GAuFy2Xftxbm-Ys5sw/w580-h640/Screenshot%20(13181).png",
+      "verification": "Viewed then/now comparison: upper 320-pixel region is the movie image, lower region is the 2019 visit photograph. Extracted only the movie region.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-godfather",
+      "location_id": "genco-oil",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHD7h0k54_yPZ6xjlqBG3DyWPxqZzQuXeEvgY99VVX-xph5S4cFe82MQZqFJAVmFyKxFKkzUeV-ki-IbGyjSj_cClPeQ4h3mPN7SgFzCJ9o6gIdcdssQ8oV_erfllSCGMSswbaRV6tI8s/s640/Screenshot+%25281325%2529.png",
+      "verification": "Viewed then/now comparison: upper 320-pixel region is the movie image, lower region is the 2019 visit photograph. Extracted only the movie region.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-godfather",
+      "location_id": "vito-mott-shooting",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGz6HFn71qJrSOHKKVuBedqyzM9FsIIF-jBTX1164cZ9Glaq1GPGv9v3dZUrtmjZYq4nXkES5Rg-pJVhRjyAm5w1Sk14LAnuvpPEOEB62AseSK7PMMJGmAjeTqLlZeYevFC0sjuMjgChE/s640/Screenshot+%25281327%2529.png",
+      "verification": "Viewed then/now comparison: upper 320-pixel region is the movie image, lower region is the 2019 visit photograph. Extracted only the movie region.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-godfather",
+      "location_id": "clemenza-house",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlULeNS7a-SmhVqgRGRWPwuKpZp-FZhjsCK1bg9Noc-2kK7idSkLfr4tWNwIrEzITT086yuUO6H7liGrzInl8GInnY23VBBJspoqrWYndYbegHvfxgJTxzLQixcmvhPwd4wPk_YEp25_8/s640/Screenshot+%25281331%2529.png",
+      "verification": "Viewed then/now comparison: upper 320-pixel region is the movie image, lower region is the 2019 visit photograph. Extracted only the movie region.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-godfather",
+      "location_id": "louis-restaurant",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwfOY3-5CX2Mn7yNIeD9o6W2axs_n3yOnqbP9phJyYvWcpdd33U1dTKZfxymEQNsStcEskChKuNYZL_PHeAx0KfC5WLXrALk_IrU21G2oB7fBM99s4riR6-_2MSrUqKQUj0TfnjrxMUIE/s640/Screenshot+%25281334%2529.png",
+      "verification": "Viewed then/now comparison: upper 320-pixel region is the movie image, lower region is the 2019 visit photograph. Extracted only the movie region.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-godfather",
+      "location_id": "sonny-carlo-fight",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgufgRhlT6-rypH_t2Me8gDgaV67YwF7G6HXNa7CeaTCeLGoLOdDOojG2oanegMfErApPP_KEchJ-TCKkTcwdJxBvVTydYL18kVH8NxbBPySmy-2ZY72pWxDXRKvpgPN2Agc8j4WdkEcjw/s640/Screenshot+%25281335%2529.png",
+      "verification": "Viewed then/now comparison: upper 320-pixel region is the movie image, lower region is the 2019 visit photograph. Extracted only the movie region.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "annie-hall",
+      "location_id": "annie-east-68",
+      "frame_status": "verified_frame",
+      "source_page": "https://popspotsnyc.com/annie_hall/",
+      "original_image": "https://popspotsnyc.com/annie_hall/side_view.jpg",
+      "verification": "Viewed downloaded movie frame in contact sheet. It is a film image, not a modern comparison image or a Photoshop overlay.",
+      "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
     }
   ]
 }

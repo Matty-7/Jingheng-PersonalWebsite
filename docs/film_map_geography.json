@@ -1,0 +1,1178 @@
+{
+  "reviewed_on": "2026-09-21",
+  "records": [
+    {
+      "id": "carnegie-deli",
+      "address": "854 Seventh Avenue at West 55th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.764184,
+        -73.981379
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=854+Seventh+Avenue+Manhattan",
+      "coordinate_matched_name": "854 SEVENTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "danny-broadway-office",
+      "address": "Broadway at West 47th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Theater District",
+      "coordinates": [
+        40.7591,
+        -73.9845
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "brill-building",
+      "address": "1619 Broadway at West 49th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.761138,
+        -73.984652
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1619+Broadway+Manhattan",
+      "coordinate_matched_name": "1619 BROADWAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "george-washington-bridge",
+      "address": "George Washington Bridge, Manhattan approach",
+      "borough": "Manhattan",
+      "neighborhood": "Washington Heights",
+      "coordinates": [
+        40.8509,
+        -73.9461
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "broadway-west-73",
+      "address": "Broadway at West 73rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.7793,
+        -73.9821
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "hotel-west-73",
+      "address": "240 West 73rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.779696,
+        -73.982646
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=240+West+73rd+Street+Manhattan",
+      "coordinate_matched_name": "240 WEST 73 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "broadway-columbus-circle",
+      "address": "Broadway at Columbus Circle",
+      "borough": "Manhattan",
+      "neighborhood": "Columbus Circle",
+      "coordinates": [
+        40.7681,
+        -73.9824
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "waldorf-astoria",
+      "address": "301 Park Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.756511,
+        -73.973347
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=301+Park+Avenue+Manhattan",
+      "coordinate_matched_name": "301 PARK AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "pj-clarkes",
+      "address": "915 Third Avenue at East 55th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.758919,
+        -73.968001
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=915+Third+Avenue+Manhattan",
+      "coordinate_matched_name": "915 THIRD AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "danny-apartment",
+      "address": "200 West 54th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.763495,
+        -73.981891
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=200+West+54th+Street+Manhattan",
+      "coordinate_matched_name": "200 WEST 54 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "madison-east-76",
+      "address": "Madison Avenue at East 76th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.774,
+        -73.9634
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "sixth-west-50",
+      "address": "Sixth Avenue at West 50th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown",
+      "coordinates": [
+        40.7604,
+        -73.98
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "west-broadway-prince",
+      "address": "West Broadway between Prince Street and West Houston Street",
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "coordinates": [
+        40.7253,
+        -74.0015
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "guggenheim",
+      "address": "1071 Fifth Avenue at East 89th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.783008,
+        -73.958886
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1071+Fifth+Avenue+Manhattan",
+      "coordinate_matched_name": "1071 FIFTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "fifth-avenue-993",
+      "address": "Near 993 Fifth Avenue, between East 80th and East 81st Streets",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.777867,
+        -73.962741
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=993+Fifth+Avenue+Manhattan",
+      "coordinate_matched_name": "993 FIFTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "cinema-studio",
+      "address": "1966 Broadway, between West 66th and West 67th Streets",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.773927,
+        -73.981732
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1966+Broadway+Manhattan",
+      "coordinate_matched_name": "1966 BROADWAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "moma",
+      "address": "11 West 53rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.761194,
+        -73.977013
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=11+West+53rd+Street+Manhattan",
+      "coordinate_matched_name": "11 WEST 53 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "dalton-school",
+      "address": "108 East 89th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.78154,
+        -73.955063
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=108+East+89th+Street+Manhattan",
+      "coordinate_matched_name": "108 EAST 89 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "lexington-candy-shop",
+      "address": "1226 Lexington Avenue at East 83rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.777496,
+        -73.957311
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1226+Lexington+Avenue+Manhattan",
+      "coordinate_matched_name": "1226 LEXINGTON AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "central-park-lake",
+      "address": "The Lake, Central Park, near Bow Bridge",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.7756,
+        -73.9723
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "cranberry-columbia",
+      "address": "Cranberry Street at Columbia Heights, Brooklyn",
+      "borough": "Brooklyn",
+      "neighborhood": "Brooklyn Heights",
+      "coordinates": [
+        40.7003,
+        -73.9958
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "gramercy-west-21",
+      "address": "Gramercy Park West at East 21st Street",
+      "borough": "Manhattan",
+      "neighborhood": "Gramercy",
+      "coordinates": [
+        40.7389,
+        -73.9871
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "mount-sinai",
+      "address": "1184 Fifth Avenue at East 101st Street",
+      "borough": "Manhattan",
+      "neighborhood": "Spanish Harlem",
+      "coordinates": [
+        40.789801,
+        -73.953255
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1184+Fifth+Avenue+Manhattan",
+      "coordinate_matched_name": "1184 FIFTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "sheep-meadow",
+      "address": "Sheep Meadow, Central Park, between West 66th and West 69th Streets",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.7718,
+        -73.9745
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "west-45-seventh",
+      "address": "West 45th Street at Seventh Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Theater District",
+      "coordinates": [
+        40.7581,
+        -73.985
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "metro-cinema",
+      "address": "2626 Broadway at West 99th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.796682,
+        -73.969798
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2626+Broadway+Manhattan",
+      "coordinate_matched_name": "2626 BROADWAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "madison-square-garden",
+      "address": "4 Pennsylvania Plaza, at Eighth Avenue and West 33rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Chelsea",
+      "coordinates": [
+        40.750518,
+        -73.993527
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=4+Pennsylvania+Plaza+Manhattan",
+      "coordinate_matched_name": "4 PENNSYLVANIA PLAZA",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "lincoln-center",
+      "address": "Columbus Avenue between West 63rd and West 64th Streets",
+      "borough": "Manhattan",
+      "neighborhood": "Lincoln Square",
+      "coordinates": [
+        40.7725,
+        -73.9826
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "21-club",
+      "address": "21 West 52nd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.760522,
+        -73.977366
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=21+West+52nd+Street+Manhattan",
+      "coordinate_matched_name": "21 WEST 52 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "larry-workplace",
+      "address": "10 East 53rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.759821,
+        -73.9753
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=10+East+53rd+Street+Manhattan",
+      "coordinate_matched_name": "10 EAST 53 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "hotel-waldron",
+      "address": "225 East 17th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Gramercy",
+      "coordinates": [
+        40.734909,
+        -73.984555
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=225+East+17th+Street+Manhattan",
+      "coordinate_matched_name": "225 EAST 17 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "beekman-theater",
+      "address": "1254 Second Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.76451,
+        -73.961073
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1254+Second+Avenue+Manhattan",
+      "coordinate_matched_name": "1254 SECOND AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "wall-street-racquet-club",
+      "address": "Former Piers 13 and 14, South Street at Wall Street",
+      "borough": "Manhattan",
+      "neighborhood": "Financial District",
+      "coordinates": [
+        40.7052,
+        -74.005
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "central-park-zoo",
+      "address": "Central Park Zoo, Fifth Avenue at East 64th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.7678,
+        -73.9718
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "seaport-pier-16",
+      "address": "Pier 16, South Street at Fulton Street",
+      "borough": "Manhattan",
+      "neighborhood": "South Street Seaport",
+      "coordinates": [
+        40.7053,
+        -74.002
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "washington-square-north",
+      "address": "Washington Square North near University Place",
+      "borough": "Manhattan",
+      "neighborhood": "Greenwich Village",
+      "coordinates": [
+        40.732,
+        -73.9959
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "west-fourth-dialogue",
+      "address": "132 West 4th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Greenwich Village",
+      "coordinates": [
+        40.73111,
+        -74.000079
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=132+West+4th+Street+Manhattan",
+      "coordinate_matched_name": "132 WEST 4 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "paris-theater",
+      "address": "4 West 58th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.76375,
+        -73.97432
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=4+West+58th+Street+Manhattan",
+      "coordinate_matched_name": "4 WEST 58 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "seaport-pier-15",
+      "address": "Pier 15, East River at South Street",
+      "borough": "Manhattan",
+      "neighborhood": "South Street Seaport",
+      "coordinates": [
+        40.7042,
+        -74.0038
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "thalia-theater",
+      "address": "250 West 95th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.793907,
+        -73.972888
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=250+West+95th+Street+Manhattan",
+      "coordinate_matched_name": "250 WEST 95 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "alvy-childhood-home",
+      "address": "Riegelmann Boardwalk between West 15th and West 16th Streets, Brooklyn",
+      "borough": "Brooklyn",
+      "neighborhood": "Coney Island",
+      "coordinates": [
+        40.5728,
+        -73.9837
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "joe-riverside",
+      "address": "210 Riverside Drive",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.794072,
+        -73.97601
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=210+Riverside+Drive%2C+Manhattan",
+      "coordinate_matched_name": "210 RIVERSIDE DRIVE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "mail-starbucks",
+      "address": "2252 Broadway",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.784772,
+        -73.978644
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2252+Broadway%2C+Manhattan",
+      "coordinate_matched_name": "2252 B'WAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "barney-greengrass",
+      "address": "541 Amsterdam Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.787962,
+        -73.974392
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=541+Amsterdam+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "541 AMSTERDAM AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "boat-basin",
+      "address": "West 79th Street at the Hudson River",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.7851,
+        -73.985
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "ocean-grill",
+      "address": "382 Columbus Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.781606,
+        -73.976151
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=382+Columbus+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "382 COLUMBUS AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "grays-papaya",
+      "address": "2090 Broadway",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.778285,
+        -73.98161
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2090+Broadway%2C+Manhattan",
+      "coordinate_matched_name": "2090 B'WAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "county-courthouse",
+      "address": "60 Centre Street",
+      "borough": "Manhattan",
+      "neighborhood": "City Hall Area",
+      "coordinates": [
+        40.7145,
+        -74.001571
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=60+Centre+Street%2C+Manhattan",
+      "coordinate_matched_name": "60 CENTER STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "washington-square-arch",
+      "address": "Washington Square North at Fifth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Greenwich Village",
+      "coordinates": [
+        40.7312,
+        -73.9971
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "shakespeare-broadway",
+      "address": "2259 Broadway",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.78516,
+        -73.97951
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2259+Broadway%2C+Manhattan",
+      "coordinate_matched_name": "2259 B'WAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "harry-east-11",
+      "address": "57 East 11th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Greenwich Village",
+      "coordinates": [
+        40.733153,
+        -73.992362
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=57+East+11th+Street%2C+Manhattan",
+      "coordinate_matched_name": "57 EAST 11 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "cafe-luxembourg",
+      "address": "200 West 70th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.777267,
+        -73.983086
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=200+West+70th+Street%2C+Manhattan",
+      "coordinate_matched_name": "200 WEST 70 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "jess-marie-home",
+      "address": "32 West 89th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.787533,
+        -73.969188
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=32+West+89th+Street%2C+Manhattan",
+      "coordinate_matched_name": "32 WEST 89 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "puck-building",
+      "address": "295 Lafayette Street",
+      "borough": "Manhattan",
+      "neighborhood": "Nolita",
+      "coordinates": [
+        40.724475,
+        -73.995413
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=295+Lafayette+Street%2C+Manhattan",
+      "coordinate_matched_name": "295 LAFAYETTE STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "columbia-campus",
+      "address": "116th Street at Broadway",
+      "borough": "Manhattan",
+      "neighborhood": "Morningside Heights",
+      "coordinates": [
+        40.8075,
+        -73.9626
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "ghost-east-63",
+      "address": "16 East 63rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.766154,
+        -73.970271
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=16+East+63rd+Street%2C+Manhattan",
+      "coordinate_matched_name": "16 EAST 63 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "tavern-green",
+      "address": "Central Park West at West 67th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.7723,
+        -73.9776
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "city-hall",
+      "address": "City Hall Park",
+      "borough": "Manhattan",
+      "neighborhood": "Civic Center",
+      "coordinates": [
+        40.7128,
+        -74.0059
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "conservatory-water",
+      "address": "Central Park near East 74th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.7742,
+        -73.9664
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "naumburg-bandshell",
+      "address": "The Mall, Central Park",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.7725,
+        -73.9714
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "mott-street-shop",
+      "address": "32 Mott Street",
+      "borough": "Manhattan",
+      "neighborhood": "Chinatown",
+      "coordinates": [
+        40.714774,
+        -73.998605
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=32+Mott+Street%2C+Manhattan",
+      "coordinate_matched_name": "32 MOTT STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "battery-park",
+      "address": "Battery Park waterfront",
+      "borough": "Manhattan",
+      "neighborhood": "Battery Park",
+      "coordinates": [
+        40.7033,
+        -74.0165
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "carnegie-hall",
+      "address": "881 Seventh Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.765007,
+        -73.979914
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=881+7+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "881 7 AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "cit-madison",
+      "address": "650 Madison Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.764035,
+        -73.971738
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=650+Madison+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "650 MADISON AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "un-headquarters",
+      "address": "405 East 42nd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.748796,
+        -73.96908
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=405+East+42nd+Street%2C+Manhattan",
+      "coordinate_matched_name": "405 EAST 42 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "flatiron-building",
+      "address": "175 Fifth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Flatiron District",
+      "coordinates": [
+        40.740979,
+        -73.989688
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=175+5+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "175 5 AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "moondance-diner",
+      "address": "88 Sixth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "coordinates": [
+        40.722742,
+        -74.004922
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=88+6+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "88 6 AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "harry-broadway-loft",
+      "address": "704 Broadway",
+      "borough": "Manhattan",
+      "neighborhood": "NoHo",
+      "coordinates": [
+        40.728594,
+        -73.993753
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=704+Broadway%2C+Manhattan",
+      "coordinate_matched_name": "704 B'WAY",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "oscorp-building",
+      "address": "135 East 57th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.761468,
+        -73.969611
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=135+East+57th+Street%2C+Manhattan",
+      "coordinate_matched_name": "135 EAST 57 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "taxi-cafeteria",
+      "address": "737 Eighth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.76005,
+        -73.988024
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=737+8+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "737 8 AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "hotel-olcott",
+      "address": "27 West 72nd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.777199,
+        -73.97738
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=27+West+72nd+Street%2C+Manhattan",
+      "coordinate_matched_name": "27 WEST 72 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "lyric-theatre",
+      "address": "213 West 42nd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown West",
+      "coordinates": [
+        40.756889,
+        -73.987467
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=213+West+42nd+Street%2C+Manhattan",
+      "coordinate_matched_name": "213 WEST 42 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "st-regis",
+      "address": "2 East 55th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.761293,
+        -73.974431
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2+East+55th+Street%2C+Manhattan",
+      "coordinate_matched_name": "2 EAST 55 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "chelsea-pier-59",
+      "address": "Pier 59, Hudson River Park",
+      "borough": "Manhattan",
+      "neighborhood": "Chelsea",
+      "coordinates": [
+        40.7453,
+        -74.009
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "waverly-apartment",
+      "address": "200 Waverly Place",
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "coordinates": [
+        40.734861,
+        -74.00169
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=200+Waverly+Place%2C+Manhattan",
+      "coordinate_matched_name": "200 WAVERLY PLACE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "central-park-mall",
+      "address": "The Mall near East 66th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.771,
+        -73.9725
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "bubbys",
+      "address": "120 Hudson Street",
+      "borough": "Manhattan",
+      "neighborhood": "Tribeca",
+      "coordinates": [
+        40.719816,
+        -74.008314
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=120+Hudson+Street%2C+Manhattan",
+      "coordinate_matched_name": "120 HUDSON STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "craft-restaurant",
+      "address": "43 East 19th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Gramercy",
+      "coordinates": [
+        40.738174,
+        -73.988665
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=43+East+19th+Street%2C+Manhattan",
+      "coordinate_matched_name": "43 EAST 19 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "holt-studio",
+      "address": "56 Crosby Street",
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "coordinates": [
+        40.722331,
+        -73.998771
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=56+Crosby+Street%2C+Manhattan",
+      "coordinate_matched_name": "56 CROSBY STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "smith-wollensky",
+      "address": "797 Third Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.755193,
+        -73.970783
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=797+3+Avenue%2C+Manhattan",
+      "coordinate_matched_name": "797 3 AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "natural-history",
+      "address": "Central Park West at West 79th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.781,
+        -73.9734
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "lenox-hill",
+      "address": "100 East 77th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.773964,
+        -73.961105
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=100+East+77th+Street%2C+Manhattan",
+      "coordinate_matched_name": "100 EAST 77 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "cary-building",
+      "address": "105 Chambers Street",
+      "borough": "Manhattan",
+      "neighborhood": "Tribeca",
+      "coordinates": [
+        40.715286,
+        -74.007964
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=105+Chambers+Street%2C+Manhattan",
+      "coordinate_matched_name": "105 CHAMBERS STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "hester-orchard",
+      "address": "Hester Street at Orchard Street",
+      "borough": "Manhattan",
+      "neighborhood": "Lower East Side",
+      "coordinates": [
+        40.7155,
+        -73.9901
+      ],
+      "method": "Representative public approach or named block, manually placed; approximate, not a surveyed camera position"
+    },
+    {
+      "id": "mcnally-williamsburg",
+      "address": "76 North 4th Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Williamsburg",
+      "coordinates": [
+        40.717295,
+        -73.961643
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=76+North+4th+Street%2C+Brooklyn",
+      "coordinate_matched_name": "76 NORTH 4 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "love-daddy-radio",
+      "address": "174 Stuyvesant Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Bedford-Stuyvesant",
+      "coordinates": [
+        40.689407,
+        -73.933632
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=174+Stuyvesant+Avenue+Brooklyn",
+      "coordinate_matched_name": "174 STUYVESANT AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "yes-jesus-church",
+      "address": "184 Stuyvesant Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Bedford-Stuyvesant",
+      "coordinates": [
+        40.689072,
+        -73.933518
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=184+Stuyvesant+Avenue+Brooklyn",
+      "coordinate_matched_name": "184 STUYVESANT AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "mookie-home",
+      "address": "173 Stuyvesant Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Bedford-Stuyvesant",
+      "coordinates": [
+        40.689116,
+        -73.933049
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=173+Stuyvesant+Avenue+Brooklyn",
+      "coordinate_matched_name": "173 STUYVESANT AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "mother-sister-home",
+      "address": "167 Stuyvesant Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Bedford-Stuyvesant",
+      "coordinates": [
+        40.689332,
+        -73.933092
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=167+Stuyvesant+Avenue+Brooklyn",
+      "coordinate_matched_name": "167 STUYVESANT AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "corleone-compound",
+      "address": "110 Longfellow Avenue",
+      "borough": "Staten Island",
+      "neighborhood": "Todt Hill",
+      "coordinates": [
+        40.606518,
+        -74.097912
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=110+Longfellow+Avenue+Staten+Island",
+      "coordinate_matched_name": "110 LONGFELLOW AVENUE",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "genco-oil",
+      "address": "128 Mott Street",
+      "borough": "Manhattan",
+      "neighborhood": "Chinatown",
+      "coordinates": [
+        40.718485,
+        -73.996478
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=128+Mott+Street+Manhattan",
+      "coordinate_matched_name": "128 MOTT STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "vito-mott-shooting",
+      "address": "137 Mott Street",
+      "borough": "Manhattan",
+      "neighborhood": "Little Italy",
+      "coordinates": [
+        40.71859,
+        -73.996884
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=137+Mott+Street+Manhattan",
+      "coordinate_matched_name": "137 MOTT STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "clemenza-house",
+      "address": "1999 East 5th Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Gravesend",
+      "coordinates": [
+        40.601722,
+        -73.967343
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1999+East+5th+Street+Brooklyn",
+      "coordinate_matched_name": "1999 EAST 5 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "louis-restaurant",
+      "address": "3531 White Plains Road",
+      "borough": "Bronx",
+      "neighborhood": "Olinville",
+      "coordinates": [
+        40.878398,
+        -73.866466
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=3531+White+Plains+Road+Bronx",
+      "coordinate_matched_name": "3531 WHITE PLAINS ROAD",
+      "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "sonny-carlo-fight",
+      "address": "503 East 118th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Spanish Harlem",
+      "coordinates": [
+        40.796335,
+        -73.931657
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=503+East+118th+Street+Manhattan",
+      "coordinate_matched_name": "503 EAST 118 STREET",
+      "method": "Exact NYC Planning address, street and borough match"
+    }
+  ]
+}

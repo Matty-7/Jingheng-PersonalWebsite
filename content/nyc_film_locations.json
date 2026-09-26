@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-20",
+  "reviewed_on": "2026-09-21",
   "films": [
     {
       "id": "manhattan",
@@ -56,6 +56,13 @@
       "year": 1993,
       "director": "Woody Allen",
       "note": "An Upper East Side couple turns neighborhood curiosity into amateur detection."
+    },
+    {
+      "id": "broadway-danny-rose",
+      "title": "Broadway Danny Rose",
+      "year": 1984,
+      "director": "Woody Allen",
+      "note": "Deli tables, theatre marquees, and a talent agent’s rounds through New York."
     },
     {
       "id": "ghostbusters",
@@ -260,6 +267,36 @@
       "id": "do-the-right-thing",
       "label": "Filming reference · otsoNY",
       "url": "https://onthesetofnewyork.com/dotherightthing.html"
+    },
+    {
+      "id": "broadway-danny-rose",
+      "label": "Filming reference",
+      "url": "https://onthesetofnewyork.com/broadwaydannyrose.html"
+    },
+    {
+      "id": "annie-hall-movie-tourist",
+      "label": "Filming reference",
+      "url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html"
+    },
+    {
+      "id": "annie-hall-locations",
+      "label": "Filming reference",
+      "url": "https://movie-locations.com/movies/a/Annie-Hall.php"
+    },
+    {
+      "id": "annie-hall-popspots",
+      "label": "Location research",
+      "url": "https://popspotsnyc.com/annie_hall/"
+    },
+    {
+      "id": "do-the-right-thing-nycinfilm",
+      "label": "Filming reference",
+      "url": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/"
+    },
+    {
+      "id": "the-godfather-then-now",
+      "label": "Filming reference",
+      "url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html"
     }
   ],
   "locations": [
@@ -420,6 +457,23 @@
             "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail142.jpg",
             "width": 565,
             "height": 315
+          }
+        },
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac and Mary browse the deli’s crowded counters.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-zabars.jpg",
+            "thumbnail": "/images/film-map/manhattan-zabars-thumb.jpg",
+            "alt": "Manhattan: Isaac and Mary browse the deli’s crowded counters.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan15.jpg",
+            "width": 565,
+            "height": 240
           }
         }
       ]
@@ -725,6 +779,23 @@
             "width": 565,
             "height": 306
           }
+        },
+        {
+          "film_id": "home-alone-2",
+          "scene": "Bethesda Terrace appears in Kevin’s wintertime New York.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-bethesda.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-bethesda-thumb.jpg",
+            "alt": "Home Alone 2: Bethesda Terrace appears in Kevin’s wintertime New York.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_184.jpg",
+            "width": 565,
+            "height": 306
+          }
         }
       ]
     },
@@ -788,6 +859,23 @@
             "image_url": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_02.jpg",
             "width": 565,
             "height": 237
+          }
+        },
+        {
+          "film_id": "breakfast-at-tiffanys",
+          "scene": "Holly and Paul walk along Fifth Avenue outside the library.",
+          "source_ids": [
+            "breakfast-at-tiffanys"
+          ],
+          "still": {
+            "src": "/images/film-map/breakfast-at-tiffanys-library.jpg",
+            "thumbnail": "/images/film-map/breakfast-at-tiffanys-library-thumb.jpg",
+            "alt": "Breakfast at Tiffany’s: Holly and Paul walk along Fifth Avenue outside the library.",
+            "credit": "Breakfast at Tiffany’s (1961) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/breakfastattiffanys.html",
+            "image_url": "https://onthesetofnewyork.com/locations/breakfastattiffanys/breakfastattiffanys44.jpg",
+            "width": 565,
+            "height": 314
           }
         }
       ]
@@ -998,6 +1086,23 @@
             "width": 565,
             "height": 306
           }
+        },
+        {
+          "film_id": "ghostbusters",
+          "scene": "The team races through the Rockefeller Center gardens.",
+          "source_ids": [
+            "ghostbusters"
+          ],
+          "still": {
+            "src": "/images/film-map/ghostbusters-rockefeller.jpg",
+            "thumbnail": "/images/film-map/ghostbusters-rockefeller-thumb.jpg",
+            "alt": "Ghostbusters: The team races through the Rockefeller Center gardens.",
+            "credit": "Ghostbusters (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/ghostbusters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_44.jpg",
+            "width": 565,
+            "height": 237
+          }
         }
       ]
     },
@@ -1093,6 +1198,23 @@
             "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man65.jpg",
             "width": 565,
             "height": 305
+          }
+        },
+        {
+          "film_id": "home-alone-2",
+          "scene": "Harry and Marv encounter a police officer in Times Square.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-times-square.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-times-square-thumb.jpg",
+            "alt": "Home Alone 2: Harry and Marv encounter a police officer in Times Square.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_207.jpg",
+            "width": 565,
+            "height": 306
           }
         }
       ]
@@ -1227,32 +1349,32 @@
     },
     {
       "id": "annie-east-68",
-      "name": "Annie’s Upper East Side block",
-      "address": "East 68th Street at Madison Avenue",
+      "name": "Annie’s balcony",
+      "address": "36 East 68th Street",
       "neighborhood": "Upper East Side",
       "borough": "Manhattan",
       "coordinates": [
-        40.76921,
-        -73.9673
+        40.76879,
+        -73.966849
       ],
       "access": "Public exterior",
-      "visit_note": "Public sidewalk at East 68th Street and Madison Avenue.",
+      "visit_note": "Private apartment and balcony; view the building from the public sidewalk only.",
       "scenes": [
         {
           "film_id": "annie-hall",
-          "scene": "Annie’s Volkswagen heads down East 68th Street.",
+          "scene": "Alvy stands among flowers on Annie’s balcony.",
           "source_ids": [
-            "annie-hall"
+            "annie-hall-popspots"
           ],
           "still": {
-            "src": "/images/film-map/annie-hall--annie-east-68.jpg",
-            "thumbnail": "/images/film-map/annie-hall--annie-east-68--thumb.jpg",
-            "alt": "Annie’s Volkswagen heads down East 68th Street.",
-            "credit": "Annie Hall (1977) · otsoNY",
-            "source_url": "https://onthesetofnewyork.com/anniehall.html",
-            "image_url": "https://onthesetofnewyork.com/locations/anniehall/anniehall01.jpg",
-            "width": 565,
-            "height": 299
+            "src": "/images/film-map/annie-hall-annie-east-68.jpg",
+            "thumbnail": "/images/film-map/annie-hall-annie-east-68-thumb.jpg",
+            "alt": "Annie Hall: Alvy stands among flowers on Annie’s balcony.",
+            "credit": "Annie Hall (1977) · PopSpots",
+            "source_url": "https://popspotsnyc.com/annie_hall/",
+            "image_url": "https://popspotsnyc.com/annie_hall/side_view.jpg",
+            "width": 280,
+            "height": 224
           }
         }
       ]
@@ -1670,6 +1792,23 @@
             "width": 565,
             "height": 320
           }
+        },
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin records the city near Radio City Music Hall.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-radio-city.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-radio-city-thumb.jpg",
+            "alt": "Home Alone 2: Kevin records the city near Radio City Music Hall.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_109.jpg",
+            "width": 565,
+            "height": 306
+          }
         }
       ]
     },
@@ -1766,6 +1905,23 @@
             "width": 565,
             "height": 318
           }
+        },
+        {
+          "film_id": "home-alone-2",
+          "scene": "Harry and Marv appear beside the Central Park ice rink.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-wollman-rink.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-wollman-rink-thumb.jpg",
+            "alt": "Home Alone 2: Harry and Marv appear beside the Central Park ice rink.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_156.jpg",
+            "width": 565,
+            "height": 306
+          }
         }
       ]
     },
@@ -1797,6 +1953,23 @@
             "image_url": "https://onthesetofnewyork.com/locations/serendipity/Serendipity100.jpg",
             "width": 565,
             "height": 318
+          }
+        },
+        {
+          "film_id": "manhattan",
+          "scene": "Mary and Yale meet beside the perfume counter.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-bloomingdales.jpg",
+            "thumbnail": "/images/film-map/manhattan-bloomingdales-thumb.jpg",
+            "alt": "Manhattan: Mary and Yale meet beside the perfume counter.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan66.jpg",
+            "width": 565,
+            "height": 240
           }
         }
       ]
@@ -2117,6 +2290,3118 @@
             "image_url": "https://onthesetofnewyork.com/locations/dotherightthing/dotherightthing02.jpg",
             "width": 565,
             "height": 339
+          }
+        }
+      ]
+    },
+    {
+      "id": "carnegie-deli",
+      "name": "Carnegie Deli, former site",
+      "address": "854 Seventh Avenue at West 55th Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.764184,
+        -73.981379
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "The deli glows at night beneath its large entrance sign.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-carnegie-deli.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-carnegie-deli-thumb.jpg",
+            "alt": "Broadway Danny Rose: The deli glows at night beneath its large entrance sign.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose01.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "danny-broadway-office",
+      "name": "Danny’s Broadway office",
+      "address": "Broadway at West 47th Street",
+      "neighborhood": "Theater District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7591,
+        -73.9845
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "Danny talks in an office overlooking Times Square.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-danny-broadway-office.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-danny-broadway-office-thumb.jpg",
+            "alt": "Broadway Danny Rose: Danny talks in an office overlooking Times Square.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose05.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "brill-building",
+      "name": "Brill Building",
+      "address": "1619 Broadway at West 49th Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.761138,
+        -73.984652
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "Danny walks past cinema marquees beside the Brill Building.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-brill-building.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-brill-building-thumb.jpg",
+            "alt": "Broadway Danny Rose: Danny walks past cinema marquees beside the Brill Building.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose12.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "george-washington-bridge",
+      "name": "George Washington Bridge",
+      "address": "George Washington Bridge, Manhattan approach",
+      "neighborhood": "Washington Heights",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.8509,
+        -73.9461
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "Cars cross the bridge above the Hudson.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-george-washington-bridge.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-george-washington-bridge-thumb.jpg",
+            "alt": "Broadway Danny Rose: Cars cross the bridge above the Hudson.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose15.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "broadway-west-73",
+      "name": "Broadway and West 73rd Street",
+      "address": "Broadway at West 73rd Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7793,
+        -73.9821
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "A taxi stops beside the Upper West Side sidewalk.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-broadway-west-73.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-broadway-west-73-thumb.jpg",
+            "alt": "Broadway Danny Rose: A taxi stops beside the Upper West Side sidewalk.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose19.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "hotel-west-73",
+      "name": "West 73rd Street hotel",
+      "address": "240 West 73rd Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.779696,
+        -73.982646
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "Danny passes through the hotel entrance.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-hotel-west-73.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-hotel-west-73-thumb.jpg",
+            "alt": "Broadway Danny Rose: Danny passes through the hotel entrance.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose20.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "broadway-columbus-circle",
+      "name": "Broadway at Columbus Circle",
+      "address": "Broadway at Columbus Circle",
+      "neighborhood": "Columbus Circle",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7681,
+        -73.9824
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "Danny talks with two men beside passing traffic.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-broadway-columbus-circle.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-broadway-columbus-circle-thumb.jpg",
+            "alt": "Broadway Danny Rose: Danny talks with two men beside passing traffic.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose26.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "waldorf-astoria",
+      "name": "Waldorf Astoria",
+      "address": "301 Park Avenue",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.756511,
+        -73.973347
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "The group walks beneath chandeliers in the hotel.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-waldorf-astoria.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-waldorf-astoria-thumb.jpg",
+            "alt": "Broadway Danny Rose: The group walks beneath chandeliers in the hotel.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose27.jpg",
+            "width": 565,
+            "height": 305
+          }
+        },
+        {
+          "film_id": "serendipity",
+          "scene": "Jonathan searches for Sara at the Waldorf Astoria.",
+          "source_ids": [
+            "serendipity"
+          ],
+          "still": {
+            "src": "/images/film-map/serendipity-waldorf-astoria.jpg",
+            "thumbnail": "/images/film-map/serendipity-waldorf-astoria-thumb.jpg",
+            "alt": "Serendipity: Jonathan searches for Sara at the Waldorf Astoria.",
+            "credit": "Serendipity (2001) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/serendipity.html",
+            "image_url": "https://onthesetofnewyork.com/locations/serendipity/Serendipity138.jpg",
+            "width": 565,
+            "height": 318
+          }
+        }
+      ]
+    },
+    {
+      "id": "pj-clarkes",
+      "name": "P. J. Clarke’s",
+      "address": "915 Third Avenue at East 55th Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.758919,
+        -73.968001
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "Tina stands outside the saloon as a man approaches.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-pj-clarkes.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-pj-clarkes-thumb.jpg",
+            "alt": "Broadway Danny Rose: Tina stands outside the saloon as a man approaches.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose29.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "danny-apartment",
+      "name": "Danny’s apartment building",
+      "address": "200 West 54th Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.763495,
+        -73.981891
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "broadway-danny-rose",
+          "scene": "A rainy street view establishes Danny’s apartment building.",
+          "source_ids": [
+            "broadway-danny-rose"
+          ],
+          "still": {
+            "src": "/images/film-map/broadway-danny-rose-danny-apartment.jpg",
+            "thumbnail": "/images/film-map/broadway-danny-rose-danny-apartment-thumb.jpg",
+            "alt": "Broadway Danny Rose: A rainy street view establishes Danny’s apartment building.",
+            "credit": "Broadway Danny Rose (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/broadwaydannyrose.html",
+            "image_url": "https://onthesetofnewyork.com/locations/broadwaydannyrose/broadwaydannyrose35.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "madison-east-76",
+      "name": "Madison Avenue at East 76th Street",
+      "address": "Madison Avenue at East 76th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.774,
+        -73.9634
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac and Tracy walk together at night.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-madison-east-76.jpg",
+            "thumbnail": "/images/film-map/manhattan-madison-east-76-thumb.jpg",
+            "alt": "Manhattan: Isaac and Tracy walk together at night.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan56.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "sixth-west-50",
+      "name": "Sixth Avenue at West 50th Street",
+      "address": "Sixth Avenue at West 50th Street",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7604,
+        -73.98
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Tracy and Isaac pass a row of fountains.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-sixth-west-50.jpg",
+            "thumbnail": "/images/film-map/manhattan-sixth-west-50-thumb.jpg",
+            "alt": "Manhattan: Tracy and Isaac pass a row of fountains.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan59.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "west-broadway-prince",
+      "name": "West Broadway in SoHo",
+      "address": "West Broadway between Prince Street and West Houston Street",
+      "neighborhood": "SoHo",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7253,
+        -74.0015
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Four friends walk together along a SoHo sidewalk.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-west-broadway-prince.jpg",
+            "thumbnail": "/images/film-map/manhattan-west-broadway-prince-thumb.jpg",
+            "alt": "Manhattan: Four friends walk together along a SoHo sidewalk.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan60.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "guggenheim",
+      "name": "Solomon R. Guggenheim Museum",
+      "address": "1071 Fifth Avenue at East 89th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.783008,
+        -73.958886
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Guests gather beneath the museum’s sweeping interior ramps.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-guggenheim.jpg",
+            "thumbnail": "/images/film-map/manhattan-guggenheim-thumb.jpg",
+            "alt": "Manhattan: Guests gather beneath the museum’s sweeping interior ramps.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan75.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "fifth-avenue-993",
+      "name": "Fifth Avenue near East 80th Street",
+      "address": "Near 993 Fifth Avenue, between East 80th and East 81st Streets",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.777867,
+        -73.962741
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac sits with his companions beside café windows.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-fifth-avenue-993.jpg",
+            "thumbnail": "/images/film-map/manhattan-fifth-avenue-993-thumb.jpg",
+            "alt": "Manhattan: Isaac sits with his companions beside café windows.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan91.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "cinema-studio",
+      "name": "Cinema Studio, former site",
+      "address": "1966 Broadway, between West 66th and West 67th Streets",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.773927,
+        -73.981732
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac emerges onto the sidewalk outside Cinema Studio.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-cinema-studio.jpg",
+            "thumbnail": "/images/film-map/manhattan-cinema-studio-thumb.jpg",
+            "alt": "Manhattan: Isaac emerges onto the sidewalk outside Cinema Studio.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan78.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "moma",
+      "name": "Museum of Modern Art",
+      "address": "11 West 53rd Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.761194,
+        -73.977013
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Visitors stand among sculptures in the museum galleries.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-moma.jpg",
+            "thumbnail": "/images/film-map/manhattan-moma-thumb.jpg",
+            "alt": "Manhattan: Visitors stand among sculptures in the museum galleries.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan80.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "dalton-school",
+      "name": "Dalton School",
+      "address": "108 East 89th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.78154,
+        -73.955063
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Students gather outside the school entrance.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-dalton-school.jpg",
+            "thumbnail": "/images/film-map/manhattan-dalton-school-thumb.jpg",
+            "alt": "Manhattan: Students gather outside the school entrance.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan83.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "lexington-candy-shop",
+      "name": "Lexington Avenue candy shop",
+      "address": "1226 Lexington Avenue at East 83rd Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.777496,
+        -73.957311
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac and Tracy sit together at a crowded counter.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-lexington-candy-shop.jpg",
+            "thumbnail": "/images/film-map/manhattan-lexington-candy-shop-thumb.jpg",
+            "alt": "Manhattan: Isaac and Tracy sit together at a crowded counter.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan93.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "central-park-lake",
+      "name": "The Lake, Central Park",
+      "address": "The Lake, Central Park, near Bow Bridge",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7756,
+        -73.9723
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac and Tracy share a rowboat on the lake.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-central-park-lake.jpg",
+            "thumbnail": "/images/film-map/manhattan-central-park-lake-thumb.jpg",
+            "alt": "Manhattan: Isaac and Tracy share a rowboat on the lake.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan85.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "cranberry-columbia",
+      "name": "Cranberry Street and Columbia Heights",
+      "address": "Cranberry Street at Columbia Heights, Brooklyn",
+      "neighborhood": "Brooklyn Heights",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.7003,
+        -73.9958
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac and Mary pause beside a car under leafy trees.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-cranberry-columbia.jpg",
+            "thumbnail": "/images/film-map/manhattan-cranberry-columbia-thumb.jpg",
+            "alt": "Manhattan: Isaac and Mary pause beside a car under leafy trees.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan90.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "gramercy-west-21",
+      "name": "Gramercy Park West",
+      "address": "Gramercy Park West at East 21st Street",
+      "neighborhood": "Gramercy",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7389,
+        -73.9871
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan",
+          "scene": "Isaac runs along the iron fence surrounding Gramercy Park.",
+          "source_ids": [
+            "manhattan"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-gramercy-west-21.jpg",
+            "thumbnail": "/images/film-map/manhattan-gramercy-west-21-thumb.jpg",
+            "alt": "Manhattan: Isaac runs along the iron fence surrounding Gramercy Park.",
+            "credit": "Manhattan (1979) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattan/manhattan115.jpg",
+            "width": 565,
+            "height": 240
+          }
+        },
+        {
+          "film_id": "manhattan-murder-mystery",
+          "scene": "The camera looks through Gramercy Park’s tall iron fence.",
+          "source_ids": [
+            "manhattan-murder-mystery"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-murder-mystery-gramercy-west-21.jpg",
+            "thumbnail": "/images/film-map/manhattan-murder-mystery-gramercy-west-21-thumb.jpg",
+            "alt": "Manhattan Murder Mystery: The camera looks through Gramercy Park’s tall iron fence.",
+            "credit": "Manhattan Murder Mystery (1993) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery16.jpg",
+            "width": 565,
+            "height": 298
+          }
+        }
+      ]
+    },
+    {
+      "id": "mount-sinai",
+      "name": "Mount Sinai Hospital",
+      "address": "1184 Fifth Avenue at East 101st Street",
+      "neighborhood": "Spanish Harlem",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.789801,
+        -73.953255
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "hannah-and-her-sisters",
+          "scene": "Mickey walks outside the hospital beneath its blue entrance canopy.",
+          "source_ids": [
+            "hannah-and-her-sisters"
+          ],
+          "still": {
+            "src": "/images/film-map/hannah-and-her-sisters-mount-sinai.jpg",
+            "thumbnail": "/images/film-map/hannah-and-her-sisters-mount-sinai-thumb.jpg",
+            "alt": "Hannah and Her Sisters: Mickey walks outside the hospital beneath its blue entrance canopy.",
+            "credit": "Hannah and Her Sisters (1986) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/hannahandhersisters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters13.jpg",
+            "width": 565,
+            "height": 325
+          }
+        }
+      ]
+    },
+    {
+      "id": "sheep-meadow",
+      "name": "Sheep Meadow",
+      "address": "Sheep Meadow, Central Park, between West 66th and West 69th Streets",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7718,
+        -73.9745
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "hannah-and-her-sisters",
+          "scene": "Mickey pauses beside Sheep Meadow’s low fence.",
+          "source_ids": [
+            "hannah-and-her-sisters"
+          ],
+          "still": {
+            "src": "/images/film-map/hannah-and-her-sisters-sheep-meadow.jpg",
+            "thumbnail": "/images/film-map/hannah-and-her-sisters-sheep-meadow-thumb.jpg",
+            "alt": "Hannah and Her Sisters: Mickey pauses beside Sheep Meadow’s low fence.",
+            "credit": "Hannah and Her Sisters (1986) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/hannahandhersisters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters19.jpg",
+            "width": 565,
+            "height": 325
+          }
+        }
+      ]
+    },
+    {
+      "id": "west-45-seventh",
+      "name": "West 45th Street theatre block",
+      "address": "West 45th Street at Seventh Avenue",
+      "neighborhood": "Theater District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7581,
+        -73.985
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "hannah-and-her-sisters",
+          "scene": "Two women walk beneath the theatre marquee.",
+          "source_ids": [
+            "hannah-and-her-sisters"
+          ],
+          "still": {
+            "src": "/images/film-map/hannah-and-her-sisters-west-45-seventh.jpg",
+            "thumbnail": "/images/film-map/hannah-and-her-sisters-west-45-seventh-thumb.jpg",
+            "alt": "Hannah and Her Sisters: Two women walk beneath the theatre marquee.",
+            "credit": "Hannah and Her Sisters (1986) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/hannahandhersisters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters21.jpg",
+            "width": 565,
+            "height": 325
+          }
+        }
+      ]
+    },
+    {
+      "id": "metro-cinema",
+      "name": "Metro Cinema",
+      "address": "2626 Broadway at West 99th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.796682,
+        -73.969798
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "hannah-and-her-sisters",
+          "scene": "The Metro’s neon sign glows through the theatre’s glass doors.",
+          "source_ids": [
+            "hannah-and-her-sisters"
+          ],
+          "still": {
+            "src": "/images/film-map/hannah-and-her-sisters-metro-cinema.jpg",
+            "thumbnail": "/images/film-map/hannah-and-her-sisters-metro-cinema-thumb.jpg",
+            "alt": "Hannah and Her Sisters: The Metro’s neon sign glows through the theatre’s glass doors.",
+            "credit": "Hannah and Her Sisters (1986) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/hannahandhersisters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/hannahandhersisters/hannahandhersisters26.jpg",
+            "width": 565,
+            "height": 325
+          }
+        }
+      ]
+    },
+    {
+      "id": "madison-square-garden",
+      "name": "Madison Square Garden",
+      "address": "4 Pennsylvania Plaza, at Eighth Avenue and West 33rd Street",
+      "neighborhood": "Chelsea",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.750518,
+        -73.993527
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan-murder-mystery",
+          "scene": "Larry and Carol watch a Rangers hockey game.",
+          "source_ids": [
+            "manhattan-murder-mystery"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-murder-mystery-madison-square-garden.jpg",
+            "thumbnail": "/images/film-map/manhattan-murder-mystery-madison-square-garden-thumb.jpg",
+            "alt": "Manhattan Murder Mystery: Larry and Carol watch a Rangers hockey game.",
+            "credit": "Manhattan Murder Mystery (1993) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery02.jpg",
+            "width": 565,
+            "height": 298
+          }
+        }
+      ]
+    },
+    {
+      "id": "lincoln-center",
+      "name": "Lincoln Center",
+      "address": "Columbus Avenue between West 63rd and West 64th Streets",
+      "neighborhood": "Lincoln Square",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7725,
+        -73.9826
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "manhattan-murder-mystery",
+          "scene": "The illuminated concert hall faces a wet plaza at night.",
+          "source_ids": [
+            "manhattan-murder-mystery"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-murder-mystery-lincoln-center.jpg",
+            "thumbnail": "/images/film-map/manhattan-murder-mystery-lincoln-center-thumb.jpg",
+            "alt": "Manhattan Murder Mystery: The illuminated concert hall faces a wet plaza at night.",
+            "credit": "Manhattan Murder Mystery (1993) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery05.jpg",
+            "width": 565,
+            "height": 298
+          }
+        }
+      ]
+    },
+    {
+      "id": "21-club",
+      "name": "21 Club filming location",
+      "address": "21 West 52nd Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.760522,
+        -73.977366
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "manhattan-murder-mystery",
+          "scene": "The restaurant’s jockey statues line the balcony above its entrance.",
+          "source_ids": [
+            "manhattan-murder-mystery"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-murder-mystery-21-club.jpg",
+            "thumbnail": "/images/film-map/manhattan-murder-mystery-21-club-thumb.jpg",
+            "alt": "Manhattan Murder Mystery: The restaurant’s jockey statues line the balcony above its entrance.",
+            "credit": "Manhattan Murder Mystery (1993) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery11.jpg",
+            "width": 565,
+            "height": 298
+          }
+        }
+      ]
+    },
+    {
+      "id": "larry-workplace",
+      "name": "Larry’s workplace",
+      "address": "10 East 53rd Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.759821,
+        -73.9753
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "manhattan-murder-mystery",
+          "scene": "The camera looks up at the office building’s numbered entrance.",
+          "source_ids": [
+            "manhattan-murder-mystery"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-murder-mystery-larry-workplace.jpg",
+            "thumbnail": "/images/film-map/manhattan-murder-mystery-larry-workplace-thumb.jpg",
+            "alt": "Manhattan Murder Mystery: The camera looks up at the office building’s numbered entrance.",
+            "credit": "Manhattan Murder Mystery (1993) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery07.jpg",
+            "width": 565,
+            "height": 298
+          }
+        }
+      ]
+    },
+    {
+      "id": "hotel-waldron",
+      "name": "Hotel Waldron filming location",
+      "address": "225 East 17th Street",
+      "neighborhood": "Gramercy",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.734909,
+        -73.984555
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "manhattan-murder-mystery",
+          "scene": "Police cars stand outside the hotel entrance.",
+          "source_ids": [
+            "manhattan-murder-mystery"
+          ],
+          "still": {
+            "src": "/images/film-map/manhattan-murder-mystery-hotel-waldron.jpg",
+            "thumbnail": "/images/film-map/manhattan-murder-mystery-hotel-waldron-thumb.jpg",
+            "alt": "Manhattan Murder Mystery: Police cars stand outside the hotel entrance.",
+            "credit": "Manhattan Murder Mystery (1993) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/manhattanmurdermystery.html",
+            "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery18.jpg",
+            "width": 565,
+            "height": 298
+          }
+        }
+      ]
+    },
+    {
+      "id": "beekman-theater",
+      "name": "Beekman Theater, former site",
+      "address": "1254 Second Avenue",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.76451,
+        -73.961073
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "A fan approaches Alvy outside the cinema.",
+          "source_ids": [
+            "annie-hall-movie-tourist",
+            "annie-hall-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-beekman-theater.jpg",
+            "thumbnail": "/images/film-map/annie-hall-beekman-theater-thumb.jpg",
+            "alt": "Annie Hall: A fan approaches Alvy outside the cinema.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKp5uiSfAPoSeO7ZfLaPHt6sNsS9M6lUy66cUeiUIWUPCzt0QQU1wJ42TCL8fjO894oFV_J73pDYGEAgdc8xZ0NG_8O-4aSWgSO45z-BB2rT5In5XiSmCcRkLHuI-Ubp76yLjXE8BILsM/s400/BeekmanTheatre_AnnieHall.jpg",
+            "width": 400,
+            "height": 214
+          }
+        }
+      ]
+    },
+    {
+      "id": "wall-street-racquet-club",
+      "name": "Wall Street Racquet Club, former site",
+      "address": "Former Piers 13 and 14, South Street at Wall Street",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7052,
+        -74.005
+      ],
+      "access": "Historical location",
+      "visit_note": "Historic waterfront site; the club and original piers are gone.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Alvy looks back beside the waterfront tennis-club windows.",
+          "source_ids": [
+            "annie-hall-movie-tourist",
+            "annie-hall-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-wall-street-racquet-club.jpg",
+            "thumbnail": "/images/film-map/annie-hall-wall-street-racquet-club-thumb.jpg",
+            "alt": "Annie Hall: Alvy looks back beside the waterfront tennis-club windows.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiO8y4cy_cEf2KKcCM-0ErhIdh8dUYdaAlgWiN62go2_tjO04VU2XxPGI84fmzEPdHIlaTCMGy9NqQ270YbdnxvyQEldtRiiWc_JBdinq6EFjwaqIY-ZaSgdpXX43DcI8hTSx6JFuk_O3Y/s400/WallStRacquetClub2_AnnieHall.jpg",
+            "width": 400,
+            "height": 213
+          }
+        }
+      ]
+    },
+    {
+      "id": "central-park-zoo",
+      "name": "Central Park Zoo",
+      "address": "Central Park Zoo, Fifth Avenue at East 64th Street",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7678,
+        -73.9718
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Annie approaches through the zoo’s leafy paths and benches.",
+          "source_ids": [
+            "annie-hall-movie-tourist"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-central-park-zoo.jpg",
+            "thumbnail": "/images/film-map/annie-hall-central-park-zoo-thumb.jpg",
+            "alt": "Annie Hall: Annie approaches through the zoo’s leafy paths and benches.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTSiZkuTeXXygjzKDUSppi2AtHbTpOoeruR5EPG1daxQ06BRALNjadph-EsDynHQj4O0m6NhyTd6K4prS1UIqpsQnYzLkgokwyT3S0oKrWMCEMj2W0Z79RkKaFtMbD1j2UZ6clB0pXQ6A/s400/CentralParkZoo_AnnieHall.jpg",
+            "width": 400,
+            "height": 211
+          }
+        }
+      ]
+    },
+    {
+      "id": "seaport-pier-16",
+      "name": "Pier 16, South Street Seaport",
+      "address": "Pier 16, South Street at Fulton Street",
+      "neighborhood": "South Street Seaport",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7053,
+        -74.002
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Annie and Alvy face each other beside the river at dusk.",
+          "source_ids": [
+            "annie-hall-popspots",
+            "annie-hall-movie-tourist"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-seaport-pier-16.jpg",
+            "thumbnail": "/images/film-map/annie-hall-seaport-pier-16-thumb.jpg",
+            "alt": "Annie Hall: Annie and Alvy face each other beside the river at dusk.",
+            "credit": "Annie Hall (1977) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/anniehall.html",
+            "image_url": "https://onthesetofnewyork.com/locations/anniehall/anniehall06.jpg",
+            "width": 565,
+            "height": 299
+          }
+        }
+      ]
+    },
+    {
+      "id": "washington-square-north",
+      "name": "Washington Square North",
+      "address": "Washington Square North near University Place",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.732,
+        -73.9959
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Annie and Alvy argue while walking beside the park.",
+          "source_ids": [
+            "annie-hall-movie-tourist"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-washington-square-north.jpg",
+            "thumbnail": "/images/film-map/annie-hall-washington-square-north-thumb.jpg",
+            "alt": "Annie Hall: Annie and Alvy argue while walking beside the park.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxCW58C5rXUQV7BEx76jhuN9j3FFmSmJMHLTF-mdnxPtD5KJjUXqa-M5GrpK09bWxjkBhOyHSt1Ep_2JoNKJVTH-oMOGzjOInENexwu3ilFAn7hbbvFSoxKYif3CSkFUfhJbZcEk6A2rw/s400/WashingtonSquareNorth2_AnnieHall.jpg",
+            "width": 400,
+            "height": 214
+          }
+        }
+      ]
+    },
+    {
+      "id": "west-fourth-dialogue",
+      "name": "West 4th Street conversation",
+      "address": "132 West 4th Street",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.73111,
+        -74.000079
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Alvy questions a smiling couple on the sidewalk.",
+          "source_ids": [
+            "annie-hall-movie-tourist"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-west-fourth-dialogue.jpg",
+            "thumbnail": "/images/film-map/annie-hall-west-fourth-dialogue-thumb.jpg",
+            "alt": "Annie Hall: Alvy questions a smiling couple on the sidewalk.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMW67H6DwUQ6bg5ntKlJKX5eAybPCjC6g6066AyaMQXjrJTFzlMPTaLvbdL-fqlrAMrFp5txoynjhj0BPPqeo-b5OBl2i1vOk8EuXb-fhdHIgTkVslx4K5HnpLKFC0nECLGsIqZV86rkk/s400/W4thStr2_AnnieHall.jpg",
+            "width": 400,
+            "height": 214
+          }
+        }
+      ]
+    },
+    {
+      "id": "paris-theater",
+      "name": "The Paris Theater",
+      "address": "4 West 58th Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.76375,
+        -73.97432
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Alvy steps outside the cinema beside its ticket booth.",
+          "source_ids": [
+            "annie-hall-movie-tourist"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-paris-theater.jpg",
+            "thumbnail": "/images/film-map/annie-hall-paris-theater-thumb.jpg",
+            "alt": "Annie Hall: Alvy steps outside the cinema beside its ticket booth.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtJTjMvpM6JlPI2Cp9fBHb6bXBDpV3_jVhc0m3HO2NJIVOFNaL5vcjzIRHXg1qcwunr6IbTB5ORQw1j6wlPsTDgP3aR1bWgTJ7jMh0unCufrpDCsijyMTYw0DtiodyabFR1E50b_WRBH8/s400/ParisCinema1_AnnieHall.jpg",
+            "width": 400,
+            "height": 214
+          }
+        }
+      ]
+    },
+    {
+      "id": "seaport-pier-15",
+      "name": "Pier 15 waterfront",
+      "address": "Pier 15, East River at South Street",
+      "neighborhood": "South Street Seaport",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7042,
+        -74.0038
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Alvy walks alone beside the river in evening light.",
+          "source_ids": [
+            "annie-hall-movie-tourist"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-seaport-pier-15.jpg",
+            "thumbnail": "/images/film-map/annie-hall-seaport-pier-15-thumb.jpg",
+            "alt": "Annie Hall: Alvy walks alone beside the river in evening light.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsZGLQCN-0Tvdc9mhG2xSlFRiewCfai8yu8zOudyV4P6R5xtqrtU_-l9C8BaewYadAFr1gPL1X_xdYwwy9QmNEAeIt8YUQYcV3ubPupJ_GzXGnARQ7xTJPC6eMVTwHwNGrk_fPC8z7umQ/s400/Pier15_AnnieHall.jpg",
+            "width": 400,
+            "height": 212
+          }
+        }
+      ]
+    },
+    {
+      "id": "thalia-theater",
+      "name": "Thalia Theater",
+      "address": "250 West 95th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.793907,
+        -73.972888
+      ],
+      "access": "Venue",
+      "visit_note": "Filming entrance is on West 95th Street; the theatre is associated with the Symphony Space site.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "Alvy encounters Annie beneath the Thalia’s film marquee.",
+          "source_ids": [
+            "annie-hall-movie-tourist",
+            "annie-hall-popspots"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-thalia-theater.jpg",
+            "thumbnail": "/images/film-map/annie-hall-thalia-theater-thumb.jpg",
+            "alt": "Annie Hall: Alvy encounters Annie beneath the Thalia’s film marquee.",
+            "credit": "Annie Hall (1977) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh81rJEerlchmE8-HLgbx7mg4RaqRxMhL5eGRUI1NGfrZoC8gVjc3GpfZdyj4uT8ZOlwPAmKVPcBuqdJSAj9lmG5Er5OOSMLwyrJ5pEax-O6umLyF2IUPwRSFiiUPLREBkQPR6iWBBncnM/s400/ThaliaTheater_AnnieHall.jpg",
+            "width": 400,
+            "height": 214
+          }
+        }
+      ]
+    },
+    {
+      "id": "alvy-childhood-home",
+      "name": "Alvy’s childhood home, former site",
+      "address": "Riegelmann Boardwalk between West 15th and West 16th Streets, Brooklyn",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.5728,
+        -73.9837
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "annie-hall",
+          "scene": "The old wooden roller coaster looms above Alvy’s childhood home.",
+          "source_ids": [
+            "annie-hall-popspots"
+          ],
+          "still": {
+            "src": "/images/film-map/annie-hall-alvy-childhood-home.jpg",
+            "thumbnail": "/images/film-map/annie-hall-alvy-childhood-home-thumb.jpg",
+            "alt": "Annie Hall: The old wooden roller coaster looms above Alvy’s childhood home.",
+            "credit": "Annie Hall (1977) · PopSpots",
+            "source_url": "https://popspotsnyc.com/annie_hall/",
+            "image_url": "https://popspotsnyc.com/annie_hall/ANNIE_pix_2/thunderbolt_house.jpg",
+            "width": 640,
+            "height": 480
+          }
+        }
+      ]
+    },
+    {
+      "id": "joe-riverside",
+      "name": "Joe’s Riverside Drive apartment",
+      "address": "210 Riverside Drive",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.794072,
+        -73.97601
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Joe walks along Riverside Drive outside his apartment building.",
+          "source_ids": [
+            "youve-got-mail"
+          ],
+          "still": {
+            "src": "/images/film-map/youve-got-mail-joe-riverside.jpg",
+            "thumbnail": "/images/film-map/youve-got-mail-joe-riverside-thumb.jpg",
+            "alt": "You've Got Mail: Joe walks along Riverside Drive outside his apartment building.",
+            "credit": "You've Got Mail (1998) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/youvegotmail.html",
+            "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail104.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "mail-starbucks",
+      "name": "Broadway coffee stop",
+      "address": "2252 Broadway",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.784772,
+        -73.978644
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Joe waits at the Broadway coffee counter.",
+          "source_ids": [
+            "youve-got-mail"
+          ],
+          "still": {
+            "src": "/images/film-map/youve-got-mail-mail-starbucks.jpg",
+            "thumbnail": "/images/film-map/youve-got-mail-mail-starbucks-thumb.jpg",
+            "alt": "You've Got Mail: Joe waits at the Broadway coffee counter.",
+            "credit": "You've Got Mail (1998) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/youvegotmail.html",
+            "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail127.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "barney-greengrass",
+      "name": "Barney Greengrass",
+      "address": "541 Amsterdam Avenue",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.787962,
+        -73.974392
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Kathleen and her friends talk over lunch at the deli.",
+          "source_ids": [
+            "youve-got-mail"
+          ],
+          "still": {
+            "src": "/images/film-map/youve-got-mail-barney-greengrass.jpg",
+            "thumbnail": "/images/film-map/youve-got-mail-barney-greengrass-thumb.jpg",
+            "alt": "You've Got Mail: Kathleen and her friends talk over lunch at the deli.",
+            "credit": "You've Got Mail (1998) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/youvegotmail.html",
+            "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail129.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "boat-basin",
+      "name": "79th Street Boat Basin",
+      "address": "West 79th Street at the Hudson River",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7851,
+        -73.985
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Kathleen and Birdie walk beside the Hudson marina.",
+          "source_ids": [
+            "youve-got-mail"
+          ],
+          "still": {
+            "src": "/images/film-map/youve-got-mail-boat-basin.jpg",
+            "thumbnail": "/images/film-map/youve-got-mail-boat-basin-thumb.jpg",
+            "alt": "You've Got Mail: Kathleen and Birdie walk beside the Hudson marina.",
+            "credit": "You've Got Mail (1998) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/youvegotmail.html",
+            "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail134.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "ocean-grill",
+      "name": "Ocean Grill, former site",
+      "address": "382 Columbus Avenue",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.781606,
+        -73.976151
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "Joe joins Kathleen at an outdoor restaurant table.",
+          "source_ids": [
+            "youve-got-mail"
+          ],
+          "still": {
+            "src": "/images/film-map/youve-got-mail-ocean-grill.jpg",
+            "thumbnail": "/images/film-map/youve-got-mail-ocean-grill-thumb.jpg",
+            "alt": "You've Got Mail: Joe joins Kathleen at an outdoor restaurant table.",
+            "credit": "You've Got Mail (1998) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/youvegotmail.html",
+            "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail164.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "grays-papaya",
+      "name": "Gray’s Papaya",
+      "address": "2090 Broadway",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.778285,
+        -73.98161
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "youve-got-mail",
+          "scene": "The pair stop at the Broadway hot-dog counter.",
+          "source_ids": [
+            "youve-got-mail"
+          ],
+          "still": {
+            "src": "/images/film-map/youve-got-mail-grays-papaya.jpg",
+            "thumbnail": "/images/film-map/youve-got-mail-grays-papaya-thumb.jpg",
+            "alt": "You've Got Mail: The pair stop at the Broadway hot-dog counter.",
+            "credit": "You've Got Mail (1998) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/youvegotmail.html",
+            "image_url": "https://onthesetofnewyork.com/locations/youvegotmail/youvegotmail170.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "county-courthouse",
+      "name": "New York County Courthouse",
+      "address": "60 Centre Street",
+      "neighborhood": "City Hall Area",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7145,
+        -74.001571
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "anora",
+          "scene": "Anora and the family appear in the courthouse sequence.",
+          "source_ids": [
+            "anora"
+          ],
+          "still": {
+            "src": "/images/film-map/anora-county-courthouse.jpg",
+            "thumbnail": "/images/film-map/anora-county-courthouse-thumb.jpg",
+            "alt": "Anora: Anora and the family appear in the courthouse sequence.",
+            "credit": "Anora (2024) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/anora.html",
+            "image_url": "https://onthesetofnewyork.com/locations/anora/anora10.jpg",
+            "width": 565,
+            "height": 234
+          }
+        }
+      ]
+    },
+    {
+      "id": "washington-square-arch",
+      "name": "Washington Square Arch",
+      "address": "Washington Square North at Fifth Avenue",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7312,
+        -73.9971
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "The Washington Square Arch fills the arrival shot.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ],
+          "still": {
+            "src": "/images/film-map/when-harry-met-sally-washington-square-arch.jpg",
+            "thumbnail": "/images/film-map/when-harry-met-sally-washington-square-arch-thumb.jpg",
+            "alt": "When Harry Met Sally: The Washington Square Arch fills the arrival shot.",
+            "credit": "When Harry Met Sally (1989) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/whenharrymetsally.html",
+            "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally108.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "shakespeare-broadway",
+      "name": "Shakespeare & Co., former site",
+      "address": "2259 Broadway",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.78516,
+        -73.97951
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Harry and Sally encounter each other between bookshop shelves.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ],
+          "still": {
+            "src": "/images/film-map/when-harry-met-sally-shakespeare-broadway.jpg",
+            "thumbnail": "/images/film-map/when-harry-met-sally-shakespeare-broadway-thumb.jpg",
+            "alt": "When Harry Met Sally: Harry and Sally encounter each other between bookshop shelves.",
+            "credit": "When Harry Met Sally (1989) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/whenharrymetsally.html",
+            "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally120.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "harry-east-11",
+      "name": "Harry’s apartment",
+      "address": "57 East 11th Street",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.733153,
+        -73.992362
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Harry reads alone in his apartment.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ],
+          "still": {
+            "src": "/images/film-map/when-harry-met-sally-harry-east-11.jpg",
+            "thumbnail": "/images/film-map/when-harry-met-sally-harry-east-11-thumb.jpg",
+            "alt": "When Harry Met Sally: Harry reads alone in his apartment.",
+            "credit": "When Harry Met Sally (1989) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/whenharrymetsally.html",
+            "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally128.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "cafe-luxembourg",
+      "name": "Café Luxembourg",
+      "address": "200 West 70th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.777267,
+        -73.983086
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "Dinner with friends brings the four leads to a restaurant table.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ],
+          "still": {
+            "src": "/images/film-map/when-harry-met-sally-cafe-luxembourg.jpg",
+            "thumbnail": "/images/film-map/when-harry-met-sally-cafe-luxembourg-thumb.jpg",
+            "alt": "When Harry Met Sally: Dinner with friends brings the four leads to a restaurant table.",
+            "credit": "When Harry Met Sally (1989) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/whenharrymetsally.html",
+            "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally151.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "jess-marie-home",
+      "name": "Jess and Marie’s brownstone",
+      "address": "32 West 89th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.787533,
+        -73.969188
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "The friends gather outside Jess and Marie’s brownstone.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ],
+          "still": {
+            "src": "/images/film-map/when-harry-met-sally-jess-marie-home.jpg",
+            "thumbnail": "/images/film-map/when-harry-met-sally-jess-marie-home-thumb.jpg",
+            "alt": "When Harry Met Sally: The friends gather outside Jess and Marie’s brownstone.",
+            "credit": "When Harry Met Sally (1989) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/whenharrymetsally.html",
+            "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally164.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "puck-building",
+      "name": "Puck Building",
+      "address": "295 Lafayette Street",
+      "neighborhood": "Nolita",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.724475,
+        -73.995413
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "when-harry-met-sally",
+          "scene": "The Puck Building hosts the friends’ social world.",
+          "source_ids": [
+            "when-harry-met-sally"
+          ],
+          "still": {
+            "src": "/images/film-map/when-harry-met-sally-puck-building.jpg",
+            "thumbnail": "/images/film-map/when-harry-met-sally-puck-building-thumb.jpg",
+            "alt": "When Harry Met Sally: The Puck Building hosts the friends’ social world.",
+            "credit": "When Harry Met Sally (1989) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/whenharrymetsally.html",
+            "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally172.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "columbia-campus",
+      "name": "Columbia University",
+      "address": "116th Street at Broadway",
+      "neighborhood": "Morningside Heights",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.8075,
+        -73.9626
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "The scientists talk on the Columbia campus steps.",
+          "source_ids": [
+            "ghostbusters"
+          ],
+          "still": {
+            "src": "/images/film-map/ghostbusters-columbia-campus.jpg",
+            "thumbnail": "/images/film-map/ghostbusters-columbia-campus-thumb.jpg",
+            "alt": "Ghostbusters: The scientists talk on the Columbia campus steps.",
+            "credit": "Ghostbusters (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/ghostbusters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_14.jpg",
+            "width": 565,
+            "height": 237
+          }
+        },
+        {
+          "film_id": "spider-man",
+          "scene": "Peter and Harry visit Columbia on their school trip.",
+          "source_ids": [
+            "spider-man"
+          ],
+          "still": {
+            "src": "/images/film-map/spider-man-columbia-campus.jpg",
+            "thumbnail": "/images/film-map/spider-man-columbia-campus-thumb.jpg",
+            "alt": "Spider-Man: Peter and Harry visit Columbia on their school trip.",
+            "credit": "Spider-Man (2002) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/spiderman.html",
+            "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man10.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "ghost-east-63",
+      "name": "East 63rd Street townhouse",
+      "address": "16 East 63rd Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.766154,
+        -73.970271
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "The Ghostbusters emerge with their equipment on East 63rd Street.",
+          "source_ids": [
+            "ghostbusters"
+          ],
+          "still": {
+            "src": "/images/film-map/ghostbusters-ghost-east-63.jpg",
+            "thumbnail": "/images/film-map/ghostbusters-ghost-east-63-thumb.jpg",
+            "alt": "Ghostbusters: The Ghostbusters emerge with their equipment on East 63rd Street.",
+            "credit": "Ghostbusters (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/ghostbusters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_39.jpg",
+            "width": 565,
+            "height": 237
+          }
+        }
+      ]
+    },
+    {
+      "id": "tavern-green",
+      "name": "Tavern on the Green",
+      "address": "Central Park West at West 67th Street",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7723,
+        -73.9776
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "Louis seeks help outside the restaurant during the terror-dog sequence.",
+          "source_ids": [
+            "ghostbusters"
+          ],
+          "still": {
+            "src": "/images/film-map/ghostbusters-tavern-green.jpg",
+            "thumbnail": "/images/film-map/ghostbusters-tavern-green-thumb.jpg",
+            "alt": "Ghostbusters: Louis seeks help outside the restaurant during the terror-dog sequence.",
+            "credit": "Ghostbusters (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/ghostbusters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_50.jpg",
+            "width": 565,
+            "height": 237
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-hall",
+      "name": "New York City Hall",
+      "address": "City Hall Park",
+      "neighborhood": "Civic Center",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7128,
+        -74.0059
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "ghostbusters",
+          "scene": "The Ghostbusters arrive at City Hall.",
+          "source_ids": [
+            "ghostbusters"
+          ],
+          "still": {
+            "src": "/images/film-map/ghostbusters-city-hall.jpg",
+            "thumbnail": "/images/film-map/ghostbusters-city-hall-thumb.jpg",
+            "alt": "Ghostbusters: The Ghostbusters arrive at City Hall.",
+            "credit": "Ghostbusters (1984) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/ghostbusters.html",
+            "image_url": "https://onthesetofnewyork.com/locations/ghostbusters/ghostbusters1984_83.jpg",
+            "width": 565,
+            "height": 237
+          }
+        }
+      ]
+    },
+    {
+      "id": "conservatory-water",
+      "name": "Conservatory Water",
+      "address": "Central Park near East 74th Street",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7742,
+        -73.9664
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "breakfast-at-tiffanys",
+          "scene": "Paul and Holly spend time beside the model-boat pond.",
+          "source_ids": [
+            "breakfast-at-tiffanys"
+          ],
+          "still": {
+            "src": "/images/film-map/breakfast-at-tiffanys-conservatory-water.jpg",
+            "thumbnail": "/images/film-map/breakfast-at-tiffanys-conservatory-water-thumb.jpg",
+            "alt": "Breakfast at Tiffany’s: Paul and Holly spend time beside the model-boat pond.",
+            "credit": "Breakfast at Tiffany’s (1961) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/breakfastattiffanys.html",
+            "image_url": "https://onthesetofnewyork.com/locations/breakfastattiffanys/breakfastattiffanys68.jpg",
+            "width": 565,
+            "height": 314
+          }
+        }
+      ]
+    },
+    {
+      "id": "naumburg-bandshell",
+      "name": "Naumburg Bandshell",
+      "address": "The Mall, Central Park",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7725,
+        -73.9714
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "breakfast-at-tiffanys",
+          "scene": "Paul searches for Holly beside the park’s bandshell.",
+          "source_ids": [
+            "breakfast-at-tiffanys"
+          ],
+          "still": {
+            "src": "/images/film-map/breakfast-at-tiffanys-naumburg-bandshell.jpg",
+            "thumbnail": "/images/film-map/breakfast-at-tiffanys-naumburg-bandshell-thumb.jpg",
+            "alt": "Breakfast at Tiffany’s: Paul searches for Holly beside the park’s bandshell.",
+            "credit": "Breakfast at Tiffany’s (1961) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/breakfastattiffanys.html",
+            "image_url": "https://onthesetofnewyork.com/locations/breakfastattiffanys/breakfastattiffanys28.jpg",
+            "width": 565,
+            "height": 314
+          }
+        }
+      ]
+    },
+    {
+      "id": "mott-street-shop",
+      "name": "Mott Street storefront",
+      "address": "32 Mott Street",
+      "neighborhood": "Chinatown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.714774,
+        -73.998605
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin pauses outside the Mott Street shop window.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-mott-street-shop.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-mott-street-shop-thumb.jpg",
+            "alt": "Home Alone 2: Kevin pauses outside the Mott Street shop window.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_113.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "battery-park",
+      "name": "The Battery",
+      "address": "Battery Park waterfront",
+      "neighborhood": "Battery Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7033,
+        -74.0165
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin looks out across the harbor through a viewing telescope.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-battery-park.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-battery-park-thumb.jpg",
+            "alt": "Home Alone 2: Kevin looks out across the harbor through a viewing telescope.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_116.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "carnegie-hall",
+      "name": "Carnegie Hall",
+      "address": "881 Seventh Avenue",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.765007,
+        -73.979914
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Carnegie Hall anchors Kevin’s encounter with the pigeon lady.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2-carnegie-hall.jpg",
+            "thumbnail": "/images/film-map/home-alone-2-carnegie-hall-thumb.jpg",
+            "alt": "Home Alone 2: Carnegie Hall anchors Kevin’s encounter with the pigeon lady.",
+            "credit": "Home Alone 2 (1992) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_197.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "cit-madison",
+      "name": "Roger Thornhill’s office building",
+      "address": "650 Madison Avenue",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.764035,
+        -73.971738
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "north-by-northwest",
+          "scene": "Thornhill leaves his Madison Avenue office amid the lunchtime crowd.",
+          "source_ids": [
+            "north-by-northwest"
+          ],
+          "still": {
+            "src": "/images/film-map/north-by-northwest-cit-madison.jpg",
+            "thumbnail": "/images/film-map/north-by-northwest-cit-madison-thumb.jpg",
+            "alt": "North by Northwest: Thornhill leaves his Madison Avenue office amid the lunchtime crowd.",
+            "credit": "North by Northwest (1959) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/northbynorthwest.html",
+            "image_url": "https://onthesetofnewyork.com/locations/northbynorthwest/northbynorthwest03.jpg",
+            "width": 565,
+            "height": 315
+          }
+        }
+      ]
+    },
+    {
+      "id": "un-headquarters",
+      "name": "United Nations Headquarters",
+      "address": "405 East 42nd Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.748796,
+        -73.96908
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "north-by-northwest",
+          "scene": "Thornhill arrives at the United Nations headquarters.",
+          "source_ids": [
+            "north-by-northwest"
+          ],
+          "still": {
+            "src": "/images/film-map/north-by-northwest-un-headquarters.jpg",
+            "thumbnail": "/images/film-map/north-by-northwest-un-headquarters-thumb.jpg",
+            "alt": "North by Northwest: Thornhill arrives at the United Nations headquarters.",
+            "credit": "North by Northwest (1959) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/northbynorthwest.html",
+            "image_url": "https://onthesetofnewyork.com/locations/northbynorthwest/northbynorthwest08.jpg",
+            "width": 565,
+            "height": 317
+          }
+        }
+      ]
+    },
+    {
+      "id": "flatiron-building",
+      "name": "Flatiron Building / The Daily Bugle",
+      "address": "175 Fifth Avenue",
+      "neighborhood": "Flatiron District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.740979,
+        -73.989688
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "spider-man",
+          "scene": "The Flatiron Building supplies the exterior of the Daily Bugle.",
+          "source_ids": [
+            "spider-man"
+          ],
+          "still": {
+            "src": "/images/film-map/spider-man-flatiron-building.jpg",
+            "thumbnail": "/images/film-map/spider-man-flatiron-building-thumb.jpg",
+            "alt": "Spider-Man: The Flatiron Building supplies the exterior of the Daily Bugle.",
+            "credit": "Spider-Man (2002) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/spiderman.html",
+            "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man47.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "moondance-diner",
+      "name": "Moondance Diner, former site",
+      "address": "88 Sixth Avenue",
+      "neighborhood": "SoHo",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.722742,
+        -74.004922
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "spider-man",
+          "scene": "Mary Jane works at the SoHo diner.",
+          "source_ids": [
+            "spider-man"
+          ],
+          "still": {
+            "src": "/images/film-map/spider-man-moondance-diner.jpg",
+            "thumbnail": "/images/film-map/spider-man-moondance-diner-thumb.jpg",
+            "alt": "Spider-Man: Mary Jane works at the SoHo diner.",
+            "credit": "Spider-Man (2002) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/spiderman.html",
+            "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man53.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "harry-broadway-loft",
+      "name": "Harry Osborn’s loft",
+      "address": "704 Broadway",
+      "neighborhood": "NoHo",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.728594,
+        -73.993753
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "spider-man",
+          "scene": "The Broadway building stands in for Harry’s loft.",
+          "source_ids": [
+            "spider-man"
+          ],
+          "still": {
+            "src": "/images/film-map/spider-man-harry-broadway-loft.jpg",
+            "thumbnail": "/images/film-map/spider-man-harry-broadway-loft-thumb.jpg",
+            "alt": "Spider-Man: The Broadway building stands in for Harry’s loft.",
+            "credit": "Spider-Man (2002) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/spiderman.html",
+            "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man58.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "oscorp-building",
+      "name": "Oscorp building",
+      "address": "135 East 57th Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.761468,
+        -73.969611
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "spider-man",
+          "scene": "The East 57th Street tower supplies Oscorp’s exterior.",
+          "source_ids": [
+            "spider-man"
+          ],
+          "still": {
+            "src": "/images/film-map/spider-man-oscorp-building.jpg",
+            "thumbnail": "/images/film-map/spider-man-oscorp-building-thumb.jpg",
+            "alt": "Spider-Man: The East 57th Street tower supplies Oscorp’s exterior.",
+            "credit": "Spider-Man (2002) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/spiderman.html",
+            "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man61.jpg",
+            "width": 565,
+            "height": 305
+          }
+        }
+      ]
+    },
+    {
+      "id": "taxi-cafeteria",
+      "name": "Eighth Avenue cafeteria, former site",
+      "address": "737 Eighth Avenue",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.76005,
+        -73.988024
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "taxi-driver",
+          "scene": "Travis’s cab passes the illuminated Eighth Avenue storefronts.",
+          "source_ids": [
+            "taxi-driver"
+          ],
+          "still": {
+            "src": "/images/film-map/taxi-driver-taxi-cafeteria.jpg",
+            "thumbnail": "/images/film-map/taxi-driver-taxi-cafeteria-thumb.jpg",
+            "alt": "Taxi Driver: Travis’s cab passes the illuminated Eighth Avenue storefronts.",
+            "credit": "Taxi Driver (1976) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/taxidriver.html",
+            "image_url": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver27.jpg",
+            "width": 565,
+            "height": 310
+          }
+        }
+      ]
+    },
+    {
+      "id": "hotel-olcott",
+      "name": "Hotel Olcott",
+      "address": "27 West 72nd Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.777199,
+        -73.97738
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "taxi-driver",
+          "scene": "A yellow taxi pulls up outside the Hotel Olcott.",
+          "source_ids": [
+            "taxi-driver"
+          ],
+          "still": {
+            "src": "/images/film-map/taxi-driver-hotel-olcott.jpg",
+            "thumbnail": "/images/film-map/taxi-driver-hotel-olcott-thumb.jpg",
+            "alt": "Taxi Driver: A yellow taxi pulls up outside the Hotel Olcott.",
+            "credit": "Taxi Driver (1976) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/taxidriver.html",
+            "image_url": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver34.jpg",
+            "width": 565,
+            "height": 311
+          }
+        }
+      ]
+    },
+    {
+      "id": "lyric-theatre",
+      "name": "Lyric Theatre, former entrance",
+      "address": "213 West 42nd Street",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.756889,
+        -73.987467
+      ],
+      "access": "Historical location",
+      "visit_note": "The original venue or set has changed or disappeared. The pin identifies its historical site; view from public space.",
+      "scenes": [
+        {
+          "film_id": "taxi-driver",
+          "scene": "Travis takes Betsy to the 42nd Street cinema.",
+          "source_ids": [
+            "taxi-driver"
+          ],
+          "still": {
+            "src": "/images/film-map/taxi-driver-lyric-theatre.jpg",
+            "thumbnail": "/images/film-map/taxi-driver-lyric-theatre-thumb.jpg",
+            "alt": "Taxi Driver: Travis takes Betsy to the 42nd Street cinema.",
+            "credit": "Taxi Driver (1976) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/taxidriver.html",
+            "image_url": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver53.jpg",
+            "width": 565,
+            "height": 310
+          }
+        }
+      ]
+    },
+    {
+      "id": "st-regis",
+      "name": "The St. Regis New York",
+      "address": "2 East 55th Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.761293,
+        -73.974431
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "taxi-driver",
+          "scene": "Travis’s taxi waits beneath the St. Regis entrance sign.",
+          "source_ids": [
+            "taxi-driver"
+          ],
+          "still": {
+            "src": "/images/film-map/taxi-driver-st-regis.jpg",
+            "thumbnail": "/images/film-map/taxi-driver-st-regis-thumb.jpg",
+            "alt": "Taxi Driver: Travis’s taxi waits beneath the St. Regis entrance sign.",
+            "credit": "Taxi Driver (1976) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/taxidriver.html",
+            "image_url": "https://onthesetofnewyork.com/locations/taxidriver/taxidriver72.jpg",
+            "width": 565,
+            "height": 307
+          }
+        },
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy and Christian meet over drinks at the hotel bar.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-st-regis.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-st-regis-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy and Christian meet over drinks at the hotel bar.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada292.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "chelsea-pier-59",
+      "name": "Chelsea Piers, Pier 59",
+      "address": "Pier 59, Hudson River Park",
+      "neighborhood": "Chelsea",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7453,
+        -74.009
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "serendipity",
+          "scene": "Jonathan makes inquiries at the Chelsea Piers golf facility.",
+          "source_ids": [
+            "serendipity"
+          ],
+          "still": {
+            "src": "/images/film-map/serendipity-chelsea-pier-59.jpg",
+            "thumbnail": "/images/film-map/serendipity-chelsea-pier-59-thumb.jpg",
+            "alt": "Serendipity: Jonathan makes inquiries at the Chelsea Piers golf facility.",
+            "credit": "Serendipity (2001) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/serendipity.html",
+            "image_url": "https://onthesetofnewyork.com/locations/serendipity/Serendipity142.jpg",
+            "width": 565,
+            "height": 318
+          }
+        }
+      ]
+    },
+    {
+      "id": "waverly-apartment",
+      "name": "Waverly Place apartment",
+      "address": "200 Waverly Place",
+      "neighborhood": "West Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.734861,
+        -74.00169
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "serendipity",
+          "scene": "Sara appears outside the Waverly Place apartment.",
+          "source_ids": [
+            "serendipity"
+          ],
+          "still": {
+            "src": "/images/film-map/serendipity-waverly-apartment.jpg",
+            "thumbnail": "/images/film-map/serendipity-waverly-apartment-thumb.jpg",
+            "alt": "Serendipity: Sara appears outside the Waverly Place apartment.",
+            "credit": "Serendipity (2001) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/serendipity.html",
+            "image_url": "https://onthesetofnewyork.com/locations/serendipity/Serendipity162.jpg",
+            "width": 565,
+            "height": 318
+          }
+        }
+      ]
+    },
+    {
+      "id": "central-park-mall",
+      "name": "The Mall, Central Park",
+      "address": "The Mall near East 66th Street",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.771,
+        -73.9725
+      ],
+      "access": "Public approach",
+      "visit_note": "The pin marks an approach to the filmed area, not the exact camera position. Check local access before visiting.",
+      "scenes": [
+        {
+          "film_id": "serendipity",
+          "scene": "Jonathan runs beneath the trees along the Mall.",
+          "source_ids": [
+            "serendipity"
+          ],
+          "still": {
+            "src": "/images/film-map/serendipity-central-park-mall.jpg",
+            "thumbnail": "/images/film-map/serendipity-central-park-mall-thumb.jpg",
+            "alt": "Serendipity: Jonathan runs beneath the trees along the Mall.",
+            "credit": "Serendipity (2001) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/serendipity.html",
+            "image_url": "https://onthesetofnewyork.com/locations/serendipity/Serendipity181.jpg",
+            "width": 565,
+            "height": 318
+          }
+        }
+      ]
+    },
+    {
+      "id": "bubbys",
+      "name": "Bubby’s",
+      "address": "120 Hudson Street",
+      "neighborhood": "Tribeca",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.719816,
+        -74.008314
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy catches up with her friends at the restaurant.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-bubbys.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-bubbys-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy catches up with her friends at the restaurant.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada224.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "craft-restaurant",
+      "name": "Craft",
+      "address": "43 East 19th Street",
+      "neighborhood": "Gramercy",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.738174,
+        -73.988665
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy meets her father over dinner at Craft.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-craft-restaurant.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-craft-restaurant-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy meets her father over dinner at Craft.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada247.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "holt-studio",
+      "name": "James Holt’s studio",
+      "address": "56 Crosby Street",
+      "neighborhood": "SoHo",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.722331,
+        -73.998771
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy attends the gathering at James Holt’s studio.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-holt-studio.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-holt-studio-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy attends the gathering at James Holt’s studio.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada261.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "smith-wollensky",
+      "name": "Smith & Wollensky",
+      "address": "797 Third Avenue",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.755193,
+        -73.970783
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy collects Miranda’s steak order.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-smith-wollensky.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-smith-wollensky-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy collects Miranda’s steak order.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada280.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "natural-history",
+      "name": "American Museum of Natural History",
+      "address": "Central Park West at West 79th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.781,
+        -73.9734
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "The museum provides the setting for the formal benefit.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-natural-history.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-natural-history-thumb.jpg",
+            "alt": "The Devil Wears Prada: The museum provides the setting for the formal benefit.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada303.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "lenox-hill",
+      "name": "Lenox Hill Hospital",
+      "address": "100 East 77th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.773964,
+        -73.961105
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy visits Emily in hospital.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-lenox-hill.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-lenox-hill-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy visits Emily in hospital.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada314.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "cary-building",
+      "name": "Cary Building",
+      "address": "105 Chambers Street",
+      "neighborhood": "Tribeca",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.715286,
+        -74.007964
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-devil-wears-prada",
+          "scene": "Andy interviews for a newspaper job in the Cary Building.",
+          "source_ids": [
+            "the-devil-wears-prada"
+          ],
+          "still": {
+            "src": "/images/film-map/the-devil-wears-prada-cary-building.jpg",
+            "thumbnail": "/images/film-map/the-devil-wears-prada-cary-building-thumb.jpg",
+            "alt": "The Devil Wears Prada: Andy interviews for a newspaper job in the Cary Building.",
+            "credit": "The Devil Wears Prada (2006) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/thedevilwearsprada.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thedevilwearsprada/thedevilwearsprada331.jpg",
+            "width": 565,
+            "height": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "hester-orchard",
+      "name": "Hester and Orchard Streets",
+      "address": "Hester Street at Orchard Street",
+      "neighborhood": "Lower East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7155,
+        -73.9901
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "past-lives",
+          "scene": "An overhead street view places Nora on the Lower East Side.",
+          "source_ids": [
+            "past-lives"
+          ],
+          "still": {
+            "src": "/images/film-map/past-lives-hester-orchard.jpg",
+            "thumbnail": "/images/film-map/past-lives-hester-orchard-thumb.jpg",
+            "alt": "Past Lives: An overhead street view places Nora on the Lower East Side.",
+            "credit": "Past Lives (2023) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/pastlives.html",
+            "image_url": "https://onthesetofnewyork.com/locations/pastlives/pastlives42.jpg",
+            "width": 565,
+            "height": 304
+          }
+        }
+      ]
+    },
+    {
+      "id": "mcnally-williamsburg",
+      "name": "McNally Jackson, Williamsburg",
+      "address": "76 North 4th Street",
+      "neighborhood": "Williamsburg",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.717295,
+        -73.961643
+      ],
+      "access": "Venue",
+      "visit_note": "Check current opening hours, admission and reservations before visiting.",
+      "scenes": [
+        {
+          "film_id": "past-lives",
+          "scene": "Nora joins Arthur at his Brooklyn bookshop event.",
+          "source_ids": [
+            "past-lives"
+          ],
+          "still": {
+            "src": "/images/film-map/past-lives-mcnally-williamsburg.jpg",
+            "thumbnail": "/images/film-map/past-lives-mcnally-williamsburg-thumb.jpg",
+            "alt": "Past Lives: Nora joins Arthur at his Brooklyn bookshop event.",
+            "credit": "Past Lives (2023) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/pastlives.html",
+            "image_url": "https://onthesetofnewyork.com/locations/pastlives/pastlives60.jpg",
+            "width": 565,
+            "height": 304
+          }
+        }
+      ]
+    },
+    {
+      "id": "love-daddy-radio",
+      "name": "FM 108 We Love Radio",
+      "address": "174 Stuyvesant Avenue",
+      "neighborhood": "Bedford-Stuyvesant",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.689407,
+        -73.933632
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "do-the-right-thing",
+          "scene": "Mister Señor Love Daddy broadcasts from his neighborhood radio booth.",
+          "source_ids": [
+            "do-the-right-thing-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/do-the-right-thing-love-daddy-radio.jpg",
+            "thumbnail": "/images/film-map/do-the-right-thing-love-daddy-radio-thumb.jpg",
+            "alt": "Do the Right Thing: Mister Señor Love Daddy broadcasts from his neighborhood radio booth.",
+            "credit": "Do the Right Thing (1989) · NYC in Film",
+            "source_url": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+            "image_url": "https://nycinfilm.com/wp-content/uploads/2023/04/ezgif.com-gif-maker.gif?w=879&h=478",
+            "width": 720,
+            "height": 391
+          }
+        }
+      ]
+    },
+    {
+      "id": "yes-jesus-church",
+      "name": "Yes Jesus Last Baptist Church filming facade",
+      "address": "184 Stuyvesant Avenue",
+      "neighborhood": "Bedford-Stuyvesant",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.689072,
+        -73.933518
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "do-the-right-thing",
+          "scene": "Smiley stands outside the church with pictures pinned to his shirt.",
+          "source_ids": [
+            "do-the-right-thing-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/do-the-right-thing-yes-jesus-church.jpg",
+            "thumbnail": "/images/film-map/do-the-right-thing-yes-jesus-church-thumb.jpg",
+            "alt": "Do the Right Thing: Smiley stands outside the church with pictures pinned to his shirt.",
+            "credit": "Do the Right Thing (1989) · NYC in Film",
+            "source_url": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+            "image_url": "https://nycinfilm.com/wp-content/uploads/2023/04/doright-church.gif?w=843&h=475",
+            "width": 720,
+            "height": 405
+          }
+        }
+      ]
+    },
+    {
+      "id": "mookie-home",
+      "name": "Mookie’s apartment",
+      "address": "173 Stuyvesant Avenue",
+      "neighborhood": "Bedford-Stuyvesant",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.689116,
+        -73.933049
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "do-the-right-thing",
+          "scene": "Mookie leaves his apartment wearing a Jackie Robinson jersey.",
+          "source_ids": [
+            "do-the-right-thing-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/do-the-right-thing-mookie-home.jpg",
+            "thumbnail": "/images/film-map/do-the-right-thing-mookie-home-thumb.jpg",
+            "alt": "Do the Right Thing: Mookie leaves his apartment wearing a Jackie Robinson jersey.",
+            "credit": "Do the Right Thing (1989) · NYC in Film",
+            "source_url": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+            "image_url": "https://nycinfilm.com/wp-content/uploads/2023/04/doright-mookie1.gif?w=775&h=420",
+            "width": 720,
+            "height": 390
+          }
+        }
+      ]
+    },
+    {
+      "id": "mother-sister-home",
+      "name": "Mother Sister’s window",
+      "address": "167 Stuyvesant Avenue",
+      "neighborhood": "Bedford-Stuyvesant",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.689332,
+        -73.933092
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "do-the-right-thing",
+          "scene": "Mother Sister watches the block from her window.",
+          "source_ids": [
+            "do-the-right-thing-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/do-the-right-thing-mother-sister-home.jpg",
+            "thumbnail": "/images/film-map/do-the-right-thing-mother-sister-home-thumb.jpg",
+            "alt": "Do the Right Thing: Mother Sister watches the block from her window.",
+            "credit": "Do the Right Thing (1989) · NYC in Film",
+            "source_url": "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/",
+            "image_url": "https://nycinfilm.com/wp-content/uploads/2023/04/ezgif.com-optimize.gif?w=800&h=434",
+            "width": 720,
+            "height": 390
+          }
+        }
+      ]
+    },
+    {
+      "id": "corleone-compound",
+      "name": "Corleone compound",
+      "address": "110 Longfellow Avenue",
+      "neighborhood": "Todt Hill",
+      "borough": "Staten Island",
+      "coordinates": [
+        40.606518,
+        -74.097912
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "the-godfather",
+          "scene": "Cars enter the Corleone family’s guarded compound.",
+          "source_ids": [
+            "the-godfather-then-now"
+          ],
+          "still": {
+            "src": "/images/film-map/the-godfather-corleone-compound.jpg",
+            "thumbnail": "/images/film-map/the-godfather-corleone-compound-thumb.jpg",
+            "alt": "The Godfather: Cars enter the Corleone family’s guarded compound.",
+            "credit": "The Godfather (1972) · Then & Now Movie Locations",
+            "source_url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZ6GrafSVBkIyW84Mcbnipaf2Ev0zDctWysfwmwpja4acuX_reporN2Hg6cEGDkVvNqkQTQ7icv7QTsFXLcgSwH5L-LfPD_RBgVfhZSHw7D9XBbN0iEQpdx5bSKNZroEmGG9edv8i5nB4VNp49atLooT-s9RYWrNUYL49BmKtA_GAuFy2Xftxbm-Ys5sw/w580-h640/Screenshot%20(13181).png",
+            "width": 579,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "id": "genco-oil",
+      "name": "Genco Pura Olive Oil Company",
+      "address": "128 Mott Street",
+      "neighborhood": "Chinatown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.718485,
+        -73.996478
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-godfather",
+          "scene": "A black car waits outside the Genco Olive Oil entrance.",
+          "source_ids": [
+            "the-godfather-then-now"
+          ],
+          "still": {
+            "src": "/images/film-map/the-godfather-genco-oil.jpg",
+            "thumbnail": "/images/film-map/the-godfather-genco-oil-thumb.jpg",
+            "alt": "The Godfather: A black car waits outside the Genco Olive Oil entrance.",
+            "credit": "The Godfather (1972) · Then & Now Movie Locations",
+            "source_url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHD7h0k54_yPZ6xjlqBG3DyWPxqZzQuXeEvgY99VVX-xph5S4cFe82MQZqFJAVmFyKxFKkzUeV-ki-IbGyjSj_cClPeQ4h3mPN7SgFzCJ9o6gIdcdssQ8oV_erfllSCGMSswbaRV6tI8s/s640/Screenshot+%25281325%2529.png",
+            "width": 577,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "id": "vito-mott-shooting",
+      "name": "Mott Street assassination attempt",
+      "address": "137 Mott Street",
+      "neighborhood": "Little Italy",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.71859,
+        -73.996884
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-godfather",
+          "scene": "Vito shops at the outdoor fruit stand on Mott Street.",
+          "source_ids": [
+            "the-godfather-then-now"
+          ],
+          "still": {
+            "src": "/images/film-map/the-godfather-vito-mott-shooting.jpg",
+            "thumbnail": "/images/film-map/the-godfather-vito-mott-shooting-thumb.jpg",
+            "alt": "The Godfather: Vito shops at the outdoor fruit stand on Mott Street.",
+            "credit": "The Godfather (1972) · Then & Now Movie Locations",
+            "source_url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGz6HFn71qJrSOHKKVuBedqyzM9FsIIF-jBTX1164cZ9Glaq1GPGv9v3dZUrtmjZYq4nXkES5Rg-pJVhRjyAm5w1Sk14LAnuvpPEOEB62AseSK7PMMJGmAjeTqLlZeYevFC0sjuMjgChE/s640/Screenshot+%25281327%2529.png",
+            "width": 577,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "id": "clemenza-house",
+      "name": "Clemenza’s house",
+      "address": "1999 East 5th Street",
+      "neighborhood": "Gravesend",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.601722,
+        -73.967343
+      ],
+      "access": "Exterior only",
+      "visit_note": "Private premises. View from the public sidewalk; the pin does not grant access to interiors.",
+      "scenes": [
+        {
+          "film_id": "the-godfather",
+          "scene": "Parked cars line the driveway beside Clemenza’s house.",
+          "source_ids": [
+            "the-godfather-then-now"
+          ],
+          "still": {
+            "src": "/images/film-map/the-godfather-clemenza-house.jpg",
+            "thumbnail": "/images/film-map/the-godfather-clemenza-house-thumb.jpg",
+            "alt": "The Godfather: Parked cars line the driveway beside Clemenza’s house.",
+            "credit": "The Godfather (1972) · Then & Now Movie Locations",
+            "source_url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlULeNS7a-SmhVqgRGRWPwuKpZp-FZhjsCK1bg9Noc-2kK7idSkLfr4tWNwIrEzITT086yuUO6H7liGrzInl8GInnY23VBBJspoqrWYndYbegHvfxgJTxzLQixcmvhPwd4wPk_YEp25_8/s640/Screenshot+%25281331%2529.png",
+            "width": 580,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "id": "louis-restaurant",
+      "name": "Louis Restaurant filming site",
+      "address": "3531 White Plains Road",
+      "neighborhood": "Olinville",
+      "borough": "Bronx",
+      "coordinates": [
+        40.878398,
+        -73.866466
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-godfather",
+          "scene": "The restaurant’s neon signs light up the night street.",
+          "source_ids": [
+            "the-godfather-then-now"
+          ],
+          "still": {
+            "src": "/images/film-map/the-godfather-louis-restaurant.jpg",
+            "thumbnail": "/images/film-map/the-godfather-louis-restaurant-thumb.jpg",
+            "alt": "The Godfather: The restaurant’s neon signs light up the night street.",
+            "credit": "The Godfather (1972) · Then & Now Movie Locations",
+            "source_url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwfOY3-5CX2Mn7yNIeD9o6W2axs_n3yOnqbP9phJyYvWcpdd33U1dTKZfxymEQNsStcEskChKuNYZL_PHeAx0KfC5WLXrALk_IrU21G2oB7fBM99s4riR6-_2MSrUqKQUj0TfnjrxMUIE/s640/Screenshot+%25281334%2529.png",
+            "width": 577,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "id": "sonny-carlo-fight",
+      "name": "Sonny and Carlo’s fight",
+      "address": "503 East 118th Street",
+      "neighborhood": "Spanish Harlem",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.796335,
+        -73.931657
+      ],
+      "access": "Public streets",
+      "visit_note": "View from the public sidewalk. The film records this location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-godfather",
+          "scene": "Carlo stands on the East Harlem stoop before Sonny arrives.",
+          "source_ids": [
+            "the-godfather-then-now"
+          ],
+          "still": {
+            "src": "/images/film-map/the-godfather-sonny-carlo-fight.jpg",
+            "thumbnail": "/images/film-map/the-godfather-sonny-carlo-fight-thumb.jpg",
+            "alt": "The Godfather: Carlo stands on the East Harlem stoop before Sonny arrives.",
+            "credit": "The Godfather (1972) · Then & Now Movie Locations",
+            "source_url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgufgRhlT6-rypH_t2Me8gDgaV67YwF7G6HXNa7CeaTCeLGoLOdDOojG2oanegMfErApPP_KEchJ-TCKkTcwdJxBvVTydYL18kVH8NxbBPySmy-2ZY72pWxDXRKvpgPN2Agc8j4WdkEcjw/s640/Screenshot+%25281335%2529.png",
+            "width": 578,
+            "height": 320
           }
         }
       ]

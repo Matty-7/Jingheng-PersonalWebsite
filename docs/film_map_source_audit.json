@@ -1,0 +1,202 @@
+{
+  "reviewed_on": "2026-09-21",
+  "films": [
+    {
+      "film_id": "manhattan",
+      "title": "Manhattan",
+      "location_count": 18,
+      "source_urls": [
+        "https://onthesetofnewyork.com/manhattan.html",
+        "https://onthesetofnewyork.com/manhattanmurdermystery.html"
+      ]
+    },
+    {
+      "film_id": "youve-got-mail",
+      "title": "You've Got Mail",
+      "location_count": 12,
+      "source_urls": [
+        "https://onthesetofnewyork.com/youvegotmail.html"
+      ]
+    },
+    {
+      "film_id": "anora",
+      "title": "Anora",
+      "location_count": 6,
+      "source_urls": [
+        "https://onthesetofnewyork.com/anora.html",
+        "https://www.cntraveler.com/story/on-location-anora",
+        "https://nypost.com/2025/03/05/us-news/after-oscars-sweep-anora-brooklyn-filming-locations-get-their-moment-in-the-spotlight/"
+      ]
+    },
+    {
+      "film_id": "annie-hall",
+      "title": "Annie Hall",
+      "location_count": 13,
+      "source_urls": [
+        "https://onthesetofnewyork.com/anniehall.html",
+        "https://movie-tourist.blogspot.com/2012/08/annie-hall-1977.html",
+        "https://movie-locations.com/movies/a/Annie-Hall.php",
+        "https://popspotsnyc.com/annie_hall/"
+      ]
+    },
+    {
+      "film_id": "when-harry-met-sally",
+      "title": "When Harry Met Sally",
+      "location_count": 10,
+      "source_urls": [
+        "https://onthesetofnewyork.com/whenharrymetsally.html"
+      ]
+    },
+    {
+      "film_id": "past-lives",
+      "title": "Past Lives",
+      "location_count": 6,
+      "source_urls": [
+        "https://onthesetofnewyork.com/pastlives.html"
+      ]
+    },
+    {
+      "film_id": "hannah-and-her-sisters",
+      "title": "Hannah and Her Sisters",
+      "location_count": 8,
+      "source_urls": [
+        "https://onthesetofnewyork.com/hannahandhersisters.html"
+      ]
+    },
+    {
+      "film_id": "manhattan-murder-mystery",
+      "title": "Manhattan Murder Mystery",
+      "location_count": 9,
+      "source_urls": [
+        "https://onthesetofnewyork.com/manhattanmurdermystery.html"
+      ]
+    },
+    {
+      "film_id": "broadway-danny-rose",
+      "title": "Broadway Danny Rose",
+      "location_count": 10,
+      "source_urls": [
+        "https://onthesetofnewyork.com/broadwaydannyrose.html"
+      ]
+    },
+    {
+      "film_id": "ghostbusters",
+      "title": "Ghostbusters",
+      "location_count": 8,
+      "source_urls": [
+        "https://onthesetofnewyork.com/ghostbusters.html"
+      ]
+    },
+    {
+      "film_id": "breakfast-at-tiffanys",
+      "title": "Breakfast at Tiffany’s",
+      "location_count": 5,
+      "source_urls": [
+        "https://onthesetofnewyork.com/breakfastattiffanys.html"
+      ]
+    },
+    {
+      "film_id": "home-alone-2",
+      "title": "Home Alone 2",
+      "location_count": 10,
+      "source_urls": [
+        "https://onthesetofnewyork.com/homealone2.html"
+      ]
+    },
+    {
+      "film_id": "north-by-northwest",
+      "title": "North by Northwest",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/northbynorthwest.html"
+      ]
+    },
+    {
+      "film_id": "spider-man",
+      "title": "Spider-Man",
+      "location_count": 7,
+      "source_urls": [
+        "https://onthesetofnewyork.com/spiderman.html"
+      ]
+    },
+    {
+      "film_id": "taxi-driver",
+      "title": "Taxi Driver",
+      "location_count": 7,
+      "source_urls": [
+        "https://onthesetofnewyork.com/taxidriver.html"
+      ]
+    },
+    {
+      "film_id": "the-godfather",
+      "title": "The Godfather",
+      "location_count": 8,
+      "source_urls": [
+        "https://onthesetofnewyork.com/thegodfather.html",
+        "https://www.thennowmovielocations.com/2019/06/the-godfather.html"
+      ]
+    },
+    {
+      "film_id": "serendipity",
+      "title": "Serendipity",
+      "location_count": 7,
+      "source_urls": [
+        "https://onthesetofnewyork.com/serendipity.html"
+      ]
+    },
+    {
+      "film_id": "the-devil-wears-prada",
+      "title": "The Devil Wears Prada",
+      "location_count": 11,
+      "source_urls": [
+        "https://onthesetofnewyork.com/thedevilwearsprada.html"
+      ]
+    },
+    {
+      "film_id": "goodfellas",
+      "title": "Goodfellas",
+      "location_count": 2,
+      "source_urls": [
+        "https://onthesetofnewyork.com/goodfellas.html"
+      ]
+    },
+    {
+      "film_id": "do-the-right-thing",
+      "title": "Do the Right Thing",
+      "location_count": 5,
+      "source_urls": [
+        "https://onthesetofnewyork.com/dotherightthing.html",
+        "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/"
+      ]
+    }
+  ],
+  "held_candidates": [
+    {
+      "film_id": "manhattan",
+      "name": "Rizzoli Bookstore, former site",
+      "address": "31 West 57th Street",
+      "source_url": "https://onthesetofnewyork.com/manhattan.html",
+      "issue": "Historical address conflict: 31 West 57th Street opened in 1985, after Manhattan (1979). Likely filming-era store is 712 Fifth Avenue; do not use 31 West 57th.",
+      "suggested_address": "712 Fifth Avenue",
+      "supporting_source_url": "https://en.wikipedia.org/wiki/Rizzoli_Bookstore",
+      "status": "hold_for_historical_address_verification"
+    },
+    {
+      "film_id": "manhattan",
+      "name": "FAO Schwarz, former Fifth Avenue store",
+      "address": "767 Fifth Avenue at East 59th Street",
+      "source_url": "https://onthesetofnewyork.com/manhattan.html",
+      "issue": "Historical address conflict: 767 Fifth Avenue opened in 1986, after Manhattan (1979). Filming-era FAO Schwarz was at 745 Fifth Avenue.",
+      "suggested_address": "745 Fifth Avenue",
+      "supporting_source_url": "https://en.wikipedia.org/wiki/FAO_Schwarz",
+      "status": "hold_for_historical_address_verification"
+    }
+  ],
+  "additional_exclusions": [
+    "Spider-Man wrestling venue: the supplied exterior frame shows Madison Square Garden, while the page labels the 69th Regiment Armory. Excluded rather than mapping the wrong venue.",
+    "Unresolved Annie Hall New Yorker Theater address conflict.",
+    "Broad non-specific park/river shots and repeated views of already mapped venues are not separate pins.",
+    "The remaining source-page street blocks are inventoried but not yet given independently checked frame/geographic associations. This catalog is not an exhaustive list of every filming location.",
+    "Goodfellas: added-address research did not produce a verified scene-specific image in this pass. Two established locations remain."
+  ]
+}
