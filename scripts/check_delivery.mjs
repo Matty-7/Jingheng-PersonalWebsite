@@ -77,12 +77,26 @@ export async function runtime_image_paths(project_root = root) {
   }
   files.push(...[...imported_content].map((url) => new URL(url)));
   const paths = new Set();
+  const collect_json_paths = (value) => {
+    if (typeof value === 'string') {
+      if (
+        /^\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico)$/.test(value)
+      )
+        paths.add(value);
+    } else if (value && typeof value === 'object') {
+      Object.values(value).forEach(collect_json_paths);
+    }
+  };
   for (const file of files) {
     const source = await readFile(file, 'utf8');
+    if (file.pathname.endsWith('.json')) {
+      collect_json_paths(JSON.parse(source));
+      continue;
+    }
     for (const match of source.matchAll(
-      /\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico)/g,
+      /["'`(](\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico))(?=["'`)])/g,
     ))
-      paths.add(match[0]);
+      paths.add(match[1]);
   }
   return [...paths].sort((a, b) => a.localeCompare(b));
 }

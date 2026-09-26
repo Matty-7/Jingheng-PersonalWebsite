@@ -1,6 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import {
+  access,
+  mkdtemp,
+  mkdir,
+  readFile,
+  rm,
+  writeFile,
+} from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -33,7 +40,11 @@ test('runtime inventory includes alias and relative JSON imports without retired
     );
     await writeFile(
       join(directory, 'content/places.json'),
-      JSON.stringify(['/images/place.jpg', '/images/shared.jpg']),
+      JSON.stringify([
+        '/images/place.jpg',
+        '/images/shared.jpg',
+        'https://example.com/content/images/external.jpg',
+      ]),
     );
     await writeFile(
       join(directory, 'content/retired.json'),
@@ -50,20 +61,30 @@ test('runtime inventory includes alias and relative JSON imports without retired
 
 test('every current film and literary catalog image is included in delivery checks', async () => {
   const paths = new Set(await runtime_image_paths());
-  for (const name of ['nyc_film_locations', 'nyc_literary_locations']) {
-    const source = await readFile(
-      new URL(`../content/${name}.json`, import.meta.url),
+  const film = JSON.parse(
+    await readFile(
+      new URL('../content/nyc_film_locations.json', import.meta.url),
       'utf8',
-    );
-    const references = [
-      ...source.matchAll(
-        /\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico)/g,
+    ),
+  );
+  const literature = JSON.parse(
+    await readFile(
+      new URL('../content/nyc_literary_locations.json', import.meta.url),
+      'utf8',
+    ),
+  );
+  const references = [
+    ...film.locations.flatMap((place) =>
+      place.scenes.flatMap((scene) =>
+        scene.still ? [scene.still.src, scene.still.thumbnail] : [],
       ),
-    ];
-    assert.ok(references.length > 0);
-    for (const [path] of references)
-      assert.ok(paths.has(path), `${name}: missing ${path}`);
-  }
+    ),
+    ...literature.works.flatMap((work) => (work.cover ? [work.cover.src] : [])),
+  ];
+  assert.ok(references.length > 0);
+  for (const path of references) assert.ok(paths.has(path), `Missing ${path}`);
+  for (const path of paths)
+    await access(new URL(`../public${path}`, import.meta.url));
 });
 
 test('a 200 response is insufficient when a gateway substitutes HTML or stale bytes', () => {
