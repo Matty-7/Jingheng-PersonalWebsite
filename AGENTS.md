@@ -19,15 +19,17 @@
 - Run npm run lint, npx tsc --noEmit, npm test, node scripts/check-content.mjs and npm run build after substantive changes. Vendored components/ui and hooks/use-mobile.ts are excluded from application lint and should not be edited for routine styling.
 - Do not claim animation, MusicKit integration, or browser checks that were not implemented or performed.
 
-## Four-role collaboration
+## Proportionate collaboration
 
-For substantive development, follow `docs/agent_workflow.md`: design critic, design editor, engineer, regression reviewer, then critic closure. The Site-owning parent acts as engineer and is the only writer to the checkout and the only agent that commits, pushes, opens PRs, or saves/deploys Sites. Spawn bounded read-only critique/design/review tasks; those agents may message one another. Asset agents return files outside the checkout for the owner to integrate.
+On September 26, 2026, Jingheng requested faster website iterations because repeated subagent reviews were taking too long. For foreground work with an accepted user scope, the default is the parent engineer plus **one independent read-only PR reviewer**. Do not automatically run a critic, design editor or critic-closure round. Add one design pass only when a material design decision is unresolved. The separate daily visitor audit retains its critic/editor discovery and closure requirements. Use the routing, review budgets and handoff in `docs/agent_workflow.md` and `docs/agent_roles.md`.
+
+The Site-owning parent is the only writer to the checkout and the only agent that commits, pushes, opens PRs, or saves/deploys Sites. Review the final stable diff while CI runs; inspect existing evidence instead of repeating the entire test suite. Repairs require explicit approval of the new full head, using a delta review when appropriate. Give each agent only its scope and evidence, prohibit nested delegation, and report review time separately from CI/deployment time. Asset agents return files outside the checkout for the owner to integrate.
 
 Use snake_case for new helpers and task files, preserve framework-required naming, and avoid gratuitous renaming of existing code. Keep prose understated, avoid generic personal-brand slogans, and preserve the author's voice.
 
 ## Autonomous review, merge and deployment
 
-On September 7, 2026, Jingheng explicitly authorized the full critic -> design editor -> engineer -> independent PR reviewer -> merge -> public deploy -> critic loop, including current PR #1. Passing independent review and required checks authorize the engineer to merge the reviewed PR into `main` and deploy it without another conversational confirmation. This supersedes the earlier instruction that only deployment after a user-performed merge was authorized.
+On September 7, 2026, Jingheng explicitly authorized independent reviewed merges and public deployment, including then-current PR #1. The September 26 foreground routing above supersedes the original mandatory full critic/editor/engineer/reviewer/critic sequence for user-directed iterations. Passing independent review and required checks authorize the engineer to merge the reviewed PR into `main` and deploy it without another conversational confirmation. This supersedes the earlier instruction that only deployment after a user-performed merge was authorized.
 
 Use `docs/agent_workflow.md` and the role briefs in `docs/agent_roles.md`. Keep this existing Site, domain and public audience. Routine code quality, accessibility, performance and layout improvements are in scope; preserve the author's approved article text and established design direction. Only make changes that have evidence and an accepted spec. If no worthwhile issue remains, record that outcome and leave the site unchanged.
 
