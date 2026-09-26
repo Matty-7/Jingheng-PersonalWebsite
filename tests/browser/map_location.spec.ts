@@ -208,7 +208,9 @@ test('cross-map history preserves the destination map parameters after reload', 
   await expect(
     page.getByRole('button', { name: 'Riverside', exact: true }),
   ).toHaveAttribute('aria-pressed', 'true');
-  await page.getByRole('link', { name: 'Explore the NYC Film Map' }).click();
+  await page
+    .getByRole('link', { name: 'Explore the NYC Film & TV Map' })
+    .click();
   await expect(
     page.getByRole('button', { name: 'Manhattan 1979', exact: true }),
   ).toBeEnabled();

@@ -36,7 +36,9 @@ test('real scene frames have local derivatives and matching provenance; missing 
       assert.ok(record, `${place.id}/${scene.film_id}`);
       if (!scene.still) { missing.push(place.id); continue; }
       const still = scene.still;
-      assert.equal(record.frame_status, 'verified_frame');
+      const expected_status = { production_still: 'verified_production_still', episode_image: 'verified_episode_image' };
+      assert.ok(still.kind === undefined || Object.hasOwn(expected_status, still.kind));
+      assert.equal(record.frame_status, still.kind ? expected_status[still.kind] : 'verified_frame');
       assert.equal(record.original_image, still.image_url);
       assert.equal(record.source_page, still.source_url);
       assert.ok(still.alt && still.credit && still.width > 0 && still.height > 0);
@@ -55,6 +57,22 @@ test('real scene frames have local derivatives and matching provenance; missing 
   assert.deepEqual(missing.sort((a, b) => a.localeCompare(b)), ['ocean-view', 'tatiana']);
   assert.ok(originals.size > 100, 'The expanded catalog retains verified scene-specific frames');
   const summary = JSON.parse(readFileSync(new URL('../content/nyc_film_map_summary.json', import.meta.url), 'utf8'));
-  assert.deepEqual(summary, { film_count: data.films.length, place_count: data.locations.length });
+  assert.deepEqual(summary, {
+    film_count: data.films.filter((work) => work.format !== 'series').length,
+    series_count: data.films.filter((work) => work.format === 'series').length,
+    place_count: data.locations.length,
+  });
   for (const id of ['manhattan', 'annie-hall', 'hannah-and-her-sisters', 'manhattan-murder-mystery']) assert.ok(data.films.some((film) => film.id === id), id);
+});
+
+test('series carry explicit format, creator and completed run metadata without changing the film catalog', () => {
+  const films = data.films.filter((work) => work.format !== 'series');
+  const series = data.films.filter((work) => work.format === 'series');
+  assert.equal(films.length, 32);
+  assert.equal(series.length, 6);
+  for (const work of series) {
+    assert.ok(work.creators && !work.director, work.id);
+    assert.ok(Number.isInteger(work.year) && Number.isInteger(work.end_year));
+    assert.ok(work.end_year >= work.year && work.end_year <= 2026, work.id);
+  }
 });

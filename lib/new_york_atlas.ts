@@ -3,6 +3,10 @@ import {
   film_locations,
   google_film_embed_url,
   google_maps_url,
+  screen_creator,
+  screen_kind,
+  screen_year,
+  type ScreenWork,
   type FilmLocation,
   type FilmScene,
 } from './nyc_film_map.ts';
@@ -42,7 +46,12 @@ type AtlasBase = {
 };
 export type AtlasEntry = AtlasBase &
   (
-    | { medium: 'film'; location: FilmLocation; scene: FilmScene }
+    | {
+        medium: 'film';
+        location: FilmLocation;
+        scene: FilmScene;
+        work: ScreenWork;
+      }
     | { medium: 'literature'; passage: LiteraryEntry; work: LiteraryWork }
     | { medium: 'music'; track: MusicTrack; place: MusicPlace }
   );
@@ -142,7 +151,7 @@ export const atlas_entries: AtlasEntry[] = [
         medium: 'film',
         place_key: `film:${location.id}`,
         title: film.title,
-        creator: film.director,
+        creator: screen_creator(film),
         year: film.year,
         place_name: location.name,
         area: `${location.neighborhood}, ${location.borough}`,
@@ -152,6 +161,7 @@ export const atlas_entries: AtlasEntry[] = [
         collection_url: `/portfolio/nyc-film-map?film=${film.id}&place=${location.id}`,
         location,
         scene,
+        work: film,
       };
     }),
   ),
@@ -210,10 +220,22 @@ export const atlas_counts = {
 };
 export const atlas_labels: Record<AtlasFilter, string> = {
   all: 'All',
-  film: 'Film',
+  film: 'Film & TV',
   literature: 'Literature',
   music: 'Music',
 };
+
+export function atlas_entry_label(entry: AtlasEntry) {
+  return entry.medium === 'film'
+    ? screen_kind(entry.work)
+    : atlas_labels[entry.medium];
+}
+
+export function atlas_year(entry: AtlasEntry) {
+  return entry.medium === 'film'
+    ? screen_year(entry.work)
+    : (entry.year ?? 'Year unverified');
+}
 
 function search_text(value: string) {
   return value
@@ -234,7 +256,7 @@ export function search_atlas(medium: AtlasFilter, query: string) {
       [
         entry.title,
         entry.creator,
-        entry.year,
+        atlas_year(entry),
         entry.place_name,
         entry.area,
         entry.relationship,

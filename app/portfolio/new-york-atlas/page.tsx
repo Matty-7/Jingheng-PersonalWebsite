@@ -7,7 +7,7 @@ import './new_york_atlas.css';
 
 export const metadata = pageMetadata(
   'New York Atlas | Jingheng Huan',
-  'Explore New York through film, literature and music. Discover filming locations, original passages and song previews connected by the places they share.',
+  'Explore New York through film, television, literature and music. Discover filming locations, original passages and song previews connected by the places they share.',
   '/portfolio/new-york-atlas',
 );
 
@@ -24,7 +24,7 @@ export default function NewYorkAtlasPage() {
         <h1>
           New York <em>Atlas.</em>
         </h1>
-        <p>Film, literature, and music.</p>
+        <p>Film &amp; TV, literature, and music.</p>
       </header>
       <NewYorkAtlas google_maps_key={google_maps_embed_key()} />
       <footer className="atlas-footer">
@@ -37,7 +37,7 @@ export default function NewYorkAtlasPage() {
             building.
           </p>
           <p>
-            Film scenes may contain spoilers. Check access before visiting; view
+            Film and TV scenes may contain spoilers. Check access before visiting; view
             residential locations from the public sidewalk.
           </p>
         </details>

@@ -6,8 +6,8 @@ import { pageMetadata } from '@/lib/seo';
 import './nyc_film_map.css';
 
 export const metadata = pageMetadata(
-  'NYC Film Map | Jingheng Huan',
-  'Explore New York through Manhattan, You’ve Got Mail, Anora and more. Find real filming locations, matching movie frames and links to each place on Google Maps.',
+  'NYC Film & TV Map | Jingheng Huan',
+  'Explore New York through films and TV series. Find real filming locations, matching scene images and links to each place on Google Maps.',
   '/portfolio/nyc-film-map',
 );
 
@@ -20,12 +20,12 @@ export default function NycFilmMapPage() {
         <Link href="/portfolio/new-york-atlas">← New York Atlas</Link>
       </nav>
       <header className="cinema-heading">
-        <h1>NYC Film <em>Map.</em></h1>
-        <p>The city, as seen in the movies.</p>
+        <h1>NYC Film &amp; TV <em>Map.</em></h1>
+        <p>The city, on screen.</p>
       </header>
       <NycFilmMap google_maps_key={google_maps_embed_key()} />
       <footer className="cinema-footnote">
-        <p>A growing collection of sourced filming locations. Pins mark venues or public approaches, not camera positions. Film frames are shown with source credits. Scene descriptions may contain spoilers.</p>
+        <p>A growing collection of sourced filming locations. Pins mark venues or public approaches, not camera positions. Scene images are shown with source credits. Scene descriptions may contain spoilers.</p>
         <p>Check current opening hours and admission before visiting. Residential locations are for viewing from the public sidewalk only. Latest additions reviewed September 26, 2026.</p>
       </footer>
     </main>

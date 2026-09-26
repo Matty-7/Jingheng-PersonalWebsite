@@ -20,14 +20,16 @@ import {
   atlas_connections,
   atlas_counts,
   atlas_embed_url,
+  atlas_entry_label,
   atlas_labels,
   atlas_location,
   atlas_maps_url,
+  atlas_year,
   search_atlas,
   type AtlasEntry,
   type AtlasFilter,
 } from '@/lib/new_york_atlas';
-import { film_sources } from '@/lib/nyc_film_map';
+import { film_sources, screen_credit } from '@/lib/nyc_film_map';
 import { artist_connection, preview_time } from '@/lib/nyc_music_map';
 import { useMapLocation } from './use_map_location';
 import { useMusicPreview } from './use_music_preview';
@@ -103,7 +105,7 @@ function AtlasStory({ entry }: { entry: AtlasEntry }) {
             <figcaption>
               {scene.still.credit} ·{' '}
               <SourceLink href={scene.still.source_url}>
-                Frame source
+                {scene.still.kind ? 'Image source' : 'Frame source'}
               </SourceLink>
             </figcaption>
           </figure>
@@ -323,7 +325,7 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
                   </span>
                   <span className="atlas-result-copy">
                     <span className="sr-only">
-                      {atlas_labels[entry.medium]}:{' '}
+                      {atlas_entry_label(entry)}:{' '}
                     </span>
                     <strong>{entry.place_name}</strong>
                     <span>{entry.title}</span>
@@ -376,7 +378,7 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
               {results.map((entry) => (
                 <option key={entry.id} value={entry.id}>
                   {entry.place_name} · {entry.title} ·{' '}
-                  {atlas_labels[entry.medium]}
+                  {atlas_entry_label(entry)}
                 </option>
               ))}
             </select>
@@ -454,11 +456,14 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
                 <div>
                   <p className="atlas-eyebrow">
                     <MediumIcon medium={selected.medium} />
-                    {atlas_labels[selected.medium]} ·{' '}
-                    {selected.year ?? 'Year unverified'}
+                    {atlas_entry_label(selected)} · {atlas_year(selected)}
                   </p>
                   <h3>{selected.title}</h3>
-                  <p>{selected.creator}</p>
+                  <p>
+                    {selected.medium === 'film'
+                      ? screen_credit(selected.work)
+                      : selected.creator}
+                  </p>
                   {selected.medium === 'music' && (
                     <p className="atlas-caption">
                       {selected.track.album} · {selected.track.genre}
@@ -532,7 +537,7 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
                     >
                       <span className="atlas-result-medium">
                         <MediumIcon medium={entry.medium} />
-                        {atlas_labels[entry.medium]}
+                        {atlas_entry_label(entry)}
                       </span>
                       <strong>{entry.title}</strong>
                       <span>{entry.place_name}</span>
@@ -561,7 +566,7 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
       <nav className="atlas-collections" aria-label="Complete collections">
         <span>Explore a collection</span>
         <Link href="/portfolio/nyc-film-map">
-          Film scenes <ArrowUpRight size={15} />
+          Film &amp; TV scenes <ArrowUpRight size={15} />
         </Link>
         <Link href="/portfolio/nyc-literary-map">
           Literary passages <ArrowUpRight size={15} />

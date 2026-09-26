@@ -1658,6 +1658,189 @@
       "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=96+Lafayette+Street+Manhattan",
       "coordinate_matched_name": "96 LAFAYETTE STREET",
       "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "friends-bedford-building",
+      "address": "90 Bedford Street at Grove Street",
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "coordinates": [
+        40.732292,
+        -74.005243
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=90%20Bedford%20Street%20Manhattan",
+      "coordinate_matched_name": "90 BEDFORD STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "solow-building",
+      "address": "9 West 57th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown",
+      "coordinates": [
+        40.763836,
+        -73.974935
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=9%20West%2057th%20Street%20Manhattan",
+      "coordinate_matched_name": "9 WEST 57 STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "phoebe-apartment",
+      "address": "454 West 58th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Hell’s Kitchen",
+      "coordinates": [
+        40.769257,
+        -73.987275
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=454%20West%2058th%20Street%20Manhattan",
+      "coordinate_matched_name": "454 WEST 58 STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "toms-restaurant",
+      "address": "2880 Broadway at West 112th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Morningside Heights",
+      "coordinates": [
+        40.805497,
+        -73.965247
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2880%20Broadway%20Manhattan",
+      "coordinate_matched_name": "2880 BROADWAY",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "costanza-house",
+      "address": "22-37 37th Street",
+      "borough": "Queens",
+      "neighborhood": "Astoria",
+      "coordinates": [
+        40.772917,
+        -73.908294
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=22-37%2037th%20Street%20Queens",
+      "coordinate_matched_name": "22-37 37 STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "magnolia-bakery",
+      "address": "401 Bleecker Street at West 11th Street",
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "coordinates": [
+        40.735863,
+        -74.004944
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=401%20Bleecker%20Street%20Manhattan",
+      "coordinate_matched_name": "401 BLEECKER STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "jefferson-market-garden",
+      "address": "Greenwich Avenue between Sixth Avenue and West 10th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Greenwich Village",
+      "coordinates": [
+        40.7345,
+        -73.99939
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=10%20Greenwich%20Avenue%20Manhattan",
+      "coordinate_matched_name": "10 GREENWICH AVENUE",
+      "method": "NYC Planning point for the historical 10 Greenwich Avenue parcel; public garden entrance is on Greenwich Avenue between Sixth Avenue and West 10th Street, not a camera position.",
+      "entrance_source_url": "https://www.jeffersonmarketgarden.org/visit"
+    },
+    {
+      "id": "new-york-palace",
+      "address": "455 Madison Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.757994,
+        -73.974923
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=455%20Madison%20Avenue%20Manhattan",
+      "coordinate_matched_name": "455 MADISON AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "jean-georges",
+      "address": "1 Central Park West",
+      "borough": "Manhattan",
+      "neighborhood": "Lincoln Square",
+      "coordinates": [
+        40.769149,
+        -73.981539
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1%20Central%20Park%20West%20Manhattan",
+      "coordinate_matched_name": "1 CENTRAL PARK WEST",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "the-mark-hotel",
+      "address": "25 East 77th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.775324,
+        -73.963271
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=25%20East%2077th%20Street%20Manhattan",
+      "coordinate_matched_name": "25 EAST 77 STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "chelsea-square-diner",
+      "address": "368 West 23rd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Chelsea",
+      "coordinates": [
+        40.746235,
+        -74.00127
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=368%20West%2023rd%20Street%20Manhattan",
+      "coordinate_matched_name": "368 WEST 23 STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "albanese-meats",
+      "address": "238 Elizabeth Street",
+      "borough": "Manhattan",
+      "neighborhood": "Nolita",
+      "coordinates": [
+        40.723224,
+        -73.993753
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=238%20Elizabeth%20Street%20Manhattan",
+      "coordinate_matched_name": "238 ELIZABETH STREET",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "la-bonbonniere",
+      "address": "28 Eighth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "coordinates": [
+        40.737761,
+        -74.004359
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=28%20Eighth%20Avenue%20Manhattan",
+      "coordinate_matched_name": "28 EIGHTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
+    },
+    {
+      "id": "b-altman-building",
+      "address": "365 Fifth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown South",
+      "coordinates": [
+        40.748527,
+        -73.983641
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=365%20Fifth%20Avenue%20Manhattan",
+      "coordinate_matched_name": "365 FIFTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; building point, not a camera position."
     }
   ]
 }
