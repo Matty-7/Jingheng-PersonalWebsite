@@ -128,7 +128,9 @@ test('server HTML keeps a light directory and renders only a requested location'
   const initial_html = await initial.text();
   expect(Buffer.byteLength(initial_html)).toBeLessThan(450_000);
   expect(initial_html).not.toContain('class="cinema-selected"');
-  expect(initial_html).toContain('Read scenes at Café Lalo');
+  expect(initial_html.replaceAll('<!-- -->', '')).toContain(
+    'Read scenes at Café Lalo',
+  );
   const selected = await request.get(
     '/portfolio/nyc-film-map?film=youve-got-mail&place=cafe-lalo',
   );
