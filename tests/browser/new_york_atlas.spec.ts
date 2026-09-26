@@ -26,7 +26,10 @@ test('Atlas unifies search and filters, preserves empty state and mobile layout'
   await expect(page.locator('.atlas-story blockquote')).toContainText(
     'white marble steps',
   );
-  await page.getByRole('button', { name: /^Music/ }).click();
+  await page
+    .locator('.atlas-filters')
+    .getByRole('button', { name: /^Music/ })
+    .click();
   await expect(
     page.getByRole('heading', { name: 'No connections found.' }),
   ).toBeVisible();
@@ -110,7 +113,10 @@ test('music preview stays user initiated and failure leaves music and location l
     'href',
     /maps\/search/,
   );
-  await page.getByRole('button', { name: /^Film/ }).click();
+  await page
+    .locator('.atlas-filters')
+    .getByRole('button', { name: /^Film/ })
+    .click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
   await expect(page.locator('iframe')).toHaveCount(0);
 });
