@@ -3,10 +3,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { map_location_url, type MapLocationCodec } from '@/lib/map_location';
 
-export function useMapLocation<State>(codec: MapLocationCodec<State>) {
-  const [state, set_state] = useState(codec.initial_state);
+export function useMapLocation<State>(
+  codec: MapLocationCodec<State>,
+  initial_state: State = codec.initial_state,
+) {
+  const [state, set_state] = useState(initial_state);
   const [ready, set_ready] = useState(false);
-  const current = useRef(codec.initial_state);
+  const current = useRef(initial_state);
   const initialized = useRef(false);
   const owner_path = useRef<string | null>(null);
 

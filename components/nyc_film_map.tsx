@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useMapLocation } from './use_map_location';
-import { film_location } from '@/lib/nyc_film_location';
+import { film_location, type FilmSelection } from '@/lib/nyc_film_location';
 import Image from 'next/image';
 import {
   ArrowUpRight,
@@ -154,8 +154,18 @@ function SceneDetails({
   );
 }
 
-export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
-  const { state, update, ready: interactive } = useMapLocation(film_location);
+export function NycFilmMap({
+  google_maps_key,
+  initial_selection,
+}: {
+  google_maps_key: string;
+  initial_selection?: FilmSelection;
+}) {
+  const {
+    state,
+    update,
+    ready: interactive,
+  } = useMapLocation(film_location, initial_selection);
   const { film_id, query, selected_id } = state;
   const [collapsed_selection, set_collapsed_selection] = useState<
     typeof state | null
@@ -548,45 +558,55 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
                         aria-hidden="true"
                       />
                     </summary>
-                    <section
-                      className="cinema-selected"
-                      aria-label={`Details for ${location.name}`}
-                      tabIndex={-1}
-                      ref={(element) => {
-                        if (element)
-                          details_elements.current.set(location.id, element);
-                        else details_elements.current.delete(location.id);
-                      }}
-                    >
-                      <div className="cinema-selected-title">
-                        <h3>{location.name}</h3>
-                        <button
-                          aria-label={`Show ${location.name} on map`}
-                          onClick={() => {
-                            map_panel.current?.focus({ preventScroll: true });
-                            map_panel.current?.scrollIntoView({
-                              block: 'start',
-                              behavior: 'instant',
-                            });
-                          }}
+                    {selected ? (
+                      <section
+                        className="cinema-selected"
+                        aria-label={`Details for ${location.name}`}
+                        tabIndex={-1}
+                        ref={(element) => {
+                          if (element)
+                            details_elements.current.set(location.id, element);
+                          else details_elements.current.delete(location.id);
+                        }}
+                      >
+                        <div className="cinema-selected-title">
+                          <h3>{location.name}</h3>
+                          <button
+                            aria-label={`Show ${location.name} on map`}
+                            onClick={() => {
+                              map_panel.current?.focus({ preventScroll: true });
+                              map_panel.current?.scrollIntoView({
+                                block: 'start',
+                                behavior: 'instant',
+                              });
+                            }}
+                          >
+                            <MapPin size={17} aria-hidden="true" />
+                          </button>
+                          <button
+                            aria-label="Close location details"
+                            onClick={() => {
+                              const summary = details_elements.current
+                                .get(location.id)
+                                ?.parentElement?.querySelector('summary');
+                              close_location();
+                              summary?.focus();
+                            }}
+                          >
+                            <X size={17} />
+                          </button>
+                        </div>
+                        <SceneDetails location={location} film_id={film_id} />
+                      </section>
+                    ) : (
+                      <noscript>
+                        <a
+                          href={`?${new URLSearchParams(film_location.write({ ...state, selected_id: location.id }))}`}
                         >
-                          <MapPin size={17} aria-hidden="true" />
-                        </button>
-                        <button
-                          aria-label="Close location details"
-                          onClick={() => {
-                            close_location();
-                            details_elements.current
-                              .get(location.id)
-                              ?.parentElement?.querySelector('summary')
-                              ?.focus();
-                          }}
-                        >
-                          <X size={17} />
-                        </button>
-                      </div>
-                      <SceneDetails location={location} film_id={film_id} />
-                    </section>
+                          Read scenes at {location.name}
+                        </a>
+                      </noscript>
+                    )}
                   </details>
                 </li>
               );

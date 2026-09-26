@@ -1,4 +1,5 @@
 import { google_place_embed_url, google_place_url } from './google_maps.ts';
+import { normalize_search_text } from './search_text.ts';
 import catalog from '../content/nyc_music_map.json' with { type: 'json' };
 
 export type MusicConnection = {
@@ -28,17 +29,20 @@ export function artist_connection(track: MusicTrack, place_id: string) {
 }
 
 export function search_music(query: string): MusicTrack[] {
-  const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  const terms = normalize_search_text(query)
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
   return music_tracks.filter((track) => {
-    const text = [
-      track.title,
-      track.artist,
-      track.album,
-      track.genre,
-      ...track_places(track).flatMap((place) => [place.name, place.area]),
-    ]
-      .join(' ')
-      .toLocaleLowerCase();
+    const text = normalize_search_text(
+      [
+        track.title,
+        track.artist,
+        track.album,
+        track.genre,
+        ...track_places(track).flatMap((place) => [place.name, place.area]),
+      ].join(' '),
+    );
     return terms.every((term) => text.includes(term));
   });
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "later-article",
+    "title": "Later article",
+    "date": "2026-09-21",
+    "kind": "Essay",
+    "status": "published",
+    "external_url": "https://example.com/p/later-article"
+  },
+  {
+    "slug": "earlier-article",
+    "title": "Earlier article",
+    "date": "2026-09-12",
+    "kind": "Essay",
+    "status": "published",
+    "external_url": "https://example.com/p/earlier-article"
+  }
+]

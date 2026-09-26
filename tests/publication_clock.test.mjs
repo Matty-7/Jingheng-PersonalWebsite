@@ -9,7 +9,7 @@ import { validate_newsletter_links } from '../lib/newsletter_schema.ts';
 test('publication visibility follows request time after a zero-clock Worker startup', () => {
   const posts = JSON.parse(
     readFileSync(
-      new URL('../content/newsletter_links.json', import.meta.url),
+      new URL('./fixtures/newsletter_links.json', import.meta.url),
       'utf8',
     ),
   );
@@ -50,12 +50,15 @@ test('publication visibility follows request time after a zero-clock Worker star
   now = Date.parse('2026-09-13T12:00:00Z');
   assert.deepEqual(
     exports.get_visible_posts().map((post) => post.slug),
-    posts
-      .filter((post) => post.status === 'published')
-      .map((post) => post.slug),
+    ['earlier-article'],
   );
   now = Date.parse('2026-09-14T00:00:00Z');
   assert.equal(exports.get_visible_posts()[0].slug, 'scheduled');
+  now = Date.parse('2026-09-21T00:00:00Z');
+  assert.deepEqual(
+    exports.get_visible_posts().map((post) => post.slug),
+    ['later-article', 'scheduled', 'earlier-article'],
+  );
   assert.ok(
     !exports.get_visible_posts().some((post) => post.slug === 'private-draft'),
   );

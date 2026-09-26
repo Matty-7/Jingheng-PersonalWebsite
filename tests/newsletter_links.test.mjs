@@ -4,12 +4,14 @@ import { test } from 'node:test';
 import vm from 'node:vm';
 import ts from 'typescript';
 import { get_published_posts } from '../lib/post_visibility.ts';
+import { validate_newsletter_links } from '../lib/newsletter_schema.ts';
 
 const read = (path) =>
   readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const links = JSON.parse(read('content/newsletter_links.json'));
+const fixtures = JSON.parse(read('tests/fixtures/newsletter_links.json'));
 const visible = () =>
-  get_published_posts(links, Date.parse('2026-09-13T12:00:00Z'));
+  get_published_posts(fixtures, Date.parse('2026-09-22T12:00:00Z'));
 function load_module(path, imports) {
   const exports = {};
   const compiled = ts.transpileModule(read(path), {
@@ -27,15 +29,10 @@ function load_module(path, imports) {
 }
 
 test('public newsletter metadata covers the verified archive without importing prose', () => {
+  const profile = JSON.parse(read('content/profile.json'));
   assert.deepEqual(
-    visible().map((post) => [post.slug, post.date]),
-    [
-      ['september-11-in-new-york', '2026-09-12'],
-      ['which-rate', '2026-09-12'],
-      ['from-the-stands', '2026-09-10'],
-      ['across-the-water', '2026-09-09'],
-      ['something-of-my-own', '2026-09-08'],
-    ],
+    validate_newsletter_links(links, profile.newsletterUrl).errors,
+    [],
   );
   assert.ok(
     links.every(
@@ -65,11 +62,12 @@ test('every published route redirects; draft, future and missing routes return n
       get_visible_posts: () =>
         get_published_posts(
           [
-            ...links,
-            { ...links[0], slug: 'draft-article', status: 'draft' },
-            { ...links[0], slug: 'future-article', date: '2099-01-01' },
+            ...fixtures,
+            { ...fixtures[0], slug: 'draft-article', status: 'draft' },
+            { ...fixtures[0], slug: 'future-article', date: '2099-01-01' },
+            { ...fixtures[0], slug: 'invalid-date', date: '2026-02-30' },
           ],
-          Date.parse('2026-09-13T12:00:00Z'),
+          Date.parse('2026-09-22T12:00:00Z'),
         ),
     },
     'next/navigation': {
@@ -81,13 +79,18 @@ test('every published route redirects; draft, future and missing routes return n
       },
     },
   });
-  for (const post of links) {
+  for (const post of fixtures) {
     await assert.rejects(
       route.default({ params: Promise.resolve({ slug: post.slug }) }),
       (error) => error.status === 308 && error.url === post.external_url,
     );
   }
-  for (const slug of ['draft-article', 'future-article', 'unknown']) {
+  for (const slug of [
+    'draft-article',
+    'future-article',
+    'invalid-date',
+    'unknown',
+  ]) {
     await assert.rejects(
       route.default({ params: Promise.resolve({ slug }) }),
       (error) => error.status === 404,

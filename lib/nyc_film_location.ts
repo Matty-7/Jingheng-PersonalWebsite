@@ -1,7 +1,7 @@
 import type { MapLocationCodec } from './map_location';
 import { film_catalog, search_locations } from './nyc_film_map.ts';
 
-type FilmSelection = {
+export type FilmSelection = {
   film_id: string;
   selected_id: string | null;
   query: string;

@@ -41,10 +41,12 @@ test('film selection connects Google map, keyboard scene controls and real frame
   await expect(page.locator('.cinema-place-list > li')).toHaveCount(
     film_data.locations.length,
   );
+  await expect(page.locator('.cinema-selected')).toHaveCount(0);
   await expect(chooser.locator('option')).toHaveCount(
     film_data.locations.length,
   );
   await chooser.selectOption('plaza');
+  await expect(page.locator('.cinema-selected')).toHaveCount(1);
   await expect(frame).toHaveAttribute('title', 'Google Maps: The Plaza Hotel');
   const plaza = page.getByRole('region', {
     name: 'Details for The Plaza Hotel',
@@ -92,7 +94,8 @@ test('film selection connects Google map, keyboard scene controls and real frame
     page.getByRole('region', { name: 'Filming location map', exact: true }),
   ).toBeFocused();
   await details.getByRole('button', { name: 'Close location details' }).click();
-  await expect(details).toBeHidden();
+  await expect(details).toHaveCount(0);
+  await expect(page.locator(scene_summary('Café Lalo'))).toBeFocused();
   await expect(frame).toHaveAttribute('title', 'Google Maps: Café Lalo');
   await page.locator(scene_summary('Café Lalo')).press('Space');
   await expect(details).toBeVisible();
@@ -115,6 +118,43 @@ test('film selection connects Google map, keyboard scene controls and real frame
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
+});
+
+test('server HTML keeps a light directory and renders only a requested location', async ({
+  request,
+}) => {
+  const initial = await request.get('/portfolio/nyc-film-map');
+  expect(initial.status()).toBe(200);
+  const initial_html = await initial.text();
+  expect(Buffer.byteLength(initial_html)).toBeLessThan(450_000);
+  expect(initial_html).not.toContain('class="cinema-selected"');
+  expect(initial_html).toContain('Read scenes at Café Lalo');
+  const selected = await request.get(
+    '/portfolio/nyc-film-map?film=youve-got-mail&place=cafe-lalo',
+  );
+  const selected_html = await selected.text();
+  expect([...selected_html.matchAll(/class="cinema-selected"/g)]).toHaveLength(
+    1,
+  );
+  expect(selected_html).toContain('vacated this address in 2024');
+  expect(selected_html).toContain('Details for Café Lalo');
+});
+
+test.describe('Film without JavaScript', () => {
+  test.use({ javaScriptEnabled: false });
+
+  test('native summaries link to server-rendered scene details', async ({
+    page,
+  }) => {
+    await page.goto('/portfolio/nyc-film-map?q=cafe+lalo');
+    await page.locator(scene_summary('Café Lalo')).click();
+    await page.getByRole('link', { name: 'Read scenes at Café Lalo' }).click();
+    const details = page.getByRole('region', { name: 'Details for Café Lalo' });
+    await expect(details).toBeVisible();
+    await expect(details).toContainText('vacated this address in 2024');
+    expect(new URL(page.url()).searchParams.get('q')).toBe('cafe lalo');
+    await expect(page.locator('.cinema-selected')).toHaveCount(1);
+  });
 });
 
 test('film filters, sequential locations, search reset and reduced motion remain usable', async ({
