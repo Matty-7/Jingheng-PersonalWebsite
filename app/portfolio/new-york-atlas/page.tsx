@@ -18,26 +18,29 @@ export default function NewYorkAtlasPage() {
         <Link href="/" className="brand-link" aria-label="Jingheng Huan home">
           <BrandMark />
         </Link>
-        <span>JINGHENG HUAN / PROJECTS</span>
         <Link href="/#projects">← Projects</Link>
       </nav>
       <header className="atlas-heading">
         <h1>
           New York <em>Atlas.</em>
         </h1>
-        <p>The city through film, literature, and music.</p>
+        <p>Film, literature, and music.</p>
       </header>
       <NewYorkAtlas google_maps_key={google_maps_embed_key()} />
       <footer className="atlas-footer">
-        <p>
-          A collection of sourced connections between works and places. Filming
-          locations, literary settings and musicians’ lives are identified
-          separately. Area references do not identify an exact building.
-        </p>
-        <p>
-          Film scenes may contain spoilers. Check access before visiting; view
-          residential locations from the public sidewalk.
-        </p>
+        <details>
+          <summary>About this atlas</summary>
+          <p>
+            A collection of sourced connections between works and places.
+            Filming locations, literary settings and musicians’ lives are
+            identified separately. Area references do not identify an exact
+            building.
+          </p>
+          <p>
+            Film scenes may contain spoilers. Check access before visiting; view
+            residential locations from the public sidewalk.
+          </p>
+        </details>
       </footer>
     </main>
   );
