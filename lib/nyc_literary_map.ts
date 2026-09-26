@@ -1,4 +1,5 @@
 import { google_place_embed_url, google_place_url } from './google_maps.ts';
+import { normalize_search_text } from './search_text.ts';
 import catalog from '../content/nyc_literary_locations.json' with { type: 'json' };
 
 export type LiteraryCover = {
@@ -51,11 +52,15 @@ export function entries_for_work(work_id: string) {
 }
 
 export function search_literary_entries(work_id: string, query: string) {
-  const terms = query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+  const terms = normalize_search_text(query)
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
   return entries_for_work(work_id).filter((entry) => {
     const work = literary_works.find((item) => item.id === entry.work_id)!;
-    const text =
-      `${work.title} ${work.author} ${entry.place} ${entry.area}`.toLocaleLowerCase();
+    const text = normalize_search_text(
+      `${work.title} ${work.author} ${entry.place} ${entry.area}`,
+    );
     return terms.every((term) => text.includes(term));
   });
 }

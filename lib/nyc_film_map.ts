@@ -1,4 +1,5 @@
 import { google_place_embed_url, google_place_url } from './google_maps.ts';
+import { normalize_search_text } from './search_text.ts';
 import location_data from '../content/nyc_film_locations.json' with { type: 'json' };
 
 export type FilmScene = {
@@ -92,7 +93,10 @@ export function google_film_embed_url(location: FilmLocation, api_key: string) {
 }
 
 export function search_locations(film_id: string, query: string) {
-  const terms = query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+  const terms = normalize_search_text(query)
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
   return locations_for_film(film_id).filter((location) => {
     const films = location.scenes
       .filter((scene) => film_id === 'all' || scene.film_id === film_id)
@@ -102,15 +106,15 @@ export function search_locations(film_id: string, query: string) {
           ? `${film.title} ${screen_creator(film)} ${screen_year(film)}`
           : '',
       );
-    const text = [
-      location.name,
-      location.address,
-      location.neighborhood,
-      location.borough,
-      ...films,
-    ]
-      .join(' ')
-      .toLocaleLowerCase();
+    const text = normalize_search_text(
+      [
+        location.name,
+        location.address,
+        location.neighborhood,
+        location.borough,
+        ...films,
+      ].join(' '),
+    );
     return terms.every((term) => text.includes(term));
   });
 }

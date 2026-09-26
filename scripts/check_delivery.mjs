@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { readFile, readdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import ts from 'typescript';
 
 const root = new URL('../', import.meta.url);
 const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -47,6 +48,59 @@ async function source_files(directory) {
   ).flat();
 }
 
+export async function runtime_image_paths(project_root = root) {
+  const files = (
+    await Promise.all(
+      ['app/', 'components/', 'lib/'].map((directory) =>
+        source_files(new URL(directory, project_root)),
+      ),
+    )
+  )
+    .flat()
+    .filter((url) => /\.(tsx?|css|json)$/.test(url.pathname));
+  // Content provenance archives are not runtime assets. Inspect the JSON files
+  // imported by application source rather than every retired content record.
+  const imported_content = new Set();
+  for (const file of files) {
+    if (!/\.tsx?$/.test(file.pathname)) continue;
+    const source = await readFile(file, 'utf8');
+    for (const { fileName } of ts.preProcessFile(source).importedFiles) {
+      if (!fileName.endsWith('.json')) continue;
+      const imported = fileName.startsWith('@/')
+        ? new URL(fileName.slice(2), project_root)
+        : fileName.startsWith('.')
+          ? new URL(fileName, file)
+          : null;
+      if (imported?.href.startsWith(project_root.href))
+        imported_content.add(imported.href);
+    }
+  }
+  files.push(...[...imported_content].map((url) => new URL(url)));
+  const paths = new Set();
+  const collect_json_paths = (value) => {
+    if (typeof value === 'string') {
+      if (
+        /^\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico)$/.test(value)
+      )
+        paths.add(value);
+    } else if (value && typeof value === 'object') {
+      Object.values(value).forEach(collect_json_paths);
+    }
+  };
+  for (const file of files) {
+    const source = await readFile(file, 'utf8');
+    if (file.pathname.endsWith('.json')) {
+      collect_json_paths(JSON.parse(source));
+      continue;
+    }
+    for (const match of source.matchAll(
+      /["'`(](\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico))(?=["'`)])/g,
+    ))
+      paths.add(match[1]);
+  }
+  return [...paths].sort((a, b) => a.localeCompare(b));
+}
+
 export async function check_delivery(origin) {
   const base = new URL(origin);
   assert.ok(['https:', 'http:'].includes(base.protocol));
@@ -62,40 +116,11 @@ export async function check_delivery(origin) {
     ].includes(base.hostname),
     'Use only this Site or its supported preview.',
   );
-  const files = (
-    await Promise.all(
-      ['app/', 'components/', 'lib/'].map((directory) =>
-        source_files(new URL(directory, root)),
-      ),
-    )
-  )
-    .flat()
-    .filter((url) => /\.(tsx?|css|json)$/.test(url.pathname));
-  // Content provenance archives are not runtime assets. Inspect the JSON files
-  // imported by application source rather than every retired content record.
-  const imported_content = new Set();
-  for (const file of files) {
-    const source = await readFile(file, 'utf8');
-    for (const match of source.matchAll(
-      /from\s+['"]@\/content\/([a-zA-Z0-9_.-]+\.json)['"]/g,
-    ))
-      imported_content.add(match[1]);
-  }
-  files.push(
-    ...[...imported_content].map((name) => new URL(`content/${name}`, root)),
-  );
-  const paths = new Set();
-  for (const file of files) {
-    const source = await readFile(file, 'utf8');
-    for (const match of source.matchAll(
-      /\/images\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|svg|ico)/g,
-    ))
-      paths.add(match[0]);
-  }
-  assert.ok(paths.size >= 35, 'Image inventory unexpectedly incomplete');
+  const paths = await runtime_image_paths();
+  assert.ok(paths.length >= 35, 'Image inventory unexpectedly incomplete');
   const results = [];
   // Four requests at a time; no external audio stream or third-party hosts.
-  const remaining = [...paths].sort((a, b) => a.localeCompare(b));
+  const remaining = paths;
   for (let index = 0; index < remaining.length; index += 4) {
     const batch = await Promise.all(
       remaining.slice(index, index + 4).map(async (path) => {

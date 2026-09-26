@@ -28,6 +28,7 @@ import {
   type MusicTrack,
 } from './nyc_music_map.ts';
 import type { MapLocationCodec } from './map_location';
+import { normalize_search_text } from './search_text.ts';
 
 export type AtlasMedium = 'film' | 'literature' | 'music';
 export type AtlasFilter = AtlasMedium | 'all';
@@ -237,22 +238,17 @@ export function atlas_year(entry: AtlasEntry) {
     : (entry.year ?? 'Year unverified');
 }
 
-function search_text(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '')
-    .replace(/[’‘]/g, "'")
-    .toLocaleLowerCase();
-}
-
 export function search_atlas(medium: AtlasFilter, query: string) {
-  const terms = search_text(query).trim().split(/\s+/).filter(Boolean);
+  const terms = normalize_search_text(query)
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
   return atlas_entries.filter((entry) => {
     if (medium !== 'all' && entry.medium !== medium) return false;
     const area = atlas_areas.find((item) =>
       item.places.includes(entry.place_key),
     );
-    const text = search_text(
+    const text = normalize_search_text(
       [
         entry.title,
         entry.creator,
