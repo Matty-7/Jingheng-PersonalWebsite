@@ -40,6 +40,7 @@ const structuredData = (html) =>
 for (const path of [
   '/',
   '/portfolio/mortgage-map',
+  '/portfolio/new-york-atlas',
   '/portfolio/nyc-film-map',
   '/portfolio/nyc-literary-map',
   '/portfolio/nyc-music-map',
@@ -134,6 +135,7 @@ assert.deepEqual(
   [
     `${canonical}/`,
     `${canonical}/portfolio/mortgage-map`,
+    `${canonical}/portfolio/new-york-atlas`,
     `${canonical}/portfolio/nyc-film-map`,
     `${canonical}/portfolio/nyc-literary-map`,
     `${canonical}/portfolio/nyc-music-map`,
