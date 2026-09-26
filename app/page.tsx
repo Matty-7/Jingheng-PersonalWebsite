@@ -314,14 +314,14 @@ export default function Home() {
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
               <h3>New York Atlas</h3>
-              <p>Explore the city through film, literature and music. Find the scenes, passages and songs connected to a place, with original sources and previews.</p>
+              <p>Explore the city through film, television, literature and music. Find the scenes, passages and songs connected to a place, with original sources and previews.</p>
               <Link href="/portfolio/new-york-atlas" className="text-link">Explore the atlas <span aria-hidden="true">↗</span></Link>
             </div>
             <ProjectMapPreview
               href="/portfolio/new-york-atlas"
               label="Open New York Atlas"
               artwork={{ src: '/images/film-map/manhattan-poster.jpg', alt: 'Manhattan (1979) poster with the Queensboro Bridge and skyline lettering', width: 640, height: 940 }}
-              eyebrow="FILM · LITERATURE · MUSIC"
+              eyebrow="FILM & TV · LITERATURE · MUSIC"
               headline="New York"
               emphasis="Atlas."
               summary="Scenes, passages and songs"

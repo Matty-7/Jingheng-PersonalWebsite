@@ -147,7 +147,9 @@ test('Atlas links to an intact specialized collection and comes back', async ({
   const sources = page.locator('.atlas-story details');
   await sources.locator('summary').press('Enter');
   await expect(sources.getByRole('link').first()).toBeVisible();
-  await page.getByRole('link', { name: 'View in the film collection' }).click();
+  await page
+    .getByRole('link', { name: 'View in the film & tv collection' })
+    .click();
   await expect(
     page.getByRole('combobox', { name: 'Choose a filming location' }),
   ).toHaveValue('cafe-lalo');
@@ -155,4 +157,61 @@ test('Atlas links to an intact specialized collection and comes back', async ({
   await expect(
     page.getByRole('heading', { name: 'New York Atlas.' }),
   ).toBeVisible();
+});
+
+test('TV creators, years and screen deep links work in both collections', async ({
+  page,
+}) => {
+  await page.goto('/portfolio/new-york-atlas?medium=film');
+  await expect(
+    page.getByRole('button', { name: /^Film & TV/ }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  const search = page.getByRole('searchbox', { name: 'Search the atlas' });
+  await expect(search).toBeEnabled();
+  await search.fill('Marta Kauffman');
+  await expect(page.locator('.atlas-work-heading h3')).toHaveText('Friends');
+  await expect(page.locator('.atlas-work-heading')).toContainText(
+    'TV series · 1994–2004',
+  );
+  await expect(page.locator('.atlas-work-heading')).toContainText('Created by');
+  await expect(page.locator('.atlas-work-heading')).toContainText(
+    'Marta Kauffman',
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  const collection = page.getByRole('link', {
+    name: 'View in the film & tv collection',
+  });
+  const destination = new URL(
+    (await collection.getAttribute('href'))!,
+    page.url(),
+  );
+  await collection.press('Enter');
+  await expect(
+    page.getByRole('heading', { name: 'NYC Film & TV Map.' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('combobox', { name: 'Choose a filming location' }),
+  ).toHaveValue(destination.searchParams.get('place')!);
+  await expect(
+    page.getByRole('button', { name: 'Friends 1994–2004', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.cinema-list-heading')).toContainText(
+    'Created by',
+  );
+  await page
+    .getByRole('searchbox', { name: 'Search titles, creators or places' })
+    .fill('David Crane');
+  await expect(
+    page.getByRole('button', { name: 'Friends 1994–2004', exact: true }),
+  ).toBeVisible();
+  await expect(page.locator('.cinema-collection-label')).toContainText(
+    '32 films · 6 series',
+  );
+  await page.goBack();
+  await expect(search).toHaveValue('Marta Kauffman');
+  await expect(page.locator('.atlas-work-heading h3')).toHaveText('Friends');
 });

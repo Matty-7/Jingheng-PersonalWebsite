@@ -29,7 +29,9 @@ test('film selection connects Google map, keyboard scene controls and real frame
   page,
 }) => {
   await page.goto('/portfolio/nyc-film-map');
-  await page.getByRole('button', { name: 'Pause film scrolling' }).click();
+  await page
+    .getByRole('button', { name: 'Pause collection scrolling' })
+    .click();
   const chooser = page.getByRole('combobox', {
     name: 'Choose a filming location',
   });
@@ -121,7 +123,7 @@ test('film filters, sequential locations, search reset and reduced motion remain
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/portfolio/nyc-film-map');
   const search = page.getByRole('searchbox', {
-    name: 'Search films, directors or places',
+    name: 'Search titles, creators or places',
   });
   const chooser = page.getByRole('combobox', {
     name: 'Choose a filming location',
@@ -178,7 +180,7 @@ test('film filters, sequential locations, search reset and reduced motion remain
   await expect(
     page.locator('.cinema-map-panel .cinema-google-link'),
   ).toHaveCount(0);
-  await page.getByRole('button', { name: 'Explore all films' }).click();
+  await page.getByRole('button', { name: 'Explore all titles' }).click();
   await expect(page.locator('.cinema-place-list > li')).toHaveCount(
     film_data.locations.length,
   );
@@ -278,26 +280,30 @@ test('film shelf motion pauses explicitly and place counts stay attached to film
   await expect
     .poll(() => shelf.evaluate((element) => element.scrollLeft))
     .toBeGreaterThan(10);
-  await page.getByRole('button', { name: 'Pause film scrolling' }).click();
+  await page
+    .getByRole('button', { name: 'Pause collection scrolling' })
+    .click();
   const stopped = await shelf.evaluate((element) => element.scrollLeft);
   await page.waitForTimeout(350);
   expect(await shelf.evaluate((element) => element.scrollLeft)).toBeCloseTo(
     stopped,
     0,
   );
-  await page.getByRole('button', { name: 'More films' }).click();
+  await page.getByRole('button', { name: 'More titles' }).click();
   await expect
     .poll(() => shelf.evaluate((element) => element.scrollLeft))
     .toBeGreaterThan(stopped + 100);
   await expect(
-    page.getByRole('button', { name: 'Resume film scrolling' }),
+    page.getByRole('button', { name: 'Resume collection scrolling' }),
   ).toBeVisible();
-  await page.getByRole('button', { name: 'Resume film scrolling' }).click();
+  await page
+    .getByRole('button', { name: 'Resume collection scrolling' })
+    .click();
   await expect(
-    page.getByRole('button', { name: 'Pause film scrolling' }),
+    page.getByRole('button', { name: 'Pause collection scrolling' }),
   ).toBeVisible();
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(
-    page.getByRole('button', { name: 'Resume film scrolling' }),
+    page.getByRole('button', { name: 'Resume collection scrolling' }),
   ).toBeDisabled();
 });

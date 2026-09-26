@@ -284,6 +284,73 @@
         "https://onthesetofnewyork.com/blackswan.html",
         "https://movie-locations.com/movies/b/Black-Swan.php"
       ]
+    },
+    {
+      "film_id": "friends",
+      "title": "Friends",
+      "format": "series",
+      "location_count": 3,
+      "source_urls": [
+        "https://extstreet.com/Friends.html",
+        "https://robonlocation.com/tv/friends/",
+        "https://www.imdb.com/title/tt0108778/locations/?item=lc2134727",
+        "https://people.com/friends-production-designer-reveals-joey-and-chandler-almost-didn-t-live-across-the-hall-from-monica-and-rachel-8714781"
+      ]
+    },
+    {
+      "film_id": "seinfeld",
+      "title": "Seinfeld",
+      "format": "series",
+      "location_count": 3,
+      "source_urls": [
+        "https://extstreet.com/Seinfeld.html",
+        "https://robonlocation.com/tv/seinfeld/",
+        "https://www.architecturaldigest.com/story/where-was-seinfeld-filmed-and-other-secrets-from-the-sets"
+      ]
+    },
+    {
+      "film_id": "sex-and-the-city",
+      "title": "Sex and the City",
+      "format": "series",
+      "location_count": 2,
+      "source_urls": [
+        "https://www.thefilmtripper.com/blog/magnolia-bakery-satc",
+        "https://www.iamnotastalker.com/2009/11/20/jefferson-market-garden/",
+        "https://www.jeffersonmarketgarden.org/weddings"
+      ]
+    },
+    {
+      "film_id": "gossip-girl",
+      "title": "Gossip Girl",
+      "format": "series",
+      "location_count": 3,
+      "source_urls": [
+        "https://www.sceen-it.com/sceen/413/Gossip-Girl/Grand-Central-Terminal",
+        "https://www.sceen-it.com/sceen/564/Gossip-Girl/Metropolitan-Museum-of-Art",
+        "https://www.iamnotastalker.com/2009/10/26/the-new-york-palace-hotel",
+        "https://grandcentralterminal.com/vanderbilt-hall-venue/",
+        "https://store.metmuseum.org/store-locations"
+      ]
+    },
+    {
+      "film_id": "succession",
+      "title": "Succession",
+      "format": "series",
+      "location_count": 3,
+      "source_urls": [
+        "https://www.untappedcities.com/succession-filming-locations-nyc/"
+      ]
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "title": "The Marvelous Mrs. Maisel",
+      "format": "series",
+      "location_count": 3,
+      "source_urls": [
+        "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+        "https://www.timeout.com/newyork/shopping/albanese-meat-poultry",
+        "https://legistar.council.nyc.gov/LegislationDetail.aspx?GUID=8FE93E53-0889-4D85-B8B5-E41A4088025D&ID=1241336&Options=&Search="
+      ]
     }
   ],
   "held_candidates": [

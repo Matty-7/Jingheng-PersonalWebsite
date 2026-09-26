@@ -27,6 +27,10 @@ import {
   film_catalog,
   film_locations,
   film_sources,
+  screen_counts,
+  screen_credit,
+  screen_kind,
+  screen_year,
   search_locations,
   type FilmLocation,
   type FilmScene,
@@ -92,7 +96,8 @@ function SceneDetails({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Frame source <ArrowUpRight size={12} aria-hidden="true" />
+                    {scene.still.kind ? 'Image source' : 'Frame source'}{' '}
+                    <ArrowUpRight size={12} aria-hidden="true" />
                   </a>
                 </figcaption>
               )}
@@ -101,7 +106,8 @@ function SceneDetails({
               <p className="cinema-film-label">
                 {film.title}{' '}
                 <span>
-                  {film.year} · {film.director}
+                  {screen_kind(film)} · {screen_year(film)} ·{' '}
+                  {screen_credit(film)}
                 </span>
               </p>
               <p>{scene.scene}</p>
@@ -218,23 +224,24 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
 
   return (
     <>
-      <section className="cinema-picker" aria-label="Choose a film">
+      <section className="cinema-picker" aria-label="Choose a film or series">
         <div className="cinema-controls">
           <div className="cinema-collection-label">
             <Film size={18} aria-hidden="true" />
             <span>THE COLLECTION</span>
             <small>
-              {film_catalog.length} films · {film_locations.length} places
+              {screen_counts.film} films · {screen_counts.series} series ·{' '}
+              {film_locations.length} places
             </small>
           </div>
           <label className="cinema-search">
             <Search size={18} aria-hidden="true" />
-            <span className="sr-only">Search films, directors or places</span>
+            <span className="sr-only">Search titles, creators or places</span>
             <input
               type="search"
               disabled={!interactive}
               value={query}
-              placeholder="Film, director or place"
+              placeholder="Title, creator or place"
               onChange={(event) => change_query(event.target.value)}
             />
             {query && (
@@ -252,8 +259,8 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
               disabled={!interactive || shelf_motion.reduced}
               aria-label={
                 shelf_motion.scrolling
-                  ? 'Pause film scrolling'
-                  : 'Resume film scrolling'
+                  ? 'Pause collection scrolling'
+                  : 'Resume collection scrolling'
               }
               onClick={shelf_motion.toggle}
             >
@@ -265,14 +272,14 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
             </button>
             <button
               disabled={!interactive}
-              aria-label="Previous films"
+              aria-label="Previous titles"
               onClick={() => scroll_films(-1)}
             >
               <ChevronLeft size={19} />
             </button>
             <button
               disabled={!interactive}
-              aria-label="More films"
+              aria-label="More titles"
               onClick={() => scroll_films(1)}
             >
               <ChevronRight size={19} />
@@ -283,7 +290,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
           <button
             disabled={!interactive}
             className="cinema-all-films"
-            aria-label="All films"
+            aria-label="All films and series"
             aria-pressed={film_id === 'all'}
             onClick={() => choose_film('all')}
           >
@@ -292,11 +299,11 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
               <span>
                 NEW YORK
                 <br />
-                <em>on film.</em>
+                <em>on screen.</em>
               </span>
             </span>
             <span className="cinema-film-card-label">
-              All films <small>{film_catalog.length}</small>
+              All titles <small>{film_catalog.length}</small>
             </span>
             <span className="cinema-film-card-count">
               {film_locations.length} places
@@ -321,7 +328,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
                 disabled={!interactive}
                 className="cinema-film-card"
                 key={film.id}
-                aria-label={`${film.title} ${film.year}`}
+                aria-label={`${film.title} ${screen_year(film)}`}
                 aria-pressed={film_id === film.id}
                 onClick={() => choose_film(film.id)}
               >
@@ -329,14 +336,17 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
                   {scene ? (
                     <SceneStill scene={scene} thumbnail />
                   ) : (
-                    <span className="cinema-film-year">{film.year}</span>
+                    <span className="cinema-film-year">
+                      {screen_year(film)}
+                    </span>
                   )}
                 </span>
                 <span className="cinema-film-card-label">
                   {film.title}
-                  <small>{film.year}</small>
+                  <small>{screen_year(film)}</small>
                 </span>
                 <span className="cinema-film-card-count">
+                  {film.format === 'series' && 'TV series · '}
                   {place_count} {place_count === 1 ? 'place' : 'places'}
                 </span>
                 {film_id === film.id && (
@@ -465,15 +475,15 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
             </>
           ) : (
             <p className="cinema-map-fallback">
-              Choose another film or clear your search to find a location.
+              Choose another title or clear your search to find a location.
             </p>
           )}
         </section>
-        <aside className="cinema-places" aria-label="Film locations">
+        <aside className="cinema-places" aria-label="Film and TV locations">
           <div className="cinema-list-heading">
             <p className="cinema-kicker">
               {selected_film
-                ? `${selected_film.year} / ${selected_film.director}`
+                ? `${screen_kind(selected_film)} · ${screen_year(selected_film)} / ${screen_credit(selected_film)}`
                 : 'SCENES IN THE CITY'}
             </p>
             <h2>
@@ -489,7 +499,7 @@ export function NycFilmMap({ google_maps_key }: { google_maps_key: string }) {
                 disabled={!interactive}
                 onClick={() => choose_film('all')}
               >
-                Explore all films
+                Explore all titles
               </button>
             </div>
           )}

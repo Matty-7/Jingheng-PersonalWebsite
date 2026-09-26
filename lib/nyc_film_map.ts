@@ -6,6 +6,7 @@ export type FilmScene = {
   scene: string;
   source_ids: string[];
   still?: {
+    kind?: 'production_still' | 'episode_image';
     src: string;
     thumbnail: string;
     alt: string;
@@ -30,9 +31,43 @@ export type FilmLocation = {
   scenes: FilmScene[];
 };
 
-export const film_catalog = location_data.films;
+export type ScreenWork = {
+  id: string;
+  title: string;
+  year: number;
+  note: string;
+} & (
+  | { format?: 'film'; director: string }
+  | { format: 'series'; creators: string; end_year: number }
+);
+
+export function screen_kind(work: ScreenWork) {
+  return work.format === 'series' ? 'TV series' : 'Film';
+}
+
+export function screen_creator(work: ScreenWork) {
+  return work.format === 'series' ? work.creators : work.director;
+}
+
+export function screen_credit(work: ScreenWork) {
+  return work.format === 'series'
+    ? `Created by ${work.creators}`
+    : work.director;
+}
+
+export function screen_year(work: ScreenWork) {
+  return work.format === 'series'
+    ? `${work.year}–${work.end_year}`
+    : String(work.year);
+}
+
+export const film_catalog = location_data.films as ScreenWork[];
 export const film_sources = location_data.sources;
 export const film_locations = location_data.locations as FilmLocation[];
+export const screen_counts = {
+  film: film_catalog.filter((work) => work.format !== 'series').length,
+  series: film_catalog.filter((work) => work.format === 'series').length,
+};
 
 export function locations_for_film(film_id: string) {
   return film_id === 'all'
@@ -62,7 +97,11 @@ export function search_locations(film_id: string, query: string) {
     const films = location.scenes
       .filter((scene) => film_id === 'all' || scene.film_id === film_id)
       .map((scene) => film_catalog.find((film) => film.id === scene.film_id))
-      .map((film) => `${film?.title} ${film?.director} ${film?.year}`);
+      .map((film) =>
+        film
+          ? `${film.title} ${screen_creator(film)} ${screen_year(film)}`
+          : '',
+      );
     const text = [
       location.name,
       location.address,

@@ -1,0 +1,497 @@
+{
+  "reviewed_on": "2026-09-26",
+  "base_sha": "71dadee92aca8593253220bb9e551888ebde05bf",
+  "counts": {
+    "film_count": 32,
+    "series_count": 6,
+    "place_count": 204,
+    "new_places": 14,
+    "new_scene_associations": 17,
+    "screen_scene_associations": 225
+  },
+  "metadata": {
+    "friends": {
+      "year_label": "1994–2004",
+      "ongoing": false,
+      "source_urls": [
+        "https://awards.wga.org/awards/awards-recipients/laurel-awards/tv-laurel-award/marta-kauffman-david-crane"
+      ],
+      "evidence": "WGAW’s January 13, 2016 release credits Kauffman and Crane as co-creators and states that the NBC run was 1994–2004."
+    },
+    "seinfeld": {
+      "year_label": "1989–1998",
+      "ongoing": false,
+      "source_urls": [
+        "https://ir.paramount.com/news-releases/news-release-details/hello-jerry-viacom-acquires-exclusive-cable-rights-seinfeld-sony",
+        "https://www.imdb.com/title/tt0098904",
+        "https://extstreet.com/Seinfeld.html"
+      ],
+      "evidence": "Viacom’s September 21, 2019 release explicitly credits Larry David and Jerry Seinfeld as creators. IMDb and Ext.Street identify the original run as 1989–1998."
+    },
+    "sex-and-the-city": {
+      "year_label": "1998–2004",
+      "ongoing": false,
+      "source_urls": [
+        "https://www.history.com/this-day-in-history/June-6/sex-and-the-city-premieres-on-hbo"
+      ],
+      "evidence": "HISTORY identifies the June 1998 premiere, Darren Star as creator, and the original series ending in 2004. The films and And Just Like That are separate works."
+    },
+    "gossip-girl": {
+      "year_label": "2007–2012",
+      "source_urls": [
+        "https://press.wbd.com/us/na/media-release/hbo-max/max-original-series-gossip-girl-return-november-part-two-first-season"
+      ],
+      "evidence": "WBD identifies the original show as developed by Josh Schwartz and Stephanie Savage and broadcast from 2007 to 2012."
+    },
+    "succession": {
+      "year_label": "2018–2023",
+      "source_urls": [
+        "https://press.wbd.com/us/media-release/hbo-0/succession/hbo-original-drama-series-succession-returns-its-fourth-season-march-26",
+        "https://www.nowtv.com/membership/watch-tv-shows/hbo/watch-succession"
+      ],
+      "evidence": "HBO credits creator Jesse Armstrong; NOW lists the completed four-season series as 2018–2023."
+    },
+    "the-marvelous-mrs-maisel": {
+      "year_label": "2017–2023",
+      "source_urls": [
+        "https://press.aboutamazon.com/2017/10/amy-sherman-palladinos-the-marvelous-mrs-maisel-premieres-on-wednesday-november-29-exclusively-on-amazon-prime-video",
+        "https://www.aboutamazon.com/news/entertainment/amy-sherman-palladino-farewell-letter-to-the-marvelous-mrs-maisel"
+      ],
+      "evidence": "Amazon names Amy Sherman-Palladino as creator in its 2017 premiere announcement and identifies the fifth season as final in April 2023."
+    }
+  },
+  "scenes": [
+    {
+      "film_id": "friends",
+      "location_id": "friends-bedford-building",
+      "kind": "episode_frame",
+      "source_ids": [
+        "friends-extstreet",
+        "friends-bedford-people"
+      ],
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/58121789277466831323.jpg",
+      "local_image": "/images/film-map/friends--friends-bedford-building.jpg",
+      "local_sha256": "ae925b98c54a51e50f69e82c2fc8a233d65e09a82d8a45b5cfc6ead760828324",
+      "episode_evidence": null,
+      "verification": "The source labels the paired frame as the apartment building at 90 Bedford Street; the corner façade and storefront are visible. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "friends",
+      "location_id": "solow-building",
+      "kind": "episode_frame",
+      "source_ids": [
+        "friends-extstreet",
+        "friends-rob"
+      ],
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/58121789277470503804.jpg",
+      "local_image": "/images/film-map/friends--solow-building.jpg",
+      "local_sha256": "d39ba681a6a34723c57ddedfde31dce4f5449ed7d0512faabb30fd9c3cbc1a04",
+      "episode_evidence": null,
+      "verification": "Both filming inventories identify 9 West 57th Street; the selected frame shows the distinctive skyscraper and neighboring façade. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "friends",
+      "location_id": "phoebe-apartment",
+      "kind": "episode_frame",
+      "source_ids": [
+        "friends-extstreet",
+        "friends-phoebe-imdb"
+      ],
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/55855039495645476216160.jpg",
+      "local_image": "/images/film-map/friends--phoebe-apartment.jpg",
+      "local_sha256": "66718eece5b63f8d61e4458b0721eac6fa6c2e60da15e1bd42524c63cda0d78e",
+      "episode_evidence": null,
+      "verification": "Ext.Street pairs this frame with 454 West 58th Street; IMDb independently lists that address as Phoebe’s apartment-building exterior. Do not substitute the fictional 5 Morton Street address. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "toms-restaurant",
+      "kind": "episode_frame",
+      "source_ids": [
+        "seinfeld-extstreet",
+        "seinfeld-rob"
+      ],
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/2108971119082609865689.jpg",
+      "local_image": "/images/film-map/seinfeld--toms-restaurant.jpg",
+      "local_sha256": "8cbd19b1619dc4c73ec2d14cec0072445924363099fb8fb649c73f4592691c39",
+      "episode_evidence": null,
+      "verification": "The paired source frame shows the recognizable RESTAURANT sign and corner at the address; independent inventories confirm its exterior use. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "library",
+      "kind": "episode_frame",
+      "source_ids": [
+        "seinfeld-extstreet",
+        "seinfeld-rob"
+      ],
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/65378104691560816254748.jpg",
+      "local_image": "/images/film-map/seinfeld--library.jpg",
+      "local_sha256": "ce0dcd7d104675ff116f14a696e6890401a4b73e41926871617fade05d55119b",
+      "episode_evidence": null,
+      "verification": "Ext.Street identifies The Library and provides this frame. Rob on Location explicitly identifies the Fifth Avenue main branch and establishing-shot use. Existing place identity and address are reused. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "costanza-house",
+      "kind": "episode_frame",
+      "source_ids": [
+        "seinfeld-extstreet",
+        "seinfeld-ad"
+      ],
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/2026721245438385209413768.jpg",
+      "local_image": "/images/film-map/seinfeld--costanza-house.jpg",
+      "local_sha256": "c0097aee10facca524ade32ebfbfbc950851f23249c71ae23b8398d5a9d2b981",
+      "episode_evidence": null,
+      "verification": "Ext.Street pairs the selected frame with 22-37 37th Street. Architectural Digest independently confirms the house address and Astoria neighborhood. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "sex-and-the-city",
+      "location_id": "magnolia-bakery",
+      "kind": "episode_frame",
+      "source_ids": [
+        "satc-magnolia-filmtripper"
+      ],
+      "source_page": "https://www.thefilmtripper.com/blog/magnolia-bakery-satc",
+      "original_image": "https://images.squarespace-cdn.com/content/v1/5de203bf4d009912ef872c6a/1619643781462-UH5D6A21H28BAO9FY0OV/Carrie+and+Miranda+-+Magnolia+02.jfif",
+      "local_image": "/images/film-map/sex-and-the-city--magnolia-bakery.jpg",
+      "local_sha256": "06a8a1fdb97fcc79ae18ceddf6048d5d82568d8946b452b16d649f03fce36da5",
+      "episode_evidence": {
+        "season": 3,
+        "number": 5
+      },
+      "verification": "The source identifies address, scene, and S03E05. The selected wide frame shows both characters and the Magnolia Bakery sign. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "sex-and-the-city",
+      "location_id": "jefferson-market-garden",
+      "kind": "episode_frame",
+      "source_ids": [
+        "satc-garden-stalker",
+        "satc-garden-official"
+      ],
+      "source_page": "https://www.iamnotastalker.com/2009/11/20/jefferson-market-garden/",
+      "original_image": "https://wp.iamnotastalker.com/wp-content/uploads/2009/11/a7bd8672-b654-4e76-a4d6-b70b773d08a6.jpg",
+      "local_image": "/images/film-map/sex-and-the-city--jefferson-market-garden.jpg",
+      "local_sha256": "15116cbcd4c63b88cde93f0adfec4c9c09e0e75e6e0f44cd89ad426004bf7045",
+      "episode_evidence": {
+        "season": 6,
+        "title": "The Ick Factor"
+      },
+      "verification": "The source identifies The Ick Factor, season six, and this garden; the garden’s official website independently confirms Miranda’s wedding was filmed there. The selected screen capture is the wide ceremony view. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph."
+    },
+    {
+      "film_id": "gossip-girl",
+      "location_id": "grand-central",
+      "kind": "episode_frame",
+      "source_ids": [
+        "gossip-girl-gct",
+        "gct-address"
+      ],
+      "source_page": "https://www.sceen-it.com/sceen/413/Gossip-Girl/Grand-Central-Terminal",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/4780.jpg/nos/.jpg",
+      "local_image": "/images/film-map/gossip-girl--grand-central.jpg",
+      "local_sha256": "18fd0082ed8dffcece7add6d6187bcc4e96960f39a70b66bbdf146cc3d4d2d0f",
+      "episode_evidence": null,
+      "verification": "Blake Lively appears in the concourse with the clock, departure boards and arched terminal interior behind her. Location source presents the asset as a scene screenshot, visually checked against its associated venue."
+    },
+    {
+      "film_id": "gossip-girl",
+      "location_id": "met",
+      "kind": "episode_frame",
+      "source_ids": [
+        "gossip-girl-met",
+        "met-address"
+      ],
+      "source_page": "https://www.sceen-it.com/sceen/564/Gossip-Girl/Metropolitan-Museum-of-Art",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/6444.jpg/nos/.jpg",
+      "local_image": "/images/film-map/gossip-girl--met.jpg",
+      "local_sha256": "028879a1c43cdac0057babf0262641c54879c8aab1586d5523c34e7f40edeaa4",
+      "episode_evidence": null,
+      "verification": "The group sits on the broad exterior steps below the museum’s stone columns and exhibition banners. Location source presents the asset as a scene screenshot, visually checked against its associated venue."
+    },
+    {
+      "film_id": "gossip-girl",
+      "location_id": "new-york-palace",
+      "kind": "episode_frame",
+      "source_ids": [
+        "gossip-girl-palace"
+      ],
+      "source_page": "https://www.iamnotastalker.com/2009/10/26/the-new-york-palace-hotel",
+      "original_image": "https://wp.iamnotastalker.com/wp-content/uploads/2009/10/d6690deb-9c41-4b9d-bb5d-ac37408a5ebd.jpg",
+      "local_image": "/images/film-map/gossip-girl--new-york-palace.jpg",
+      "local_sha256": "ee3be203868cb2ee9618ffe2ac130298716881613df15cdf0bcb136f3362332c",
+      "episode_evidence": null,
+      "verification": "Serena and Dan appear over the distinctive patterned courtyard paving, beside its stone walls and wrought-iron gates. Location source presents the asset as a scene screenshot, visually checked against its associated venue."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "jean-georges",
+      "kind": "production_still",
+      "source_ids": [
+        "succession-untapped"
+      ],
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-episode-7-untapped-new-york1.jpg",
+      "local_image": "/images/film-map/succession--jean-georges.jpg",
+      "local_sha256": "64bb70c29eb87861b4c7e2ffb9995b261139034aa484c56a375728504e8c75c7",
+      "episode_evidence": {
+        "season": 4,
+        "number": 7
+      },
+      "verification": "Shiv sits at a restaurant table in the episode-specific image paired with the Jean-Georges section. Official in-scene HBO publicity photography reproduced by a location inventory; not represented as an extracted video frame."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "the-mark-hotel",
+      "kind": "production_still",
+      "source_ids": [
+        "succession-untapped"
+      ],
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-filming-locations-the-mark-hotel-matthew-macfadyen-nyc.jpg",
+      "local_image": "/images/film-map/succession--the-mark-hotel.jpg",
+      "local_sha256": "f0f69d8037ca00dec12f315aef96112646f4c723574533e8e8b375fc67425772",
+      "episode_evidence": null,
+      "verification": "Tom stands with a phone in the wood-paneled interior shown in the location-specific image. Official in-scene HBO publicity photography reproduced by a location inventory; not represented as an extracted video frame."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "chelsea-square-diner",
+      "kind": "production_still",
+      "source_ids": [
+        "succession-untapped"
+      ],
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2019/06/succession-filming-locations-hbo-chelsea-square-diner-nyc.jpg",
+      "local_image": "/images/film-map/succession--chelsea-square-diner.jpg",
+      "local_sha256": "ace2bf31a97ab2ecf03088954ab3141327ae500739b9fefffbc755f56ae3824b",
+      "episode_evidence": null,
+      "verification": "Roman and Kendall are visible at a diner table with coffee service; the location article pairs this image with the meeting. Official in-scene HBO publicity photography reproduced by a location inventory; not represented as an extracted video frame."
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "location_id": "albanese-meats",
+      "kind": "episode_image",
+      "source_ids": [
+        "maisel-amazon",
+        "albanese-address"
+      ],
+      "source_page": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+      "original_image": "https://assets.aboutamazon.com/42/4f/20c0ed2b4d4bb98075c8bb907227/maisel-butcher-episode-1.jpg",
+      "local_image": "/images/film-map/the-marvelous-mrs-maisel--albanese-meats.jpg",
+      "local_sha256": "c44280c054830fbdab05fe1aa0b583e68cb4925075ee211d860b7532b01e89cb",
+      "episode_evidence": {
+        "season": 1,
+        "number": 1
+      },
+      "verification": "Midge in a pink coat stands at the actual red shopfront dressed with Lutzi’s signage. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established."
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "location_id": "la-bonbonniere",
+      "kind": "episode_image",
+      "source_ids": [
+        "maisel-amazon",
+        "bonbonniere-address"
+      ],
+      "source_page": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+      "original_image": "https://assets.aboutamazon.com/ea/50/e59abf82483e92159c8e92dc4b55/thecityspoon-episode-img.jpg",
+      "local_image": "/images/film-map/the-marvelous-mrs-maisel--la-bonbonniere.jpg",
+      "local_sha256": "37e77e1038fda53d61ba4378187336aed566927fe132266cc59fabd768b69517",
+      "episode_evidence": null,
+      "verification": "The couple embrace in the street directly before the dressed City Spoon storefront, with period cars nearby. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established."
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "location_id": "b-altman-building",
+      "kind": "episode_image",
+      "source_ids": [
+        "maisel-amazon"
+      ],
+      "source_page": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+      "original_image": "https://assets.aboutamazon.com/f1/e5/4dcf64754640a6a52a3e3fc711d5/baltmanandcompany-episode-img.jpg",
+      "local_image": "/images/film-map/the-marvelous-mrs-maisel--b-altman-building.jpg",
+      "local_sha256": "6d6a6d6c388039f9e0ac6e94b30b9fc8102010dc992f7c69d7a0c007abc965d4",
+      "episode_evidence": null,
+      "verification": "Midge stands on a snow-dressed sidewalk beside the department-store window displays; the source pairs it with the actual exterior shoot. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established."
+    }
+  ],
+  "sources": [
+    {
+      "id": "friends-extstreet",
+      "label": "Filming reference · Ext.Street",
+      "url": "https://extstreet.com/Friends.html",
+      "evidence": "Pairs series frames with 90 Bedford Street, the Solow Building at 9 West 57th Street, and Phoebe’s exterior at 454 West 58th Street. Its museum entry was rejected after visual review."
+    },
+    {
+      "id": "friends-rob",
+      "label": "Filming reference · Rob on Location",
+      "url": "https://robonlocation.com/tv/friends/",
+      "evidence": "Identifies the Solow Building as the exterior establishing Chandler’s office. Its Phoebe paragraph gives a fictional address, so that paragraph is not used."
+    },
+    {
+      "id": "friends-phoebe-imdb",
+      "label": "Filming reference · IMDb",
+      "url": "https://www.imdb.com/title/tt0108778/locations/?item=lc2134727",
+      "evidence": "Search retrieval explicitly identifies 454 West 58th Street as Phoebe Buffay’s apartment-building exterior. Direct page open returned an error; the indexed location item was readable."
+    },
+    {
+      "id": "friends-bedford-people",
+      "label": "Production reference · People",
+      "url": "https://people.com/friends-production-designer-reveals-joey-and-chandler-almost-didn-t-live-across-the-hall-from-monica-and-rachel-8714781",
+      "evidence": "Article about production designer John Shaffner distinguishes the New York apartment-building exterior from studio interiors."
+    },
+    {
+      "id": "seinfeld-extstreet",
+      "label": "Filming reference · Ext.Street",
+      "url": "https://extstreet.com/Seinfeld.html",
+      "evidence": "Pairs series frames with Tom’s Restaurant at 2880 Broadway, New York Public Library, and the Costanza house at 22-37 37th Street."
+    },
+    {
+      "id": "seinfeld-rob",
+      "label": "Filming reference · Rob on Location",
+      "url": "https://robonlocation.com/tv/seinfeld/",
+      "evidence": "Identifies Tom’s as the Monk’s exterior and the Fifth Avenue main library as an establishing shot in the overdue-library-book story. Explains that studio interiors were elsewhere."
+    },
+    {
+      "id": "seinfeld-ad",
+      "label": "Production reference · Architectural Digest",
+      "url": "https://www.architecturaldigest.com/story/where-was-seinfeld-filmed-and-other-secrets-from-the-sets",
+      "evidence": "Identifies George’s parents’ exterior as 22-37 37th Street in Astoria, Queens, and Tom’s at Broadway and West 112th Street."
+    },
+    {
+      "id": "satc-magnolia-filmtripper",
+      "label": "Filming reference · The FilmTripper",
+      "url": "https://www.thefilmtripper.com/blog/magnolia-bakery-satc",
+      "evidence": "Identifies Magnolia Bakery at 401 Bleecker Street, Carrie and Miranda’s cupcake conversation in S03E05, and directly captured HBO screen images."
+    },
+    {
+      "id": "satc-garden-stalker",
+      "label": "Filming reference · I Am Not a Stalker",
+      "url": "https://www.iamnotastalker.com/2009/11/20/jefferson-market-garden/",
+      "evidence": "Identifies the garden on Greenwich Avenue between Sixth Avenue and West 10th Street as Miranda and Steve’s wedding venue in season six’s The Ick Factor; includes screen captures and separate comparison photos."
+    },
+    {
+      "id": "satc-garden-official",
+      "label": "Venue reference · Jefferson Market Garden",
+      "url": "https://www.jeffersonmarketgarden.org/weddings",
+      "evidence": "The venue’s own wedding page confirms that Miranda’s wedding was filmed in the garden."
+    },
+    {
+      "id": "gossip-girl-gct",
+      "label": "Filming reference · Sceen-it",
+      "url": "https://www.sceen-it.com/sceen/413/Gossip-Girl/Grand-Central-Terminal"
+    },
+    {
+      "id": "gossip-girl-met",
+      "label": "Filming reference · Sceen-it",
+      "url": "https://www.sceen-it.com/sceen/564/Gossip-Girl/Metropolitan-Museum-of-Art"
+    },
+    {
+      "id": "gossip-girl-palace",
+      "label": "Filming reference · I Am Not A Stalker",
+      "url": "https://www.iamnotastalker.com/2009/10/26/the-new-york-palace-hotel"
+    },
+    {
+      "id": "succession-untapped",
+      "label": "Filming reference · Untapped New York",
+      "url": "https://www.untappedcities.com/succession-filming-locations-nyc/"
+    },
+    {
+      "id": "maisel-amazon",
+      "label": "Filming reference · Amazon",
+      "url": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city"
+    },
+    {
+      "id": "albanese-address",
+      "label": "Address reference · Time Out",
+      "url": "https://www.timeout.com/newyork/shopping/albanese-meat-poultry"
+    },
+    {
+      "id": "bonbonniere-address",
+      "label": "Address reference · NYC Council",
+      "url": "https://legistar.council.nyc.gov/LegislationDetail.aspx?GUID=8FE93E53-0889-4D85-B8B5-E41A4088025D&ID=1241336&Options=&Search="
+    },
+    {
+      "id": "gct-address",
+      "label": "Address reference · Grand Central Terminal",
+      "url": "https://grandcentralterminal.com/vanderbilt-hall-venue/"
+    },
+    {
+      "id": "met-address",
+      "label": "Address reference · Metropolitan Museum of Art",
+      "url": "https://store.metmuseum.org/store-locations"
+    },
+    {
+      "id": "gossip-girl-metadata",
+      "label": "Series credits · Warner Bros. Discovery",
+      "url": "https://press.wbd.com/us/na/media-release/hbo-max/max-original-series-gossip-girl-return-november-part-two-first-season"
+    },
+    {
+      "id": "succession-metadata",
+      "label": "Series credits · HBO",
+      "url": "https://press.wbd.com/us/media-release/hbo-0/succession/hbo-original-drama-series-succession-returns-its-fourth-season-march-26"
+    },
+    {
+      "id": "succession-years",
+      "label": "Series dates · NOW",
+      "url": "https://www.nowtv.com/membership/watch-tv-shows/hbo/watch-succession"
+    },
+    {
+      "id": "maisel-metadata",
+      "label": "Series credits · Amazon",
+      "url": "https://press.aboutamazon.com/2017/10/amy-sherman-palladinos-the-marvelous-mrs-maisel-premieres-on-wednesday-november-29-exclusively-on-amazon-prime-video"
+    },
+    {
+      "id": "maisel-final-season",
+      "label": "Series dates · Amazon",
+      "url": "https://www.aboutamazon.com/news/entertainment/amy-sherman-palladino-farewell-letter-to-the-marvelous-mrs-maisel"
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Friends museum / American Museum of Natural History",
+      "reason": "Ext.Street’s paired frame does not depict the stated AMNH façade. Omitted rather than propagating the mismatch. Rejected frame remains scratch-only as friends-ext-5.jpg."
+    },
+    {
+      "candidate": "Friends opening-credit fountain",
+      "reason": "California filming location; outside NYC scope."
+    },
+    {
+      "candidate": "Phoebe’s fictional 5 Morton Street address",
+      "reason": "Fictional address must not replace the verified exterior at 454 West 58th Street."
+    },
+    {
+      "candidate": "Seinfeld Jerry apartment",
+      "reason": "Exterior is in Los Angeles; outside NYC scope."
+    },
+    {
+      "candidate": "Seinfeld Soup Kitchen International",
+      "reason": "A real inspiration is not enough; source says the episode used a studio backlot set."
+    },
+    {
+      "candidate": "Sex and the City films / And Just Like That",
+      "reason": "Separate works; excluded from the 1998–2004 series row."
+    },
+    {
+      "candidate": "404 Riverside Drive / The Strathmore",
+      "reason": "The sampled Amazon image depicts the apartment interior rather than a verifiable image of the real building exterior; not included."
+    },
+    {
+      "candidate": "Succession / Pier 15",
+      "reason": "The sampled image depicts the wedding interior and does not visually establish Pier 15; not included."
+    },
+    {
+      "candidate": "Gossip Girl / Empire penthouse",
+      "reason": "Source identifies the penthouse set as Silvercup Studios; excluded."
+    }
+  ],
+  "image_policy": "Scene-matched images only. Actual episode frames, production stills and episode images retain distinct provenance. No image license is asserted. Sitcom exterior shots do not imply NYC studio interiors."
+}

@@ -8,14 +8,23 @@ import {
   atlas_embed_url,
   atlas_maps_url,
   atlas_location,
+  atlas_entry_label,
+  atlas_year,
   search_atlas,
 } from '../lib/new_york_atlas.ts';
-import { film_locations } from '../lib/nyc_film_map.ts';
+import {
+  film_locations,
+  film_catalog,
+  screen_kind,
+  screen_credit,
+  screen_year,
+  search_locations,
+} from '../lib/nyc_film_map.ts';
 import { literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.deepEqual(atlas_counts, { film: 32, literature: 19, music: 118 });
+  assert.deepEqual(atlas_counts, { film: 38, literature: 19, music: 118 });
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,
@@ -48,6 +57,35 @@ test('Atlas retains every original scene, passage and track-place relationship',
       assert.equal(params.get('place'), entry.place.id);
     }
   }
+});
+
+test('TV series retain the screen route while exposing creators and year ranges in both explorers', () => {
+  const friends = film_catalog.find((work) => work.id === 'friends');
+  assert.equal(screen_kind(friends), 'TV series');
+  assert.equal(screen_year(friends), '1994–2004');
+  assert.match(screen_credit(friends), /^Created by .*Marta Kauffman/);
+  for (const query of ['friends', 'marta kauffman', '1994–2004']) {
+    const entries = search_atlas('film', query);
+    assert.ok(
+      entries.some((entry) => entry.scene.film_id === 'friends'),
+      query,
+    );
+    assert.ok(
+      search_locations('all', query).some((place) =>
+        place.scenes.some((scene) => scene.film_id === 'friends'),
+      ),
+      query,
+    );
+  }
+  const entry = search_atlas('film', 'marta kauffman')[0];
+  assert.equal(atlas_entry_label(entry), 'TV series');
+  assert.equal(atlas_year(entry), '1994–2004');
+  assert.match(entry.id, /^film:/);
+  assert.match(entry.collection_url, /\/nyc-film-map\?film=friends&place=/);
+  const manhattan = film_catalog.find((work) => work.id === 'manhattan');
+  assert.equal(screen_kind(manhattan), 'Film');
+  assert.equal(screen_year(manhattan), '1979');
+  assert.equal(screen_credit(manhattan), 'Woody Allen');
 });
 
 test('area connections keep distinct source places, pins and scope', () => {

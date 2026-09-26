@@ -5,7 +5,8 @@
     "No open license or reuse permission is asserted.",
     "Unverified candidate images are excluded.",
     "Two sourced Anora places remain available without an unverified replacement image.",
-    "Display derivatives use JPEG for the current host; verified frames, dimensions and source attribution are unchanged."
+    "Display derivatives use JPEG for the current host; verified frames, dimensions and source attribution are unchanged.",
+    "Television additions distinguish episode frames, HBO production stills and Amazon episode images. Production stills and episode images are not claimed to be extracted video frames."
   ],
   "records": [
     {
@@ -1972,6 +1973,159 @@
       "original_image": "https://onthesetofnewyork.com/locations/blackswan/blackswan32.jpg",
       "verification": "OtsoNY identifies96 Lafayette Street; Movie Locations names the venue Santos Party House. Frame shows Nina in the club, not a modern venue photograph. Selected original frame visually inspected; modern comparison photographs excluded.",
       "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "friends",
+      "location_id": "friends-bedford-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/58121789277466831323.jpg",
+      "verification": "The source labels the paired frame as the apartment building at 90 Bedford Street; the corner façade and storefront are visible. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "friends",
+      "location_id": "solow-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/58121789277470503804.jpg",
+      "verification": "Both filming inventories identify 9 West 57th Street; the selected frame shows the distinctive skyscraper and neighboring façade. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "friends",
+      "location_id": "phoebe-apartment",
+      "frame_status": "verified_frame",
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/55855039495645476216160.jpg",
+      "verification": "Ext.Street pairs this frame with 454 West 58th Street; IMDb independently lists that address as Phoebe’s apartment-building exterior. Do not substitute the fictional 5 Morton Street address. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "toms-restaurant",
+      "frame_status": "verified_frame",
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/2108971119082609865689.jpg",
+      "verification": "The paired source frame shows the recognizable RESTAURANT sign and corner at the address; independent inventories confirm its exterior use. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "library",
+      "frame_status": "verified_frame",
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/65378104691560816254748.jpg",
+      "verification": "Ext.Street identifies The Library and provides this frame. Rob on Location explicitly identifies the Fifth Avenue main branch and establishing-shot use. Existing place identity and address are reused. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "costanza-house",
+      "frame_status": "verified_frame",
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/2026721245438385209413768.jpg",
+      "verification": "Ext.Street pairs the selected frame with 22-37 37th Street. Architectural Digest independently confirms the house address and Astoria neighborhood. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "sex-and-the-city",
+      "location_id": "magnolia-bakery",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.thefilmtripper.com/blog/magnolia-bakery-satc",
+      "original_image": "https://images.squarespace-cdn.com/content/v1/5de203bf4d009912ef872c6a/1619643781462-UH5D6A21H28BAO9FY0OV/Carrie+and+Miranda+-+Magnolia+02.jfif",
+      "verification": "The source identifies address, scene, and S03E05. The selected wide frame shows both characters and the Magnolia Bakery sign. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "sex-and-the-city",
+      "location_id": "jefferson-market-garden",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.iamnotastalker.com/2009/11/20/jefferson-market-garden/",
+      "original_image": "https://wp.iamnotastalker.com/wp-content/uploads/2009/11/a7bd8672-b654-4e76-a4d6-b70b773d08a6.jpg",
+      "verification": "The source identifies The Ick Factor, season six, and this garden; the garden’s official website independently confirms Miranda’s wedding was filmed there. The selected screen capture is the wide ceremony view. Visually inspected the downloaded full image and the selected-frames contact sheet; selected image is the series frame, not a present-day comparison photograph.",
+      "rights": "Copyrighted television frame; source attribution documents provenance and does not establish a reuse license."
+    },
+    {
+      "film_id": "gossip-girl",
+      "location_id": "grand-central",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.sceen-it.com/sceen/413/Gossip-Girl/Grand-Central-Terminal",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/4780.jpg/nos/.jpg",
+      "verification": "Blake Lively appears in the concourse with the clock, departure boards and arched terminal interior behind her. Location source presents the asset as a scene screenshot, visually checked against its associated venue.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "gossip-girl",
+      "location_id": "met",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.sceen-it.com/sceen/564/Gossip-Girl/Metropolitan-Museum-of-Art",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/6444.jpg/nos/.jpg",
+      "verification": "The group sits on the broad exterior steps below the museum’s stone columns and exhibition banners. Location source presents the asset as a scene screenshot, visually checked against its associated venue.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "gossip-girl",
+      "location_id": "new-york-palace",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.iamnotastalker.com/2009/10/26/the-new-york-palace-hotel",
+      "original_image": "https://wp.iamnotastalker.com/wp-content/uploads/2009/10/d6690deb-9c41-4b9d-bb5d-ac37408a5ebd.jpg",
+      "verification": "Serena and Dan appear over the distinctive patterned courtyard paving, beside its stone walls and wrought-iron gates. Location source presents the asset as a scene screenshot, visually checked against its associated venue.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "jean-georges",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-episode-7-untapped-new-york1.jpg",
+      "verification": "Shiv sits at a restaurant table in the episode-specific image paired with the Jean-Georges section. Official in-scene HBO publicity photography reproduced by a location inventory; not represented as an extracted video frame.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "the-mark-hotel",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-filming-locations-the-mark-hotel-matthew-macfadyen-nyc.jpg",
+      "verification": "Tom stands with a phone in the wood-paneled interior shown in the location-specific image. Official in-scene HBO publicity photography reproduced by a location inventory; not represented as an extracted video frame.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "chelsea-square-diner",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2019/06/succession-filming-locations-hbo-chelsea-square-diner-nyc.jpg",
+      "verification": "Roman and Kendall are visible at a diner table with coffee service; the location article pairs this image with the meeting. Official in-scene HBO publicity photography reproduced by a location inventory; not represented as an extracted video frame.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "location_id": "albanese-meats",
+      "frame_status": "verified_episode_image",
+      "source_page": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+      "original_image": "https://assets.aboutamazon.com/42/4f/20c0ed2b4d4bb98075c8bb907227/maisel-butcher-episode-1.jpg",
+      "verification": "Midge in a pink coat stands at the actual red shopfront dressed with Lutzi’s signage. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "location_id": "la-bonbonniere",
+      "frame_status": "verified_episode_image",
+      "source_page": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+      "original_image": "https://assets.aboutamazon.com/ea/50/e59abf82483e92159c8e92dc4b55/thecityspoon-episode-img.jpg",
+      "verification": "The couple embrace in the street directly before the dressed City Spoon storefront, with period cars nearby. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "the-marvelous-mrs-maisel",
+      "location_id": "b-altman-building",
+      "frame_status": "verified_episode_image",
+      "source_page": "https://www.aboutamazon.com/news/entertainment/marvelous-mrs-maisel-filming-locations-new-york-city",
+      "original_image": "https://assets.aboutamazon.com/f1/e5/4dcf64754640a6a52a3e3fc711d5/baltmanandcompany-episode-img.jpg",
+      "verification": "Midge stands on a snow-dressed sidewalk beside the department-store window displays; the source pairs it with the actual exterior shoot. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established.",
+      "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
     }
   ]
 }
