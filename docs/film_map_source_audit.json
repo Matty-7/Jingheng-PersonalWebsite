@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-21",
+  "reviewed_on": "2026-09-26",
   "films": [
     {
       "film_id": "manhattan",
@@ -167,6 +167,122 @@
       "source_urls": [
         "https://onthesetofnewyork.com/dotherightthing.html",
         "https://nycinfilm.com/2023/04/16/do-the-right-thing-1989/"
+      ]
+    },
+    {
+      "film_id": "the-warriors",
+      "title": "The Warriors",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/thewarriors.html",
+        "https://extstreet.com/The_Warriors.html",
+        "https://www.scoutingny.com/the-new-york-city-filming-locations-of-the-warriors-part-2/",
+        "https://movie-locations.com/movies/w/Warriors-1979.php"
+      ]
+    },
+    {
+      "film_id": "the-french-connection",
+      "title": "The French Connection",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/thefrenchconnection.html",
+        "https://www.movie-locations.com/movies/f/French-Connection.php"
+      ]
+    },
+    {
+      "film_id": "dog-day-afternoon",
+      "title": "Dog Day Afternoon",
+      "location_count": 2,
+      "source_urls": [
+        "https://onthesetofnewyork.com/dogdayafternoon.html",
+        "https://wsbj.com/sorabji/2010/03/30/dog-day-at-the-yard.html",
+        "https://longislandcemeteries.com/cemeteries/Calvary%20Cemetery%20Map.pdf",
+        "https://movie-locations.com/movies/d/Dog-Day-Afternoon.php"
+      ]
+    },
+    {
+      "film_id": "saturday-night-fever",
+      "title": "Saturday Night Fever",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/saturdaynightfever.html",
+        "https://www.extstreet.com/Saturday_Night_Fever.html",
+        "https://nycinfilm.com/2023/03/09/saturday-night-fever-1977/comment-page-1/"
+      ]
+    },
+    {
+      "film_id": "moonstruck",
+      "title": "Moonstruck",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/moonstruck.html"
+      ]
+    },
+    {
+      "film_id": "the-royal-tenenbaums",
+      "title": "The Royal Tenenbaums",
+      "location_count": 2,
+      "source_urls": [
+        "https://onthesetofnewyork.com/theroyaltenenbaums.html",
+        "https://www.movie-locations.com/movies/r/Royal-Tenenbaums.php"
+      ]
+    },
+    {
+      "film_id": "the-apartment",
+      "title": "The Apartment",
+      "location_count": 3,
+      "source_urls": [
+        "https://onthesetofnewyork.com/theapartment.html",
+        "https://nycinfilm.com/2022/11/09/the-apartment-1960/",
+        "https://www.centralparknyc.org/articles/central-park-in-classic-films"
+      ]
+    },
+    {
+      "film_id": "the-seven-year-itch",
+      "title": "The Seven Year Itch",
+      "location_count": 3,
+      "source_urls": [
+        "https://onthesetofnewyork.com/thesevenyearitch.html",
+        "https://movie-locations.com/movies/s/Seven-Year-Itch.php",
+        "https://www.nypap.org/preservation-history/pennsylvania-station/"
+      ]
+    },
+    {
+      "film_id": "the-fisher-king",
+      "title": "The Fisher King",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/thefisherking.html",
+        "https://catalog.afi.com/Film/67273-THE-FISHER-KING?cxt=filmography"
+      ]
+    },
+    {
+      "film_id": "big",
+      "title": "Big",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/big.html",
+        "https://www.csmonitor.com/USA/USA-Update/2015/0715/FAO-Schwarz-closes-flagship-Manhattan-store-the-end-of-an-era"
+      ]
+    },
+    {
+      "film_id": "once-upon-a-time-in-america",
+      "title": "Once Upon a Time in America",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/onceamerica.html",
+        "https://movie-tourist.blogspot.com/2016/11/once-upon-time-in-america-1984.html",
+        "https://movie-locations.com/movies/o/Once-Upon-A-Time-In-America.php",
+        "https://www.nyc.gov/site/dcas/business/dcasmanagedbuildings/long-island-city-courthouse.page"
+      ]
+    },
+    {
+      "film_id": "black-swan",
+      "title": "Black Swan",
+      "location_count": 4,
+      "source_urls": [
+        "https://onthesetofnewyork.com/blackswan.html",
+        "https://movie-locations.com/movies/b/Black-Swan.php"
       ]
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-21",
+  "reviewed_on": "2026-09-26",
   "films": [
     {
       "id": "manhattan",
@@ -140,6 +140,90 @@
       "year": 1989,
       "director": "Spike Lee",
       "note": "One Brooklyn block reaches a breaking point on a hot summer day."
+    },
+    {
+      "id": "the-warriors",
+      "title": "The Warriors",
+      "year": 1979,
+      "director": "Walter Hill",
+      "note": "A night journey through rival territories leads a Coney Island gang toward home."
+    },
+    {
+      "id": "the-french-connection",
+      "title": "The French Connection",
+      "year": 1971,
+      "director": "William Friedkin",
+      "note": "Two detectives track a drug shipment through streets, stations and waterfronts."
+    },
+    {
+      "id": "dog-day-afternoon",
+      "title": "Dog Day Afternoon",
+      "year": 1975,
+      "director": "Sidney Lumet",
+      "note": "A Brooklyn bank robbery turns into a long negotiation on a crowded street."
+    },
+    {
+      "id": "saturday-night-fever",
+      "title": "Saturday Night Fever",
+      "year": 1977,
+      "director": "John Badham",
+      "note": "Tony moves between his Brooklyn job, family home and weekend dance floor."
+    },
+    {
+      "id": "moonstruck",
+      "title": "Moonstruck",
+      "year": 1987,
+      "director": "Norman Jewison",
+      "note": "An unexpected romance crosses Brooklyn family life and an evening at the opera."
+    },
+    {
+      "id": "the-royal-tenenbaums",
+      "title": "The Royal Tenenbaums",
+      "year": 2001,
+      "director": "Wes Anderson",
+      "note": "A fractured family reunites in an imagined city assembled from real New York places."
+    },
+    {
+      "id": "the-apartment",
+      "title": "The Apartment",
+      "year": 1960,
+      "director": "Billy Wilder",
+      "note": "Office routines, a missed theatre date, and a lonely wait in Central Park."
+    },
+    {
+      "id": "the-seven-year-itch",
+      "title": "The Seven Year Itch",
+      "year": 1955,
+      "director": "Billy Wilder",
+      "note": "A summer in Manhattan, from a crowded station to an East Side brownstone."
+    },
+    {
+      "id": "the-fisher-king",
+      "title": "The Fisher King",
+      "year": 1991,
+      "director": "Terry Gilliam",
+      "note": "A search for redemption among commuters, park lawns, and an unlikely castle."
+    },
+    {
+      "id": "big",
+      "title": "Big",
+      "year": 1988,
+      "director": "Penny Marshall",
+      "note": "A child’s wish becomes a grown-up life of toy shops, offices, and a SoHo loft."
+    },
+    {
+      "id": "once-upon-a-time-in-america",
+      "title": "Once Upon a Time in America",
+      "year": 1984,
+      "director": "Sergio Leone",
+      "note": "Old friendships return through Brooklyn streets, a Queens jail, and a Bronx cemetery."
+    },
+    {
+      "id": "black-swan",
+      "title": "Black Swan",
+      "year": 2010,
+      "director": "Darren Aronofsky",
+      "note": "A ballerina’s pursuit of perfection moves from Lincoln Center to a night downtown."
     }
   ],
   "sources": [
@@ -297,6 +381,166 @@
       "id": "the-godfather-then-now",
       "label": "Filming reference",
       "url": "https://www.thennowmovielocations.com/2019/06/the-godfather.html"
+    },
+    {
+      "id": "the-warriors",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/thewarriors.html"
+    },
+    {
+      "id": "the-french-connection",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/thefrenchconnection.html"
+    },
+    {
+      "id": "dog-day-afternoon",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/dogdayafternoon.html"
+    },
+    {
+      "id": "saturday-night-fever",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/saturdaynightfever.html"
+    },
+    {
+      "id": "moonstruck",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/moonstruck.html"
+    },
+    {
+      "id": "the-royal-tenenbaums",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/theroyaltenenbaums.html"
+    },
+    {
+      "id": "warriors-ext",
+      "label": "Filming reference · Ext.Street",
+      "url": "https://extstreet.com/The_Warriors.html"
+    },
+    {
+      "id": "warriors-scouting",
+      "label": "Location research · Scouting NY",
+      "url": "https://www.scoutingny.com/the-new-york-city-filming-locations-of-the-warriors-part-2/"
+    },
+    {
+      "id": "warriors-film-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://movie-locations.com/movies/w/Warriors-1979.php"
+    },
+    {
+      "id": "french-film-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://www.movie-locations.com/movies/f/French-Connection.php"
+    },
+    {
+      "id": "snf-ext",
+      "label": "Filming reference · Ext.Street",
+      "url": "https://www.extstreet.com/Saturday_Night_Fever.html"
+    },
+    {
+      "id": "snf-nycinfilm",
+      "label": "Location research · NYC in Film",
+      "url": "https://nycinfilm.com/2023/03/09/saturday-night-fever-1977/comment-page-1/"
+    },
+    {
+      "id": "dog-calvary",
+      "label": "Film frames · Sorabji at WSBJ",
+      "url": "https://wsbj.com/sorabji/2010/03/30/dog-day-at-the-yard.html"
+    },
+    {
+      "id": "calvary-map",
+      "label": "Cemetery map",
+      "url": "https://longislandcemeteries.com/cemeteries/Calvary%20Cemetery%20Map.pdf"
+    },
+    {
+      "id": "dog-film-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://movie-locations.com/movies/d/Dog-Day-Afternoon.php"
+    },
+    {
+      "id": "royal-film-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://www.movie-locations.com/movies/r/Royal-Tenenbaums.php"
+    },
+    {
+      "id": "the-apartment",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/theapartment.html"
+    },
+    {
+      "id": "the-seven-year-itch",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/thesevenyearitch.html"
+    },
+    {
+      "id": "the-fisher-king",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/thefisherking.html"
+    },
+    {
+      "id": "the-apartment-nycinfilm",
+      "label": "Location research · NYC in Film",
+      "url": "https://nycinfilm.com/2022/11/09/the-apartment-1960/"
+    },
+    {
+      "id": "the-apartment-park",
+      "label": "Park history · Central Park Conservancy",
+      "url": "https://www.centralparknyc.org/articles/central-park-in-classic-films"
+    },
+    {
+      "id": "the-fisher-king-afi",
+      "label": "Film history · AFI Catalog",
+      "url": "https://catalog.afi.com/Film/67273-THE-FISHER-KING?cxt=filmography"
+    },
+    {
+      "id": "the-seven-year-itch-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://movie-locations.com/movies/s/Seven-Year-Itch.php"
+    },
+    {
+      "id": "big",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/big.html"
+    },
+    {
+      "id": "once-upon-a-time-in-america",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/onceamerica.html"
+    },
+    {
+      "id": "black-swan",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/blackswan.html"
+    },
+    {
+      "id": "black-swan-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://movie-locations.com/movies/b/Black-Swan.php"
+    },
+    {
+      "id": "once-america-tourist",
+      "label": "Location research · Movie Tourist",
+      "url": "https://movie-tourist.blogspot.com/2016/11/once-upon-time-in-america-1984.html"
+    },
+    {
+      "id": "once-america-locations",
+      "label": "Filming reference · Movie Locations",
+      "url": "https://movie-locations.com/movies/o/Once-Upon-A-Time-In-America.php"
+    },
+    {
+      "id": "lic-courthouse-city",
+      "label": "Building history · NYC DCAS",
+      "url": "https://www.nyc.gov/site/dcas/business/dcasmanagedbuildings/long-island-city-courthouse.page"
+    },
+    {
+      "id": "old-penn-history",
+      "label": "Station history · NY Preservation Archive Project",
+      "url": "https://www.nypap.org/preservation-history/pennsylvania-station/"
+    },
+    {
+      "id": "fao-fifth-closure",
+      "label": "Closure report · Christian Science Monitor",
+      "url": "https://www.csmonitor.com/USA/USA-Update/2015/0715/FAO-Schwarz-closes-flagship-Manhattan-store-the-end-of-an-era"
     }
   ],
   "locations": [
@@ -1134,6 +1378,24 @@
             "image_url": "https://onthesetofnewyork.com/locations/northbynorthwest/northbynorthwest13.jpg",
             "width": 565,
             "height": 314
+          }
+        },
+        {
+          "film_id": "the-fisher-king",
+          "scene": "Parry follows Lydia through Grand Central as the commuters become a waltzing crowd.",
+          "source_ids": [
+            "the-fisher-king",
+            "the-fisher-king-afi"
+          ],
+          "still": {
+            "alt": "Parry smiles amid the crowd inside Grand Central Terminal.",
+            "credit": "The Fisher King (1991) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefisherking.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefisherking/thefisherking143.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/the-fisher-king--grand-central.jpg",
+            "thumbnail": "/images/film-map/the-fisher-king--grand-central--thumb.jpg"
           }
         }
       ]
@@ -3093,6 +3355,23 @@
             "width": 565,
             "height": 325
           }
+        },
+        {
+          "film_id": "the-fisher-king",
+          "scene": "Jack and Parry spend a night beneath the skyline on Sheep Meadow.",
+          "source_ids": [
+            "the-fisher-king"
+          ],
+          "still": {
+            "alt": "Jack and Parry stand on Sheep Meadow with illuminated buildings behind them.",
+            "credit": "The Fisher King (1991) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefisherking.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefisherking/thefisherking147.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/the-fisher-king--sheep-meadow.jpg",
+            "thumbnail": "/images/film-map/the-fisher-king--sheep-meadow--thumb.jpg"
+          }
         }
       ]
     },
@@ -3220,6 +3499,43 @@
             "image_url": "https://onthesetofnewyork.com/locations/manhattanmurdermystery/manhattanmurdermystery05.jpg",
             "width": 565,
             "height": 298
+          }
+        },
+        {
+          "film_id": "moonstruck",
+          "scene": "Loretta and Ronny’s opera evening brings them to Lincoln Center.",
+          "source_ids": [
+            "moonstruck"
+          ],
+          "still": {
+            "src": "/images/film-map/moonstruck--lincoln-center.jpg",
+            "thumbnail": "/images/film-map/moonstruck--lincoln-center--thumb.jpg",
+            "alt": "The illuminated Lincoln Center plaza and fountain appear at night.",
+            "credit": "Moonstruck (1987) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/moonstruck.html",
+            "image_url": "https://onthesetofnewyork.com/locations/moonstruck/moonstruck02.jpg",
+            "width": 565,
+            "height": 278,
+            "sha256": "9d916dc7f724279cd212705a3aacbb99f1ab80b58a7fa49f41f9674bab5d3b56",
+            "content_type": "image/jpeg"
+          }
+        },
+        {
+          "film_id": "black-swan",
+          "scene": "Nina approaches Lincoln Center, the home of her ballet company in the story.",
+          "source_ids": [
+            "black-swan",
+            "black-swan-locations"
+          ],
+          "still": {
+            "alt": "Nina faces the Lincoln Center buildings across the plaza.",
+            "credit": "Black Swan (2010) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/blackswan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/blackswan/blackswan53.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/black-swan--lincoln-center.jpg",
+            "thumbnail": "/images/film-map/black-swan--lincoln-center--thumb.jpg"
           }
         }
       ]
@@ -4330,6 +4646,26 @@
             "width": 565,
             "height": 306
           }
+        },
+        {
+          "film_id": "the-royal-tenenbaums",
+          "scene": "Pagoda meets Royal by the harbor to tell him about Etheline’s possible remarriage.",
+          "source_ids": [
+            "the-royal-tenenbaums",
+            "royal-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/the-royal-tenenbaums--battery-park.jpg",
+            "thumbnail": "/images/film-map/the-royal-tenenbaums--battery-park--thumb.jpg",
+            "alt": "Pagoda stands by the waterfront railing in Battery Park.",
+            "credit": "The Royal Tenenbaums (2001) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/theroyaltenenbaums.html",
+            "image_url": "https://onthesetofnewyork.com/locations/theroyaltenenbaums/theroyaltenenbaums03.jpg",
+            "width": 565,
+            "height": 238,
+            "sha256": "069d0ff9743a31c9db32181252be501468a5a1465eefa036f42f138c8f01c1b6",
+            "content_type": "image/jpeg"
+          }
         }
       ]
     },
@@ -5402,6 +5738,1255 @@
             "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgufgRhlT6-rypH_t2Me8gDgaV67YwF7G6HXNa7CeaTCeLGoLOdDOojG2oanegMfErApPP_KEchJ-TCKkTcwdJxBvVTydYL18kVH8NxbBPySmy-2ZY72pWxDXRKvpgPN2Agc8j4WdkEcjw/s640/Screenshot+%25281335%2529.png",
             "width": 578,
             "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "id": "warriors-72-station",
+      "name": "72nd Street subway station",
+      "address": "Broadway at West 72nd Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "access": "Transit exterior",
+      "visit_note": "View the station house from the public plaza; follow transit rules if entering.",
+      "coordinates": [
+        40.778453,
+        -73.98197
+      ],
+      "scenes": [
+        {
+          "film_id": "the-warriors",
+          "scene": "The Warriors emerge at the Broadway station during their encounter with the Baseball Furies.",
+          "source_ids": [
+            "the-warriors",
+            "warriors-scouting"
+          ],
+          "still": {
+            "src": "/images/film-map/the-warriors--warriors-72-station.jpg",
+            "thumbnail": "/images/film-map/the-warriors--warriors-72-station--thumb.jpg",
+            "alt": "Gang members appear outside the 72nd Street station house.",
+            "credit": "The Warriors (1979) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thewarriors.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thewarriors/thewarriors10.jpg",
+            "width": 565,
+            "height": 316,
+            "sha256": "08b977b22dbc1326dbbcff121d0c7d6de13a54895843b2e5b2a015770a97a920",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "firemens-memorial",
+      "name": "Firemen’s Memorial",
+      "address": "Riverside Drive at West 100th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "access": "Public park",
+      "visit_note": "Use public park paths and steps.",
+      "coordinates": [
+        40.798637,
+        -73.973335
+      ],
+      "scenes": [
+        {
+          "film_id": "the-warriors",
+          "scene": "The chase passes the Firemen’s Memorial at the edge of Riverside Park.",
+          "source_ids": [
+            "the-warriors",
+            "warriors-scouting"
+          ],
+          "still": {
+            "src": "/images/film-map/the-warriors--firemens-memorial.jpg",
+            "thumbnail": "/images/film-map/the-warriors--firemens-memorial--thumb.jpg",
+            "alt": "The Warriors run past the stone Firemen’s Memorial at night.",
+            "credit": "The Warriors (1979) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thewarriors.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thewarriors/thewarriors13.jpg",
+            "width": 565,
+            "height": 316,
+            "sha256": "0b1a7ce7a8e8cd66096e7b664c2ef0dca7fecb17fdc613266effbe6292aa4938",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "brooklyn-bridge",
+      "name": "Brooklyn Bridge",
+      "address": "Brooklyn Bridge pedestrian walkway",
+      "neighborhood": "East River",
+      "borough": "Manhattan / Brooklyn",
+      "access": "Public bridge",
+      "visit_note": "Use the pedestrian walkway. The pin represents the bridge, not an entrance or the traffic lanes shown in the film.",
+      "coordinates": [
+        40.7057,
+        -73.9964
+      ],
+      "maps_query": "Brooklyn Bridge pedestrian walkway, New York",
+      "scenes": [
+        {
+          "film_id": "the-french-connection",
+          "scene": "A car carrying the men under surveillance crosses the Brooklyn Bridge.",
+          "source_ids": [
+            "the-french-connection"
+          ],
+          "still": {
+            "src": "/images/film-map/the-french-connection--brooklyn-bridge.jpg",
+            "thumbnail": "/images/film-map/the-french-connection--brooklyn-bridge--thumb.jpg",
+            "alt": "A light-colored car drives onto the Brooklyn Bridge in the film.",
+            "credit": "The French Connection (1971) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefrenchconnection.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefrenchconnection/thefrenchconnection01.jpg",
+            "width": 565,
+            "height": 304,
+            "sha256": "55c9449078f581f38ea44ebbb95a2e1f6512e5dedbaae6ca51f66f12586b1a23",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ratners-delancey",
+      "name": "Ratner’s, former site",
+      "address": "138 Delancey Street",
+      "neighborhood": "Lower East Side",
+      "borough": "Manhattan",
+      "access": "Former restaurant exterior",
+      "visit_note": "View the former restaurant address from the sidewalk.",
+      "coordinates": [
+        40.718561,
+        -73.986851
+      ],
+      "scenes": [
+        {
+          "film_id": "the-french-connection",
+          "scene": "Salvatore Boca and his companion leave Ratner’s as the investigation follows their movements.",
+          "source_ids": [
+            "the-french-connection",
+            "french-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/the-french-connection--ratners-delancey.jpg",
+            "thumbnail": "/images/film-map/the-french-connection--ratners-delancey--thumb.jpg",
+            "alt": "A couple exits beneath the Ratner’s sign on Delancey Street.",
+            "credit": "The French Connection (1971) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefrenchconnection.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefrenchconnection/thefrenchconnection32.jpg",
+            "width": 565,
+            "height": 304,
+            "sha256": "cf348e7cf9709e1de320c52a6fe2400c39e75b40d027fe9f919a0f4fa67f1773",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "62nd-street-station",
+      "name": "62nd Street subway station",
+      "address": "62nd Street at New Utrecht Avenue",
+      "neighborhood": "Bensonhurst",
+      "borough": "Brooklyn",
+      "access": "Transit exterior",
+      "visit_note": "View the elevated station from the sidewalk; paid areas require a fare.",
+      "coordinates": [
+        40.626472,
+        -73.996895
+      ],
+      "scenes": [
+        {
+          "film_id": "the-french-connection",
+          "scene": "Doyle’s pursuit ends at the steps of the elevated 62nd Street station.",
+          "source_ids": [
+            "the-french-connection",
+            "french-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/the-french-connection--62nd-street-station.jpg",
+            "thumbnail": "/images/film-map/the-french-connection--62nd-street-station--thumb.jpg",
+            "alt": "Doyle stands below the elevated tracks beside the station stairs.",
+            "credit": "The French Connection (1971) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefrenchconnection.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefrenchconnection/thefrenchconnection52.jpg",
+            "width": 565,
+            "height": 304,
+            "sha256": "771cd560105df5b1b346fc185255928d72efc871364d1343cdc34a54eadbe5a3",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ronaldo-maia-flowers",
+      "name": "Ronaldo Maia Flowers, former site",
+      "address": "27 East 67th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "access": "Former shop exterior",
+      "visit_note": "View the historical storefront address from the public sidewalk.",
+      "coordinates": [
+        40.768598,
+        -73.967445
+      ],
+      "scenes": [
+        {
+          "film_id": "the-french-connection",
+          "scene": "Charnier enters a flower shop while Doyle follows his movements.",
+          "source_ids": [
+            "the-french-connection",
+            "french-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/the-french-connection--ronaldo-maia-flowers.jpg",
+            "thumbnail": "/images/film-map/the-french-connection--ronaldo-maia-flowers--thumb.jpg",
+            "alt": "A man approaches the flower shop beneath its Ronaldo Maia Flowers sign.",
+            "credit": "The French Connection (1971) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefrenchconnection.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefrenchconnection/thefrenchconnection18.jpg",
+            "width": 565,
+            "height": 304,
+            "sha256": "28d1ba6f113e01313b0d88980314f6822ed405f2ab7350e5cbc4a996b4fd8137",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "orphans-45th-road",
+      "name": "The Orphans’ block",
+      "address": "21-57 45th Road",
+      "neighborhood": "Long Island City",
+      "borough": "Queens",
+      "access": "Residential exterior",
+      "visit_note": "Stay on the public sidewalk; the buildings are private.",
+      "coordinates": [
+        40.746465,
+        -73.945663
+      ],
+      "scenes": [
+        {
+          "film_id": "the-warriors",
+          "scene": "The Warriors meet the Orphans on a Queens block standing in for their journey through the Bronx.",
+          "source_ids": [
+            "warriors-ext",
+            "warriors-scouting"
+          ],
+          "still": {
+            "src": "/images/film-map/the-warriors--orphans-45th-road.jpg",
+            "thumbnail": "/images/film-map/the-warriors--orphans-45th-road--thumb.jpg",
+            "alt": "An Orphans gang member watches from an elevated porch at night.",
+            "credit": "The Warriors (1979) · Ext.Street",
+            "source_url": "https://extstreet.com/The_Warriors.html",
+            "image_url": "https://extstreet.com/stills/63621233260683130381368521.jpg",
+            "width": 360,
+            "height": 202,
+            "sha256": "8631291855086adc3e19e01d962814d2123ff1e11f33570e5f7f62bc0ea921a6",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "coney-stillwell-station",
+      "name": "Coney Island–Stillwell Avenue station",
+      "address": "Stillwell Avenue at Surf Avenue",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "access": "Transit station",
+      "visit_note": "Use public station access and observe fare requirements. The station has changed since filming.",
+      "coordinates": [
+        40.577422,
+        -73.981233
+      ],
+      "scenes": [
+        {
+          "film_id": "the-warriors",
+          "scene": "The Warriors arrive back at Coney Island by subway near the end of their journey.",
+          "source_ids": [
+            "warriors-ext",
+            "warriors-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/the-warriors--coney-stillwell-station.jpg",
+            "thumbnail": "/images/film-map/the-warriors--coney-stillwell-station--thumb.jpg",
+            "alt": "A graffiti-covered train appears beside a Stillwell Avenue station sign.",
+            "credit": "The Warriors (1979) · Ext.Street",
+            "source_url": "https://extstreet.com/The_Warriors.html",
+            "image_url": "https://extstreet.com/stills/63621233260683130381457833.jpg",
+            "width": 360,
+            "height": 202,
+            "sha256": "7f575c4ba537d90f74410cc8dc50e0687f38f9165f8eb69c05f011501a6b0dfe",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dog-day-bank",
+      "name": "First Brooklyn Savings Bank filming site",
+      "address": "285 Prospect Park West",
+      "neighborhood": "Windsor Terrace",
+      "borough": "Brooklyn",
+      "access": "Residential exterior",
+      "visit_note": "View the former bank-set location from the public sidewalk; do not enter the residential property.",
+      "coordinates": [
+        40.657848,
+        -73.982316
+      ],
+      "scenes": [
+        {
+          "film_id": "dog-day-afternoon",
+          "scene": "Sonny steps outside the bank to confront the police gathered in the street.",
+          "source_ids": [
+            "dog-day-afternoon",
+            "dog-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/dog-day-afternoon--dog-day-bank.jpg",
+            "thumbnail": "/images/film-map/dog-day-afternoon--dog-day-bank--thumb.jpg",
+            "alt": "Sonny faces a police officer outside the bank doors.",
+            "credit": "Dog Day Afternoon (1975) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/dogdayafternoon.html",
+            "image_url": "https://onthesetofnewyork.com/locations/dogdayafternoon/dogdayafternoon06.jpg",
+            "width": 565,
+            "height": 323,
+            "sha256": "cf10e2f092de44f232c2c795581fb3943327eb7dab44876bd1627875bf8508b1",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "calvary-cemetery",
+      "name": "Calvary Cemetery",
+      "address": "First Calvary Cemetery, 34-02 Greenpoint Avenue",
+      "neighborhood": "Blissville",
+      "borough": "Queens",
+      "access": "Cemetery",
+      "visit_note": "The pin marks the Greenpoint Avenue approach to First Calvary, not the opening shot’s camera position. Follow cemetery visiting rules.",
+      "coordinates": [
+        40.736013,
+        -73.932602
+      ],
+      "scenes": [
+        {
+          "film_id": "dog-day-afternoon",
+          "scene": "The opening montage looks across Calvary Cemetery toward the Manhattan skyline.",
+          "source_ids": [
+            "dog-calvary",
+            "calvary-map"
+          ],
+          "still": {
+            "src": "/images/film-map/dog-day-afternoon--calvary-cemetery.jpg",
+            "thumbnail": "/images/film-map/dog-day-afternoon--calvary-cemetery--thumb.jpg",
+            "alt": "White gravestones fill the foreground beneath the Manhattan skyline in the opening montage.",
+            "credit": "Dog Day Afternoon (1975) · Sorabji at WSBJ",
+            "source_url": "https://wsbj.com/sorabji/2010/03/30/dog-day-at-the-yard.html",
+            "image_url": "https://i0.wp.com/wsbj.com/sorabji/wp-content/uploads/2010/03/calvary_cemetery_dog_day_afternoon_02.png?resize=1080%2C608&ssl=1",
+            "width": 1080,
+            "height": 608,
+            "sha256": "208a45ae4aa2a320f16dab5afacd61de2576b2b1e6e4b4f2c9a2e227b86b7686",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lennys-pizza",
+      "name": "Lenny’s Pizza, former site",
+      "address": "1969 86th Street",
+      "neighborhood": "Bensonhurst",
+      "borough": "Brooklyn",
+      "access": "Former shop exterior",
+      "visit_note": "View the former pizza-shop address from the public sidewalk.",
+      "coordinates": [
+        40.605107,
+        -73.998545
+      ],
+      "scenes": [
+        {
+          "film_id": "saturday-night-fever",
+          "scene": "Tony stops for pizza during his opening walk through the neighborhood.",
+          "source_ids": [
+            "saturday-night-fever",
+            "snf-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/saturday-night-fever--lennys-pizza.jpg",
+            "thumbnail": "/images/film-map/saturday-night-fever--lennys-pizza--thumb.jpg",
+            "alt": "Tony orders through the open window beneath the pizza sign.",
+            "credit": "Saturday Night Fever (1977) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/saturdaynightfever.html",
+            "image_url": "https://onthesetofnewyork.com/locations/saturdaynightfever/saturdaynightfever03.jpg",
+            "width": 565,
+            "height": 321,
+            "sha256": "a652cf4b463c1314344f20ffa4fa8e59b1deda59114230918afda9bd01d9ffaf",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tony-hardware",
+      "name": "Tony’s hardware store",
+      "address": "7305 Fifth Avenue",
+      "neighborhood": "Bay Ridge",
+      "borough": "Brooklyn",
+      "access": "Former shop exterior",
+      "visit_note": "View the filming address from the public sidewalk.",
+      "coordinates": [
+        40.630707,
+        -74.021846
+      ],
+      "scenes": [
+        {
+          "film_id": "saturday-night-fever",
+          "scene": "Tony returns to the hardware store where he works.",
+          "source_ids": [
+            "snf-ext",
+            "snf-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/saturday-night-fever--tony-hardware.jpg",
+            "thumbnail": "/images/film-map/saturday-night-fever--tony-hardware--thumb.jpg",
+            "alt": "Tony passes the hardware store entrance on Fifth Avenue.",
+            "credit": "Saturday Night Fever (1977) · Ext.Street",
+            "source_url": "https://www.extstreet.com/Saturday_Night_Fever.html",
+            "image_url": "https://www.extstreet.com/stills/1726224065051571086596924320559491242.jpg",
+            "width": 360,
+            "height": 202,
+            "sha256": "7172fba2f2a419914904de0fd9dd95cca3efdc8907e68c5a618b925cb06fff71",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "manero-home",
+      "name": "The Manero family home",
+      "address": "221 79th Street",
+      "neighborhood": "Bay Ridge",
+      "borough": "Brooklyn",
+      "access": "Residential exterior",
+      "visit_note": "Stay on the public sidewalk. The home’s exterior has been remodeled since filming.",
+      "coordinates": [
+        40.629195,
+        -74.030815
+      ],
+      "scenes": [
+        {
+          "film_id": "saturday-night-fever",
+          "scene": "Tony comes home to the house he shares with his family.",
+          "source_ids": [
+            "snf-ext",
+            "snf-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/saturday-night-fever--manero-home.jpg",
+            "thumbnail": "/images/film-map/saturday-night-fever--manero-home--thumb.jpg",
+            "alt": "Tony approaches the steps of his family home.",
+            "credit": "Saturday Night Fever (1977) · Ext.Street",
+            "source_url": "https://www.extstreet.com/Saturday_Night_Fever.html",
+            "image_url": "https://www.extstreet.com/stills/1726224065051571086596924320559491404.jpg",
+            "width": 360,
+            "height": 202,
+            "sha256": "687a25717d9f67b1c07e545b5b034c4f4b0c215621d9a02938aebfa9cfc66d64",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2001-odyssey",
+      "name": "2001 Odyssey, former site",
+      "address": "802 64th Street",
+      "neighborhood": "Sunset Park",
+      "borough": "Brooklyn",
+      "access": "Former club site",
+      "visit_note": "View the historical address from the sidewalk; the original nightclub building was demolished.",
+      "coordinates": [
+        40.632933,
+        -74.011863
+      ],
+      "scenes": [
+        {
+          "film_id": "saturday-night-fever",
+          "scene": "The disco exterior introduces the club where Tony spends his Saturday nights.",
+          "source_ids": [
+            "snf-ext",
+            "snf-nycinfilm"
+          ],
+          "still": {
+            "src": "/images/film-map/saturday-night-fever--2001-odyssey.jpg",
+            "thumbnail": "/images/film-map/saturday-night-fever--2001-odyssey--thumb.jpg",
+            "alt": "The 2001 Odyssey sign glows above the club entrance at night.",
+            "credit": "Saturday Night Fever (1977) · Ext.Street",
+            "source_url": "https://www.extstreet.com/Saturday_Night_Fever.html",
+            "image_url": "https://www.extstreet.com/stills/1726224065051571086596924320559495156.jpg",
+            "width": 360,
+            "height": 202,
+            "sha256": "a33e84f47fd1221f78ae4e298de890bda4d9b08bec69ec292eacd1370e7aa53d",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "castorini-home",
+      "name": "The Castorini family home",
+      "address": "19 Cranberry Street",
+      "neighborhood": "Brooklyn Heights",
+      "borough": "Brooklyn",
+      "access": "Residential exterior",
+      "visit_note": "Stay on the public sidewalk; this is a private home.",
+      "coordinates": [
+        40.700242,
+        -73.994596
+      ],
+      "scenes": [
+        {
+          "film_id": "moonstruck",
+          "scene": "The Cranberry Street house provides the exterior of Loretta’s family home.",
+          "source_ids": [
+            "moonstruck"
+          ],
+          "still": {
+            "src": "/images/film-map/moonstruck--castorini-home.jpg",
+            "thumbnail": "/images/film-map/moonstruck--castorini-home--thumb.jpg",
+            "alt": "Loretta stands on the steps of the Castorini home.",
+            "credit": "Moonstruck (1987) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/moonstruck.html",
+            "image_url": "https://onthesetofnewyork.com/locations/moonstruck/moonstruck16.jpg",
+            "width": 565,
+            "height": 294,
+            "sha256": "6c9baa6051d53a9012ed8e5468ec6152a7f8488472bfdcae50c78b9440dd123b",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "grand-ticino",
+      "name": "Grand Ticino filming location",
+      "address": "284 West 12th Street",
+      "neighborhood": "West Village",
+      "borough": "Manhattan",
+      "access": "Restaurant exterior",
+      "visit_note": "View the corner from the public sidewalk.",
+      "coordinates": [
+        40.737411,
+        -74.00397
+      ],
+      "scenes": [
+        {
+          "film_id": "moonstruck",
+          "scene": "The West Village restaurant exterior stands in for the Grand Ticino.",
+          "source_ids": [
+            "moonstruck"
+          ],
+          "still": {
+            "src": "/images/film-map/moonstruck--grand-ticino.jpg",
+            "thumbnail": "/images/film-map/moonstruck--grand-ticino--thumb.jpg",
+            "alt": "The Grand Ticino restaurant sign and corner awning appear at night.",
+            "credit": "Moonstruck (1987) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/moonstruck.html",
+            "image_url": "https://onthesetofnewyork.com/locations/moonstruck/moonstruck13.jpg",
+            "width": 565,
+            "height": 275,
+            "sha256": "3144e26219e4a2a5b762f438c64501b119845233a5765d5676b39a9943837da9",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cammareri-bakery",
+      "name": "Cammareri Bakery filming location",
+      "address": "Henry Street at Sackett Street",
+      "neighborhood": "Carroll Gardens",
+      "borough": "Brooklyn",
+      "access": "Shop exterior",
+      "visit_note": "View the former bakery corner from the public sidewalk.",
+      "coordinates": [
+        40.684098,
+        -73.999649
+      ],
+      "scenes": [
+        {
+          "film_id": "moonstruck",
+          "scene": "Loretta visits the bakery where Ronny works.",
+          "source_ids": [
+            "moonstruck"
+          ],
+          "still": {
+            "src": "/images/film-map/moonstruck--cammareri-bakery.jpg",
+            "thumbnail": "/images/film-map/moonstruck--cammareri-bakery--thumb.jpg",
+            "alt": "Loretta approaches the Cammareri Brothers Bakery corner.",
+            "credit": "Moonstruck (1987) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/moonstruck.html",
+            "image_url": "https://onthesetofnewyork.com/locations/moonstruck/moonstruck21.jpg",
+            "width": 565,
+            "height": 276,
+            "sha256": "49e3a54ad18f4e978b775a437e0332b13f7c313f15e5e46a5b7c17b90555d4bb",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tenenbaum-house",
+      "name": "The Tenenbaum family house",
+      "address": "339 Convent Avenue at West 144th Street",
+      "neighborhood": "Hamilton Heights",
+      "borough": "Manhattan",
+      "access": "Residential exterior",
+      "visit_note": "View the house from the public sidewalk and keep the steps clear.",
+      "coordinates": [
+        40.823765,
+        -73.946486
+      ],
+      "scenes": [
+        {
+          "film_id": "the-royal-tenenbaums",
+          "scene": "The Convent Avenue mansion supplies the exterior of the Tenenbaum family’s home.",
+          "source_ids": [
+            "the-royal-tenenbaums",
+            "royal-film-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/the-royal-tenenbaums--tenenbaum-house.jpg",
+            "thumbnail": "/images/film-map/the-royal-tenenbaums--tenenbaum-house--thumb.jpg",
+            "alt": "The Tenenbaum house facade appears in warm evening light.",
+            "credit": "The Royal Tenenbaums (2001) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/theroyaltenenbaums.html",
+            "image_url": "https://onthesetofnewyork.com/locations/theroyaltenenbaums/theroyaltenenbaums04.jpg",
+            "width": 565,
+            "height": 238,
+            "sha256": "cef062af4077ae4bdfcd43a388438055843f35b23a6a965baac52439330d0e00",
+            "content_type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "baxter-broadway-office",
+      "name": "Baxter’s office building",
+      "address": "2 Broadway at Stone Street",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "access": "Office exterior",
+      "visit_note": "View the building from the public sidewalk.",
+      "coordinates": [
+        40.70453,
+        -74.012641
+      ],
+      "scenes": [
+        {
+          "film_id": "the-apartment",
+          "scene": "The tower at 2 Broadway establishes the insurance company where Baxter and Fran work.",
+          "source_ids": [
+            "the-apartment"
+          ],
+          "still": {
+            "alt": "The office tower at 2 Broadway seen between neighboring buildings.",
+            "credit": "The Apartment (1960) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/theapartment.html",
+            "image_url": "https://onthesetofnewyork.com/locations/theapartment/theapartment08.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/the-apartment--baxter-broadway-office.jpg",
+            "thumbnail": "/images/film-map/the-apartment--baxter-broadway-office--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "majestic-theatre",
+      "name": "Majestic Theatre",
+      "address": "247 West 44th Street",
+      "neighborhood": "Theater District",
+      "borough": "Manhattan",
+      "access": "Theatre exterior",
+      "visit_note": "View the marquee from West 44th Street; entry depends on a performance ticket.",
+      "coordinates": [
+        40.758423,
+        -73.988023
+      ],
+      "scenes": [
+        {
+          "film_id": "the-apartment",
+          "scene": "Baxter waits outside the Majestic for Fran, with tickets to The Music Man.",
+          "source_ids": [
+            "the-apartment",
+            "the-apartment-nycinfilm"
+          ],
+          "still": {
+            "alt": "Baxter stands beneath the Majestic Theatre marquee.",
+            "credit": "The Apartment (1960) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/theapartment.html",
+            "image_url": "https://onthesetofnewyork.com/locations/theapartment/theapartment02.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/the-apartment--majestic-theatre.jpg",
+            "thumbnail": "/images/film-map/the-apartment--majestic-theatre--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "west-drive-baxter-bench",
+      "name": "West Drive benches",
+      "address": "Central Park West at West 69th Street",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "access": "Park path",
+      "visit_note": "Enter the park at West 69th Street for the West Drive paths. The pin marks the approach, not the exact bench.",
+      "coordinates": [
+        40.774628,
+        -73.977774
+      ],
+      "scenes": [
+        {
+          "film_id": "the-apartment",
+          "scene": "Baxter waits on a park bench while an executive borrows his apartment.",
+          "source_ids": [
+            "the-apartment",
+            "the-apartment-nycinfilm",
+            "the-apartment-park"
+          ],
+          "still": {
+            "alt": "Baxter sits alone on a long row of park benches at night.",
+            "credit": "The Apartment (1960) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/theapartment.html",
+            "image_url": "https://onthesetofnewyork.com/locations/theapartment/theapartment15.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/the-apartment--west-drive-baxter-bench.jpg",
+            "thumbnail": "/images/film-map/the-apartment--west-drive-baxter-bench--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "old-penn-station",
+      "name": "Original Pennsylvania Station, former site",
+      "address": "Seventh Avenue at West 31st Street",
+      "neighborhood": "Midtown South",
+      "borough": "Manhattan",
+      "access": "Historic station site",
+      "visit_note": "View the former station site from the surrounding public streets; the grand hall shown in the film no longer exists.",
+      "coordinates": [
+        40.749684,
+        -73.990526
+      ],
+      "scenes": [
+        {
+          "film_id": "the-seven-year-itch",
+          "scene": "A crowded original Penn Station appears as families leave the city for summer.",
+          "source_ids": [
+            "the-seven-year-itch",
+            "old-penn-history"
+          ],
+          "still": {
+            "alt": "Crowds fill the iron-and-glass concourse of the original Pennsylvania Station.",
+            "credit": "The Seven Year Itch (1955) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thesevenyearitch.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thesevenyearitch/sevenyearitch13.jpg",
+            "width": 565,
+            "height": 223,
+            "src": "/images/film-map/the-seven-year-itch--old-penn-station.jpg",
+            "thumbnail": "/images/film-map/the-seven-year-itch--old-penn-station--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sherman-east-61",
+      "name": "Richard Sherman’s brownstone",
+      "address": "164 East 61st Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "access": "Residential exterior",
+      "visit_note": "Stay on the public sidewalk; the residence is not a visitor attraction.",
+      "coordinates": [
+        40.762934,
+        -73.966424
+      ],
+      "scenes": [
+        {
+          "film_id": "the-seven-year-itch",
+          "scene": "Richard returns to the brownstone where the Girl is staying upstairs.",
+          "source_ids": [
+            "the-seven-year-itch",
+            "the-seven-year-itch-locations"
+          ],
+          "still": {
+            "alt": "Richard approaches the steps of his East 61st Street brownstone.",
+            "credit": "The Seven Year Itch (1955) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thesevenyearitch.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thesevenyearitch/sevenyearitch01.jpg",
+            "width": 565,
+            "height": 221,
+            "src": "/images/film-map/the-seven-year-itch--sherman-east-61.jpg",
+            "thumbnail": "/images/film-map/the-seven-year-itch--sherman-east-61--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "itch-east-57",
+      "name": "East 57th Street traffic",
+      "address": "East 57th Street between Madison and Park Avenues",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "access": "Public street",
+      "visit_note": "Use the sidewalk to view the block; keep clear of traffic.",
+      "coordinates": [
+        40.761684,
+        -73.971779
+      ],
+      "scenes": [
+        {
+          "film_id": "the-seven-year-itch",
+          "scene": "A daytime street view places the story amid the traffic and shops of East 57th Street.",
+          "source_ids": [
+            "the-seven-year-itch"
+          ],
+          "still": {
+            "alt": "Period cars pass storefronts along East 57th Street.",
+            "credit": "The Seven Year Itch (1955) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thesevenyearitch.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thesevenyearitch/sevenyearitch18.jpg",
+            "width": 565,
+            "height": 220,
+            "src": "/images/film-map/the-seven-year-itch--itch-east-57.jpg",
+            "thumbnail": "/images/film-map/the-seven-year-itch--itch-east-57--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fisher-video-shop",
+      "name": "Video Spot filming location",
+      "address": "15 Ann Street",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "access": "Storefront exterior",
+      "visit_note": "View the filming address from the public sidewalk.",
+      "coordinates": [
+        40.711018,
+        -74.007823
+      ],
+      "scenes": [
+        {
+          "film_id": "the-fisher-king",
+          "scene": "The Ann Street storefront appears as the video shop where Jack works with Anne.",
+          "source_ids": [
+            "the-fisher-king"
+          ],
+          "still": {
+            "alt": "The Video Spot storefront at 15 Ann Street in the film.",
+            "credit": "The Fisher King (1991) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefisherking.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefisherking/thefisherking105.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/the-fisher-king--fisher-video-shop.jpg",
+            "thumbnail": "/images/film-map/the-fisher-king--fisher-video-shop--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "squadron-a-armory",
+      "name": "Squadron A Armory",
+      "address": "1339 Madison Avenue at East 94th Street",
+      "neighborhood": "Carnegie Hill",
+      "borough": "Manhattan",
+      "access": "Building exterior",
+      "visit_note": "View the armory façade from the sidewalk; do not enter school grounds.",
+      "coordinates": [
+        40.785565,
+        -73.95492
+      ],
+      "scenes": [
+        {
+          "film_id": "the-fisher-king",
+          "scene": "The armory becomes the fortress where Jack searches for Parry’s Holy Grail.",
+          "source_ids": [
+            "the-fisher-king",
+            "the-fisher-king-afi"
+          ],
+          "still": {
+            "alt": "Jack and Parry walk beside the red-brick armory façade.",
+            "credit": "The Fisher King (1991) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/thefisherking.html",
+            "image_url": "https://onthesetofnewyork.com/locations/thefisherking/thefisherking134.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/the-fisher-king--squadron-a-armory.jpg",
+            "thumbnail": "/images/film-map/the-fisher-king--squadron-a-armory--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "st-james-hotel",
+      "name": "St. James Hotel",
+      "address": "109 West 45th Street",
+      "neighborhood": "Theater District",
+      "borough": "Manhattan",
+      "access": "Hotel exterior",
+      "visit_note": "View the hotel entrance from the public sidewalk.",
+      "coordinates": [
+        40.757218,
+        -73.9832
+      ],
+      "scenes": [
+        {
+          "film_id": "big",
+          "scene": "Josh and Billy find the St. James Hotel during their first night in Manhattan.",
+          "source_ids": [
+            "big"
+          ],
+          "still": {
+            "alt": "Josh and Billy look upward on the busy sidewalk outside the St. James Hotel.",
+            "credit": "Big (1988) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/big.html",
+            "image_url": "https://onthesetofnewyork.com/locations/big/big004.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/big--st-james-hotel.jpg",
+            "thumbnail": "/images/film-map/big--st-james-hotel--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thompson-spring-court",
+      "name": "Thompson Street paddleball court",
+      "address": "Thompson Street at Spring Street",
+      "neighborhood": "SoHo",
+      "borough": "Manhattan",
+      "access": "Outdoor court",
+      "visit_note": "View the court from the adjoining public sidewalk and follow posted park rules.",
+      "coordinates": [
+        40.725016,
+        -74.002635
+      ],
+      "scenes": [
+        {
+          "film_id": "big",
+          "scene": "Josh plays paddleball with his colleague Paul on the SoHo court.",
+          "source_ids": [
+            "big"
+          ],
+          "still": {
+            "alt": "Josh and Paul hold paddles on the fenced outdoor court.",
+            "credit": "Big (1988) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/big.html",
+            "image_url": "https://onthesetofnewyork.com/locations/big/big028.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/big--thompson-spring-court.jpg",
+            "thumbnail": "/images/film-map/big--thompson-spring-court--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fao-fifth-avenue",
+      "name": "FAO Schwarz, Fifth Avenue filming site",
+      "address": "767 Fifth Avenue at East 59th Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "access": "Former toy-store site",
+      "visit_note": "View the Fifth Avenue filming address from the public sidewalk.",
+      "coordinates": [
+        40.76354,
+        -73.972249
+      ],
+      "scenes": [
+        {
+          "film_id": "big",
+          "scene": "Josh and Mr. MacMillan play a duet on the toy store’s giant floor piano.",
+          "source_ids": [
+            "big",
+            "fao-fifth-closure"
+          ],
+          "still": {
+            "alt": "Josh and Mr. MacMillan step across the giant piano inside FAO Schwarz.",
+            "credit": "Big (1988) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/big.html",
+            "image_url": "https://onthesetofnewyork.com/locations/big/big018.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/big--fao-fifth-avenue.jpg",
+            "thumbnail": "/images/film-map/big--fao-fifth-avenue--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "josh-grand-loft",
+      "name": "Josh’s SoHo loft",
+      "address": "83 Grand Street",
+      "neighborhood": "SoHo",
+      "borough": "Manhattan",
+      "access": "Residential exterior",
+      "visit_note": "Stay on the public sidewalk; the loft is not a visitor attraction.",
+      "coordinates": [
+        40.721593,
+        -74.002616
+      ],
+      "scenes": [
+        {
+          "film_id": "big",
+          "scene": "Josh and Billy play on the fire escape of his SoHo loft.",
+          "source_ids": [
+            "big"
+          ],
+          "still": {
+            "alt": "Josh and Billy look down from the fire escape at 83 Grand Street.",
+            "credit": "Big (1988) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/big.html",
+            "image_url": "https://onthesetofnewyork.com/locations/big/big021.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/big--josh-grand-loft.jpg",
+            "thumbnail": "/images/film-map/big--josh-grand-loft--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "washington-water-bridge",
+      "name": "Washington Street bridge view",
+      "address": "Washington Street at Water Street",
+      "neighborhood": "DUMBO",
+      "borough": "Brooklyn",
+      "access": "Public street",
+      "visit_note": "Use the sidewalks for the bridge view and keep the roadway clear.",
+      "coordinates": [
+        40.703628,
+        -73.989441
+      ],
+      "scenes": [
+        {
+          "film_id": "once-upon-a-time-in-america",
+          "scene": "The boys cross the street with the Manhattan Bridge towering behind them.",
+          "source_ids": [
+            "once-upon-a-time-in-america",
+            "once-america-tourist",
+            "once-america-locations"
+          ],
+          "still": {
+            "alt": "The boys cross Washington Street beneath the view of the Manhattan Bridge.",
+            "credit": "Once Upon a Time in America (1984) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/onceamerica.html",
+            "image_url": "https://onthesetofnewyork.com/locations/onceuponatimeinamerica/onceupon01.jpg",
+            "width": 565,
+            "height": 317,
+            "src": "/images/film-map/once-upon-a-time-in-america--washington-water-bridge.jpg",
+            "thumbnail": "/images/film-map/once-upon-a-time-in-america--washington-water-bridge--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "adams-front-bridge",
+      "name": "Manhattan Bridge archway",
+      "address": "Water Street beneath the Manhattan Bridge",
+      "neighborhood": "DUMBO",
+      "borough": "Brooklyn",
+      "access": "Public street",
+      "visit_note": "The pin marks the public archway. The filmed approach runs along Adams Street between Front and Water Streets.",
+      "coordinates": [
+        40.7031,
+        -73.98786
+      ],
+      "scenes": [
+        {
+          "film_id": "once-upon-a-time-in-america",
+          "scene": "The boys approach the Manhattan Bridge on Adams Street before encountering Bugsy.",
+          "source_ids": [
+            "once-upon-a-time-in-america",
+            "once-america-tourist"
+          ],
+          "still": {
+            "alt": "The boys walk toward the stone bridge anchorage on Adams Street.",
+            "credit": "Once Upon a Time in America (1984) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/onceamerica.html",
+            "image_url": "https://onthesetofnewyork.com/locations/onceuponatimeinamerica/onceupon04.jpg",
+            "width": 565,
+            "height": 313,
+            "src": "/images/film-map/once-upon-a-time-in-america--adams-front-bridge.jpg",
+            "thumbnail": "/images/film-map/once-upon-a-time-in-america--adams-front-bridge--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "woodlawn-mausoleum",
+      "name": "Woodlawn Cemetery mausoleum",
+      "address": "Woodlawn Cemetery, near the Jerome Avenue entrance at Bainbridge Avenue",
+      "neighborhood": "Woodlawn",
+      "borough": "Bronx",
+      "access": "Cemetery grounds",
+      "visit_note": "The pin marks the Jerome Avenue gatehouse approach, not the exact mausoleum. Follow cemetery visiting rules and view the structure from outside.",
+      "coordinates": [
+        40.8875,
+        -73.87722
+      ],
+      "scenes": [
+        {
+          "film_id": "once-upon-a-time-in-america",
+          "scene": "Noodles visits the mausoleum holding the memorials to his old friends.",
+          "source_ids": [
+            "once-america-tourist"
+          ],
+          "still": {
+            "alt": "Noodles stands at the entrance of the columned mausoleum in Woodlawn Cemetery.",
+            "credit": "Once Upon a Time in America (1984) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2016/11/once-upon-time-in-america-1984.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSEXF7hmeji5lAsd2X0WujdM2WKpUrI3aj7vKGIpPgReam0QQLmYVw-6IFaM-JcLZ_pA4takYUr-0NKnlPKp0bHBi-FCIa7I2iMcVyjYzLaQ21VxowKka4ja5-L0imcCxOf6LskDiAYl0/s400/Mausoleum_America.jpg",
+            "width": 400,
+            "height": 223,
+            "src": "/images/film-map/once-upon-a-time-in-america--woodlawn-mausoleum.jpg",
+            "thumbnail": "/images/film-map/once-upon-a-time-in-america--woodlawn-mausoleum--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lic-courthouse",
+      "name": "Long Island City Courthouse",
+      "address": "25-10 Court Square West",
+      "neighborhood": "Long Island City",
+      "borough": "Queens",
+      "access": "Courthouse exterior",
+      "visit_note": "View the courthouse from the public sidewalk; the former jail area has changed since filming.",
+      "coordinates": [
+        40.745894,
+        -73.943067
+      ],
+      "scenes": [
+        {
+          "film_id": "once-upon-a-time-in-america",
+          "scene": "Max meets Noodles as he is released from prison.",
+          "source_ids": [
+            "once-america-tourist",
+            "lic-courthouse-city"
+          ],
+          "still": {
+            "alt": "Noodles and Max walk away from the prison gate beside the Long Island City Courthouse.",
+            "credit": "Once Upon a Time in America (1984) · Movie Tourist",
+            "source_url": "https://movie-tourist.blogspot.com/2016/11/once-upon-time-in-america-1984.html",
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNWKBOmCWfDdr-hssP5ylvN5ov3_lRbsE0nYgvJ-I1lEdzWHTPo4wpGKza0zofHCfl1PsIMA_5szwRQndCdCWuvMApgaBlLaYskWEbFQHqbjuW7dhtW5M_Yb3KgD_8QVh0CrljDq6esrA/s400/Courthouse2_25-10_CourtSquareWest_Queens.jpg",
+            "width": 400,
+            "height": 223,
+            "src": "/images/film-map/once-upon-a-time-in-america--lic-courthouse.jpg",
+            "thumbnail": "/images/film-map/once-upon-a-time-in-america--lic-courthouse--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "us-custom-house",
+      "name": "Alexander Hamilton U.S. Custom House",
+      "address": "1 Bowling Green",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "access": "Museum building",
+      "visit_note": "View the exterior from Bowling Green; check museum access before visiting the interior.",
+      "coordinates": [
+        40.704083,
+        -74.013754
+      ],
+      "scenes": [
+        {
+          "film_id": "black-swan",
+          "scene": "Nina is introduced as the company’s new star at the formal reception.",
+          "source_ids": [
+            "black-swan",
+            "black-swan-locations"
+          ],
+          "still": {
+            "alt": "Nina and Thomas stand above the reception crowd on the grand staircase.",
+            "credit": "Black Swan (2010) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/blackswan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/blackswan/blackswan60.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/black-swan--us-custom-house.jpg",
+            "thumbnail": "/images/film-map/black-swan--us-custom-house--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "forum-fourth-avenue",
+      "name": "Forum filming location",
+      "address": "127 Fourth Avenue",
+      "neighborhood": "East Village",
+      "borough": "Manhattan",
+      "access": "Former lounge site",
+      "visit_note": "View the former filming address from the public sidewalk.",
+      "coordinates": [
+        40.733239,
+        -73.989602
+      ],
+      "scenes": [
+        {
+          "film_id": "black-swan",
+          "scene": "Nina joins Lily for drinks at Forum during their night out.",
+          "source_ids": [
+            "black-swan",
+            "black-swan-locations"
+          ],
+          "still": {
+            "alt": "Nina sits at a table in the dark lounge.",
+            "credit": "Black Swan (2010) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/blackswan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/blackswan/blackswan69.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/black-swan--forum-fourth-avenue.jpg",
+            "thumbnail": "/images/film-map/black-swan--forum-fourth-avenue--thumb.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "santos-party-house",
+      "name": "Santos Party House filming location",
+      "address": "96 Lafayette Street",
+      "neighborhood": "Chinatown",
+      "borough": "Manhattan",
+      "access": "Former nightclub site",
+      "visit_note": "View the Lafayette Street filming address from the public sidewalk.",
+      "coordinates": [
+        40.717783,
+        -74.00141
+      ],
+      "scenes": [
+        {
+          "film_id": "black-swan",
+          "scene": "Nina and Lily continue their night at a crowded nightclub.",
+          "source_ids": [
+            "black-swan",
+            "black-swan-locations"
+          ],
+          "still": {
+            "alt": "Nina moves through the green-lit crowd inside the nightclub.",
+            "credit": "Black Swan (2010) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/blackswan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/blackswan/blackswan32.jpg",
+            "width": 565,
+            "height": 240,
+            "src": "/images/film-map/black-swan--santos-party-house.jpg",
+            "thumbnail": "/images/film-map/black-swan--santos-party-house--thumb.jpg"
           }
         }
       ]

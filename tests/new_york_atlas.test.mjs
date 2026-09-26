@@ -15,7 +15,7 @@ import { literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.deepEqual(atlas_counts, { film: 20, literature: 19, music: 118 });
+  assert.deepEqual(atlas_counts, { film: 32, literature: 19, music: 118 });
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,

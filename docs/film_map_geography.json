@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-21",
+  "reviewed_on": "2026-09-26",
   "records": [
     {
       "id": "carnegie-deli",
@@ -1173,6 +1173,491 @@
       "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=503+East+118th+Street+Manhattan",
       "coordinate_matched_name": "503 EAST 118 STREET",
       "method": "Exact NYC Planning address, street and borough match"
+    },
+    {
+      "id": "warriors-72-station",
+      "address": "Broadway at West 72nd Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.778453,
+        -73.98197
+      ],
+      "coordinate_source_url": "https://data.ny.gov/resource/39hk-dx4f.json?gtfs_stop_id=123",
+      "coordinate_matched_name": "72 St / Broadway - 7Av",
+      "method": "MTA official station centroid; approximate station reference, not a specific stairway or camera position."
+    },
+    {
+      "id": "firemens-memorial",
+      "address": "Riverside Drive at West 100th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper West Side",
+      "coordinates": [
+        40.798637,
+        -73.973335
+      ],
+      "coordinate_source_url": "https://commons.wikimedia.org/wiki/File:Firemen's_Memorial_(Manhattan)_2014_jeh.jpg",
+      "coordinate_matched_name": "Firemen’s Memorial photographic viewpoint",
+      "method": "Nearby public approach based on geotagged memorial photograph and Riverside Park Conservancy site description; not the film camera position."
+    },
+    {
+      "id": "brooklyn-bridge",
+      "address": "Brooklyn Bridge pedestrian walkway",
+      "borough": "Manhattan / Brooklyn",
+      "neighborhood": "East River",
+      "coordinates": [
+        40.7057,
+        -73.9964
+      ],
+      "coordinate_source_url": "https://en.wikipedia.org/wiki/Brooklyn_Bridge",
+      "coordinate_matched_name": "Brooklyn Bridge landmark coordinate",
+      "method": "Representative bridge landmark point, not the filmed traffic lane or a pedestrian entrance."
+    },
+    {
+      "id": "ratners-delancey",
+      "address": "138 Delancey Street",
+      "borough": "Manhattan",
+      "neighborhood": "Lower East Side",
+      "coordinates": [
+        40.718561,
+        -73.986851
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=138+Delancey+Street+Manhattan",
+      "coordinate_matched_name": "138 DELANCEY STREET",
+      "method": "Exact NYC Planning address match; venue point, not a camera position."
+    },
+    {
+      "id": "62nd-street-station",
+      "address": "62nd Street at New Utrecht Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Bensonhurst",
+      "coordinates": [
+        40.626472,
+        -73.996895
+      ],
+      "coordinate_source_url": "https://data.ny.gov/resource/39hk-dx4f.json?gtfs_stop_id=B16",
+      "coordinate_matched_name": "62 St / West End",
+      "method": "MTA official station centroid; approximate station reference, not a specific stairway or camera position."
+    },
+    {
+      "id": "ronaldo-maia-flowers",
+      "address": "27 East 67th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.768598,
+        -73.967445
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=27+East+67th+Street+Manhattan",
+      "coordinate_matched_name": "27 EAST 67 STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "orphans-45th-road",
+      "address": "21-57 45th Road",
+      "borough": "Queens",
+      "neighborhood": "Long Island City",
+      "coordinates": [
+        40.746465,
+        -73.945663
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=21-57+45th+Road+Queens",
+      "coordinate_matched_name": "21-57 45 ROAD",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "coney-stillwell-station",
+      "address": "Stillwell Avenue at Surf Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Coney Island",
+      "coordinates": [
+        40.577422,
+        -73.981233
+      ],
+      "coordinate_source_url": "https://data.ny.gov/resource/39hk-dx4f.json?gtfs_stop_id=D43",
+      "coordinate_matched_name": "Coney Island-Stillwell Av / Sea Beach / West End / Culver / Brighton",
+      "method": "MTA official station centroid; approximate station reference, not a specific stairway or camera position."
+    },
+    {
+      "id": "dog-day-bank",
+      "address": "285 Prospect Park West",
+      "borough": "Brooklyn",
+      "neighborhood": "Windsor Terrace",
+      "coordinates": [
+        40.657848,
+        -73.982316
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=285+Prospect+Park+West+Brooklyn",
+      "coordinate_matched_name": "285 PROSPECT PARK WEST",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "calvary-cemetery",
+      "address": "First Calvary Cemetery, 34-02 Greenpoint Avenue",
+      "borough": "Queens",
+      "neighborhood": "Blissville",
+      "coordinates": [
+        40.736013,
+        -73.932602
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=34-02%20Greenpoint%20Avenue%20Queens",
+      "coordinate_matched_name": "34-02 GREENPOINT AVENUE",
+      "method": "First Calvary public approach at the official Greenpoint Avenue address; not the opening shot camera position. Cemetery address corroborated by official chapel listing.",
+      "reference_url": "https://calvaryandalliedcemeteries.com/venue/st-callixtus-chapel/"
+    },
+    {
+      "id": "lennys-pizza",
+      "address": "1969 86th Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Bensonhurst",
+      "coordinates": [
+        40.605107,
+        -73.998545
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1969+86th+Street+Brooklyn",
+      "coordinate_matched_name": "1969 86 STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "tony-hardware",
+      "address": "7305 Fifth Avenue",
+      "borough": "Brooklyn",
+      "neighborhood": "Bay Ridge",
+      "coordinates": [
+        40.630707,
+        -74.021846
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=7305+Fifth+Avenue+Brooklyn",
+      "coordinate_matched_name": "7305 FIFTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "manero-home",
+      "address": "221 79th Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Bay Ridge",
+      "coordinates": [
+        40.629195,
+        -74.030815
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=221+79th+Street+Brooklyn",
+      "coordinate_matched_name": "221 79 STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "2001-odyssey",
+      "address": "802 64th Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Sunset Park",
+      "coordinates": [
+        40.632933,
+        -74.011863
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=802+64th+Street+Brooklyn",
+      "coordinate_matched_name": "802 64 STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "castorini-home",
+      "address": "19 Cranberry Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Brooklyn Heights",
+      "coordinates": [
+        40.700242,
+        -73.994596
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=19+Cranberry+Street+Brooklyn",
+      "coordinate_matched_name": "19 CRANBERRY STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "grand-ticino",
+      "address": "284 West 12th Street",
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "coordinates": [
+        40.737411,
+        -74.00397
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=284+West+12th+Street+Manhattan",
+      "coordinate_matched_name": "284 WEST 12 STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "cammareri-bakery",
+      "address": "Henry Street at Sackett Street",
+      "borough": "Brooklyn",
+      "neighborhood": "Carroll Gardens",
+      "coordinates": [
+        40.684098,
+        -73.999649
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=502+Henry+Street+Brooklyn",
+      "coordinate_matched_name": "502 HENRY STREET",
+      "method": "NYC Planning address at the sourced Henry/Sackett corner; venue point, not a camera position."
+    },
+    {
+      "id": "tenenbaum-house",
+      "address": "339 Convent Avenue at West 144th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Hamilton Heights",
+      "coordinates": [
+        40.823765,
+        -73.946486
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=339+Convent+Avenue+Manhattan",
+      "coordinate_matched_name": "339 CONVENT AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "baxter-broadway-office",
+      "address": "2 Broadway at Stone Street",
+      "borough": "Manhattan",
+      "neighborhood": "Financial District",
+      "coordinates": [
+        40.70453,
+        -74.012641
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=2+Broadway+Manhattan",
+      "coordinate_matched_name": "2 BROADWAY",
+      "method": "Exact NYC Planning address match; venue point, not a camera position."
+    },
+    {
+      "id": "majestic-theatre",
+      "address": "247 West 44th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Theater District",
+      "coordinates": [
+        40.758423,
+        -73.988023
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=247+West+44th+Street+Manhattan",
+      "coordinate_matched_name": "247 WEST 44 STREET",
+      "method": "Exact NYC Planning address match; venue point, not a camera position."
+    },
+    {
+      "id": "west-drive-baxter-bench",
+      "address": "Central Park West at West 69th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Central Park",
+      "coordinates": [
+        40.774628,
+        -73.977774
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1%20West%2069%20Street%20Manhattan",
+      "coordinate_matched_name": "1 WEST 69 STREET",
+      "method": "Representative West 69th Street park approach using adjoining 1 West 69 Street address; not the exact bench."
+    },
+    {
+      "id": "old-penn-station",
+      "address": "Seventh Avenue at West 31st Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown South",
+      "coordinates": [
+        40.749684,
+        -73.990526
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=401+7+Avenue+Manhattan",
+      "coordinate_matched_name": "401 7 AVENUE",
+      "method": "Representative public street approach using nearby NYC Planning address; not a camera position."
+    },
+    {
+      "id": "sherman-east-61",
+      "address": "164 East 61st Street",
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "coordinates": [
+        40.762934,
+        -73.966424
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=164+East+61st+Street+Manhattan",
+      "coordinate_matched_name": "164 EAST 61 STREET",
+      "method": "Exact NYC Planning address match; venue point, not a camera position."
+    },
+    {
+      "id": "itch-east-57",
+      "address": "East 57th Street between Madison and Park Avenues",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.761684,
+        -73.971779
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=40+East+57+Street+Manhattan",
+      "coordinate_matched_name": "40 EAST 57 STREET",
+      "method": "Representative public street approach using nearby NYC Planning address; not a camera position."
+    },
+    {
+      "id": "fisher-video-shop",
+      "address": "15 Ann Street",
+      "borough": "Manhattan",
+      "neighborhood": "Financial District",
+      "coordinates": [
+        40.711018,
+        -74.007823
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=15+Ann+Street+Manhattan",
+      "coordinate_matched_name": "15 ANN STREET",
+      "method": "Exact NYC Planning address match; venue point, not a camera position."
+    },
+    {
+      "id": "squadron-a-armory",
+      "address": "1339 Madison Avenue at East 94th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Carnegie Hill",
+      "coordinates": [
+        40.785565,
+        -73.95492
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1339+Madison+Avenue+Manhattan",
+      "coordinate_matched_name": "1339 MADISON AVENUE",
+      "method": "Exact NYC Planning address match; venue point, not a camera position."
+    },
+    {
+      "id": "st-james-hotel",
+      "address": "109 West 45th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Theater District",
+      "coordinates": [
+        40.757218,
+        -73.9832
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=109+West+45th+Street+Manhattan",
+      "coordinate_matched_name": "109 WEST 45 STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "thompson-spring-court",
+      "address": "Thompson Street at Spring Street",
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "coordinates": [
+        40.725016,
+        -74.002635
+      ],
+      "coordinate_source_url": "https://www.wikizero.org/wiki/en/Vesuvio_Playground",
+      "coordinate_matched_name": "Vesuvio / Thompson Playground",
+      "method": "Representative park coordinate, corroborated as Thompson/Spring basketball court by NYC Council listing; not the exact camera position.",
+      "reference_url": "https://council.nyc.gov/public-advocate/basketball-court-locations/"
+    },
+    {
+      "id": "fao-fifth-avenue",
+      "address": "767 Fifth Avenue at East 59th Street",
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "coordinates": [
+        40.76354,
+        -73.972249
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=767+Fifth+Avenue+Manhattan",
+      "coordinate_matched_name": "767 FIFTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "josh-grand-loft",
+      "address": "83 Grand Street",
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "coordinates": [
+        40.721593,
+        -74.002616
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=83+Grand+Street+Manhattan",
+      "coordinate_matched_name": "83 GRAND STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "washington-water-bridge",
+      "address": "Washington Street at Water Street",
+      "borough": "Brooklyn",
+      "neighborhood": "DUMBO",
+      "coordinates": [
+        40.703628,
+        -73.989441
+      ],
+      "coordinate_source_url": "https://www.nyctourism.com/attractions-tours/washington-street-between-front-and-water-streets-dumbo/",
+      "coordinate_matched_name": "Washington Street between Front and Water Streets",
+      "method": "Official NYC Tourism destination coordinates for the photographed street block; not a surveyed camera position."
+    },
+    {
+      "id": "adams-front-bridge",
+      "address": "Water Street beneath the Manhattan Bridge",
+      "borough": "Brooklyn",
+      "neighborhood": "DUMBO",
+      "coordinates": [
+        40.7031,
+        -73.98786
+      ],
+      "coordinate_source_url": "https://mapcarta.com/N552255010",
+      "coordinate_matched_name": "Brooklyn Flea in Dumbo Archway",
+      "method": "Representative public archway point using the mapped market site within the plaza. Film approach is along Adams Street; pin is not its exact camera point.",
+      "reference_url": "https://dumbo.nyc/dumboarchway/"
+    },
+    {
+      "id": "woodlawn-mausoleum",
+      "address": "Woodlawn Cemetery, near the Jerome Avenue entrance at Bainbridge Avenue",
+      "borough": "Bronx",
+      "neighborhood": "Woodlawn",
+      "coordinates": [
+        40.8875,
+        -73.87722
+      ],
+      "coordinate_source_url": "https://mapcarta.com/25038428",
+      "coordinate_matched_name": "Jerome Avenue Gate House",
+      "method": "Representative cemetery approach at Jerome Avenue gatehouse; not an exact mausoleum or film camera point. Official cemetery directions confirm Jerome/Bainbridge entrance.",
+      "reference_url": "https://www.woodlawn.org/about/plan-a-visit/"
+    },
+    {
+      "id": "lic-courthouse",
+      "address": "25-10 Court Square West",
+      "borough": "Queens",
+      "neighborhood": "Long Island City",
+      "coordinates": [
+        40.745894,
+        -73.943067
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=25-10+Court+Square+Queens",
+      "coordinate_matched_name": "25-10 COURT SQUARE",
+      "method": "Exact NYC Planning numbered address match. Courthouse street alias checked against NYC DCAS; venue point, not a camera position."
+    },
+    {
+      "id": "us-custom-house",
+      "address": "1 Bowling Green",
+      "borough": "Manhattan",
+      "neighborhood": "Financial District",
+      "coordinates": [
+        40.704083,
+        -74.013754
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=1+Bowling+Green+Manhattan",
+      "coordinate_matched_name": "1 BOWLING GREEN",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "forum-fourth-avenue",
+      "address": "127 Fourth Avenue",
+      "borough": "Manhattan",
+      "neighborhood": "East Village",
+      "coordinates": [
+        40.733239,
+        -73.989602
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=127+Fourth+Avenue+Manhattan",
+      "coordinate_matched_name": "127 FOURTH AVENUE",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
+    },
+    {
+      "id": "santos-party-house",
+      "address": "96 Lafayette Street",
+      "borough": "Manhattan",
+      "neighborhood": "Chinatown",
+      "coordinates": [
+        40.717783,
+        -74.00141
+      ],
+      "coordinate_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=96+Lafayette+Street+Manhattan",
+      "coordinate_matched_name": "96 LAFAYETTE STREET",
+      "method": "Exact NYC Planning address, street and borough match; venue point, not a camera position."
     }
   ]
 }

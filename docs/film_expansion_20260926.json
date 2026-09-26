@@ -1,0 +1,423 @@
+{
+  "reviewed_on": "2026-09-26",
+  "base_sha": "a3d166539fc63aa45f6307c612092400533c9f94",
+  "scope": "Additional films and verified scene-place associations; existing records and interfaces preserved.",
+  "new_films": 12,
+  "new_places": 37,
+  "new_scene_links": 42,
+  "records": [
+    {
+      "film_id": "the-warriors",
+      "location_id": "warriors-72-station",
+      "source_ids": [
+        "the-warriors",
+        "warriors-scouting"
+      ],
+      "verification": "otsoNY identifies this as 72nd Street Station; the selected original frame shows the station house at night."
+    },
+    {
+      "film_id": "the-warriors",
+      "location_id": "firemens-memorial",
+      "source_ids": [
+        "the-warriors",
+        "warriors-scouting"
+      ],
+      "verification": "otsoNY labels the image group Fireman’s Monument, Riverside Drive and West 100th Street."
+    },
+    {
+      "film_id": "the-french-connection",
+      "location_id": "brooklyn-bridge",
+      "source_ids": [
+        "the-french-connection"
+      ],
+      "verification": "otsoNY labels the first frame sequence Brooklyn Bridge."
+    },
+    {
+      "film_id": "the-french-connection",
+      "location_id": "ratners-delancey",
+      "source_ids": [
+        "the-french-connection",
+        "french-film-locations"
+      ],
+      "verification": "otsoNY labels image group as diner at 138 Delancey Street; Ratner’s sign is visible in film frames."
+    },
+    {
+      "film_id": "the-french-connection",
+      "location_id": "62nd-street-station",
+      "source_ids": [
+        "the-french-connection",
+        "french-film-locations"
+      ],
+      "verification": "otsoNY identifies the chase endpoint and this image group as 62nd Street Station."
+    },
+    {
+      "film_id": "the-french-connection",
+      "location_id": "ronaldo-maia-flowers",
+      "source_ids": [
+        "the-french-connection",
+        "french-film-locations"
+      ],
+      "verification": "Both location inventories identify the flower-shop address."
+    },
+    {
+      "film_id": "the-warriors",
+      "location_id": "orphans-45th-road",
+      "source_ids": [
+        "warriors-ext",
+        "warriors-scouting"
+      ],
+      "verification": "Ext.Street gives this address at 00:32:04; Scouting NY corroborates 45th Road near 23rd Street."
+    },
+    {
+      "film_id": "the-warriors",
+      "location_id": "coney-stillwell-station",
+      "source_ids": [
+        "warriors-ext",
+        "warriors-film-locations"
+      ],
+      "verification": "Ext.Street labels the frame Stillwell Avenue station at 01:21:45."
+    },
+    {
+      "film_id": "dog-day-afternoon",
+      "location_id": "dog-day-bank",
+      "source_ids": [
+        "dog-day-afternoon",
+        "dog-film-locations"
+      ],
+      "verification": "Both inventories identify 285 Prospect Park West as the bank exterior."
+    },
+    {
+      "film_id": "dog-day-afternoon",
+      "location_id": "calvary-cemetery",
+      "source_ids": [
+        "dog-calvary",
+        "calvary-map"
+      ],
+      "verification": "The source identifies these as film screen grabs of Calvary; it does not resolve the camera position."
+    },
+    {
+      "film_id": "saturday-night-fever",
+      "location_id": "lennys-pizza",
+      "source_ids": [
+        "saturday-night-fever",
+        "snf-nycinfilm"
+      ],
+      "verification": "otsoNY places the pizza window at this address."
+    },
+    {
+      "film_id": "saturday-night-fever",
+      "location_id": "tony-hardware",
+      "source_ids": [
+        "snf-ext",
+        "snf-nycinfilm"
+      ],
+      "verification": "Ext.Street frame at 00:05:01; NYC in Film independently confirms the address."
+    },
+    {
+      "film_id": "saturday-night-fever",
+      "location_id": "manero-home",
+      "source_ids": [
+        "snf-ext",
+        "snf-nycinfilm"
+      ],
+      "verification": "Ext.Street frame at 00:05:58; NYC in Film confirms 221 79th Street."
+    },
+    {
+      "film_id": "saturday-night-fever",
+      "location_id": "2001-odyssey",
+      "source_ids": [
+        "snf-ext",
+        "snf-nycinfilm"
+      ],
+      "verification": "Ext.Street frame at 00:12:09; NYC in Film confirms the address and demolition."
+    },
+    {
+      "film_id": "moonstruck",
+      "location_id": "castorini-home",
+      "source_ids": [
+        "moonstruck"
+      ],
+      "verification": "otsoNY groups the frame under Loretta’s Apartment, 19 Cranberry Street."
+    },
+    {
+      "film_id": "moonstruck",
+      "location_id": "grand-ticino",
+      "source_ids": [
+        "moonstruck"
+      ],
+      "verification": "otsoNY identifies the actual corner despite the Brooklyn street sign used in the film."
+    },
+    {
+      "film_id": "moonstruck",
+      "location_id": "cammareri-bakery",
+      "source_ids": [
+        "moonstruck"
+      ],
+      "verification": "otsoNY labels this group Sackett Street and Henry Street; the bakery sign is visible."
+    },
+    {
+      "film_id": "moonstruck",
+      "location_id": "lincoln-center",
+      "source_ids": [
+        "moonstruck"
+      ],
+      "verification": "otsoNY labels this frame group Lincoln Center."
+    },
+    {
+      "film_id": "the-royal-tenenbaums",
+      "location_id": "tenenbaum-house",
+      "source_ids": [
+        "the-royal-tenenbaums",
+        "royal-film-locations"
+      ],
+      "verification": "otsoNY lists 444 West 144th Street; Movie Locations lists the same corner property as 339 Convent Avenue."
+    },
+    {
+      "film_id": "the-royal-tenenbaums",
+      "location_id": "battery-park",
+      "source_ids": [
+        "the-royal-tenenbaums",
+        "royal-film-locations"
+      ],
+      "verification": "otsoNY supplies the matching frame; Movie Locations corroborates the waterfront meeting."
+    },
+    {
+      "film_id": "the-apartment",
+      "location_id": "baxter-broadway-office",
+      "source_ids": [
+        "the-apartment"
+      ],
+      "verification": "Film frame appears directly before the source caption identifying Baxter’s offices at 2 Broadway; visually inspected building exterior."
+    },
+    {
+      "film_id": "the-apartment",
+      "location_id": "majestic-theatre",
+      "source_ids": [
+        "the-apartment",
+        "the-apartment-nycinfilm"
+      ],
+      "verification": "OtsoNY places this frame under Majestic Theatre; the theatre entrance and Baxter are visible."
+    },
+    {
+      "film_id": "the-apartment",
+      "location_id": "west-drive-baxter-bench",
+      "source_ids": [
+        "the-apartment",
+        "the-apartment-nycinfilm",
+        "the-apartment-park"
+      ],
+      "verification": "Frame visually inspected; Central Park Conservancy confirms West Drive cameo. NYC in Film narrows stretch to 68th–69th Streets, overriding otsoNY’s broad near-Columbus-Circle description."
+    },
+    {
+      "film_id": "the-seven-year-itch",
+      "location_id": "old-penn-station",
+      "source_ids": [
+        "the-seven-year-itch",
+        "old-penn-history"
+      ],
+      "verification": "OtsoNY caption identifies Pennsylvania Station at 7th Avenue and West 31st Street; visually inspected frame shows original station concourse. Old station demolition is a stable historic fact; no current station interior is promised."
+    },
+    {
+      "film_id": "the-seven-year-itch",
+      "location_id": "sherman-east-61",
+      "source_ids": [
+        "the-seven-year-itch",
+        "the-seven-year-itch-locations"
+      ],
+      "verification": "OtsoNY groups film frame with 164 East 61st caption; Movie Locations independently confirms the NYC exterior."
+    },
+    {
+      "film_id": "the-seven-year-itch",
+      "location_id": "itch-east-57",
+      "source_ids": [
+        "the-seven-year-itch"
+      ],
+      "verification": "OtsoNY explicitly captions this film frame as East 57th between Madison and Park. No unverified character action is asserted."
+    },
+    {
+      "film_id": "the-fisher-king",
+      "location_id": "fisher-video-shop",
+      "source_ids": [
+        "the-fisher-king"
+      ],
+      "verification": "OtsoNY groups frame with Video Shop, 15 Ann Street. Frame visibly reads Video Spot; scene role follows film synopsis and grouped frames."
+    },
+    {
+      "film_id": "the-fisher-king",
+      "location_id": "squadron-a-armory",
+      "source_ids": [
+        "the-fisher-king",
+        "the-fisher-king-afi"
+      ],
+      "verification": "OtsoNY identifies Squadron A Armory; AFI production notes confirm it doubled for Carmichael’s townhouse and was modified for filming."
+    },
+    {
+      "film_id": "the-fisher-king",
+      "location_id": "grand-central",
+      "source_ids": [
+        "the-fisher-king",
+        "the-fisher-king-afi"
+      ],
+      "verification": "OtsoNY frame block identifies Grand Central; AFI production notes independently confirm the waltzing commuter scene."
+    },
+    {
+      "film_id": "the-fisher-king",
+      "location_id": "sheep-meadow",
+      "source_ids": [
+        "the-fisher-king"
+      ],
+      "verification": "OtsoNY labels this frame group Sheep Meadow; inspected frame shows both characters in the nighttime lawn scene."
+    },
+    {
+      "film_id": "big",
+      "location_id": "st-james-hotel",
+      "source_ids": [
+        "big"
+      ],
+      "verification": "OtsoNY places frames big005/004/007 together directly above the hotel address. big005 shows the neon hotel sign; selected big004 shows the two characters."
+    },
+    {
+      "film_id": "big",
+      "location_id": "thompson-spring-court",
+      "source_ids": [
+        "big"
+      ],
+      "verification": "OtsoNY directly identifies Thompson and Spring Streets; inspected film frame shows both men playing on the outdoor court."
+    },
+    {
+      "film_id": "big",
+      "location_id": "fao-fifth-avenue",
+      "source_ids": [
+        "big",
+        "fao-fifth-closure"
+      ],
+      "verification": "Original page image URL extracted from FAO Schwarz location group; inspected full frame shows both actors and the piano."
+    },
+    {
+      "film_id": "big",
+      "location_id": "josh-grand-loft",
+      "source_ids": [
+        "big"
+      ],
+      "verification": "OtsoNY directly identifies Josh’s apartment at83 Grand; inspected frames big021/022 show both boys on the fire escape."
+    },
+    {
+      "film_id": "once-upon-a-time-in-america",
+      "location_id": "washington-water-bridge",
+      "source_ids": [
+        "once-upon-a-time-in-america",
+        "once-america-tourist",
+        "once-america-locations"
+      ],
+      "verification": "OtsoNY image and address agree; Movie Tourist and Movie Locations independently identify Washington and Water Streets."
+    },
+    {
+      "film_id": "once-upon-a-time-in-america",
+      "location_id": "adams-front-bridge",
+      "source_ids": [
+        "once-upon-a-time-in-america",
+        "once-america-tourist"
+      ],
+      "verification": "OtsoNY labels this block Adams and Water; Movie Tourist places approach at Adams and Front. Selected frame spans the approach to the same arch; address deliberately gives the intervening block."
+    },
+    {
+      "film_id": "once-upon-a-time-in-america",
+      "location_id": "woodlawn-mausoleum",
+      "source_ids": [
+        "once-america-tourist"
+      ],
+      "verification": "Movie Tourist explicitly pairs this released-film frame with Woodlawn Cemetery and locates it near the west-side Jerome Avenue entrance. IMDb filming inventory independently lists Woodlawn for the vault."
+    },
+    {
+      "film_id": "once-upon-a-time-in-america",
+      "location_id": "lic-courthouse",
+      "source_ids": [
+        "once-america-tourist",
+        "lic-courthouse-city"
+      ],
+      "verification": "Movie Tourist pairs frame with25-10 Court Square West and notes former jails; NYC DCAS independently verifies courthouse address. Frame is a film image, not the adjoining modern comparison."
+    },
+    {
+      "film_id": "black-swan",
+      "location_id": "lincoln-center",
+      "source_ids": [
+        "black-swan",
+        "black-swan-locations"
+      ],
+      "verification": "OtsoNY group and Movie Locations both identify exterior; selected exterior avoids attributing Purchase College performance interiors to Lincoln Center."
+    },
+    {
+      "film_id": "black-swan",
+      "location_id": "us-custom-house",
+      "source_ids": [
+        "black-swan",
+        "black-swan-locations"
+      ],
+      "verification": "OtsoNY labels the group U.S. Custom House; Movie Locations identifies reception interior at the National Museum of the American Indian,1 Bowling Green."
+    },
+    {
+      "film_id": "black-swan",
+      "location_id": "forum-fourth-avenue",
+      "source_ids": [
+        "black-swan",
+        "black-swan-locations"
+      ],
+      "verification": "OtsoNY frame group identifies Forum127 Fourth Avenue; Movie Locations independently describes this first stop before Santos Party House."
+    },
+    {
+      "film_id": "black-swan",
+      "location_id": "santos-party-house",
+      "source_ids": [
+        "black-swan",
+        "black-swan-locations"
+      ],
+      "verification": "OtsoNY identifies96 Lafayette Street; Movie Locations names the venue Santos Party House. Frame shows Nina in the club, not a modern venue photograph."
+    }
+  ],
+  "held_candidates": [
+    {
+      "film_id": "dog-day-afternoon",
+      "places": [
+        "JFK airport tarmac",
+        "bank interior warehouse"
+      ],
+      "reason": "Specific visitable filming point and matching frame not securely established; retain two supported depicted places."
+    },
+    {
+      "film_id": "the-royal-tenenbaums",
+      "places": [
+        "21 Tier Street",
+        "West Side Tennis Club",
+        "Waldorf Astoria"
+      ],
+      "reason": "Locations supported, but downloaded Untapped images for the summer house and tennis club were contemporary photos; no new matching frame retained. Reduced to two supported scenes."
+    },
+    {
+      "film_id": "the-french-connection",
+      "places": [
+        "Fifth Avenue subway entrance"
+      ],
+      "reason": "Replaced partial-handoff candidate with the more closely corroborated flower-shop exterior."
+    },
+    {
+      "film_id": "the-apartment",
+      "location": "205 Columbus Avenue bar",
+      "reason": "NYC in Film disputes bar interior attribution; omitted pending stronger evidence."
+    },
+    {
+      "film_id": "the-seven-year-itch",
+      "location": "Lexington Avenue at East 52nd Street subway grate",
+      "reason": "Source reports released footage reshot on Hollywood set; do not imply supplied released frame was filmed at this NYC corner."
+    },
+    {
+      "film_id": "once-upon-a-time-in-america",
+      "location": "South Street",
+      "reason": "OtsoNY supplies only a long street name, insufficiently precise for a reliable pin without more research."
+    },
+    {
+      "film_id": "black-swan",
+      "location": "Lincoln Center performance interiors",
+      "reason": "Movie Locations identifies final ballet performance filming at Purchase College outside NYC; selected only verified Lincoln Center exterior."
+    }
+  ]
+}
