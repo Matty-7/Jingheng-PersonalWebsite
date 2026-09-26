@@ -137,13 +137,15 @@ test('film filters, sequential locations, search reset and reduced motion remain
   await expect(chooser.locator('option')).toHaveCount(
     film_places('manhattan').length,
   );
-  await expect(chooser).toHaveValue('sutton-square');
+  const manhattan_places = film_places('manhattan');
+  await expect(chooser).toHaveValue(manhattan_places[0].id);
   await expect(
     page.getByRole('button', {
       name: 'Previous filming location',
       exact: true,
     }),
   ).toBeDisabled();
+  await chooser.selectOption('sutton-square');
   await page.getByRole('button', { name: 'View scene', exact: true }).click();
   const sutton = page.getByRole('region', {
     name: 'Details for Sutton Square',
@@ -157,7 +159,10 @@ test('film filters, sequential locations, search reset and reduced motion remain
   await page
     .getByRole('button', { name: 'Next filming location', exact: true })
     .click();
-  await expect(chooser).toHaveValue(film_places('manhattan')[1].id);
+  const sutton_index = manhattan_places.findIndex(
+    (place) => place.id === 'sutton-square',
+  );
+  await expect(chooser).toHaveValue(manhattan_places[sutton_index + 1].id);
   await page.goBack();
   await expect(chooser).toHaveValue('sutton-square');
   await expect(frame).toHaveAttribute('title', 'Google Maps: Sutton Square');
@@ -202,6 +207,7 @@ test('unavailable Google frame and scene image retain destinations and reference
     name: 'Details for The Shop Around the Corner',
   });
   await expect(details).toContainText('106 West 69th Street');
+  await details.locator('.cinema-still').scrollIntoViewIfNeeded();
   await expect(details).toContainText(
     'Image unavailable. The filming reference is linked below.',
   );
