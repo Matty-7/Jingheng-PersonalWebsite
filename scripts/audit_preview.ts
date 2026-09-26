@@ -6,6 +6,8 @@ import type { Plugin } from 'vite';
 export function audit_preview(): Plugin {
   const viewports: Record<string, [number, number]> = {
     '/__audit/desktop': [1440, 900],
+    '/__audit/atlas_desktop': [1440, 900],
+    '/__audit/atlas_mobile': [390, 844],
     '/__audit/mobile': [390, 844],
     '/__audit/short': [1280, 720],
     '/__audit/mortgage_desktop': [1440, 900],
@@ -30,7 +32,9 @@ export function audit_preview(): Plugin {
           return;
         }
         const [width, height] = viewport;
-        const route = (request.url ?? '').startsWith('/__audit/music_')
+        const route = (request.url ?? '').startsWith('/__audit/atlas_')
+          ? '/portfolio/new-york-atlas'
+          : (request.url ?? '').startsWith('/__audit/music_')
           ? '/portfolio/nyc-music-map'
           : (request.url ?? '').startsWith('/__audit/mortgage_')
           ? '/portfolio/mortgage-map'

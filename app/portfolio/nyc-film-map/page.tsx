@@ -17,7 +17,7 @@ export default function NycFilmMapPage() {
       <nav className="cinema-nav" aria-label="Projects navigation">
         <Link href="/" className="brand-link" aria-label="Jingheng Huan home"><BrandMark /></Link>
         <span>JINGHENG HUAN / PROJECTS</span>
-        <Link href="/#projects">← Projects</Link>
+        <Link href="/portfolio/new-york-atlas">← New York Atlas</Link>
       </nav>
       <header className="cinema-heading">
         <h1>NYC Film <em>Map.</em></h1>

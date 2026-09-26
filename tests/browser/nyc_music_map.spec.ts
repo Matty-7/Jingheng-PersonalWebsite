@@ -325,9 +325,9 @@ test('full song list stays complete during filtering and exports real Apple link
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test('project order matches the music, film and book recommendations', async ({ page }) => {
+test('one Atlas project preserves the music, film and book recommendations', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#projects h3')).toHaveText(['Mortgage Mind Map', 'NYC Music Map', 'NYC Film Map', 'NYC Literary Map']);
+  await expect(page.locator('#projects h3')).toHaveText(['Mortgage Mind Map', 'New York Atlas']);
   expect(await page.locator('main [id]').evaluateAll(elements => elements.map(element => element.id).filter(id => ['records', 'films', 'books'].includes(id)))).toEqual(['records', 'films', 'books']);
 });
 

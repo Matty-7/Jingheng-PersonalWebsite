@@ -13,11 +13,9 @@ import { PlaybillCollection } from '@/components/playbill_collection';
 import { SocialIcon } from '@/components/social_icon';
 import { ProjectMapPreview } from '@/components/project_map_preview';
 import films from '@/content/films.json';
-import film_map_summary from '@/content/nyc_film_map_summary.json';
 import { Bookshelf } from '@/components/bookshelf';
 import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
-import music_summary from '@/content/nyc_music_map_summary.json';
 import { mortgage_domains, mortgage_preview_path } from '@/content/mortgage_domains';
 import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
 const newsletterUrl = profile.newsletterUrl as string | null;
@@ -315,50 +313,18 @@ export default function Home() {
           </article>
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
-              <h3 id="music-map-project-heading">NYC Music Map</h3>
-              <p>Find the places named in songs, from Bleecker Street to the Queensboro Bridge. Hear a preview and explore the city on Google Maps.</p>
-              <Link href="/portfolio/nyc-music-map" className="text-link">Explore songs and places <span aria-hidden="true">↗</span></Link>
+              <h3>New York Atlas</h3>
+              <p>Explore the city through film, literature and music. Find the scenes, passages and songs connected to a place, with original sources and previews.</p>
+              <Link href="/portfolio/new-york-atlas" className="text-link">Explore the atlas <span aria-hidden="true">↗</span></Link>
             </div>
             <ProjectMapPreview
-              href="/portfolio/nyc-music-map"
-              label="Open NYC Music Map"
-              artwork={{ src: '/images/records/new-york-state-of-mind.jpg', alt: 'Turnstiles by Billy Joel', width: 600, height: 600 }}
-              eyebrow="NEW YORK, ON RECORD"
-              headline="Find the places"
-              emphasis="inside the songs."
-              summary={`${music_summary.track_count} songs · ${music_summary.place_count} places`}
-            />
-          </article>
-          <article className="projects-entry projects-film-entry" data-reveal>
-            <div className="projects-copy">
-              <h3>NYC Film Map</h3>
-              <p>New York through the movies. Explore real filming locations, match the scene to the street, and open each place in Google Maps.</p>
-              <Link href="/portfolio/nyc-film-map" className="text-link">Explore film locations <span aria-hidden="true">↗</span></Link>
-            </div>
-            <ProjectMapPreview
-              href="/portfolio/nyc-film-map"
-              label="Open NYC Film Map"
+              href="/portfolio/new-york-atlas"
+              label="Open New York Atlas"
               artwork={{ src: '/images/film-map/manhattan-poster.jpg', alt: 'Manhattan (1979) poster with the Queensboro Bridge and skyline lettering', width: 640, height: 940 }}
-              eyebrow="NEW YORK, ON SCREEN"
-              headline="From the screen"
-              emphasis="to the street."
-              summary={`${film_map_summary.film_count} films · ${film_map_summary.place_count} places`}
-            />
-          </article>
-          <article className="projects-entry projects-literary-entry" data-reveal>
-            <div className="projects-copy">
-              <h3>NYC Literary Map</h3>
-              <p>Read New York through the places in its books and magazines. Explore original passages, real covers and the streets behind the words.</p>
-              <Link href="/portfolio/nyc-literary-map" className="text-link">Explore literary places <span aria-hidden="true">↗</span></Link>
-            </div>
-            <ProjectMapPreview
-              href="/portfolio/nyc-literary-map"
-              label="Open NYC Literary Map"
-              artwork={{ src: '/images/literary-map/great-gatsby.jpg', alt: 'The Great Gatsby by F. Scott Fitzgerald', width: 600, height: 850 }}
-              eyebrow="NEW YORK, IN PRINT"
-              headline="Read the city"
-              emphasis="through its pages."
-              summary="Books, magazines & the city"
+              eyebrow="FILM · LITERATURE · MUSIC"
+              headline="New York"
+              emphasis="Atlas."
+              summary="Scenes, passages and songs"
             />
           </article>
         </section>
