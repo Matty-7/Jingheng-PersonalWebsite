@@ -267,9 +267,9 @@ test('Anora retains its verified Tatiana frame', async ({ page }) => {
       .toBe(true);
   }
   await page.getByRole('button', { name: 'Sources and place details' }).click();
-  await expect(page.getByRole('dialog').locator('figcaption')).toContainText(
-    'Frame source',
-  );
+  await expect(
+    page.getByRole('dialog').getByRole('link', { name: 'Frame source' }),
+  ).toBeVisible();
 });
 
 test('unsupported WebGL keeps search and retry usable without the removed cafe', async ({
