@@ -1,12 +1,18 @@
 import { test, expect } from '@playwright/test';
 
 test('neighborhood selections focus the overview while search and Show all places preserve its scope', async ({ page }) => {
+  // Keep real Leaflet loading/zoom behavior independent of the public tile server.
+  await page.route('https://tile.openstreetmap.org/**', (route) => route.fulfill({
+    contentType: 'image/svg+xml',
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256"><rect width="256" height="256" fill="#e5e7eb"/></svg>',
+  }));
   await page.goto('/portfolio/nyc-music-map');
   await expect(page.getByRole('button', { name: 'Select Bushwick Blues by Delta Spirit', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.sound-catalog-heading')).toContainText('118 songs · 73 places');
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
   const tile = page.locator('.sound-overview .leaflet-tile').first();
   await expect(tile).toHaveAttribute('src', /tile.openstreetmap.org/);
+  await expect(tile).toHaveClass(/leaflet-tile-loaded/);
   const all_tile = await tile.getAttribute('src');
   await page.getByRole('searchbox').fill('Queensbridge');
   await expect(page.getByRole('button', { name: 'Select QueensBridge Politics by Nas', exact: true })).toBeVisible();
