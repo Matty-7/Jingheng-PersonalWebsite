@@ -26,7 +26,3 @@ export function playlist_csv(
     '\r\n'
   );
 }
-
-export function playlist_text(tracks: MusicTrack[]): string {
-  return tracks.map((track) => `${track.artist} - ${track.title}`).join('\n');
-}

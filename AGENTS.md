@@ -16,7 +16,7 @@
 - Do not add geographic slogans to the hero or restore the removed city chapter. Never add a home street address. Preserve geographic detail in owner-authored essays.
 - Keep secrets and private signing keys out of source, media, logs and Git history.
 - Preserve keyboard use, readable static content, responsive layouts and reduced-motion behavior.
-- Foreground application changes require successful exact-head CI covering lint, formatting, TypeScript, unit tests, content checks, build and the complete browser suite. Run focused local checks for the affected behavior; do not duplicate every CI command locally by default. The narrow non-runtime documentation allowlist uses the documented fast CI route. Daily audits retain their required local/browser observations. Vendored components/ui and hooks/use-mobile.ts are excluded from application lint and should not be edited for routine styling.
+- Foreground application changes require successful exact-head CI covering lint, formatting, TypeScript, unit tests, content checks, build and the complete browser suite. Run focused local checks for the affected behavior; do not duplicate every CI command locally by default. The narrow non-runtime documentation allowlist uses the documented fast CI route. Daily audits retain their required local/browser observations. Vendored components/ui are excluded from application lint and should not be edited for routine styling.
 - Do not claim animation, MusicKit integration, or browser checks that were not implemented or performed.
 
 ## Proportionate collaboration

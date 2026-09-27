@@ -9,7 +9,6 @@ import {
   atlas_year,
   atlas_detail,
   atlas_connections,
-  atlas_embed_url,
   atlas_maps_url,
 } from '../lib/new_york_atlas.ts';
 
@@ -83,11 +82,9 @@ test('lightweight search preserves every catalog field and ordered result', () =
 
 test('on-demand details retain every original entry, source and geographic relationship', () => {
   for (const entry of atlas_entries) {
-    const detail = atlas_detail(entry.id, 'test-only-key');
+    const detail = atlas_detail(entry.id);
     assert.deepEqual(detail.entry, entry);
-    assert.equal(detail.map_url, atlas_embed_url(entry, 'test-only-key'));
     assert.equal(detail.maps_url, atlas_maps_url(entry));
-    assert.equal(atlas_detail(entry.id, '').map_url, null);
     assert.deepEqual(
       detail.related.entries.map((item) => item.id),
       atlas_connections(entry).entries.map((item) => item.id),
@@ -106,6 +103,6 @@ test('on-demand details retain every original entry, source and geographic relat
     '__proto__',
     '../../content/posts.json',
   ]) {
-    assert.equal(atlas_detail(id, 'test-only-key'), null);
+    assert.equal(atlas_detail(id), null);
   }
 });

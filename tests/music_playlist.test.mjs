@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { playlist_csv, playlist_text } from '../lib/music_playlist.ts';
+import { playlist_csv } from '../lib/music_playlist.ts';
 
 const catalog = JSON.parse(
   readFileSync(new URL('../content/nyc_music_map.json', import.meta.url)),
@@ -13,10 +13,6 @@ test('playlist export retains every catalog recording and exact Apple link', () 
   assert.equal(csv.trim().split('\r\n').length, catalog.tracks.length + 1);
   for (const track of catalog.tracks)
     assert.ok(csv.includes(track.apple_music_url));
-  assert.equal(
-    playlist_text(catalog.tracks).split('\n').length,
-    catalog.tracks.length,
-  );
 });
 
 test('CSV protects Unicode, quotes, commas, newlines and spreadsheet formula prefixes', () => {

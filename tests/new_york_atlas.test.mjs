@@ -2,17 +2,15 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
   atlas_entries,
-  atlas_counts,
+  atlas_index,
   atlas_areas,
   atlas_connections,
-  atlas_embed_url,
   atlas_maps_url,
   atlas_location,
   atlas_entry_label,
   atlas_year,
   atlas_detail,
   atlas_card_summary,
-  search_atlas,
 } from '../lib/new_york_atlas.ts';
 import {
   film_locations,
@@ -20,17 +18,23 @@ import {
   screen_kind,
   screen_credit,
   screen_year,
-  search_locations,
 } from '../lib/nyc_film_map.ts';
-import { literary_entries } from '../lib/nyc_literary_map.ts';
+import { search_atlas_index } from '../lib/atlas_browser.ts';
+import { literary_works, literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
+
+function search_atlas(medium, query) {
+  return search_atlas_index(atlas_index, medium, query).map(
+    ({ id }) => atlas_detail(id).entry,
+  );
+}
 
 test('every Atlas card has a brief introduction and retains full details', () => {
   for (const entry of atlas_entries) {
     const summary = atlas_card_summary(entry);
     assert.ok(summary.length > 0 && summary.length <= 200, entry.id);
     assert.match(summary, /[.!?][”"']?$/, entry.id);
-    const detail = atlas_detail(entry.id, '');
+    const detail = atlas_detail(entry.id);
     assert.equal(detail.summary, summary);
     assert.equal(detail.entry, entry);
     if (entry.medium === 'literature') {
@@ -73,7 +77,9 @@ test('card introductions stop at complete sentences without splitting abbreviate
 });
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.deepEqual(atlas_counts, { film: 57, literature: 20, music: 149 });
+  assert.equal(film_catalog.length, 57);
+  assert.equal(literary_works.length, 20);
+  assert.equal(music_tracks.length, 149);
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,
@@ -108,7 +114,7 @@ test('Atlas retains every original scene, passage and track-place relationship',
   }
 });
 
-test('TV series retain the screen route while exposing creators and year ranges in both explorers', () => {
+test('TV series retain the screen route while exposing creators and year ranges in Atlas', () => {
   const friends = film_catalog.find((work) => work.id === 'friends');
   assert.equal(screen_kind(friends), 'TV series');
   assert.equal(screen_year(friends), '1994–2004');
@@ -117,12 +123,6 @@ test('TV series retain the screen route while exposing creators and year ranges 
     const entries = search_atlas('film', query);
     assert.ok(
       entries.some((entry) => entry.scene.film_id === 'friends'),
-      query,
-    );
-    assert.ok(
-      search_locations('all', query).some((place) =>
-        place.scenes.some((scene) => scene.film_id === 'friends'),
-      ),
       query,
     );
   }
@@ -224,13 +224,10 @@ test('Atlas codec resolves incompatible or invalid selection and restores valid 
   }
 });
 
-test('every Atlas map preserves the existing free endpoint and keyless fallback', () => {
+test('every Atlas destination preserves its keyless Google Maps link', () => {
   for (const entry of atlas_entries) {
-    const url = new URL(atlas_embed_url(entry, 'test-only-key'));
-    assert.equal(url.origin, 'https://www.google.com');
-    assert.equal(url.pathname, '/maps/embed/v1/place');
-    assert.equal(atlas_embed_url(entry, ''), null);
     const external = new URL(atlas_maps_url(entry));
+    assert.equal(external.origin, 'https://www.google.com');
     assert.equal(external.pathname, '/maps/search/');
     assert.equal(external.searchParams.has('key'), false);
     if (entry.medium !== 'film') {
@@ -238,7 +235,6 @@ test('every Atlas map preserves the existing free endpoint and keyless fallback'
         entry.medium === 'literature'
           ? entry.passage.coordinates
           : entry.place.coordinates;
-      assert.equal(url.searchParams.get('center'), coordinates.join(','));
       assert.equal(external.searchParams.get('query'), coordinates.join(','));
     }
   }
