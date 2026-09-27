@@ -9,6 +9,7 @@ test('free jumps become the saved lesson and support native browser history', as
     'data-ready',
     'true',
   );
+  await expect(page).toHaveURL(/\/portfolio\/mortgage-map$/);
   await page.getByRole('button', { name: 'Prepayments', exact: true }).click();
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Prepayments',
@@ -30,6 +31,7 @@ test('free jumps become the saved lesson and support native browser history', as
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Prepayments',
   );
+  await expect(page).toHaveURL(/\/portfolio\/mortgage-map$/);
 });
 
 test('lesson changes retain the learning surface and reset the answer', async ({

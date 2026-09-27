@@ -92,14 +92,6 @@ export function MortgageMap({
     if (!loaded) return;
     if (location.pathname !== '/portfolio/mortgage-map') return;
     document.documentElement.removeAttribute('data-mortgage-pending');
-    const url = new URL(location.href);
-    url.hash = `concept=${progress.current_id}`;
-    url.searchParams.set('concept', progress.current_id);
-    history.replaceState(
-      { ...history.state, learning_route: progress.route_id },
-      '',
-      url,
-    );
     try {
       localStorage.setItem(progress_key, JSON.stringify(progress));
     } catch {
@@ -138,6 +130,16 @@ export function MortgageMap({
   function choose(id: string, preferred = progress.route_id) {
     if (!learning_index.has(id)) return;
     const chosen_route = route_for_concept(id, preferred);
+    // Stamp the current entry only when navigating. Rewriting the URL during
+    // hydration can cancel an in-flight document navigation in WebKit.
+    const current_url = new URL(location.href);
+    current_url.hash = `concept=${progress.current_id}`;
+    current_url.searchParams.set('concept', progress.current_id);
+    history.replaceState(
+      { ...history.state, learning_route: progress.route_id },
+      '',
+      current_url,
+    );
     focus_requested.current = true;
     set_progress((current) => select_lesson(current, id, chosen_route.id));
     set_catalog_open(false);
