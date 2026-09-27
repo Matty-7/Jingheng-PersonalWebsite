@@ -25,7 +25,6 @@ export const AtlasMap = memo(function AtlasMap({
   const container = useRef<HTMLDivElement>(null);
   const active_map = useRef<Leaflet.Map | null>(null);
   const framed_map = useRef<Leaflet.Map | null>(null);
-  const focused_place = useRef<string | null>(null);
   const select = useRef(on_select);
   const selected = useRef(selected_id);
   const prefetch = useRef(on_prefetch);
@@ -245,7 +244,6 @@ export const AtlasMap = memo(function AtlasMap({
       framed_map.current === map &&
       !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     framed_map.current = map;
-    focused_place.current = null;
     map.stop();
     if (selected.current && markers.current.has(selected.current)) {
       return () => cancelAnimationFrame(render_icons);
@@ -270,7 +268,6 @@ export const AtlasMap = memo(function AtlasMap({
     if (!instance || active_map.current !== instance.map) return;
     const active = selected_id ? markers.current.get(selected_id) : undefined;
     if (!active) {
-      focused_place.current = null;
       return;
     }
     active.setZIndexOffset(1000);
@@ -293,8 +290,7 @@ export const AtlasMap = memo(function AtlasMap({
     const reduced_motion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     );
-    const place_key = active.getLatLng().toString();
-    let following = focused_place.current !== place_key;
+    let following = true;
     let frame = 0;
     const center_place = () => {
       if (!following) return;
@@ -311,13 +307,17 @@ export const AtlasMap = memo(function AtlasMap({
           .add([0, (height - visible_height) / 2]),
         zoom,
       );
+      if (
+        map.getZoom() === zoom &&
+        map
+          .project(map.getCenter(), zoom)
+          .distanceTo(map.project(center, zoom)) < 1
+      )
+        return;
       map.flyTo(center, zoom, {
         animate: !reduced_motion.matches,
         duration: 0.65,
       });
-    };
-    const finish_focus = () => {
-      if (following) focused_place.current = place_key;
     };
     const schedule_center = () => {
       cancelAnimationFrame(frame);
@@ -333,7 +333,6 @@ export const AtlasMap = memo(function AtlasMap({
       if (reduced_motion.matches) center_place();
     };
     const observer = new ResizeObserver(schedule_center);
-    map.on('moveend', finish_focus);
     if (card) observer.observe(card);
     schedule_center();
     map.getContainer().addEventListener('pointerdown', stop_following);
@@ -344,7 +343,6 @@ export const AtlasMap = memo(function AtlasMap({
     return () => {
       cancelAnimationFrame(frame);
       observer.disconnect();
-      map.off('moveend', finish_focus);
       map.getContainer().removeEventListener('pointerdown', stop_following);
       map.getContainer().removeEventListener('wheel', stop_following);
       reduced_motion.removeEventListener('change', motion_changed);
