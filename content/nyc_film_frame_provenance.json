@@ -2262,6 +2262,123 @@
       "original_image": "https://www.zillowstatic.com/bedrock/app/uploads/sites/26/2022/10/broad-city-whole-foods-1.gif",
       "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
       "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "materialists",
+      "location_id": "joseph-leonard",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/materialists.html",
+      "original_image": "https://onthesetofnewyork.com/locations/materialists/materialists10.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "materialists",
+      "location_id": "nobu-downtown",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/materialists.html",
+      "original_image": "https://onthesetofnewyork.com/locations/materialists/materialists36.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "babygirl",
+      "location_id": "united-palace",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/babygirl.html",
+      "original_image": "https://onthesetofnewyork.com/locations/babygirl/babygirl17.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "babygirl",
+      "location_id": "the-nines",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/babygirl.html",
+      "original_image": "https://onthesetofnewyork.com/locations/babygirl/babygirl35.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "in-the-heights",
+      "location_id": "highbridge-pool",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/filming-locations-in-the-heights/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/06/in-the-heights-filming.-location-highbridge-pool-washington-heights-nyc.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Production photograph, not an extracted frame.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "in-the-heights",
+      "location_id": "cooper-triangle",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.untappedcities.com/filming-locations-in-the-heights/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/06/in-the-heights-filming-location-cooper-triangle-east-village-nyc.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "caught-stealing",
+      "location_id": "double-down-saloon",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.extstreet.com/Caught_Stealing.html",
+      "original_image": "https://www.extstreet.com/stills/49111560876275963560408864075.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "caught-stealing",
+      "location_id": "nathans-famous-coney",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.extstreet.com/Caught_Stealing.html",
+      "original_image": "https://www.extstreet.com/stills/1522458387164554870372674877673.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "and-just-like-that",
+      "location_id": "whitney-cafe",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.sceen-it.com/sceen/5674/And-Just-Like-That/The-Whitney-Caf",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/76316.jpg/nos/.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "and-just-like-that",
+      "location_id": "empire-diner",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.sceen-it.com/sceen/5905/And-Just-Like-That/Empire-Diner",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/77577.jpg/nos/.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "gossip-girl-2021",
+      "location_id": "museum-city-new-york",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/gossip-girl-filming-locations/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/07/cast-of-gossip-girl-reboot-filming-locations-museum-of-the-city-of-new-york-constance-billard-school-for-girls-st-jude-school-for-boys-nyc.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Production photograph, not an extracted frame.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "gossip-girl-2021",
+      "location_id": "met",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/gossip-girl-filming-locations/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/07/cast-of-gossip-girl-reboot-filming-locations-metropolitan-museum-of-art-met-steps-nyc.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Production photograph, not an extracted frame.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "fallout",
+      "location_id": "brooklyn-army-terminal",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.atlasofwonders.com/2024/04/where-was-fallout-filmed.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRuI3Mz9vo3uaTTFVqTgdlRTyc9zCaH3QPZN5SP9pIKSIw0dwUZQqTJeuxxxqMsyb88S9Jly6lAFOcNZQgjFqG6UExy3bhjIYnqwl6ZT2mdVxIMJ1evTpzKaJdQO3XAi2XkKBR3QHBskBiiz2kMdb9Q_tnbsSh23TN7wU5B00TQytNwGM/s1600/3.jpg",
+      "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
     }
   ]
 }

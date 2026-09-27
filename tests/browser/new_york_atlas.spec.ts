@@ -130,10 +130,10 @@ test('sources retain TV metadata and geographic precision when images fail', asy
     .getByRole('button', { name: 'Close details', exact: true })
     .click();
   await select_search(page, 'henry james');
-  await expect(page.locator('.atlas-scope')).toContainText(
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await expect(page.getByRole('dialog')).toContainText(
     'not an identified address',
   );
-  await page.getByRole('button', { name: 'Sources and place details' }).click();
   await expect(page.getByRole('dialog').locator('blockquote')).toContainText(
     'white marble steps',
   );
