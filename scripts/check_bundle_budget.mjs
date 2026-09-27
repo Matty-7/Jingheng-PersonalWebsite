@@ -7,7 +7,7 @@ const manifest = JSON.parse(
   readFileSync(new URL('.vite/manifest.json', root), 'utf8'),
 );
 const budgets = [
-  { entry: 'app/page.tsx', raw: 630_000, gzip: 200_000 },
+  { entry: 'app/page.tsx', raw: 540_000, gzip: 170_000 },
   { entry: 'components/new_york_atlas.tsx', raw: 470_000, gzip: 150_000 },
   { entry: 'components/mortgage_map.tsx', raw: 680_000, gzip: 205_000 },
 ];
