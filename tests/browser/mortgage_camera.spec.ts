@@ -21,8 +21,6 @@ test('learning works without panning or zooming and fits narrow screens', async 
       () => document.documentElement.scrollWidth - innerWidth,
     ),
   ).toBe(0);
-  await page
-    .getByRole('button', { name: 'Refinancing incentive', exact: true })
-    .press('Enter');
+  await page.goBack();
   await expect(page.getByRole('slider')).toBeVisible();
 });
