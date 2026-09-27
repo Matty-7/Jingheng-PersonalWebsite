@@ -136,7 +136,7 @@ test('Atlas codec resolves incompatible or invalid selection and restores valid 
     new URLSearchParams('medium=bogus&entry=missing'),
   );
   assert.equal(invalid.medium, 'all');
-  assert.equal(invalid.entry_id, atlas_entries[0].id);
+  assert.equal(invalid.entry_id, null);
   const empty = atlas_location.read(new URLSearchParams('q=zzzz-no-match'));
   assert.equal(empty.entry_id, null);
   for (const entry of atlas_entries) {

@@ -257,6 +257,12 @@ export const atlas_index: AtlasIndexEntry[] = atlas_entries.map((entry) => {
     place_name: entry.place_name,
     area: entry.area,
     label: atlas_entry_label(entry),
+    place_key: entry.place_key,
+    coordinates: (entry.medium === 'film'
+      ? entry.location.coordinates
+      : entry.medium === 'literature'
+        ? entry.passage.coordinates
+        : entry.place.coordinates) as [number, number],
     search_text: normalize_search_text(
       [
         entry.title,

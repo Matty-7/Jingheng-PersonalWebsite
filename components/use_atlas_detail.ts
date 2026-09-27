@@ -57,5 +57,14 @@ export function useAtlasDetail(
     });
   }
 
-  return { detail, failed, retry };
+  const recording = entry_id?.startsWith('music:')
+    ? [...details.values()].find(
+        (cached) =>
+          cached.entry.medium === 'music' &&
+          cached.entry.track.id === entry_id.split(':')[1],
+      )?.entry
+    : undefined;
+  const preview_track =
+    recording?.medium === 'music' ? recording.track : undefined;
+  return { detail, failed, retry, preview_track };
 }

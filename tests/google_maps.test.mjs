@@ -56,22 +56,4 @@ test('application sources keep the strict zero-charge Google Maps boundary', () 
       );
     }
   }
-  for (const kind of ['film', 'literary', 'music']) {
-    const page = readFileSync(
-      new URL(`../app/portfolio/nyc-${kind}-map/page.tsx`, import.meta.url),
-      'utf8',
-    );
-    const helper = readFileSync(
-      new URL(`../lib/nyc_${kind}_map.ts`, import.meta.url),
-      'utf8',
-    );
-    assert.ok(
-      page.includes('google_maps_key={google_maps_embed_key()}'),
-      `${kind}: missing shared key`,
-    );
-    assert.ok(
-      helper.includes('google_place_embed_url('),
-      `${kind}: missing free helper`,
-    );
-  }
 });

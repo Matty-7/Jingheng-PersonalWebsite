@@ -7,6 +7,7 @@ export function audit_preview(): Plugin {
   const viewports: Record<string, [number, number]> = {
     '/__audit/desktop': [1440, 900],
     '/__audit/atlas_desktop': [1440, 900],
+    '/__audit/atlas_reference': [1488, 1056],
     '/__audit/atlas_mobile': [390, 844],
     '/__audit/mobile': [390, 844],
     '/__audit/short': [1280, 720],
@@ -33,17 +34,19 @@ export function audit_preview(): Plugin {
           return;
         }
         const [width, height] = viewport;
-        const route = (request.url ?? '').startsWith('/__audit/atlas_')
-          ? '/portfolio/new-york-atlas'
-          : (request.url ?? '').startsWith('/__audit/music_')
-            ? '/portfolio/nyc-music-map'
-            : (request.url ?? '').startsWith('/__audit/mortgage_')
-              ? '/portfolio/mortgage-map'
-              : (request.url ?? '').startsWith('/__audit/literary_')
-                ? '/portfolio/nyc-literary-map'
-                : (request.url ?? '').startsWith('/__audit/film_')
-                  ? '/portfolio/nyc-film-map'
-                  : '/';
+        const route = (request.url ?? '').startsWith('/__audit/atlas_reference')
+          ? '/portfolio/new-york-atlas?entry=film%3Ariverside-garden%3Ayouve-got-mail'
+          : (request.url ?? '').startsWith('/__audit/atlas_')
+            ? '/portfolio/new-york-atlas'
+            : (request.url ?? '').startsWith('/__audit/music_')
+              ? '/portfolio/nyc-music-map'
+              : (request.url ?? '').startsWith('/__audit/mortgage_')
+                ? '/portfolio/mortgage-map'
+                : (request.url ?? '').startsWith('/__audit/literary_')
+                  ? '/portfolio/nyc-literary-map'
+                  : (request.url ?? '').startsWith('/__audit/film_')
+                    ? '/portfolio/nyc-film-map'
+                    : '/';
         response.setHeader('Content-Type', 'text/html; charset=utf-8');
         response.setHeader('Cache-Control', 'no-store');
         response.end(
@@ -51,7 +54,7 @@ export function audit_preview(): Plugin {
             ? ''
             : `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Site audit viewport</title>
-<style>body{margin:0;background:#ddd}iframe{display:block;border:0${(request.url ?? '').startsWith('/__audit/mortgage_design') ? ';transform:scale(.85);transform-origin:top left' : ''}}</style></head>
+<style>body{margin:0;background:#ddd}iframe{display:block;border:0}${width === 1488 ? `iframe{transform:scale(${(request.url ?? '').startsWith('/__audit/mortgage_design') ? '.85' : '.86'});transform-origin:top left}` : ''}</style></head>
 <body><iframe title="Website at ${width} by ${height}" src="${route}" width="${width}" height="${height}"></iframe></body></html>`,
         );
       });

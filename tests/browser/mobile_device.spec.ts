@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { open_home } from './home_helpers';
+import { mock_map } from './atlas_helpers';
 
 test.use({ reducedMotion: 'reduce' });
 
@@ -55,42 +56,33 @@ test('device touch opens and closes a book, then plays and pauses a record', asy
   ).toBe(true);
 });
 
-test('device touch changes Atlas medium and opens its selected collection', async ({
+test('device touch filters Atlas and selects a unified place card', async ({
   page,
 }) => {
-  await page.route('https://www.google.com/maps/embed/**', (route) =>
-    route.fulfill({
-      contentType: 'text/html',
-      body: '<title>Map fixture</title>',
-    }),
-  );
+  await mock_map(page);
   await page.goto(
-    '/portfolio/new-york-atlas?medium=literature&entry=literature%3Awashington-square',
+    '/portfolio/new-york-atlas?entry=literature%3Awashington-square',
   );
-  const music = page
-    .locator('.atlas-filters')
-    .getByRole('button', { name: /^Music/ });
+  const music = page.getByRole('button', { name: 'Music', exact: true });
   await expect(music).toBeEnabled();
   await music.tap();
-  await expect(page.locator('.atlas-detail')).toHaveAttribute(
+  await expect(page.locator('.atlas-card')).toHaveCount(0);
+  await page.getByRole('searchbox').fill('cornelia street');
+  await page.locator('.atlas-search-results button').first().tap();
+  await expect(page.locator('.atlas-card')).toHaveAttribute(
     'data-medium',
     'music',
   );
-  await expect(
-    page.getByRole('combobox', { name: 'Choose a work and place' }),
-  ).toBeVisible();
-  const collection = page.getByRole('link', {
-    name: 'View in the music collection',
-  });
-  await collection.scrollIntoViewIfNeeded();
-  await collection.tap();
-  await expect(
-    page.getByRole('heading', { name: 'NYC Music Map.' }),
-  ).toBeVisible();
-  await expect(page.locator('audio')).toHaveCount(1);
+  await page.getByRole('button', { name: 'Sources and place details' }).tap();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.getByRole('button', { name: 'Close details' }).tap();
+  await page.getByRole('button', { name: 'Close place card' }).tap();
+  await expect(page.locator('.atlas-card')).toHaveCount(0);
   expect(
     await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
+      () =>
+        document.documentElement.scrollWidth <= innerWidth &&
+        document.documentElement.scrollHeight <= innerHeight + 1,
     ),
   ).toBe(true);
 });
