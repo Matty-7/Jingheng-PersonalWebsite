@@ -221,7 +221,13 @@ export const AtlasMap = memo(function AtlasMap({
       });
       marker.on('add', () => {
         const element = marker.getElement();
-        element?.addEventListener('focus', anticipate);
+        element?.addEventListener('focus', () => {
+          anticipate();
+          // Leaflet may rebuild a focused pin when a flight's zoom snaps.
+          const live = marker.getElement();
+          if (live?.isConnected && live !== element && !element?.isConnected)
+            live.focus({ preventScroll: true });
+        });
         element?.addEventListener('touchstart', anticipate, { passive: true });
         element?.setAttribute('role', 'button');
         element?.setAttribute('aria-label', title);
@@ -293,7 +299,7 @@ export const AtlasMap = memo(function AtlasMap({
     let following = true;
     let frame = 0;
     const center_place = () => {
-      if (!following) return;
+      if (!following || active_map.current !== map) return;
       map.stop();
       const zoom = Math.max(map.getZoom(), 14);
       const height = map.getSize().y;
@@ -346,7 +352,7 @@ export const AtlasMap = memo(function AtlasMap({
       map.getContainer().removeEventListener('pointerdown', stop_following);
       map.getContainer().removeEventListener('wheel', stop_following);
       reduced_motion.removeEventListener('change', motion_changed);
-      map.stop();
+      if (active_map.current === map) map.stop();
       point.remove();
       active.setZIndexOffset(0);
       active.getElement()?.classList.remove('is-selected');
