@@ -6,7 +6,7 @@
     "Unverified candidate images are excluded.",
     "Display derivatives use JPEG for the current host; verified frames, dimensions and source attribution are unchanged.",
     "Television additions distinguish episode frames, HBO production stills and Amazon episode images. Production stills and episode images are not claimed to be extracted video frames.",
-    "Tatiana Grill uses a verified film frame. Ocean View Cafe uses an explicitly labeled official venue photograph, not a film frame."
+    "Tatiana Grill uses a verified film frame."
   ],
   "records": [
     {
@@ -80,15 +80,6 @@
       "original_image": "https://m.media-amazon.com/images/M/MV5BOTRkYzhiZmEtMGZiMi00MmVkLTk2MjUtNzkxNWQyZWUyZjU1XkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg",
       "verification": "IMDb indexes the frame as Anora (2024), featuring Anton Bitter. The location is supported by the director interview and Ext.Street candy-shop sequence at 1:18:02. Source image visually inspected.",
       "rights": "Film frame; source attribution retained. No open license or reuse permission asserted."
-    },
-    {
-      "film_id": "anora",
-      "location_id": "ocean-view",
-      "frame_status": "verified_location_photo",
-      "source_page": "https://oceanviewcafeny.com/",
-      "original_image": "https://oceanviewcafeny.com/images/ps1.jpg",
-      "verification": "Visually inspected official venue photo: name and phone match the official site at 290 Brighton Beach Avenue. This is a venue photograph, not an Anora film frame.",
-      "rights": "Source attribution retained. No open license or reuse permission asserted."
     },
     {
       "film_id": "anora",

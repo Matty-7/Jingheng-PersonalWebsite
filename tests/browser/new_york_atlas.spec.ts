@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { mock_map, select_search, atlas_path } from './atlas_helpers';
+import {
+  mock_map,
+  select_search,
+  atlas_path,
+  map_style_url,
+} from './atlas_helpers';
 
 test.beforeEach(async ({ page }) => mock_map(page));
 
@@ -9,7 +14,14 @@ test('map-first Atlas filters and searches without page scrolling or collection 
   await page.goto(atlas_path);
   await expect(page.locator('.atlas-map.leaflet-container')).toBeVisible();
   await expect(page.locator('.atlas-card')).toHaveCount(0);
-  await expect(page.locator('.leaflet-tile-loaded').first()).toBeVisible();
+  await expect(page.locator('.maplibregl-canvas')).toBeVisible();
+  await expect(page.locator('.atlas-map-status')).toHaveCount(0);
+  await expect(page.locator('.leaflet-control-attribution')).toContainText(
+    'OpenFreeMap',
+  );
+  await expect(page.locator('.leaflet-control-attribution')).toContainText(
+    'OpenStreetMap',
+  );
   await expect(page.locator('.atlas-cluster').first()).toBeVisible();
   await select_search(page, 'cafe lalo');
   await expect(page.locator('.atlas-card h2')).toHaveText('Café Lalo');
@@ -113,22 +125,15 @@ test('clusters support keyboard expansion and map failure keeps search usable', 
   const cluster = page.locator('.atlas-cluster').first();
   await expect(cluster).toHaveAttribute('role', 'button');
   const initial = await cluster.getAttribute('aria-label');
-  const tile_before = await page
-    .locator('.leaflet-tile-loaded')
-    .first()
-    .getAttribute('src');
+  const position_before = await cluster.getAttribute('style');
   await cluster.press('Space');
   await expect
-    .poll(() =>
-      page.locator('.leaflet-tile-loaded').first().getAttribute('src'),
-    )
-    .not.toBe(tile_before);
+    .poll(() => cluster.getAttribute('style'))
+    .not.toBe(position_before);
   await expect(page.locator('.atlas-map')).toBeFocused();
   expect(initial).toMatch(/places. Zoom to explore/);
-  await page.unroute('https://tile.openstreetmap.org/**');
-  await page.route('https://tile.openstreetmap.org/**', (route) =>
-    route.abort(),
-  );
+  await page.unroute(map_style_url);
+  await page.route(map_style_url, (route) => route.abort());
   await page.reload();
   await expect(
     page.getByText('Map unavailable. Search still works.'),
@@ -138,6 +143,12 @@ test('clusters support keyboard expansion and map failure keeps search usable', 
     page.getByRole('link', { name: 'Open in Google Maps' }),
   ).toBeVisible();
   await expect(page.getByRole('button', { name: 'Retry map' })).toBeVisible();
+  await page.unroute(map_style_url);
+  await mock_map(page);
+  await page.getByRole('button', { name: 'Retry map' }).click();
+  await expect(page.locator('.atlas-map-status')).toHaveCount(0);
+  await expect(page.locator('.maplibregl-canvas')).toHaveCount(1);
+  await expect(page.locator('.atlas-pin.is-selected')).toBeVisible();
 });
 
 test('missing artwork leaves a compact text card and the next selection restores its image', async ({
@@ -146,14 +157,12 @@ test('missing artwork leaves a compact text card and the next selection restores
   await page.route('**/api/atlas-entry?*', async (route) => {
     const response = await route.fetch();
     const detail = await response.json();
-    if (
-      ['film:tatiana:anora', 'film:ocean-view:anora'].includes(detail.entry.id)
-    )
+    if (detail.entry.id === 'film:tatiana:anora')
       delete detail.entry.scene.still;
     await route.fulfill({ response, json: detail });
   });
   await page.goto(atlas_path);
-  for (const query of ['Tatiana Grill', 'Ocean View Cafe']) {
+  for (const query of ['Tatiana Grill']) {
     await select_search(page, query);
     await expect(page.locator('.atlas-card')).toHaveAttribute(
       'aria-busy',
@@ -206,11 +215,9 @@ test('failed literature and music covers collapse their whole artwork area', asy
   await expect(page.locator('.atlas-artwork img')).toBeVisible();
 });
 
-test('Anora places have verified artwork and distinguish a venue photo from a film frame', async ({
-  page,
-}) => {
+test('Anora retains its verified Tatiana frame', async ({ page }) => {
   await page.goto(atlas_path);
-  for (const query of ['Tatiana Grill', 'Ocean View Cafe']) {
+  for (const query of ['Tatiana Grill']) {
     await select_search(page, query);
     await expect(page.locator('.atlas-artwork img')).toBeVisible();
     await expect
@@ -225,6 +232,38 @@ test('Anora places have verified artwork and distinguish a venue photo from a fi
   }
   await page.getByRole('button', { name: 'Sources and place details' }).click();
   await expect(page.getByRole('dialog').locator('figcaption')).toContainText(
-    'Location photo',
+    'Frame source',
   );
+});
+
+test('unsupported WebGL keeps search and retry usable without the removed cafe', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+    // The native method is called with its original canvas as this below.
+    // oxlint-disable-next-line typescript/unbound-method
+    const get_context = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function (
+      this: HTMLCanvasElement,
+      ...args: Parameters<typeof get_context>
+    ) {
+      if (String(args[0]).startsWith('webgl')) return null;
+      return get_context.apply(this, args);
+    } as typeof get_context;
+  });
+  await page.goto(atlas_path);
+  await expect(page.getByRole('button', { name: 'Retry map' })).toBeVisible();
+  await select_search(page, 'cafe lalo');
+  await expect(page.locator('.atlas-card h2')).toHaveText('Café Lalo');
+  await page.getByRole('button', { name: 'Retry map' }).click();
+  await expect(page.getByRole('button', { name: 'Retry map' })).toBeVisible();
+  await expect(page.locator('.atlas-pin.is-selected')).toBeVisible();
+  await expect(page.locator('.maplibregl-canvas')).toHaveCount(0);
+  await page.getByRole('searchbox').fill('Ocean View Cafe');
+  await expect(
+    page.getByRole('heading', { name: 'No connections found.' }),
+  ).toBeVisible();
+  expect(errors).toEqual([]);
 });

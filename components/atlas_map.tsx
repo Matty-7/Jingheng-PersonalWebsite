@@ -43,7 +43,10 @@ export function AtlasMap({
     void import('leaflet')
       .then(async (module) => {
         const leaflet = module.default ?? module;
-        await import('leaflet.markercluster');
+        const [, { maplibreGL }] = await Promise.all([
+          import('leaflet.markercluster'),
+          import('@maplibre/maplibre-gl-leaflet'),
+        ]);
         if (disposed || !container.current) return;
         map = leaflet
           .map(container.current, {
@@ -58,31 +61,6 @@ export function AtlasMap({
           .setView([40.754, -73.973], 12);
         active_map.current = map;
         leaflet.control.zoom({ position: 'topright' }).addTo(map);
-        let loaded = 0;
-        const tiles = leaflet.tileLayer(
-          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          {
-            maxZoom: 19,
-            attribution:
-              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          },
-        );
-        tiles.on('loading', () => {
-          loaded = 0;
-          clearTimeout(timeout);
-          timeout = setTimeout(() => {
-            if (!disposed && !loaded) set_status('error');
-          }, 12000);
-        });
-        tiles.on('tileload', () => {
-          loaded++;
-          if (!disposed) set_status('ready');
-        });
-        tiles.on('load', () => {
-          clearTimeout(timeout);
-          if (!disposed) set_status(loaded ? 'ready' : 'error');
-        });
-        tiles.addTo(map);
         const cluster = leaflet.markerClusterGroup({
           showCoverageOnHover: false,
           animate: false,
@@ -125,6 +103,60 @@ export function AtlasMap({
         );
         observer.observe(container.current);
         set_instance({ leaflet, map, cluster });
+        // The vector basemap shares Leaflet's camera and existing accessible pins.
+        const basemap = maplibreGL({
+          style: 'https://tiles.openfreemap.org/styles/positron',
+          interactive: false,
+          attributionControl: {
+            customAttribution:
+              '<a href="https://openfreemap.org/">OpenFreeMap</a> · <a href="https://www.openmaptiles.org/">© OpenMapTiles</a> · <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a>',
+          },
+        });
+        try {
+          basemap.addTo(map);
+          const vector_map = basemap.getMaplibreMap();
+          let loaded = false;
+          let initial_error = false;
+          const ready = () => {
+            if (disposed || initial_error) return;
+            loaded = true;
+            clearTimeout(timeout);
+            set_status('ready');
+          };
+          timeout = setTimeout(() => {
+            if (!disposed && !loaded) set_status('error');
+          }, 12000);
+          vector_map.on('load', ready);
+          vector_map.on('error', () => {
+            // A later isolated tile error should not obscure a usable map.
+            if (!disposed && !loaded) {
+              initial_error = true;
+              clearTimeout(timeout);
+              set_status('error');
+            }
+          });
+          vector_map.on('webglcontextlost', () => {
+            if (!disposed) set_status('error');
+          });
+          vector_map.on('webglcontextrestored', () => {
+            if (!disposed) {
+              set_status('loading');
+              void vector_map.once('idle', ready);
+            }
+          });
+        } catch (error) {
+          console.warn('Atlas basemap could not initialize.', error);
+          // The bridge needs a safe removal path if GPU initialization throws
+          // before it has a MapLibre instance. Keep search and Leaflet pins usable.
+          if (!basemap.getMaplibreMap()) {
+            basemap.onRemove = () => {
+              basemap.getContainer()?.remove();
+              return basemap;
+            };
+          }
+          basemap.remove();
+          if (!disposed) set_status('error');
+        }
       })
       .catch(() => {
         if (!disposed) set_status('error');
