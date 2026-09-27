@@ -64,6 +64,7 @@ export function NewYorkAtlas({
   const origin = useRef<HTMLElement | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const info_button = useRef<HTMLButtonElement>(null);
+  const work_switcher = useRef<HTMLElement>(null);
   const [search_open, set_search_open] = useState(false);
   const [info_id, set_info_id] = useState<string | null>(null);
   const info_open = info_id !== null && info_id === entry_id;
@@ -92,6 +93,22 @@ export function NewYorkAtlas({
       origin.current.focus({ preventScroll: true });
     else document.getElementById('atlas-map')?.focus({ preventScroll: true });
   }, [update, state]);
+  useEffect(() => {
+    const rail = work_switcher.current;
+    const active = rail?.querySelector<HTMLButtonElement>(
+      '[aria-pressed="true"]',
+    );
+    if (!rail || !active || rail.scrollWidth <= rail.clientWidth) return;
+    const rail_bounds = rail.getBoundingClientRect();
+    const active_bounds = active.getBoundingClientRect();
+    const delta =
+      active_bounds.left < rail_bounds.left
+        ? active_bounds.left - rail_bounds.left - 4
+        : active_bounds.right > rail_bounds.right
+          ? active_bounds.right - rail_bounds.right + 4
+          : 0;
+    if (delta) rail.scrollBy({ left: delta, behavior: 'instant' });
+  }, [entry_id]);
   useEffect(() => {
     if (info_open) dialog.current?.showModal();
     else dialog.current?.close();
@@ -281,7 +298,7 @@ export function NewYorkAtlas({
                 class_name={`atlas-artwork atlas-artwork-${summary.medium}`}
               />
             )}
-            <div className="atlas-card-copy">
+            <div className="atlas-card-heading">
               <p className="atlas-eyebrow">
                 {summary.label}
                 {detail && <> · {detail.year}</>}
@@ -290,21 +307,33 @@ export function NewYorkAtlas({
               <h2 ref={heading} tabIndex={-1}>
                 {summary.place_name}
               </h2>
-              {siblings.length > 1 ? (
-                <select
-                  aria-label="Works at this place"
-                  value={entry_id ?? ''}
-                  onChange={(event) => select_entry(event.target.value)}
-                >
-                  {siblings.map((entry) => (
-                    <option key={entry.id} value={entry.id}>
-                      {entry.title}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <h3>{summary.title}</h3>
-              )}
+              {siblings.length < 2 && <h3>{summary.title}</h3>}
+            </div>
+            {siblings.length > 1 && (
+              <nav
+                ref={work_switcher}
+                className="atlas-work-switcher"
+                aria-label="Works at this place"
+              >
+                {siblings.map((entry) => (
+                  <button
+                    key={entry.id}
+                    type="button"
+                    aria-pressed={entry.id === entry_id}
+                    disabled={!ready}
+                    onClick={() =>
+                      update((previous) => ({
+                        ...previous,
+                        entry_id: entry.id,
+                      }))
+                    }
+                  >
+                    {entry.title}
+                  </button>
+                ))}
+              </nav>
+            )}
+            <div className="atlas-card-copy">
               {detail ? (
                 <p className="atlas-card-description">{description}</p>
               ) : (
