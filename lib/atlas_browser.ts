@@ -23,6 +23,7 @@ export type AtlasIndexEntry = {
 };
 export type AtlasDetail = {
   entry: AtlasEntry;
+  summary: string;
   label: string;
   year: string | number;
   credit: string;

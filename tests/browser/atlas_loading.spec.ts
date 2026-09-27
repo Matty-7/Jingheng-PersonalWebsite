@@ -159,7 +159,7 @@ test('failed or mismatched details retry and preserve a full-page fallback', asy
     'false',
   );
   await expect(page.locator('.atlas-card-description')).toContainText(
-    'white marble steps',
+    'James moves from the crowded streets into a quiet square',
   );
   await select_search(page, 'cafe lalo');
   await page
@@ -256,7 +256,7 @@ test('a failed intent prefetch does not prevent a later selection from loading',
     'false',
   );
   await expect(page.locator('.atlas-card-description')).toContainText(
-    'white marble steps',
+    'James moves from the crowded streets into a quiet square',
   );
   expect(attempts).toBe(2);
 });
