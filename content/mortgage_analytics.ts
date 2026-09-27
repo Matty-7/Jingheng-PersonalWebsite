@@ -75,7 +75,11 @@ export const analytics_topics = [
     id: 'payment_default_metrics',
     branch: 'credit',
     title: 'Payments, defaults and losses',
-    concepts: ['monthly_payment_rate', 'conditional_default_rate'],
+    concepts: [
+      'loan_states',
+      'monthly_payment_rate',
+      'conditional_default_rate',
+    ],
   },
   {
     id: 'scenario_context',
@@ -124,6 +128,32 @@ function analysis_concept(input: ConceptInput): MortgageConcept {
 }
 
 export const analytics_concepts: MortgageConcept[] = [
+  analysis_concept({
+    id: 'loan_states',
+    title: 'Loan state transitions',
+    subtitle: 'From payment status to cash received',
+    aliases: ['cure', 'roll rate', 'credit transitions', 'competing risks'],
+    summary:
+      'A delinquent loan can catch up, fall further behind or enter a workout. Follow its payment status over time before drawing conclusions about losses.',
+    distinction:
+      'A cure returns a loan to current status; a roll rate measures movement between defined states over a stated interval. Default, property disposition and recovery receipts can occur at different times. Voluntary payoff and credit-related liquidation are different exits from the remaining population, so their assumed probabilities cannot be applied independently without a consistent framework.',
+    question:
+      'A loan becomes 60 days delinquent. What can you conclude about the investor’s final loss?',
+    answer:
+      'The final loss is not known. The loan may cure or enter a workout; proceeds, costs, guarantees and recovery timing still affect investor cash flows.',
+    links: [
+      {
+        id: 'delinquency',
+        reason: 'Payment status is an observation, not a final loss.',
+      },
+      { id: 'recovery_lag', reason: 'Recoveries need their own dates.' },
+      {
+        id: 'prepayments',
+        reason: 'Voluntary payoff is a separate exit from the loan population.',
+      },
+    ],
+    sources: ['loan_performance_glossary'],
+  }),
   analysis_concept({
     id: 'historical_speeds',
     title: 'Historical prepayment speeds',
@@ -267,11 +297,11 @@ export const analytics_concepts: MortgageConcept[] = [
     summary:
       'A scenario specifies a possible combination of inputs: rates, prepayments, defaults, recoveries or property income. Comparing scenarios reveals how results depend on those assumptions.',
     distinction:
-      'A stress case is not a probability forecast. Separate the security and market snapshot from the assumptions being changed.',
+      'Name the changed input, the fixed inputs and the output. At a fixed price, a new cash-flow path implies a new yield. At a fixed yield, it implies a new price. A stress case is not a probability forecast; keep the market snapshot and valuation conventions consistent.',
     question:
-      'If price changes between two runs, did the scenario necessarily change?',
+      'You change the prepayment assumption while holding the bond price fixed. Which quantity do you solve for?',
     answer:
-      'No. First check the market snapshot, security data and valuation conventions.',
+      'Solve for the yield that discounts the revised cash flows to the same price. Holding yield fixed and solving for price is a different experiment.',
     links: [
       {
         id: 'assumption_vector',
@@ -281,6 +311,11 @@ export const analytics_concepts: MortgageConcept[] = [
       {
         id: 'quote_context',
         reason: 'A scenario comparison also needs consistent market context.',
+      },
+      {
+        id: 'yield',
+        reason:
+          'Yield is an output when price and the cash-flow path are given.',
       },
     ],
     sources: ['cre', 'embedded_options'],
@@ -646,6 +681,24 @@ function analysis_relation(
 }
 
 export const analytics_relationships: MortgageRelationship[] = [
+  analysis_relation(
+    'loan_states',
+    'delinquency',
+    'tracks payment status',
+    'A loan can move into delinquency and later cure; a delinquency observation does not establish a final loss.',
+    'measurement',
+    ['loan_performance_glossary'],
+    'Define the observation interval, population and payment-status convention.',
+  ),
+  analysis_relation(
+    'loan_states',
+    'recovery_lag',
+    'separates events from receipts',
+    'Payment status, loan exit and recovery receipts have distinct dates that affect projected investor cash flows.',
+    'mechanism',
+    ['loan_performance_glossary'],
+    'Recovery amounts and timing depend on the workout and the applicable guarantee or transaction terms.',
+  ),
   analysis_relation(
     'collateral_stratification',
     'historical_speeds',

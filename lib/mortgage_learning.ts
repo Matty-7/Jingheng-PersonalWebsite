@@ -31,6 +31,7 @@ export const route_index = new Map(
   learning_routes.map((route) => [route.id, route]),
 );
 export const progress_key = 'mortgage-map-learning-v1';
+export const position_cookie = 'mortgage-map-position-v1';
 export type LearningProgress = {
   route_id: string;
   current_id: string;
@@ -66,6 +67,14 @@ export function read_progress(raw: string | null): LearningProgress {
           ]
         : [],
     };
+  } catch {
+    return initial_progress;
+  }
+}
+
+export function read_position(raw: string | undefined): LearningProgress {
+  try {
+    return read_progress(raw ? decodeURIComponent(raw) : null);
   } catch {
     return initial_progress;
   }

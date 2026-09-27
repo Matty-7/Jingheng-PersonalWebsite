@@ -261,6 +261,46 @@ export const mortgage_sources: Record<
   ...context_sources,
   ...analytics_sources,
   ...expansion_sources,
+  loan_performance_glossary: {
+    publisher: 'Fannie Mae',
+    title:
+      'Single-Family Loan Performance Dataset and CRT Glossary · payment history and loan exits',
+    url: 'https://capitalmarkets.fanniemae.com/media/6931/display',
+  },
+  trace_transactions: {
+    publisher: 'FINRA',
+    title:
+      'Trade Activity and Trade History Data · executed trades and reporting times',
+    url: 'https://www.finra.org/finra-data/fixed-income/about-trade-activity',
+  },
+  evaluated_pricing: {
+    publisher: 'Bloomberg',
+    title:
+      'Evaluated Pricing Solutions · observations, comparables and valuation',
+    url: 'https://professional.bloomberg.com/products/data/enterprise-catalog/pricing/evaluated-pricing/',
+  },
+  second_lien_case: {
+    publisher: 'Structured Finance Association',
+    title: 'From Revival to Scale: Second-Lien RMBS · September 17, 2026',
+    url: 'https://structuredfinance.org/resources/sfa-research-corner-from-revival-to-scale-second-lien-rmbs-moves-into-a-new-phase/',
+  },
+  rate_transmission_case: {
+    publisher: 'Apollo',
+    title: 'Higher for Longer Hits the Lowest Rated · September 25, 2026',
+    url: 'https://www.apollo.com/wealth/insights-news/insights/daily-spark/higher-for-longer-hits-the-lowest-rated',
+  },
+  yield_spread_case: {
+    publisher: 'Apollo',
+    title:
+      'Recent Rates Volatility: Risks and Opportunities in Credit · September 26, 2026',
+    url: 'https://www.apollo.com/wealth/insights-news/insights/daily-spark/recent-rates-volatility-risks-and-opportunities-in-credit',
+  },
+  score_disclosure_case: {
+    publisher: 'Fannie Mae',
+    title:
+      'CRT Disclosure Updates to Support Credit Score Changes · August 17, 2026',
+    url: 'https://capitalmarkets.fanniemae.com/credit-risk-transfer/single-family-credit-risk-transfer/crt-disclosure-updates-credit-score-changes',
+  },
   cfpb: {
     publisher: 'CFPB',
     title: 'How does paying down a mortgage work?',
@@ -521,7 +561,7 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'A fixed-rate loan keeps its note rate. An adjustable-rate mortgage (ARM) resets under contract terms, commonly using an index plus a margin, with applicable caps and floors.',
     distinction:
-      'A fixed note rate does not guarantee an unchanged total housing bill. Taxes and insurance can change.',
+      'Higher market rates reach a floating-rate borrower through contractual resets and a fixed-rate borrower when replacement financing is needed. Reset dates, caps and floors matter. A fixed note rate does not freeze taxes or insurance. Apollo’s September 25, 2026 credit discussion illustrates this uneven transmission across debt contracts.',
     links: [
       {
         id: 'principal_interest',
@@ -532,10 +572,11 @@ const original_concepts: MortgageConcept[] = [
         reason: 'The existing loan’s terms affect the benefit of refinancing.',
       },
     ],
-    question: 'Does an ARM always reset to the current index plus margin?',
+    question:
+      'Market rates rise. Whose note rate can respond under the existing contract?',
     answer:
-      'Not necessarily: introductory terms, reset dates and contractual limits can constrain the actual rate.',
-    sources: ['arm'],
+      'An ARM borrower’s rate can reset on its contractual dates, within applicable limits. An existing fixed note rate does not reset with the market; a replacement loan can carry a different rate.',
+    sources: ['arm', 'rate_transmission_case'],
     topic: 'loan_contract',
   },
   {
@@ -967,7 +1008,7 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'For a simple pass-through, investor payments combine interest, scheduled principal and unscheduled principal. Timing follows the security’s distribution rules.',
     distinction:
-      'A principal payment returns invested balance; it is not all investment income.',
+      'Contractual cash flows follow the loan terms. Scenario cash flows add a particular set of prepayment, default and recovery assumptions. Expected cash flows require probabilities across possible outcomes; a single base case is not automatically a probability-weighted expectation. Principal returned is not all investment income.',
     links: [
       {
         id: 'prepayments',
@@ -982,10 +1023,11 @@ const original_concepts: MortgageConcept[] = [
         reason: 'Discounts the payment stream into a present amount.',
       },
     ],
-    question: 'Why can faster prepayments reduce future interest?',
+    question:
+      'An analyst labels one projected cash-flow path “base case.” Is it necessarily the probability-weighted expected cash flow?',
     answer:
-      'Once principal is repaid, that principal no longer generates future coupon payments.',
-    sources: ['freddie_factor'],
+      'No. A base case is one selected set of assumptions. A probability-weighted expectation requires an explicit treatment of possible outcomes and their probabilities.',
+    sources: ['freddie_factor', 'embedded_options'],
     topic: 'payment_timing',
   },
   {
@@ -2076,7 +2118,7 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'A yield is a rate that equates assumed cash flows with a price under specified compounding and timing conventions.',
     distinction:
-      'For an MBS, changing the prepayment assumption can change the quoted yield.',
+      'At a fixed price, changing the prepayment assumption changes the yield implied by the revised cash flows. At a fixed yield, the same cash-flow change instead changes price. State which experiment you are running.',
     question: 'Is a quoted yield a promised realized return?',
     answer:
       'No. Actual cash flows, sale price and reinvestment conditions can differ.',
@@ -2413,11 +2455,12 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'A nominal spread compares an instrument’s yield with a selected benchmark yield. The benchmark choice is part of the definition.',
     distinction:
-      'It does not separately remove the effect of an embedded prepayment option.',
-    question: 'Is a 100 bp spread meaningful without a benchmark?',
+      'A high all-in yield can coexist with a narrow spread when the benchmark yield is high. Apollo’s September 26, 2026 discussion provides a dated example. A nominal spread does not separately remove the effect of an embedded prepayment option.',
+    question:
+      'A bond yields 6% and a comparable benchmark yields 5.5%. What does its high yield tell you about the spread?',
     answer:
-      'It is incomplete: the reference rate and cash-flow assumptions are needed.',
-    sources: ['fed_spreads'],
+      'The illustrative nominal spread is only 50 bp: (0.06 − 0.055) × 10,000 = 50 bp. High yield alone does not establish generous compensation for credit, liquidity or option risk.',
+    sources: ['fed_spreads', 'yield_spread_case'],
     links: [
       {
         id: 'yield',
@@ -3156,9 +3199,11 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'DSCR compares available income with the debt service it must cover.',
     distinction:
-      'A ratio is meaningful only with its income adjustments and debt-service definition.',
-    question: 'If NOI falls but debt service stays fixed, what happens?',
-    answer: 'DSCR falls proportionally.',
+      'Origination DSCR reflects the underwriting snapshot. A current or re-underwritten ratio needs updated income and debt service measured over aligned periods. Rental-loan and commercial-property programs can define eligible income and debt service differently; preserve the stated calculation basis.',
+    question:
+      'A loan had a 1.4× DSCR at origination. Does that establish its coverage today?',
+    answer:
+      'No. Recheck current income, the relevant debt service and their measurement periods. Falling income or a higher refinancing rate can weaken coverage even when the original ratio was strong.',
     sources: ['cre'],
     links: [
       {
