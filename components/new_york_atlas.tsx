@@ -1,16 +1,19 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { memo, useCallback, useMemo, useRef, useState } from 'react';
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   ArrowUpRight,
-  BookOpen,
-  Check,
   ChevronLeft,
-  ChevronRight,
-  Film,
-  Music2,
+  Info,
   Pause,
   Play,
   Search,
@@ -25,542 +28,350 @@ import {
   type AtlasFilter,
   type AtlasSelection,
 } from '@/lib/atlas_browser';
-import type { AtlasEntry } from '@/lib/new_york_atlas';
+import { AtlasImage, AtlasStory } from './atlas_story';
 import { useAtlasDetail } from './use_atlas_detail';
 import { useMapLocation } from './use_map_location';
 import { useMusicPreview } from './use_music_preview';
-import { preview_time } from '@/lib/preview_time';
 import { map_location_url } from '@/lib/map_location';
 
-function AtlasImage({
-  src,
-  alt,
-  width,
-  height,
-}: {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-}) {
-  const [failed, set_failed] = useState(false);
-  return failed ? (
-    <span className="atlas-image-fallback">Image unavailable</span>
-  ) : (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      unoptimized
-      loading="lazy"
-      onError={() => set_failed(true)}
-    />
-  );
-}
-
-function MediumIcon({ medium }: { medium: AtlasEntry['medium'] }) {
-  const Icon =
-    medium === 'film' ? Film : medium === 'literature' ? BookOpen : Music2;
-  return <Icon size={16} aria-hidden="true" />;
-}
-
-function SourceLink({
-  href,
-  aria_label,
-  children,
-}: {
-  href: string;
-  aria_label?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      aria-label={aria_label}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {children} <ArrowUpRight size={14} aria-hidden="true" />
-    </a>
-  );
-}
-
-const AtlasStory = memo(function AtlasStory({
-  detail,
-}: {
-  detail: AtlasDetail;
-}) {
-  const { entry, connection, sources } = detail;
-  if (entry.medium === 'film') {
-    const { scene } = entry;
-    return (
-      <div className="atlas-story">
-        {scene.still && (
-          <figure className="atlas-still">
-            <AtlasImage
-              key={scene.still.src}
-              src={scene.still.src}
-              alt={scene.still.alt}
-              width={scene.still.width}
-              height={scene.still.height}
-            />
-            <figcaption>
-              {scene.still.credit} ·{' '}
-              <SourceLink href={scene.still.source_url}>
-                {scene.still.kind ? 'Image source' : 'Frame source'}
-              </SourceLink>
-            </figcaption>
-          </figure>
-        )}
-        <p>{scene.scene}</p>
-        <details className="atlas-notes">
-          <summary>Scene sources</summary>
-          <div className="atlas-sources">
-            {scene.source_ids.map((id) => {
-              const source = sources.find((item) => item.id === id);
-              return source ? (
-                <SourceLink key={id} href={source.url}>
-                  {source.label}
-                </SourceLink>
-              ) : null;
-            })}
-          </div>
-        </details>
-      </div>
-    );
-  }
-  if (entry.medium === 'literature') {
-    const { passage, work } = entry;
-    return (
-      <div className="atlas-story">
-        <p className="atlas-eyebrow">Original words · {passage.excerpt_kind}</p>
-        <blockquote cite={passage.source_url}>{passage.excerpt}</blockquote>
-        <p className="atlas-caption">{passage.locator}</p>
-        <SourceLink href={passage.source_url}>Read the source</SourceLink>
-        <p>{passage.note}</p>
-        <details className="atlas-notes">
-          <summary>Text &amp; cover notes</summary>
-          <p>
-            {work.rights}. {passage.excerpt_kind} transcribed from the linked
-            source; original wording retained.
-          </p>
-          {work.cover && (
-            <>
-              <p>
-                {work.cover.edition} · {work.cover.credit}
-              </p>
-              <SourceLink href={work.cover.source_url}>Cover source</SourceLink>
-            </>
-          )}
-          {passage.place_source_url && (
-            <SourceLink href={passage.place_source_url}>
-              Location reference
-            </SourceLink>
-          )}
-        </details>
-      </div>
-    );
-  }
-  const { track } = entry;
-  return (
-    <div className="atlas-story">
-      {connection && (
-        <div className="atlas-connection-note">
-          <p>{connection.note}</p>
-          <SourceLink href={connection.source_url}>
-            {connection.source_label}
-          </SourceLink>
-        </div>
-      )}
-      <p className="atlas-eyebrow">
-        {connection
-          ? 'About the song'
-          : track.excerpt
-            ? 'In the lyrics'
-            : 'In the title'}
-      </p>
-      {track.excerpt && (
-        <blockquote cite={track.source_url}>“{track.excerpt}”</blockquote>
-      )}
-      <p>{track.note}</p>
-      <SourceLink href={track.source_url}>{track.source_label}</SourceLink>
-      {track.excerpt && (
-        <p className="atlas-caption">
-          Short excerpt. Full lyrics at the source.
-        </p>
-      )}
-    </div>
-  );
-});
-
-const page_size = 10;
-
-const AtlasResults = memo(function AtlasResults({
-  results,
-  entry_id,
-  ready,
-  select_entry,
-}: {
-  results: AtlasIndexEntry[];
-  entry_id: string | null;
-  ready: boolean;
-  select_entry: (id: string) => void;
-}) {
-  const selected_index = Math.max(
-    0,
-    results.findIndex((entry) => entry.id === entry_id),
-  );
-  const page_start = Math.floor(selected_index / page_size) * page_size;
-  const visible_results = results.slice(page_start, page_start + page_size);
-  return (
-    <>
-      <aside className="atlas-index" aria-label="Atlas results">
-        <div className="atlas-index-heading">
-          <span>Places &amp; works</span>
-          <span>
-            {page_start + 1}–{Math.min(page_start + page_size, results.length)}
-          </span>
-        </div>
-        <div className="atlas-result-list">
-          {visible_results.map((entry) => (
-            <button
-              key={entry.id}
-              type="button"
-              className="atlas-result"
-              data-medium={entry.medium}
-              aria-pressed={entry.id === entry_id}
-              onClick={() => select_entry(entry.id)}
-            >
-              <span className="atlas-result-icon" aria-hidden="true">
-                <MediumIcon medium={entry.medium} />
-              </span>
-              <span className="atlas-result-copy">
-                <span className="sr-only">{entry.label}: </span>
-                <strong>{entry.place_name}</strong>
-                <span>{entry.title}</span>
-              </span>
-              {entry.id === entry_id && (
-                <Check
-                  className="atlas-selected-check"
-                  size={16}
-                  aria-hidden="true"
-                />
-              )}
-            </button>
-          ))}
-        </div>
-        <div className="atlas-pagination">
-          <button
-            type="button"
-            disabled={!ready || page_start === 0}
-            aria-label="Previous results"
-            onClick={() => select_entry(results[page_start - page_size].id)}
-          >
-            <ChevronLeft size={18} />
-            Previous
-          </button>
-          <span>
-            {Math.floor(page_start / page_size) + 1} /{' '}
-            {Math.ceil(results.length / page_size)}
-          </span>
-          <button
-            type="button"
-            disabled={!ready || page_start + page_size >= results.length}
-            aria-label="Next results"
-            onClick={() => select_entry(results[page_start + page_size].id)}
-          >
-            Next
-            <ChevronRight size={18} />
-          </button>
-        </div>
-      </aside>
-      <div className="atlas-mobile-picker">
-        <label className="sr-only" htmlFor="atlas-place-picker">
-          Choose a work and place
-        </label>
-        <select
-          id="atlas-place-picker"
-          value={entry_id ?? ''}
-          disabled={!ready}
-          onChange={(event) => select_entry(event.target.value)}
-        >
-          {results.map((entry) => (
-            <option key={entry.id} value={entry.id}>
-              {entry.place_name} · {entry.title} · {entry.label}
-            </option>
-          ))}
-        </select>
-      </div>
-    </>
-  );
-});
+const AtlasMap = lazy(() =>
+  import('./atlas_map').then((module) => ({ default: module.AtlasMap })),
+);
 
 export function NewYorkAtlas({
   index,
-  counts,
   initial_detail,
   initial_selection,
 }: {
   index: AtlasIndexEntry[];
-  counts: Record<Exclude<AtlasFilter, 'all'>, number>;
   initial_detail: AtlasDetail | null;
   initial_selection: AtlasSelection;
 }) {
-  const atlas_location = useMemo(() => create_atlas_location(index), [index]);
-  const { state, update, ready } = useMapLocation(
-    atlas_location,
-    initial_selection,
-  );
+  const codec = useMemo(() => create_atlas_location(index), [index]);
+  const { state, update, ready } = useMapLocation(codec, initial_selection);
   const { medium, query, entry_id } = state;
   const results = useMemo(
     () => search_atlas_index(index, medium, query),
     [index, medium, query],
   );
   const summary = results.find((entry) => entry.id === entry_id);
-  const { detail, failed, retry } = useAtlasDetail(entry_id, initial_detail);
-  const selected = detail?.entry;
-  const detail_heading = useRef<HTMLHeadingElement>(null);
-  const track = selected?.medium === 'music' ? selected.track : undefined;
-  const {
-    audio,
-    audio_events,
-    playing,
-    loading,
-    elapsed,
-    duration,
-    message,
-    toggle_preview,
-  } = useMusicPreview(track);
-  const map_url = detail?.map_url;
-  const related = detail?.related;
-
-  const select_entry = useCallback(
-    (id: string, related_entry = false) => {
-      update({
-        ...state,
-        ...(related_entry ? { medium: 'all', query: '' } : {}),
-        entry_id: id,
-      });
-      requestAnimationFrame(() => {
-        const heading = detail_heading.current;
-        if (!heading) return;
-        heading.focus({ preventScroll: true });
-        const bounds = heading.getBoundingClientRect();
-        if (bounds.top < 0 || bounds.bottom > window.innerHeight) {
-          heading.scrollIntoView({ behavior: 'instant', block: 'start' });
-        }
-      });
-    },
-    [state, update],
+  const { detail, failed, retry, preview_track } = useAtlasDetail(
+    entry_id,
+    initial_detail,
   );
+  const selected = detail?.entry;
+  const heading = useRef<HTMLHeadingElement>(null);
+  const search_input = useRef<HTMLInputElement>(null);
+  const origin = useRef<HTMLElement | null>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const info_button = useRef<HTMLButtonElement>(null);
+  const [search_open, set_search_open] = useState(false);
+  const [info_id, set_info_id] = useState<string | null>(null);
+  const info_open = info_id !== null && info_id === entry_id;
+  const { audio, audio_events, playing, loading, message, toggle_preview } =
+    useMusicPreview(preview_track);
+  const siblings = summary
+    ? results.filter((entry) => entry.place_key === summary.place_key)
+    : [];
+  const select_entry = useCallback(
+    (id: string) => {
+      origin.current =
+        document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : null;
+      set_search_open(false);
+      update((previous) => ({ ...previous, entry_id: id }));
+      requestAnimationFrame(() =>
+        heading.current?.focus({ preventScroll: true }),
+      );
+    },
+    [update, set_search_open],
+  );
+  const close_card = useCallback(() => {
+    update({ ...state, entry_id: null });
+    if (origin.current?.isConnected)
+      origin.current.focus({ preventScroll: true });
+    else document.getElementById('atlas-map')?.focus({ preventScroll: true });
+  }, [update, state]);
+  useEffect(() => {
+    if (info_open) dialog.current?.showModal();
+    else dialog.current?.close();
+  }, [info_open]);
+  useEffect(() => {
+    const dismiss = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape' || info_open) return;
+      if (search_open) {
+        set_search_open(false);
+        search_input.current?.focus();
+      } else if (entry_id) close_card();
+    };
+    window.addEventListener('keydown', dismiss);
+    return () => window.removeEventListener('keydown', dismiss);
+  }, [info_open, search_open, entry_id, close_card]);
+  const artwork =
+    selected?.medium === 'film'
+      ? selected.scene.still
+      : selected?.medium === 'literature'
+        ? selected.work.cover && {
+            ...selected.work.cover,
+            width: 300,
+            height: 450,
+          }
+        : selected?.medium === 'music'
+          ? {
+              src: selected.track.artwork_url,
+              alt: `${selected.track.album} cover`,
+              width: 300,
+              height: 300,
+            }
+          : null;
+  const description =
+    selected?.medium === 'film'
+      ? selected.scene.scene
+      : selected?.medium === 'literature'
+        ? selected.passage.excerpt
+        : selected?.medium === 'music'
+          ? (detail?.connection?.note ?? selected.track.note)
+          : '';
+  const selection_url =
+    typeof window === 'undefined'
+      ? ''
+      : map_location_url(window.location.href, codec.keys, codec.write(state))
+          .href;
 
   return (
     <div className="atlas-explorer">
-      <div className="atlas-controls">
+      <header className="atlas-toolbar">
+        <div className="atlas-brand">
+          <Link
+            href="/#projects"
+            prefetch={false}
+            aria-label="Back to projects"
+          >
+            <ChevronLeft size={22} />
+          </Link>
+          <h1>
+            New York <em>Atlas.</em>
+          </h1>
+        </div>
         <fieldset className="atlas-filters">
           <legend className="sr-only">Content type</legend>
-          {(['all', 'film', 'literature', 'music'] as AtlasFilter[]).map(
+          {(['all', 'film', 'music', 'literature'] as AtlasFilter[]).map(
             (value) => (
               <button
-                key={value}
                 type="button"
+                key={value}
                 aria-pressed={medium === value}
                 disabled={!ready}
-                onClick={() =>
-                  update({ ...state, medium: value, entry_id: null })
-                }
+                onClick={() => {
+                  set_search_open(false);
+                  update({ ...state, medium: value, entry_id: null });
+                }}
               >
                 {atlas_labels[value]}
-                <span>
-                  {value === 'all'
-                    ? counts.film + counts.literature + counts.music
-                    : counts[value]}
-                </span>
               </button>
             ),
           )}
         </fieldset>
-        <div className="atlas-search">
-          <Search size={18} aria-hidden="true" />
-          <label className="sr-only" htmlFor="atlas-search">
-            Search the atlas
-          </label>
-          <input
-            id="atlas-search"
-            type="search"
-            value={query}
-            disabled={!ready}
-            placeholder="Place, work or creator"
-            onChange={(event) =>
-              update(
-                { ...state, query: event.target.value, entry_id: null },
-                'replace',
-              )
-            }
-          />
-          {query && (
-            <button
-              type="button"
-              aria-label="Clear search"
-              onClick={() => update({ ...state, query: '', entry_id: null })}
+        <div
+          className="atlas-search-wrap"
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget))
+              set_search_open(false);
+          }}
+        >
+          <div className="atlas-search">
+            <Search size={18} aria-hidden="true" />
+            <label className="sr-only" htmlFor="atlas-search">
+              Search the atlas
+            </label>
+            <input
+              ref={search_input}
+              id="atlas-search"
+              type="search"
+              value={query}
+              disabled={!ready}
+              placeholder="Search the city"
+              aria-controls={
+                search_open && query ? 'atlas-search-results' : undefined
+              }
+              onFocus={() => set_search_open(true)}
+              onChange={(event) => {
+                set_search_open(true);
+                update(
+                  { ...state, query: event.target.value, entry_id: null },
+                  'replace',
+                );
+              }}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' && results.length && query) {
+                  event.preventDefault();
+                  select_entry(results[0].id);
+                }
+                if (event.key === 'ArrowDown') {
+                  event.preventDefault();
+                  document
+                    .querySelector<HTMLButtonElement>(
+                      '#atlas-search-results button',
+                    )
+                    ?.focus();
+                }
+              }}
+            />
+            {query && (
+              <button
+                type="button"
+                aria-label="Clear search"
+                onClick={() => {
+                  update({ ...state, query: '', entry_id: null }, 'replace');
+                  search_input.current?.focus();
+                }}
+              >
+                <X size={17} />
+              </button>
+            )}
+          </div>
+          {search_open && query && results.length > 0 && (
+            <div
+              className="atlas-search-results"
+              id="atlas-search-results"
+              aria-label="Search results"
             >
-              <X size={18} aria-hidden="true" />
-            </button>
+              {results.slice(0, 8).map((entry) => (
+                <button
+                  type="button"
+                  key={entry.id}
+                  onClick={() => select_entry(entry.id)}
+                >
+                  <strong>{entry.place_name}</strong>
+                  <span>
+                    {entry.title} · {entry.label}
+                  </span>
+                </button>
+              ))}
+            </div>
           )}
         </div>
-      </div>
-      <div className="atlas-status">
-        <output>
-          {results.length} {results.length === 1 ? 'connection' : 'connections'}
-          {query ? ` matching “${query}”` : ''}
-        </output>
-      </div>
-      {summary ? (
-        <div className="atlas-workspace">
-          <AtlasResults
-            results={results}
-            entry_id={entry_id}
-            ready={ready}
-            select_entry={select_entry}
-          />
-          <section
-            className="atlas-selected"
-            aria-label="Selected place and work"
+      </header>
+      <div className="atlas-canvas">
+        {ready ? (
+          <Suspense
+            fallback={
+              <output className="atlas-map-status">Loading map…</output>
+            }
           >
-            <div className="atlas-place-heading">
-              <div>
-                <p className="atlas-eyebrow">{summary.area}</p>
-                <h2 ref={detail_heading} tabIndex={-1}>
-                  {summary.place_name}
-                </h2>
-              </div>
-              {detail && (
-                <SourceLink
-                  href={detail.maps_url}
-                  aria_label="Open in Google Maps"
-                >
-                  Maps
-                </SourceLink>
+            <AtlasMap
+              entries={results}
+              selected_id={entry_id}
+              on_select={select_entry}
+            />
+          </Suspense>
+        ) : (
+          <div className="atlas-map" />
+        )}
+        <output className="sr-only">
+          {results.length} connections on the map.
+        </output>
+        {!results.length && (
+          <section className="atlas-empty">
+            <h2>No connections found.</h2>
+            <button type="button" onClick={() => update(codec.initial_state)}>
+              Reset filters
+            </button>
+          </section>
+        )}
+        {summary && (
+          <article
+            className="atlas-card atlas-detail"
+            data-medium={summary.medium}
+            aria-label="Selected place and work"
+            aria-busy={!detail && !failed}
+          >
+            <div className={`atlas-artwork atlas-artwork-${summary.medium}`}>
+              {artwork?.src ? (
+                <AtlasImage key={artwork.src} {...artwork} />
+              ) : (
+                <span className="atlas-image-fallback">
+                  {detail ? 'Image unavailable' : 'Loading image…'}
+                </span>
               )}
             </div>
-            <div
-              className="atlas-map"
-              key={summary.id}
-              aria-busy={!detail && !failed}
-            >
-              {!detail ? (
-                <div className="atlas-loading">
-                  <strong>{summary.title}</strong>
+            <div className="atlas-card-copy">
+              <p className="atlas-eyebrow">
+                {summary.label}
+                {detail && <> · {detail.year}</>}
+                {detail?.connection && <> · Artist connection</>}
+              </p>
+              <h2 ref={heading} tabIndex={-1}>
+                {summary.place_name}
+              </h2>
+              {siblings.length > 1 ? (
+                <select
+                  aria-label="Works at this place"
+                  value={entry_id ?? ''}
+                  onChange={(event) => select_entry(event.target.value)}
+                >
+                  {siblings.map((entry) => (
+                    <option key={entry.id} value={entry.id}>
+                      {entry.title}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <h3>{summary.title}</h3>
+              )}
+              {detail ? (
+                <p className="atlas-card-description">{description}</p>
+              ) : (
+                <output className="atlas-loading">
                   {failed ? (
                     <>
-                      <output>Details could not be loaded.</output>
-                      <button type="button" onClick={retry}>
-                        Retry loading details
-                      </button>
-                      <a
-                        href={
-                          map_location_url(
-                            window.location.href,
-                            atlas_location.keys,
-                            atlas_location.write(state),
-                          ).href
-                        }
-                        onClick={(event) => {
-                          if (
-                            event.metaKey ||
-                            event.ctrlKey ||
-                            event.shiftKey ||
-                            event.altKey
-                          )
-                            return;
-                          // A same-document hash link would only scroll. Reload
-                          // explicitly so the server can recover this selection.
-                          event.preventDefault();
-                          window.location.reload();
-                        }}
+                      Details unavailable.{' '}
+                      <button
+                        type="button"
+                        aria-label="Retry loading details"
+                        onClick={retry}
                       >
-                        Open this selection as a page
-                      </a>
+                        Retry
+                      </button>{' '}
+                      <a href={selection_url}>Open this selection as a page</a>
                     </>
                   ) : (
-                    <output>Loading details…</output>
+                    'Loading details…'
                   )}
-                </div>
-              ) : map_url ? (
-                <iframe
-                  src={map_url}
-                  title={`Google Maps: ${summary.place_name}`}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-              ) : (
-                <p>
-                  The map is unavailable.{' '}
-                  <SourceLink href={detail.maps_url}>
-                    Open this place in Google Maps
-                  </SourceLink>
-                </p>
+                </output>
+              )}
+              {selected && selected.medium !== 'film' && (
+                <p className="atlas-scope">{selected.precision}</p>
               )}
             </div>
-            {selected && detail && (
-              <>
-                <div className="atlas-location-note">
-                  <div>
-                    <strong>{selected.relationship}</strong>
-                    <p>{selected.precision}</p>
-                  </div>
-                  <details className="atlas-visiting" key={selected.id}>
-                    <summary>Visiting notes</summary>
-                    <p>{selected.visit_note}</p>
-                  </details>
-                </div>
-                <article className="atlas-detail" data-medium={selected.medium}>
-                  <header className="atlas-work-heading">
-                    {selected.medium === 'literature' &&
-                      selected.work.cover && (
-                        <figure className="atlas-cover">
-                          <AtlasImage
-                            key={selected.work.cover.src}
-                            src={selected.work.cover.src}
-                            alt={selected.work.cover.alt}
-                            width={200}
-                            height={280}
-                          />
-                        </figure>
-                      )}
-                    {selected.medium === 'music' && (
-                      <figure className="atlas-cover atlas-album">
-                        <AtlasImage
-                          key={selected.track.artwork_url}
-                          src={selected.track.artwork_url}
-                          alt={`${selected.track.album} by ${selected.creator}`}
-                          width={240}
-                          height={240}
-                        />
-                      </figure>
-                    )}
-                    <div>
-                      <p className="atlas-eyebrow">
-                        <MediumIcon medium={selected.medium} />
-                        {detail.label} · {detail.year}
-                      </p>
-                      <h3>{selected.title}</h3>
-                      <p>{detail.credit}</p>
-                      {selected.medium === 'music' && (
-                        <p className="atlas-caption">
-                          {selected.track.album} · {selected.track.genre}
-                        </p>
-                      )}
-                    </div>
-                  </header>
-                  {selected.medium === 'music' && (
+            <div className="atlas-card-actions">
+              <button
+                className="atlas-close atlas-icon-button"
+                type="button"
+                aria-label="Close place card"
+                disabled={!ready}
+                onClick={close_card}
+              >
+                <X size={20} />
+              </button>
+              {detail && (
+                <>
+                  <a
+                    className="atlas-action"
+                    href={detail.maps_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open in Google Maps"
+                  >
+                    Google Maps <ArrowUpRight size={15} />
+                  </a>
+                  {selected?.medium === 'music' && (
                     <div className="atlas-player">
                       <button
                         type="button"
-                        className="atlas-play"
-                        onClick={() => void toggle_preview()}
+                        className="atlas-action"
+                        disabled={!ready}
                         aria-label={
                           loading
                             ? 'Cancel loading preview'
@@ -568,100 +379,124 @@ export function NewYorkAtlas({
                               ? 'Pause preview'
                               : `Play preview of ${selected.title}`
                         }
+                        onClick={() => void toggle_preview()}
                       >
-                        {loading || playing ? (
-                          <Pause size={18} />
+                        {playing || loading ? (
+                          <Pause size={16} />
                         ) : (
-                          <Play size={18} />
-                        )}
-                        <span className="sr-only">
-                          {loading
-                            ? 'Loading preview…'
-                            : playing
-                              ? 'Pause preview'
-                              : 'Play preview'}
-                        </span>
+                          <Play size={16} />
+                        )}{' '}
+                        {loading ? 'Loading…' : playing ? 'Pause' : 'Preview'}
                       </button>
-                      <progress
-                        value={elapsed}
-                        max={duration || 1}
-                        aria-label="Preview playback progress"
-                      />
-                      <span>
-                        {preview_time(elapsed)} /{' '}
-                        {duration ? preview_time(duration) : 'preview'}
-                      </span>
-                      <output>
-                        {message || 'Song preview provided courtesy of iTunes.'}
-                      </output>
-                      <SourceLink href={selected.track.apple_music_url}>
-                        Listen on Apple Music
-                      </SourceLink>
+                      {message && (
+                        <output>
+                          {message}{' '}
+                          <a
+                            href={selected.track.apple_music_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Listen on Apple Music
+                          </a>
+                        </output>
+                      )}
                     </div>
                   )}
-                  <AtlasStory detail={detail} />
-                  <Link
-                    prefetch={false}
-                    className="atlas-collection-link"
-                    href={selected.collection_url}
+                  <button
+                    ref={info_button}
+                    className="atlas-info atlas-icon-button"
+                    type="button"
+                    aria-label="Sources and place details"
+                    disabled={!ready}
+                    onClick={() => set_info_id(entry_id)}
                   >
-                    View in the {atlas_labels[selected.medium].toLowerCase()}{' '}
-                    collection <ArrowUpRight size={15} aria-hidden="true" />
-                  </Link>
-                </article>
-                {related && related.entries.length > 0 && (
-                  <section className="atlas-related" aria-label="Related works">
-                    <h3>{related.label}</h3>
-                    {related.area && <p>Works connected to nearby places.</p>}
-                    <div>
-                      {related.entries.map((entry) => (
-                        <button
-                          key={entry.id}
-                          type="button"
-                          onClick={() => select_entry(entry.id, true)}
-                        >
-                          <span className="atlas-result-medium">
-                            <MediumIcon medium={entry.medium} />
-                            {entry.label}
-                          </span>
-                          <strong>{entry.title}</strong>
-                          <span>{entry.place_name}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </section>
-                )}
-              </>
+                    <Info size={19} />
+                  </button>
+                </>
+              )}
+            </div>
+          </article>
+        )}
+        <noscript>
+          <style>{`html:has(.atlas-page),body:has(.atlas-page){height:auto;overflow:auto}.atlas-page{height:auto;min-height:100vh}.atlas-canvas{padding:20px}.atlas-map{display:none}.atlas-card{position:relative;left:auto;bottom:auto;transform:none;margin:0 auto 20px;max-height:none}.atlas-noscript{position:relative;inset:auto;margin:auto;max-width:600px}`}</style>
+          <div className="atlas-noscript">
+            <form action="/portfolio/new-york-atlas" method="get">
+              <label htmlFor="atlas-static-entry">
+                Choose a place and work
+              </label>
+              <select
+                id="atlas-static-entry"
+                name="entry"
+                defaultValue={entry_id ?? ''}
+              >
+                <option value="">Choose a place</option>
+                {index.map((entry) => (
+                  <option key={entry.id} value={entry.id}>
+                    {entry.place_name} · {entry.title}
+                  </option>
+                ))}
+              </select>
+              <button type="submit">Open</button>
+            </form>
+            {detail && (
+              <section className="atlas-info-body">
+                <h2>Sources &amp; place details</h2>
+                <p>
+                  {detail.credit} · {detail.year}
+                </p>
+                <p>
+                  {detail.entry.relationship} · {detail.entry.precision}
+                </p>
+                <p>{detail.entry.visit_note}</p>
+                <AtlasStory detail={detail} />
+              </section>
             )}
-          </section>
-        </div>
-      ) : (
-        <section className="atlas-empty">
-          <h2>No connections found.</h2>
-          <p>
-            Try a place, work or creator, or search across all three
-            collections.
-          </p>
+          </div>
+        </noscript>
+      </div>
+      <dialog
+        ref={dialog}
+        className="atlas-info-dialog"
+        aria-labelledby="atlas-info-title"
+        onClose={() => {
+          set_info_id(null);
+          info_button.current?.focus();
+        }}
+      >
+        <div className="atlas-info-heading">
+          <h2 id="atlas-info-title">Sources &amp; place details</h2>
           <button
             type="button"
-            onClick={() => update(atlas_location.initial_state)}
+            className="atlas-icon-button"
+            aria-label="Close details"
+            onClick={() => set_info_id(null)}
           >
-            Reset filters
+            <X size={20} />
           </button>
-        </section>
-      )}
-      <nav className="atlas-collections" aria-label="Complete collections">
-        <span>Explore a collection</span>
-        <Link prefetch={false} href="/portfolio/nyc-film-map">
-          Film &amp; TV scenes <ArrowUpRight size={15} />
-        </Link>
-        <Link prefetch={false} href="/portfolio/nyc-literary-map">
-          Literary passages <ArrowUpRight size={15} />
-        </Link>
-        <Link prefetch={false} href="/portfolio/nyc-music-map">
-          Music, overview &amp; playlist <ArrowUpRight size={15} />
-        </Link>
-      </nav>
+        </div>
+        {detail && (
+          <div className="atlas-info-body">
+            <h3>{detail.entry.title}</h3>
+            <p>
+              {detail.credit} · {detail.year}
+            </p>
+            <p>
+              {detail.entry.relationship} · {detail.entry.precision}
+            </p>
+            <p>{detail.entry.visit_note}</p>
+            <AtlasStory detail={detail} />
+            {selected?.medium === 'music' && (
+              <a
+                href={selected.track.apple_music_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Listen on Apple Music
+              </a>
+            )}
+          </div>
+        )}
+      </dialog>
       {/* oxlint-disable-next-line jsx-a11y/media-has-caption */}
       <audio
         ref={audio}

@@ -1,57 +1,35 @@
 import { test, expect } from '@playwright/test';
-
 test.use({ javaScriptEnabled: false });
 
-test.beforeEach(async ({ page }) => {
-  await page.route('https://www.google.com/maps/embed/**', (route) =>
-    route.fulfill({
-      contentType: 'text/html',
-      body: '<title>Map fixture</title>',
-    }),
-  );
-});
-
-test('Atlas, music and literature deep links render their requested selection without JavaScript', async ({
+test('deep links and old links render selected content without JavaScript', async ({
   page,
 }) => {
-  await page.goto(
-    '/portfolio/new-york-atlas?medium=music&q=billy+joel&entry=music%3Anew-york-state-of-mind%3Ariverside',
-  );
-  await expect(page.locator('.atlas-place-heading h2')).toHaveText('Riverside');
-  await expect(page.locator('.atlas-work-heading h3')).toHaveText(
-    'New York State of Mind',
-  );
-  await expect(page.locator('.atlas-detail')).toHaveAttribute(
-    'data-medium',
-    'music',
-  );
-  await expect(page.getByRole('searchbox')).toHaveValue('billy joel');
-
-  await page.goto(
-    '/portfolio/nyc-music-map?track=cornelia-street&place=cornelia-street',
-  );
-  await expect(
-    page
-      .getByRole('article', { name: 'Selected song' })
-      .getByRole('heading', { level: 2 }),
-  ).toHaveText('Cornelia Street');
-  await expect(page.locator('.sound-map-panel iframe')).toHaveAttribute(
-    'title',
-    /Cornelia Street/,
-  );
-
-  await page.goto(
-    '/portfolio/nyc-literary-map?work=gatsby&passage=queensboro-bridge',
-  );
-  await expect(
-    page.getByRole('article').getByRole('heading', { level: 2 }),
-  ).toHaveText('Queensboro Bridge');
-
-  await page.goto(
-    '/portfolio/new-york-atlas?medium=unknown&q=no-such-work-xyz&entry=invalid',
-  );
+  for (const [url, title] of [
+    [
+      '/portfolio/new-york-atlas?entry=music%3Anew-york-state-of-mind%3Ariverside',
+      'Riverside',
+    ],
+    [
+      '/portfolio/nyc-music-map?track=cornelia-street&place=cornelia-street',
+      'Cornelia Street',
+    ],
+    [
+      '/portfolio/nyc-literary-map?work=gatsby&passage=queensboro-bridge',
+      'Queensboro Bridge',
+    ],
+  ]) {
+    await page.goto(url);
+    await expect(page.locator('.atlas-card h2')).toHaveText(title);
+    await expect(
+      page.getByRole('link', { name: 'Open in Google Maps' }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole('combobox', { name: 'Choose a place and work' }),
+    ).toBeVisible();
+  }
+  await page.goto('/portfolio/new-york-atlas?q=no-such-work-xyz&entry=invalid');
   await expect(
     page.getByRole('heading', { name: 'No connections found.' }),
   ).toBeVisible();
-  await expect(page.locator('iframe')).toHaveCount(0);
+  await expect(page.locator('.atlas-card')).toHaveCount(0);
 });

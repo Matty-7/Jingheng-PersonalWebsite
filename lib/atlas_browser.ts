@@ -18,6 +18,8 @@ export type AtlasIndexEntry = {
   area: string;
   label: string;
   search_text: string;
+  place_key: string;
+  coordinates: [number, number];
 };
 export type AtlasDetail = {
   entry: AtlasEntry;
@@ -58,7 +60,7 @@ export function create_atlas_location(
   index: AtlasIndexEntry[],
 ): MapLocationCodec<AtlasSelection> {
   return {
-    initial_state: { medium: 'all', query: '', entry_id: index[0]?.id ?? null },
+    initial_state: { medium: 'all', query: '', entry_id: null },
     keys: ['medium', 'q', 'entry'],
     read(params) {
       const candidate = params.get('medium');
@@ -71,9 +73,7 @@ export function create_atlas_location(
       const query = params.get('q') ?? '';
       const results = search_atlas_index(index, medium, query);
       const entry_id =
-        results.find((entry) => entry.id === params.get('entry'))?.id ??
-        results[0]?.id ??
-        null;
+        results.find((entry) => entry.id === params.get('entry'))?.id ?? null;
       return { medium, query, entry_id };
     },
     write(state) {

@@ -1,68 +1,37 @@
 import { test, expect } from '@playwright/test';
-import { approach_shelf } from './music_helpers';
+import { mock_map, select_search, atlas_path } from './atlas_helpers';
+test.beforeEach(async ({ page }) => mock_map(page));
 
-test('failed preview and map requests leave usable links and silent selection', async ({
+test('failed preview leaves external links and a new selection is silent', async ({
   page,
 }) => {
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) =>
     route.abort(),
   );
-  let intercepted_maps = 0;
-  await page.route('https://www.google.com/maps/embed/v1/place?**', (route) => {
-    intercepted_maps += 1;
-    return route.abort();
-  });
-  await page.goto('/portfolio/nyc-music-map');
-  await expect(
-    page.getByRole('button', {
-      name: 'Select New York State of Mind by Billy Joel',
-      exact: true,
-    }),
-  ).toBeEnabled();
+  await page.goto(
+    `${atlas_path}?entry=music%3Anew-york-state-of-mind%3Ariverside`,
+  );
+  await expect(page.getByRole('searchbox')).toBeEnabled();
   await page
-    .getByRole('button', {
-      name: 'Select New York State of Mind by Billy Joel',
-      exact: true,
-    })
-    .press('Enter');
-  await expect.poll(() => intercepted_maps).toBeGreaterThan(0);
-  await page
-    .getByRole('button', {
-      name: 'Play preview of New York State of Mind',
-      exact: true,
-    })
+    .getByRole('button', { name: 'Play preview of New York State of Mind' })
     .click();
-  await expect(
-    page.getByText(
-      'This preview is unavailable. You can still open the song on Apple Music.',
-    ),
-  ).toBeVisible();
+  await expect(page.locator('.atlas-player output')).toContainText(
+    'This preview is unavailable',
+  );
   await expect(
     page.getByRole('link', { name: 'Listen on Apple Music', exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByRole('link', { name: 'Open in Google Maps', exact: true }),
+    page.getByRole('link', { name: 'Open in Google Maps' }),
   ).toBeVisible();
-  await approach_shelf(page);
-  await page
-    .getByRole('button', {
-      name: 'Select Chelsea Hotel #2 by Leonard Cohen',
-      exact: true,
-    })
-    .click();
+  await select_search(page, 'cornelia street');
+  await expect(
+    page.getByRole('button', { name: 'Play preview of Cornelia Street' }),
+  ).toBeVisible();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
-  await expect(
-    page.getByRole('button', {
-      name: 'Play preview of Chelsea Hotel #2',
-      exact: true,
-    }),
-  ).toBeVisible();
-  await expect(
-    page.getByText('Song preview provided courtesy of iTunes.'),
-  ).toBeVisible();
 });
 
-test('changing a place preserves a playing preview and changing the song clears it', async ({
+test('same-recording place changes retain playback; a new recording stops it', async ({
   page,
 }) => {
   const sample_count = 8000 * 30;
@@ -80,76 +49,60 @@ test('changing a place preserves a playing preview and changing the song clears 
   wav.write('data', 36);
   wav.writeUInt32LE(sample_count * 2, 40);
   await page.route('https://audio-ssl.itunes.apple.com/**', (route) =>
-    route.fulfill({ status: 200, contentType: 'audio/wav', body: wav }),
+    route.fulfill({ contentType: 'audio/wav', body: wav }),
   );
-  await page.goto('/portfolio/nyc-music-map');
-  await expect(
-    page.getByRole('button', {
-      name: 'Select New York State of Mind by Billy Joel',
-      exact: true,
-    }),
-  ).toBeEnabled();
+  await page.goto(
+    `${atlas_path}?q=billy+joel&entry=music%3Anew-york-state-of-mind%3Achinatown`,
+  );
+  await expect(page.getByRole('searchbox')).toBeEnabled();
   await page
-    .getByRole('button', {
-      name: 'Select New York State of Mind by Billy Joel',
-      exact: true,
-    })
-    .press('Enter');
-  await page
-    .getByRole('button', {
-      name: 'Play preview of New York State of Mind',
-      exact: true,
-    })
+    .getByRole('button', { name: 'Play preview of New York State of Mind' })
     .click();
+  const audio = page.locator('audio');
   await expect
     .poll(() =>
-      page
-        .locator('audio')
-        .evaluate((audio) => (audio as HTMLAudioElement).currentTime),
+      audio.evaluate((element: HTMLAudioElement) => element.currentTime),
     )
     .toBeGreaterThan(0);
-  const audio_src = await page.locator('audio').getAttribute('src');
-  await page.getByRole('button', { name: 'Riverside', exact: true }).click();
-  await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
-  expect(
-    await page
-      .locator('audio')
-      .evaluate((audio) => (audio as HTMLAudioElement).paused),
-  ).toBe(false);
+  const source = await audio.getAttribute('src');
+  await page.getByRole('button', { name: /^Riverside:/ }).press('Enter');
+  await expect(page.locator('.atlas-card h2')).toHaveText('Riverside');
+  await expect(audio).toHaveAttribute('src', source!);
+  await expect(audio).toHaveJSProperty('paused', false);
+  await page.goBack();
+  await expect(page.locator('.atlas-card h2')).toHaveText('Chinatown');
+  await expect(audio).toHaveJSProperty('paused', false);
+  await select_search(page, 'cornelia street');
+  await expect(audio).not.toHaveAttribute('src');
+  await expect(audio).toHaveJSProperty('paused', true);
+});
+
+test('a pending preview can be cancelled and cannot revive after closing the card', async ({
+  page,
+}) => {
+  let release: () => void = () => {};
+  let requests = 0;
+  await page.route('https://audio-ssl.itunes.apple.com/**', async (route) => {
+    requests++;
+    await new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    await route.abort().catch(() => {});
+  });
+  await page.goto(
+    `${atlas_path}?entry=music%3Acornelia-street%3Acornelia-street`,
+  );
+  await expect(page.getByRole('searchbox')).toBeEnabled();
   await page
-    .getByRole('button', { name: 'Show all places', exact: true })
+    .getByRole('button', { name: 'Play preview of Cornelia Street' })
     .click();
-  await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
-  expect(
-    await page
-      .locator('audio')
-      .evaluate((audio) => (audio as HTMLAudioElement).paused),
-  ).toBe(false);
-  await approach_shelf(page);
-  await page
-    .getByRole('button', {
-      name: 'Select New York State of Mind by Billy Joel',
-      exact: true,
-    })
-    .click();
+  await expect.poll(() => requests).toBe(1);
+  await page.getByRole('button', { name: 'Cancel loading preview' }).click();
   await expect(
-    page.getByRole('button', { name: /^Riverside: New York State of Mind/ }),
-  ).toHaveClass(/is-selected/);
-  await expect(
-    page.getByRole('button', { name: 'Riverside', exact: true }),
-  ).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('audio')).toHaveAttribute('src', audio_src!);
-  expect(
-    await page
-      .locator('audio')
-      .evaluate((audio) => (audio as HTMLAudioElement).paused),
-  ).toBe(false);
-  await approach_shelf(page);
-  await page
-    .getByRole('button', {
-      name: 'Select Chelsea Hotel #2 by Leonard Cohen',
-      exact: true,
-    })
-    .click();
+    page.getByRole('button', { name: 'Play preview of Cornelia Street' }),
+  ).toBeVisible();
+  release();
+  await page.getByRole('button', { name: 'Close place card' }).click();
   await expect(page.locator('audio')).not.toHaveAttribute('src');
+  await expect(page.locator('audio')).toHaveJSProperty('paused', true);
 });

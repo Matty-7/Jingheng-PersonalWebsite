@@ -1,217 +1,141 @@
 import { test, expect } from '@playwright/test';
+import { mock_map, select_search, atlas_path } from './atlas_helpers';
 
-test.beforeEach(async ({ page }) => {
-  await page.route('https://www.google.com/maps/embed/**', (route) =>
-    route.fulfill({
-      contentType: 'text/html',
-      body: '<!doctype html><title>Map fixture</title>',
-    }),
-  );
-});
+test.beforeEach(async ({ page }) => mock_map(page));
 
-test('Atlas unifies search and filters, preserves empty state and mobile layout', async ({
+test('map-first Atlas filters and searches without page scrolling or collection navigation', async ({
   page,
 }) => {
-  await page.goto('/portfolio/new-york-atlas');
-  await expect(
-    page.getByRole('heading', { name: 'New York Atlas.' }),
-  ).toBeVisible();
-  await expect(page.locator('.atlas-map iframe')).toHaveCount(1);
-  const search = page.getByRole('searchbox', { name: 'Search the atlas' });
-  await expect(search).toBeEnabled();
-  const layout = await page.evaluate(() => ({
-    width: innerWidth,
-    workspace_top: document
-      .querySelector('.atlas-workspace')!
-      .getBoundingClientRect().top,
-    map_top: document.querySelector('.atlas-map')!.getBoundingClientRect().top,
-  }));
-  if (layout.width > 800) expect(layout.workspace_top).toBeLessThanOrEqual(250);
-  else expect(layout.map_top).toBeLessThanOrEqual(400);
-  const visiting = page.locator('.atlas-visiting');
-  await expect(visiting.locator('p')).not.toBeVisible();
-  await visiting.locator('summary').press('Enter');
-  await expect(visiting.locator('p')).toBeVisible();
-  await expect(visiting.locator('p')).toContainText(
-    'West 90th and 91st Streets',
+  await page.goto(atlas_path);
+  await expect(page.locator('.atlas-map.leaflet-container')).toBeVisible();
+  await expect(page.locator('.atlas-card')).toHaveCount(0);
+  await expect(page.locator('.leaflet-tile-loaded').first()).toBeVisible();
+  await expect(page.locator('.atlas-cluster').first()).toBeVisible();
+  await select_search(page, 'cafe lalo');
+  await expect(page.locator('.atlas-card h2')).toHaveText('Café Lalo');
+  await expect(page.locator('.atlas-pin.is-selected')).toBeVisible();
+  await expect(page.locator('.atlas-card')).toHaveAttribute(
+    'data-medium',
+    'film',
   );
-  await visiting.locator('summary').press('Enter');
-  await expect(visiting.locator('p')).not.toBeVisible();
-  await search.fill('henry james');
-  await expect(page.locator('.atlas-detail')).toContainText(
-    'Washington Square',
-  );
-  await expect(page.locator('.atlas-story blockquote')).toContainText(
-    'white marble steps',
-  );
-  await page
-    .locator('.atlas-filters')
-    .getByRole('button', { name: /^Music/ })
-    .click();
+  await expect(page.getByRole('link', { name: /collection/ })).toHaveCount(0);
+  expect(
+    await page.evaluate(
+      () =>
+        document.documentElement.scrollHeight <= innerHeight + 1 &&
+        document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.getByRole('button', { name: 'Close place card' }).click();
+  await expect(page.locator('.atlas-card')).toHaveCount(0);
+  await page.getByRole('button', { name: /^Café Lalo:/ }).press('Enter');
+  await expect(page.locator('.atlas-card h2')).toHaveText('Café Lalo');
+  await page.getByRole('button', { name: 'Music', exact: true }).click();
   await expect(
     page.getByRole('heading', { name: 'No connections found.' }),
   ).toBeVisible();
-  await expect(page.locator('iframe')).toHaveCount(0);
-  await expect(page.locator('.atlas-place-heading')).toHaveCount(0);
+  await expect(page.locator('.atlas-card')).toHaveCount(0);
+  await expect(page.locator('.atlas-pin, .atlas-cluster')).toHaveCount(0);
   await page.getByRole('button', { name: 'Reset filters' }).click();
-  await expect(search).toHaveValue('');
-  await expect(page.locator('.atlas-map iframe')).toHaveCount(1);
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
+  await expect(page.getByRole('searchbox')).toHaveValue('');
+  await expect(page.locator('.atlas-cluster').first()).toBeVisible();
+});
+
+test('film, music and literature share one compact card and keyboard-accessible source dialog', async ({
+  page,
+}) => {
+  await page.goto(atlas_path);
+  const sizes: number[] = [];
+  for (const [query, medium] of [
+    ['cafe lalo', 'film'],
+    ['henry james', 'literature'],
+    ['cornelia street', 'music'],
+  ]) {
+    await select_search(page, query);
+    const card = page.locator('.atlas-card');
+    await expect(card).toHaveAttribute('data-medium', medium);
+    await expect(card).toHaveAttribute('aria-busy', 'false');
+    await expect(card.locator('.atlas-artwork')).toBeVisible();
+    await expect(card.locator('.atlas-card-copy')).toBeVisible();
+    await expect(card.locator('.atlas-card-actions')).toBeVisible();
+    sizes.push((await card.boundingBox())!.width);
+    await page
+      .getByRole('button', { name: 'Sources and place details' })
+      .press('Enter');
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await expect(
+      page.getByRole('dialog').getByRole('link').first(),
+    ).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('dialog')).not.toBeVisible();
+    await expect(
+      page.getByRole('button', { name: 'Sources and place details' }),
+    ).toBeFocused();
+  }
+  expect(new Set(sizes).size).toBe(1);
   await expect(page.locator('audio')).toHaveCount(1);
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
 
-test('related works cross categories with distinct pins and reversible history', async ({
+test('sources retain TV metadata, geographic precision and image failure fallback', async ({
   page,
 }) => {
-  await page.goto(
-    '/portfolio/new-york-atlas?medium=literature&entry=literature%3Awashington-square&utm_source=test',
-  );
-  await expect(page.locator('.atlas-location-note')).toContainText(
-    'not an identified address',
-  );
-  await expect(page.getByRole('searchbox')).toBeEnabled();
-  const original_url = page.url();
-  const related = page.getByRole('region', { name: 'Related works' });
-  await related
-    .getByRole('button')
-    .filter({ hasText: 'Washington Square Arch' })
-    .first()
-    .press('Enter');
-  await expect(page.locator('.atlas-place-heading h2')).toHaveText(
-    'Washington Square Arch',
-  );
-  await expect(page.locator('.atlas-detail')).toHaveAttribute(
-    'data-medium',
-    'film',
-  );
-  await expect(page.locator('.atlas-still img')).toHaveCount(1);
-  expect(new URL(page.url()).searchParams.get('utm_source')).toBe('test');
-  await page.goBack();
-  await expect(page).toHaveURL(original_url);
-  await expect(page.locator('.atlas-detail')).toHaveAttribute(
-    'data-medium',
-    'literature',
-  );
-  await page.reload();
-  await expect(page.locator('.atlas-location-note')).toContainText(
-    'not an identified address',
-  );
-  await page.goForward();
-  await expect(page.locator('.atlas-place-heading h2')).toHaveText(
-    'Washington Square Arch',
-  );
-});
-
-test('music preview stays user initiated and failure leaves music and location links', async ({
-  page,
-}) => {
-  await page.route('https://audio-ssl.itunes.apple.com/**', (route) =>
-    route.abort(),
-  );
-  await page.goto(
-    '/portfolio/new-york-atlas?medium=music&q=billy+joel&entry=music%3Anew-york-state-of-mind%3Ariverside',
-  );
-  await expect(page.locator('.atlas-place-heading h2')).toHaveText('Riverside');
-  await expect(page.locator('audio')).not.toHaveAttribute('src');
-  await page
-    .getByRole('button', { name: 'Play preview of New York State of Mind' })
-    .click();
-  await expect(page.locator('.atlas-player output')).toContainText(
-    'This preview is unavailable',
-  );
-  await expect(
-    page.getByRole('link', { name: 'Listen on Apple Music' }),
-  ).toBeVisible();
-  await expect(page.locator('.atlas-place-heading a')).toHaveAttribute(
-    'href',
-    /maps\/search/,
-  );
-  await page
-    .locator('.atlas-filters')
-    .getByRole('button', { name: /^Film/ })
-    .click();
-  await expect(page.locator('audio')).not.toHaveAttribute('src');
-  await expect(page.locator('iframe')).toHaveCount(0);
-});
-
-test('Atlas links to an intact specialized collection and comes back', async ({
-  page,
-}) => {
-  await page.goto('/portfolio/new-york-atlas?medium=film&q=cafe+lalo');
-  await expect(page.locator('.atlas-place-heading h2')).toHaveText('Café Lalo');
-  const sources = page.locator('.atlas-story details');
-  await sources.locator('summary').press('Enter');
-  await expect(sources.getByRole('link').first()).toBeVisible();
-  await page
-    .getByRole('link', { name: 'View in the film & tv collection' })
-    .click();
-  await expect(
-    page.getByRole('combobox', { name: 'Choose a filming location' }),
-  ).toHaveValue('cafe-lalo');
-  await page.getByRole('link', { name: '← New York Atlas' }).click();
-  await expect(
-    page.getByRole('heading', { name: 'New York Atlas.' }),
-  ).toBeVisible();
-});
-
-test('TV creators, years and screen deep links work in both collections', async ({
-  page,
-}) => {
-  await page.goto('/portfolio/new-york-atlas?medium=film');
-  await expect(
-    page.getByRole('button', { name: /^Film & TV/ }),
-  ).toHaveAttribute('aria-pressed', 'true');
-  const search = page.getByRole('searchbox', { name: 'Search the atlas' });
-  await expect(search).toBeEnabled();
-  await search.fill('Marta Kauffman');
-  await expect(page.locator('.atlas-work-heading h3')).toHaveText('Friends');
-  await expect(page.locator('.atlas-work-heading')).toContainText(
+  await page.route('**/images/**', (route) => route.abort());
+  await page.goto(atlas_path);
+  await select_search(page, 'Marta Kauffman');
+  await expect(page.locator('.atlas-eyebrow')).toContainText(
     'TV series · 1994–2004',
   );
-  await expect(page.locator('.atlas-work-heading')).toContainText('Created by');
-  await expect(page.locator('.atlas-work-heading')).toContainText(
-    'Marta Kauffman',
+  await expect(page.locator('.atlas-artwork .atlas-image-fallback')).toHaveText(
+    'Image unavailable',
   );
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  const collection = page.getByRole('link', {
-    name: 'View in the film & tv collection',
-  });
-  const destination = new URL(
-    (await collection.getAttribute('href'))!,
-    page.url(),
-  );
-  await collection.press('Enter');
-  await expect(
-    page.getByRole('heading', { name: 'NYC Film & TV Map.' }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole('combobox', { name: 'Choose a filming location' }),
-  ).toHaveValue(destination.searchParams.get('place')!);
-  await expect(
-    page.getByRole('button', { name: 'Friends 1994–2004', exact: true }),
-  ).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.cinema-list-heading')).toContainText(
-    'Created by',
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await expect(page.getByRole('dialog')).toContainText(
+    'Created by David Crane and Marta Kauffman',
   );
   await page
-    .getByRole('searchbox', { name: 'Search titles, creators or places' })
-    .fill('David Crane');
-  await expect(
-    page.getByRole('button', { name: 'Friends 1994–2004', exact: true }),
-  ).toBeVisible();
-  await expect(page.locator('.cinema-collection-label')).toContainText(
-    '32 films · 6 series',
+    .getByRole('button', { name: 'Close details', exact: true })
+    .click();
+  await select_search(page, 'henry james');
+  await expect(page.locator('.atlas-scope')).toContainText(
+    'not an identified address',
   );
-  await page.goBack();
-  await expect(search).toHaveValue('Marta Kauffman');
-  await expect(page.locator('.atlas-work-heading h3')).toHaveText('Friends');
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await expect(page.getByRole('dialog').locator('blockquote')).toContainText(
+    'white marble steps',
+  );
+});
+
+test('clusters support keyboard expansion and map failure keeps search usable', async ({
+  page,
+}) => {
+  await page.goto(atlas_path);
+  const cluster = page.locator('.atlas-cluster').first();
+  await expect(cluster).toHaveAttribute('role', 'button');
+  const initial = await cluster.getAttribute('aria-label');
+  const tile_before = await page
+    .locator('.leaflet-tile-loaded')
+    .first()
+    .getAttribute('src');
+  await cluster.press('Space');
+  await expect
+    .poll(() =>
+      page.locator('.leaflet-tile-loaded').first().getAttribute('src'),
+    )
+    .not.toBe(tile_before);
+  await expect(page.locator('.atlas-map')).toBeFocused();
+  expect(initial).toMatch(/places. Zoom to explore/);
+  await page.unroute('https://tile.openstreetmap.org/**');
+  await page.route('https://tile.openstreetmap.org/**', (route) =>
+    route.abort(),
+  );
+  await page.reload();
+  await expect(
+    page.getByText('Map unavailable. Search still works.'),
+  ).toBeVisible({ timeout: 20000 });
+  await select_search(page, 'cafe lalo');
+  await expect(
+    page.getByRole('link', { name: 'Open in Google Maps' }),
+  ).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Retry map' })).toBeVisible();
 });
