@@ -21,7 +21,7 @@ import {
   mortgage_reducer,
 } from '../lib/mortgage_state.ts';
 
-test('one Mortgage Mind Map includes every domain and concept at every hierarchy depth without overlap', () => {
+test('one Mortgage Map includes every domain and concept at every hierarchy depth without overlap', () => {
   const ids = new Set(mortgage_concepts.map((c) => c.id));
   assert.equal(mortgage_topics.flatMap((t) => t.concepts).length, ids.size);
   for (const topic of mortgage_topics)
@@ -69,7 +69,7 @@ test('one Mortgage Mind Map includes every domain and concept at every hierarchy
   assert.equal(search_concepts('HELOC')[0].id, 'heloc');
 });
 
-test('search, reading history and URL restore retain concepts across every Mortgage Mind Map domain', () => {
+test('search, reading history and URL restore retain concepts across every Mortgage Map domain', () => {
   let state = initial_mortgage_state;
   const connections = mortgage_reducer(state, {
     type: 'change_view',

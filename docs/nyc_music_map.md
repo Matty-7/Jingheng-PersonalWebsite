@@ -57,7 +57,7 @@ Official capability references:
 - https://developer.apple.com/musickit/
 - https://support.apple.com/guide/music/save-a-copy-of-your-playlists-mus27cd5060f/mac
 
-Accepted review scope: MUSIC-SCALE-01, MUSIC-PLAYLIST-01, PROJECT-ORDER-01. Projects now run Mortgage Mind Map, music, film, literary, with the same music/film/book sequence as the recommendations. The mortgage URL and concept IDs remain unchanged.
+Accepted review scope: MUSIC-SCALE-01, MUSIC-PLAYLIST-01, PROJECT-ORDER-01. Projects now run Mortgage Map, music, film, literary, with the same music/film/book sequence as the recommendations. The mortgage URL and concept IDs remain unchanged.
 
 All 88 newly added artwork and preview endpoints returned HTTP 200 during the September 20 expansion check. This verifies availability, not full playback across every device or region.
 

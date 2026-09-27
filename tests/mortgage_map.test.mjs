@@ -129,6 +129,7 @@ import {
   mortgage_topics,
   mortgage_relationships,
   mortgage_paths,
+  mortgage_path_models,
 } from '../content/mortgage_concepts.ts';
 import {
   build_mortgage_graph,
@@ -316,6 +317,25 @@ test('mechanism paths explain every step and state their limits', () => {
     mechanism_models.find((c) => c.id === 'income_to_real_return').premise,
     /not successive causes/,
   );
+});
+
+test('mortgage lock-in states its units and follows principal timing into rate risk', () => {
+  const lock_in = mortgage_concepts.find((c) => c.id === 'lock_in');
+  assert.match(lock_in.formula.expression, /new-loan rate/);
+  assert.match(lock_in.formula.assumptions, /not a payment change/);
+  assert.match(lock_in.formula.example, /\+400 bp/);
+  assert.match(lock_in.distinction, /not a prohibition/);
+  assert.deepEqual(
+    mortgage_path_models.find((model) => model.id === 'lock_in_to_duration')
+      .steps,
+    ['lock_in', 'turnover', 'prepayments', 'cash_flows', 'wal', 'duration'],
+  );
+  const comparison = mortgage_relationships.find(
+    (edge) => edge.id === 'wal__duration',
+  );
+  assert.equal(comparison.kind, 'comparison');
+  assert.match(comparison.conditions, /does not mechanically imply/);
+  assert.match(mortgage_math.lock_in.variables, /basis points/);
 });
 
 test('reading history branches correctly, stays bounded and accepts only known concept links', () => {

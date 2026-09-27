@@ -351,7 +351,7 @@ export default function Home() {
           </div>
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
-              <h3>Mortgage Mind Map</h3>
+              <h3>Mortgage Map</h3>
               <p>
                 Explore mortgage cash flows, interest rates and structured
                 credit through connected concepts, reading paths and public
@@ -363,7 +363,7 @@ export default function Home() {
             </div>
             <div
               className="project-map-preview"
-              aria-label="Explore the Mortgage Mind Map"
+              aria-label="Explore the Mortgage Map"
             >
               <div
                 className="project-map-path"

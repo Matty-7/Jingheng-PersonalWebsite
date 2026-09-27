@@ -1,4 +1,3 @@
-import { expansion_paths } from '@/content/fixed_income_expansion';
 import type { RefObject } from 'react';
 import {
   ArrowLeft,
@@ -11,6 +10,7 @@ import {
 } from 'lucide-react';
 import {
   mortgage_branches,
+  mortgage_path_models,
   mortgage_paths,
   mortgage_sources,
   type MortgageConcept,
@@ -39,6 +39,7 @@ export function MortgageReader({
   follow_history,
   copy_concept_link,
   choose_concept,
+  choose_path,
   show_paths,
   explore_connections,
 }: {
@@ -52,11 +53,16 @@ export function MortgageReader({
   follow_history: (offset: number) => void;
   copy_concept_link: () => Promise<void>;
   choose_concept: (id: string, trigger?: HTMLButtonElement) => void;
+  choose_path: (id: string) => void;
   show_paths: () => void;
   explore_connections: () => void;
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
-  const model = expansion_paths.find((item) => item.id === path_id);
+  const model = mortgage_path_models.find((item) => item.id === path_id);
+  const concept_is_on_path = path?.steps.includes(concept.id) ?? false;
+  const suggested_path = concept_is_on_path
+    ? undefined
+    : mortgage_path_models.find((item) => item.steps.includes(concept.id));
   const relations = study_edges(concept.id);
   return (
     <aside
@@ -99,7 +105,17 @@ export function MortgageReader({
       <h2 tabIndex={-1}>{concept.title}</h2>
       <p className="atlas-reader-subtitle">{concept.subtitle}</p>
       <p className="atlas-reader-summary">{concept.summary}</p>
-      {path && path.steps.includes(concept.id) && (
+      {suggested_path && (
+        <div className="atlas-reader-path">
+          <button onClick={() => choose_path(suggested_path.id)}>
+            <Route size={14} /> Follow: {suggested_path.title}
+          </button>
+          <p className="atlas-reader-step-explanation">
+            {suggested_path.description}
+          </p>
+        </div>
+      )}
+      {path && concept_is_on_path && (
         <div className="atlas-reader-path">
           <button
             onClick={() => {

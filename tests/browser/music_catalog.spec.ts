@@ -154,7 +154,7 @@ test('one Atlas project preserves the music, film and book recommendations', asy
 }) => {
   await page.goto('/');
   await expect(page.locator('#projects h3')).toHaveText([
-    'Mortgage Mind Map',
+    'Mortgage Map',
     'New York Atlas',
   ]);
   expect(

@@ -415,6 +415,11 @@ export const mortgage_sources: Record<
     title: 'The Lock-In Effect of Rising Mortgage Rates',
     url: 'https://www.fhfa.gov/research/papers/wp2403',
   },
+  lockin_mobility: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'Mortgage Rate Lock-In and Homeowners’ Moving Plans',
+    url: 'https://libertystreeteconomics.newyorkfed.org/2024/05/mortgage-rate-lock-in-and-homeowners-moving-plans/',
+  },
   clo: {
     publisher: 'Guggenheim Investments',
     title: 'Understanding Collateralized Loan Obligations',
@@ -1686,26 +1691,44 @@ const original_concepts: MortgageConcept[] = [
   {
     id: 'lock_in',
     title: 'Mortgage lock-in',
-    subtitle: 'The cost of giving up an old rate',
+    subtitle: 'A rate gap can make moving more expensive',
     summary:
-      'A borrower with a low fixed mortgage rate may face a higher housing payment after moving and borrowing again. That can discourage a sale.',
+      'Mortgage lock-in begins with the gap between the rate available on a replacement loan and the borrower’s existing note rate. A positive gap can make replacement financing less attractive and discourage a home sale, which can slow one source of mortgage principal return.',
+    formula: {
+      expression: 'Rate gap = available new-loan rate − existing note rate',
+      assumptions:
+        'Compare annual mortgage rates for the same borrower, product and date. This isolates the rate difference; it is not a payment change, a sale probability or a prepayment-speed forecast.',
+      example:
+        'Illustrative only: 7.00% − 3.00% = +4.00 percentage points = +400 bp.',
+    },
     distinction:
-      'Life events can still lead to a move despite an unfavorable rate comparison.',
-    question: 'Can higher rates affect prepayments through home sales?',
+      'A positive rate gap is a disincentive, not a prohibition. Life events, equity, income, property choice, down payment, loan balance and possible assumption can still outweigh it. Do not read a 400 bp rate gap as a 400 bp payment increase.',
+    question:
+      'Does a +400 bp rate gap mean the payment rises 400 bp or the borrower will not move?',
     answer:
-      'Yes. The decision to move can change as well as the decision to refinance.',
-    sources: ['lockin'],
+      'No. It compares annual note rates. The payment also depends on the new balance and term, while the decision to move depends on many non-rate factors.',
+    sources: ['lockin', 'lockin_mobility'],
     links: [
       {
         id: 'turnover',
         reason: 'Giving up a favorable loan can discourage a housing move.',
       },
       {
+        id: 'affordability',
+        reason:
+          'The replacement payment also depends on the home price, down payment, balance and term.',
+      },
+      {
+        id: 'assumability',
+        reason:
+          'An eligible assumption can preserve an existing note rate instead of replacing the loan.',
+      },
+      {
         id: 'extension',
         reason: 'Slower principal return can lengthen exposure.',
       },
     ],
-    aliases: [],
+    aliases: ['rate lock-in', 'mortgage rate lock-in', 'rate gap'],
     topic: 'refinancing',
     branch: 'prepayment',
   },
@@ -1714,13 +1737,13 @@ const original_concepts: MortgageConcept[] = [
     title: 'Housing turnover',
     subtitle: 'Moving also repays mortgages',
     summary:
-      'Selling a financed home commonly repays its mortgage. This creates principal return even without a refinancing incentive.',
+      'Selling a financed home commonly repays its mortgage, creating principal return even when rate-driven refinancing is unattractive. Turnover can vary with loan age, seasonality, local housing conditions and household events.',
     distinction:
-      'Turnover and rate-driven refinancing are different reasons for payoff.',
+      'Turnover and rate-driven refinancing are different payoff channels. Turnover is not a constant prepayment floor, and an eligible loan assumption can let debt remain after a property sale.',
     question: 'Can prepayments continue when refinancing is unattractive?',
     answer:
       'Yes. Moves, sales and other borrower circumstances still generate payoffs.',
-    sources: ['basics', 'cohort'],
+    sources: ['basics', 'cohort', 'lockin_mobility'],
     links: [
       {
         id: 'prepayments',
@@ -3590,6 +3613,9 @@ export const mortgage_relationships: MortgageRelationship[] = [
     reason:
       'A borrower may avoid surrendering a low-rate mortgage when replacement financing costs more.',
     kind: 'mechanism',
+    conditions:
+      'Compare available and existing annual rates for the same borrower and financing context. A positive gap can discourage a move but does not prevent one.',
+    sources: ['lockin', 'lockin_mobility'],
   },
   {
     id: 'turnover__prepayments',
@@ -3598,6 +3624,9 @@ export const mortgage_relationships: MortgageRelationship[] = [
     label: 'can trigger a payoff',
     reason: 'A home sale commonly repays the existing mortgage.',
     kind: 'mechanism',
+    conditions:
+      'Most financed sales repay the old loan, but program rules and an eligible assumption can allow the debt to remain. Turnover also varies over time and across borrowers.',
+    sources: ['basics', 'lockin_mobility'],
   },
   {
     id: 'seasonality__turnover',
@@ -3664,6 +3693,18 @@ export const mortgage_relationships: MortgageRelationship[] = [
     reason:
       'WAL weights the dates of projected principal repayments, excluding interest and discounting.',
     kind: 'measurement',
+  },
+  {
+    id: 'wal__duration',
+    source: 'wal',
+    target: 'duration',
+    label: 'answers a different timing question',
+    reason:
+      'WAL averages undiscounted principal-payment dates; effective duration estimates local price sensitivity after cash flows are reprojected under rate shocks.',
+    kind: 'comparison',
+    conditions:
+      'Compare measures under a stated cash-flow and valuation model. A longer WAL does not mechanically imply an equal increase in effective duration.',
+    sources: ['formulas', 'yield_duration_public'],
   },
   {
     id: 'cash_flows__pv',
@@ -4192,6 +4233,12 @@ export const mortgage_paths = [
       'model_risk',
     ],
   },
+];
+
+export const mortgage_path_models = [
+  ...analytics_paths,
+  ...expansion_paths,
+  ...mechanism_models,
 ];
 
 export const learning_path = mortgage_paths[0].steps.map((id) => ({ id }));
