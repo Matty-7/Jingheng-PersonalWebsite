@@ -7,7 +7,11 @@ export default defineConfig({
   retries: 0,
   workers: process.env.CI ? 2 : 1,
   timeout: 60_000,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'test-results/browser_results.json' }],
+  ],
   use: {
     baseURL: 'http://127.0.0.1:4173',
     browserName: 'chromium',
@@ -29,7 +33,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run start -- --var GOOGLE_MAPS_EMBED_API_KEY:maps-embed-test-only --ip 127.0.0.1 --port 4173',
+    command:
+      'npm run start -- --var GOOGLE_MAPS_EMBED_API_KEY:maps-embed-test-only --ip 127.0.0.1 --port 4173',
     url: 'http://127.0.0.1:4173/portfolio/mortgage-map',
     reuseExistingServer: false,
     timeout: 90_000,

@@ -44,12 +44,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run lint
-      - run: npm run format:check
-      - run: npx tsc --noEmit
-      - run: npm test
-      - run: node scripts/check-content.mjs
-      - run: npm run build
+      - run: npm run check:full
+      - name: Save quality timing and individual logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-quality-evidence
+          path: outputs/checks/
+          retention-days: 7
+          if-no-files-found: error
       - name: Record the built revision
         run: git rev-parse HEAD > dist/.ci_source_sha
       - name: Share this build with browser shards
@@ -87,6 +90,9 @@ jobs:
         run: npx playwright install --with-deps chromium webkit
       - name: Check map and home browser flows
         run: npm run test:browser -- --shard=${{ matrix.shard }}/3
+      - name: Summarize slow browser cases
+        if: always() && hashFiles('test-results/browser_results.json') != ''
+        run: node scripts/browser_summary.mjs
       - name: Save browser report and visual evidence
         if: always()
         uses: actions/upload-artifact@v4

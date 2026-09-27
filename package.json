@@ -14,7 +14,10 @@
     "content:summary": "node scripts/music_map_summary.mjs --write",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "test:browser": "playwright test",
-    "format:check": "oxfmt --check components/nyc_film_map.tsx components/nyc_literary_map.tsx components/nyc_music_map.tsx components/use_map_location.ts components/use_music_preview.ts lib/map_location.ts lib/nyc_film_location.ts lib/nyc_literary_location.ts lib/nyc_music_location.ts scripts/music_map_summary.mjs tests/map_location.test.mjs tests/browser/map_location.spec.ts"
+    "format:check": "oxfmt --check components/nyc_film_map.tsx components/nyc_literary_map.tsx components/nyc_music_map.tsx components/use_map_location.ts components/use_music_preview.ts lib/map_location.ts lib/nyc_film_location.ts lib/nyc_literary_location.ts lib/nyc_music_location.ts scripts/music_map_summary.mjs tests/map_location.test.mjs tests/browser/map_location.spec.ts",
+    "check": "node scripts/verify.mjs",
+    "check:full": "node scripts/verify.mjs full",
+    "review:packet": "node scripts/review_packet.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
