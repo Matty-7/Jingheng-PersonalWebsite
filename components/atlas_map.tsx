@@ -171,7 +171,7 @@ export function AtlasMap({
         );
       marker.on('click', choose);
       marker.on('keydown', (event: Leaflet.LeafletKeyboardEvent) => {
-        if (event.originalEvent.key !== ' ') return;
+        if (![' ', 'Enter'].includes(event.originalEvent.key)) return;
         leaflet.DomEvent.stop(event.originalEvent);
         choose();
       });
