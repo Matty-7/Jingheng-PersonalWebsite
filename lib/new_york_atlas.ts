@@ -169,8 +169,9 @@ export const atlas_entries: AtlasEntry[] = [
         year: film.year,
         place_name: location.name,
         area: `${location.neighborhood}, ${location.borough}`,
-        relationship: 'Filming location',
-        precision: 'Venue or public approach, not a camera position.',
+        relationship: scene.relationship ?? 'Filming location',
+        precision:
+          scene.precision ?? 'Venue or public approach, not a camera position.',
         visit_note: location.visit_note,
         collection_url: `/portfolio/nyc-film-map?film=${film.id}&place=${location.id}`,
         location,

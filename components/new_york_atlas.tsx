@@ -191,7 +191,6 @@ export function NewYorkAtlas({
               type="search"
               value={query}
               disabled={!ready}
-              placeholder="Search the city"
               aria-controls={
                 search_open && query ? 'atlas-search-results' : undefined
               }

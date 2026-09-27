@@ -24,7 +24,7 @@ import { literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.deepEqual(atlas_counts, { film: 38, literature: 19, music: 118 });
+  assert.deepEqual(atlas_counts, { film: 40, literature: 20, music: 126 });
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,
@@ -169,4 +169,21 @@ test('every Atlas map preserves the existing free endpoint and keyless fallback'
       assert.equal(external.searchParams.get('query'), coordinates.join(','));
     }
   }
+});
+
+test('landmark discovery retains the distinction between settings, performances and historic sites', () => {
+  const liberty = search_atlas('all', 'statue of liberty');
+  assert.deepEqual(
+    new Set(liberty.map((entry) => entry.medium)),
+    new Set(['literature', 'music']),
+  );
+  const hudson = search_atlas('all', 'hudson yards');
+  assert.ok(hudson.some((entry) => entry.title === 'Blinding Lights'));
+  assert.ok(hudson.some((entry) => entry.place_name === 'The Shed'));
+  const unisphere = search_atlas('film', 'unisphere')[0];
+  assert.equal(unisphere.relationship, 'Screen setting');
+  assert.match(unisphere.precision, /studio recreations/);
+  const original_wtc = search_atlas('film', 'world trade center')[0];
+  assert.match(original_wtc.precision, /Historical/);
+  assert.match(original_wtc.visit_note, /not One World Observatory/);
 });
