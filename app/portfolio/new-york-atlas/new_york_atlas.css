@@ -1,4 +1,5 @@
 @import 'leaflet/dist/leaflet.css';
+@import 'maplibre-gl/dist/maplibre-gl.css';
 
 html:has(.atlas-page),
 body:has(.atlas-page) {
@@ -191,10 +192,6 @@ body:has(.atlas-page) {
   background: #e8eee8;
   font-family: inherit;
   z-index: 0;
-}
-.atlas-map .leaflet-tile-pane {
-  filter: saturate(0.4) contrast(0.9) brightness(1.06);
-  opacity: 0.78;
 }
 .atlas-map .leaflet-control-zoom {
   margin: 20px;

@@ -396,11 +396,6 @@
       "url": "https://www.moviemaps.org/locations/e77"
     },
     {
-      "id": "ocean-view",
-      "label": "Venue · Ocean View Cafe",
-      "url": "https://www.oceanviewcafeny.com/index.php/extensions"
-    },
-    {
       "id": "lalo-closure",
       "label": "Closure report · West Side Rag",
       "url": "https://www.westsiderag.com/2024/10/31/cafe-lalo-will-not-reopen-in-its-longtime-uws-home-building-owner"
@@ -1180,40 +1175,6 @@
             "image_url": "https://m.media-amazon.com/images/M/MV5BOTRkYzhiZmEtMGZiMi00MmVkLTk2MjUtNzkxNWQyZWUyZjU1XkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg",
             "width": 960,
             "height": 400
-          }
-        }
-      ]
-    },
-    {
-      "id": "ocean-view",
-      "name": "Ocean View Cafe",
-      "address": "290 Brighton Beach Avenue",
-      "neighborhood": "Brighton Beach",
-      "borough": "Brooklyn",
-      "coordinates": [
-        40.5767,
-        -73.9642
-      ],
-      "access": "Café",
-      "visit_note": "Check current opening hours with the venue.",
-      "scenes": [
-        {
-          "film_id": "anora",
-          "scene": "During the search, a woman in the café suggests Ivan has been kidnapped.",
-          "source_ids": [
-            "anora-interview",
-            "ocean-view"
-          ],
-          "still": {
-            "src": "/images/film-map/anora--ocean-view.jpg",
-            "thumbnail": "/images/film-map/anora--ocean-view--thumb.jpg",
-            "alt": "The blue Ocean View Café storefront sign with the restaurant website and phone number.",
-            "credit": "Location photo · Ocean View Cafe",
-            "source_url": "https://oceanviewcafeny.com/",
-            "image_url": "https://oceanviewcafeny.com/images/ps1.jpg",
-            "width": 960,
-            "height": 449,
-            "kind": "location_photo"
           }
         }
       ]
