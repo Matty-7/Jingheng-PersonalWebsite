@@ -30,6 +30,7 @@ import { useAtlasDetail } from './use_atlas_detail';
 import { useMapLocation } from './use_map_location';
 import { useMusicPreview } from './use_music_preview';
 import { preview_time } from '@/lib/preview_time';
+import { map_location_url } from '@/lib/map_location';
 
 function AtlasImage({
   src,
@@ -458,7 +459,26 @@ export function NewYorkAtlas({
                         Retry loading details
                       </button>
                       <a
-                        href={`?${new URLSearchParams(atlas_location.write(state))}`}
+                        href={
+                          map_location_url(
+                            window.location.href,
+                            atlas_location.keys,
+                            atlas_location.write(state),
+                          ).href
+                        }
+                        onClick={(event) => {
+                          if (
+                            event.metaKey ||
+                            event.ctrlKey ||
+                            event.shiftKey ||
+                            event.altKey
+                          )
+                            return;
+                          // A same-document hash link would only scroll. Reload
+                          // explicitly so the server can recover this selection.
+                          event.preventDefault();
+                          window.location.reload();
+                        }}
                       >
                         Open this selection as a page
                       </a>

@@ -132,13 +132,13 @@ test('failed and mismatched detail requests can be retried without losing the se
   let attempts = 0;
   await page.route(detail_pattern, async (route) => {
     ++attempts;
-    if (attempts === 1)
+    if (attempts === 1 || attempts > 3)
       return route.fulfill({ status: 503, body: 'Temporarily unavailable' });
     if (attempts === 2)
       return route.fulfill({ json: { entry: { id: 'wrong-entry' } } });
     return route.continue();
   });
-  await page.goto(atlas_path);
+  await page.goto(`${atlas_path}?utm_source=test#atlas-anchor`);
   const search = page.getByRole('searchbox');
   await expect(search).toBeEnabled();
   await search.fill('henry james');
@@ -147,7 +147,7 @@ test('failed and mismatched detail requests can be retried without losing the se
   const selected_url = page.url();
   await expect(
     page.getByRole('link', { name: 'Open this selection as a page' }),
-  ).toHaveAttribute('href', /entry=literature%3Awashington-square/);
+  ).toHaveAttribute('href', selected_url);
   await expect(page.locator('.atlas-detail')).toHaveCount(0);
   await retry.press('Enter');
   await expect.poll(() => attempts).toBe(2);
@@ -160,4 +160,25 @@ test('failed and mismatched detail requests can be retried without losing the se
   await expect(search).toHaveValue('henry james');
   expect(attempts).toBe(3);
   await expect(page.locator('audio')).toHaveCount(1);
+  await search.fill('cafe lalo');
+  const fallback = page.getByRole('link', {
+    name: 'Open this selection as a page',
+  });
+  await expect(fallback).toBeVisible();
+  const fallback_url = page.url();
+  await expect(fallback).toHaveAttribute('href', fallback_url);
+  const document_request = page.waitForRequest(
+    (request) =>
+      request.isNavigationRequest() && request.frame() === page.mainFrame(),
+  );
+  await fallback.press('Enter');
+  await document_request;
+  await expect(page.locator('.atlas-work-heading h3')).toHaveText(
+    "You've Got Mail",
+  );
+  await expect(page.getByRole('searchbox')).toBeEnabled();
+  await expect(page).toHaveURL(fallback_url);
+  expect(new URL(page.url()).searchParams.get('utm_source')).toBe('test');
+  expect(new URL(page.url()).hash).toBe('#atlas-anchor');
+  expect(attempts).toBe(4);
 });
