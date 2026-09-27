@@ -49,12 +49,15 @@ export function MortgageCatalog({
           dialog.querySelectorAll<HTMLElement>(
             'button, input, summary, a[href], [tabindex]',
           ),
-        ).filter(
-          (control) =>
+        ).filter((control) => {
+          const collapsed = control.closest('details:not([open])');
+          return (
+            (!collapsed || control === collapsed.querySelector('summary')) &&
             control.tabIndex >= 0 &&
             !control.matches(':disabled') &&
-            control.getClientRects().length > 0,
-        );
+            control.getClientRects().length > 0
+          );
+        });
         const first = controls[0];
         const last = controls.at(-1);
         const active = dialog.ownerDocument.activeElement;
