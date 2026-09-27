@@ -27,9 +27,14 @@ export function ProjectMapPreview({
       </span>
       <span className="project-culture-copy">
         <small>{eyebrow}</small>
-        <strong>{headline}<br /><em>{emphasis}</em></strong>
+        <strong>
+          {headline}
+          <br />
+          <em>{emphasis}</em>
+        </strong>
         <span className="project-culture-summary">
-          <span>{summary}</span><span aria-hidden="true">↗</span>
+          <span>{summary}</span>
+          <span aria-hidden="true">↗</span>
         </span>
       </span>
     </Link>

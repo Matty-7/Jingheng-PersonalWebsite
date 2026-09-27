@@ -11,6 +11,12 @@
     "bun.lockb",
     "components/ui/**",
     "hooks/use-mobile.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "public/**",
+    "docs/**",
+    "content/**/*.json",
+    "AGENTS.md",
+    "README.md",
+    ".sites-runtime/**"
   ]
 }

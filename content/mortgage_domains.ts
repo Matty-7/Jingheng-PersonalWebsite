@@ -56,7 +56,7 @@ export const mortgage_domains = [
     number: '08',
     entry: 'default',
   },
-{
+  {
     id: 'products',
     title: 'Product families',
     question: 'What backs the promise to pay?',
@@ -72,9 +72,16 @@ export const mortgage_domains = [
   },
 ];
 
-
 export const mortgage_preview_path = [
-  { id: 'prepayments', title: 'Prepayment', detail: 'Changes when principal returns' },
-  { id: 'cash_flows', title: 'Cash flows', detail: 'Changes what is discounted' },
+  {
+    id: 'prepayments',
+    title: 'Prepayment',
+    detail: 'Changes when principal returns',
+  },
+  {
+    id: 'cash_flows',
+    title: 'Cash flows',
+    detail: 'Changes what is discounted',
+  },
   { id: 'oas', title: 'Value & risk', detail: 'Depends on the option model' },
 ];

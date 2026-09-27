@@ -258,9 +258,7 @@ export function MortgageCanvas({
             >
               {node.kind === 'root' ? (
                 <>
-                  <strong>
-                    {node.title}
-                  </strong>
+                  <strong>{node.title}</strong>
                   <small>{node.subtitle}</small>
                 </>
               ) : (

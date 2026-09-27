@@ -16,7 +16,10 @@ import films from '@/content/films.json';
 import { Bookshelf } from '@/components/bookshelf';
 import profile from '@/content/profile.json';
 import channels from '@/content/channels.json';
-import { mortgage_domains, mortgage_preview_path } from '@/content/mortgage_domains';
+import {
+  mortgage_domains,
+  mortgage_preview_path,
+} from '@/content/mortgage_domains';
 import { homeStructuredData, serializeStructuredData } from '@/lib/seo';
 const newsletterUrl = profile.newsletterUrl as string | null;
 
@@ -49,7 +52,9 @@ export default function Home() {
     const cards = Array.from(
       filmTrack?.querySelectorAll<HTMLElement>('.film-card') ?? [],
     );
-    const posters = cards.map((card) => card.querySelector<HTMLElement>('.poster-frame'));
+    const posters = cards.map((card) =>
+      card.querySelector<HTMLElement>('.poster-frame'),
+    );
     let layout_dirty = true;
     let film_enabled = false;
     let distance = 0;
@@ -77,7 +82,8 @@ export default function Home() {
     // Stable scrolling never measures transformed posters or changes section height.
     const measure_layout = () => {
       layout_dirty = false;
-      film_enabled = film_motion_query.matches && CSS.supports('height', '1cqh');
+      film_enabled =
+        film_motion_query.matches && CSS.supports('height', '1cqh');
       if (!filmSection || !filmTrack) return;
       if (!film_enabled) {
         reset_film_motion();
@@ -107,28 +113,58 @@ export default function Home() {
       // Read every live geometry value before applying this frame's styles.
       const viewport_height = window.innerHeight;
       const viewport_width = window.innerWidth;
-      const page_progress = window.scrollY / Math.max(
-        1, document.documentElement.scrollHeight - viewport_height,
-      );
+      const page_progress =
+        window.scrollY /
+        Math.max(1, document.documentElement.scrollHeight - viewport_height);
       const hero_rect = hero?.getBoundingClientRect();
       const hero_progress = hero_rect
-        ? Math.min(1, Math.max(0, -hero_rect.top / Math.max(1, hero_rect.height)))
+        ? Math.min(
+            1,
+            Math.max(0, -hero_rect.top / Math.max(1, hero_rect.height)),
+          )
         : 0;
-      const film_rect = film_enabled ? filmSection?.getBoundingClientRect() : null;
+      const film_rect = film_enabled
+        ? filmSection?.getBoundingClientRect()
+        : null;
       const film_progress = film_rect
-        ? Math.max(0, Math.min(1, -film_rect.top / Math.max(1, film_height - viewport_height)))
+        ? Math.max(
+            0,
+            Math.min(
+              1,
+              -film_rect.top / Math.max(1, film_height - viewport_height),
+            ),
+          )
         : 0;
 
-      document.documentElement.style.setProperty('--page-progress', String(page_progress));
-      hero?.style.setProperty('--hero-progress', reduced.matches ? '0' : String(hero_progress));
-      if (film_enabled && filmSection && filmTrack && film_progress !== last_progress) {
+      document.documentElement.style.setProperty(
+        '--page-progress',
+        String(page_progress),
+      );
+      hero?.style.setProperty(
+        '--hero-progress',
+        reduced.matches ? '0' : String(hero_progress),
+      );
+      if (
+        film_enabled &&
+        filmSection &&
+        filmTrack &&
+        film_progress !== last_progress
+      ) {
         const translation = -film_progress * distance;
-        filmTrack.style.setProperty('--film-transform', `translate3d(${translation}px,0,0)`);
+        filmTrack.style.setProperty(
+          '--film-transform',
+          `translate3d(${translation}px,0,0)`,
+        );
         filmSection.style.setProperty('--film-progress', String(film_progress));
         posters.forEach((poster, index) => {
-          const depth = Math.max(-1, Math.min(1,
-            (card_centres[index] + translation - viewport_width / 2) / viewport_width,
-          ));
+          const depth = Math.max(
+            -1,
+            Math.min(
+              1,
+              (card_centres[index] + translation - viewport_width / 2) /
+                viewport_width,
+            ),
+          );
           poster?.style.setProperty('--depth', String(depth));
         });
         last_progress = film_progress;
@@ -162,10 +198,24 @@ export default function Home() {
           <BrandMark />
         </a>
         <div className="nav-links">
-          <a href={channels.youtube.url} target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href={channels.podcast.url} target="_blank" rel="noopener noreferrer">Podcast</a>
+          <a
+            href={channels.youtube.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+          <a
+            href={channels.podcast.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Podcast
+          </a>
           {newsletterUrl ? (
-            <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">Newsletter</a>
+            <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
+              Newsletter
+            </a>
           ) : null}
           <a href="#projects">Projects</a>
           <a href="#records">Music</a>
@@ -204,7 +254,11 @@ export default function Home() {
             </h2>
           </div>
           <div className="publishing-grid">
-            <article id="youtube" className="publishing-card publishing-video" data-reveal>
+            <article
+              id="youtube"
+              className="publishing-card publishing-video"
+              data-reveal
+            >
               <div className="publishing-label">
                 <SocialIcon name="youtube" />
                 <p className="eyebrow">YOUTUBE</p>
@@ -228,7 +282,11 @@ export default function Home() {
                 Watch on YouTube
               </a>
             </article>
-            <article id="podcast" className="publishing-card publishing-audio" data-reveal>
+            <article
+              id="podcast"
+              className="publishing-card publishing-audio"
+              data-reveal
+            >
               <div className="publishing-label">
                 <SocialIcon name="applepodcasts" />
                 <p className="eyebrow">PODCAST</p>
@@ -281,31 +339,61 @@ export default function Home() {
           </div>
         </section>
         <span id="portfolio" aria-hidden="true" />
-        <section id="projects" className="projects-section" aria-labelledby="projects-heading">
+        <section
+          id="projects"
+          className="projects-section"
+          aria-labelledby="projects-heading"
+        >
           <div className="projects-heading" data-reveal>
-            <h2 id="projects-heading"><em>Projects.</em></h2>
+            <h2 id="projects-heading">
+              <em>Projects.</em>
+            </h2>
           </div>
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
               <h3>Mortgage Mind Map</h3>
-              <p>Explore mortgage cash flows, interest rates and structured credit through connected concepts, reading paths and public sources.</p>
-              <Link href="/portfolio/mortgage-map" className="text-link">Explore the map <span aria-hidden="true">↗</span></Link>
+              <p>
+                Explore mortgage cash flows, interest rates and structured
+                credit through connected concepts, reading paths and public
+                sources.
+              </p>
+              <Link href="/portfolio/mortgage-map" className="text-link">
+                Explore the map <span aria-hidden="true">↗</span>
+              </Link>
             </div>
-            <div className="project-map-preview" aria-label="Explore the Mortgage Mind Map">
-              <div className="project-map-path" aria-label="From borrower decisions to valuation">
+            <div
+              className="project-map-preview"
+              aria-label="Explore the Mortgage Mind Map"
+            >
+              <div
+                className="project-map-path"
+                aria-label="From borrower decisions to valuation"
+              >
                 {mortgage_preview_path.map((step, i) => (
-                  <Link href={`/portfolio/mortgage-map#concept=${step.id}`} key={step.id}>
+                  <Link
+                    href={`/portfolio/mortgage-map#concept=${step.id}`}
+                    key={step.id}
+                  >
                     <span className="project-step-number">0{i + 1}</span>
                     <strong>{step.title}</strong>
                     <span>{step.detail}</span>
-                    {i < mortgage_preview_path.length - 1 && <span className="project-path-arrow" aria-hidden="true">→</span>}
+                    {i < mortgage_preview_path.length - 1 && (
+                      <span className="project-path-arrow" aria-hidden="true">
+                        →
+                      </span>
+                    )}
                   </Link>
                 ))}
               </div>
               <div className="project-domain-links">
                 {mortgage_domains.map((domain) => (
-                  <Link href={`/portfolio/mortgage-map#concept=${domain.entry}`} key={domain.id}>
-                    <span>{domain.number}</span>{domain.title}<span aria-hidden="true">↗</span>
+                  <Link
+                    href={`/portfolio/mortgage-map#concept=${domain.entry}`}
+                    key={domain.id}
+                  >
+                    <span>{domain.number}</span>
+                    {domain.title}
+                    <span aria-hidden="true">↗</span>
                   </Link>
                 ))}
               </div>
@@ -314,13 +402,24 @@ export default function Home() {
           <article className="projects-entry" data-reveal>
             <div className="projects-copy">
               <h3>New York Atlas</h3>
-              <p>Explore the city through film, television, literature and music. Find the scenes, passages and songs connected to a place, with original sources and previews.</p>
-              <Link href="/portfolio/new-york-atlas" className="text-link">Explore the atlas <span aria-hidden="true">↗</span></Link>
+              <p>
+                Explore the city through film, television, literature and music.
+                Find the scenes, passages and songs connected to a place, with
+                original sources and previews.
+              </p>
+              <Link href="/portfolio/new-york-atlas" className="text-link">
+                Explore the atlas <span aria-hidden="true">↗</span>
+              </Link>
             </div>
             <ProjectMapPreview
               href="/portfolio/new-york-atlas"
               label="Open New York Atlas"
-              artwork={{ src: '/images/film-map/manhattan-poster.jpg', alt: 'Manhattan (1979) poster with the Queensboro Bridge and skyline lettering', width: 640, height: 940 }}
+              artwork={{
+                src: '/images/film-map/manhattan-poster.jpg',
+                alt: 'Manhattan (1979) poster with the Queensboro Bridge and skyline lettering',
+                width: 640,
+                height: 940,
+              }}
               eyebrow="FILM & TV · LITERATURE · MUSIC"
               headline="New York"
               emphasis="Atlas."

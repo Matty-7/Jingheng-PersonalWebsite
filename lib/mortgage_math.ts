@@ -7,35 +7,43 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
     rolls: {
       tex: String.raw`D=P_{\mathrm{near}}-P_{\mathrm{far}}`,
-      variables: 'D: drop in price points per $100 current face; P: comparable clean TBA prices for near and far settlement. Not a percentage return or annualized rate.',
+      variables:
+        'D: drop in price points per $100 current face; P: comparable clean TBA prices for near and far settlement. Not a percentage return or annualized rate.',
     },
     breakeven_inflation: {
       tex: String.raw`\mathrm{BE}\approx y_{\mathrm{nominal}}-y_{\mathrm{real}}`,
-      variables: 'Annual yields as decimals at comparable maturity and conventions; multiply the difference by 10,000 for basis points. Includes risk and liquidity compensation.',
+      variables:
+        'Annual yields as decimals at comparable maturity and conventions; multiply the difference by 10,000 for basis points. Includes risk and liquidity compensation.',
     },
     curve_slope: {
       tex: String.raw`s_{\mathrm{bp}}=(y_{\mathrm{long}}-y_{\mathrm{short}})\times10^4`,
-      variables: 'Same currency, observation time and comparable yield conventions. A rise in this difference is steepening, even if the curve remains inverted.',
+      variables:
+        'Same currency, observation time and comparable yield conventions. A rise in this difference is steepening, even if the curve remains inverted.',
     },
     cltv: {
       tex: String.raw`\mathrm{CLTV}=\frac{B_{\mathrm{first}}+B_{\mathrm{subordinate}}}{V_{\mathrm{prescribed}}}`,
-      variables: 'Balances and prescribed property value are in the same currency. Use the program’s treatment of drawn HELOC balances; HCLTV substitutes full HELOC credit lines under the cited convention.',
+      variables:
+        'Balances and prescribed property value are in the same currency. Use the program’s treatment of drawn HELOC balances; HCLTV substitutes full HELOC credit lines under the cited convention.',
     },
     conditional_default_rate: {
       tex: String.raw`\mathrm{CDR}=1-(1-\mathrm{MDR})^{12}`,
-      variables: 'MDR and CDR are decimal rates. Identify the default or liquidation event and eligible balance before annualizing.',
+      variables:
+        'MDR and CDR are decimal rates. Identify the default or liquidation event and eligible balance before annualizing.',
     },
     effective_convexity: {
       tex: String.raw`C_{\mathrm{eff}}\approx\frac{P_-+P_+-2P_0}{P_0(\Delta y)^2}`,
-      variables: 'P₋ / P₊: full prices after equal down / up parallel curve shifts at fixed OAS; P₀: base full price; Δy: positive rate shift as a decimal. With annual rates, convexity has units of years squared.',
+      variables:
+        'P₋ / P₊: full prices after equal down / up parallel curve shifts at fixed OAS; P₀: base full price; Δy: positive rate shift as a decimal. With annual rates, convexity has units of years squared.',
     },
     cds_bond_basis: {
       tex: String.raw`b_{\mathrm{bp}}=s_{\mathrm{CDS,bp}}-s_{\mathrm{bond,bp}}`,
-      variables: 'b: basis; s: spread in basis points. Align reference entity, seniority, currency and maturity; identify the bond-spread method.',
+      variables:
+        'b: basis; s: spread in basis points. Align reference entity, seniority, currency and maturity; identify the bond-spread method.',
     },
     excess_spread: {
       tex: String.raw`E_t=R_t-I_t-F_t-L_t`,
-      variables: 'E: excess income; R: collected finance charges and other income; I: certificate interest; F: servicing and other senior expenses; L: charge-offs. All amounts use the same currency and period t.',
+      variables:
+        'E: excess income; R: collected finance charges and other income; I: certificate interest; F: servicing and other senior expenses; L: charge-offs. All amounts use the same currency and period t.',
     },
     dti: {
       tex: String.raw`\mathrm{DTI}=\frac{D_{\mathrm{monthly}}}{Y_{\mathrm{monthly}}}`,

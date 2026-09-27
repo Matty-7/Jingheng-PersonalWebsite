@@ -63,8 +63,13 @@ test('compact navigation keeps settings, sibling reading and focus accessible', 
     const atlas = await page.getByRole('dialog').boundingBox();
     const canvas = await page.getByRole('application').boundingBox();
     expect(canvas!.y - atlas!.y).toBeLessThanOrEqual(300);
-    await expect(page.getByRole('group', { name: 'Atlas subject' })).toHaveCount(0);
-    await test_info.attach('expanded-navigation', { body: await page.screenshot(), contentType: 'image/png' });
+    await expect(
+      page.getByRole('group', { name: 'Atlas subject' }),
+    ).toHaveCount(0);
+    await test_info.attach('expanded-navigation', {
+      body: await page.screenshot(),
+      contentType: 'image/png',
+    });
     await browse.press('Enter');
   }
   const navigator = page.getByRole('navigation', {

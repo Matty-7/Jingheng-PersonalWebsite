@@ -33,10 +33,12 @@ function load_component(name) {
 
 test('the rendered hero is discoverable before layout and preloads one high-priority JPEG', () => {
   const { RoomScene } = load_component('room_scene.tsx');
-  const html = renderToStaticMarkup(createElement(RoomScene, {
-    paused: false,
-    on_toggle: () => {},
-  }));
+  const html = renderToStaticMarkup(
+    createElement(RoomScene, {
+      paused: false,
+      on_toggle: () => {},
+    }),
+  );
   const hero = html.match(/<img\b[^>]*class="room-background"[^>]*>/)?.[0];
   assert.ok(hero, 'Hero must be present in server HTML');
   assert.match(hero, /loading="eager"/);
@@ -51,7 +53,12 @@ test('the rendered hero is discoverable before layout and preloads one high-prio
 });
 
 test('the LCP artwork stays within its JPEG transfer budget', () => {
-  const bytes = readFileSync(new URL('../public/images/living-room-motion.jpg', import.meta.url));
+  const bytes = readFileSync(
+    new URL('../public/images/living-room-motion.jpg', import.meta.url),
+  );
   assert.deepEqual([...bytes.subarray(0, 3)], [0xff, 0xd8, 0xff]);
-  assert.ok(bytes.length <= 210_000, `Hero exceeded 210 KB: ${bytes.length} bytes`);
+  assert.ok(
+    bytes.length <= 210_000,
+    `Hero exceeded 210 KB: ${bytes.length} bytes`,
+  );
 });
