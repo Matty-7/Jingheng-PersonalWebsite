@@ -322,10 +322,9 @@ body:has(.atlas-page) {
 .atlas-artwork-literature {
   padding: 8px;
 }
-.atlas-image-fallback {
-  color: var(--atlas-muted);
-  padding: 16px;
-  font-size: 13px;
+.atlas-card:not(:has(.atlas-artwork)) {
+  grid-template-columns: minmax(0, 1fr) 136px;
+  padding-left: 24px;
 }
 .atlas-card-copy {
   min-width: 0;
@@ -607,6 +606,10 @@ body:has(.atlas-page) {
   .atlas-artwork {
     height: 104px;
     margin-top: 5px;
+  }
+  .atlas-card:not(:has(.atlas-artwork)) {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 12px;
   }
   .atlas-artwork-literature,
   .atlas-artwork-music {
