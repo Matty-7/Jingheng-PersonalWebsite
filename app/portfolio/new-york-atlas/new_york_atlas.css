@@ -484,6 +484,33 @@ body:has(.atlas-page) {
 .atlas-info-body a {
   text-decoration: underline;
 }
+.atlas-music-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.atlas-info-body .atlas-music-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  text-decoration: none;
+}
+.atlas-music-links .atlas-music-link-apple {
+  color: #fff;
+  background: #fa243c;
+}
+.atlas-music-links .atlas-music-link-spotify {
+  color: #1ed760;
+  background: #121212;
+}
+.atlas-music-link:hover {
+  filter: brightness(1.1);
+}
 .atlas-story img {
   max-height: 240px;
   width: 100%;
