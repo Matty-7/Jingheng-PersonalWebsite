@@ -3,7 +3,8 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { BookOpen, Film, Music2 } from 'lucide-react';
-import * as Leaflet from 'leaflet';
+import leaflet from 'leaflet';
+import type * as Leaflet from 'leaflet';
 import 'leaflet.markercluster';
 import { maplibreGL } from '@maplibre/maplibre-gl-leaflet';
 import { setWorkerUrl } from 'maplibre-gl';
@@ -50,7 +51,6 @@ export const AtlasMap = memo(function AtlasMap({
     let timeout: ReturnType<typeof setTimeout> | undefined;
     void Promise.resolve().then(() => {
       try {
-        const leaflet = Leaflet;
         if (disposed || !container.current) return;
         setWorkerUrl(maplibre_worker_url);
         map = leaflet
