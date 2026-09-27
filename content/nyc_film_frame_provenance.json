@@ -2469,6 +2469,60 @@
       "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/75319.jpg/w/600/h/340/crop/true/nos/5756_marry%20me_coney%20island_0.png",
       "verification": "Selected image visually inspected against the source’s venue attribution. Scene frame, not a comparison photograph.",
       "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "begin-again",
+      "location_id": "washington-square-arch",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/beginagain.html",
+      "original_image": "https://onthesetofnewyork.com/locations/beginagain/beginagain47.jpg",
+      "verification": "Both location guides identify the arch recording scene; source image is attached to Washington Square Park section.",
+      "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "begin-again",
+      "location_id": "bethesda",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/beginagain.html",
+      "original_image": "https://onthesetofnewyork.com/locations/beginagain/beginagain55.jpg",
+      "verification": "Both location guides identify Bethesda Terrace as a recording stop; source image appears in its terrace section.",
+      "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "frances-ha",
+      "location_id": "tompkins-square-park",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/francesha.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/francesha/francesha01.jpg",
+      "verification": "On the Set of New York attaches film screenshots to Tompkins Square Park at East 7th Street and Avenue A; park-centre coordinates deliberately avoid a fictional exact bench.",
+      "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "tick-tick-boom",
+      "location_id": "strand-bookstore",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.extstreet.com/Tick_Tick_Boom.html",
+      "original_image": "https://www.extstreet.com/stills/1972994141028433009549055940.jpg",
+      "verification": "Ext.Street identifies Strand Bookstore, 828 Broadway, with frame time 00:08:34; Netflix confirms the opening number filmed there.",
+      "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "tick-tick-boom",
+      "location_id": "delacorte-theater",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.extstreet.com/Tick_Tick_Boom.html",
+      "original_image": "https://www.extstreet.com/stills/61162818371881423296020738907.jpg",
+      "verification": "Ext.Street identifies the amphitheatre frame at 01:33:37 as Delacorte Theater; Netflix explicitly connects the location with Why.",
+      "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "uncut-gems",
+      "location_id": "sixth-west-50",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.motionpictures.org/2019/12/how-jay-z-connected-the-oscar-hopefuls-of-uncut-gems/",
+      "original_image": "https://www.motionpictures.org/wp-content/uploads/2019/12/UG_03247-1024x621.jpg",
+      "verification": "Cinematographer Darius Khondji describes Howard being pushed into the fountain; Josh Safdie independently identifies Sixth Avenue and 50th Street. Locally inspected A24 image shows Howard soaked in the basin with Radio City behind. Pin marks the public approach, not a claim of exact camera position. Image is conservatively classified as production still; source explicitly credits Courtesy of A24 without naming a photographer.",
+      "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
     }
   ]
 }

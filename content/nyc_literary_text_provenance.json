@@ -336,6 +336,46 @@
       "source_file_sha256": "a0885f70c5214923a69231b4e4aa928f1f0fdc3ea2c929337d4522babd132cfb",
       "excerpt_sha256": "889229e6362af3789b763c742ec1d2df29220ae29a38d2d377bd2fd3951b21c7",
       "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
+    },
+    {
+      "entry_id": "rules-civility-bowery",
+      "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694#tab-book-excerpt",
+      "source_file_sha256": "b916c9a40d40b2144e43594214e882db304f0f88d8dd3438662e37c24d54ea21",
+      "excerpt_sha256": "d0ec1235331a639a6296b275d7d649a0d44a6ca76f5af80e6120d05a7fde4c00",
+      "verification": "Verbatim contiguous excerpt checked against publisher or publisher-supplied novel text; the interpretation is independently written.",
+      "coordinate_source": "Reused existing literary place_id bowery coordinates and Plus Code."
+    },
+    {
+      "entry_id": "harlem-shuffle-radio-row",
+      "source_url": "https://prhinternationalsales.com/book/?isbn=9780385545136#tab-book-excerpt",
+      "source_file_sha256": "28b1ea187b20d2077012660b68c2e07ae54c17ad39b7848ab792d77872089582",
+      "excerpt_sha256": "f429b600d8b5ba8311c6fd0e1246b4f9a2ba381139dad36d4abbd44e84315a35",
+      "verification": "Verbatim contiguous excerpt checked against publisher or publisher-supplied novel text; the interpretation is independently written.",
+      "coordinate_source": "Coordinates from the former Cortlandt Street elevated station (40.71083, -74.0124028); used as an explicitly representative Radio Row area pin."
+    },
+    {
+      "entry_id": "severance-times-square",
+      "source_url": "https://www.bookreporter.com/reviews/severance/excerpt",
+      "source_file_sha256": "cf7648a100d37691fabeb401d2eb0b73d17203b2c3e965f4a378821c542e181d",
+      "excerpt_sha256": "09a6617f85ac254bec8cdae108f47b331b8fd66b08a698871e4bfbafa1e1f057",
+      "verification": "Verbatim contiguous excerpt checked against publisher or publisher-supplied novel text; the interpretation is independently written.",
+      "coordinate_source": "Reused existing literary place_id times-square coordinates and Plus Code."
+    },
+    {
+      "entry_id": "severance-bryant-park",
+      "source_url": "https://www.bookreporter.com/reviews/severance/excerpt",
+      "source_file_sha256": "cf7648a100d37691fabeb401d2eb0b73d17203b2c3e965f4a378821c542e181d",
+      "excerpt_sha256": "b064da12dbad3179da83c85273edb6f068b90df16dfd182a91b73978dd983d27",
+      "verification": "Verbatim contiguous excerpt checked against publisher or publisher-supplied novel text; the interpretation is independently written.",
+      "coordinate_source": "Reused existing literary place_id bryant-park coordinates and Plus Code."
+    },
+    {
+      "entry_id": "little-life-pho-viet-huong",
+      "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258#tab-book-excerpt",
+      "source_file_sha256": "97d17e260298f1ba989f57748cfcef46e34ed78c26b7b4bb385bf2754c0f6892",
+      "excerpt_sha256": "0320f3251fd18c5a79b884216612efe80bdc4d960c5b56378267489daf5aaf06",
+      "verification": "Verbatim contiguous excerpt checked against publisher or publisher-supplied novel text; the interpretation is independently written.",
+      "coordinate_source": "Mapstr structured data and Apple Maps link specify 40.7162382, -73.9992305 for 73 Mulberry Street; historical address corroborated by Time Out and NYC Chinatown storefront archive."
     }
   ]
 }

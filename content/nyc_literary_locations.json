@@ -340,6 +340,74 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:The_poems_of_Emma_Lazarus_volume_1.djvu",
         "credit": "Wikimedia Commons; Internet Archive scan of the 1889 Houghton, Mifflin and Company edition"
       }
+    },
+    {
+      "id": "rules_civility",
+      "title": "Rules of Civility",
+      "author": "Amor Towles",
+      "year": 2011,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694",
+      "text_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694#tab-book-excerpt",
+      "rights": "Copyrighted novel; brief quotation totaling no more than 25 words across this catalog",
+      "cover": {
+        "src": "/images/literary-map/rules-of-civility.jpg",
+        "alt": "Published cover of Rules of Civility by Amor Towles.",
+        "edition": "Viking hardcover, July 26, 2011; ISBN 9780670022694",
+        "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694",
+        "credit": "Viking / Penguin Random House; official publisher cover"
+      }
+    },
+    {
+      "id": "harlem_shuffle",
+      "title": "Harlem Shuffle",
+      "author": "Colson Whitehead",
+      "year": 2021,
+      "kind": "Book",
+      "source_url": "https://prhinternationalsales.com/book/?isbn=9780385545136",
+      "text_url": "https://prhinternationalsales.com/book/?isbn=9780385545136#tab-book-excerpt",
+      "rights": "Copyrighted novel; brief quotation totaling no more than 25 words across this catalog",
+      "cover": {
+        "src": "/images/literary-map/harlem-shuffle.jpg",
+        "alt": "Published cover of Harlem Shuffle by Colson Whitehead.",
+        "edition": "Doubleday hardcover, September 14, 2021; ISBN 9780385545136",
+        "source_url": "https://prhinternationalsales.com/book/?isbn=9780385545136",
+        "credit": "Doubleday / Penguin Random House; official publisher cover"
+      }
+    },
+    {
+      "id": "severance",
+      "title": "Severance",
+      "author": "Ling Ma",
+      "year": 2018,
+      "kind": "Book",
+      "source_url": "https://us.macmillan.com/books/9780374717117/severance/",
+      "text_url": "https://www.bookreporter.com/reviews/severance/excerpt",
+      "rights": "Copyrighted novel; brief quotation totaling no more than 25 words across this catalog",
+      "cover": {
+        "src": "/images/literary-map/severance.jpg",
+        "alt": "Published cover of Severance by Ling Ma.",
+        "edition": "Picador paperback; ISBN 9781250214997",
+        "source_url": "https://read.macmillan.com/lp/severance-picador/",
+        "credit": "Picador / Macmillan; official publisher cover"
+      }
+    },
+    {
+      "id": "little_life",
+      "title": "A Little Life",
+      "author": "Hanya Yanagihara",
+      "year": 2015,
+      "kind": "Book",
+      "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258",
+      "text_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258#tab-book-excerpt",
+      "rights": "Copyrighted novel; brief quotation totaling no more than 25 words across this catalog",
+      "cover": {
+        "src": "/images/literary-map/a-little-life.jpg",
+        "alt": "Published cover of A Little Life by Hanya Yanagihara.",
+        "edition": "Doubleday hardcover, March 10, 2015; ISBN 9780385539258",
+        "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258",
+        "credit": "Doubleday / Penguin Random House; official publisher cover"
+      }
     }
   ],
   "entries": [
@@ -1350,6 +1418,108 @@
       "precision": "Historical venue reference. The passage refers to the Garden near Madison Square, on the site now occupied by the New York Life Building, not today’s arena above Penn Station.",
       "visit_note": "View the former site from Madison Avenue at East 26th Street.",
       "place_source_url": "https://madisonsquarepark.org/community/news/2021/04/history-of-the-new-york-life-building/"
+    },
+    {
+      "id": "rules-civility-bowery",
+      "work_id": "rules_civility",
+      "place_id": "bowery",
+      "place": "The Bowery",
+      "area": "Lower Manhattan",
+      "coordinates": [
+        40.7241447,
+        -73.9926047
+      ],
+      "plus_code": "87G8P2F4+MX",
+      "map_query": "Bowery and East Houston Street New York",
+      "locator": "Opening chapter, Eve Ross and Manhattan society",
+      "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694#tab-book-excerpt",
+      "excerpt": "from an ashcan on the Bowery to a penthouse in paradise.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Katey pictures Manhattan as a steep social ladder with the Bowery at its lowest rung.",
+      "precision": "Street-level reference. The pin reuses the existing Bowery marker; the text identifies no particular building.",
+      "visit_note": "View the street from public sidewalks."
+    },
+    {
+      "id": "harlem-shuffle-radio-row",
+      "work_id": "harlem_shuffle",
+      "place_id": "radio-row",
+      "place": "Radio Row, former Cortlandt Street district",
+      "area": "Financial District, Manhattan",
+      "coordinates": [
+        40.71083,
+        -74.0124028
+      ],
+      "plus_code": "87G7PX6Q+82",
+      "map_query": "Cortlandt Way and Greenwich Street New York",
+      "locator": "Chapter One, Radio Row",
+      "source_url": "https://prhinternationalsales.com/book/?isbn=9780385545136#tab-book-excerpt",
+      "excerpt": "Carney’s man on Radio Row was halfway down Cortlandt, off Greenwich, right in the thick.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Carney visits a downtown repairman, connecting his furniture trade to Radio Row’s vanished electronics shops.",
+      "precision": "Historical area. The pin uses the former Cortlandt Street elevated-station site near Greenwich Street, not an identified address for the fictional shop.",
+      "visit_note": "Explore the present World Trade Center district from public paths; the original Radio Row streetscape no longer survives.",
+      "place_source_url": "https://en.wikipedia.org/wiki/Cortlandt_Street_station_(IRT_Ninth_Avenue_Line)"
+    },
+    {
+      "id": "severance-times-square",
+      "work_id": "severance",
+      "place_id": "times-square",
+      "place": "Times Square",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7573,
+        -73.9858
+      ],
+      "plus_code": "87G8Q247+WM",
+      "map_query": "Times Square New York",
+      "locator": "Chapter 1, morning commute and Spectra office",
+      "source_url": "https://www.bookreporter.com/reviews/severance/excerpt",
+      "excerpt": "At Canal, I transferred to the N to ride all the way to Times Square.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Candace’s commute brings her through Times Square before the office begins responding to Shen Fever.",
+      "precision": "Named district. The pin reuses the existing Times Square marker, not a claimed entrance to the fictional Spectra office.",
+      "visit_note": "Use the public square and surrounding sidewalks."
+    },
+    {
+      "id": "severance-bryant-park",
+      "work_id": "severance",
+      "place_id": "bryant-park",
+      "place": "Bryant Park",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7536,
+        -73.9832
+      ],
+      "plus_code": "87G8Q238+CP",
+      "map_query": "Bryant Park New York",
+      "locator": "Chapter 1, morning commute and Spectra office",
+      "source_url": "https://www.bookreporter.com/reviews/severance/excerpt",
+      "excerpt": "I could see Bryant Park.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "A glimpse of Bryant Park from her office window helps Candace measure the passing years.",
+      "precision": "Named park viewed from a fictional office. The pin marks Bryant Park, not the office or a verified sightline.",
+      "visit_note": "Use the public square and surrounding sidewalks."
+    },
+    {
+      "id": "little-life-pho-viet-huong",
+      "work_id": "little_life",
+      "place_id": "pho-viet-huong",
+      "place": "Pho Viet Huong, former site",
+      "area": "Chinatown, Manhattan",
+      "coordinates": [
+        40.7162382,
+        -73.9992305
+      ],
+      "plus_code": "87G8P282+F8",
+      "map_query": "73 Mulberry Street New York",
+      "locator": "Part I, opening chapter",
+      "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258#tab-book-excerpt",
+      "excerpt": "They were at Pho Viet Huong in Chinatown, where they met twice a month for dinner.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "The four friends trade apartment troubles over an inexpensive dinner at their habitual Chinatown meeting place.",
+      "precision": "Named former restaurant at 73 Mulberry Street. The pin follows the restaurant listing; its interior should not be treated as a current literary attraction.",
+      "visit_note": "The restaurant is listed as permanently closed; view the former address from the public sidewalk.",
+      "place_source_url": "https://mapstr.com/place/eWcY1ErpE2g"
     }
   ]
 }

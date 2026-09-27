@@ -427,6 +427,34 @@
       "year": 2022,
       "director": "Kat Coiro",
       "note": "An unlikely romance moves between Manhattan concert venues and a Coney Island date."
+    },
+    {
+      "id": "begin-again",
+      "title": "Begin Again",
+      "year": 2013,
+      "director": "John Carney",
+      "note": "A singer and a producer turn New York into an outdoor recording studio."
+    },
+    {
+      "id": "frances-ha",
+      "title": "Frances Ha",
+      "year": 2012,
+      "director": "Noah Baumbach",
+      "note": "An aspiring dancer finds her footing among friendships, apartments and city sidewalks."
+    },
+    {
+      "id": "tick-tick-boom",
+      "title": "tick, tick...BOOM!",
+      "year": 2021,
+      "director": "Lin-Manuel Miranda",
+      "note": "Jonathan Larson races toward thirty through the bookstores, theatres and streets of New York."
+    },
+    {
+      "id": "uncut-gems",
+      "title": "Uncut Gems",
+      "year": 2019,
+      "director": "Josh Safdie and Benny Safdie",
+      "note": "A jeweller chases a life-changing score through the Diamond District."
     }
   ],
   "sources": [
@@ -1234,6 +1262,46 @@
       "id": "recent-films-161",
       "label": "On the Set of New York",
       "url": "https://onthesetofnewyork.com/marryme.html"
+    },
+    {
+      "id": "begin-again-reference-1",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/beginagain.html"
+    },
+    {
+      "id": "begin-again-reference-2",
+      "label": "Filming reference · Ext. New York City",
+      "url": "https://extnewyorkcity.wordpress.com/2016/02/16/begin-again-film-locations/"
+    },
+    {
+      "id": "frances-ha-reference-1",
+      "label": "Filming reference · otsoNY",
+      "url": "https://www.onthesetofnewyork.com/francesha.html"
+    },
+    {
+      "id": "tick-tick-boom-reference-1",
+      "label": "Filming reference · Ext. Street",
+      "url": "https://www.extstreet.com/Tick_Tick_Boom.html"
+    },
+    {
+      "id": "tick-tick-boom-reference-2",
+      "label": "Filming reference · Netflix",
+      "url": "https://www.netflix.com/tudum/articles/tick-tick-boom-filming-locations-new-york-city"
+    },
+    {
+      "id": "tick-tick-boom-reference-3",
+      "label": "Place reference · Central Park Conservancy",
+      "url": "https://www.centralparknyc.org/locations/delacorte-theater"
+    },
+    {
+      "id": "uncut-gems-reference-1",
+      "label": "Production reference · The Credits",
+      "url": "https://www.motionpictures.org/2019/12/how-jay-z-connected-the-oscar-hopefuls-of-uncut-gems/"
+    },
+    {
+      "id": "uncut-gems-reference-2",
+      "label": "Filmmaker interview · Le Cinéma Club",
+      "url": "https://www.lecinemaclub.com/journal/behind_the_scenes_of_uncut_gems/"
     }
   ],
   "locations": [
@@ -1759,6 +1827,25 @@
             "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_184.jpg",
             "width": 565,
             "height": 306
+          }
+        },
+        {
+          "film_id": "begin-again",
+          "scene": "Gretta and her band make an outdoor recording at Bethesda Terrace.",
+          "source_ids": [
+            "begin-again-reference-1",
+            "begin-again-reference-2"
+          ],
+          "precision": "venue",
+          "still": {
+            "src": "/images/film-map/begin-again--bethesda.jpg",
+            "thumbnail": "/images/film-map/begin-again--bethesda--thumb.jpg",
+            "alt": "The band records at Bethesda Terrace in Central Park.",
+            "credit": "Begin Again (2013) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/beginagain.html",
+            "image_url": "https://onthesetofnewyork.com/locations/beginagain/beginagain55.jpg",
+            "width": 565,
+            "height": 314
           }
         }
       ]
@@ -3748,6 +3835,26 @@
             "width": 565,
             "height": 240
           }
+        },
+        {
+          "film_id": "uncut-gems",
+          "scene": "Howard is pushed into a fountain near Sixth Avenue and West 50th Street.",
+          "source_ids": [
+            "uncut-gems-reference-1",
+            "uncut-gems-reference-2"
+          ],
+          "precision": "public approach",
+          "still": {
+            "src": "/images/film-map/uncut-gems--sixth-west-50.jpg",
+            "thumbnail": "/images/film-map/uncut-gems--sixth-west-50--thumb.jpg",
+            "alt": "Adam Sandler as Howard Ratner stands soaked in the Sixth Avenue fountain; Radio City is visible behind him.",
+            "credit": "Adam Sandler in Uncut Gems (2019) · Courtesy of A24 · The Credits",
+            "source_url": "https://www.motionpictures.org/2019/12/how-jay-z-connected-the-oscar-hopefuls-of-uncut-gems/",
+            "image_url": "https://www.motionpictures.org/wp-content/uploads/2019/12/UG_03247-1024x621.jpg",
+            "width": 800,
+            "height": 485,
+            "kind": "production_still"
+          }
         }
       ]
     },
@@ -5006,6 +5113,25 @@
             "image_url": "https://onthesetofnewyork.com/locations/whenharrymetsally/whenharrymetsally108.jpg",
             "width": 565,
             "height": 306
+          }
+        },
+        {
+          "film_id": "begin-again",
+          "scene": "Gretta and the band record beneath the Washington Square Arch.",
+          "source_ids": [
+            "begin-again-reference-1",
+            "begin-again-reference-2"
+          ],
+          "precision": "venue",
+          "still": {
+            "src": "/images/film-map/begin-again--washington-square-arch.jpg",
+            "thumbnail": "/images/film-map/begin-again--washington-square-arch--thumb.jpg",
+            "alt": "Gretta and the band record at the Washington Square Arch.",
+            "credit": "Begin Again (2013) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/beginagain.html",
+            "image_url": "https://onthesetofnewyork.com/locations/beginagain/beginagain47.jpg",
+            "width": 565,
+            "height": 314
           }
         }
       ]
@@ -9446,6 +9572,108 @@
             "recent-films-160",
             "recent-films-161"
           ]
+        }
+      ]
+    },
+    {
+      "id": "tompkins-square-park",
+      "name": "Tompkins Square Park",
+      "address": "East 7th Street at Avenue A",
+      "neighborhood": "East Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7264911,
+        -73.9818055
+      ],
+      "access": "Park",
+      "visit_note": "The pin identifies the park, not an exact bench or camera position.",
+      "scenes": [
+        {
+          "film_id": "frances-ha",
+          "scene": "Frances and Sophie spend time together in Tompkins Square Park.",
+          "source_ids": [
+            "frances-ha-reference-1"
+          ],
+          "precision": "park",
+          "still": {
+            "src": "/images/film-map/frances-ha--tompkins-square-park.jpg",
+            "thumbnail": "/images/film-map/frances-ha--tompkins-square-park--thumb.jpg",
+            "alt": "Frances and Sophie in a black-and-white park scene.",
+            "credit": "Frances Ha (2012) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/francesha.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/francesha/francesha01.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "strand-bookstore",
+      "name": "Strand Bookstore",
+      "address": "828 Broadway at East 12th Street",
+      "neighborhood": "East Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.733288,
+        -73.990974
+      ],
+      "access": "Bookstore",
+      "visit_note": "Visit during shop hours and keep aisles clear; the pin marks the store.",
+      "scenes": [
+        {
+          "film_id": "tick-tick-boom",
+          "scene": "Jonathan dances among the books during the opening “30/90” sequence.",
+          "source_ids": [
+            "tick-tick-boom-reference-1",
+            "tick-tick-boom-reference-2"
+          ],
+          "precision": "venue",
+          "still": {
+            "src": "/images/film-map/tick-tick-boom--strand-bookstore.jpg",
+            "thumbnail": "/images/film-map/tick-tick-boom--strand-bookstore--thumb.jpg",
+            "alt": "Jonathan dances in the Strand Bookstore.",
+            "credit": "tick, tick...BOOM! (2021) · Netflix · Ext.Street",
+            "source_url": "https://www.extstreet.com/Tick_Tick_Boom.html",
+            "image_url": "https://www.extstreet.com/stills/1972994141028433009549055940.jpg",
+            "width": 360,
+            "height": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": "delacorte-theater",
+      "name": "Delacorte Theater",
+      "address": "Mid-Park at 80th Street, Central Park",
+      "neighborhood": "Central Park",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.78026,
+        -73.96879
+      ],
+      "access": "Theatre / park approach",
+      "visit_note": "View the exterior from park paths; auditorium access depends on the theatre schedule.",
+      "scenes": [
+        {
+          "film_id": "tick-tick-boom",
+          "scene": "Jonathan sings “Why” at the Delacorte Theater.",
+          "source_ids": [
+            "tick-tick-boom-reference-1",
+            "tick-tick-boom-reference-2",
+            "tick-tick-boom-reference-3"
+          ],
+          "precision": "venue",
+          "still": {
+            "src": "/images/film-map/tick-tick-boom--delacorte-theater.jpg",
+            "thumbnail": "/images/film-map/tick-tick-boom--delacorte-theater--thumb.jpg",
+            "alt": "The Delacorte Theater glows across Turtle Pond at night in tick, tick...BOOM!.",
+            "credit": "tick, tick...BOOM! (2021) · Netflix · Ext.Street",
+            "source_url": "https://www.extstreet.com/Tick_Tick_Boom.html",
+            "image_url": "https://www.extstreet.com/stills/61162818371881423296020738907.jpg",
+            "width": 360,
+            "height": 150
+          }
         }
       ]
     }

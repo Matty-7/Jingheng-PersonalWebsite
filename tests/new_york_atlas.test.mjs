@@ -77,9 +77,9 @@ test('card introductions stop at complete sentences without splitting abbreviate
 });
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.equal(film_catalog.length, 57);
-  assert.equal(literary_works.length, 20);
-  assert.equal(music_tracks.length, 149);
+  assert.equal(film_catalog.length, 61);
+  assert.equal(literary_works.length, 24);
+  assert.equal(music_tracks.length, 155);
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,

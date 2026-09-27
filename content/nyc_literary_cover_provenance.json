@@ -330,6 +330,82 @@
       "rights_note": "Historical 1889 edition title-page scan; public domain in the United States.",
       "alt": "Historical title page of The Poems of Emma Lazarus, Volume I, published by Houghton, Mifflin and Company in 1889.",
       "site_file": "/images/literary-map/poems-emma-lazarus.jpg"
+    },
+    {
+      "id": "rules-of-civility",
+      "work_id": "rules_civility",
+      "title": "Rules of Civility",
+      "author": "Amor Towles",
+      "original_publication_year": 2011,
+      "cover_edition": "Viking hardcover, July 26, 2011; ISBN 9780670022694",
+      "source_page": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694",
+      "image_url": "https://images.penguinrandomhouse.com/cover/9780670022694",
+      "credit": "Viking / Penguin Random House; official publisher cover",
+      "rights_note": "Copyrighted publisher cover; supplied for identification and editorial discussion, not asserted to be public domain.",
+      "alt": "Published cover of Rules of Civility by Amor Towles.",
+      "site_file": "/images/literary-map/rules-of-civility.jpg",
+      "source_image_sha256": "807817ee7c1259c60336dfdfe0aa54e48ca90e53d4a3f35a98a7e18be53ad403",
+      "dimensions": [
+        299,
+        450
+      ]
+    },
+    {
+      "id": "harlem-shuffle",
+      "work_id": "harlem_shuffle",
+      "title": "Harlem Shuffle",
+      "author": "Colson Whitehead",
+      "original_publication_year": 2021,
+      "cover_edition": "Doubleday hardcover, September 14, 2021; ISBN 9780385545136",
+      "source_page": "https://prhinternationalsales.com/book/?isbn=9780385545136",
+      "image_url": "https://images.penguinrandomhouse.com/cover/9780385545136",
+      "credit": "Doubleday / Penguin Random House; official publisher cover",
+      "rights_note": "Copyrighted publisher cover; supplied for identification and editorial discussion, not asserted to be public domain.",
+      "alt": "Published cover of Harlem Shuffle by Colson Whitehead.",
+      "site_file": "/images/literary-map/harlem-shuffle.jpg",
+      "source_image_sha256": "f543749a08e3711a6d69d97a63cf1a9a9ba0808396b51c988fd50e06d1ae2604",
+      "dimensions": [
+        296,
+        450
+      ]
+    },
+    {
+      "id": "severance",
+      "work_id": "severance",
+      "title": "Severance",
+      "author": "Ling Ma",
+      "original_publication_year": 2018,
+      "cover_edition": "Picador paperback; ISBN 9781250214997",
+      "source_page": "https://read.macmillan.com/lp/severance-picador/",
+      "image_url": "https://mpd-biblio-covers.imgix.net/9781250214997.jpg?w=800",
+      "credit": "Picador / Macmillan; official publisher cover",
+      "rights_note": "Copyrighted publisher cover; supplied for identification and editorial discussion, not asserted to be public domain.",
+      "alt": "Published cover of Severance by Ling Ma.",
+      "site_file": "/images/literary-map/severance.jpg",
+      "source_image_sha256": "eb75e57a9b49a6cc800057e80d45ae8556b4a460ef3f821b389ce86d73dbf25e",
+      "dimensions": [
+        518,
+        800
+      ]
+    },
+    {
+      "id": "a-little-life",
+      "work_id": "little_life",
+      "title": "A Little Life",
+      "author": "Hanya Yanagihara",
+      "original_publication_year": 2015,
+      "cover_edition": "Doubleday hardcover, March 10, 2015; ISBN 9780385539258",
+      "source_page": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258",
+      "image_url": "https://images.penguinrandomhouse.com/cover/9780385539258",
+      "credit": "Doubleday / Penguin Random House; official publisher cover",
+      "rights_note": "Copyrighted publisher cover; supplied for identification and editorial discussion, not asserted to be public domain.",
+      "alt": "Published cover of A Little Life by Hanya Yanagihara.",
+      "site_file": "/images/literary-map/a-little-life.jpg",
+      "source_image_sha256": "754e489b56a537b76ae05f00c957ddb97c949defd3644dd902de573b29a4cee7",
+      "dimensions": [
+        295,
+        450
+      ]
     }
   ],
   "magazine": {
