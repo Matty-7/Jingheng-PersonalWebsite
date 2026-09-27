@@ -133,21 +133,25 @@ test('books drag, cancel, move with arrows and restore focus after reading', asy
   await page.mouse.up();
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(page.locator('.book-drag-ghost')).toHaveCount(0);
+  await expect(page.locator('.bookshelf-book.chosen')).toHaveCount(0);
   expect((await first.boundingBox())!.x).toBeGreaterThan(
     (await second.boundingBox())!.x,
   );
   await first.press('ArrowLeft');
   await expect.poll(order).toEqual(original);
+  await expect(page.locator('.bookshelf-book.chosen')).toHaveCount(0);
 
   await drag_to_second();
   await page.keyboard.press('Escape');
   await page.mouse.up();
   await expect.poll(order).toEqual(original);
   await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page.locator('.bookshelf-book.chosen')).toHaveCount(0);
   await first.press('ArrowRight');
   await expect
     .poll(order)
     .toEqual([original[1], original[0], ...original.slice(2)]);
+  await expect(page.locator('.bookshelf-book.chosen')).toHaveCount(0);
   await first.press('Enter');
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.keyboard.press('Escape');
