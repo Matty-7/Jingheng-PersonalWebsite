@@ -54,11 +54,11 @@ test('expanded readings have primary-source provenance and count repeated places
       'utf8',
     ),
   );
-  assert.equal(catalog.works.length, 19);
-  assert.equal(catalog.entries.length, 43);
+  assert.equal(catalog.works.length, 20);
+  assert.equal(catalog.entries.length, 50);
   assert.equal(
     new Set(catalog.entries.map((entry) => entry.place_id)).size,
-    40,
+    47,
   );
   const evidence = new Map(
     provenance.entries.map((entry) => [entry.entry_id, entry]),

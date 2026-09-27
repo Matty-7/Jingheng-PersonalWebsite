@@ -1,5 +1,5 @@
 {
-  "verified_date": "2026-09-20",
+  "verified_date": "2026-09-27",
   "verification": "Original source covers visually inspected. Display copies scaled to at most 600 by 900 pixels and encoded as optimized progressive JPEG from the verified originals; no generated or semantic changes.",
   "books": [
     {
@@ -313,6 +313,23 @@
       "rights_note": "Standard Ebooks production dedicated to CC0; historical artwork identified in colophon.",
       "alt": "Standard Ebooks cover of Sister Carrie by Theodore Dreiser, with a woman standing beside snowy New York streets.",
       "site_file": "/images/literary-map/sister-carrie.jpg"
+    },
+    {
+      "id": "poems-emma-lazarus",
+      "title": "The New Colossus",
+      "author": "Emma Lazarus",
+      "original_publication_year": 1883,
+      "cover_edition": "1889 collected edition, Volume I; historical title page",
+      "dimensions": [
+        960,
+        1625
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_poems_of_Emma_Lazarus_volume_1.djvu",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/The_poems_of_Emma_Lazarus_volume_1.djvu/page9-960px-The_poems_of_Emma_Lazarus_volume_1.djvu.jpg",
+      "credit": "Wikimedia Commons; Internet Archive scan of the 1889 Houghton, Mifflin and Company edition",
+      "rights_note": "Historical 1889 edition title-page scan; public domain in the United States.",
+      "alt": "Historical title page of The Poems of Emma Lazarus, Volume I, published by Houghton, Mifflin and Company in 1889.",
+      "site_file": "/images/literary-map/poems-emma-lazarus.jpg"
     }
   ],
   "magazine": {

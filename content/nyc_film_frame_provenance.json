@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-26",
+  "reviewed_on": "2026-09-27",
   "notes": [
     "Original low-resolution film frames are tied to specific scenes and credited.",
     "No open license or reuse permission is asserted.",
@@ -2126,6 +2126,60 @@
       "original_image": "https://assets.aboutamazon.com/f1/e5/4dcf64754640a6a52a3e3fc711d5/baltmanandcompany-episode-img.jpg",
       "verification": "Midge stands on a snow-dressed sidewalk beside the department-store window displays; the source pairs it with the actual exterior shoot. Official Amazon article identifies this as an image from the episode/scene and credits Amazon Studios; extraction method not established.",
       "rights": "Copyrighted series image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "ellis-island",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-season-4-episode-3-untapped-new-york1.jpg",
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Island-level filming association; the marker identifies the museum approach, not the ceremony position.",
+      "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "sleepless-in-seattle",
+      "location_id": "empire-state-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/sleeplessinseattle.html",
+      "original_image": "https://onthesetofnewyork.com/locations/sleeplessinseattle/sleeplessinseattle40.jpg",
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. The pin identifies the named venue, not the exact camera position.",
+      "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "world-trade-center-original",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/homealone2.html",
+      "original_image": "https://onthesetofnewyork.com/locations/homealone2/homealone2_121.jpg",
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Historical filming location; pin marks the public memorial approach, not a surviving observation deck.",
+      "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "the-shed",
+      "frame_status": "verified_frame",
+      "source_page": "https://bamfstyle.com/2023/07/21/succession-307-kendall-birthday-party/",
+      "original_image": "https://i0.wp.com/bamfstyle.com/wp-content/uploads/2023/07/Succession307Bday-CL-Jacket1.jpg?ssl=1",
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Episode-level venue association confirmed by the cinematographer. The frame illustrates the party sequence; its exact room is not independently identified.",
+      "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "men-in-black",
+      "location_id": "unisphere",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/meninblack.html",
+      "original_image": "https://onthesetofnewyork.com/locations/meninblack/meninblack188.jpg",
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Landmark depicted. The finale combines Queens locations, studio recreations and visual effects; this pin is not a claim that the destruction was filmed here.",
+      "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "woolworth-building",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/10/succcession-filming-locations-season-3-woolworth-tower-residences-pinnacle-apartment-nyc.jpg",
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Filming venue; pin marks the public exterior approach, not the private residence or camera position.",
+      "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
     }
   ]
 }

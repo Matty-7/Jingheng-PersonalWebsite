@@ -1,0 +1,76 @@
+{
+  "reviewed_on": "2026-09-27",
+  "records": [
+    {
+      "track_id": "blinding-lights",
+      "place_id": "edge-hudson-yards",
+      "kind": "Live performance",
+      "source_url": "https://www.hudsonyardsnewyork.com/stories/weeknd-opens-vmas-edge",
+      "metadata_track_id": 1499378607,
+      "verification": "The Weeknd performed this song at Edge for the 2020 MTV Video Music Awards. The preview is the studio recording."
+    },
+    {
+      "track_id": "pa-ti",
+      "place_id": "edge-hudson-yards",
+      "kind": "Music video",
+      "source_url": "https://www.edgenyc.com/news/iconic-moments-at-edge-jlo-and-malumas-pa-ti-music-video/",
+      "metadata_track_id": 1627392965,
+      "verification": "Jennifer Lopez and Maluma filmed scenes for the Pa’ Ti video at Edge in 2020. The preview is the released song."
+    },
+    {
+      "track_id": "cardigan",
+      "place_id": "high-line",
+      "kind": "Lyrics",
+      "source_url": "https://www.shazam.com/song/1524793745/cardigan",
+      "metadata_track_id": 1524801580,
+      "verification": "The song recalls a heartbeat on the High Line. The park is named; an exact meeting place is not."
+    },
+    {
+      "track_id": "statue-of-liberty-xtc",
+      "place_id": "statue-of-liberty",
+      "kind": "Title",
+      "source_url": "https://music.apple.com/us/album/statue-of-liberty/724360813?i=724361211&uo=4",
+      "metadata_track_id": 724361211,
+      "verification": "XTC turns the Statue of Liberty into the subject of a song on White Music. The map follows the named monument."
+    },
+    {
+      "track_id": "sing-sing-sing-carnegie",
+      "place_id": "carnegie-hall",
+      "kind": "Live recording",
+      "source_url": "https://digitalcollections.nypl.org/items/fe2d6520-5235-0136-0619-01d4411f1750",
+      "metadata_track_id": 169856688,
+      "verification": "This recording comes from Benny Goodman’s January 16, 1938 Carnegie Hall concert, issued on the 1950 live album."
+    },
+    {
+      "track_id": "think-apollo",
+      "place_id": "apollo-theater",
+      "kind": "Live recording",
+      "source_url": "https://www.apollotheater.org/history",
+      "metadata_track_id": 1445669276,
+      "verification": "Recorded at the Apollo in 1962 and released in 1963, this performance places James Brown inside the Harlem theater."
+    },
+    {
+      "track_id": "venom-empire-state",
+      "place_id": "empire-state-building",
+      "kind": "Filmed performance",
+      "source_url": "https://www.eminem.com/news/watch-now-eminems-empire-state-building-performance-jimmy-kimmel-live/",
+      "metadata_track_id": 1436078784,
+      "verification": "Eminem performed Venom at the Empire State Building for Jimmy Kimmel Live in 2018. The preview is the studio recording."
+    },
+    {
+      "track_id": "piano-man-yankee-stadium",
+      "place_id": "yankee-stadium-original",
+      "kind": "Live recording",
+      "source_url": "https://www.billyjoel.com/news/billy-joel-live-at-yankee-stadium-in-cinemas-worldwide-in-october/",
+      "metadata_track_id": 1637199842,
+      "verification": "This live edition documents Billy Joel’s June 1990 concerts at the original Yankee Stadium. The selected album was released in 2022."
+    }
+  ],
+  "location_notes": [
+    {
+      "place_id": "yankee-stadium-original",
+      "source_url": "https://www.mlb.com/news/featured/yankee-stadium-guide-capacity-seating-chart-parking-and-more",
+      "verification": "The original stadium site is Heritage Field, not the current stadium to the north. Coordinates identify the historic site."
+    }
+  ]
+}

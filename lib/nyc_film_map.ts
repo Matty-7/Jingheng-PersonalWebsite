@@ -6,6 +6,8 @@ export type FilmScene = {
   film_id: string;
   scene: string;
   source_ids: string[];
+  relationship?: 'Screen setting';
+  precision?: string;
   still?: {
     kind?: 'production_still' | 'episode_image';
     src: string;

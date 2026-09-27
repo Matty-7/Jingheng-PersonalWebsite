@@ -1,0 +1,60 @@
+{
+  "reviewed_on": "2026-09-27",
+  "records": [
+    {
+      "film_id": "succession",
+      "location_id": "ellis-island",
+      "source_ids": [
+        "succession-untapped"
+      ],
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Island-level filming association; the marker identifies the museum approach, not the ceremony position."
+    },
+    {
+      "film_id": "sleepless-in-seattle",
+      "location_id": "empire-state-building",
+      "source_ids": [
+        "sleepless-in-seattle"
+      ],
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. The pin identifies the named venue, not the exact camera position."
+    },
+    {
+      "film_id": "home-alone-2",
+      "location_id": "world-trade-center-original",
+      "source_ids": [
+        "home-alone-2"
+      ],
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Historical filming location; pin marks the public memorial approach, not a surviving observation deck."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "the-shed",
+      "source_ids": [
+        "succession-cinematography",
+        "succession-birthday-frame"
+      ],
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Episode-level venue association confirmed by the cinematographer. The frame illustrates the party sequence; its exact room is not independently identified."
+    },
+    {
+      "film_id": "men-in-black",
+      "location_id": "unisphere",
+      "source_ids": [
+        "men-in-black",
+        "men-in-black-locations"
+      ],
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Landmark depicted. The finale combines Queens locations, studio recreations and visual effects; this pin is not a claim that the destruction was filmed here."
+    },
+    {
+      "film_id": "succession",
+      "location_id": "woolworth-building",
+      "source_ids": [
+        "succession-untapped"
+      ],
+      "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Filming venue; pin marks the public exterior approach, not the private residence or camera position."
+    }
+  ],
+  "excluded": [
+    "35 Hudson Yards editorial collage is not a scene image.",
+    "Waystar office image does not resolve 4 versus 7 World Trade Center.",
+    "Past Lives harbor cruise is not a filming location on Liberty Island."
+  ]
+}
