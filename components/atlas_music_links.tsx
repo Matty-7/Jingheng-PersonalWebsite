@@ -1,13 +1,14 @@
 import type { MusicTrack } from '@/lib/nyc_music_map';
+import { atlas_music_platform_urls } from '@/lib/atlas_sources';
 
 export function AtlasMusicLinks({ track }: { track: MusicTrack }) {
-  const spotify_url = `https://open.spotify.com/search/${encodeURIComponent(`${track.title} ${track.artist}`)}`;
+  const platform_urls = atlas_music_platform_urls(track);
 
   return (
     <nav className="atlas-music-links" aria-label="Music platforms">
       <a
         className="atlas-music-link atlas-music-link-apple"
-        href={track.apple_music_url}
+        href={platform_urls.apple}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Listen to ${track.title} by ${track.artist} on Apple Music`}
@@ -26,7 +27,7 @@ export function AtlasMusicLinks({ track }: { track: MusicTrack }) {
       </a>
       <a
         className="atlas-music-link atlas-music-link-spotify"
-        href={spotify_url}
+        href={platform_urls.spotify}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Find ${track.title} by ${track.artist} on Spotify`}
