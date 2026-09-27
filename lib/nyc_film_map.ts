@@ -41,7 +41,7 @@ export type ScreenWork = {
   note: string;
 } & (
   | { format?: 'film'; director: string }
-  | { format: 'series'; creators: string; end_year: number }
+  | { format: 'series'; creators: string; end_year: number | null }
 );
 
 export function screen_kind(work: ScreenWork) {
@@ -60,7 +60,7 @@ export function screen_credit(work: ScreenWork) {
 
 export function screen_year(work: ScreenWork) {
   return work.format === 'series'
-    ? `${work.year}–${work.end_year}`
+    ? `${work.year}–${work.end_year ?? 'present'}`
     : String(work.year);
 }
 
