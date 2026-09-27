@@ -347,8 +347,8 @@
     },
     {
       "id": "tatiana",
-      "label": "Venue · Tatiana",
-      "url": "https://www.tatianarestaurantnyc.com/"
+      "label": "Filming address · MovieMaps",
+      "url": "https://www.moviemaps.org/locations/e77"
     },
     {
       "id": "ocean-view",
@@ -754,6 +754,11 @@
       "id": "succession-birthday-frame",
       "label": "Episode frame · BAMF Style",
       "url": "https://bamfstyle.com/2023/07/21/succession-307-kendall-birthday-party/"
+    },
+    {
+      "id": "tatiana-director",
+      "label": "Director location visit · The New Yorker",
+      "url": "https://www.newyorker.com/magazine/2024/10/28/brighton-beach-goes-hollywood"
     }
   ],
   "locations": [
@@ -969,24 +974,35 @@
     },
     {
       "id": "tatiana",
-      "name": "Tatiana Restaurant & Nightclub",
-      "address": "3152 Brighton 6th Street",
+      "name": "Tatiana Grill",
+      "address": "3145 Brighton 4th Street",
       "neighborhood": "Brighton Beach",
       "borough": "Brooklyn",
       "coordinates": [
-        40.5754,
-        -73.9612
+        40.57519,
+        -73.9626
       ],
       "access": "Restaurant",
-      "visit_note": "Check with the venue for dining and show access.",
+      "visit_note": "The film records Tatiana Grill at this boardwalk address. The location is now listed as Azure Lounge Restaurant; confirm current access before visiting.",
       "scenes": [
         {
           "film_id": "anora",
           "scene": "Ani and the men look for Ivan at the boardwalk restaurant.",
           "source_ids": [
-            "anora-interview",
-            "tatiana"
-          ]
+            "anora",
+            "tatiana",
+            "tatiana-director"
+          ],
+          "still": {
+            "src": "/images/film-map/anora--tatiana.jpg",
+            "thumbnail": "/images/film-map/anora--tatiana--thumb.jpg",
+            "alt": "Ani and Igor approach Tatiana Grill on the Brighton Beach boardwalk at sunset.",
+            "credit": "Anora (2024) · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/anora.html",
+            "image_url": "https://onthesetofnewyork.com/locations/anora/anora03.jpg",
+            "width": 565,
+            "height": 234
+          }
         }
       ]
     },
@@ -1042,7 +1058,18 @@
           "source_ids": [
             "anora-interview",
             "ocean-view"
-          ]
+          ],
+          "still": {
+            "src": "/images/film-map/anora--ocean-view.jpg",
+            "thumbnail": "/images/film-map/anora--ocean-view--thumb.jpg",
+            "alt": "The blue Ocean View Café storefront sign with the restaurant website and phone number.",
+            "credit": "Location photo · Ocean View Cafe",
+            "source_url": "https://oceanviewcafeny.com/",
+            "image_url": "https://oceanviewcafeny.com/images/ps1.jpg",
+            "width": 960,
+            "height": 449,
+            "kind": "location_photo"
+          }
         }
       ]
     },
@@ -7744,7 +7771,7 @@
             "src": "/images/film-map/succession--ellis-island.jpg",
             "thumbnail": "/images/film-map/succession--ellis-island--thumb.jpg",
             "alt": "Connor and Willa raise their joined hands at their Ellis Island wedding.",
-            "credit": "Succession · Macall B. Polay/HBO via Untapped New York",
+            "credit": "Succession · Production still · Macall B. Polay/HBO via Untapped New York",
             "source_url": "https://www.untappedcities.com/succession-filming-locations-nyc/",
             "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-season-4-episode-3-untapped-new-york1.jpg",
             "width": 800,
@@ -7912,7 +7939,7 @@
             "src": "/images/film-map/succession--woolworth-building.jpg",
             "thumbnail": "/images/film-map/succession--woolworth-building--thumb.jpg",
             "alt": "Roman takes a phone call beside the angled windows of the Woolworth Tower Residences.",
-            "credit": "Succession · Macall B. Polay/HBO via Untapped New York",
+            "credit": "Succession · Production still · Macall B. Polay/HBO via Untapped New York",
             "source_url": "https://www.untappedcities.com/succession-filming-locations-nyc/",
             "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/10/succcession-filming-locations-season-3-woolworth-tower-residences-pinnacle-apartment-nyc.jpg",
             "width": 800,

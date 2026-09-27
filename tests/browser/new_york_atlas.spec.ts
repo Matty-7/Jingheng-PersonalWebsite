@@ -77,7 +77,7 @@ test('film, music and literature share one compact card and keyboard-accessible 
   await expect(page.locator('audio')).not.toHaveAttribute('src');
 });
 
-test('sources retain TV metadata, geographic precision and image failure fallback', async ({
+test('sources retain TV metadata and geographic precision when images fail', async ({
   page,
 }) => {
   await page.route('**/images/**', (route) => route.abort());
@@ -86,13 +86,13 @@ test('sources retain TV metadata, geographic precision and image failure fallbac
   await expect(page.locator('.atlas-eyebrow')).toContainText(
     'TV series · 1994–2004',
   );
-  await expect(page.locator('.atlas-artwork .atlas-image-fallback')).toHaveText(
-    'Image unavailable',
-  );
+  await expect(page.locator('.atlas-artwork')).toHaveCount(0);
+  await expect(page.getByText('Image unavailable')).toHaveCount(0);
   await page.getByRole('button', { name: 'Sources and place details' }).click();
   await expect(page.getByRole('dialog')).toContainText(
     'Created by David Crane and Marta Kauffman',
   );
+  await expect(page.getByRole('dialog').locator('.atlas-still')).toHaveCount(0);
   await page
     .getByRole('button', { name: 'Close details', exact: true })
     .click();
@@ -138,4 +138,93 @@ test('clusters support keyboard expansion and map failure keeps search usable', 
     page.getByRole('link', { name: 'Open in Google Maps' }),
   ).toBeVisible();
   await expect(page.getByRole('button', { name: 'Retry map' })).toBeVisible();
+});
+
+test('missing artwork leaves a compact text card and the next selection restores its image', async ({
+  page,
+}) => {
+  await page.route('**/api/atlas-entry?*', async (route) => {
+    const response = await route.fetch();
+    const detail = await response.json();
+    if (
+      ['film:tatiana:anora', 'film:ocean-view:anora'].includes(detail.entry.id)
+    )
+      delete detail.entry.scene.still;
+    await route.fulfill({ response, json: detail });
+  });
+  await page.goto(atlas_path);
+  for (const query of ['Tatiana Grill', 'Ocean View Cafe']) {
+    await select_search(page, query);
+    await expect(page.locator('.atlas-card')).toHaveAttribute(
+      'aria-busy',
+      'false',
+    );
+    await expect(page.locator('.atlas-artwork')).toHaveCount(0);
+    await expect(page.getByText('Image unavailable')).toHaveCount(0);
+    const card = page.locator('.atlas-card');
+    const copy = card.locator('.atlas-card-copy');
+    await expect(copy).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'Open in Google Maps' }),
+    ).toBeVisible();
+    const card_box = (await card.boundingBox())!;
+    const copy_box = (await copy.boundingBox())!;
+    expect(copy_box.x - card_box.x).toBeLessThan(30);
+    expect(copy_box.width).toBeGreaterThan(card_box.width / 2);
+  }
+  await select_search(page, 'cafe lalo');
+  await expect(page.locator('.atlas-artwork img')).toBeVisible();
+  await expect
+    .poll(() =>
+      page
+        .locator('.atlas-artwork img')
+        .evaluate(
+          (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
+        ),
+    )
+    .toBe(true);
+});
+
+test('failed literature and music covers collapse their whole artwork area', async ({
+  page,
+}) => {
+  await page.route('**/images/**', (route) => route.abort());
+  await page.route('https://*.mzstatic.com/**', (route) => route.abort());
+  await page.goto(atlas_path);
+  for (const query of ['henry james', 'cornelia street']) {
+    await select_search(page, query);
+    await expect(page.locator('.atlas-card')).toHaveAttribute(
+      'aria-busy',
+      'false',
+    );
+    await expect(page.locator('.atlas-artwork')).toHaveCount(0);
+    await expect(page.locator('.atlas-card-copy')).toBeVisible();
+    await expect(page.getByText('Image unavailable')).toHaveCount(0);
+  }
+  await page.unroute('**/images/**');
+  await select_search(page, 'cafe lalo');
+  await expect(page.locator('.atlas-artwork img')).toBeVisible();
+});
+
+test('Anora places have verified artwork and distinguish a venue photo from a film frame', async ({
+  page,
+}) => {
+  await page.goto(atlas_path);
+  for (const query of ['Tatiana Grill', 'Ocean View Cafe']) {
+    await select_search(page, query);
+    await expect(page.locator('.atlas-artwork img')).toBeVisible();
+    await expect
+      .poll(() =>
+        page
+          .locator('.atlas-artwork img')
+          .evaluate(
+            (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
+          ),
+      )
+      .toBe(true);
+  }
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await expect(page.getByRole('dialog').locator('figcaption')).toContainText(
+    'Location photo',
+  );
 });

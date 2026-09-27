@@ -9,7 +9,7 @@ export type FilmScene = {
   relationship?: 'Screen setting';
   precision?: string;
   still?: {
-    kind?: 'production_still' | 'episode_image';
+    kind?: 'production_still' | 'episode_image' | 'location_photo';
     src: string;
     thumbnail: string;
     alt: string;

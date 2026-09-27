@@ -10,25 +10,31 @@ export function AtlasImage({
   alt,
   width,
   height,
+  class_name,
+  children,
 }: {
   src: string;
   alt: string;
   width: number;
   height: number;
+  class_name: string;
+  children?: React.ReactNode;
 }) {
-  const [failed, set_failed] = useState(false);
-  return failed ? (
-    <span className="atlas-image-fallback">Image unavailable</span>
-  ) : (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      unoptimized
-      loading="lazy"
-      onError={() => set_failed(true)}
-    />
+  const [failed_src, set_failed_src] = useState<string | null>(null);
+  if (failed_src === src) return null;
+  return (
+    <figure className={class_name}>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        unoptimized
+        loading="lazy"
+        onError={() => set_failed_src(src)}
+      />
+      {children}
+    </figure>
   );
 }
 
@@ -64,21 +70,21 @@ export const AtlasStory = memo(function AtlasStory({
     return (
       <div className="atlas-story">
         {scene.still && (
-          <figure className="atlas-still">
-            <AtlasImage
-              key={scene.still.src}
-              src={scene.still.src}
-              alt={scene.still.alt}
-              width={scene.still.width}
-              height={scene.still.height}
-            />
+          <AtlasImage
+            key={scene.still.src}
+            src={scene.still.src}
+            alt={scene.still.alt}
+            width={scene.still.width}
+            height={scene.still.height}
+            class_name="atlas-still"
+          >
             <figcaption>
               {scene.still.credit} ·{' '}
               <SourceLink href={scene.still.source_url}>
                 {scene.still.kind ? 'Image source' : 'Frame source'}
               </SourceLink>
             </figcaption>
-          </figure>
+          </AtlasImage>
         )}
         <p>{scene.scene}</p>
         <details className="atlas-notes">
