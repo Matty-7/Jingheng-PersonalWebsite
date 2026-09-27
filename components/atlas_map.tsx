@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { BookOpen, Film, Music2 } from 'lucide-react';
 import type * as Leaflet from 'leaflet';
+import maplibre_worker_url from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import type { AtlasIndexEntry } from '@/lib/atlas_browser';
 
 export function AtlasMap({
@@ -43,11 +44,13 @@ export function AtlasMap({
     void import('leaflet')
       .then(async (module) => {
         const leaflet = module.default ?? module;
-        const [, { maplibreGL }] = await Promise.all([
+        const [, { maplibreGL }, { setWorkerUrl }] = await Promise.all([
           import('leaflet.markercluster'),
           import('@maplibre/maplibre-gl-leaflet'),
+          import('maplibre-gl'),
         ]);
         if (disposed || !container.current) return;
+        setWorkerUrl(maplibre_worker_url);
         map = leaflet
           .map(container.current, {
             zoomControl: false,
