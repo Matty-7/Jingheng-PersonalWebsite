@@ -3,7 +3,12 @@ import { BrandMark } from '@/components/brand_mark';
 import { NewYorkAtlas } from '@/components/new_york_atlas';
 import { google_maps_embed_key } from '@/lib/google_maps_config';
 import { pageMetadata } from '@/lib/seo';
-import { atlas_location } from '@/lib/new_york_atlas';
+import {
+  atlas_location,
+  atlas_index,
+  atlas_counts,
+  atlas_detail,
+} from '@/lib/new_york_atlas';
 import { read_map_selection, type MapSearchParams } from '@/lib/map_location';
 import './new_york_atlas.css';
 
@@ -25,10 +30,17 @@ export default async function NewYorkAtlasPage({
   return (
     <main className="atlas-page">
       <nav className="atlas-nav" aria-label="Projects navigation">
-        <Link href="/" className="brand-link" aria-label="Jingheng Huan home">
+        <Link
+          prefetch={false}
+          href="/"
+          className="brand-link"
+          aria-label="Jingheng Huan home"
+        >
           <BrandMark />
         </Link>
-        <Link href="/#projects">← Projects</Link>
+        <Link prefetch={false} href="/#projects">
+          ← Projects
+        </Link>
       </nav>
       <header className="atlas-heading">
         <h1>
@@ -37,7 +49,12 @@ export default async function NewYorkAtlasPage({
         <p>Film &amp; TV, literature, and music.</p>
       </header>
       <NewYorkAtlas
-        google_maps_key={google_maps_embed_key()}
+        index={atlas_index}
+        counts={atlas_counts}
+        initial_detail={atlas_detail(
+          initial_selection.entry_id,
+          google_maps_embed_key(),
+        )}
         initial_selection={initial_selection}
       />
       <footer className="atlas-footer">
