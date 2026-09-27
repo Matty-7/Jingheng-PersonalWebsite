@@ -17,7 +17,7 @@ import {
   learning_index,
   refinancing_feedback,
 } from '@/lib/mortgage_learning';
-import type { MortgageFormulas } from './mortgage_reader';
+import type { MortgageFormulas } from '@/lib/mortgage_math';
 
 export function MortgageLesson({
   concept,

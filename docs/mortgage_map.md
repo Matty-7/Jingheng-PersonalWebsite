@@ -1,5 +1,7 @@
 # Mortgage Map
 
+These are historical implementation notes. The current interface and implementation are documented in [Mortgage Map learning redesign](mortgage_learning_redesign.md). The September 27 cleanup removed the retired graph, reducer, reader, camera and style modules described below; catalog content and source provenance remain preserved. Current search lives in `lib/mortgage_search.ts`.
+
 On September 12, 2026, Jingheng explicitly requested a public interactive knowledge map in a real Projects section. This is a separate educational reading project. The withdrawn experiment is not restored, redirected or reused.
 
 ## Content model

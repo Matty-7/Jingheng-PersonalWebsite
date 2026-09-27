@@ -131,16 +131,9 @@ import {
   mortgage_paths,
   mortgage_path_models,
 } from '../content/mortgage_concepts.ts';
-import {
-  build_mortgage_graph,
-  build_connection_graph,
-  graph_bounds,
-  fit_camera,
-  zoom_camera,
-  search_concepts,
-} from '../lib/mortgage_graph.ts';
+import { search_concepts } from '../lib/mortgage_search.ts';
 
-test('four-level hierarchy owns each concept once and never overlaps nodes at any depth', () => {
+test('every concept belongs to exactly one topic in its domain', () => {
   const assigned = mortgage_topics.flatMap((t) => t.concepts);
   assert.equal(new Set(assigned).size, mortgage_concepts.length);
   assert.equal(assigned.length, mortgage_concepts.length);
@@ -149,37 +142,6 @@ test('four-level hierarchy owns each concept once and never overlaps nodes at an
     assert.equal(topic?.branch, concept.branch);
     assert.ok(topic.concepts.includes(concept.id));
   }
-  for (const filter of ['all', ...mortgage_branches.map((b) => b.id)]) {
-    for (const depth of [0, 1, 2]) {
-      const nodes = build_mortgage_graph(depth, filter);
-      const ids = new Set(nodes.map((n) => n.id));
-      assert.equal(ids.size, nodes.length);
-      for (const node of nodes) {
-        if (node.parent) assert.ok(ids.has(node.parent));
-        const parents = new Set([node.id]);
-        let parent = node.parent;
-        while (parent) {
-          assert.ok(!parents.has(parent));
-          parents.add(parent);
-          parent = nodes.find((n) => n.id === parent)?.parent;
-        }
-      }
-      for (let i = 0; i < nodes.length; i++)
-        for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i],
-            b = nodes[j];
-          assert.ok(
-            Math.abs(a.x - b.x) >= (a.width + b.width) / 2 ||
-              Math.abs(a.y - b.y) >= (a.height + b.height) / 2,
-            `${filter}/${depth}: ${a.id} overlaps ${b.id}`,
-          );
-        }
-    }
-  }
-  assert.equal(
-    build_mortgage_graph(2).filter((n) => n.kind === 'concept').length,
-    mortgage_concepts.length,
-  );
 });
 
 test('analytical edges are explicit, typed and connected across every domain', () => {
@@ -224,71 +186,20 @@ test('analytical edges are explicit, typed and connected across every domain', (
   }
 });
 
-test('connection studies expose every endpoint and keep cards apart', () => {
-  for (const selected of mortgage_concepts) {
-    const nodes = build_connection_graph(selected.id);
-    const ids = new Set(nodes.map((n) => n.id));
-    for (const edge of mortgage_relationships.filter(
-      (e) => e.source === selected.id || e.target === selected.id,
-    ))
-      assert.ok(ids.has(edge.source) && ids.has(edge.target));
-    assert.equal(ids.size, nodes.length);
-    for (let i = 0; i < nodes.length; i++)
-      for (let j = i + 1; j < nodes.length; j++) {
-        assert.ok(
-          Math.abs(nodes[i].x - nodes[j].x) >= 250 ||
-            Math.abs(nodes[i].y - nodes[j].y) >= 80,
-        );
-      }
-  }
-});
-
-test('search prioritizes exact terms and camera math preserves the zoom anchor', () => {
+test('search prioritizes exact terms and rejects empty or unmatched queries', () => {
   assert.equal(search_concepts('  OAS ')[0].id, 'oas');
   assert.equal(search_concepts('weighted average loan age')[0].id, 'wala');
   assert.equal(search_concepts('no matching mortgage phrase').length, 0);
   assert.equal(search_concepts('').length, 0);
-  const camera = { x: 150, y: 240, scale: 0.6 };
-  const zoomed = zoom_camera(camera, 1.25, 430, 320);
-  assert.ok(
-    Math.abs(
-      (430 - camera.x) / camera.scale - (430 - zoomed.x) / zoomed.scale,
-    ) < 1e-9,
-  );
-  assert.ok(
-    Math.abs(
-      (320 - camera.y) / camera.scale - (320 - zoomed.y) / zoomed.scale,
-    ) < 1e-9,
-  );
-  assert.equal(zoom_camera(camera, 100, 0, 0).scale, 2);
-  assert.equal(zoom_camera(camera, 0.001, 0, 0).scale, 0.07);
-  for (const [width, height] of [
-    [1200, 650],
-    [356, 440],
-  ]) {
-    const bounds = graph_bounds(build_mortgage_graph(2));
-    const fit = fit_camera(bounds, width, height);
-    assert.ok(bounds.width * fit.scale <= width);
-    assert.ok(bounds.height * fit.scale <= height);
-  }
 });
 
 import { atlas_comparisons } from '../content/atlas_extensions.ts';
 import { render_mortgage_math, mortgage_math } from '../lib/mortgage_math.ts';
-import {
-  study_edges,
-  connection_lanes,
-  connection_route,
-} from '../lib/mortgage_graph.ts';
+
 import {
   mechanism_models,
   mechanism_concepts,
 } from '../content/mortgage_mechanisms.ts';
-import {
-  visit_concept,
-  read_concept_hash,
-  concept_hash,
-} from '../lib/mortgage_reading.ts';
 
 test('mechanism paths explain every step and state their limits', () => {
   const ids = new Set(mortgage_concepts.map((c) => c.id));
@@ -336,31 +247,6 @@ test('mortgage lock-in states its units and follows principal timing into rate r
   assert.equal(comparison.kind, 'comparison');
   assert.match(comparison.conditions, /does not mechanically imply/);
   assert.match(mortgage_math.lock_in.variables, /basis points/);
-});
-
-test('reading history branches correctly, stays bounded and accepts only known concept links', () => {
-  let trail = { ids: [], cursor: -1 };
-  trail = visit_concept(trail, 'oas');
-  trail = visit_concept(trail, 'z_spread');
-  assert.deepEqual(visit_concept(trail, 'z_spread'), trail);
-  trail = { ...trail, cursor: 0 };
-  trail = visit_concept(trail, 'duration');
-  assert.deepEqual(trail, { ids: ['oas', 'duration'], cursor: 1 });
-  for (let i = 0; i < 80; i++) trail = visit_concept(trail, `concept_${i}`);
-  assert.equal(trail.ids.length, 60);
-  assert.equal(trail.cursor, 59);
-  const valid = new Set(['oas', 'rate_lock']);
-  assert.equal(
-    read_concept_hash(concept_hash('rate_lock'), valid),
-    'rate_lock',
-  );
-  for (const hash of [
-    '',
-    '#concept=missing',
-    '#concept=%3Cscript%3E',
-    '#unrelated',
-  ])
-    assert.equal(read_concept_hash(hash, valid), null);
 });
 
 test('all displayed formulas render strict TeX with accessible MathML and variable definitions', () => {
@@ -414,36 +300,6 @@ test('comparison rows are complete, navigable, and cover the important independe
   );
 });
 
-test('each connection study has one line per neighbor and label lanes clear every card', () => {
-  for (const c of mortgage_concepts) {
-    const nodes = build_connection_graph(c.id),
-      index = new Map(nodes.map((n) => [n.id, n]));
-    const edges = connection_lanes(c.id);
-    const neighbors = edges.map((e) =>
-      e.source === c.id ? e.target : e.source,
-    );
-    assert.equal(new Set(neighbors).size, neighbors.length, c.id);
-    const labels = [];
-    for (const e of edges) {
-      const route = connection_route(index.get(e.source), index.get(e.target));
-      assert.ok(!/NaN|undefined/.test(route.path));
-      for (const node of nodes)
-        assert.ok(
-          Math.abs(route.x - node.x) >= 108 + node.width / 2 ||
-            Math.abs(route.y - node.y) >= 12 + node.height / 2,
-          `${c.id}: ${e.id} label intersects ${node.id}`,
-        );
-      for (const other of labels)
-        assert.ok(
-          Math.abs(route.x - other.x) >= 216 ||
-            Math.abs(route.y - other.y) >= 24,
-          `${c.id} label collision`,
-        );
-      labels.push(route);
-    }
-  }
-});
-
 // Homepage destinations must survive future catalog changes.
 test('homepage domain entrances and spread filters stay complete and resolve to readers', async () => {
   const { mortgage_domains, mortgage_preview_path } =
@@ -465,37 +321,15 @@ test('homepage domain entrances and spread filters stay complete and resolve to 
   assert.equal(new Set(grouped).size, grouped.length);
 });
 
-test('every concept participates in the analytical network with complete study explanations', () => {
-  for (const c of mortgage_concepts) {
-    const expected = mortgage_relationships.filter(
-      (e) => e.source === c.id || e.target === c.id,
-    );
-    assert.ok(expected.length > 0, `${c.id}: no analytical relationship`);
-    assert.deepEqual(
-      study_edges(c.id)
-        .map((e) => e.id)
-        .sort(),
-      expected.map((e) => e.id).sort(),
-    );
-    assert.deepEqual(
-      connection_lanes(c.id)
-        .flatMap((lane) => lane.relationships.map((e) => e.id))
-        .sort(),
-      expected.map((e) => e.id).sort(),
+test('every concept participates in the analytical network', () => {
+  for (const concept of mortgage_concepts) {
+    assert.ok(
+      mortgage_relationships.some(
+        (edge) => edge.source === concept.id || edge.target === concept.id,
+      ),
+      `${concept.id}: no analytical relationship`,
     );
   }
-  const basis = connection_lanes('basis_risk').find((lane) =>
-    lane.relationships.some((e) => e.source === 'spread_duration'),
-  );
-  assert.ok(
-    basis.relationships.length > 1,
-    'measurement and comparison must both survive',
-  );
-  assert.equal(
-    basis.directed,
-    false,
-    'a mixed relationship lane must not imply one causal arrow',
-  );
 });
 
 test('runoff and structured cash-flow links retain direction, conditions and public references', async () => {

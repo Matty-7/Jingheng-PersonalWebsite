@@ -22,7 +22,7 @@ import {
 } from '@/lib/mortgage_learning';
 import { MortgageCatalog } from './mortgage_catalog';
 import { MortgageLesson } from './mortgage_lesson';
-import type { MortgageFormulas } from './mortgage_reader';
+import type { MortgageFormulas } from '@/lib/mortgage_math';
 import { useLearningProgress } from './use_learning_progress';
 
 export function MortgageMap({
