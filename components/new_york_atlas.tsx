@@ -482,15 +482,6 @@ export function NewYorkAtlas({
             </p>
             <p>{detail.entry.visit_note}</p>
             <AtlasStory detail={detail} />
-            {selected?.medium === 'music' && (
-              <a
-                href={selected.track.apple_music_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Listen on Apple Music
-              </a>
-            )}
           </div>
         )}
       </dialog>
