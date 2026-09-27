@@ -31,12 +31,8 @@ test('all domains and concepts remain available through one catalog', async ({
   await expect(page.getByRole('heading', { level: 2 })).toContainText('HELOC');
   await page.reload();
   await expect(page.getByRole('heading', { level: 2 })).toContainText('HELOC');
-  await page
-    .getByRole('button', { name: 'Back to your learning path' })
-    .click();
-  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-    'When does refinancing make sense?',
-  );
+  await page.goto('/portfolio/mortgage-map');
+  await expect(page.getByRole('heading', { level: 2 })).toContainText('HELOC');
 });
 
 test('existing cross-domain routes can become the active study path', async ({
@@ -48,7 +44,7 @@ test('existing cross-domain routes can become the active study path', async ({
   );
   await page.getByText('Why it matters', { exact: true }).click();
   await expect(page.locator('.learning-formula')).toContainText('+400 bp');
-  await page.getByRole('button', { name: 'View full tree' }).click();
+  await page.getByRole('button', { name: 'All topics', exact: true }).click();
   const dialog = page.getByRole('dialog');
   await dialog
     .getByRole('button', { name: 'Learning routes', exact: true })
@@ -71,5 +67,12 @@ test('existing cross-domain routes can become the active study path', async ({
   );
   await expect(
     page.getByRole('button', { name: 'Back to your learning path' }),
-  ).toBeVisible();
+  ).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Housing turnover',
+  );
+  await expect(page.locator('.learning-route-header')).toContainText(
+    'From mortgage lock-in to MBS rate risk',
+  );
 });

@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   Check,
   ChevronDown,
-  GitBranch,
   TrendingUp,
 } from 'lucide-react';
 import {
@@ -23,18 +22,14 @@ import type { MortgageFormulas } from './mortgage_reader';
 export function MortgageLesson({
   concept,
   formulas,
-  is_detour,
   completed,
   complete,
-  browse,
   choose,
 }: {
   concept: MortgageConcept;
   formulas: MortgageFormulas;
-  is_detour: boolean;
   completed: boolean;
   complete: () => void;
-  browse: () => void;
   choose: (id: string) => void;
 }) {
   const activity_ref = useRef<HTMLDivElement>(null);
@@ -44,13 +39,10 @@ export function MortgageLesson({
   );
   const [new_rate, set_new_rate] = useState(5);
   const [answer, set_answer] = useState<number | null>(null);
-  const [revealed, set_revealed] = useState(false);
-  const [reasoning, set_reasoning] = useState('');
   const check = learning_checks[concept.id];
-  const correct = check && answer === check.correct;
+  const correct = answer === check.correct;
   const feedback = refinancing_feedback(new_rate);
   const formula = formulas[concept.id];
-  const ready = check ? correct : revealed;
   const heading =
     concept.id === 'incentive'
       ? 'When does refinancing make sense?'
@@ -162,64 +154,44 @@ export function MortgageLesson({
             </>
           ) : (
             <div className="learning-check">
-              <p className="learning-eyebrow">
-                {check ? 'CHECK YOUR UNDERSTANDING' : 'THINK IT THROUGH'}
-              </p>
+              <p className="learning-eyebrow">CHECK YOUR UNDERSTANDING</p>
               <h3 tabIndex={-1}>{concept.question}</h3>
-              {check ? (
-                <fieldset
-                  className="learning-choices"
-                  aria-label="Choose an answer"
-                >
-                  {check.choices.map((choice, index) => (
-                    <button
-                      key={choice}
-                      aria-pressed={answer === index}
-                      className={
-                        answer === index
-                          ? correct
-                            ? 'is-correct'
-                            : 'is-incorrect'
-                          : ''
-                      }
-                      onClick={() => set_answer(index)}
-                    >
-                      {answer === index && correct ? (
-                        <Check size={18} aria-hidden="true" />
-                      ) : (
-                        <span
-                          className="learning-choice-dot"
-                          aria-hidden="true"
-                        />
-                      )}
-                      {choice}
-                    </button>
-                  ))}
-                </fieldset>
-              ) : (
-                <label className="learning-reasoning">
-                  Your reasoning <span>(optional)</span>
-                  <textarea
-                    value={reasoning}
-                    onChange={(event) => set_reasoning(event.target.value)}
-                    placeholder="Put the idea in your own words."
-                    rows={3}
-                  />
-                </label>
-              )}
-              {check && answer !== null && (
+              <fieldset
+                className="learning-choices"
+                aria-label="Choose an answer"
+              >
+                {check.choices.map((choice, index) => (
+                  <button
+                    key={choice}
+                    aria-pressed={answer === index}
+                    className={
+                      answer === index
+                        ? correct
+                          ? 'is-correct'
+                          : 'is-incorrect'
+                        : ''
+                    }
+                    onClick={() => set_answer(index)}
+                  >
+                    {answer === index && correct ? (
+                      <Check size={18} aria-hidden="true" />
+                    ) : (
+                      <span
+                        className="learning-choice-dot"
+                        aria-hidden="true"
+                      />
+                    )}
+                    {choice}
+                  </button>
+                ))}
+              </fieldset>
+              {answer !== null && (
                 <div className="learning-answer" aria-live="polite">
                   <strong>
                     {correct
                       ? 'That’s right.'
                       : 'Not quite. Try another answer.'}
                   </strong>
-                  {correct && <p>{concept.answer}</p>}
-                </div>
-              )}
-              {!check && revealed && (
-                <div className="learning-answer" aria-live="polite">
-                  <strong>Compare your reasoning</strong>
                   <p>{concept.answer}</p>
                 </div>
               )}
@@ -236,10 +208,6 @@ export function MortgageLesson({
         </div>
       </section>
       <footer className="learning-footer">
-        <button className="learning-text-button" onClick={browse}>
-          <GitBranch size={17} aria-hidden="true" />
-          View full tree
-        </button>
         {phase === 'explore' ? (
           <button
             className="learning-primary"
@@ -254,24 +222,13 @@ export function MortgageLesson({
           >
             Check understanding <ArrowRight size={18} aria-hidden="true" />
           </button>
-        ) : !check && !revealed ? (
-          <button
-            className="learning-primary"
-            onClick={() => set_revealed(true)}
-          >
-            Reveal explanation <ArrowRight size={18} aria-hidden="true" />
-          </button>
         ) : (
           <button
             className="learning-primary"
-            disabled={!ready}
+            disabled={!correct}
             onClick={complete}
           >
-            {is_detour
-              ? 'Mark understood & return'
-              : completed
-                ? 'Continue learning'
-                : 'Mark understood & continue'}
+            {completed ? 'Continue learning' : 'Mark understood & continue'}
             <ArrowRight size={18} aria-hidden="true" />
           </button>
         )}

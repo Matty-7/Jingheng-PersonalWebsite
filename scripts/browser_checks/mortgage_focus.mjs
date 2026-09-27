@@ -37,7 +37,7 @@ export async function check_mortgage_focus_surface(
     .getByRole('heading', { name: 'SMM', exact: true })
     .waitFor({ state: 'visible' });
   await surface.locator('#learning-title:focus').waitFor({ state: 'attached' });
-  await button('View full tree').press('Enter');
+  await button('All topics').press('Enter');
   await button('Close all topics').press('Shift+Tab');
   assert.equal(await surface.getByRole('dialog').locator(':focus').count(), 1);
   await surface.getByRole('dialog').locator(':focus').press('Tab');

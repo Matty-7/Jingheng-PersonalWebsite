@@ -233,28 +233,6 @@
   grid-column: 3;
   grid-row: 2;
 }
-.learning-return {
-  margin: -8px 3.25% 26px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.learning-return button {
-  background: none;
-  border: 0;
-  padding: 8px 0;
-  min-height: 36px;
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 13px;
-  color: var(--learning-green);
-}
-.learning-return button:last-child {
-  color: var(--learning-muted);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 .learning-stage {
   border-top: 1px solid var(--learning-line);
   display: grid;
@@ -454,13 +432,9 @@
 .learning-footer {
   padding: 22px 3.25% 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
-}
-.learning-footer .learning-text-button {
-  color: #506d61;
-  font-size: 13px;
 }
 .learning-primary {
   border: 1px solid var(--learning-green);
@@ -536,27 +510,6 @@
   margin-top: 10px;
   color: var(--learning-muted);
 }
-.learning-reasoning {
-  color: var(--learning-muted);
-  font-size: 14px;
-}
-.learning-reasoning span {
-  font-size: 12px;
-}
-.learning-reasoning textarea {
-  display: block;
-  width: 100%;
-  resize: vertical;
-  min-height: 105px;
-  border: 1px solid var(--learning-line);
-  border-radius: 8px;
-  padding: 14px;
-  margin-top: 10px;
-  color: inherit;
-  background: transparent;
-  font-size: 15px;
-  line-height: 1.55;
-}
 .learning-announcement {
   position: absolute;
   width: 1px;
@@ -584,7 +537,7 @@
 }
 .learning-catalog header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
 }
@@ -906,13 +859,6 @@
   .node-branch {
     display: none;
   }
-  .learning-return {
-    margin: -6px 22px 22px;
-    gap: 20px;
-  }
-  .learning-return button {
-    font-size: 11px;
-  }
   .learning-stage {
     padding: 26px 22px 0;
     grid-template-columns: 1fr;
@@ -980,9 +926,6 @@
     order: -1;
     min-height: 52px;
     font-size: 14px;
-  }
-  .learning-footer .learning-text-button {
-    font-size: 12px;
   }
   .learning-check > h3 {
     font-size: 21px;
@@ -1133,14 +1076,5 @@
     font-size: 13px;
     padding: 12px 16px;
     gap: 12px;
-  }
-  .learning-footer .learning-text-button {
-    font-size: 0;
-    gap: 0;
-    min-width: 28px;
-  }
-  .learning-footer .learning-text-button svg {
-    width: 20px;
-    height: 20px;
   }
 }

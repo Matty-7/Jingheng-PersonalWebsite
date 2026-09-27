@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ArrowLeft, Check, ChevronDown, Circle, Search } from 'lucide-react';
+import { Check, ChevronDown, Circle, Search } from 'lucide-react';
 import {
   initial_progress,
   learning_index,
@@ -11,6 +11,7 @@ import {
   read_progress,
   route_for_concept,
   route_index,
+  select_lesson,
   type LearningProgress,
 } from '@/lib/mortgage_learning';
 import { MortgageCatalog } from './mortgage_catalog';
@@ -25,7 +26,7 @@ export function MortgageMap({
   home_link: ReactNode;
 }) {
   const [progress, set_progress] = useState<LearningProgress>(initial_progress);
-  const [selected, set_selected] = useState(initial_progress.current_id);
+  const selected = progress.current_id;
   const [loaded, set_loaded] = useState(false);
   const [catalog_open, set_catalog_open] = useState(false);
   const [announcement, set_announcement] = useState('');
@@ -36,7 +37,6 @@ export function MortgageMap({
   const concept = learning_index.get(selected)!;
   const route = route_for_concept(selected, progress.route_id);
   const tree = local_tree(route, selected);
-  const is_detour = selected !== progress.current_id;
   const completed_count = route.steps.filter((id) =>
     progress.completed.includes(id),
   ).length;
@@ -87,29 +87,30 @@ export function MortgageMap({
       /* Learning works when browser storage is unavailable. */
     }
     const frame = requestAnimationFrame(() => {
-      set_progress(saved);
       const from_hash = new URLSearchParams(location.hash.slice(1)).get(
         'concept',
       );
-      set_selected(
-        from_hash && learning_index.has(from_hash)
-          ? from_hash
-          : saved.current_id,
+      const restored = select_lesson(saved, from_hash ?? saved.current_id);
+      set_progress(restored);
+      const url = new URL(location.href);
+      url.hash = `concept=${restored.current_id}`;
+      history.replaceState(
+        { ...history.state, learning_route: restored.route_id },
+        '',
+        url,
       );
       set_loaded(true);
     });
     function restore_location() {
       const id = new URLSearchParams(location.hash.slice(1)).get('concept');
-      if (id && learning_index.has(id)) set_selected(id);
-      else if (!id) {
-        try {
-          set_selected(
-            read_progress(localStorage.getItem(progress_key)).current_id,
-          );
-        } catch {
-          set_selected(saved.current_id);
-        }
-      }
+      set_progress((current) =>
+        select_lesson(
+          current,
+          id ?? saved.current_id,
+          history.state?.learning_route,
+        ),
+      );
+      set_catalog_open(false);
     }
     window.addEventListener('popstate', restore_location);
     window.addEventListener('hashchange', restore_location);
@@ -136,13 +137,16 @@ export function MortgageMap({
         ?.focus({ preventScroll: true }),
     );
   }
-  function choose(id: string) {
+  function choose(id: string, preferred = progress.route_id) {
     if (!learning_index.has(id)) return;
-    set_selected(id);
+    const chosen_route = route_for_concept(id, preferred);
+    set_progress((current) => select_lesson(current, id, chosen_route.id));
     set_catalog_open(false);
     const url = new URL(location.href);
     url.hash = `concept=${id}`;
-    if (location.hash !== url.hash) history.pushState(null, '', url);
+    const state = { ...history.state, learning_route: chosen_route.id };
+    if (location.hash !== url.hash) history.pushState(state, '', url);
+    else history.replaceState(state, '', url);
     focus_lesson();
   }
   function browse() {
@@ -161,23 +165,10 @@ export function MortgageMap({
     const current_id =
       chosen.steps.find((step) => !progress.completed.includes(step)) ??
       chosen.steps[0];
-    set_progress({ ...progress, route_id: chosen.id, current_id });
-    choose(current_id);
-  }
-  function learn_from_here() {
-    set_progress({ ...progress, route_id: route.id, current_id: selected });
-    set_announcement(`Continuing from ${concept.title}.`);
+    choose(current_id, chosen.id);
   }
   function complete() {
     const completed = [...new Set([...progress.completed, selected])];
-    if (is_detour) {
-      set_progress({ ...progress, completed });
-      set_announcement(
-        `${concept.title} marked understood. Back to your learning path.`,
-      );
-      choose(progress.current_id);
-      return;
-    }
     const next = next_lesson(route, selected, completed);
     set_progress({ ...progress, completed, current_id: next ?? selected });
     set_announcement(
@@ -220,15 +211,6 @@ export function MortgageMap({
           {completed_count} of {route.steps.length} understood
         </span>
       </div>
-      {is_detour && (
-        <div className="learning-return">
-          <button onClick={() => choose(progress.current_id)}>
-            <ArrowLeft size={15} aria-hidden="true" />
-            Back to your learning path
-          </button>
-          <button onClick={learn_from_here}>Learn from here</button>
-        </div>
-      )}
       <nav
         ref={tree_ref}
         className="learning-tree"
@@ -268,10 +250,8 @@ export function MortgageMap({
         key={selected}
         concept={concept}
         formulas={formulas}
-        is_detour={is_detour}
         completed={progress.completed.includes(selected)}
         complete={complete}
-        browse={browse}
         choose={choose}
       />
       <p className="learning-announcement" aria-live="polite">
