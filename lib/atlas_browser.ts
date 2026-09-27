@@ -49,11 +49,15 @@ export function search_atlas_index(
     .trim()
     .split(/\s+/)
     .filter(Boolean);
-  return index.filter(
-    (entry) =>
-      (medium === 'all' || entry.medium === medium) &&
-      terms.every((term) => entry.search_text.includes(term)),
-  );
+  return index.filter((entry) => {
+    if (medium !== 'all' && entry.medium !== medium) return false;
+    if (!terms.length) return true;
+    // Reuse display fields instead of shipping them twice in the index.
+    const text = normalize_search_text(
+      [entry.title, entry.place_name, entry.area, entry.search_text].join(' '),
+    );
+    return terms.every((term) => text.includes(term));
+  });
 }
 
 export function create_atlas_location(

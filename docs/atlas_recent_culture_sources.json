@@ -1,0 +1,457 @@
+{
+  "reviewed_on": "2026-09-27",
+  "screen_metadata": [
+    {
+      "id": "materialists",
+      "sources": [
+        {
+          "url": "https://a24films.com/films/materialists",
+          "evidence": "Official A24 page names writer-director Celine Song and year 2025."
+        }
+      ]
+    },
+    {
+      "id": "babygirl",
+      "sources": [
+        {
+          "url": "https://a24films.com/films/babygirl",
+          "evidence": "Official A24 page names writer-director Halina Reijn and year 2024."
+        }
+      ]
+    },
+    {
+      "id": "in-the-heights",
+      "sources": [
+        {
+          "url": "https://press.wbd.com/ca/media-release/hbo-max/hbo-max-celebrate-all-new-event-film-heights-and-other-iconic-series-and-movies",
+          "evidence": "WarnerMedia press release credits director Jon M. Chu and announces June 2021 release."
+        }
+      ]
+    },
+    {
+      "id": "caught-stealing",
+      "sources": [
+        {
+          "url": "https://www.sonypictures.com/movies/caughtstealing",
+          "evidence": "Official Sony Pictures page identifies 2025 film, synopsis, and copyright holders."
+        },
+        {
+          "url": "https://evgrieve.com/2025/08/evg-q-darren-aronofsky-on-caught.html",
+          "evidence": "First-person interview with director Darren Aronofsky about filming his 2025 release in the East Village."
+        }
+      ]
+    },
+    {
+      "id": "and-just-like-that",
+      "sources": [
+        {
+          "url": "https://press.wbd.com/us/media-release/hbo-max/and-just/max-original-and-just-debuts-december-9",
+          "evidence": "Official November 2021 announcement: series from Michael Patrick King debuts December 9, 2021."
+        },
+        {
+          "url": "https://www.vogue.co.uk/article/and-just-like-that-michael-patrick-king-interview",
+          "evidence": "Direct interview explicitly identifies Michael Patrick King as creator."
+        },
+        {
+          "url": "https://x.com/AndJustLikeThat/status/1951311460035928177",
+          "evidence": "Official show account published Michael Patrick King’s August 1, 2025 ending announcement. Direct X fetch was blocked; linked and reproduced by ABC/GMA."
+        },
+        {
+          "url": "https://www.goodmorningamerica.com/culture/story/end-season-3-124283184",
+          "evidence": "Reports and links the official show-account statement that season three is the last."
+        },
+        {
+          "url": "https://press.wbd.com/ca/media-release/season-three-and-just-debuts-may-29",
+          "evidence": "Official HBO Max schedule specifies the final episode date August 14, 2025."
+        }
+      ]
+    },
+    {
+      "id": "gossip-girl-2021",
+      "sources": [
+        {
+          "url": "https://www.hbomaxlapress.com/news/1534",
+          "evidence": "Official May 28, 2021 press release announces July 8 premiere and credits Joshua Safran as writer, executive producer and developer."
+        },
+        {
+          "url": "https://ew.com/tv/gossip-girl-reboot-canceled-hbo-max/",
+          "evidence": "January 19, 2023 article directly reproduces HBO Max spokesperson statement confirming no third season, and gives January 26 finale. This is an official statement carried in the trade press, rather than an HBO-hosted cancellation release."
+        },
+        {
+          "url": "https://www.rottentomatoes.com/tv/gossip_girl_2021",
+          "evidence": "Current listing confirms 2021–2023, two seasons."
+        }
+      ]
+    },
+    {
+      "id": "fallout",
+      "sources": [
+        {
+          "url": "https://www.aboutamazon.com/news/entertainment/amazon-mgm-studios-renews-fallout-season-two",
+          "evidence": "Official April 2024 announcement states global debut April 10 and names Geneva Robertson-Dworet and Graham Wagner as creators and co-showrunners."
+        },
+        {
+          "url": "https://www.aboutamazon.com.au/11-photos-how-prime-videos-fallout-series-brings-the-iconic-video-game-universe-to-life-now-streaming",
+          "evidence": "Official page dated April 12, 2024 confirms the April 10 debut."
+        },
+        {
+          "url": "https://www.aboutamazon.com/news/entertainment/fallout-season-2-season-3-prime-video",
+          "evidence": "Official article updated June 19, 2026 confirms season three is in production and no release date is yet announced. Ongoing status verified before September 27, 2026."
+        }
+      ]
+    }
+  ],
+  "screen_assets": [
+    {
+      "work_id": "materialists",
+      "place_id": "joseph-leonard",
+      "asset": "/images/film-map/materialists--joseph-leonard.jpg",
+      "sha256": "4db17bd4720e42381ed5e1c6fe2d1fa1fd278d1856ec7caa96e87094a54e6a1d",
+      "source_image_sha256": "c0e48223c672ccd7fc3aba375996da0833fb49e2a152f3d981d688496fca646c",
+      "dimensions": [
+        565,
+        303
+      ],
+      "kind": "film_frame",
+      "source_page": "https://onthesetofnewyork.com/materialists.html",
+      "original_image": "https://onthesetofnewyork.com/locations/materialists/materialists10.jpg",
+      "coordinate_source": "https://www.josephleonard.com/info/"
+    },
+    {
+      "work_id": "materialists",
+      "place_id": "nobu-downtown",
+      "asset": "/images/film-map/materialists--nobu-downtown.jpg",
+      "sha256": "26169e36af4484a64a2591f2378702ee84631a86f79662f570d330437fe427cf",
+      "source_image_sha256": "fc3d57944da0cf23d7d7e9e829803c2d2fb77c86061ecfe2c02fa997a6a53f49",
+      "dimensions": [
+        565,
+        303
+      ],
+      "kind": "film_frame",
+      "source_page": "https://onthesetofnewyork.com/materialists.html",
+      "original_image": "https://onthesetofnewyork.com/locations/materialists/materialists36.jpg",
+      "coordinate_source": "https://noburestaurants.com/downtown/contact-and-hours"
+    },
+    {
+      "work_id": "babygirl",
+      "place_id": "united-palace",
+      "asset": "/images/film-map/babygirl--united-palace.jpg",
+      "sha256": "bea884b76b81a99931956974df5cd3f23ed160979c66b761ca9b6ccb653a177c",
+      "source_image_sha256": "f384b5ba4bf33a4de8e2d57fcb76dcf115951a81502dc698f45e9f1cedebca56",
+      "dimensions": [
+        565,
+        282
+      ],
+      "kind": "film_frame",
+      "source_page": "https://onthesetofnewyork.com/babygirl.html",
+      "original_image": "https://onthesetofnewyork.com/locations/babygirl/babygirl17.jpg",
+      "coordinate_source": "https://www.latlong.net/place/united-palace-ny-usa-32708.html"
+    },
+    {
+      "work_id": "babygirl",
+      "place_id": "the-nines",
+      "asset": "/images/film-map/babygirl--the-nines.jpg",
+      "sha256": "131cf705159bd3ca028c133c8c7aa8a203c4cd4c74c8083ae88832bdf0f76907",
+      "source_image_sha256": "283451b40c9bfa3724f8196cd8bb89cf13ca22461dfac775fabab507838547c2",
+      "dimensions": [
+        565,
+        282
+      ],
+      "kind": "film_frame",
+      "source_page": "https://onthesetofnewyork.com/babygirl.html",
+      "original_image": "https://onthesetofnewyork.com/locations/babygirl/babygirl35.jpg",
+      "coordinate_source": "https://maps.apple.com/place?_provider=9902&address=9+Great+Jones+St%2C+New+York%2C+NY++10012%2C+United+States&coordinate=40.7273218%2C-73.9939767&name=The+Nines&place-id=I1C79637CFD70A2DA"
+    },
+    {
+      "work_id": "in-the-heights",
+      "place_id": "highbridge-pool",
+      "asset": "/images/film-map/in-the-heights--highbridge-pool.jpg",
+      "sha256": "973cd6f8b9cd968d576b4ef669352dafc16cd60ef217f6ea2506479c1397d741",
+      "source_image_sha256": "33621b0221366046bc301db106d06d40b019571ae5d42edd73acaba253e33556",
+      "dimensions": [
+        800,
+        533
+      ],
+      "kind": "production_still",
+      "source_page": "https://www.untappedcities.com/filming-locations-in-the-heights/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/06/in-the-heights-filming.-location-highbridge-pool-washington-heights-nyc.jpg",
+      "coordinate_source": "https://mapcarta.com/W104672329"
+    },
+    {
+      "work_id": "in-the-heights",
+      "place_id": "cooper-triangle",
+      "asset": "/images/film-map/in-the-heights--cooper-triangle.jpg",
+      "sha256": "e821bafe913963649a8080bcf2ac0d912b1bfff8276ee1502eb87151cd84c2d6",
+      "source_image_sha256": "af81c3faf7b1068d32fb7d68b2e1fcb75e20a63ebe4b1ae2ec4e3771d0bbcddc",
+      "dimensions": [
+        800,
+        335
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.untappedcities.com/filming-locations-in-the-heights/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/06/in-the-heights-filming-location-cooper-triangle-east-village-nyc.jpg",
+      "coordinate_source": "https://mapcarta.com/25042374"
+    },
+    {
+      "work_id": "caught-stealing",
+      "place_id": "double-down-saloon",
+      "asset": "/images/film-map/caught-stealing--double-down-saloon.jpg",
+      "sha256": "f922e446517a36414489c5b4c0d19e67a54d6aa9b46b6ca313d041968e738dc6",
+      "source_image_sha256": "73355a7991198e77e90a958109bd86709e88b9bbe49791e7ca5be8421784a1c4",
+      "dimensions": [
+        360,
+        194
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.extstreet.com/Caught_Stealing.html",
+      "original_image": "https://www.extstreet.com/stills/49111560876275963560408864075.jpg",
+      "coordinate_source": "https://mapcarta.com/N6030861392"
+    },
+    {
+      "work_id": "caught-stealing",
+      "place_id": "nathans-famous-coney",
+      "asset": "/images/film-map/caught-stealing--nathans-famous-coney.jpg",
+      "sha256": "af46882d70a1e0da6e6074aa5c9163767076b2e24443f8d79c8f22fa05ca57fd",
+      "source_image_sha256": "12928abcd729536eb8883093907a3dd598b0fd6fa176af8f5d52620e02073bc5",
+      "dimensions": [
+        360,
+        194
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.extstreet.com/Caught_Stealing.html",
+      "original_image": "https://www.extstreet.com/stills/1522458387164554870372674877673.jpg",
+      "coordinate_source": "https://www.latlong.net/place/nathan-s-famous-ny-usa-31635.html"
+    },
+    {
+      "work_id": "and-just-like-that",
+      "place_id": "whitney-cafe",
+      "asset": "/images/film-map/and-just-like-that--whitney-cafe.jpg",
+      "sha256": "b59bd6e128c377c887f9fa5a12b1e174266a74739c2ab7db1eb58e5e790e10d7",
+      "source_image_sha256": "7b2fc259df99224de6b648eefd6b9d9d3928c47e48faba525c28721e228fb253",
+      "dimensions": [
+        800,
+        394
+      ],
+      "kind": "episode_frame",
+      "source_page": "https://www.sceen-it.com/sceen/5674/And-Just-Like-That/The-Whitney-Caf",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/76316.jpg/nos/.jpg",
+      "coordinate_source": "https://www.latlong.net/place/whitney-museum-of-american-art-ny-usa-32794.html"
+    },
+    {
+      "work_id": "and-just-like-that",
+      "place_id": "empire-diner",
+      "asset": "/images/film-map/and-just-like-that--empire-diner.jpg",
+      "sha256": "ed4e50b6534057bb15ac9f111b5926263f46c7063b37dd97fc037d9bc9263f5f",
+      "source_image_sha256": "5e06a61008e3734a22012a402853ed164d2d7645411f75d2d3f1818de927a903",
+      "dimensions": [
+        800,
+        424
+      ],
+      "kind": "episode_frame",
+      "source_page": "https://www.sceen-it.com/sceen/5905/And-Just-Like-That/Empire-Diner",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/77577.jpg/nos/.jpg",
+      "coordinate_source": "https://www.latlong.net/poi/empire-diner-120589"
+    },
+    {
+      "work_id": "gossip-girl-2021",
+      "place_id": "museum-city-new-york",
+      "asset": "/images/film-map/gossip-girl-2021--museum-city-new-york.jpg",
+      "sha256": "78543df6432e066a9b9f607dd53590279ac98273e34ab4e10e3b9c66ca74d8ea",
+      "source_image_sha256": "c58ef9d2518230f411fa8c5a0e995c7298e0e96e1e84b5809ed209d4ccdb9c25",
+      "dimensions": [
+        800,
+        533
+      ],
+      "kind": "production_still",
+      "source_page": "https://www.untappedcities.com/gossip-girl-filming-locations/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/07/cast-of-gossip-girl-reboot-filming-locations-museum-of-the-city-of-new-york-constance-billard-school-for-girls-st-jude-school-for-boys-nyc.jpg",
+      "coordinate_source": "https://en.wikipedia.org/wiki/Museum_of_the_City_of_New_York"
+    },
+    {
+      "work_id": "gossip-girl-2021",
+      "place_id": "met",
+      "asset": "/images/film-map/gossip-girl-2021--met.jpg",
+      "sha256": "a8de3c7285525c78cf04b1211a559dc9c430106b3c5c2419fed73977aa899b8c",
+      "source_image_sha256": "f49ea1bb3b4b1eadd1d7bab38120294c75f661c9ec769f50651c6e64ee6ad728",
+      "dimensions": [
+        800,
+        533
+      ],
+      "kind": "production_still",
+      "source_page": "https://www.untappedcities.com/gossip-girl-filming-locations/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/07/cast-of-gossip-girl-reboot-filming-locations-metropolitan-museum-of-art-met-steps-nyc.jpg",
+      "coordinate_source": "Existing catalog met ID and coordinates; official venue map: https://www.metmuseum.org/plan-your-visit"
+    },
+    {
+      "work_id": "fallout",
+      "place_id": "brooklyn-army-terminal",
+      "asset": "/images/film-map/fallout--brooklyn-army-terminal.jpg",
+      "sha256": "87a3a91db763803e63d238e6d38070b7e580f24170af0a92434fad8771285bdf",
+      "source_image_sha256": "23cc48d6a451dbf7d8b747dd44e4d0f769268e740aead1a92e44b742c231c3fc",
+      "dimensions": [
+        800,
+        450
+      ],
+      "kind": "episode_frame",
+      "source_page": "https://www.atlasofwonders.com/2024/04/where-was-fallout-filmed.html",
+      "original_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRuI3Mz9vo3uaTTFVqTgdlRTyc9zCaH3QPZN5SP9pIKSIw0dwUZQqTJeuxxxqMsyb88S9Jly6lAFOcNZQgjFqG6UExy3bhjIYnqwl6ZT2mdVxIMJ1evTpzKaJdQO3XAi2XkKBR3QHBskBiiz2kMdb9Q_tnbsSh23TN7wU5B00TQytNwGM/s1600/3.jpg",
+      "coordinate_source": "https://www.atlasobscura.com/places/brooklyn-army-terminal-building-b"
+    }
+  ],
+  "music_metadata": [
+    {
+      "id": "brooklyn-maisie-peters",
+      "track_id": 1571697503,
+      "metadata_source": "https://itunes.apple.com/search?term=Maisie+Peters+Brooklyn&entity=song&country=us&limit=10",
+      "metadata_release_date": "2021-08-11T07:00:00Z",
+      "display_year": 2021,
+      "relationship_source": "https://celebmix.com/interview-maisie-peters-on-her-debut-album-you-signed-up-for-this/",
+      "additional_source": null
+    },
+    {
+      "id": "chinatown-bleachers",
+      "track_id": 1567285160,
+      "metadata_source": "https://itunes.apple.com/search?term=Bleachers+Chinatown&entity=song&country=us&limit=10",
+      "metadata_release_date": "2021-05-22T07:00:00Z",
+      "display_year": 2020,
+      "relationship_source": "https://www.sonymusic.ca/press_release/bleachers-release-two-new-tracks-chinatown-feat-bruce-springsteen-and-45-out-now",
+      "additional_source": "https://electricladystudios.com/bleachers-on-the-roof-live-at-electric-lady-ft-bruce-springsteen/"
+    },
+    {
+      "id": "feather-sabrina-carpenter",
+      "track_id": 1677892279,
+      "metadata_source": "https://itunes.apple.com/search?term=Sabrina+Carpenter+Feather&entity=song&country=us&limit=10",
+      "metadata_release_date": "2023-03-17T07:00:00Z",
+      "display_year": 2023,
+      "relationship_source": "https://apnews.com/article/52bcc40c18a934aa518be720b9c531dc",
+      "additional_source": null
+    },
+    {
+      "id": "360-charli-xcx",
+      "track_id": 1762679426,
+      "metadata_source": "https://itunes.apple.com/search?term=Charli+XCX+360&entity=song&country=us&limit=10",
+      "metadata_release_date": "2024-05-10T12:00:00Z",
+      "display_year": 2024,
+      "relationship_source": "https://www.papermag.com/charli-xcx-times-square-hm",
+      "additional_source": null
+    },
+    {
+      "id": "houdini-dua-lipa",
+      "track_id": 1714502827,
+      "metadata_source": "https://itunes.apple.com/search?term=Dua+Lipa+Houdini&entity=song&country=us&limit=10",
+      "metadata_release_date": "2023-11-09T08:00:00Z",
+      "display_year": 2023,
+      "relationship_source": "https://digital.abcaudio.com/news/icymi-watch-dua-lipas-surprise-may-5-show-new-yorks-times-square-now",
+      "additional_source": null
+    },
+    {
+      "id": "im-in-love-with-you-msg",
+      "track_id": 1711626459,
+      "metadata_source": "https://itunes.apple.com/lookup?id=1711626078&entity=song&country=us",
+      "metadata_release_date": "2022-07-11T07:00:00Z",
+      "display_year": 2023,
+      "relationship_source": "https://store.dirtyhit.co.uk/release/422621-the-1975-at-their-very-best-live-from-msg-double-vinyl",
+      "additional_source": null
+    },
+    {
+      "id": "new-york-addison-rae",
+      "track_id": 1809015426,
+      "metadata_source": "https://itunes.apple.com/search?term=Addison+Rae+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "2025-06-06T12:00:00Z",
+      "display_year": 2025,
+      "relationship_source": "https://www.teenvogue.com/story/addison-rae-became-a-full-blown-pop-star-at-the-box-in-new-york-city",
+      "additional_source": null
+    },
+    {
+      "id": "birds-of-a-feather-billie-eilish",
+      "track_id": 1739659142,
+      "metadata_source": "https://itunes.apple.com/search?term=Billie+Eilish+Birds+of+a+Feather&entity=song&country=us&limit=10",
+      "metadata_release_date": "2024-05-17T07:00:00Z",
+      "display_year": 2024,
+      "relationship_source": "https://people.com/billie-eilish-performs-on-snl-with-brother-finneas-8730550",
+      "additional_source": null
+    },
+    {
+      "id": "get-him-back-olivia-rodrigo",
+      "track_id": 1694768053,
+      "metadata_source": "https://itunes.apple.com/search?term=Olivia+Rodrigo+get+him+back&entity=song&country=us&limit=10",
+      "metadata_release_date": "2023-09-08T12:00:00Z",
+      "display_year": 2023,
+      "relationship_source": "https://www.nme.com/news/music/watch-olivia-rodrigo-debut-get-him-back-live-on-the-today-show-3495486",
+      "additional_source": null
+    },
+    {
+      "id": "what-was-that-lorde",
+      "track_id": 1810905307,
+      "metadata_source": "https://itunes.apple.com/search?term=Lorde+What+Was+That&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-04-24T07:00:00Z",
+      "display_year": 2025,
+      "relationship_source": "https://electricladystudios.com/lorde-releases-new-single-what-was-that-recorded-at-electric-lady-studios/",
+      "additional_source": null
+    },
+    {
+      "id": "silver-lining-laufey",
+      "track_id": 1802075065,
+      "metadata_source": "https://itunes.apple.com/search?term=Laufey+Silver+Lining&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-04-03T12:00:00Z",
+      "display_year": 2025,
+      "relationship_source": "https://electricladystudios.com/laufey-releases-new-single-silver-lining-recorded-at-electric-lady-studios/",
+      "additional_source": null
+    }
+  ],
+  "music_places": [
+    {
+      "id": "electric-lady-studios",
+      "coordinate_source": "https://musicbrainz.org/place/bc5d4673-bff2-4f9a-867c-38317e4dc9ed",
+      "plus_code": "87G8P2M2+6C",
+      "coordinate_note": "Public source coordinates; no paid geocoding."
+    },
+    {
+      "id": "annunciation-bvm",
+      "coordinate_source": "https://mapcarta.com/25020732",
+      "plus_code": "87G8P27W+Q4",
+      "coordinate_note": "Public source coordinates; no paid geocoding."
+    },
+    {
+      "id": "times-square",
+      "coordinate_source": "Existing venue coordinates in content/nyc_film_locations.json",
+      "plus_code": "87G8Q247+WM",
+      "coordinate_note": "Existing screen-map venue pin reused."
+    },
+    {
+      "id": "nbc-studio-8h",
+      "coordinate_source": "https://mapcarta.com/W487519790",
+      "plus_code": "87G8Q25C+M4",
+      "coordinate_note": "Public source coordinates; no paid geocoding."
+    },
+    {
+      "id": "madison-square-garden",
+      "coordinate_source": "Existing venue coordinates in content/nyc_film_locations.json",
+      "plus_code": "87G8Q224+6H",
+      "coordinate_note": "Existing screen-map venue pin reused."
+    },
+    {
+      "id": "the-box",
+      "coordinate_source": "https://maps.apple.com/place?_provider=9902&coordinate=40.721889%2C-73.9922757&place-id=I19976344BC86279E&query=The+Box",
+      "plus_code": "87G8P2C5+Q3",
+      "coordinate_note": "Public source coordinates; no paid geocoding."
+    }
+  ],
+  "music_date_notes": [
+    "Chinatown uses the original 2020 single year from Sony Music; Apple returns a 2021 date for the selected album recording.",
+    "The 1975 live edition was released in 2023. The title gives the concert date in day.month.year order: 7 November 2022. Apple’s raw 2022-07-11 date is retained for traceability, not treated as the performance date."
+  ],
+  "additional_sources": {
+    "studio_8h_address": "https://www.rockefellercenter.com/magazine/arts-culture/nbc-studio-tour-shows-tickets/",
+    "annunciation_address": "https://mountcarmel-annunciation.com/contact",
+    "the_box_address": "https://theboxnyc.com/contact/",
+    "olivia_official_performance": "https://www.youtube.com/watch?v=2JCtYJfdVzY",
+    "lorde_indexed_studio_announcement": "https://electricladystudios.com/posts/"
+  },
+  "asset_notes": [
+    "All 13 selected images visually inspected by parent. No image was enlarged. Two Caught Stealing source frames are 360 × 194.",
+    "Three production photographs carry visible Production still credits. Other selected images are film or episode frames.",
+    "Artwork and preview URLs use the selected Apple recording, not the linked live/video performance unless explicitly labeled Live recording.",
+    "Plus Codes generated offline with Google’s official Open Location Code JavaScript implementation."
+  ]
+}

@@ -41,6 +41,10 @@ test('lightweight search preserves every catalog field and ordered result', () =
       entry.title,
       entry.creator,
       entry.place_name,
+      String(atlas_year(entry)),
+      entry.area,
+      entry.relationship,
+      entry.medium === 'film' ? entry.location.address : '',
     ]),
     ...atlas_areas.map((area) => area.name),
   ]);

@@ -2901,6 +2901,339 @@
           "source_label": "Billy Joel · concert and release notes"
         }
       ]
+    },
+    {
+      "id": "brooklyn-maisie-peters",
+      "title": "Brooklyn",
+      "artist": "Maisie Peters",
+      "album": "You Signed Up For This (Apple Music Edition)",
+      "year": 2021,
+      "genre": "Pop",
+      "track_id": 1571697503,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e0/d9/08/e0d90890-427e-665a-28e7-abef4cd531b0/190296612626.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f6/91/84/f69184c4-54fd-9b45-c0d0-f4b41c79f038/mzaf_10554996551940184615.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/brooklyn/1571697083?i=1571697503&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Maisie+Peters+Brooklyn&entity=song&country=us&limit=10",
+      "metadata_release_date": "2021-08-11T07:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title names Brooklyn, recalling a New York trip with Peters’ twin sister. No particular street is implied.",
+      "source_url": "https://celebmix.com/interview-maisie-peters-on-her-debut-album-you-signed-up-for-this/",
+      "source_label": "Maisie Peters · interview"
+    },
+    {
+      "id": "chinatown-bleachers",
+      "title": "Chinatown (feat. Bruce Springsteen)",
+      "artist": "Bleachers",
+      "album": "Take the Sadness Out of Saturday Night",
+      "year": 2020,
+      "genre": "Alternative",
+      "track_id": 1567285160,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/87/b4/90/87b49017-ae3f-888a-0d0c-bab4eaeb1077/886449225101.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/19/2d/df/192ddf18-6382-27c3-8027-9722a3463899/mzaf_6888457475991021999.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/chinatown-feat-bruce-springsteen/1567285157?i=1567285160&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bleachers+Chinatown&entity=song&country=us&limit=10",
+      "metadata_release_date": "2021-05-22T07:00:00Z",
+      "place_ids": [
+        "chinatown",
+        "electric-lady-studios"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "The title starts in New York’s Chinatown; Antonoff describes a journey back to New Jersey.",
+      "source_url": "https://www.sonymusic.ca/press_release/bleachers-release-two-new-tracks-chinatown-feat-bruce-springsteen-and-45-out-now",
+      "source_label": "Sony Music · single announcement",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Filmed performance",
+          "note": "Bleachers and Bruce Springsteen performed Chinatown on Electric Lady’s roof in 2020. The preview is the studio recording.",
+          "source_url": "https://electricladystudios.com/bleachers-on-the-roof-live-at-electric-lady-ft-bruce-springsteen/",
+          "source_label": "Electric Lady Studios · rooftop performance"
+        }
+      ]
+    },
+    {
+      "id": "feather-sabrina-carpenter",
+      "title": "Feather",
+      "artist": "Sabrina Carpenter",
+      "album": "emails i can't send fwd:",
+      "year": 2023,
+      "genre": "Pop",
+      "track_id": 1677892279,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/73/ae/bc/73aebca9-6c0c-4392-e083-71913b6b590d/23UMGIM16393.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/07/4b/f1/074bf191-a02c-1d76-5d94-49256f99af6f/mzaf_7725821736642193910.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/feather/1677891658?i=1677892279&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sabrina+Carpenter+Feather&entity=song&country=us&limit=10",
+      "metadata_release_date": "2023-03-17T07:00:00Z",
+      "place_ids": [
+        "annunciation-bvm"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "The Feather video uses Annunciation Church in Williamsburg for its funeral sequence. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/feather/1677891658?i=1677892279&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "annunciation-bvm",
+          "kind": "Music video",
+          "note": "The Feather video uses Annunciation Church in Williamsburg for its funeral sequence. The preview is the studio recording.",
+          "source_url": "https://apnews.com/article/52bcc40c18a934aa518be720b9c531dc",
+          "source_label": "Associated Press · video location"
+        }
+      ]
+    },
+    {
+      "id": "360-charli-xcx",
+      "title": "360",
+      "artist": "Charli xcx",
+      "album": "360 - Single",
+      "year": 2024,
+      "genre": "Dance",
+      "track_id": 1762679426,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/d5/09/7ed50926-eadd-40a8-cf87-85c17f212bb4/075679634283.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6a/b2/36/6ab236ac-6b8e-60e4-aa77-8e73c7127ebc/mzaf_17637473173165118705.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/360/1762679425?i=1762679426&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Charli+XCX+360&entity=song&country=us&limit=10",
+      "metadata_release_date": "2024-05-10T12:00:00Z",
+      "place_ids": [
+        "times-square"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Charli xcx performed 360 during her Times Square pop-up in November 2024. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/360/1762679425?i=1762679426&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "times-square",
+          "kind": "Live performance",
+          "note": "Charli xcx performed 360 during her Times Square pop-up in November 2024. The preview is the studio recording.",
+          "source_url": "https://www.papermag.com/charli-xcx-times-square-hm",
+          "source_label": "PAPER · Times Square performance"
+        }
+      ]
+    },
+    {
+      "id": "houdini-dua-lipa",
+      "title": "Houdini",
+      "artist": "Dua Lipa",
+      "album": "Houdini - Single",
+      "year": 2023,
+      "genre": "Pop",
+      "track_id": 1714502827,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/dd/af/ea/ddafeab5-797a-5b6f-7735-f96c537b45e0/5054197894091.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2c/da/b5/2cdab5c6-04a8-5231-c697-00101e876479/mzaf_5586859405346659517.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/houdini/1714502820?i=1714502827&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Dua+Lipa+Houdini&entity=song&country=us&limit=10",
+      "metadata_release_date": "2023-11-09T08:00:00Z",
+      "place_ids": [
+        "times-square"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Dua Lipa performed Houdini in Times Square on May 5, 2024. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/houdini/1714502820?i=1714502827&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "times-square",
+          "kind": "Live performance",
+          "note": "Dua Lipa performed Houdini in Times Square on May 5, 2024. The preview is the studio recording.",
+          "source_url": "https://digital.abcaudio.com/news/icymi-watch-dua-lipas-surprise-may-5-show-new-yorks-times-square-now",
+          "source_label": "ABC Audio · Times Square performance"
+        }
+      ]
+    },
+    {
+      "id": "im-in-love-with-you-msg",
+      "title": "I’m In Love With You (Live from Madison Square Garden, New York, 07.11.22)",
+      "artist": "The 1975",
+      "album": "At Their Very Best (Live from Madison Square Garden, New York, 07.11.22)",
+      "year": 2023,
+      "genre": "Alternative",
+      "track_id": 1711626459,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/62/47/88/62478821-ffdd-0abe-ae9c-de8b4e2308b4/196922670886_Cover.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/99/5a/d9/995ad97c-abb8-5c5f-74f7-fd2f34cd4004/mzaf_5381683128717558413.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/im-in-love-with-you-live-from-madison-square-garden/1711626078?i=1711626459&uo=4",
+      "metadata_source": "https://itunes.apple.com/lookup?id=1711626078&entity=song&country=us",
+      "metadata_release_date": "2022-07-11T07:00:00Z",
+      "place_ids": [
+        "madison-square-garden"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Recorded at Madison Square Garden on November 7, 2022; released in 2023. The preview is the live recording.",
+      "source_url": "https://music.apple.com/us/album/im-in-love-with-you-live-from-madison-square-garden/1711626078?i=1711626459&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "madison-square-garden",
+          "kind": "Live recording",
+          "note": "Recorded at Madison Square Garden on November 7, 2022; released in 2023. The preview is the live recording.",
+          "source_url": "https://store.dirtyhit.co.uk/release/422621-the-1975-at-their-very-best-live-from-msg-double-vinyl",
+          "source_label": "Dirty Hit · concert recording"
+        }
+      ]
+    },
+    {
+      "id": "new-york-addison-rae",
+      "title": "New York",
+      "artist": "Addison Rae",
+      "album": "Addison",
+      "year": 2025,
+      "genre": "Pop",
+      "track_id": 1809015426,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3c/df/ec/3cdfecea-f621-0762-1088-23fc5a4414f5/mzaf_13146046532728806963.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york/1809015416?i=1809015426&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Addison+Rae+New+York&entity=song&country=us&limit=10",
+      "metadata_release_date": "2025-06-06T12:00:00Z",
+      "place_ids": [
+        "the-box"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Rae performed New York at The Box during her June 2025 album launch. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/new-york/1809015416?i=1809015426&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "the-box",
+          "kind": "Live performance",
+          "note": "Rae performed New York at The Box during her June 2025 album launch. The preview is the studio recording.",
+          "source_url": "https://www.teenvogue.com/story/addison-rae-became-a-full-blown-pop-star-at-the-box-in-new-york-city",
+          "source_label": "Teen Vogue · album launch performance"
+        }
+      ]
+    },
+    {
+      "id": "birds-of-a-feather-billie-eilish",
+      "title": "BIRDS OF A FEATHER",
+      "artist": "Billie Eilish",
+      "album": "HIT ME HARD AND SOFT",
+      "year": 2024,
+      "genre": "Alternative",
+      "track_id": 1739659142,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/34/31/d3/3431d34e-847f-5d66-df83-0bce688d997e/mzaf_18106743962423782018.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/birds-of-a-feather/1739659134?i=1739659142&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Billie+Eilish+Birds+of+a+Feather&entity=song&country=us&limit=10",
+      "metadata_release_date": "2024-05-17T07:00:00Z",
+      "place_ids": [
+        "nbc-studio-8h"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Eilish performed this song on Saturday Night Live on October 19, 2024. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/birds-of-a-feather/1739659134?i=1739659142&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "nbc-studio-8h",
+          "kind": "Television performance",
+          "note": "Eilish performed this song on Saturday Night Live on October 19, 2024. The preview is the studio recording.",
+          "source_url": "https://people.com/billie-eilish-performs-on-snl-with-brother-finneas-8730550",
+          "source_label": "People · SNL performance"
+        }
+      ]
+    },
+    {
+      "id": "get-him-back-olivia-rodrigo",
+      "title": "get him back!",
+      "artist": "Olivia Rodrigo",
+      "album": "GUTS",
+      "year": 2023,
+      "genre": "Pop",
+      "track_id": 1694768053,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9e/0d/17/9e0d17e0-c068-fbd9-fd85-610cc87c86aa/23UMGIM71511.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c5/d7/c4/c5d7c495-ea81-6264-70ac-ca36e4e92eae/mzaf_8965034932739286403.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/get-him-back/1694767605?i=1694768053&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Olivia+Rodrigo+get+him+back&entity=song&country=us&limit=10",
+      "metadata_release_date": "2023-09-08T12:00:00Z",
+      "place_ids": [
+        "rockefeller-plaza"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Rodrigo performed get him back! on Rockefeller Plaza for TODAY in September 2023. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/get-him-back/1694767605?i=1694768053&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "rockefeller-plaza",
+          "kind": "Television performance",
+          "note": "Rodrigo performed get him back! on Rockefeller Plaza for TODAY in September 2023. The preview is the studio recording.",
+          "source_url": "https://www.nme.com/news/music/watch-olivia-rodrigo-debut-get-him-back-live-on-the-today-show-3495486",
+          "source_label": "NME · TODAY performance"
+        }
+      ]
+    },
+    {
+      "id": "what-was-that-lorde",
+      "title": "What Was That",
+      "artist": "Lorde",
+      "album": "Virgin",
+      "year": 2025,
+      "genre": "Pop",
+      "track_id": 1810905307,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c1/37/21/c1372170-0217-29b6-f368-8e99b8f34af4/mzaf_5474991363617380877.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/what-was-that/1810905299?i=1810905307&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Lorde+What+Was+That&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-04-24T07:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "What Was That was recorded at Electric Lady Studios in Greenwich Village.",
+      "source_url": "https://music.apple.com/us/album/what-was-that/1810905299?i=1810905307&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "What Was That was recorded at Electric Lady Studios in Greenwich Village.",
+          "source_url": "https://electricladystudios.com/lorde-releases-new-single-what-was-that-recorded-at-electric-lady-studios/",
+          "source_label": "Electric Lady Studios · recording notes"
+        }
+      ]
+    },
+    {
+      "id": "silver-lining-laufey",
+      "title": "Silver Lining",
+      "artist": "Laufey",
+      "album": "Silver Lining - Single",
+      "year": 2025,
+      "genre": "Pop",
+      "track_id": 1802075065,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f1/4e/37/f14e373e-2199-d463-1e4b-5c5e5092eb8b/199350129001.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/ff/8c/fdff8cdf-86c1-fdb2-f284-47b4b1f61353/mzaf_3065907224203558624.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/silver-lining/1802075060?i=1802075065&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Laufey+Silver+Lining&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-04-03T12:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Silver Lining was recorded at Electric Lady Studios in Greenwich Village.",
+      "source_url": "https://music.apple.com/us/album/silver-lining/1802075060?i=1802075065&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "Silver Lining was recorded at Electric Lady Studios in Greenwich Village.",
+          "source_url": "https://electricladystudios.com/laufey-releases-new-single-silver-lining-recorded-at-electric-lady-studios/",
+          "source_label": "Electric Lady Studios · recording notes"
+        }
+      ]
     }
   ],
   "places": [
@@ -4035,6 +4368,94 @@
       ],
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8269&mlon=-73.9272#map=18/40.8269/-73.9272",
       "plus_code": "87G8R3GF+Q4"
+    },
+    {
+      "id": "electric-lady-studios",
+      "name": "Electric Lady Studios",
+      "area": "Greenwich Village, Manhattan",
+      "map_query": "52 West 8th Street, New York",
+      "precision": "Venue",
+      "note": "A working recording studio. View the exterior from West 8th Street; recording rooms are private.",
+      "coordinates": [
+        40.733056,
+        -73.998889
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.733056&mlon=-73.998889#map=18/40.733056/-73.998889",
+      "plus_code": "87G8P2M2+6C",
+      "geography_source_url": "https://musicbrainz.org/place/bc5d4673-bff2-4f9a-867c-38317e4dc9ed"
+    },
+    {
+      "id": "annunciation-bvm",
+      "name": "Annunciation of the Blessed Virgin Mary Church",
+      "area": "Williamsburg, Brooklyn",
+      "map_query": "259 North 5th Street, Brooklyn, New York",
+      "precision": "Venue",
+      "note": "View the church from North 5th Street. Interior access follows the parish’s visitor policies.",
+      "coordinates": [
+        40.71441,
+        -73.95467
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.71441&mlon=-73.95467#map=18/40.71441/-73.95467",
+      "plus_code": "87G8P27W+Q4",
+      "geography_source_url": "https://mapcarta.com/25020732"
+    },
+    {
+      "id": "times-square",
+      "name": "Times Square",
+      "area": "Midtown, Manhattan",
+      "map_query": "Times Square, New York",
+      "precision": "Area",
+      "note": "A representative pin for Times Square, where temporary outdoor stages have hosted pop-up performances.",
+      "coordinates": [
+        40.7573,
+        -73.9858
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7573&mlon=-73.9858#map=18/40.7573/-73.9858",
+      "plus_code": "87G8Q247+WM"
+    },
+    {
+      "id": "nbc-studio-8h",
+      "name": "NBC Studio 8H",
+      "area": "Midtown, Manhattan",
+      "map_query": "30 Rockefeller Plaza, New York",
+      "precision": "Venue",
+      "note": "Studio 8H is inside 30 Rockefeller Plaza. The pin marks the building; studio admission requires an authorized visit.",
+      "coordinates": [
+        40.75914,
+        -73.97965
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.75914&mlon=-73.97965#map=18/40.75914/-73.97965",
+      "plus_code": "87G8Q25C+M4",
+      "geography_source_url": "https://mapcarta.com/W487519790"
+    },
+    {
+      "id": "madison-square-garden",
+      "name": "Madison Square Garden",
+      "area": "Midtown, Manhattan",
+      "map_query": "Madison Square Garden, New York",
+      "precision": "Venue",
+      "note": "The arena above Penn Station. Concert and event admission requires a ticket; this pin marks the venue.",
+      "coordinates": [
+        40.750518,
+        -73.993527
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.750518&mlon=-73.993527#map=18/40.750518/-73.993527",
+      "plus_code": "87G8Q224+6H"
+    },
+    {
+      "id": "the-box",
+      "name": "The Box",
+      "area": "Lower East Side, Manhattan",
+      "map_query": "189 Chrystie Street, New York",
+      "precision": "Venue",
+      "note": "A performance venue on Chrystie Street. Interior access follows the venue’s event and admission policies.",
+      "coordinates": [
+        40.721889,
+        -73.9922757
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.721889&mlon=-73.9922757#map=18/40.721889/-73.9922757",
+      "plus_code": "87G8P2C5+Q3",
+      "geography_source_url": "https://maps.apple.com/place?_provider=9902&coordinate=40.721889%2C-73.9922757&place-id=I19976344BC86279E&query=The+Box"
     }
   ]
 }
