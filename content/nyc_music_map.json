@@ -2,6 +2,174 @@
   "reviewed_on": "2026-09-27",
   "tracks": [
     {
+      "id": "empire-state-of-mind-jay-z",
+      "title": "Empire State Of Mind (feat. Alicia Keys)",
+      "artist": "JAŸ-Z",
+      "album": "The Blueprint 3",
+      "year": 2009,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 1440932018,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/e6/20/cf/e620cfeb-eb74-4ef1-00c1-fd38aac6c3d7/00858786005470.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/e2/b8/8fe2b82b-b783-9584-3442-3f85e03db81a/mzaf_16411245635676557198.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/empire-state-of-mind-feat-alicia-keys/1440932009?i=1440932018&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Jay+Z+Empire+State+Of+Mind+Alicia+Keys&entity=song&country=us&limit=5",
+      "metadata_release_date": "2009-09-08T12:00:00Z",
+      "place_ids": [
+        "statue-of-liberty"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "Statue of Liberty, long live the World Trade",
+      "note": "The New York anthem salutes the Statue of Liberty as part of its citywide roll call.",
+      "source_url": "https://www.shazam.com/song/1440932750/empire-state-of-mind-feat-alicia-keys",
+      "source_label": "Shazam · lyrics"
+    },
+    {
+      "id": "new-york-st-vincent",
+      "title": "New York",
+      "artist": "St. Vincent",
+      "album": "MASSEDUCTION",
+      "year": 2017,
+      "genre": "Alternative",
+      "track_id": 1440947077,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ea/5d/7f/ea5d7f85-ca7d-bad8-a4b0-f73e916b4b30/17CRGIM04239.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/55/e0/cf/55e0cf51-bba5-7d43-e3a9-383342c4218e/mzaf_9299142059502847533.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/new-york/1440947061?i=1440947077&uo=4",
+      "metadata_source": "https://itunes.apple.com/lookup?id=1440947077&country=us",
+      "metadata_release_date": "2017-06-30T12:00:00Z",
+      "place_ids": [
+        "astor-place"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "A farewell to a friend makes New York feel suddenly unfamiliar.",
+      "source_url": "https://music.apple.com/us/album/new-york/1440947061?i=1440947077&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "astor-place",
+          "kind": "Music video",
+          "note": "The video features the rotating Alamo cube at Astor Place, filmed on location.",
+          "source_url": "https://pitchfork.com/news/inside-st-vincents-new-york-video-a-chat-with-director-alex-da-corte/",
+          "source_label": "Pitchfork · director interview"
+        }
+      ]
+    },
+    {
+      "id": "cruel-world-lana-del-rey",
+      "title": "Cruel World",
+      "artist": "Lana Del Rey",
+      "album": "Ultraviolence",
+      "year": 2014,
+      "genre": "Alternative",
+      "track_id": 1442879910,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/83/1c/52/831c528b-caa0-dc8e-bc33-5547a9f7db4a/14UMGIM20260.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/70/bf/3b/70bf3bb0-bceb-725d-fa5e-2c83023d89b2/mzaf_2615016716005373531.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/cruel-world/1442879908?i=1442879910&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Lana+Del+Rey+Cruel+World&entity=song&country=us&limit=5",
+      "metadata_release_date": "2014-06-13T12:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "A slow-burning farewell opens Ultraviolence.",
+      "source_url": "https://music.apple.com/us/album/cruel-world/1442879908?i=1442879910&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "Electric Lady identifies this track as recorded in Studio A with engineer Phil Joly.",
+          "source_url": "https://electricladystudios.com/lana-del-rey/",
+          "source_label": "Electric Lady Studios · recording credits"
+        }
+      ]
+    },
+    {
+      "id": "daylight-harry-styles",
+      "title": "Daylight",
+      "artist": "Harry Styles",
+      "album": "Harry's House",
+      "year": 2022,
+      "genre": "Pop",
+      "track_id": 1615585009,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2a/19/fb/2a19fb85-2f70-9e44-f2a9-82abe679b88e/886449990061.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0e/d7/aa/0ed7aacf-6c72-39b2-7731-05ad74ac85e2/mzaf_11719631527113093480.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/daylight/1615584999?i=1615585009&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Harry+Styles+Daylight&entity=song&country=us&limit=5",
+      "metadata_release_date": "2022-05-20T12:00:00Z",
+      "place_ids": [
+        "brooklyn"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "A bright melody carries a restless wish to be closer to someone.",
+      "source_url": "https://music.apple.com/us/album/daylight/1615584999?i=1615585009&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "brooklyn",
+          "kind": "Music video",
+          "note": "Styles and James Corden filmed their 2022 Late Late Show video in a Brooklyn fan’s apartment; this borough pin does not identify the private home.",
+          "source_url": "https://www.upi.com/Entertainment_News/Music/2022/05/27/Harry-Styles-James-Corden-music-video/6261653648007/",
+          "source_label": "UPI · 2022 video report"
+        }
+      ]
+    },
+    {
+      "id": "run-away-with-me-carly-rae-jepsen",
+      "title": "Run Away with Me",
+      "artist": "Carly Rae Jepsen",
+      "album": "E•MO•TION",
+      "year": 2015,
+      "genre": "Pop",
+      "track_id": 1442810074,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8e/b9/9b/8eb99b2a-f730-0df5-3c2c-4175d57cd84d/15UMGIM31527.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/ef/8c/b5ef8cd0-3d9a-b2e3-e7bd-daeab1a73209/mzaf_14855664445162862293.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/run-away-with-me/1442810070?i=1442810074&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Carly+Rae+Jepsen+Run+Away+With+Me&entity=song&country=us&limit=5",
+      "metadata_release_date": "2015-06-24T12:00:00Z",
+      "place_ids": [
+        "columbus-circle"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "A saxophone hook opens an invitation to leave everything behind.",
+      "source_url": "https://music.apple.com/us/album/run-away-with-me/1442810070?i=1442810074&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "columbus-circle",
+          "kind": "Music video",
+          "note": "Jepsen runs beside the Columbus Circle fountain in the video’s New York footage.",
+          "source_url": "https://en.wikipedia.org/wiki/Run_Away_with_Me",
+          "source_label": "Music-video location reference"
+        }
+      ]
+    },
+    {
+      "id": "step-vampire-weekend",
+      "title": "Step",
+      "artist": "Vampire Weekend",
+      "album": "Modern Vampires of the City",
+      "year": 2013,
+      "genre": "Alternative",
+      "track_id": 613185020,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b2/c7/94/b2c79469-1105-1a37-c092-5f889f6ed15a/634904055653.png/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/4f/93/ce4f9371-8aa1-8116-7142-75608a7d9837/mzaf_12277089735834406587.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/step/613184430?i=613185020&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Vampire+Weekend+Step&entity=song&country=us&limit=5",
+      "metadata_release_date": "2013-03-19T07:00:00Z",
+      "place_ids": [
+        "astor-place"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "I can still see them there, huddled on Astor",
+      "note": "An image of friends on Astor Place anchors the song’s tangle of memory and growing older.",
+      "source_url": "https://www.shazam.com/song/613185020/step",
+      "source_label": "Shazam · lyrics"
+    },
+    {
       "id": "the-subway-chappell-roan",
       "title": "The Subway",
       "artist": "Chappell Roan",
@@ -4840,6 +5008,36 @@
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.69052&mlon=-73.98998#map=18/40.69052/-73.98998",
       "plus_code": "87G8M2R6+62",
       "geography_source_url": "https://mapcarta.com/25032622"
+    },
+    {
+      "id": "astor-place",
+      "name": "Astor Place",
+      "area": "East Village, Manhattan",
+      "map_query": "Astor Place New York",
+      "precision": "Area",
+      "note": "The pin marks the Alamo cube. Lyrics naming Astor refer to the surrounding place, not an exact position.",
+      "coordinates": [
+        40.73,
+        -73.99111
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.73&mlon=-73.99111#map=18/40.73/-73.99111",
+      "plus_code": "87G8P2J5+2H",
+      "geography_source_url": "https://en.wikipedia.org/wiki/Alamo_(sculpture)"
+    },
+    {
+      "id": "columbus-circle",
+      "name": "Columbus Circle",
+      "area": "Midtown, Manhattan",
+      "map_query": "Columbus Circle New York",
+      "precision": "Area",
+      "note": "The pin reuses the film catalog’s public approach to the circle, not an exact camera position beside the fountain.",
+      "coordinates": [
+        40.76832,
+        -73.98153
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.76832&mlon=-73.98153#map=18/40.76832/-73.98153",
+      "plus_code": "87G8Q299+89",
+      "geography_source_url": "https://en.wikipedia.org/wiki/Columbus_Circle"
     }
   ]
 }

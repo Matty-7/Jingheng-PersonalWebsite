@@ -1,0 +1,167 @@
+{
+  "reviewed_on": "2026-09-27",
+  "year_window": [
+    2006,
+    2026
+  ],
+  "films": [
+    {
+      "id": "begin-again",
+      "title": "Begin Again",
+      "year": 2013,
+      "director": "John Carney",
+      "note": "A singer and a producer turn New York into an outdoor recording studio.",
+      "metadata_sources": [
+        {
+          "url": "https://sffilm.org/event/begin-again/",
+          "evidence": "Official SFFILM festival page gives Year 2013 and Director John Carney."
+        },
+        {
+          "url": "https://tribecafilm.com/festival/archive/532b3bd7c07f5d08a5000001-begin-again",
+          "evidence": "Official 2014 Tribeca US premiere page confirms John Carney; festival year differs from film year."
+        }
+      ]
+    },
+    {
+      "id": "frances-ha",
+      "title": "Frances Ha",
+      "year": 2012,
+      "director": "Noah Baumbach",
+      "note": "An aspiring dancer finds her footing among friendships, apartments and city sidewalks.",
+      "metadata_sources": [
+        {
+          "url": "https://www.filmlinc.org/films/frances-ha/",
+          "evidence": "Official NYFF50 page lists director Noah Baumbach and year 2012; festival ran September–October 2012."
+        }
+      ]
+    },
+    {
+      "id": "tick-tick-boom",
+      "title": "tick, tick...BOOM!",
+      "year": 2021,
+      "director": "Lin-Manuel Miranda",
+      "note": "Jonathan Larson races toward thirty through the bookstores, theatres and streets of New York.",
+      "metadata_sources": [
+        {
+          "url": "https://www.netflix.com/tudum/articles/tick-tick-boom-filming-locations-new-york-city",
+          "evidence": "Netflix identifies Miranda’s feature directorial debut and late-2021 screen adaptation."
+        }
+      ]
+    },
+    {
+      "id": "uncut-gems",
+      "title": "Uncut Gems",
+      "year": 2019,
+      "director": "Josh Safdie and Benny Safdie",
+      "note": "A jeweller chases a life-changing score through the Diamond District.",
+      "metadata_sources": [
+        {
+          "url": "https://a24films.com/films/uncut-gems",
+          "evidence": "Official distributor lists year 2019 and directors Josh Safdie and Benny Safdie."
+        }
+      ]
+    }
+  ],
+  "film_places": [
+    {
+      "film_id": "begin-again",
+      "place_id": "washington-square-arch",
+      "coordinate_source": "Existing catalog coordinates, reused unchanged."
+    },
+    {
+      "film_id": "begin-again",
+      "place_id": "bethesda",
+      "coordinate_source": "Existing catalog coordinates, reused unchanged."
+    },
+    {
+      "film_id": "frances-ha",
+      "place_id": "tompkins-square-park",
+      "coordinate_source": "https://www.topozone.com/new-york/new-york-ny/park/tompkins-square-park/"
+    },
+    {
+      "film_id": "tick-tick-boom",
+      "place_id": "strand-bookstore",
+      "coordinate_source": "https://www.latlong.net/place/strand-bookstore-ny-usa-31499.html"
+    },
+    {
+      "film_id": "tick-tick-boom",
+      "place_id": "delacorte-theater",
+      "coordinate_source": "https://mapcarta.com/W278363024"
+    },
+    {
+      "film_id": "uncut-gems",
+      "place_id": "sixth-west-50",
+      "coordinate_source": "Existing catalog sixth-west-50 coordinates, reused unchanged; filmmaker identifies Sixth Avenue and 50th Street in https://www.lecinemaclub.com/journal/behind_the_scenes_of_uncut_gems/"
+    }
+  ],
+  "literary_publication": {
+    "rules_civility": {
+      "url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780670022694",
+      "date": "2011-07-26"
+    },
+    "harlem_shuffle": {
+      "url": "https://prhinternationalsales.com/book/?isbn=9780385545136",
+      "date": "2021-09-14"
+    },
+    "severance": {
+      "url": "https://us.macmillan.com/books/9780374717117/severance/",
+      "date": "2018-08-14"
+    },
+    "little_life": {
+      "url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258",
+      "date": "2015-03-10"
+    }
+  },
+  "music": [
+    {
+      "id": "empire-state-of-mind-jay-z",
+      "year": 2009,
+      "recording": "https://itunes.apple.com/search?term=Jay+Z+Empire+State+Of+Mind+Alicia+Keys&entity=song&country=us&limit=5",
+      "relationship_source": "https://www.shazam.com/song/1440932750/empire-state-of-mind-feat-alicia-keys"
+    },
+    {
+      "id": "new-york-st-vincent",
+      "year": 2017,
+      "recording": "https://itunes.apple.com/lookup?id=1440947077&country=us",
+      "relationship_source": "https://pitchfork.com/news/inside-st-vincents-new-york-video-a-chat-with-director-alex-da-corte/"
+    },
+    {
+      "id": "cruel-world-lana-del-rey",
+      "year": 2014,
+      "recording": "https://itunes.apple.com/search?term=Lana+Del+Rey+Cruel+World&entity=song&country=us&limit=5",
+      "relationship_source": "https://electricladystudios.com/lana-del-rey/"
+    },
+    {
+      "id": "daylight-harry-styles",
+      "year": 2022,
+      "recording": "https://itunes.apple.com/search?term=Harry+Styles+Daylight&entity=song&country=us&limit=5",
+      "relationship_source": "https://www.upi.com/Entertainment_News/Music/2022/05/27/Harry-Styles-James-Corden-music-video/6261653648007/"
+    },
+    {
+      "id": "run-away-with-me-carly-rae-jepsen",
+      "year": 2015,
+      "recording": "https://itunes.apple.com/search?term=Carly+Rae+Jepsen+Run+Away+With+Me&entity=song&country=us&limit=5",
+      "relationship_source": "https://en.wikipedia.org/wiki/Run_Away_with_Me"
+    },
+    {
+      "id": "step-vampire-weekend",
+      "year": 2013,
+      "recording": "https://itunes.apple.com/search?term=Vampire+Weekend+Step&entity=song&country=us&limit=5",
+      "relationship_source": "https://www.shazam.com/song/613185020/step"
+    }
+  ],
+  "music_additional_sources": {
+    "st_vincent_song": "https://songexploder.net/transcripts/st-vincent-transcript.pdf",
+    "st_vincent_alamo": "https://www.nyc.gov/html/dot/html/pr2023/astor-place-alamo-cube-restored.shtml",
+    "carly_official_video": "https://www.universalmusic.ca/2015/07/17/carly-rae-jepsen-releases-new-single-and-video-run-away-with-me-today/",
+    "carly_video": "https://www.youtube.com/watch?v=TeccAtqd5K8"
+  },
+  "historical_places": {
+    "rules-civility-bowery": "Reused existing literary place_id bowery coordinates and Plus Code.",
+    "harlem-shuffle-radio-row": "Coordinates from the former Cortlandt Street elevated station (40.71083, -74.0124028); used as an explicitly representative Radio Row area pin.",
+    "severance-times-square": "Reused existing literary place_id times-square coordinates and Plus Code.",
+    "severance-bryant-park": "Reused existing literary place_id bryant-park coordinates and Plus Code.",
+    "little-life-pho-viet-huong": "Mapstr structured data and Apple Maps link specify 40.7162382, -73.9992305 for 73 Mulberry Street; historical address corroborated by Time Out and NYC Chinatown storefront archive."
+  },
+  "visual_review": "Parent inspected all six screen images and four official book covers. Five screen images are film frames; Uncut Gems is explicitly a production still. Images resized without upscaling."
+}
