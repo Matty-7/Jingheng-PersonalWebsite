@@ -329,11 +329,21 @@ export function atlas_card_summary(entry: AtlasEntry) {
         ? entry.passage.note
         : (artist_connection(entry.track, entry.place.id)?.note ??
           entry.track.note);
-  const sentences = Array.from(
-    sentence_segmenter.segment(introduction.trim()),
-    ({ segment }) => segment.trim(),
-  ).slice(0, 2);
-  return sentences.join(' ').length <= 200 ? sentences.join(' ') : sentences[0];
+  const sentences: string[] = [];
+  for (const { segment } of sentence_segmenter.segment(introduction.trim())) {
+    const previous = sentences.at(-1);
+    // Sentence segmentation can split names such as O. Henry and St. Nicholas.
+    if (
+      previous &&
+      /\b(?:Mr|Mrs|Ms|Dr|St|Prof|Rev|Jr|Sr|[A-Z])\.$/.test(previous)
+    ) {
+      sentences[sentences.length - 1] += ` ${segment.trim()}`;
+    } else {
+      sentences.push(segment.trim());
+    }
+  }
+  const summary = sentences.slice(0, 2).join(' ');
+  return summary.length <= 200 ? summary : sentences[0];
 }
 
 export function atlas_detail(

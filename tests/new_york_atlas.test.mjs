@@ -25,12 +25,10 @@ import {
 import { literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
 
-test('every Atlas card has one or two complete introductory sentences and retains full details', () => {
-  const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
+test('every Atlas card has a brief introduction and retains full details', () => {
   for (const entry of atlas_entries) {
     const summary = atlas_card_summary(entry);
     assert.ok(summary.length > 0 && summary.length <= 200, entry.id);
-    assert.ok([...segmenter.segment(summary)].length <= 2, entry.id);
     assert.match(summary, /[.!?][”"']?$/, entry.id);
     const detail = atlas_detail(entry.id, '');
     assert.equal(detail.summary, summary);
@@ -40,6 +38,38 @@ test('every Atlas card has one or two complete introductory sentences and retain
       assert.notEqual(summary, entry.passage.excerpt, entry.id);
     }
   }
+});
+
+test('card introductions stop at complete sentences without splitting abbreviated names', () => {
+  for (const id of [
+    'madison-square',
+    'quicksand-st-nicholas-park',
+    'voice-union-square',
+  ]) {
+    const entry = atlas_entries.find((item) => item.id === `literature:${id}`);
+    assert.equal(atlas_card_summary(entry), entry.passage.note);
+  }
+  const entry = atlas_entries.find((item) => item.medium === 'literature');
+  const with_note = (note) => ({
+    ...entry,
+    passage: { ...entry.passage, note },
+  });
+  assert.equal(
+    atlas_card_summary(
+      with_note(
+        'One short sentence. Another short sentence. A third stays in details.',
+      ),
+    ),
+    'One short sentence. Another short sentence.',
+  );
+  assert.equal(
+    atlas_card_summary(
+      with_note(
+        `One short sentence. ${'Further context '.repeat(20)}stays in details.`,
+      ),
+    ),
+    'One short sentence.',
+  );
 });
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
