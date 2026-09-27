@@ -63,6 +63,7 @@ test('existing cross-domain routes can become the active study path', async ({
     'Mortgage lock-in',
   );
   await page
+    .getByRole('navigation', { name: 'Local learning tree' })
     .getByRole('button', { name: 'Housing turnover', exact: true })
     .click();
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(

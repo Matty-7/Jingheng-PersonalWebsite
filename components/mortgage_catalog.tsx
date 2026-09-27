@@ -37,6 +37,35 @@ export function MortgageCatalog({
       className="learning-catalog"
       aria-labelledby="catalog-title"
       onCancel={close}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          close();
+          return;
+        }
+        if (event.key !== 'Tab') return;
+        const dialog = event.currentTarget;
+        const controls = Array.from(
+          dialog.querySelectorAll<HTMLElement>(
+            'button, input, summary, a[href], [tabindex]',
+          ),
+        ).filter(
+          (control) =>
+            control.tabIndex >= 0 &&
+            !control.matches(':disabled') &&
+            control.getClientRects().length > 0,
+        );
+        const first = controls[0];
+        const last = controls.at(-1);
+        const active = dialog.ownerDocument.activeElement;
+        const target = event.shiftKey
+          ? active === first && last
+          : active === last && first;
+        if (target) {
+          event.preventDefault();
+          target.focus();
+        }
+      }}
     >
       <div className="learning-catalog-inner">
         <header>

@@ -40,6 +40,13 @@ export async function check_mortgage_focus_surface(
   await button('View full tree').press('Enter');
   await button('Close all topics').press('Shift+Tab');
   assert.equal(await surface.getByRole('dialog').locator(':focus').count(), 1);
+  await surface.getByRole('dialog').locator(':focus').press('Tab');
+  assert.equal(
+    await surface
+      .locator('button[aria-label="Close all topics"]:focus')
+      .count(),
+    1,
+  );
   await surface.getByRole('dialog').locator(':focus').press('Escape');
   await surface.getByRole('dialog').waitFor({ state: 'detached' });
   return {
