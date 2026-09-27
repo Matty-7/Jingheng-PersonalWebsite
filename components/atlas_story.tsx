@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { memo, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import type { AtlasDetail } from '@/lib/atlas_browser';
+import { AtlasMusicLinks } from './atlas_music_links';
 
 export function AtlasImage({
   src,
@@ -157,12 +158,15 @@ export const AtlasStory = memo(function AtlasStory({
         <blockquote cite={track.source_url}>“{track.excerpt}”</blockquote>
       )}
       <p>{track.note}</p>
-      <SourceLink href={track.source_url}>{track.source_label}</SourceLink>
+      {!track.source_url.startsWith('https://music.apple.com/') && (
+        <SourceLink href={track.source_url}>{track.source_label}</SourceLink>
+      )}
       {track.excerpt && (
         <p className="atlas-caption">
           Short excerpt. Full lyrics at the source.
         </p>
       )}
+      <AtlasMusicLinks track={track} />
     </div>
   );
 });
