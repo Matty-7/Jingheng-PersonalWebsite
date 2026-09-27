@@ -392,6 +392,41 @@
       "format": "series",
       "creators": "Geneva Robertson-Dworet and Graham Wagner",
       "note": "New York industrial spaces become fragments of a ruined future."
+    },
+    {
+      "id": "marty-supreme",
+      "title": "Marty Supreme",
+      "year": 2025,
+      "director": "Josh Safdie",
+      "note": "A table-tennis dream unfolds amid the storefronts and streets of a recreated 1950s New York."
+    },
+    {
+      "id": "highest-2-lowest",
+      "title": "Highest 2 Lowest",
+      "year": 2025,
+      "director": "Spike Lee",
+      "note": "A music executive faces a ransom crisis above and below the Brooklyn skyline."
+    },
+    {
+      "id": "you-hurt-my-feelings",
+      "title": "You Hurt My Feelings",
+      "year": 2023,
+      "director": "Nicole Holofcener",
+      "note": "A writer’s shaken confidence unfolds through Manhattan shops and conversations."
+    },
+    {
+      "id": "she-said",
+      "title": "She Said",
+      "year": 2022,
+      "director": "Maria Schrader",
+      "note": "Two reporters follow a story from the newsroom to private conversations across Manhattan."
+    },
+    {
+      "id": "marry-me",
+      "title": "Marry Me",
+      "year": 2022,
+      "director": "Kat Coiro",
+      "note": "An unlikely romance moves between Manhattan concert venues and a Coney Island date."
     }
   ],
   "sources": [
@@ -1079,6 +1114,126 @@
       "id": "recent-culture-137",
       "label": "brooklynarmyterminal.com",
       "url": "https://brooklynarmyterminal.com/visit"
+    },
+    {
+      "id": "recent-films-138",
+      "label": "nypost.com",
+      "url": "https://nypost.com/2024/10/28/us-news/movie-shoots-with-timothee-chalamet-austin-butler-take-ny/"
+    },
+    {
+      "id": "recent-films-139",
+      "label": "Untapped New York",
+      "url": "https://www.untappedcities.com/timothee-chalamet-movie-lower-east-side-nyc/"
+    },
+    {
+      "id": "recent-films-140",
+      "label": "moscot.com",
+      "url": "https://moscot.com/pages/moscot-lower-east-side-shop"
+    },
+    {
+      "id": "recent-films-141",
+      "label": "On the Set of New York",
+      "url": "https://onthesetofnewyork.com/highesttolowest.html"
+    },
+    {
+      "id": "recent-films-142",
+      "label": "camnoir.com",
+      "url": "https://www.camnoir.com/ep326/"
+    },
+    {
+      "id": "recent-films-143",
+      "label": "olympiadumbo.com",
+      "url": "https://olympiadumbo.com/"
+    },
+    {
+      "id": "recent-films-144",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/7073/You-Hurt-My-Feelings/Paragon-Sports"
+    },
+    {
+      "id": "recent-films-145",
+      "label": "On the Set of New York",
+      "url": "https://onthesetofnewyork.com/youhurtmyfeelings.html"
+    },
+    {
+      "id": "recent-films-146",
+      "label": "filmmakermagazine.com",
+      "url": "https://filmmakermagazine.com/121163-interview-nicole-holofcener-you-hurt-my-feelings/"
+    },
+    {
+      "id": "recent-films-147",
+      "label": "paragonsports.com",
+      "url": "https://paragonsports.com/pages/contact"
+    },
+    {
+      "id": "recent-films-148",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/7072/You-Hurt-My-Feelings/192-Books"
+    },
+    {
+      "id": "recent-films-149",
+      "label": "poets.org",
+      "url": "https://poets.org/listing/192-books"
+    },
+    {
+      "id": "recent-films-150",
+      "label": "nyc.gov",
+      "url": "https://www.nyc.gov/site/mome/industries/nyc-bookstores.page"
+    },
+    {
+      "id": "recent-films-151",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/6720/She-Said/Orsay-Restaurant"
+    },
+    {
+      "id": "recent-films-152",
+      "label": "On the Set of New York",
+      "url": "https://onthesetofnewyork.com/shesaid.html"
+    },
+    {
+      "id": "recent-films-153",
+      "label": "orsayrestaurant.com",
+      "url": "https://www.orsayrestaurant.com/"
+    },
+    {
+      "id": "recent-films-154",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/6364/She-Said/The-New-York-Times-Building"
+    },
+    {
+      "id": "recent-films-155",
+      "label": "filmmakermagazine.com",
+      "url": "https://filmmakermagazine.com/117447-interview-dp-natasha-braier-she-said/"
+    },
+    {
+      "id": "recent-films-156",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/5751/Marry-Me/Radio-City-Music-Hall"
+    },
+    {
+      "id": "recent-films-157",
+      "label": "thecinemaholic.com",
+      "url": "https://thecinemaholic.com/where-was-marry-me-filmed/"
+    },
+    {
+      "id": "recent-films-158",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/5756/Marry-Me/Coney-Island-Wonder-Wheel"
+    },
+    {
+      "id": "recent-films-159",
+      "label": "denoswonderwheel.com",
+      "url": "https://www.denoswonderwheel.com/movies"
+    },
+    {
+      "id": "recent-films-160",
+      "label": "denoswonderwheel.com",
+      "url": "https://www.denoswonderwheel.com/"
+    },
+    {
+      "id": "recent-films-161",
+      "label": "On the Set of New York",
+      "url": "https://onthesetofnewyork.com/marryme.html"
     }
   ],
   "locations": [
@@ -2691,6 +2846,25 @@
             "width": 565,
             "height": 306
           }
+        },
+        {
+          "film_id": "marry-me",
+          "scene": "Fans gather outside Radio City for Kat’s concert and planned wedding.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/75299.jpg/w/600/h/340/crop/true/nos/5751_marry%20me_radio%20city%20music%20hall_0.png",
+            "width": 600,
+            "height": 340,
+            "credit": "Film frame · © Nuyorican Productions, Perfect World Pictures, Kung Fu Monkey Productions · via Sceen-It",
+            "alt": "Radio City’s marquee advertises Kat and Bastian’s Marry Me event in the film.",
+            "src": "/images/film-map/marry-me--radio-city.jpg",
+            "thumbnail": "/images/film-map/marry-me--radio-city--thumb.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/5751/Marry-Me/Radio-City-Music-Hall"
+          },
+          "source_ids": [
+            "recent-films-156",
+            "recent-films-157"
+          ]
         }
       ]
     },
@@ -6483,6 +6657,24 @@
             "sha256": "55c9449078f581f38ea44ebbb95a2e1f6512e5dedbaae6ca51f66f12586b1a23",
             "content_type": "image/jpeg"
           }
+        },
+        {
+          "film_id": "highest-2-lowest",
+          "scene": "David listens through headphones while walking on the Brooklyn Bridge.",
+          "precision": "Identified bridge and visible pedestrian walkway; existing venue pin retained, not an exact camera position.",
+          "still": {
+            "image_url": "https://onthesetofnewyork.com/locations/highesttolowest/highesttolowest20.jpg",
+            "width": 565,
+            "height": 235,
+            "credit": "Film frame · Highest 2 Lowest (2025) · Apple Original Films / A24 · frame via On the Set of New York",
+            "alt": "Film frame: David walks on the Brooklyn Bridge at dusk wearing headphones, with Lower Manhattan behind him.",
+            "src": "/images/film-map/highest-2-lowest--brooklyn-bridge.jpg",
+            "thumbnail": "/images/film-map/highest-2-lowest--brooklyn-bridge--thumb.jpg",
+            "source_url": "https://onthesetofnewyork.com/highesttolowest.html"
+          },
+          "source_ids": [
+            "recent-films-141"
+          ]
         }
       ]
     },
@@ -8970,6 +9162,289 @@
             "recent-culture-135",
             "recent-culture-136",
             "recent-culture-137"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "norkin-shoes-orchard",
+      "name": "Norkin Shoes filming storefront",
+      "address": "137 Orchard Street, New York, NY 10002",
+      "neighborhood": "Lower East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.719964,
+        -73.98956
+      ],
+      "access": "Public sidewalk; storefront exterior",
+      "visit_note": "View from Orchard Street; the Norkin Shoes signs were temporary set dressing.",
+      "scenes": [
+        {
+          "film_id": "marty-supreme",
+          "scene": "Marty works at his uncle’s Norkin Shoes, recreated at this Orchard Street storefront.",
+          "precision": "Exact storefront; photographed production set.",
+          "still": {
+            "image_url": "https://nypost.com/wp-content/uploads/sites/2/2024/10/general-view-marty-supreme-movie-90866714_049074.jpg?quality=75&strip=all&w=1024",
+            "width": 800,
+            "height": 533,
+            "credit": "GC Images, via New York Post · Marty Supreme Production still",
+            "alt": "Production photo: crew and extras outside Norkin Shoes, with 137 visible on the facade.",
+            "src": "/images/film-map/marty-supreme--norkin-shoes-orchard.jpg",
+            "thumbnail": "/images/film-map/marty-supreme--norkin-shoes-orchard--thumb.jpg",
+            "source_url": "https://nypost.com/2024/10/28/us-news/movie-shoots-with-timothee-chalamet-austin-butler-take-ny/",
+            "kind": "production_still"
+          },
+          "source_ids": [
+            "recent-films-138",
+            "recent-films-139"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moscot-orchard",
+      "name": "MOSCOT Lower East Side",
+      "address": "94 Orchard Street, New York, NY 10002",
+      "neighborhood": "Lower East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.718386,
+        -73.989837
+      ],
+      "access": "Public sidewalk; operating eyewear shop",
+      "visit_note": "See the facade from Orchard Street; its period signs and fire-escape action were part of the shoot.",
+      "scenes": [
+        {
+          "film_id": "marty-supreme",
+          "scene": "Timothée Chalamet films Marty’s ladder climb outside MOSCOT.",
+          "precision": "Exact storefront; production photograph documents the action, without asserting its final edit.",
+          "still": {
+            "image_url": "https://nypost.com/wp-content/uploads/sites/2/2024/10/2024-10-09-sk-despelaren-91358635.jpg?quality=75&strip=all&w=1024",
+            "width": 800,
+            "height": 534,
+            "credit": "Richard Ryan/TT/Shutterstock, via New York Post · Marty Supreme Production still",
+            "alt": "Production photo: Timothée Chalamet climbs a fire-escape ladder above a period MOSCOT sign.",
+            "src": "/images/film-map/marty-supreme--moscot-orchard.jpg",
+            "thumbnail": "/images/film-map/marty-supreme--moscot-orchard--thumb.jpg",
+            "source_url": "https://nypost.com/2024/10/28/us-news/movie-shoots-with-timothee-chalamet-austin-butler-take-ny/",
+            "kind": "production_still"
+          },
+          "source_ids": [
+            "recent-films-138",
+            "recent-films-140"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "olympia-dumbo",
+      "name": "Olympia DUMBO",
+      "address": "60 Front Street, Brooklyn, NY 11201",
+      "neighborhood": "DUMBO",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.70213,
+        -73.99093
+      ],
+      "access": "Private residences; public sidewalk outside",
+      "visit_note": "View the tower from Front Street. The penthouse is private; interiors were recreated on a studio set.",
+      "scenes": [
+        {
+          "film_id": "highest-2-lowest",
+          "scene": "Olympia DUMBO establishes the tower containing David King’s home.",
+          "precision": "Exterior establishing shot; interiors are not presented as a publicly visitable filming location.",
+          "still": {
+            "image_url": "https://onthesetofnewyork.com/locations/highesttolowest/highesttolowest01.jpg",
+            "width": 565,
+            "height": 235,
+            "credit": "Film frame · Highest 2 Lowest (2025) · Apple Original Films / A24 · frame via On the Set of New York",
+            "alt": "Film frame: the stepped Olympia DUMBO tower rises above neighboring buildings.",
+            "src": "/images/film-map/highest-2-lowest--olympia-dumbo.jpg",
+            "thumbnail": "/images/film-map/highest-2-lowest--olympia-dumbo--thumb.jpg",
+            "source_url": "https://onthesetofnewyork.com/highesttolowest.html"
+          },
+          "source_ids": [
+            "recent-films-141",
+            "recent-films-142",
+            "recent-films-143"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paragon-sports",
+      "name": "Paragon Sports",
+      "address": "867 Broadway at East 18th Street",
+      "neighborhood": "Flatiron",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7376533,
+        -73.9904256
+      ],
+      "access": "Public store",
+      "visit_note": "Visit during store hours; the Broadway exterior is visible from the sidewalk.",
+      "scenes": [
+        {
+          "film_id": "you-hurt-my-feelings",
+          "scene": "Beth overhears Don’s unflattering opinion of her manuscript while shopping at Paragon Sports.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/94218.jpg/w/600/h/340/crop/true/nos/7073_you%20hurt%20my%20feelings_paragon%20sports_1.png",
+            "width": 600,
+            "height": 340,
+            "credit": "Film frame · © Likely Story · via Sceen-It",
+            "alt": "Beth and Sarah outside Paragon Sports in You Hurt My Feelings.",
+            "src": "/images/film-map/you-hurt-my-feelings--paragon-sports.jpg",
+            "thumbnail": "/images/film-map/you-hurt-my-feelings--paragon-sports--thumb.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/7073/You-Hurt-My-Feelings/Paragon-Sports"
+          },
+          "source_ids": [
+            "recent-films-144",
+            "recent-films-145",
+            "recent-films-146",
+            "recent-films-147"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "192-books",
+      "name": "192 Books",
+      "address": "192 Tenth Avenue",
+      "neighborhood": "Chelsea",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.74663,
+        -74.00473
+      ],
+      "access": "Public bookstore",
+      "visit_note": "The shopfront is on Tenth Avenue; visit the interior during opening hours.",
+      "scenes": [
+        {
+          "film_id": "you-hurt-my-feelings",
+          "scene": "Beth visits the Chelsea bookstore 192 Books.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/94204.jpg/w/600/h/340/crop/true/nos/7072_you%20hurt%20my%20feelings_192%20books_0.png",
+            "width": 600,
+            "height": 340,
+            "credit": "Film frame · © Likely Story · via Sceen-It",
+            "alt": "Beth stands at the window of 192 Books in You Hurt My Feelings.",
+            "src": "/images/film-map/you-hurt-my-feelings--192-books.jpg",
+            "thumbnail": "/images/film-map/you-hurt-my-feelings--192-books--thumb.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/7072/You-Hurt-My-Feelings/192-Books"
+          },
+          "source_ids": [
+            "recent-films-148",
+            "recent-films-145",
+            "recent-films-149",
+            "recent-films-150"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orsay-restaurant",
+      "name": "Orsay Restaurant",
+      "address": "1057 Lexington Avenue",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7724056,
+        -73.9604715
+      ],
+      "access": "Public restaurant",
+      "visit_note": "Interior access is for dining; check reservations and current hours.",
+      "scenes": [
+        {
+          "film_id": "she-said",
+          "scene": "Jodi interviews a witness who is reluctant to be named in the newspaper.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/89250.jpg/w/600/h/340/crop/true/nos/6720_she%20said_orsay%20restaurant_0.jpg",
+            "width": 600,
+            "height": 340,
+            "credit": "Film frame · © Plan B Entertainment, Annapurna Pictures, Universal Pictures · via Sceen-It",
+            "alt": "Jodi and a witness talk across a table inside Orsay in She Said.",
+            "src": "/images/film-map/she-said--orsay-restaurant.jpg",
+            "thumbnail": "/images/film-map/she-said--orsay-restaurant--thumb.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/6720/She-Said/Orsay-Restaurant"
+          },
+          "source_ids": [
+            "recent-films-151",
+            "recent-films-152",
+            "recent-films-153"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new-york-times-building",
+      "name": "The New York Times Building",
+      "address": "620 Eighth Avenue",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.756001,
+        -73.990326
+      ],
+      "access": "Public exterior",
+      "visit_note": "View the tower from Eighth Avenue; the newsroom and office floors are private.",
+      "scenes": [
+        {
+          "film_id": "she-said",
+          "scene": "Jodi and Megan pursue the investigation from the New York Times offices.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/84162.jpg/w/600/h/340/crop/true/nos/6364_she%20said_the%20new%20york%20times%20building_2.jpg",
+            "width": 600,
+            "height": 340,
+            "credit": "Film frame · © Plan B Entertainment, Annapurna Pictures, Universal Pictures · via Sceen-It",
+            "alt": "Jodi makes a telephone call inside the New York Times building in She Said.",
+            "src": "/images/film-map/she-said--new-york-times-building.jpg",
+            "thumbnail": "/images/film-map/she-said--new-york-times-building--thumb.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/6364/She-Said/The-New-York-Times-Building"
+          },
+          "source_ids": [
+            "recent-films-154",
+            "recent-films-152",
+            "recent-films-155"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "denos-wonder-wheel",
+      "name": "Deno’s Wonder Wheel Amusement Park",
+      "address": "3059 West 12th Street",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.57404,
+        -73.97915
+      ],
+      "access": "Seasonal amusement park",
+      "visit_note": "Park admission is free; rides require tickets and operate seasonally, weather permitting.",
+      "scenes": [
+        {
+          "film_id": "marry-me",
+          "scene": "Kat surprises Charlie with a date among Coney Island’s amusement rides.",
+          "precision": "venue; park-level pin, not exact camera position",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/75319.jpg/w/600/h/340/crop/true/nos/5756_marry%20me_coney%20island_0.png",
+            "width": 600,
+            "height": 340,
+            "credit": "Film frame · © Nuyorican Productions, Perfect World Pictures, Kung Fu Monkey Productions · via Sceen-It",
+            "alt": "Kat and Charlie stand in front of illuminated Coney Island rides in Marry Me.",
+            "src": "/images/film-map/marry-me--denos-wonder-wheel.jpg",
+            "thumbnail": "/images/film-map/marry-me--denos-wonder-wheel--thumb.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/5756/Marry-Me/Coney-Island-Wonder-Wheel"
+          },
+          "source_ids": [
+            "recent-films-158",
+            "recent-films-159",
+            "recent-films-160",
+            "recent-films-161"
           ]
         }
       ]
