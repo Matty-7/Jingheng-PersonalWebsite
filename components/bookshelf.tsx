@@ -54,7 +54,12 @@ export function Bookshelf() {
   const previous_rects = useRef(new Map<string, DOMRect>());
   const animations = useRef(new Map<string, Animation>());
   const return_focus = useRef<HTMLButtonElement | null>(null);
+  const fallback_passage = useRef<HTMLElement | null>(null);
   const dialog_book = books.find((book) => book.slug === dialog_slug);
+
+  useEffect(() => {
+    if (is_open && dialog_failed) fallback_passage.current?.focus();
+  }, [is_open, dialog_failed, dialog_slug]);
 
   useEffect(() => {
     if (!shelf.current || typeof IntersectionObserver === 'undefined') return;
@@ -438,16 +443,25 @@ export function Bookshelf() {
         />
       )}
       {is_open && !BookDialog && dialog_book && (
-        <div className="book-dialog-status flex flex-wrap items-center gap-3 py-3 text-sm">
+        <div className="book-dialog-status space-y-3 py-3 text-sm">
           <output aria-live="polite">
             {dialog_failed
-              ? `Couldn't open ${dialog_book.title}. Please reload the page to try again.`
+              ? 'Book preview unavailable. You can read the passage below.'
               : `Opening ${dialog_book.title}…`}
           </output>
           {dialog_failed && (
-            <Button variant="outline" onClick={() => window.location.reload()}>
-              Reload page
-            </Button>
+            <section
+              ref={fallback_passage}
+              tabIndex={-1}
+              aria-label={dialog_book.title}
+              className="max-w-prose space-y-3 rounded-lg border p-5"
+            >
+              <h3 className="font-semibold">{dialog_book.title}</h3>
+              <p>{dialog_book.author}</p>
+              <blockquote cite={dialog_book.quote_source}>
+                “{dialog_book.quote}”
+              </blockquote>
+            </section>
           )}
           <Button
             variant="ghost"
@@ -457,7 +471,7 @@ export function Bookshelf() {
               return_focus.current?.focus();
             }}
           >
-            Cancel
+            {dialog_failed ? 'Close passage' : 'Cancel'}
           </Button>
         </div>
       )}
