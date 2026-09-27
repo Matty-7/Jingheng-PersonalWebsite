@@ -1,7 +1,101 @@
 import { test, expect } from '@playwright/test';
 import { open_home, expect_loaded_images } from './home_helpers';
+import featured_books from '../../content/books.json' with { type: 'json' };
 
 test.use({ reducedMotion: 'reduce' });
+
+const dialog_chunk = /\/book_dialog-[^/]+\.js(?:\?.*)?$/;
+
+test('book dialog code loads near the shelf and is reused across books', async ({
+  page,
+}) => {
+  const requests: string[] = [];
+  page.on('request', (request) => {
+    if (dialog_chunk.test(request.url())) requests.push(request.url());
+  });
+  await open_home(page);
+  await expect(page.locator('.bookshelf-book')).toHaveCount(10);
+  expect(requests).toHaveLength(0);
+  await page.locator('#books').scrollIntoViewIfNeeded();
+  await expect.poll(() => requests.length).toBe(1);
+  for (const book of featured_books.slice(0, 2)) {
+    const trigger = page.locator(`[data-book-slug="${book.slug}"]`);
+    await trigger.click();
+    await expect(
+      page.getByRole('dialog', { name: book.title, exact: true }),
+    ).toBeVisible();
+    await expect(page.locator('.open-book-quote')).toHaveText(
+      `“${book.quote}”`,
+    );
+    await page.getByRole('button', { name: 'Close', exact: true }).click();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+  }
+  expect(requests).toHaveLength(1);
+});
+
+test('slow book loading can be cancelled and opens only the latest selection', async ({
+  page,
+}) => {
+  await open_home(page);
+  let release: () => void = () => {};
+  const gate = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route(dialog_chunk, async (route) => {
+    await gate;
+    await route.continue();
+  });
+  const first = page.locator(`[data-book-slug="${featured_books[0].slug}"]`);
+  const second = page.locator(`[data-book-slug="${featured_books[1].slug}"]`);
+  await first.click();
+  await expect(page.locator('.book-dialog-status')).toContainText(
+    `Opening ${featured_books[0].title}`,
+  );
+  await second.click();
+  await expect(page.locator('.book-dialog-status')).toContainText(
+    `Opening ${featured_books[1].title}`,
+  );
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.book-dialog-status')).toHaveCount(0);
+  await expect(second).toBeFocused();
+  const loaded = page.waitForResponse(dialog_chunk);
+  release();
+  await loaded;
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await second.press('Enter');
+  await expect(
+    page.getByRole('dialog', { name: featured_books[1].title, exact: true }),
+  ).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(second).toBeFocused();
+});
+
+test('unavailable book dialog offers a working page reload', async ({
+  page,
+}) => {
+  await open_home(page);
+  await page.route(dialog_chunk, (route) => route.abort('failed'));
+  const first = page.locator(`[data-book-slug="${featured_books[0].slug}"]`);
+  await first.click();
+  const status = page.locator('.book-dialog-status');
+  await expect(status).toContainText("Couldn't open");
+  await first.click();
+  await expect(status).toContainText("Couldn't open");
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.unroute(dialog_chunk);
+  const reloaded = page.waitForEvent('load');
+  await status.getByRole('button', { name: 'Reload page' }).click();
+  await reloaded;
+  await expect(page.locator('.arrival-scene')).toHaveAttribute(
+    'data-image-state',
+    'loaded',
+  );
+  await first.click();
+  await expect(
+    page.getByRole('dialog', { name: featured_books[0].title, exact: true }),
+  ).toBeVisible();
+});
 
 test('books drag, cancel, move with arrows and restore focus after reading', async ({
   page,

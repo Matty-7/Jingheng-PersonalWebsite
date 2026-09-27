@@ -12,14 +12,11 @@ import {
   type PointerEvent,
 } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
 import books from '@/content/books.json';
 import { bind_book_touch, type BookTouchEvent } from '@/lib/book_touch';
+import { load_book_dialog } from '@/lib/book_dialog_loader';
+
+type BookDialogComponent = typeof import('@/components/book_dialog').BookDialog;
 
 type DragState = {
   slug: string;
@@ -39,6 +36,10 @@ export function Bookshelf() {
   const [selected_slug, set_selected_slug] = useState<string | null>(null);
   const [is_open, set_is_open] = useState(false);
   const [dialog_slug, set_dialog_slug] = useState<string | null>(null);
+  const [BookDialog, set_book_dialog] = useState<BookDialogComponent | null>(
+    null,
+  );
+  const [dialog_failed, set_dialog_failed] = useState(false);
   const suppress_click = useRef(false);
   const [loaded_covers, set_loaded_covers] = useState<Record<string, boolean>>(
     {},
@@ -56,10 +57,53 @@ export function Bookshelf() {
   const dialog_book = books.find((book) => book.slug === dialog_slug);
 
   useEffect(() => {
+    if (!shelf.current || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        // A failed prefetch is handled visibly if the visitor opens a book.
+        void load_book_dialog().catch(() => {});
+      },
+      { rootMargin: '600px' },
+    );
+    observer.observe(shelf.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!is_open || BookDialog) return;
+    let active = true;
+    void load_book_dialog().then(
+      (module) => {
+        if (active) set_book_dialog(() => module.BookDialog);
+      },
+      () => {
+        if (active) set_dialog_failed(true);
+      },
+    );
+    function cancel_pending(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return;
+      set_is_open(false);
+      set_selected_slug(null);
+      return_focus.current?.focus();
+    }
+    document.addEventListener('keydown', cancel_pending);
+    return () => {
+      active = false;
+      document.removeEventListener('keydown', cancel_pending);
+    };
+  }, [is_open, dialog_slug, BookDialog]);
+
+  useEffect(() => {
     function dismiss_selection(event: globalThis.PointerEvent) {
       const target = event.target;
-      if (target instanceof Element && !target.closest('.bookshelf-book')) {
+      if (
+        target instanceof Element &&
+        !target.closest('.bookshelf-book, .book-dialog-status')
+      ) {
         set_selected_slug(null);
+        if (!BookDialog) set_is_open(false);
       }
     }
     function clear_pending_pointer() {
@@ -72,7 +116,7 @@ export function Bookshelf() {
       document.removeEventListener('pointerdown', dismiss_selection);
       document.removeEventListener('pointerup', clear_pending_pointer);
     };
-  }, []);
+  }, [BookDialog]);
 
   useLayoutEffect(() => {
     const reduced = window.matchMedia(
@@ -343,6 +387,8 @@ export function Bookshelf() {
                       return_focus.current = event.currentTarget;
                       set_selected_slug(slug);
                       set_dialog_slug(slug);
+                      if (!is_open || slug !== dialog_slug)
+                        set_dialog_failed(false);
                       set_is_open(true);
                     }}
                   >
@@ -380,46 +426,41 @@ export function Bookshelf() {
       <output className="sr-only" aria-live="polite">
         {announcement}
       </output>
-      <Dialog
-        open={is_open}
-        onOpenChange={(open) => {
-          set_is_open(open);
-          if (!open) set_selected_slug(null);
-        }}
-      >
-        <DialogContent className="open-book-dialog" finalFocus={return_focus}>
-          {dialog_book && (
-            <>
-              <div className="open-book-stage">
-                <div className="open-book-paper">
-                  <DialogTitle className="sr-only">
-                    {dialog_book.title}
-                  </DialogTitle>
-                  <DialogDescription className="sr-only">
-                    {dialog_book.author}
-                  </DialogDescription>
-                  <blockquote
-                    className="open-book-quote"
-                    cite={dialog_book.quote_source}
-                  >
-                    “{dialog_book.quote}”
-                  </blockquote>
-                </div>
-                <div className="open-book-cover" aria-hidden="true">
-                  <Image
-                    unoptimized
-                    src={dialog_book.cover}
-                    width={dialog_book.coverWidth}
-                    height={dialog_book.coverHeight}
-                    alt=""
-                    draggable={false}
-                  />
-                </div>
-              </div>
-            </>
+      {dialog_book && BookDialog && (
+        <BookDialog
+          book={dialog_book}
+          open={is_open}
+          on_open_change={(open) => {
+            set_is_open(open);
+            if (!open) set_selected_slug(null);
+          }}
+          return_focus={return_focus}
+        />
+      )}
+      {is_open && !BookDialog && dialog_book && (
+        <div className="book-dialog-status flex flex-wrap items-center gap-3 py-3 text-sm">
+          <output aria-live="polite">
+            {dialog_failed
+              ? `Couldn't open ${dialog_book.title}. Please reload the page to try again.`
+              : `Opening ${dialog_book.title}…`}
+          </output>
+          {dialog_failed && (
+            <Button variant="outline" onClick={() => window.location.reload()}>
+              Reload page
+            </Button>
           )}
-        </DialogContent>
-      </Dialog>
+          <Button
+            variant="ghost"
+            onClick={() => {
+              set_is_open(false);
+              set_selected_slug(null);
+              return_focus.current?.focus();
+            }}
+          >
+            Cancel
+          </Button>
+        </div>
+      )}
       {drag_view &&
         createPortal(
           <div
