@@ -125,11 +125,18 @@ test('clusters support keyboard expansion and map failure keeps search usable', 
   const cluster = page.locator('.atlas-cluster').first();
   await expect(cluster).toHaveAttribute('role', 'button');
   const initial = await cluster.getAttribute('aria-label');
+  const cluster_icon = await cluster.elementHandle();
   const position_before = await cluster.getAttribute('style');
   await cluster.press('Space');
   await expect
-    .poll(() => cluster.getAttribute('style'))
-    .not.toBe(position_before);
+    .poll(() =>
+      cluster_icon!.evaluate(
+        (element, position) =>
+          !element.isConnected || element.getAttribute('style') !== position,
+        position_before,
+      ),
+    )
+    .toBe(true);
   await expect(page.locator('.atlas-map')).toBeFocused();
   expect(initial).toMatch(/places. Zoom to explore/);
   await page.unroute(map_style_url);
