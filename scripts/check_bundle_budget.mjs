@@ -8,7 +8,7 @@ const manifest = JSON.parse(
 );
 const budgets = [
   { entry: 'app/page.tsx', raw: 630_000, gzip: 200_000 },
-  { entry: 'components/new_york_atlas.tsx', raw: 960_000, gzip: 260_000 },
+  { entry: 'components/new_york_atlas.tsx', raw: 470_000, gzip: 150_000 },
   { entry: 'components/mortgage_map.tsx', raw: 680_000, gzip: 205_000 },
 ];
 

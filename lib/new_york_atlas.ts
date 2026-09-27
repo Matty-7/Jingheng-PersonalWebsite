@@ -4,6 +4,8 @@ import {
   google_film_embed_url,
   google_maps_url,
   screen_creator,
+  screen_credit,
+  film_sources,
   screen_kind,
   screen_year,
   type ScreenWork,
@@ -27,11 +29,22 @@ import {
   type MusicPlace,
   type MusicTrack,
 } from './nyc_music_map.ts';
-import type { MapLocationCodec } from './map_location';
+import {
+  atlas_labels,
+  create_atlas_location,
+  search_atlas_index,
+  type AtlasDetail,
+  type AtlasFilter,
+  type AtlasIndexEntry,
+} from './atlas_browser.ts';
+export { atlas_labels } from './atlas_browser.ts';
+export type {
+  AtlasMedium,
+  AtlasFilter,
+  AtlasSelection,
+} from './atlas_browser.ts';
 import { normalize_search_text } from './search_text.ts';
 
-export type AtlasMedium = 'film' | 'literature' | 'music';
-export type AtlasFilter = AtlasMedium | 'all';
 type AtlasBase = {
   id: string;
   place_key: string;
@@ -219,13 +232,6 @@ export const atlas_counts = {
   literature: literary_works.length,
   music: music_tracks.length,
 };
-export const atlas_labels: Record<AtlasFilter, string> = {
-  all: 'All',
-  film: 'Film & TV',
-  literature: 'Literature',
-  music: 'Music',
-};
-
 export function atlas_entry_label(entry: AtlasEntry) {
   return entry.medium === 'film'
     ? screen_kind(entry.work)
@@ -238,17 +244,20 @@ export function atlas_year(entry: AtlasEntry) {
     : (entry.year ?? 'Year unverified');
 }
 
-export function search_atlas(medium: AtlasFilter, query: string) {
-  const terms = normalize_search_text(query)
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-  return atlas_entries.filter((entry) => {
-    if (medium !== 'all' && entry.medium !== medium) return false;
-    const area = atlas_areas.find((item) =>
-      item.places.includes(entry.place_key),
-    );
-    const text = normalize_search_text(
+// Only the search/list fields cross the initial browser boundary. Source prose,
+// artwork metadata and complete catalogs remain on the server.
+export const atlas_index: AtlasIndexEntry[] = atlas_entries.map((entry) => {
+  const area = atlas_areas.find((item) =>
+    item.places.includes(entry.place_key),
+  );
+  return {
+    id: entry.id,
+    medium: entry.medium,
+    title: entry.title,
+    place_name: entry.place_name,
+    area: entry.area,
+    label: atlas_entry_label(entry),
+    search_text: normalize_search_text(
       [
         entry.title,
         entry.creator,
@@ -259,9 +268,16 @@ export function search_atlas(medium: AtlasFilter, query: string) {
         area?.name,
         entry.medium === 'film' ? entry.location.address : '',
       ].join(' '),
-    );
-    return terms.every((term) => text.includes(term));
-  });
+    ),
+  };
+});
+const entries_by_id = new Map(atlas_entries.map((entry) => [entry.id, entry]));
+const index_by_id = new Map(atlas_index.map((entry) => [entry.id, entry]));
+
+export function search_atlas(medium: AtlasFilter, query: string) {
+  return search_atlas_index(atlas_index, medium, query).map((entry) =>
+    entries_by_id.get(entry.id)!,
+  );
 }
 
 export function atlas_connections(entry: AtlasEntry) {
@@ -295,35 +311,36 @@ export function atlas_maps_url(entry: AtlasEntry) {
   return google_music_url(entry.place);
 }
 
-export type AtlasSelection = {
-  medium: AtlasFilter;
-  query: string;
-  entry_id: string | null;
-};
-export const atlas_location: MapLocationCodec<AtlasSelection> = {
-  initial_state: { medium: 'all', query: '', entry_id: atlas_entries[0].id },
-  keys: ['medium', 'q', 'entry'],
-  read(params) {
-    const candidate = params.get('medium');
-    const medium =
-      candidate === 'film' ||
-      candidate === 'literature' ||
-      candidate === 'music'
-        ? candidate
-        : 'all';
-    const query = params.get('q') ?? '';
-    const results = search_atlas(medium, query);
-    const entry_id =
-      results.find((entry) => entry.id === params.get('entry'))?.id ??
-      results[0]?.id ??
-      null;
-    return { medium, query, entry_id };
-  },
-  write(state) {
-    return {
-      medium: state.medium === 'all' ? '' : state.medium,
-      q: state.query,
-      entry: state.entry_id ?? '',
-    };
-  },
-};
+export const atlas_location = create_atlas_location(atlas_index);
+
+export function atlas_detail(
+  entry_id: string | null,
+  api_key: string,
+): AtlasDetail | null {
+  const entry = entry_id ? entries_by_id.get(entry_id) : undefined;
+  if (!entry) return null;
+  const related = atlas_connections(entry);
+  return {
+    entry,
+    label: atlas_entry_label(entry),
+    year: atlas_year(entry),
+    credit: entry.medium === 'film' ? screen_credit(entry.work) : entry.creator,
+    map_url: atlas_embed_url(entry, api_key),
+    maps_url: atlas_maps_url(entry),
+    sources:
+      entry.medium === 'film'
+        ? entry.scene.source_ids.flatMap((id) => {
+            const source = film_sources.find((item) => item.id === id);
+            return source ? [source] : [];
+          })
+        : [],
+    connection:
+      entry.medium === 'music'
+        ? (artist_connection(entry.track, entry.place.id) ?? null)
+        : null,
+    related: {
+      ...related,
+      entries: related.entries.map((item) => index_by_id.get(item.id)!),
+    },
+  };
+}

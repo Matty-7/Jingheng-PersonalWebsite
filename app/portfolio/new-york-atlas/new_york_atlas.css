@@ -365,6 +365,31 @@ html:has(.atlas-page) {
   line-height: 1.5;
   color: var(--atlas-muted);
 }
+.atlas-map:has(.atlas-loading) {
+  height: auto;
+}
+.atlas-loading {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  line-height: 1.5;
+}
+.atlas-loading button {
+  border: 0;
+  border-radius: 22px;
+  min-height: 44px;
+  padding: 8px 18px;
+  background: var(--atlas-ink);
+  color: var(--atlas-surface);
+}
+.atlas-loading a {
+  text-decoration: underline;
+}
 .atlas-location-note {
   display: flex;
   justify-content: space-between;
