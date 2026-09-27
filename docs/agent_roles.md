@@ -40,6 +40,8 @@ After a repair, inspect previous-reviewed-head to new-head plus affected context
 
 Send this once with the first review, then only the delta and changed evidence on follow-up. Prefer `fork_turns="none"` with this complete packet when supported; do not rely on inherited chat history.
 
+Run `npm run review:packet -- <full-base-sha>` from the clean committed checkout to generate revisions, changed paths, the diff command and matching local evidence. Add the task's accepted criteria and current CI run ID. Missing or stale local evidence is explicitly omitted; do not manufacture a PASS or repeat a complete suite to fill that field. See `docs/iteration_speed.md` for the verification commands and timing reports.
+
 ```text
 Role: independent read-only reviewer; no edits, nested agents, Sites or browser access.
 Checkout / branch: <absolute path / branch>
