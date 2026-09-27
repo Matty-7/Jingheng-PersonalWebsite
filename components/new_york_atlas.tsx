@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import {
   atlas_labels,
+  atlas_card_artwork,
   create_atlas_location,
   search_atlas_index,
   type AtlasDetail,
@@ -55,10 +56,8 @@ export function NewYorkAtlas({
     [index, medium, query],
   );
   const summary = results.find((entry) => entry.id === entry_id);
-  const { detail, failed, retry, preview_track } = useAtlasDetail(
-    entry_id,
-    initial_detail,
-  );
+  const { detail, failed, retry, preview_track, prefetch_detail } =
+    useAtlasDetail(entry_id, initial_detail);
   const selected = detail?.entry;
   const heading = useRef<HTMLHeadingElement>(null);
   const search_input = useRef<HTMLInputElement>(null);
@@ -108,23 +107,7 @@ export function NewYorkAtlas({
     window.addEventListener('keydown', dismiss);
     return () => window.removeEventListener('keydown', dismiss);
   }, [info_open, search_open, entry_id, close_card]);
-  const artwork =
-    selected?.medium === 'film'
-      ? selected.scene.still
-      : selected?.medium === 'literature'
-        ? selected.work.cover && {
-            ...selected.work.cover,
-            width: 300,
-            height: 450,
-          }
-        : selected?.medium === 'music'
-          ? {
-              src: selected.track.artwork_url,
-              alt: `${selected.track.album} cover`,
-              width: 300,
-              height: 300,
-            }
-          : null;
+  const artwork = atlas_card_artwork(detail);
   const description =
     selected?.medium === 'film'
       ? selected.scene.scene
@@ -240,6 +223,9 @@ export function NewYorkAtlas({
                 <button
                   type="button"
                   key={entry.id}
+                  onPointerEnter={() => prefetch_detail(entry.id)}
+                  onFocus={() => prefetch_detail(entry.id)}
+                  onTouchStart={() => prefetch_detail(entry.id)}
                   onClick={() => select_entry(entry.id)}
                 >
                   <strong>{entry.place_name}</strong>
@@ -263,6 +249,7 @@ export function NewYorkAtlas({
               entries={results}
               selected_id={entry_id}
               on_select={select_entry}
+              on_prefetch={prefetch_detail}
             />
           </Suspense>
         ) : (
@@ -290,6 +277,7 @@ export function NewYorkAtlas({
               <AtlasImage
                 key={artwork.src}
                 {...artwork}
+                eager
                 class_name={`atlas-artwork atlas-artwork-${summary.medium}`}
               />
             )}
@@ -471,7 +459,7 @@ export function NewYorkAtlas({
             <X size={20} />
           </button>
         </div>
-        {detail && (
+        {info_open && detail && (
           <div className="atlas-info-body">
             <h3>{detail.entry.title}</h3>
             <p>

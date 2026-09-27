@@ -1,25 +1,31 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { BookOpen, Film, Music2 } from 'lucide-react';
-import type * as Leaflet from 'leaflet';
+import * as Leaflet from 'leaflet';
+import 'leaflet.markercluster';
+import { maplibreGL } from '@maplibre/maplibre-gl-leaflet';
+import { setWorkerUrl } from 'maplibre-gl';
 import maplibre_worker_url from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import type { AtlasIndexEntry } from '@/lib/atlas_browser';
 
-export function AtlasMap({
+export const AtlasMap = memo(function AtlasMap({
   entries,
   selected_id,
   on_select,
+  on_prefetch,
 }: {
   entries: AtlasIndexEntry[];
   selected_id: string | null;
   on_select: (id: string) => void;
+  on_prefetch: (id: string) => void;
 }) {
   const container = useRef<HTMLDivElement>(null);
   const active_map = useRef<Leaflet.Map | null>(null);
   const select = useRef(on_select);
   const selected = useRef(selected_id);
+  const prefetch = useRef(on_prefetch);
   const [retry, set_retry] = useState(0);
   const [status, set_status] = useState('loading');
   const [instance, set_instance] = useState<{
@@ -34,21 +40,17 @@ export function AtlasMap({
   useEffect(() => {
     select.current = on_select;
     selected.current = selected_id;
-  }, [on_select, selected_id]);
+    prefetch.current = on_prefetch;
+  }, [on_select, selected_id, on_prefetch]);
 
   useEffect(() => {
     let disposed = false;
     let map: Leaflet.Map | undefined;
     let observer: ResizeObserver | undefined;
     let timeout: ReturnType<typeof setTimeout> | undefined;
-    void import('leaflet')
-      .then(async (module) => {
-        const leaflet = module.default ?? module;
-        const [, { maplibreGL }, { setWorkerUrl }] = await Promise.all([
-          import('leaflet.markercluster'),
-          import('@maplibre/maplibre-gl-leaflet'),
-          import('maplibre-gl'),
-        ]);
+    void Promise.resolve().then(() => {
+      try {
+        const leaflet = Leaflet;
         if (disposed || !container.current) return;
         setWorkerUrl(maplibre_worker_url);
         map = leaflet
@@ -160,10 +162,10 @@ export function AtlasMap({
           basemap.remove();
           if (!disposed) set_status('error');
         }
-      })
-      .catch(() => {
+      } catch {
         if (!disposed) set_status('error');
-      });
+      }
+    });
     return () => {
       disposed = true;
       clearTimeout(timeout);
@@ -185,6 +187,7 @@ export function AtlasMap({
       places.set(entry.place_key, group);
     }
     const next_icons: typeof icons = [];
+    const next_markers: Leaflet.Marker[] = [];
     for (const [key, works] of places) {
       const entry = works[0];
       const host = document.createElement('span');
@@ -204,6 +207,11 @@ export function AtlasMap({
         select.current(
           works.find((work) => work.id === selected.current)?.id ?? entry.id,
         );
+      const anticipate = () =>
+        prefetch.current(
+          works.find((work) => work.id === selected.current)?.id ?? entry.id,
+        );
+      marker.on('mouseover', anticipate);
       marker.on('click', choose);
       marker.on('keydown', (event: Leaflet.LeafletKeyboardEvent) => {
         if (![' ', 'Enter'].includes(event.originalEvent.key)) return;
@@ -212,6 +220,8 @@ export function AtlasMap({
       });
       marker.on('add', () => {
         const element = marker.getElement();
+        element?.addEventListener('focus', anticipate);
+        element?.addEventListener('touchstart', anticipate, { passive: true });
         element?.setAttribute('role', 'button');
         element?.setAttribute('aria-label', title);
         element?.classList.toggle(
@@ -223,10 +233,11 @@ export function AtlasMap({
         direction: 'top',
         offset: [0, -16],
       });
-      cluster.addLayer(marker);
+      next_markers.push(marker);
       for (const work of works) markers.current.set(work.id, marker);
       next_icons.push({ key, host, medium: entry.medium });
     }
+    cluster.addLayers(next_markers);
     const render_icons = requestAnimationFrame(() => set_icons(next_icons));
     if (entries.length > 60)
       map.setView([40.744, -73.98], 12, { animate: false });
@@ -246,11 +257,9 @@ export function AtlasMap({
   useEffect(() => {
     if (!instance || active_map.current !== instance.map) return;
     const active = selected_id ? markers.current.get(selected_id) : undefined;
-    for (const marker of new Set(markers.current.values())) {
-      marker.setZIndexOffset(marker === active ? 1000 : 0);
-      marker.getElement()?.classList.toggle('is-selected', marker === active);
-    }
     if (!active) return;
+    active.setZIndexOffset(1000);
+    active.getElement()?.classList.add('is-selected');
     const point = instance.leaflet
       .circleMarker(active.getLatLng(), {
         radius: 9,
@@ -274,19 +283,14 @@ export function AtlasMap({
     });
     return () => {
       point.remove();
+      active.setZIndexOffset(0);
+      active.getElement()?.classList.remove('is-selected');
     };
   }, [instance, entries, selected_id]);
 
-  return (
-    <>
-      <div
-        ref={container}
-        className="atlas-map"
-        id="atlas-map"
-        role="application"
-        aria-label="New York cultural map"
-      />
-      {icons.map(({ key, host, medium }) =>
+  const pin_icons = useMemo(
+    () =>
+      icons.map(({ key, host, medium }) =>
         createPortal(
           medium === 'film' ? (
             <Film size={17} aria-hidden="true" />
@@ -298,7 +302,20 @@ export function AtlasMap({
           host,
           key,
         ),
-      )}
+      ),
+    [icons],
+  );
+
+  return (
+    <>
+      <div
+        ref={container}
+        className="atlas-map"
+        id="atlas-map"
+        role="application"
+        aria-label="New York cultural map"
+      />
+      {pin_icons}
       {status !== 'ready' && (
         <output className="atlas-map-status">
           {status === 'loading' ? (
@@ -322,4 +339,4 @@ export function AtlasMap({
       )}
     </>
   );
-}
+});

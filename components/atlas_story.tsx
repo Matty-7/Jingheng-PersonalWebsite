@@ -11,6 +11,7 @@ export function AtlasImage({
   width,
   height,
   class_name,
+  eager = false,
   children,
 }: {
   src: string;
@@ -18,6 +19,7 @@ export function AtlasImage({
   width: number;
   height: number;
   class_name: string;
+  eager?: boolean;
   children?: React.ReactNode;
 }) {
   const [failed_src, set_failed_src] = useState<string | null>(null);
@@ -30,7 +32,8 @@ export function AtlasImage({
         width={width}
         height={height}
         unoptimized
-        loading="lazy"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
         onError={() => set_failed_src(src)}
       />
       {children}
