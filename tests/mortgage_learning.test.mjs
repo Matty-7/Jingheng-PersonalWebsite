@@ -9,6 +9,7 @@ import {
   local_tree,
   next_lesson,
   read_progress,
+  read_position,
   refinancing_feedback,
   route_for_concept,
 } from '../lib/mortgage_learning.ts';
@@ -109,5 +110,28 @@ test('free jumps adopt the new lesson, keep completion and select a valid route'
   assert.equal(
     select_lesson(other_topic, 'incentive', explicit_route.id).route_id,
     explicit_route.id,
+  );
+});
+
+test('server position is bounded and validates untrusted cookie input', () => {
+  for (const raw of [
+    undefined,
+    '%E0%A4%A',
+    encodeURIComponent('{'),
+    encodeURIComponent('{"current_id":"missing"}'),
+  ]) {
+    assert.deepEqual(read_position(raw), initial_progress);
+  }
+  const selected = select_lesson(initial_progress, 'loan_states');
+  assert.deepEqual(
+    read_position(
+      encodeURIComponent(
+        JSON.stringify({
+          route_id: selected.route_id,
+          current_id: selected.current_id,
+        }),
+      ),
+    ),
+    selected,
   );
 });

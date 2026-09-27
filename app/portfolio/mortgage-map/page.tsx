@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import { Sprout } from 'lucide-react';
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 import { MortgageMap } from '@/components/mortgage_map';
 import { pageMetadata } from '@/lib/seo';
 import { render_mortgage_math } from '@/lib/mortgage_math';
+import {
+  position_cookie,
+  read_position,
+  select_lesson,
+} from '@/lib/mortgage_learning';
 import 'katex/dist/katex.min.css';
 import './mortgage_map.css';
 
@@ -13,10 +19,23 @@ export const metadata: Metadata = pageMetadata(
   '/portfolio/mortgage-map',
 );
 
-export default function MortgageMapPage() {
+export default async function MortgageMapPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ concept?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const position = read_position((await cookies()).get(position_cookie)?.value);
+  const initial_lesson =
+    typeof params.concept === 'string'
+      ? select_lesson(position, params.concept)
+      : position;
+  const legacy_hash_guard = `try{const id=new URLSearchParams(location.hash.slice(1)).get('concept');if(id&&id!==${JSON.stringify(initial_lesson.current_id)})document.documentElement.dataset.mortgagePending='true'}catch{}`;
   return (
     <main className="mortgage-learning-page" id="map-top">
+      <script dangerouslySetInnerHTML={{ __html: legacy_hash_guard }} />
       <MortgageMap
+        initial_lesson={initial_lesson}
         formulas={render_mortgage_math()}
         home_link={
           <Link href="/#projects" aria-label="Back to projects">

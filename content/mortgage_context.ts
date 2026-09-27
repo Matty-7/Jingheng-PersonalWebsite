@@ -89,7 +89,7 @@ export const context_concepts: MortgageConcept[] = [
     summary:
       'An as-of label states the effective date or time of a snapshot. An observation time, a publication time and the date chosen for valuation can be different.',
     distinction:
-      'A file downloaded today can contain yesterday’s observations. State the time zone and whether the label means observed, published or valued; a date alone does not identify a market close.',
+      'A file downloaded today can contain yesterday’s observations. Historical analytics also need contemporaneous prices, curves, settlement and documented model assumptions. Changing only the valuation date does not recreate a historical result. State the time zone and whether the label means observed, published or valued.',
     question:
       'Does a rate published this morning necessarily describe this morning’s transactions?',
     answer:
@@ -192,12 +192,12 @@ export const context_concepts: MortgageConcept[] = [
     summary:
       'A useful comparison preserves the source, observation time, currency, instrument or index, quote side, units and rate convention. A displayed yield alone leaves much of that meaning unstated.',
     distinction:
-      'A government par yield, an OIS fixed rate and a futures-implied rate can share a currency and still measure different things. In a table, keep missing observations distinct from zero.',
+      'An executable quote offers terms subject to its size, time and conditions; an indicative quote is an indication. An evaluated price is an estimate using observations and methodology. TRACE reports executed trades, which can have earlier execution times or later corrections. None automatically establishes a price available to trade now. Missing observations are not zero.',
     question:
-      'Two cells both say 4.1%. What would you check before calling them comparable?',
+      'A TRACE trade and an evaluated price both show 99. Does that establish an executable offer at 99 now?',
     answer:
-      'Which instruments and curve measures they represent; their source and effective time; the tenor or payment period; quote side, settlement and compounding. Formatting does not establish equivalence.',
-    sources: ['ecb_curves', 'sofr_futures', 'formulas'],
+      'No. One records a completed trade and the other is a valuation estimate. Check a current executable quote, including its side, size, time, settlement and conditions.',
+    sources: ['trace_transactions', 'evaluated_pricing', 'ecb_curves'],
     links: [
       {
         id: 'benchmark_matching',

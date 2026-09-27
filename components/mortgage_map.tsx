@@ -1,6 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 import { Check, ChevronDown, Circle, Search } from 'lucide-react';
 import {
   initial_progress,
@@ -8,7 +14,7 @@ import {
   local_tree,
   next_lesson,
   progress_key,
-  read_progress,
+  position_cookie,
   route_for_concept,
   route_index,
   select_lesson,
@@ -17,22 +23,26 @@ import {
 import { MortgageCatalog } from './mortgage_catalog';
 import { MortgageLesson } from './mortgage_lesson';
 import type { MortgageFormulas } from './mortgage_reader';
+import { useLearningProgress } from './use_learning_progress';
 
 export function MortgageMap({
   formulas,
   home_link,
+  initial_lesson = initial_progress,
 }: {
   formulas: MortgageFormulas;
   home_link: ReactNode;
+  initial_lesson?: LearningProgress;
 }) {
-  const [progress, set_progress] = useState<LearningProgress>(initial_progress);
+  const { progress, loaded, set_progress } =
+    useLearningProgress(initial_lesson);
   const selected = progress.current_id;
-  const [loaded, set_loaded] = useState(false);
   const [catalog_open, set_catalog_open] = useState(false);
   const [announcement, set_announcement] = useState('');
   const catalog_trigger = useRef<HTMLElement | null>(null);
   const map_ref = useRef<HTMLElement>(null);
   const tree_ref = useRef<HTMLElement>(null);
+  const focus_requested = useRef(false);
   const [connectors, set_connectors] = useState<string[]>([]);
   const concept = learning_index.get(selected)!;
   const route = route_for_concept(selected, progress.route_id);
@@ -41,7 +51,7 @@ export function MortgageMap({
     progress.completed.includes(id),
   ).length;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tree_element = tree_ref.current;
     if (!tree_element) return;
     function measure_connections() {
@@ -70,84 +80,73 @@ export function MortgageMap({
       });
       set_connectors(paths);
     }
-    const frame = requestAnimationFrame(measure_connections);
+    measure_connections();
     const observer = new ResizeObserver(measure_connections);
     observer.observe(tree_element);
     return () => {
-      cancelAnimationFrame(frame);
       observer.disconnect();
     };
   }, [selected, route.id]);
 
   useEffect(() => {
-    let saved = initial_progress;
-    try {
-      saved = read_progress(localStorage.getItem(progress_key));
-    } catch {
-      /* Learning works when browser storage is unavailable. */
-    }
-    const frame = requestAnimationFrame(() => {
-      const from_hash = new URLSearchParams(location.hash.slice(1)).get(
-        'concept',
-      );
-      const restored = select_lesson(saved, from_hash ?? saved.current_id);
-      set_progress(restored);
-      const url = new URL(location.href);
-      url.hash = `concept=${restored.current_id}`;
-      history.replaceState(
-        { ...history.state, learning_route: restored.route_id },
-        '',
-        url,
-      );
-      set_loaded(true);
-    });
-    function restore_location() {
-      const id = new URLSearchParams(location.hash.slice(1)).get('concept');
-      set_progress((current) =>
-        select_lesson(
-          current,
-          id ?? saved.current_id,
-          history.state?.learning_route,
-        ),
-      );
-      set_catalog_open(false);
-    }
-    window.addEventListener('popstate', restore_location);
-    window.addEventListener('hashchange', restore_location);
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener('popstate', restore_location);
-      window.removeEventListener('hashchange', restore_location);
-    };
-  }, []);
-
-  useEffect(() => {
     if (!loaded) return;
+    if (location.pathname !== '/portfolio/mortgage-map') return;
+    document.documentElement.removeAttribute('data-mortgage-pending');
+    const url = new URL(location.href);
+    url.hash = `concept=${progress.current_id}`;
+    url.searchParams.set('concept', progress.current_id);
+    history.replaceState(
+      { ...history.state, learning_route: progress.route_id },
+      '',
+      url,
+    );
     try {
       localStorage.setItem(progress_key, JSON.stringify(progress));
     } catch {
       /* Progress remains available for this visit. */
     }
+    try {
+      const position = encodeURIComponent(
+        JSON.stringify({
+          route_id: progress.route_id,
+          current_id: progress.current_id,
+        }),
+      );
+      save_position_cookie(position);
+    } catch {
+      /* The URL still preserves this lesson when cookies are unavailable. */
+    }
   }, [loaded, progress]);
 
-  function focus_lesson() {
-    requestAnimationFrame(() =>
-      map_ref.current
-        ?.querySelector<HTMLElement>('#learning-title')
-        ?.focus({ preventScroll: true }),
-    );
-  }
+  useEffect(() => {
+    const close_on_history = () => set_catalog_open(false);
+    window.addEventListener('popstate', close_on_history);
+    window.addEventListener('hashchange', close_on_history);
+    return () => {
+      window.removeEventListener('popstate', close_on_history);
+      window.removeEventListener('hashchange', close_on_history);
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!focus_requested.current) return;
+    focus_requested.current = false;
+    map_ref.current
+      ?.querySelector<HTMLElement>('#learning-title')
+      ?.focus({ preventScroll: true });
+  }, [selected, catalog_open]);
   function choose(id: string, preferred = progress.route_id) {
     if (!learning_index.has(id)) return;
     const chosen_route = route_for_concept(id, preferred);
+    focus_requested.current = true;
     set_progress((current) => select_lesson(current, id, chosen_route.id));
     set_catalog_open(false);
     const url = new URL(location.href);
     url.hash = `concept=${id}`;
+    url.searchParams.set('concept', id);
     const state = { ...history.state, learning_route: chosen_route.id };
     if (location.hash !== url.hash) history.pushState(state, '', url);
     else history.replaceState(state, '', url);
-    focus_lesson();
   }
   function browse() {
     catalog_trigger.current = document.activeElement as HTMLElement;
@@ -247,7 +246,6 @@ export function MortgageMap({
         ))}
       </nav>
       <MortgageLesson
-        key={selected}
         concept={concept}
         formulas={formulas}
         completed={progress.completed.includes(selected)}
@@ -308,4 +306,8 @@ function LearningNode({
       </span>
     </button>
   );
+}
+
+function save_position_cookie(position: string) {
+  document.cookie = `${position_cookie}=${position}; Path=/portfolio/mortgage-map; Max-Age=31536000; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
 }

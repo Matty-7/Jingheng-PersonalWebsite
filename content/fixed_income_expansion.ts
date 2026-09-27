@@ -778,11 +778,11 @@ export const expansion_concepts: MortgageConcept[] = [
     summary:
       'A second lien sits behind a prior lien on the same property. Recovery depends on property proceeds after senior claims and costs. A closed-end second normally advances a defined amount, while a line of credit has draw mechanics.',
     distinction:
-      'A first-priority tranche backed by second liens still owns collateral with junior property claims. Borrower-level lien priority and security-level payment priority are different layers.',
+      'Borrowers may preserve a low-rate first mortgage and access equity with a second lien. If cash-out refinancing becomes attractive, demand can shift back to replacing the first mortgage. SFA’s September 17, 2026 research describes this substitution. A senior tranche still holds collateral with junior property claims; tranche priority does not change lien order.',
     question:
-      'Does a senior-rated tranche turn the underlying second liens into first liens?',
+      'Mortgage rates fall and second-lien issuance slows. Which explanation could fit without weaker borrower credit?',
     answer:
-      'No. Tranching reallocates collateral risk without changing the property’s lien order.',
+      'Cash-out refinancing may become more attractive, shifting borrowing away from second liens. Issuance volume alone does not establish a deterioration in credit performance.',
     links: [
       {
         id: 'cltv',
@@ -795,7 +795,7 @@ export const expansion_concepts: MortgageConcept[] = [
         reason: 'Open-end borrowing differs from a closed-end second.',
       },
     ],
-    sources: ['home_equity_guide', 'cltv_guide'],
+    sources: ['home_equity_guide', 'cltv_guide', 'second_lien_case'],
   }),
   entry({
     id: 'heloc',
@@ -875,9 +875,9 @@ export const expansion_concepts: MortgageConcept[] = [
     distinction:
       'The same numerical score from two models is not automatically the same credit risk. Avoid treating a score-model change as a deterioration in borrower quality; compare like-for-like cohorts and observed outcomes.',
     question:
-      'Can a pool-average score change solely because the scoring model changed?',
+      'A lender switches scoring models and its pool-average score rises. What should you check before concluding credit improved?',
     answer:
-      'Yes. Separate measurement changes from changes in borrower composition or repayment performance.',
+      'Compare the model versions, borrower cohorts and observed repayment outcomes. Fannie Mae’s August 17, 2026 disclosure update illustrates why score-model fields matter; a measurement change alone does not establish better borrower quality.',
     links: [
       {
         id: 'collateral_stratification',
@@ -893,7 +893,7 @@ export const expansion_concepts: MortgageConcept[] = [
         reason: 'An untested score mapping adds model uncertainty.',
       },
     ],
-    sources: ['score_transition'],
+    sources: ['score_transition', 'score_disclosure_case'],
   }),
   entry({
     id: 'cre_clo',

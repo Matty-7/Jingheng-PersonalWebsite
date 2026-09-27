@@ -4,6 +4,14 @@ export const learning_checks: Record<
   string,
   { choices: [string, string, string]; correct: number }
 > = {
+  loan_states: {
+    choices: [
+      'The final loss is fixed once a loan is 60 days delinquent.',
+      'The loan may cure or enter a workout; final loss and recovery timing remain uncertain.',
+      'Every delinquent loan immediately returns its full principal.',
+    ],
+    correct: 1,
+  },
   historical_speeds: {
     choices: [
       'No. An annualized rate can describe a shorter observation window.',
@@ -38,9 +46,9 @@ export const learning_checks: Record<
   },
   scenario_analysis: {
     choices: [
-      'Yes. Price differences establish that the scenario assumptions changed.',
-      'No. Market inputs, security data or valuation conventions may have changed.',
-      'No. An unchanged scenario means the price difference must be a calculation error.',
+      'A new price, while still claiming the price is fixed.',
+      'The yield implied by the revised cash flows and unchanged price.',
+      'The original contractual mortgage rate.',
     ],
     correct: 1,
   },
@@ -294,9 +302,9 @@ export const learning_checks: Record<
   },
   second_lien: {
     choices: [
-      'No. Tranching allocates risk without changing property lien priority.',
-      'Yes. A senior tranche upgrades each underlying mortgage to first-lien status.',
-      'Yes. A senior rating changes the collateral’s legal payment priority at the property.',
+      'Cash-out refinancing became more attractive, shifting product demand.',
+      'Every second-lien borrower became less creditworthy.',
+      'Every homeowner lost equity when mortgage rates fell.',
     ],
     correct: 0,
   },
@@ -318,9 +326,9 @@ export const learning_checks: Record<
   },
   credit_score_models: {
     choices: [
-      'Yes. A model change can alter measured scores without changing the borrowers.',
-      'No. A score change necessarily means repayment performance changed.',
-      'No. Different scoring models must assign the same score to each borrower.',
+      'Model versions, comparable borrowers and observed repayment outcomes.',
+      'Only whether the new average score is numerically larger.',
+      'Only the name of the lender that reported the score.',
     ],
     correct: 0,
   },
@@ -446,9 +454,9 @@ export const learning_checks: Record<
   },
   quote_context: {
     choices: [
-      'Check only that both cells use the same number of decimal places.',
-      'Check instrument, measure, source, time, tenor, quote side, settlement and compounding.',
-      'Check tenor alone; identical percentages then identify the same quote.',
+      'Yes. Two matching prices establish an executable offer.',
+      'No. A completed trade and a valuation estimate do not establish a current offer.',
+      'Yes. An evaluated price obliges a dealer to sell at that level.',
     ],
     correct: 1,
   },
@@ -742,9 +750,9 @@ export const learning_checks: Record<
   },
   fixed_arm: {
     choices: [
-      'Yes, immediately and without limits.',
-      'No, the rate can never change.',
-      'Not always: reset dates, caps and floors matter.',
+      'Both fixed-rate and ARM note rates reset immediately.',
+      'A fixed note rate automatically follows the market.',
+      'An ARM may reset on its scheduled date, subject to contractual limits.',
     ],
     correct: 2,
   },
@@ -846,9 +854,9 @@ export const learning_checks: Record<
   },
   cash_flows: {
     choices: [
-      'The coupon rate automatically becomes zero.',
-      'Repaid principal no longer earns future coupon payments.',
-      'Prepayments increase the remaining balance.',
+      'Yes. Any base-case label establishes probability weighting.',
+      'No. One scenario does not by itself specify outcomes and their probabilities.',
+      'Yes. Contractual payments and expected payments always match.',
     ],
     correct: 1,
   },
@@ -1262,11 +1270,11 @@ export const learning_checks: Record<
   },
   nominal_spread: {
     choices: [
-      'It fully identifies relative value because a basis point is standardized.',
-      'It identifies a 100 bp premium over every possible reference curve.',
-      'It is incomplete without the reference rate and cash-flow assumptions.',
+      'The spread must be wide because 6% is a high yield.',
+      'The nominal spread is 50 bp; yield alone does not establish relative value.',
+      'The spread is 550 bp because that is the benchmark yield.',
     ],
-    correct: 2,
+    correct: 1,
   },
   z_spread: {
     choices: [
@@ -1478,9 +1486,9 @@ export const learning_checks: Record<
   },
   dscr: {
     choices: [
-      'DSCR stays unchanged because debt service is fixed.',
-      'DSCR rises by the same proportion that NOI falls.',
-      'DSCR falls by the same proportion as NOI.',
+      'Yes. The origination ratio remains valid until maturity.',
+      'Yes. The original ratio guarantees sufficient income today.',
+      'No. Current income, debt service and measurement periods need checking.',
     ],
     correct: 2,
   },
