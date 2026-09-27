@@ -7,16 +7,22 @@ test('device touch opens and closes a book, then plays and pauses a record', asy
   page,
 }) => {
   await open_home(page);
-  expect(await page.evaluate(() => navigator.maxTouchPoints)).toBeGreaterThan(
-    0,
-  );
-  expect(
-    await page.evaluate(() => matchMedia('(pointer: coarse)').matches),
-  ).toBe(true);
+  expect(test.info().project.use.hasTouch).toBe(true);
+  expect(test.info().project.use.isMobile).toBe(true);
 
   const first_book = page.locator('.bookshelf-book').first();
   await first_book.scrollIntoViewIfNeeded();
+  await first_book.evaluate((element) => {
+    element.addEventListener(
+      'touchstart',
+      (event) => {
+        element.setAttribute('data-observed-touch', String(event.isTrusted));
+      },
+      { once: true },
+    );
+  });
   await first_book.tap();
+  await expect(first_book).toHaveAttribute('data-observed-touch', 'true');
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.getByRole('dialog').getByRole('button', { name: 'Close' }).tap();
   await expect(page.getByRole('dialog')).toHaveCount(0);

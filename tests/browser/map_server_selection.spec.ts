@@ -31,7 +31,9 @@ test('Atlas, music and literature deep links render their requested selection wi
     '/portfolio/nyc-music-map?track=cornelia-street&place=cornelia-street',
   );
   await expect(
-    page.getByRole('article', { name: 'Selected song' }).getByRole('heading'),
+    page
+      .getByRole('article', { name: 'Selected song' })
+      .getByRole('heading', { level: 2 }),
   ).toHaveText('Cornelia Street');
   await expect(page.locator('.sound-map-panel iframe')).toHaveAttribute(
     'title',
