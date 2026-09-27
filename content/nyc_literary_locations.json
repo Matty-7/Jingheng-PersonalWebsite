@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-20",
+  "reviewed_on": "2026-09-27",
   "works": [
     {
       "id": "washington",
@@ -322,6 +322,23 @@
         "edition": "Standard Ebooks edition, first released October 13, 2021",
         "source_url": "https://standardebooks.org/ebooks/theodore-dreiser/sister-carrie",
         "credit": "Standard Ebooks; cover adapted from New York Street (1902) by Childe Hassam"
+      }
+    },
+    {
+      "id": "colossus",
+      "title": "The New Colossus",
+      "author": "Emma Lazarus",
+      "year": 1883,
+      "kind": "Poem",
+      "source_url": "https://www.nps.gov/stli/learn/historyculture/colossus.htm",
+      "text_url": "https://www.nps.gov/stli/learn/historyculture/colossus.htm",
+      "rights": "Public domain in the United States",
+      "cover": {
+        "src": "/images/literary-map/poems-emma-lazarus.jpg",
+        "alt": "Historical title page of The Poems of Emma Lazarus, Volume I, published by Houghton, Mifflin and Company in 1889.",
+        "edition": "1889 collected edition, Volume I; historical title page",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_poems_of_Emma_Lazarus_volume_1.djvu",
+        "credit": "Wikimedia Commons; Internet Archive scan of the 1889 Houghton, Mifflin and Company edition"
       }
     }
   ],
@@ -1186,6 +1203,153 @@
       "precision": "Neighborhood named in the poem. No individual street or doorway is specified.",
       "visit_note": "Use the public street or paths. The text describes a historical city; buildings and access may have changed.",
       "plus_code": "87G8R363+JC"
+    },
+    {
+      "id": "beautiful-brooklyn-bridge",
+      "place_id": "brooklyn-bridge",
+      "work_id": "beautiful",
+      "place": "Brooklyn Bridge",
+      "area": "East River, Manhattan / Brooklyn",
+      "coordinates": [
+        40.7057,
+        -73.9964
+      ],
+      "plus_code": "87G8P243+7C",
+      "map_query": "Brooklyn Bridge New York",
+      "locator": "Book II, Chapter II, “Winter”",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-2-2-4",
+      "excerpt": "He leaned forward hurriedly and tapped at the glass. The taxi was only at Brooklyn Bridge, but the metre showed a dollar and eighty cents, and Anthony would never have omitted the ten percent tip.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "The bridge becomes a measure of Anthony’s dwindling money: even a short taxi journey demands an anxious look at the meter.",
+      "precision": "Named landmark. The pin represents the bridge; the passage does not identify the taxi’s exact position.",
+      "visit_note": "Use the public pedestrian promenade.",
+      "place_source_url": "https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml"
+    },
+    {
+      "id": "beautiful-times-square",
+      "place_id": "times-square",
+      "work_id": "beautiful",
+      "place": "Times Square",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7573,
+        -73.9858
+      ],
+      "plus_code": "87G8Q247+WM",
+      "map_query": "Times Square New York",
+      "locator": "Book I, Chapter I, “Night”",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-1-7",
+      "excerpt": "He found his way slowly over the jostled evening mass of Times Square, which the chariot race and its thousand satellites made rarely beautiful and bright and intimate with carnival. Faces swirled about him, a kaleidoscope of girls, ugly, ugly as sin⁠—too fat, too lean, yet floating upon this autumn air as upon their own warm and passionate breaths poured out into the night. Here, for all their vulgarity, he thought, they were faintly and subtly mysterious. He inhaled carefully, swallowing into his lungs perfume and the not unpleasant scent of many cigarettes. He caught the glance of a dark young beauty sitting alone in a closed taxicab. Her eyes in the half-light suggested night and violets, and for a moment he stirred again to that half-forgotten remoteness of the afternoon.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Electric spectacle and the moving crowd turn Times Square into a carnival filtered through Anthony’s restless attention.",
+      "precision": "Named square. The pin marks the public pedestrian area, not a precise point on Anthony’s walk.",
+      "visit_note": "Explore the pedestrian plazas and surrounding public sidewalks.",
+      "place_source_url": "https://www.timessquarenyc.org/"
+    },
+    {
+      "id": "gatsby-penn-station",
+      "place_id": "penn-station",
+      "work_id": "gatsby",
+      "place": "Pennsylvania Station, original site",
+      "area": "Midtown South, Manhattan",
+      "coordinates": [
+        40.749684,
+        -73.990526
+      ],
+      "plus_code": "87G8P2X5+VQ",
+      "map_query": "Pennsylvania Station, original site New York",
+      "locator": "Chapter II, final paragraph",
+      "source_url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html#chapter-2",
+      "excerpt": "Then I was lying half asleep in the cold lower level of the Pennsylvania Station, staring at the morning Tribune, and waiting for the four o’clock train.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Nick’s Manhattan night ends in the station’s cold lower level, waiting for an early train home.",
+      "precision": "Historical station site. The original station building described in the novel was demolished; this pin marks its former site.",
+      "visit_note": "View the site from the surrounding public streets; the original concourse no longer survives.",
+      "place_source_url": "https://www.nypap.org/preservation-history/pennsylvania-station/"
+    },
+    {
+      "id": "innocence-grace-church",
+      "place_id": "grace-church",
+      "work_id": "innocence",
+      "place": "Grace Church",
+      "area": "Greenwich Village, Manhattan",
+      "coordinates": [
+        40.731972,
+        -73.990889
+      ],
+      "plus_code": "87G8P2J5+QJ",
+      "map_query": "Grace Church New York",
+      "locator": "Book II, Chapter XIX",
+      "source_url": "https://www.gutenberg.org/cache/epub/541/pg541-images.html#chap19",
+      "excerpt": "Newland Archer, at a signal from the sexton, had come out of the vestry and placed himself with his best man on the chancel step of Grace Church.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Archer waits at the chancel before his wedding to May. The church gives the marriage ritual a concrete New York setting.",
+      "precision": "Named church at Broadway and East 10th Street.",
+      "visit_note": "View the church from Broadway; consult the church’s visitor information for interior access.",
+      "place_source_url": "https://gracechurchnyc.org/visit/"
+    },
+    {
+      "id": "four_million-flatiron-building",
+      "place_id": "flatiron-building",
+      "work_id": "four_million",
+      "place": "Flatiron Building",
+      "area": "Flatiron District, Manhattan",
+      "coordinates": [
+        40.740979,
+        -73.989688
+      ],
+      "plus_code": "87G8P2R6+94",
+      "map_query": "Flatiron Building New York",
+      "locator": "“Lost on Dress Parade,” second paragraph",
+      "source_url": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html#chap22",
+      "excerpt": "Chandler’s honorarium was $18 per week. He was employed in the office of an architect. He was twenty-two years old; he considered architecture to be truly an art; and he honestly believed—though he would not have dared to admit it in New York—that the Flatiron Building was inferior in design to the great cathedral in Milan.",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Chandler’s private comparison of the Flatiron with Milan’s cathedral introduces his architectural taste and his desire to pass for a man of means.",
+      "precision": "Named building in an architectural comparison. This is a literary reference, not a scene set inside the building.",
+      "visit_note": "View the building from the surrounding public sidewalks.",
+      "place_source_url": "https://flatironnomad.nyc/history/the-flatiron-building/"
+    },
+    {
+      "id": "colossus-statue-of-liberty",
+      "place_id": "statue-of-liberty",
+      "work_id": "colossus",
+      "place": "Statue of Liberty",
+      "area": "Liberty Island, New York Harbor",
+      "coordinates": [
+        40.689211,
+        -74.044643
+      ],
+      "plus_code": "87G7MXQ4+M4",
+      "map_query": "Statue of Liberty Liberty Island New York",
+      "locator": "“The New Colossus,” complete sonnet (1883)",
+      "source_url": "https://www.nps.gov/stli/learn/historyculture/colossus.htm",
+      "excerpt": "Not like the brazen giant of Greek fame,\nWith conquering limbs astride from land to land;\nHere at our sea-washed, sunset gates shall stand\nA mighty woman with a torch, whose flame\nIs the imprisoned lightning, and her name\nMother of Exiles. From her beacon-hand\nGlows world-wide welcome; her mild eyes command\nThe air-bridged harbor that twin cities frame.\n\"Keep, ancient lands, your storied pomp!\" cries she\nWith silent lips. \"Give me your tired, your poor,\nYour huddled masses yearning to breathe free,\nThe wretched refuse of your teeming shore.\nSend these, the homeless, tempest-tost to me,\nI lift my lamp beside the golden door!\"",
+      "excerpt_kind": "Complete poem",
+      "note": "Lazarus reimagines the monument as the “Mother of Exiles,” turning its torch toward the arrivals in New York Harbor. The poem was written for the pedestal fund before the statue’s dedication.",
+      "precision": "Named monument. The poem addresses the Statue of Liberty; the pin marks the statue on Liberty Island.",
+      "visit_note": "Visit Liberty Island by authorized ferry; consult the National Park Service for access details.",
+      "place_source_url": "https://www.loc.gov/pictures/item/ny1251/"
+    },
+    {
+      "id": "voice-old-madison-square-garden",
+      "place_id": "old-madison-square-garden",
+      "work_id": "voice",
+      "place": "Madison Square Garden, former Madison Square site",
+      "area": "NoMad, Manhattan",
+      "coordinates": [
+        40.7434,
+        -73.9856
+      ],
+      "plus_code": "87G8P2V7+9Q",
+      "map_query": "Madison Square Garden, former Madison Square site New York",
+      "locator": "“One Thousand Dollars”",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_9",
+      "excerpt": "\"A thousand dollars,\" he said, \"means much or little. One man may buy a happy home with it and laugh at Rockefeller. Another could send his wife South with it and save her life. A thousand dollars would buy pure milk for one hundred babies during June, July, and August and save fifty of their lives. You could count upon a half hour's diversion with it at faro in one of the fortified art galleries. It would furnish an education to an ambitious boy. I am told that a genuine Corot was secured for that amount in an auction room yesterday. You could move to a New Hampshire town and live respectably two years on it. You could rent Madison Square Garden for one evening with it, and lecture your audience, if you should have one, on the precariousness of the profession of heir presumptive.\"",
+      "excerpt_kind": "Complete paragraph",
+      "note": "Old Bryson lists what a thousand dollars might buy; hiring the Garden is one deliberately extravagant possibility.",
+      "precision": "Historical venue reference. The passage refers to the Garden near Madison Square, on the site now occupied by the New York Life Building, not today’s arena above Penn Station.",
+      "visit_note": "View the former site from Madison Avenue at East 26th Street.",
+      "place_source_url": "https://madisonsquarepark.org/community/news/2021/04/history-of-the-new-york-life-building/"
     }
   ]
 }

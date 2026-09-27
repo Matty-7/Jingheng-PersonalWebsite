@@ -278,6 +278,20 @@
       "format": "series",
       "creators": "Amy Sherman-Palladino",
       "note": "Midge builds a comedy career amid the storefronts, diners, and department stores of a recreated midcentury Manhattan."
+    },
+    {
+      "id": "sleepless-in-seattle",
+      "title": "Sleepless in Seattle",
+      "year": 1993,
+      "director": "Nora Ephron",
+      "note": "A radio confession leads to a meeting above New York."
+    },
+    {
+      "id": "men-in-black",
+      "title": "Men in Black",
+      "year": 1997,
+      "director": "Barry Sonnenfeld",
+      "note": "An alien immigration bureau hides in plain sight around New York."
     }
   ],
   "sources": [
@@ -715,6 +729,31 @@
       "id": "maisel-final-season",
       "label": "Series dates · Amazon",
       "url": "https://www.aboutamazon.com/news/entertainment/amy-sherman-palladino-farewell-letter-to-the-marvelous-mrs-maisel"
+    },
+    {
+      "id": "sleepless-in-seattle",
+      "label": "Filming reference · otsoNY",
+      "url": "https://onthesetofnewyork.com/sleeplessinseattle.html"
+    },
+    {
+      "id": "men-in-black",
+      "label": "Film frames · otsoNY",
+      "url": "https://onthesetofnewyork.com/meninblack.html"
+    },
+    {
+      "id": "men-in-black-locations",
+      "label": "Location and studio references · Movie Locations",
+      "url": "https://movie-locations.com/movies/m/Men-In-Black.php"
+    },
+    {
+      "id": "succession-cinematography",
+      "label": "Cinematographer interview · British Cinematographer",
+      "url": "https://britishcinematographer.co.uk/patrick-capone-and-christopher-norr-succession/"
+    },
+    {
+      "id": "succession-birthday-frame",
+      "label": "Episode frame · BAMF Style",
+      "url": "https://bamfstyle.com/2023/07/21/succession-307-kendall-birthday-party/"
     },
     {
       "id": "tatiana-director",
@@ -7706,6 +7745,208 @@
             "height": 981,
             "kind": "episode_image"
           }
+        }
+      ]
+    },
+    {
+      "id": "ellis-island",
+      "name": "Ellis Island",
+      "address": "Ellis Island National Museum of Immigration",
+      "neighborhood": "New York Harbor",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.699,
+        -74.0398
+      ],
+      "access": "Museum island",
+      "visit_note": "The pin marks the museum approach, not the exact wedding position. Reach Ellis Island by authorized ferry.",
+      "scenes": [
+        {
+          "film_id": "succession",
+          "scene": "Connor and Willa marry beside New York Harbor in a small ceremony on Ellis Island.",
+          "source_ids": [
+            "succession-untapped"
+          ],
+          "still": {
+            "src": "/images/film-map/succession--ellis-island.jpg",
+            "thumbnail": "/images/film-map/succession--ellis-island--thumb.jpg",
+            "alt": "Connor and Willa raise their joined hands at their Ellis Island wedding.",
+            "credit": "Succession · Production still · Macall B. Polay/HBO via Untapped New York",
+            "source_url": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/04/succession-season-4-episode-3-untapped-new-york1.jpg",
+            "width": 800,
+            "height": 533,
+            "kind": "production_still"
+          },
+          "precision": "Island-level filming association; the marker identifies the museum approach, not the ceremony position."
+        }
+      ]
+    },
+    {
+      "id": "empire-state-building",
+      "name": "Empire State Building",
+      "address": "350 Fifth Avenue at West 34th Street",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7484,
+        -73.9857
+      ],
+      "access": "Landmark",
+      "visit_note": "The pin marks the building. The current observatory visitor entrance is at 20 West 34th Street.",
+      "scenes": [
+        {
+          "film_id": "sleepless-in-seattle",
+          "scene": "Annie speaks to the attendant in the Empire State Building lobby. The final meeting on the observation deck used a replica built in Seattle.",
+          "source_ids": [
+            "sleepless-in-seattle"
+          ],
+          "still": {
+            "src": "/images/film-map/sleepless-in-seattle--empire-state-building.jpg",
+            "thumbnail": "/images/film-map/sleepless-in-seattle--empire-state-building--thumb.jpg",
+            "alt": "Annie speaks to the attendant in the Empire State Building lobby.",
+            "credit": "Sleepless in Seattle (1993) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/sleeplessinseattle.html",
+            "image_url": "https://onthesetofnewyork.com/locations/sleeplessinseattle/sleeplessinseattle40.jpg",
+            "width": 565,
+            "height": 304
+          }
+        }
+      ]
+    },
+    {
+      "id": "world-trade-center-original",
+      "name": "World Trade Center observation deck, former site",
+      "address": "South Pool, 9/11 Memorial Plaza",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7112,
+        -74.0128
+      ],
+      "access": "Memorial plaza",
+      "visit_note": "The original South Tower and its observation deck no longer exist. The pin marks a public approach to the South Pool; this is not One World Observatory.",
+      "scenes": [
+        {
+          "film_id": "home-alone-2",
+          "scene": "Kevin photographs the city from the original World Trade Center’s observation deck during his first day in New York.",
+          "source_ids": [
+            "home-alone-2"
+          ],
+          "still": {
+            "src": "/images/film-map/home-alone-2--world-trade-center-original.jpg",
+            "thumbnail": "/images/film-map/home-alone-2--world-trade-center-original--thumb.jpg",
+            "alt": "Kevin raises his instant camera on the original World Trade Center observation deck.",
+            "credit": "Home Alone 2 (1992) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/homealone2.html",
+            "image_url": "https://onthesetofnewyork.com/locations/homealone2/homealone2_121.jpg",
+            "width": 565,
+            "height": 306
+          },
+          "precision": "Historical filming location; pin marks the public memorial approach, not a surviving observation deck."
+        }
+      ]
+    },
+    {
+      "id": "the-shed",
+      "name": "The Shed",
+      "address": "545 West 30th Street",
+      "neighborhood": "Hudson Yards",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7536,
+        -74.0023
+      ],
+      "access": "Arts venue",
+      "visit_note": "View the building from Hudson Yards public paths. Interior access depends on the venue’s program.",
+      "scenes": [
+        {
+          "film_id": "succession",
+          "scene": "Kendall hosts his fortieth-birthday party in “Too Much Birthday.” The production used The Shed and built themed rooms for the party.",
+          "source_ids": [
+            "succession-cinematography",
+            "succession-birthday-frame"
+          ],
+          "still": {
+            "src": "/images/film-map/succession--the-shed.jpg",
+            "thumbnail": "/images/film-map/succession--the-shed--thumb.jpg",
+            "alt": "Kendall talks with party staff in the birthday-party sequence.",
+            "credit": "Succession, “Too Much Birthday” · Episode frame via BAMF Style",
+            "source_url": "https://bamfstyle.com/2023/07/21/succession-307-kendall-birthday-party/",
+            "image_url": "https://i0.wp.com/bamfstyle.com/wp-content/uploads/2023/07/Succession307Bday-CL-Jacket1.jpg?ssl=1",
+            "width": 1100,
+            "height": 619
+          },
+          "precision": "Episode-level venue association confirmed by the cinematographer. The frame illustrates the party sequence; its exact room is not independently identified."
+        }
+      ]
+    },
+    {
+      "id": "unisphere",
+      "name": "Unisphere",
+      "address": "Flushing Meadows Corona Park",
+      "neighborhood": "Flushing Meadows",
+      "borough": "Queens",
+      "coordinates": [
+        40.7464,
+        -73.8452
+      ],
+      "access": "Park",
+      "visit_note": "Use the public park paths around the Unisphere and its fountain basin.",
+      "scenes": [
+        {
+          "film_id": "men-in-black",
+          "scene": "J and K bring down Edgar’s spacecraft beside the Unisphere. The climax combines the Queens landmark with studio recreations and visual effects.",
+          "source_ids": [
+            "men-in-black",
+            "men-in-black-locations"
+          ],
+          "still": {
+            "src": "/images/film-map/men-in-black--unisphere.jpg",
+            "thumbnail": "/images/film-map/men-in-black--unisphere--thumb.jpg",
+            "alt": "J and K watch the damaged Unisphere after bringing down Edgar’s spacecraft.",
+            "credit": "Men in Black (1997) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/meninblack.html",
+            "image_url": "https://onthesetofnewyork.com/locations/meninblack/meninblack188.jpg",
+            "width": 565,
+            "height": 306
+          },
+          "relationship": "Screen setting",
+          "precision": "Landmark depicted. The finale combines Queens locations, studio recreations and visual effects; this pin is not a claim that the destruction was filmed here."
+        }
+      ]
+    },
+    {
+      "id": "woolworth-building",
+      "name": "Woolworth Building",
+      "address": "2 Park Place",
+      "neighborhood": "Tribeca",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7128,
+        -74.0082
+      ],
+      "access": "Exterior",
+      "visit_note": "The tower residences are private. View the building from the public sidewalk; the pin does not offer access to the apartment shown.",
+      "scenes": [
+        {
+          "film_id": "succession",
+          "scene": "Kendall uses Rava’s apartment in the Woolworth Tower Residences as a base for his campaign against Logan.",
+          "source_ids": [
+            "succession-untapped"
+          ],
+          "still": {
+            "src": "/images/film-map/succession--woolworth-building.jpg",
+            "thumbnail": "/images/film-map/succession--woolworth-building--thumb.jpg",
+            "alt": "Roman takes a phone call beside the angled windows of the Woolworth Tower Residences.",
+            "credit": "Succession · Production still · Macall B. Polay/HBO via Untapped New York",
+            "source_url": "https://www.untappedcities.com/succession-filming-locations-nyc/",
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/10/succcession-filming-locations-season-3-woolworth-tower-residences-pinnacle-apartment-nyc.jpg",
+            "width": 800,
+            "height": 533,
+            "kind": "production_still"
+          },
+          "precision": "Filming venue; pin marks the public exterior approach, not the private residence or camera position."
         }
       ]
     }

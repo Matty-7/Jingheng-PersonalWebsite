@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-21",
+  "reviewed_on": "2026-09-27",
   "tracks": [
     {
       "id": "bushwick-blues",
@@ -2671,6 +2671,236 @@
       "source_url": "https://music.apple.com/us/album/upper-west-side/1669107024?i=1669107029&uo=4",
       "source_label": "Apple Music · recording and title",
       "note": "Matt Sucich names the Upper West Side in the song’s title. The map uses a neighborhood marker rather than attaching the song to a private residence."
+    },
+    {
+      "id": "blinding-lights",
+      "title": "Blinding Lights",
+      "artist": "The Weeknd",
+      "album": "After Hours",
+      "year": 2019,
+      "genre": "R&B/Soul",
+      "track_id": 1499378607,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6f/bc/e6/6fbce6c4-c38c-72d8-4fd0-66cfff32f679/20UMGIM12176.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/19/d6/60/19d660ff-e3a9-8377-15a3-ce4b28e89cac/mzaf_18422426156481158187.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/blinding-lights/1499378108?i=1499378607&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=The+Weeknd+Blinding+Lights&entity=song&country=us&limit=8",
+      "metadata_release_date": "2019-11-29T08:00:00Z",
+      "place_ids": [
+        "edge-hudson-yards"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "The Weeknd performed this song at Edge for the 2020 MTV Video Music Awards. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/blinding-lights/1499378108?i=1499378607&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "edge-hudson-yards",
+          "kind": "Live performance",
+          "note": "The Weeknd performed this song at Edge for the 2020 MTV Video Music Awards. The preview is the studio recording.",
+          "source_url": "https://www.hudsonyardsnewyork.com/stories/weeknd-opens-vmas-edge",
+          "source_label": "Hudson Yards · 2020 VMAs"
+        }
+      ]
+    },
+    {
+      "id": "pa-ti",
+      "title": "Pa' Ti",
+      "artist": "Jennifer Lopez & Maluma",
+      "album": "Marry Me (Original Motion Picture Soundtrack)",
+      "year": 2020,
+      "genre": "Pop Latino",
+      "track_id": 1627392965,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/db/f1/a2/dbf1a237-f73e-9e81-539b-de4b4c596514/196589186119.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cf/7f/b4/cf7fb43c-1d49-1bff-df81-30a939f28984/mzaf_12602561681119539588.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/pa-ti/1627392961?i=1627392965&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Jennifer+Lopez+Maluma+Pa+Ti&entity=song&country=us&limit=8",
+      "metadata_release_date": "2020-09-24T12:00:00Z",
+      "place_ids": [
+        "edge-hudson-yards"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Jennifer Lopez and Maluma filmed scenes for the Pa’ Ti video at Edge in 2020. The preview is the released song.",
+      "source_url": "https://music.apple.com/us/album/pa-ti/1627392961?i=1627392965&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "edge-hudson-yards",
+          "kind": "Music video",
+          "note": "Jennifer Lopez and Maluma filmed scenes for the Pa’ Ti video at Edge in 2020. The preview is the released song.",
+          "source_url": "https://www.edgenyc.com/news/iconic-moments-at-edge-jlo-and-malumas-pa-ti-music-video/",
+          "source_label": "Edge NYC · music video location"
+        }
+      ]
+    },
+    {
+      "id": "cardigan",
+      "title": "cardigan",
+      "artist": "Taylor Swift",
+      "album": "folklore",
+      "year": 2020,
+      "genre": "Alternative",
+      "track_id": 1524801580,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ca/f3/67/caf367a5-2cf6-6b2e-a891-97dc57b19f08/20UMGIM64216.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/b3/f2/00b3f2a0-3228-b65f-7189-91eb26f5adf6/mzaf_3535055549125623460.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/cardigan/1524801260?i=1524801580&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Taylor+Swift+cardigan&entity=song&country=us&limit=8",
+      "metadata_release_date": "2020-07-24T12:00:00Z",
+      "place_ids": [
+        "high-line"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "Your heartbeat on the High Line",
+      "note": "The song recalls a heartbeat on the High Line. The park is named; an exact meeting place is not.",
+      "source_url": "https://www.shazam.com/song/1524793745/cardigan",
+      "source_label": "Shazam · lyrics"
+    },
+    {
+      "id": "statue-of-liberty-xtc",
+      "title": "Statue of Liberty",
+      "artist": "XTC",
+      "album": "White Music (Bonus Track Version)",
+      "year": 1978,
+      "genre": "Alternative",
+      "track_id": 724361211,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/29/ca/e5/29cae511-8e86-cf5a-2940-3b675e9d9c05/00724385069154.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/36/cf/a4/36cfa4fc-07f6-5710-cec7-a62e7dc4d585/mzaf_13242403562042175700.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/statue-of-liberty/724360813?i=724361211&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=XTC+Statue+of+Liberty&entity=song&country=us&limit=8",
+      "metadata_release_date": "1978-01-20T08:00:00Z",
+      "place_ids": [
+        "statue-of-liberty"
+      ],
+      "relation": "Title",
+      "excerpt": "",
+      "note": "XTC turns the Statue of Liberty into the subject of a song on White Music. The map follows the named monument.",
+      "source_url": "https://music.apple.com/us/album/statue-of-liberty/724360813?i=724361211&uo=4",
+      "source_label": "Apple Music · recording and title"
+    },
+    {
+      "id": "sing-sing-sing-carnegie",
+      "title": "Sing, Sing, Sing (With a Swing) [Live]",
+      "artist": "Benny Goodman",
+      "album": "The Famous 1938 Carnegie Hall Jazz Concert (Live)",
+      "year": 1950,
+      "genre": "Jazz",
+      "track_id": 169856688,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/51/2c/09/mzi.ghpdiyij.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d2/66/f0/d266f06a-80f3-5b93-0ac4-fd28a400b2c3/mzaf_4854248996102413207.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/sing-sing-sing-with-a-swing-live/169853677?i=169856688&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Benny+Goodman+Sing+Sing+Sing+Carnegie+Hall+1938&entity=song&country=us&limit=8",
+      "metadata_release_date": "1950-01-01T08:00:00Z",
+      "place_ids": [
+        "carnegie-hall"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "This recording comes from Benny Goodman’s January 16, 1938 Carnegie Hall concert, issued on the 1950 live album.",
+      "source_url": "https://music.apple.com/us/album/sing-sing-sing-with-a-swing-live/169853677?i=169856688&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "carnegie-hall",
+          "kind": "Live recording",
+          "note": "This recording comes from Benny Goodman’s January 16, 1938 Carnegie Hall concert, issued on the 1950 live album.",
+          "source_url": "https://digitalcollections.nypl.org/items/fe2d6520-5235-0136-0619-01d4411f1750",
+          "source_label": "NYPL · concert master tapes"
+        }
+      ]
+    },
+    {
+      "id": "think-apollo",
+      "title": "Think (Live 1962)",
+      "artist": "James Brown",
+      "album": "Live At The Apollo (1962)",
+      "year": 1963,
+      "genre": "R&B/Soul",
+      "track_id": 1445669276,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/e7/41/db/e741dbd4-3795-8eef-969c-546ff7c5b1a8/00602537429806.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4b/a2/02/4ba20299-2049-107b-eb0e-e07d59cfbc58/mzaf_6816845478513042718.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/think-live-1962/1445669062?i=1445669276&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=James+Brown+Think+Live+Apollo+1962&entity=song&country=us&limit=8",
+      "metadata_release_date": "1963-05-01T12:00:00Z",
+      "place_ids": [
+        "apollo-theater"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Recorded at the Apollo in 1962 and released in 1963, this performance places James Brown inside the Harlem theater.",
+      "source_url": "https://music.apple.com/us/album/think-live-1962/1445669062?i=1445669276&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "apollo-theater",
+          "kind": "Live recording",
+          "note": "Recorded at the Apollo in 1962 and released in 1963, this performance places James Brown inside the Harlem theater.",
+          "source_url": "https://www.apollotheater.org/history",
+          "source_label": "Apollo Theater · recording history"
+        }
+      ]
+    },
+    {
+      "id": "venom-empire-state",
+      "title": "Venom (Music from the Motion Picture)",
+      "artist": "Eminem",
+      "album": "Venom (Music from the Motion Picture) - Single",
+      "year": 2018,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 1436078784,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/6e/b7/ec/6eb7ec50-84ff-9f4c-84f1-bf1ba7df0b2d/00602577093005.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/75/21/3b752111-24dd-08e6-d20d-55f2e1d46fa5/mzaf_4024000242052887944.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/venom-music-from-the-motion-picture/1436078771?i=1436078784&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Eminem+Venom&entity=song&country=us&limit=8",
+      "metadata_release_date": "2018-08-31T07:00:00Z",
+      "place_ids": [
+        "empire-state-building"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Eminem performed Venom at the Empire State Building for Jimmy Kimmel Live in 2018. The preview is the studio recording.",
+      "source_url": "https://music.apple.com/us/album/venom-music-from-the-motion-picture/1436078771?i=1436078784&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "empire-state-building",
+          "kind": "Filmed performance",
+          "note": "Eminem performed Venom at the Empire State Building for Jimmy Kimmel Live in 2018. The preview is the studio recording.",
+          "source_url": "https://www.eminem.com/news/watch-now-eminems-empire-state-building-performance-jimmy-kimmel-live/",
+          "source_label": "Eminem · performance announcement"
+        }
+      ]
+    },
+    {
+      "id": "piano-man-yankee-stadium",
+      "title": "Piano Man (Live at Yankee Stadium, Bronx, NY - June 1990)",
+      "artist": "Billy Joel",
+      "album": "Live at Yankee Stadium",
+      "year": 2022,
+      "genre": "Rock",
+      "track_id": 1637199842,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/47/a1/7b/47a17b65-034d-a78a-a618-058d3303c8d0/196589316554.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/ee/2b/aaee2b24-c58e-a0c5-c56a-83acb2411d5b/mzaf_8224935760498474099.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/piano-man-live-at-yankee-stadium-bronx-ny-june-1990/1637199653?i=1637199842&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Billy+Joel+Piano+Man+Yankee+Stadium&entity=song&country=us&limit=8",
+      "metadata_release_date": "2019-05-03T12:00:00Z",
+      "place_ids": [
+        "yankee-stadium-original"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "This live edition documents Billy Joel’s June 1990 concerts at the original Yankee Stadium. The selected album was released in 2022.",
+      "source_url": "https://music.apple.com/us/album/piano-man-live-at-yankee-stadium-bronx-ny-june-1990/1637199653?i=1637199842&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "yankee-stadium-original",
+          "kind": "Live recording",
+          "note": "This live edition documents Billy Joel’s June 1990 concerts at the original Yankee Stadium. The selected album was released in 2022.",
+          "source_url": "https://www.billyjoel.com/news/billy-joel-live-at-yankee-stadium-in-cinemas-worldwide-in-october/",
+          "source_label": "Billy Joel · concert and release notes"
+        }
+      ]
     }
   ],
   "places": [
@@ -3707,6 +3937,104 @@
       "plus_code": "87G8Q25C+5W",
       "coordinate_reference": "https://www.openstreetmap.org/node/42432580",
       "geography_source_url": "https://www.openstreetmap.org/node/42432580"
+    },
+    {
+      "id": "edge-hudson-yards",
+      "name": "Edge at Hudson Yards",
+      "area": "Hudson Yards, Manhattan",
+      "map_query": "30 Hudson Yards, New York",
+      "precision": "Venue",
+      "note": "The pin identifies Edge at 30 Hudson Yards. Performance staging does not identify a publicly accessible camera position; deck admission is separate.",
+      "coordinates": [
+        40.7541,
+        -74.0009
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7541&mlon=-74.0009#map=18/40.7541/-74.0009",
+      "plus_code": "87G7QX3X+JJ"
+    },
+    {
+      "id": "high-line",
+      "name": "The High Line",
+      "area": "Chelsea, Manhattan",
+      "map_query": "The High Line at West 23rd Street, New York",
+      "precision": "Representative point",
+      "note": "A representative point on the elevated park at West 23rd Street. The lyric names the High Line without specifying a particular stretch.",
+      "coordinates": [
+        40.7479,
+        -74.0048
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7479&mlon=-74.0048#map=18/40.7479/-74.0048",
+      "plus_code": "87G7PXXW+53"
+    },
+    {
+      "id": "statue-of-liberty",
+      "name": "Statue of Liberty",
+      "area": "Liberty Island, New York Harbor",
+      "map_query": "Statue of Liberty, Liberty Island, New York",
+      "precision": "Landmark",
+      "note": "The pin marks the monument on Liberty Island. The title identifies the statue; it is not a claim that the recording was made here.",
+      "coordinates": [
+        40.6893,
+        -74.0445
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6893&mlon=-74.0445#map=18/40.6893/-74.0445",
+      "plus_code": "87G7MXQ4+P6"
+    },
+    {
+      "id": "carnegie-hall",
+      "name": "Carnegie Hall",
+      "area": "Midtown, Manhattan",
+      "map_query": "Carnegie Hall, 881 Seventh Avenue, New York",
+      "precision": "Venue",
+      "note": "The pin marks the concert hall, not an individual seat or stage position. The recording documents a performance at this venue.",
+      "coordinates": [
+        40.7651,
+        -73.9799
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7651&mlon=-73.9799#map=18/40.7651/-73.9799",
+      "plus_code": "87G8Q28C+22"
+    },
+    {
+      "id": "apollo-theater",
+      "name": "Apollo Theater",
+      "area": "Harlem, Manhattan",
+      "map_query": "Apollo Theater, 253 West 125th Street, New York",
+      "precision": "Venue",
+      "note": "The pin marks the historic theater on West 125th Street. The connection is the documented live recording, not a place named in the lyrics.",
+      "coordinates": [
+        40.81,
+        -73.95
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.81&mlon=-73.95#map=18/40.81/-73.95",
+      "plus_code": "87G8R362+22"
+    },
+    {
+      "id": "empire-state-building",
+      "name": "Empire State Building",
+      "area": "Midtown, Manhattan",
+      "map_query": "Empire State Building, New York",
+      "precision": "Landmark",
+      "note": "The pin marks the building. The filmed performance used restricted areas; a visitor ticket does not grant access to the performance position.",
+      "coordinates": [
+        40.7484,
+        -73.9857
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7484&mlon=-73.9857#map=18/40.7484/-73.9857",
+      "plus_code": "87G8P2X7+9P"
+    },
+    {
+      "id": "yankee-stadium-original",
+      "name": "Yankee Stadium, former site",
+      "area": "Concourse, The Bronx",
+      "map_query": "Heritage Field, Bronx, New York",
+      "precision": "Landmark",
+      "note": "The 1990 concert took place at the original Yankee Stadium, now the site of Heritage Field, south of the current stadium.",
+      "coordinates": [
+        40.8269,
+        -73.9272
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.8269&mlon=-73.9272#map=18/40.8269/-73.9272",
+      "plus_code": "87G8R3GF+Q4"
     }
   ]
 }

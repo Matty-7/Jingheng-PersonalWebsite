@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-20",
+  "reviewed_on": "2026-09-27",
   "method": "Public-domain primary editions downloaded and paragraphs checked against the source HTML; whitespace is normalized; poem line breaks are retained. Interpretation and location precision are separately authored. Existing eight passages retain their original source notes.",
   "entries": [
     {
@@ -281,6 +281,61 @@
       "source_file_sha256": "7e3a360f1ab276ae81e76071db2065f55864a099e6529c86fe531c6cbadee9b1",
       "excerpt_sha256": "3ccd5b0c9a18f59511de06be04a6ca8ad5eb0857328de718f9dcd6726f3d1939",
       "verification": "Matched to primary edition; locator and named place reviewed. Map query identifies the stated street, area, or institution, not an invented fictional address."
+    },
+    {
+      "entry_id": "beautiful-brooklyn-bridge",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-2-2-4",
+      "source_paragraph_index": 1792,
+      "source_file_sha256": "a2554662851e8b9f3486163207ec06786bc355a9db260fc8d44714d24e2bc8c1",
+      "excerpt_sha256": "88388454ffa957977ddd025d9cc93422347670c6f62ab7c16e56498216c9bec6",
+      "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
+    },
+    {
+      "entry_id": "beautiful-times-square",
+      "source_url": "https://standardebooks.org/ebooks/f-scott-fitzgerald/the-beautiful-and-damned/text/single-page#chapter-1-1-7",
+      "source_paragraph_index": 97,
+      "source_file_sha256": "a2554662851e8b9f3486163207ec06786bc355a9db260fc8d44714d24e2bc8c1",
+      "excerpt_sha256": "5b42c717c5ce8e42f454f49a4f305a79cf0aef53e91b8866ffdee4f088d0372f",
+      "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
+    },
+    {
+      "entry_id": "gatsby-penn-station",
+      "source_url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html#chapter-2",
+      "source_paragraph_index": 297,
+      "source_file_sha256": "110550ade34fce758b8c299ac66f15ec583f847d6b38fc6d504271f5b674edd1",
+      "excerpt_sha256": "0463d82d682ecff937a880da006453c02115a3ad71660b89a58b003363862025",
+      "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
+    },
+    {
+      "entry_id": "innocence-grace-church",
+      "source_url": "https://www.gutenberg.org/cache/epub/541/pg541-images.html#chap19",
+      "source_paragraph_index": 999,
+      "source_file_sha256": "bae3a1fa4f83966c02503da4a819fb95535045822dba4f064c9cee45b7828786",
+      "excerpt_sha256": "362a36de28b5b9fefe52e040506fc7833640f8766525ca2233331517101bafab",
+      "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
+    },
+    {
+      "entry_id": "four_million-flatiron-building",
+      "source_url": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html#chap22",
+      "source_paragraph_index": 959,
+      "source_file_sha256": "2b0d90dd9f2bd7ca649a6857eaebd404599400f4a1c5ed28cae9144a614773b1",
+      "excerpt_sha256": "d6fd8d2b3074111e2dea8d21d87954446b45eea52bf350da50fe443accde2835",
+      "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
+    },
+    {
+      "entry_id": "colossus-statue-of-liberty",
+      "source_url": "https://www.nps.gov/stli/learn/historyculture/colossus.htm",
+      "source_file_sha256": "ea6c4e278417eacd9499f01b2e3985b69a9785c042fc9c16ec47b981b8ebbb9e",
+      "excerpt_sha256": "3d8278dccecffde901754477063751659b9482d175584252191c30c1133f7ac5",
+      "verification": "Complete sonnet matched to the downloaded National Park Service HTML. Poem line breaks retained. NPS wording uses “yearning to breathe free”; Gutenberg ebook 3295 has a different wording, so it is not used for excerpt provenance."
+    },
+    {
+      "entry_id": "voice-old-madison-square-garden",
+      "source_url": "https://www.gutenberg.org/cache/epub/1444/pg1444-images.html#id_9",
+      "source_paragraph_index": 431,
+      "source_file_sha256": "a0885f70c5214923a69231b4e4aa928f1f0fdc3ea2c929337d4522babd132cfb",
+      "excerpt_sha256": "889229e6362af3789b763c742ec1d2df29220ae29a38d2d377bd2fd3951b21c7",
+      "verification": "Matched to downloaded primary edition HTML; zero-based paragraph index; whitespace normalized. Named place and historical site reviewed."
     }
   ]
 }
