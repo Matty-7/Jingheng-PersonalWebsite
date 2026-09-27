@@ -288,8 +288,13 @@ body:has(.atlas-page) {
   width: min(980px, calc(100% - 64px));
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr) 136px;
+  grid-template-areas:
+    'artwork heading actions'
+    'artwork works actions'
+    'artwork copy actions';
+  grid-template-rows: auto auto 1fr;
   align-items: stretch;
-  gap: 24px;
+  gap: 0 24px;
   padding: 12px;
   border-radius: 20px;
   background: var(--atlas-paper);
@@ -298,6 +303,7 @@ body:has(.atlas-page) {
   overflow: auto;
 }
 .atlas-artwork {
+  grid-area: artwork;
   height: 176px;
   display: flex;
   align-items: center;
@@ -321,11 +327,21 @@ body:has(.atlas-page) {
 }
 .atlas-card:not(:has(.atlas-artwork)) {
   grid-template-columns: minmax(0, 1fr) 136px;
+  grid-template-areas:
+    'heading actions'
+    'works actions'
+    'copy actions';
   padding-left: 24px;
 }
-.atlas-card-copy {
+.atlas-card-heading {
+  grid-area: heading;
   min-width: 0;
   padding: 10px 0 4px;
+}
+.atlas-card-copy {
+  grid-area: copy;
+  min-width: 0;
+  padding-bottom: 4px;
 }
 .atlas-eyebrow {
   color: var(--atlas-muted);
@@ -349,20 +365,41 @@ body:has(.atlas-page) {
   outline: 2px solid var(--atlas-rust);
   outline-offset: 2px;
 }
-.atlas-card h3,
-.atlas-card select {
+.atlas-card h3 {
   font:
     19px/1.3 Georgia,
     serif;
   color: var(--atlas-muted);
 }
-.atlas-card select {
+.atlas-work-switcher {
+  grid-area: works;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  margin-top: 6px;
+}
+.atlas-work-switcher button {
+  min-height: 40px;
   max-width: 100%;
-  min-height: 32px;
-  background: transparent;
-  border: 0;
-  text-overflow: ellipsis;
-  padding-right: 6px;
+  padding: 8px 12px;
+  border: 1px solid #263e321a;
+  border-radius: 9px;
+  background: var(--atlas-soft);
+  color: var(--atlas-ink);
+  font-size: 14px;
+  line-height: 1.3;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.atlas-work-switcher button:hover {
+  background: #e5e9e3;
+}
+.atlas-work-switcher button[aria-pressed='true'] {
+  background: var(--atlas-ink);
+  border-color: var(--atlas-ink);
+  color: var(--atlas-paper);
 }
 .atlas-card-description {
   margin-top: 12px;
@@ -383,6 +420,7 @@ body:has(.atlas-page) {
   text-overflow: ellipsis;
 }
 .atlas-card-actions {
+  grid-area: actions;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -566,7 +604,7 @@ body:has(.atlas-page) {
   }
   .atlas-card {
     grid-template-columns: 210px minmax(0, 1fr) 128px;
-    gap: 16px;
+    column-gap: 16px;
   }
 }
 @media (max-width: 760px) {
@@ -623,6 +661,12 @@ body:has(.atlas-page) {
     width: calc(100% - 24px);
     padding: 12px;
     grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-areas:
+      'artwork heading'
+      'works works'
+      'copy copy'
+      'actions actions';
+    grid-template-rows: auto;
     gap: 10px 12px;
     border-radius: 16px;
     max-height: 44dvh;
@@ -633,22 +677,45 @@ body:has(.atlas-page) {
   }
   .atlas-card:not(:has(.atlas-artwork)) {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'heading' 'works' 'copy' 'actions';
     padding-left: 12px;
   }
   .atlas-artwork-literature,
   .atlas-artwork-music {
     padding: 3px;
   }
-  .atlas-card-copy {
+  .atlas-card-heading {
     padding: 0 18px 0 0;
   }
   .atlas-card h2 {
     font-size: 21px;
     line-height: 1.15;
   }
-  .atlas-card h3,
-  .atlas-card select {
+  .atlas-card h3 {
     font-size: 16px;
+  }
+  .atlas-work-switcher {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    margin: -4px;
+    padding: 4px;
+    scrollbar-width: thin;
+  }
+  .atlas-work-switcher button {
+    flex: 0 0 auto;
+    min-height: 44px;
+    max-width: none;
+    white-space: nowrap;
+  }
+  .atlas-card:not(:has(.atlas-work-switcher)) {
+    grid-template-areas:
+      'artwork heading'
+      'copy copy'
+      'actions actions';
+  }
+  .atlas-card:not(:has(.atlas-work-switcher, .atlas-artwork)) {
+    grid-template-areas: 'heading' 'copy' 'actions';
   }
   .atlas-eyebrow {
     font-size: 10px;
@@ -656,7 +723,7 @@ body:has(.atlas-page) {
   }
   .atlas-card-description {
     font-size: 12px;
-    margin-top: 6px;
+    margin-top: 0;
     -webkit-line-clamp: 2;
   }
   .atlas-card-actions {

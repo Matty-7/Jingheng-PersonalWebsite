@@ -3,6 +3,40 @@ import { mock_map, select_search, atlas_path } from './atlas_helpers';
 const detail_pattern = '**/api/atlas-entry?*';
 test.beforeEach(async ({ page }) => mock_map(page));
 
+test('same-place works are visible buttons with a full-width mobile rail', async ({
+  page,
+}, test_info) => {
+  await page.goto(`${atlas_path}?entry=film%3Alibrary%3Aghostbusters`);
+  await expect(page.getByRole('searchbox')).toBeEnabled();
+  const card = page.locator('.atlas-card');
+  const works = card.getByRole('navigation', { name: 'Works at this place' });
+  await expect(works.getByRole('button')).toHaveCount(3);
+  await expect(
+    works.getByRole('button', { name: 'Ghostbusters', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  await expect(card.getByRole('combobox')).toHaveCount(0);
+  if (page.viewportSize()!.width <= 760) {
+    const card_box = (await card.boundingBox())!;
+    const rail_box = (await works.boundingBox())!;
+    expect(rail_box.width).toBeGreaterThan(card_box.width - 32);
+  }
+  await page.screenshot({
+    path: test_info.outputPath('atlas_work_switcher.png'),
+  });
+  const seinfeld = works.getByRole('button', { name: 'Seinfeld', exact: true });
+  await seinfeld.click();
+  await expect(seinfeld).toHaveAttribute('aria-pressed', 'true');
+  await expect(card).toHaveAttribute('aria-busy', 'false');
+  await expect(card.locator('.atlas-card-description')).toContainText(
+    'overdue book',
+  );
+  await page.goBack();
+  await expect(
+    works.getByRole('button', { name: 'Ghostbusters', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  expect(await works.evaluate((element) => element.scrollLeft)).toBeLessThan(8);
+});
+
 test('linked detail is rendered without a request and same-place history is cached', async ({
   page,
   request,
@@ -16,16 +50,22 @@ test('linked detail is rendered without a request and same-place history is cach
     `${atlas_path}?entry=film%3Azabars%3Ayouve-got-mail&utm_source=test`,
   );
   await expect(page.getByRole('searchbox')).toBeEnabled();
+  const works = page.getByRole('navigation', { name: 'Works at this place' });
   await expect(
-    page.getByRole('combobox', { name: 'Works at this place' }),
-  ).toHaveValue('film:zabars:youve-got-mail');
+    works.getByRole('button', { name: "You've Got Mail", exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
   expect(requests).toHaveLength(0);
   const loaded = page.waitForResponse((response) =>
     response.url().includes('/api/atlas-entry?'),
   );
-  await page
-    .getByRole('combobox', { name: 'Works at this place' })
-    .selectOption('film:zabars:manhattan');
+  const manhattan = works.getByRole('button', {
+    name: 'Manhattan',
+    exact: true,
+  });
+  await manhattan.focus();
+  await manhattan.press('Enter');
+  await expect(manhattan).toBeFocused();
+  await expect(manhattan).toHaveAttribute('aria-pressed', 'true');
   const response = await loaded;
   expect(response.status()).toBe(200);
   expect(response.headers()['cache-control']).toBe('no-store');
@@ -37,12 +77,10 @@ test('linked detail is rendered without a request and same-place history is cach
   await expect(page.locator('.atlas-eyebrow').first()).toContainText('1979');
   await page.goBack();
   await expect(
-    page.getByRole('combobox', { name: 'Works at this place' }),
-  ).toHaveValue('film:zabars:youve-got-mail');
+    works.getByRole('button', { name: "You've Got Mail", exact: true }),
+  ).toHaveAttribute('aria-pressed', 'true');
   await page.goForward();
-  await expect(
-    page.getByRole('combobox', { name: 'Works at this place' }),
-  ).toHaveValue('film:zabars:manhattan');
+  await expect(manhattan).toHaveAttribute('aria-pressed', 'true');
   expect(requests).toHaveLength(1);
   expect(new URL(page.url()).searchParams.get('utm_source')).toBe('test');
   expect((await request.get('/api/atlas-entry?entry=missing')).status()).toBe(
