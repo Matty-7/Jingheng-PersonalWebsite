@@ -1,9 +1,41 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { map_location_url } from '../lib/map_location.ts';
+import { map_location_url, read_map_selection } from '../lib/map_location.ts';
 import { film_location } from '../lib/nyc_film_location.ts';
 import { literary_location } from '../lib/nyc_literary_location.ts';
 import { music_location } from '../lib/nyc_music_location.ts';
+import { atlas_location } from '../lib/new_york_atlas.ts';
+
+test('server search parameters use the same map selection rules as browser URLs', () => {
+  const cases = [
+    [film_location, { film: ['manhattan', 'anora'], place: 'sutton-square' }],
+    [literary_location, { work: 'gatsby', passage: 'queensboro-bridge' }],
+    [music_location, { track: 'new-york-state-of-mind', place: 'riverside' }],
+    [
+      atlas_location,
+      {
+        medium: 'music',
+        q: 'billy joel',
+        entry: 'music:new-york-state-of-mind:riverside',
+      },
+    ],
+    [
+      atlas_location,
+      { medium: 'unknown', q: 'no-such-work-xyz', entry: 'invalid' },
+    ],
+  ];
+  for (const [codec, params] of cases) {
+    const url = new URLSearchParams();
+    for (const [key, value] of Object.entries(params)) {
+      for (const item of Array.isArray(value) ? value : [value])
+        url.append(key, item);
+    }
+    assert.deepEqual(
+      read_map_selection(codec, { ...params, unused: undefined, empty: [] }),
+      codec.read(url),
+    );
+  }
+});
 
 test('map links preserve unrelated parameters and anchors while replacing owned values', () => {
   const url = map_location_url(

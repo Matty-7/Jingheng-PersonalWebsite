@@ -5,6 +5,20 @@ export type MapLocationCodec<State> = {
   write: (state: State) => Record<string, string>;
 };
 
+export type MapSearchParams = Record<string, string | string[] | undefined>;
+
+export function read_map_selection<State>(
+  codec: MapLocationCodec<State>,
+  search_params: MapSearchParams,
+): State {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(search_params)) {
+    const first = Array.isArray(value) ? value[0] : value;
+    if (first !== undefined) params.set(key, first);
+  }
+  return codec.read(params);
+}
+
 export function map_location_url(
   current_url: string,
   keys: readonly string[],

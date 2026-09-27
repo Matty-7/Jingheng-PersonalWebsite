@@ -7,14 +7,14 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vinext build",
+    "build": "vinext build && node scripts/check_bundle_budget.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
-    "format": "oxfmt",
+    "format": "oxfmt app components lib scripts tests \"content/**/*.ts\" \"*.ts\" package.json .oxfmtrc.json .oxlintrc.json",
     "content:summary": "node scripts/music_map_summary.mjs --write",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "test:browser": "playwright test",
-    "format:check": "oxfmt --check components/nyc_film_map.tsx components/nyc_literary_map.tsx components/nyc_music_map.tsx components/use_map_location.ts components/use_music_preview.ts lib/map_location.ts lib/nyc_film_location.ts lib/nyc_literary_location.ts lib/nyc_music_location.ts scripts/music_map_summary.mjs tests/map_location.test.mjs tests/browser/map_location.spec.ts",
+    "format:check": "npm run format -- --check",
     "check": "node scripts/verify.mjs",
     "check:full": "node scripts/verify.mjs full",
     "review:packet": "node scripts/review_packet.mjs"

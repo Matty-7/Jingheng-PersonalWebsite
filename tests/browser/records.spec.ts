@@ -4,6 +4,45 @@ import { open_home } from './home_helpers';
 
 test.use({ reducedMotion: 'reduce' });
 
+test('turntable artwork waits until nearby and stays mounted through navigation', async ({
+  page,
+}) => {
+  const requests: string[] = [];
+  page.on('request', (request) => {
+    if (
+      /\/images\/turntable(?:-base\.jpg|\.png)$/.test(
+        new URL(request.url()).pathname,
+      )
+    )
+      requests.push(request.url());
+  });
+  await open_home(page);
+  await expect(page.locator('.turntable')).not.toBeInViewport();
+  expect(requests).toHaveLength(0);
+  await expect(page.locator('.turntable img, .turntable svg')).toHaveCount(0);
+  const reserved = await page.locator('.turntable').boundingBox();
+  expect(reserved!.height).toBeGreaterThan(0);
+  await page.locator('#records').scrollIntoViewIfNeeded();
+  await expect(page.locator('.turntable')).toHaveAttribute(
+    'data-image-ready',
+    'true',
+  );
+  const loaded = await page.locator('.turntable').boundingBox();
+  expect(loaded!.height).toBeCloseTo(reserved!.height, 0);
+  expect(requests.some((url) => url.endsWith('/images/turntable.png'))).toBe(
+    true,
+  );
+  const artwork = await page.locator('.turntable').elementHandle();
+  await page.locator('#books').scrollIntoViewIfNeeded();
+  await page.locator('#records').scrollIntoViewIfNeeded();
+  expect(
+    await artwork!.evaluate(
+      (el) => el.isConnected && el === document.querySelector('.turntable'),
+    ),
+  ).toBe(true);
+  await expect(page.locator('audio')).toHaveCount(1);
+});
+
 test('records play, pause, wrap and keep one audio element across sections', async ({
   page,
 }) => {

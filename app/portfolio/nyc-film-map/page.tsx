@@ -4,6 +4,7 @@ import { NycFilmMap } from '@/components/nyc_film_map';
 import { film_location } from '@/lib/nyc_film_location';
 import { google_maps_embed_key } from '@/lib/google_maps_config';
 import { pageMetadata } from '@/lib/seo';
+import { read_map_selection, type MapSearchParams } from '@/lib/map_location';
 import './nyc_film_map.css';
 
 export const metadata = pageMetadata(
@@ -15,14 +16,12 @@ export const metadata = pageMetadata(
 export default async function NycFilmMapPage({
   searchParams,
 }: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
+  searchParams: Promise<MapSearchParams>;
 }) {
-  const params = new URLSearchParams();
-  for (const [key, value] of Object.entries(await searchParams)) {
-    if (value !== undefined)
-      params.set(key, Array.isArray(value) ? value[0] : value);
-  }
-  const initial_selection = film_location.read(params);
+  const initial_selection = read_map_selection(
+    film_location,
+    await searchParams,
+  );
   return (
     <main className="cinema-page">
       <nav className="cinema-nav" aria-label="Projects navigation">

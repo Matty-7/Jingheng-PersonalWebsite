@@ -1,7 +1,7 @@
 import type { MapLocationCodec } from './map_location';
 import { music_tracks, search_music } from './nyc_music_map.ts';
 
-type MusicSelection = {
+export type MusicSelection = {
   track_id: string | null;
   place_id: string;
   query: string;

@@ -3,6 +3,8 @@ import { BrandMark } from '@/components/brand_mark';
 import { NewYorkAtlas } from '@/components/new_york_atlas';
 import { google_maps_embed_key } from '@/lib/google_maps_config';
 import { pageMetadata } from '@/lib/seo';
+import { atlas_location } from '@/lib/new_york_atlas';
+import { read_map_selection, type MapSearchParams } from '@/lib/map_location';
 import './new_york_atlas.css';
 
 export const metadata = pageMetadata(
@@ -11,7 +13,15 @@ export const metadata = pageMetadata(
   '/portfolio/new-york-atlas',
 );
 
-export default function NewYorkAtlasPage() {
+export default async function NewYorkAtlasPage({
+  searchParams,
+}: {
+  searchParams: Promise<MapSearchParams>;
+}) {
+  const initial_selection = read_map_selection(
+    atlas_location,
+    await searchParams,
+  );
   return (
     <main className="atlas-page">
       <nav className="atlas-nav" aria-label="Projects navigation">
@@ -26,7 +36,10 @@ export default function NewYorkAtlasPage() {
         </h1>
         <p>Film &amp; TV, literature, and music.</p>
       </header>
-      <NewYorkAtlas google_maps_key={google_maps_embed_key()} />
+      <NewYorkAtlas
+        google_maps_key={google_maps_embed_key()}
+        initial_selection={initial_selection}
+      />
       <footer className="atlas-footer">
         <details>
           <summary>About this atlas</summary>
@@ -37,8 +50,8 @@ export default function NewYorkAtlasPage() {
             building.
           </p>
           <p>
-            Film and TV scenes may contain spoilers. Check access before visiting; view
-            residential locations from the public sidewalk.
+            Film and TV scenes may contain spoilers. Check access before
+            visiting; view residential locations from the public sidewalk.
           </p>
         </details>
       </footer>

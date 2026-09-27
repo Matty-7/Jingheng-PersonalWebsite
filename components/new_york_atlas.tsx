@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useMemo, useRef, useState } from 'react';
 import {
   ArrowUpRight,
   BookOpen,
@@ -28,6 +28,7 @@ import {
   search_atlas,
   type AtlasEntry,
   type AtlasFilter,
+  type AtlasSelection,
 } from '@/lib/new_york_atlas';
 import { film_sources, screen_credit } from '@/lib/nyc_film_map';
 import { artist_connection, preview_time } from '@/lib/nyc_music_map';
@@ -88,7 +89,7 @@ function SourceLink({
   );
 }
 
-function AtlasStory({ entry }: { entry: AtlasEntry }) {
+const AtlasStory = memo(function AtlasStory({ entry }: { entry: AtlasEntry }) {
   if (entry.medium === 'film') {
     const { scene } = entry;
     return (
@@ -190,21 +191,124 @@ function AtlasStory({ entry }: { entry: AtlasEntry }) {
       )}
     </div>
   );
-}
+});
 
 const page_size = 10;
 
-export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
-  const { state, update, ready } = useMapLocation(atlas_location);
-  const { medium, query, entry_id } = state;
-  const results = useMemo(() => search_atlas(medium, query), [medium, query]);
-  const selected = results.find((entry) => entry.id === entry_id);
+const AtlasResults = memo(function AtlasResults({
+  results,
+  entry_id,
+  ready,
+  select_entry,
+}: {
+  results: AtlasEntry[];
+  entry_id: string | null;
+  ready: boolean;
+  select_entry: (id: string) => void;
+}) {
   const selected_index = Math.max(
     0,
     results.findIndex((entry) => entry.id === entry_id),
   );
   const page_start = Math.floor(selected_index / page_size) * page_size;
   const visible_results = results.slice(page_start, page_start + page_size);
+  return (
+    <>
+      <aside className="atlas-index" aria-label="Atlas results">
+        <div className="atlas-index-heading">
+          <span>Places &amp; works</span>
+          <span>
+            {page_start + 1}–{Math.min(page_start + page_size, results.length)}
+          </span>
+        </div>
+        <div className="atlas-result-list">
+          {visible_results.map((entry) => (
+            <button
+              key={entry.id}
+              type="button"
+              className="atlas-result"
+              data-medium={entry.medium}
+              aria-pressed={entry.id === entry_id}
+              onClick={() => select_entry(entry.id)}
+            >
+              <span className="atlas-result-icon" aria-hidden="true">
+                <MediumIcon medium={entry.medium} />
+              </span>
+              <span className="atlas-result-copy">
+                <span className="sr-only">{atlas_entry_label(entry)}: </span>
+                <strong>{entry.place_name}</strong>
+                <span>{entry.title}</span>
+              </span>
+              {entry.id === entry_id && (
+                <Check
+                  className="atlas-selected-check"
+                  size={16}
+                  aria-hidden="true"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+        <div className="atlas-pagination">
+          <button
+            type="button"
+            disabled={!ready || page_start === 0}
+            aria-label="Previous results"
+            onClick={() => select_entry(results[page_start - page_size].id)}
+          >
+            <ChevronLeft size={18} />
+            Previous
+          </button>
+          <span>
+            {Math.floor(page_start / page_size) + 1} /{' '}
+            {Math.ceil(results.length / page_size)}
+          </span>
+          <button
+            type="button"
+            disabled={!ready || page_start + page_size >= results.length}
+            aria-label="Next results"
+            onClick={() => select_entry(results[page_start + page_size].id)}
+          >
+            Next
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      </aside>
+      <div className="atlas-mobile-picker">
+        <label className="sr-only" htmlFor="atlas-place-picker">
+          Choose a work and place
+        </label>
+        <select
+          id="atlas-place-picker"
+          value={entry_id ?? ''}
+          disabled={!ready}
+          onChange={(event) => select_entry(event.target.value)}
+        >
+          {results.map((entry) => (
+            <option key={entry.id} value={entry.id}>
+              {entry.place_name} · {entry.title} · {atlas_entry_label(entry)}
+            </option>
+          ))}
+        </select>
+      </div>
+    </>
+  );
+});
+
+export function NewYorkAtlas({
+  google_maps_key,
+  initial_selection,
+}: {
+  google_maps_key: string;
+  initial_selection?: AtlasSelection;
+}) {
+  const { state, update, ready } = useMapLocation(
+    atlas_location,
+    initial_selection,
+  );
+  const { medium, query, entry_id } = state;
+  const results = useMemo(() => search_atlas(medium, query), [medium, query]);
+  const selected = results.find((entry) => entry.id === entry_id);
   const detail_heading = useRef<HTMLHeadingElement>(null);
   const track = selected?.medium === 'music' ? selected.track : undefined;
   const {
@@ -218,24 +322,30 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
     toggle_preview,
   } = useMusicPreview(track);
   const map_url = selected ? atlas_embed_url(selected, google_maps_key) : null;
-  const related = selected ? atlas_connections(selected) : null;
+  const related = useMemo(
+    () => (selected ? atlas_connections(selected) : null),
+    [selected],
+  );
 
-  function select_entry(id: string, related_entry = false) {
-    update({
-      ...state,
-      ...(related_entry ? { medium: 'all', query: '' } : {}),
-      entry_id: id,
-    });
-    requestAnimationFrame(() => {
-      const heading = detail_heading.current;
-      if (!heading) return;
-      heading.focus({ preventScroll: true });
-      const bounds = heading.getBoundingClientRect();
-      if (bounds.top < 0 || bounds.bottom > window.innerHeight) {
-        heading.scrollIntoView({ behavior: 'instant', block: 'start' });
-      }
-    });
-  }
+  const select_entry = useCallback(
+    (id: string, related_entry = false) => {
+      update({
+        ...state,
+        ...(related_entry ? { medium: 'all', query: '' } : {}),
+        entry_id: id,
+      });
+      requestAnimationFrame(() => {
+        const heading = detail_heading.current;
+        if (!heading) return;
+        heading.focus({ preventScroll: true });
+        const bounds = heading.getBoundingClientRect();
+        if (bounds.top < 0 || bounds.bottom > window.innerHeight) {
+          heading.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+      });
+    },
+    [state, update],
+  );
 
   return (
     <div className="atlas-explorer">
@@ -302,87 +412,12 @@ export function NewYorkAtlas({ google_maps_key }: { google_maps_key: string }) {
       </div>
       {selected ? (
         <div className="atlas-workspace">
-          <aside className="atlas-index" aria-label="Atlas results">
-            <div className="atlas-index-heading">
-              <span>Places &amp; works</span>
-              <span>
-                {page_start + 1}–
-                {Math.min(page_start + page_size, results.length)}
-              </span>
-            </div>
-            <div className="atlas-result-list">
-              {visible_results.map((entry) => (
-                <button
-                  key={entry.id}
-                  type="button"
-                  className="atlas-result"
-                  data-medium={entry.medium}
-                  aria-pressed={entry.id === entry_id}
-                  onClick={() => select_entry(entry.id)}
-                >
-                  <span className="atlas-result-icon" aria-hidden="true">
-                    <MediumIcon medium={entry.medium} />
-                  </span>
-                  <span className="atlas-result-copy">
-                    <span className="sr-only">
-                      {atlas_entry_label(entry)}:{' '}
-                    </span>
-                    <strong>{entry.place_name}</strong>
-                    <span>{entry.title}</span>
-                  </span>
-                  {entry.id === entry_id && (
-                    <Check
-                      className="atlas-selected-check"
-                      size={16}
-                      aria-hidden="true"
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-            <div className="atlas-pagination">
-              <button
-                type="button"
-                disabled={!ready || page_start === 0}
-                aria-label="Previous results"
-                onClick={() => select_entry(results[page_start - page_size].id)}
-              >
-                <ChevronLeft size={18} />
-                Previous
-              </button>
-              <span>
-                {Math.floor(page_start / page_size) + 1} /{' '}
-                {Math.ceil(results.length / page_size)}
-              </span>
-              <button
-                type="button"
-                disabled={!ready || page_start + page_size >= results.length}
-                aria-label="Next results"
-                onClick={() => select_entry(results[page_start + page_size].id)}
-              >
-                Next
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </aside>
-          <div className="atlas-mobile-picker">
-            <label className="sr-only" htmlFor="atlas-place-picker">
-              Choose a work and place
-            </label>
-            <select
-              id="atlas-place-picker"
-              value={entry_id ?? ''}
-              disabled={!ready}
-              onChange={(event) => select_entry(event.target.value)}
-            >
-              {results.map((entry) => (
-                <option key={entry.id} value={entry.id}>
-                  {entry.place_name} · {entry.title} ·{' '}
-                  {atlas_entry_label(entry)}
-                </option>
-              ))}
-            </select>
-          </div>
+          <AtlasResults
+            results={results}
+            entry_id={entry_id}
+            ready={ready}
+            select_entry={select_entry}
+          />
           <section
             className="atlas-selected"
             aria-label="Selected place and work"
