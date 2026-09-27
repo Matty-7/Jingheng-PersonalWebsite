@@ -6,7 +6,8 @@
     "Unverified candidate images are excluded.",
     "Display derivatives use JPEG for the current host; verified frames, dimensions and source attribution are unchanged.",
     "Television additions distinguish episode frames, HBO production stills and Amazon episode images. Production stills and episode images are not claimed to be extracted video frames.",
-    "Tatiana Grill uses a verified film frame. Ocean View Cafe uses an explicitly labeled official venue photograph, not a film frame."
+    "Tatiana Grill uses a verified film frame. Ocean View Cafe uses an explicitly labeled official venue photograph, not a film frame.",
+    "September 27 television additions retain episode-frame and credited Hulu/USA Network production-photo distinctions. Full cards and thumbnails share compact local JPEGs."
   ],
   "records": [
     {
@@ -2180,6 +2181,96 @@
       "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/10/succcession-filming-locations-season-3-woolworth-tower-residences-pinnacle-apartment-nyc.jpg",
       "verification": "Parent and research agent visually inspected the downloaded scene image against the linked source and named scene. Filming venue; pin marks the public exterior approach, not the private residence or camera position.",
       "rights": "Film or television scene image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "only-murders-in-the-building",
+      "location_id": "belnord",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/08/only-murders-in-the-building-filming-locations-belnord-apartment-upper-west-side-hulu-martin-short-steve-martin-selena-gomez-nyc.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Credited production photograph, not an extracted episode frame.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "only-murders-in-the-building",
+      "location_id": "united-palace",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/08/only-murders-season-3-united-palace-untapped-new-york1.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Credited production photograph, not an extracted episode frame.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "mr-robot",
+      "location_id": "grand-central",
+      "frame_status": "verified_production_still",
+      "source_page": "https://www.untappedcities.com/10-nyc-film-locations-for-usa-networks-mr-robot/",
+      "original_image": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2017/10/mr-robot-filming-locations-grand-central-terminal-nyc.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Credited production photograph, not an extracted episode frame.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "mr-robot",
+      "location_id": "oscorp-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.sceen-it.com/sceen/3786/Mr-Robot/135-E-Street-Lexington-Avenue",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/47085.jpg/nos/.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "mr-robot",
+      "location_id": "brooklyn-museum",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.sceen-it.com/sceen/4220/Mr-Robot/The-Brooklyn-Museum",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/medium/52488.jpg/nos/.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "person-of-interest",
+      "location_id": "queensbridge-park",
+      "frame_status": "verified_frame",
+      "source_page": "https://moviemaps.org/images/6c1",
+      "original_image": "https://storage.googleapis.com/moviemaps/img/6c1.51gu3i.940.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "person-of-interest",
+      "location_id": "cleft-ridge-arch",
+      "frame_status": "verified_frame",
+      "source_page": "https://moviemaps.org/images/m9v",
+      "original_image": "https://storage.googleapis.com/moviemaps/img/m9v.exqnmi.940.jpg",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "brooklyn-nine-nine",
+      "location_id": "nypd-78th-precinct",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.livethemovies.com/blog/the-78th-precinct-from-brooklyn-nine-nine",
+      "original_image": "https://images.squarespace-cdn.com/content/v1/5c2ac81b3c3a53368709c177/1546732543979-7JI5S4GKJG8HYJH0WE12/78th-Precinct-from-Brooklyn-Nine-Nine.png",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broad-city",
+      "location_id": "chalk-gyms",
+      "frame_status": "verified_frame",
+      "source_page": "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/",
+      "original_image": "https://www.zillowstatic.com/bedrock/app/uploads/sites/26/2022/10/broad-city-soulstice.gif",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "broad-city",
+      "location_id": "whole-foods-gowanus",
+      "frame_status": "verified_frame",
+      "source_page": "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/",
+      "original_image": "https://www.zillowstatic.com/bedrock/app/uploads/sites/26/2022/10/broad-city-whole-foods-1.gif",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded.",
+      "rights": "Source credit retained. No open license or reuse permission asserted."
     }
   ]
 }

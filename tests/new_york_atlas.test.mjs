@@ -24,7 +24,7 @@ import { literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.deepEqual(atlas_counts, { film: 40, literature: 20, music: 126 });
+  assert.deepEqual(atlas_counts, { film: 45, literature: 20, music: 126 });
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,
@@ -86,6 +86,30 @@ test('TV series retain the screen route while exposing creators and year ranges 
   assert.equal(screen_kind(manhattan), 'Film');
   assert.equal(screen_year(manhattan), '1979');
   assert.equal(screen_credit(manhattan), 'Woody Allen');
+});
+
+test('ongoing series show present and remain searchable by title, creator and run', () => {
+  const series = film_catalog.find(
+    (work) => work.id === 'only-murders-in-the-building',
+  );
+  assert.equal(series.end_year, null);
+  assert.equal(screen_year(series), '2021–present');
+  for (const query of ['Only Murders', 'John Hoffman', '2021–present']) {
+    const entries = search_atlas('film', query);
+    assert.ok(
+      entries.some((entry) => entry.scene.film_id === series.id),
+      query,
+    );
+    assert.ok(entries.every((entry) => atlas_year(entry) === '2021–present'));
+  }
+  assert.equal(
+    screen_year(film_catalog.find((work) => work.id === 'seinfeld')),
+    '1989–1998',
+  );
+  assert.equal(
+    screen_year(film_catalog.find((work) => work.id === 'manhattan')),
+    '1979',
+  );
 });
 
 test('area connections keep distinct source places, pins and scope', () => {

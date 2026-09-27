@@ -1,0 +1,233 @@
+{
+  "checked_on": "2026-09-27",
+  "before": {
+    "works": 40,
+    "places": 210,
+    "scenes": 231
+  },
+  "after": {
+    "works": 45,
+    "places": 218,
+    "scenes": 241
+  },
+  "work_metadata_sources": {
+    "mr-robot": [
+      {
+        "url": "https://www.usanetwork.com/usa-insider/rami-malek-oppenheimer-mr-robot-career",
+        "ref": "turn74view3",
+        "evidence": "USA Network explicitly gives 2015–2019 and creator Sam Esmail."
+      }
+    ],
+    "person-of-interest": [
+      {
+        "url": "https://www.warnerbros.it/serietv/genere-crime/person-interest/",
+        "ref": "turn78view2",
+        "evidence": "Warner Bros. synopsis attributes series to Jonathan Nolan and Bad Robot."
+      },
+      {
+        "url": "https://press.wbd.com/us/ca/media-release/hbo-0/hbo-orders-limited-series-son",
+        "ref": "turn72search12",
+        "evidence": "Official WBD search extract states CBS 2011–2016; full page fetch is 403."
+      }
+    ],
+    "brooklyn-nine-nine": [
+      "https://www.nbcuniversal.com/article/parks-recreation-celebrates-15th-anniversary-beloved-cast-continues-bring-us-laughs",
+      "https://www.latimes.com/entertainment-arts/tv/story/2020-01-29/brooklyn-nine-nine-nbc-dan-goor-season-7"
+    ],
+    "broad-city": [
+      "https://www.paramountpressexpress.com/comedy-central/releases/?view=105042-press-comedy-central-inks-first-look-television-deal-with-ilana-glazer-and-abbi-jacobson",
+      "https://www.televisionacademy.com/features/news/features/broad-city-oral-history-ilana-glazer-abbi-jacobson"
+    ],
+    "only-murders-in-the-building": [
+      {
+        "id": "only-murders-hulu",
+        "label": "Series credits and current season · Hulu",
+        "url": "https://press.hulu.com/shows/only-murders-in-the-building/",
+        "evidence": "Hulu names Steve Martin and John Hoffman as co-creators and announces season six."
+      },
+      {
+        "id": "only-murders-premiere",
+        "label": "Series premiere · Hulu",
+        "url": "https://www.hulu.com/series/only-murders-in-the-building-ef31c7e1-cd0f-4e07-848d-1cbfedb50ddf",
+        "evidence": "Hulu lists the series as beginning in 2021."
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "film_id": "only-murders-in-the-building",
+      "location_id": "belnord",
+      "reused_place": false,
+      "source_urls": [
+        "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/",
+        "https://en.wikipedia.org/wiki/The_Belnord"
+      ],
+      "coordinate_evidence": "https://en.wikipedia.org/wiki/The_Belnord (published venue coordinate)",
+      "asset": "/images/film-map/only-murders-in-the-building--belnord.jpg",
+      "sha256": "7782389f14257b466f6314a0ca9dcc411f2e365e65afd6bb931bc963a44da075",
+      "image_kind": "production_still",
+      "verification": "Selected image visually inspected against its source page and location attribution. Credited production photograph, not an extracted episode frame."
+    },
+    {
+      "film_id": "only-murders-in-the-building",
+      "location_id": "united-palace",
+      "reused_place": false,
+      "source_urls": [
+        "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/",
+        "https://unitedpalace.org/",
+        "https://www.latlong.net/place/united-palace-ny-usa-32708.html"
+      ],
+      "coordinate_evidence": "https://www.latlong.net/place/united-palace-ny-usa-32708.html",
+      "asset": "/images/film-map/only-murders-in-the-building--united-palace.jpg",
+      "sha256": "1c751a67d9410fe9f09b3e9072193fdae71ec695594c0a35e41d1c698bb72815",
+      "image_kind": "production_still",
+      "verification": "Selected image visually inspected against its source page and location attribution. Credited production photograph, not an extracted episode frame."
+    },
+    {
+      "film_id": "mr-robot",
+      "location_id": "grand-central",
+      "reused_place": true,
+      "source_urls": [
+        "https://www.untappedcities.com/10-nyc-film-locations-for-usa-networks-mr-robot/"
+      ],
+      "coordinate_evidence": "Existing catalog coordinates reused for exact same location.",
+      "asset": "/images/film-map/mr-robot--grand-central.jpg",
+      "sha256": "456d8f9c22ca13ec4398b5acb565d62bb5ea5741b0b0b6977884e23cf7ee70dd",
+      "image_kind": "production_still",
+      "verification": "Selected image visually inspected against its source page and location attribution. Credited production photograph, not an extracted episode frame."
+    },
+    {
+      "film_id": "mr-robot",
+      "location_id": "oscorp-building",
+      "reused_place": true,
+      "source_urls": [
+        "https://www.sceen-it.com/sceen/3786/Mr-Robot/135-E-Street-Lexington-Avenue",
+        "https://www.untappedcities.com/10-nyc-film-locations-for-usa-networks-mr-robot/"
+      ],
+      "coordinate_evidence": "Existing catalog coordinates reused for exact same location.",
+      "asset": "/images/film-map/mr-robot--oscorp-building.jpg",
+      "sha256": "aae65a157c5e17f98d93d89fd6aaba632e6bd3d69fa8ce28d70f3cd355b9d2d4",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    },
+    {
+      "film_id": "mr-robot",
+      "location_id": "brooklyn-museum",
+      "reused_place": false,
+      "source_urls": [
+        "https://www.sceen-it.com/sceen/4220/Mr-Robot/The-Brooklyn-Museum",
+        "https://www.usanetwork.com/usa-insider/where-was-mr-robot-filmed",
+        "https://mapcarta.com/25032556"
+      ],
+      "coordinate_evidence": "https://mapcarta.com/25032556 (OpenStreetMap-derived venue pin)",
+      "asset": "/images/film-map/mr-robot--brooklyn-museum.jpg",
+      "sha256": "3dc7784f00aed71433ae5d873bb32617e461c330780dc9fcb906498080399c3b",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    },
+    {
+      "film_id": "person-of-interest",
+      "location_id": "queensbridge-park",
+      "reused_place": false,
+      "source_urls": [
+        "https://moviemaps.org/locations/35x",
+        "https://moviemaps.org/images/6c1"
+      ],
+      "coordinate_evidence": "https://moviemaps.org/locations/35x (public page map data: llat 40.7562571962424, llng -73.9488754196045)",
+      "asset": "/images/film-map/person-of-interest--queensbridge-park.jpg",
+      "sha256": "f82090bceb480c2b6a98f904c59065d6f5e231f5694a193f0c80df6c3187ef7c",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    },
+    {
+      "film_id": "person-of-interest",
+      "location_id": "cleft-ridge-arch",
+      "reused_place": false,
+      "source_urls": [
+        "https://moviemaps.org/locations/4zc",
+        "https://moviemaps.org/images/m9v"
+      ],
+      "coordinate_evidence": "https://moviemaps.org/locations/4zc (public page map data: llat 40.659955, llng -73.9649071)",
+      "asset": "/images/film-map/person-of-interest--cleft-ridge-arch.jpg",
+      "sha256": "2e6598867b9fc6ff343fd2671a3d9625d1ef3c598be2d566044b6ea6c78cdc9d",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    },
+    {
+      "film_id": "brooklyn-nine-nine",
+      "location_id": "nypd-78th-precinct",
+      "reused_place": false,
+      "source_urls": [
+        "https://www.livethemovies.com/blog/the-78th-precinct-from-brooklyn-nine-nine",
+        "https://www.untappedcities.com/brooklyn-nine-nine-nyc-police-station-precinct/",
+        "https://moviemaps.org/locations/2of"
+      ],
+      "coordinate_evidence": "https://commons.wikimedia.org/wiki/File:NYPD_78th_precinct.jpg",
+      "asset": "/images/film-map/brooklyn-nine-nine--nypd-78th-precinct.jpg",
+      "sha256": "6312ae991367f93df5b43ab2cb3ba8d66ad48e561dc6ffd85e0483d6ed20d3e1",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    },
+    {
+      "film_id": "broad-city",
+      "location_id": "chalk-gyms",
+      "reused_place": false,
+      "source_urls": [
+        "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/",
+        "https://www.chalkgyms.com/",
+        "https://www.latlong.net/location/broad-city-locations-615"
+      ],
+      "coordinate_evidence": "https://www.latlong.net/location/broad-city-locations-615",
+      "asset": "/images/film-map/broad-city--chalk-gyms.jpg",
+      "sha256": "2b359a2a7a2b08d6f4203114b02b2693a4ccf8f109bb3a98101179d97213fce9",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    },
+    {
+      "film_id": "broad-city",
+      "location_id": "whole-foods-gowanus",
+      "reused_place": false,
+      "source_urls": [
+        "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/",
+        "https://www.wholefoodsmarket.com/stores/thirdand3rd",
+        "https://www.latlong.net/location/broad-city-locations-615"
+      ],
+      "coordinate_evidence": "https://www.latlong.net/location/broad-city-locations-615",
+      "asset": "/images/film-map/broad-city--whole-foods-gowanus.jpg",
+      "sha256": "d03bbb34205cd0a51179a9488ce7b8735b961eb1645d2eca88a76213596f121d",
+      "image_kind": "episode_frame",
+      "verification": "Selected image visually inspected against its source page and location attribution. Episode frame; comparison and generic location photographs excluded."
+    }
+  ],
+  "excluded": [
+    {
+      "title": "How I Met Your Mother",
+      "reason": "No NYC filming point with matching genuine frame verified. McGee’s Pub is inspiration only and must not be represented as filming.",
+      "source_urls": [
+        "https://moviemaps.org/movies/rc",
+        "https://lamag.com/news/scene-it-before-the-church-in-how-i-met-your-mother/"
+      ]
+    },
+    {
+      "title": "Brooklyn Nine-Nine second location",
+      "reason": "Opening bridge identification conflicted in search results; no exact NYC filmed vantage with frame proven in bounded research."
+    },
+    {
+      "title": "30 Rock",
+      "reason": "Optional; 160 Riverside Drive and Rockefeller Center plausible, but no downloaded verified frame completed before bounded task ended.",
+      "source_urls": [
+        "https://moviemaps.org/movies/43",
+        "https://www.scoutingny.com/the-most-famous-sitcom-residences-in-new-york-city/"
+      ]
+    },
+    {
+      "title": "Mr. Robot arcade",
+      "reason": "Downloaded candidates did not clearly establish the arcade facade in a show frame."
+    }
+  ],
+  "notes": [
+    "Only Murders in the Building remains ongoing; null end_year renders as present. Hulu season-six announcement checked on the review date.",
+    "The Oscorp location keeps its stable ID and existing Spider-Man scene; the shared place label now uses the physical address.",
+    "Images were only resized/converted to JPEG. No generated imagery or invented episode numbers."
+  ]
+}

@@ -292,6 +292,51 @@
       "year": 1997,
       "director": "Barry Sonnenfeld",
       "note": "An alien immigration bureau hides in plain sight around New York."
+    },
+    {
+      "id": "mr-robot",
+      "title": "Mr. Robot",
+      "year": 2015,
+      "end_year": 2019,
+      "format": "series",
+      "creators": "Sam Esmail",
+      "note": "A hacker moves between corporate Manhattan and the city’s hidden meeting places."
+    },
+    {
+      "id": "person-of-interest",
+      "title": "Person of Interest",
+      "year": 2011,
+      "end_year": 2016,
+      "format": "series",
+      "creators": "Jonathan Nolan",
+      "note": "Reese and Finch follow the Machine’s leads through New York streets and parks."
+    },
+    {
+      "id": "brooklyn-nine-nine",
+      "title": "Brooklyn Nine-Nine",
+      "year": 2013,
+      "end_year": 2021,
+      "format": "series",
+      "creators": "Dan Goor and Michael Schur",
+      "note": "A Brooklyn precinct exterior anchors a workplace comedy largely filmed in California."
+    },
+    {
+      "id": "broad-city",
+      "title": "Broad City",
+      "year": 2014,
+      "end_year": 2019,
+      "format": "series",
+      "creators": "Ilana Glazer and Abbi Jacobson",
+      "note": "Abbi and Ilana turn jobs, errands and friendship into adventures across New York."
+    },
+    {
+      "id": "only-murders-in-the-building",
+      "title": "Only Murders in the Building",
+      "year": 2021,
+      "end_year": null,
+      "format": "series",
+      "creators": "Steve Martin and John Hoffman",
+      "note": "Three neighbors investigate murders while making a true-crime podcast."
     }
   ],
   "sources": [
@@ -759,6 +804,106 @@
       "id": "tatiana-director",
       "label": "Director location visit · The New Yorker",
       "url": "https://www.newyorker.com/magazine/2024/10/28/brighton-beach-goes-hollywood"
+    },
+    {
+      "id": "only-murders-in-the-building-tv-source-1",
+      "label": "Location reference · Untapped New York",
+      "url": "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/"
+    },
+    {
+      "id": "only-murders-in-the-building-tv-source-2",
+      "label": "Location reference · en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/The_Belnord"
+    },
+    {
+      "id": "only-murders-in-the-building-tv-source-3",
+      "label": "Location reference · unitedpalace.org",
+      "url": "https://unitedpalace.org/"
+    },
+    {
+      "id": "only-murders-in-the-building-tv-source-4",
+      "label": "Location reference · latlong.net",
+      "url": "https://www.latlong.net/place/united-palace-ny-usa-32708.html"
+    },
+    {
+      "id": "mr-robot-tv-source-1",
+      "label": "Location reference · Untapped New York",
+      "url": "https://www.untappedcities.com/10-nyc-film-locations-for-usa-networks-mr-robot/"
+    },
+    {
+      "id": "mr-robot-tv-source-2",
+      "label": "Location reference · Sceen-it",
+      "url": "https://www.sceen-it.com/sceen/3786/Mr-Robot/135-E-Street-Lexington-Avenue"
+    },
+    {
+      "id": "mr-robot-tv-source-3",
+      "label": "Location reference · Sceen-it",
+      "url": "https://www.sceen-it.com/sceen/4220/Mr-Robot/The-Brooklyn-Museum"
+    },
+    {
+      "id": "mr-robot-tv-source-4",
+      "label": "Location reference · usanetwork.com",
+      "url": "https://www.usanetwork.com/usa-insider/where-was-mr-robot-filmed"
+    },
+    {
+      "id": "mr-robot-tv-source-5",
+      "label": "Location reference · mapcarta.com",
+      "url": "https://mapcarta.com/25032556"
+    },
+    {
+      "id": "person-of-interest-tv-source-1",
+      "label": "Location reference · MovieMaps",
+      "url": "https://moviemaps.org/locations/35x"
+    },
+    {
+      "id": "person-of-interest-tv-source-2",
+      "label": "Location reference · MovieMaps",
+      "url": "https://moviemaps.org/images/6c1"
+    },
+    {
+      "id": "person-of-interest-tv-source-3",
+      "label": "Location reference · MovieMaps",
+      "url": "https://moviemaps.org/locations/4zc"
+    },
+    {
+      "id": "person-of-interest-tv-source-4",
+      "label": "Location reference · MovieMaps",
+      "url": "https://moviemaps.org/images/m9v"
+    },
+    {
+      "id": "brooklyn-nine-nine-tv-source-1",
+      "label": "Location reference · Live the Movies",
+      "url": "https://www.livethemovies.com/blog/the-78th-precinct-from-brooklyn-nine-nine"
+    },
+    {
+      "id": "brooklyn-nine-nine-tv-source-2",
+      "label": "Location reference · Untapped New York",
+      "url": "https://www.untappedcities.com/brooklyn-nine-nine-nyc-police-station-precinct/"
+    },
+    {
+      "id": "brooklyn-nine-nine-tv-source-3",
+      "label": "Location reference · MovieMaps",
+      "url": "https://moviemaps.org/locations/2of"
+    },
+    {
+      "id": "broad-city-tv-source-1",
+      "label": "Location reference · StreetEasy",
+      "url": "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/"
+    },
+    {
+      "id": "broad-city-tv-source-2",
+      "label": "Location reference · chalkgyms.com",
+      "url": "https://www.chalkgyms.com/"
+    },
+    {
+      "id": "broad-city-tv-source-3",
+      "label": "Location reference · latlong.net",
+      "url": "https://www.latlong.net/location/broad-city-locations-615"
+    },
+    {
+      "id": "broad-city-tv-source-4",
+      "label": "Location reference · wholefoodsmarket.com",
+      "url": "https://www.wholefoodsmarket.com/stores/thirdand3rd"
     }
   ],
   "locations": [
@@ -1690,6 +1835,25 @@
             "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/medium/4780.jpg/nos/.jpg",
             "width": 852,
             "height": 440
+          }
+        },
+        {
+          "film_id": "mr-robot",
+          "scene": "Freddy Lomax follows Mr. Robot’s instructions through Grand Central Terminal.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "mr-robot-tv-source-1"
+          ],
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2017/10/mr-robot-filming-locations-grand-central-terminal-nyc.jpg",
+            "credit": "Production still · Elizabeth Fisher / USA Network · via Untapped New York",
+            "alt": "Freddy Lomax talks on the phone beneath Grand Central Terminal’s painted ceiling.",
+            "width": 800,
+            "height": 534,
+            "source_url": "https://www.untappedcities.com/10-nyc-film-locations-for-usa-networks-mr-robot/",
+            "kind": "production_still",
+            "src": "/images/film-map/mr-robot--grand-central.jpg",
+            "thumbnail": "/images/film-map/mr-robot--grand-central.jpg"
           }
         }
       ]
@@ -5157,7 +5321,7 @@
     },
     {
       "id": "oscorp-building",
-      "name": "Oscorp building",
+      "name": "135 East 57th Street",
       "address": "135 East 57th Street",
       "neighborhood": "Midtown East",
       "borough": "Manhattan",
@@ -5183,6 +5347,25 @@
             "image_url": "https://onthesetofnewyork.com/locations/spiderman/spider-man61.jpg",
             "width": 565,
             "height": 305
+          }
+        },
+        {
+          "film_id": "mr-robot",
+          "scene": "Elliot leaves E Corp’s headquarters and encounters Darlene outside the East 57th Street building.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "mr-robot-tv-source-2",
+            "mr-robot-tv-source-1"
+          ],
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/medium/47085.jpg/nos/.jpg",
+            "credit": "Mr. Robot · Anonymous Content, UCP, Esmail Corp · via Sceen-it",
+            "alt": "Elliot stands outside E Corp’s headquarters at 135 East 57th Street.",
+            "width": 600,
+            "height": 324,
+            "source_url": "https://www.sceen-it.com/sceen/3786/Mr-Robot/135-E-Street-Lexington-Avenue",
+            "src": "/images/film-map/mr-robot--oscorp-building.jpg",
+            "thumbnail": "/images/film-map/mr-robot--oscorp-building.jpg"
           }
         }
       ]
@@ -7947,6 +8130,285 @@
             "kind": "production_still"
           },
           "precision": "Filming venue; pin marks the public exterior approach, not the private residence or camera position."
+        }
+      ]
+    },
+    {
+      "id": "belnord",
+      "name": "The Belnord",
+      "address": "225 West 86th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.78833,
+        -73.97611
+      ],
+      "access": "Exterior",
+      "visit_note": "View from the public sidewalk; the residential courtyard is private.",
+      "scenes": [
+        {
+          "film_id": "only-murders-in-the-building",
+          "scene": "The Belnord’s exterior and courtyard stand in for the Arconia.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "only-murders-in-the-building-tv-source-1",
+            "only-murders-in-the-building-tv-source-2"
+          ],
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/08/only-murders-in-the-building-filming-locations-belnord-apartment-upper-west-side-hulu-martin-short-steve-martin-selena-gomez-nyc.jpg",
+            "credit": "Production still · Craig Blankenhorn / Hulu · via Untapped New York",
+            "alt": "Oliver walks through the Belnord courtyard beneath its arched entrance.",
+            "width": 800,
+            "height": 533,
+            "source_url": "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/",
+            "kind": "production_still",
+            "src": "/images/film-map/only-murders-in-the-building--belnord.jpg",
+            "thumbnail": "/images/film-map/only-murders-in-the-building--belnord.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "united-palace",
+      "name": "United Palace",
+      "address": "4140 Broadway at West 175th Street",
+      "neighborhood": "Washington Heights",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.846539,
+        -73.938065
+      ],
+      "access": "Venue",
+      "visit_note": "See the exterior from Broadway; check the venue’s public event listings for interior access.",
+      "scenes": [
+        {
+          "film_id": "only-murders-in-the-building",
+          "scene": "United Palace supplies the theater and ornate lobby seen at the start of season three.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "only-murders-in-the-building-tv-source-1",
+            "only-murders-in-the-building-tv-source-3",
+            "only-murders-in-the-building-tv-source-4"
+          ],
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2023/08/only-murders-season-3-united-palace-untapped-new-york1.jpg",
+            "credit": "Production still · Patrick Harbron / Hulu · via Untapped New York",
+            "alt": "Charles stands in the ornate United Palace lobby in a season-three production still.",
+            "width": 800,
+            "height": 533,
+            "source_url": "https://www.untappedcities.com/only-murders-in-the-building-filming-locations/",
+            "kind": "production_still",
+            "src": "/images/film-map/only-murders-in-the-building--united-palace.jpg",
+            "thumbnail": "/images/film-map/only-murders-in-the-building--united-palace.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "brooklyn-museum",
+      "name": "Brooklyn Museum",
+      "address": "200 Eastern Parkway",
+      "neighborhood": "Prospect Heights",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.67097,
+        -73.9637
+      ],
+      "access": "Museum",
+      "visit_note": "Check the museum’s current admission and gallery access before visiting.",
+      "scenes": [
+        {
+          "film_id": "mr-robot",
+          "scene": "The Brooklyn Museum provides the setting for Price and Zhang’s confrontation in season four.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "mr-robot-tv-source-3",
+            "mr-robot-tv-source-4",
+            "mr-robot-tv-source-5"
+          ],
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/medium/52488.jpg/nos/.jpg",
+            "credit": "Mr. Robot · Anonymous Content, UCP, Esmail Corp · via Sceen-it",
+            "alt": "Zhang in a sculpture gallery at the Brooklyn Museum.",
+            "width": 600,
+            "height": 277,
+            "source_url": "https://www.sceen-it.com/sceen/4220/Mr-Robot/The-Brooklyn-Museum",
+            "src": "/images/film-map/mr-robot--brooklyn-museum.jpg",
+            "thumbnail": "/images/film-map/mr-robot--brooklyn-museum.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "queensbridge-park",
+      "name": "Queensbridge Park",
+      "address": "Queensbridge Park Greenway, near Vernon Boulevard",
+      "neighborhood": "Long Island City",
+      "borough": "Queens",
+      "coordinates": [
+        40.756257,
+        -73.948875
+      ],
+      "access": "Public park",
+      "visit_note": "Use the park’s public paths; the photographed waterfront has changed since filming.",
+      "scenes": [
+        {
+          "film_id": "person-of-interest",
+          "scene": "Reese is brought to Queensbridge Park for his first meeting with Finch in the pilot.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "person-of-interest-tv-source-1",
+            "person-of-interest-tv-source-2"
+          ],
+          "still": {
+            "image_url": "https://storage.googleapis.com/moviemaps/img/6c1.51gu3i.940.jpg",
+            "credit": "Person of Interest · Warner Bros. Entertainment Inc. · via MovieMaps",
+            "alt": "Finch sits on a bench in Queensbridge Park, with the Manhattan skyline and Queensboro Bridge behind him.",
+            "width": 800,
+            "height": 449,
+            "source_url": "https://moviemaps.org/images/6c1",
+            "src": "/images/film-map/person-of-interest--queensbridge-park.jpg",
+            "thumbnail": "/images/film-map/person-of-interest--queensbridge-park.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cleft-ridge-arch",
+      "name": "Cleft Ridge Arch",
+      "address": "Well House Drive, Prospect Park",
+      "neighborhood": "Prospect Park",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.659955,
+        -73.964907
+      ],
+      "access": "Public park",
+      "visit_note": "Approach by the public paths near the Boathouse.",
+      "scenes": [
+        {
+          "film_id": "person-of-interest",
+          "scene": "Finch and Root walk through Cleft Ridge Arch on their way to a park picnic in “SNAFU.”",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "person-of-interest-tv-source-3",
+            "person-of-interest-tv-source-4"
+          ],
+          "still": {
+            "image_url": "https://storage.googleapis.com/moviemaps/img/m9v.exqnmi.940.jpg",
+            "credit": "Person of Interest · Warner Bros. Entertainment Inc. · via MovieMaps",
+            "alt": "Finch and Root approach through Cleft Ridge Arch in Prospect Park.",
+            "width": 800,
+            "height": 449,
+            "source_url": "https://moviemaps.org/images/m9v",
+            "src": "/images/film-map/person-of-interest--cleft-ridge-arch.jpg",
+            "thumbnail": "/images/film-map/person-of-interest--cleft-ridge-arch.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nypd-78th-precinct",
+      "name": "NYPD 78th Precinct",
+      "address": "65 Sixth Avenue",
+      "neighborhood": "Prospect Heights",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.680798,
+        -73.974472
+      ],
+      "access": "Exterior",
+      "visit_note": "View from the public sidewalk. This is a working police station; the show’s interiors were filmed on a California set.",
+      "scenes": [
+        {
+          "film_id": "brooklyn-nine-nine",
+          "scene": "The 78th Precinct facade appears in recurring establishing shots as the fictional 99th Precinct.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "brooklyn-nine-nine-tv-source-1",
+            "brooklyn-nine-nine-tv-source-2",
+            "brooklyn-nine-nine-tv-source-3"
+          ],
+          "still": {
+            "image_url": "https://images.squarespace-cdn.com/content/v1/5c2ac81b3c3a53368709c177/1546732543979-7JI5S4GKJG8HYJH0WE12/78th-Precinct-from-Brooklyn-Nine-Nine.png",
+            "credit": "Brooklyn Nine-Nine · Episode frame · FOX, via Live the Movies",
+            "alt": "Police cars line the street outside the 78th Precinct in a Brooklyn Nine-Nine establishing shot.",
+            "width": 600,
+            "height": 340,
+            "source_url": "https://www.livethemovies.com/blog/the-78th-precinct-from-brooklyn-nine-nine",
+            "src": "/images/film-map/brooklyn-nine-nine--nypd-78th-precinct.jpg",
+            "thumbnail": "/images/film-map/brooklyn-nine-nine--nypd-78th-precinct.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chalk-gyms",
+      "name": "Chalk Gyms",
+      "address": "193 North 9th Street",
+      "neighborhood": "Williamsburg",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.718315,
+        -73.955437
+      ],
+      "access": "Business",
+      "visit_note": "View the entrance from the sidewalk; interior access follows the gym’s rules.",
+      "scenes": [
+        {
+          "film_id": "broad-city",
+          "scene": "Chalk Gyms provides the setting for Soulstice, the gym where Abbi works. In this frame she stands behind its reception desk.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "broad-city-tv-source-1",
+            "broad-city-tv-source-2",
+            "broad-city-tv-source-3"
+          ],
+          "still": {
+            "image_url": "https://www.zillowstatic.com/bedrock/app/uploads/sites/26/2022/10/broad-city-soulstice.gif",
+            "credit": "Broad City · Episode frame extracted from GIF · Comedy Central, via StreetEasy/GIPHY",
+            "alt": "Abbi stands at the Soulstice gym reception desk as Ilana approaches.",
+            "width": 480,
+            "height": 270,
+            "source_url": "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/",
+            "src": "/images/film-map/broad-city--chalk-gyms.jpg",
+            "thumbnail": "/images/film-map/broad-city--chalk-gyms.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "whole-foods-gowanus",
+      "name": "Whole Foods Market, Gowanus",
+      "address": "214 3rd Street",
+      "neighborhood": "Gowanus",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.67487,
+        -73.988838
+      ],
+      "access": "Business",
+      "visit_note": "An operating grocery store. Visit during public business hours; the scene’s aisle arrangement may have changed.",
+      "scenes": [
+        {
+          "film_id": "broad-city",
+          "scene": "After dental surgery, Abbi shops at the Gowanus Whole Foods while imagining her blue stuffed toy Bingo as a giant shopping companion.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "source_ids": [
+            "broad-city-tv-source-1",
+            "broad-city-tv-source-4",
+            "broad-city-tv-source-3"
+          ],
+          "still": {
+            "image_url": "https://www.zillowstatic.com/bedrock/app/uploads/sites/26/2022/10/broad-city-whole-foods-1.gif",
+            "credit": "Broad City · Episode frame extracted from GIF · Comedy Central via StreetEasy",
+            "alt": "Bingo, Abbi’s imagined giant blue companion, pushes a shopping cart through Whole Foods.",
+            "width": 500,
+            "height": 281,
+            "source_url": "https://streeteasy.com/blog/broad-city-nyc-film-locations/amp/",
+            "src": "/images/film-map/broad-city--whole-foods-gowanus.jpg",
+            "thumbnail": "/images/film-map/broad-city--whole-foods-gowanus.jpg"
+          }
         }
       ]
     }
