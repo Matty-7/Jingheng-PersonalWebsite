@@ -2459,7 +2459,7 @@ const original_concepts: MortgageConcept[] = [
     question:
       'A bond yields 6% and a comparable benchmark yields 5.5%. What does its high yield tell you about the spread?',
     answer:
-      'The illustrative nominal spread is only 50 bp: (6% − 5.5%) × 100. High yield alone does not establish generous compensation for credit, liquidity or option risk.',
+      'The illustrative nominal spread is only 50 bp: (0.06 − 0.055) × 10,000 = 50 bp. High yield alone does not establish generous compensation for credit, liquidity or option risk.',
     sources: ['fed_spreads', 'yield_spread_case'],
     links: [
       {
