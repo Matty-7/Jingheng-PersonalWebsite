@@ -10,6 +10,14 @@ test('free jumps become the saved lesson and support native browser history', as
     'true',
   );
   await expect(page).toHaveURL(/\/portfolio\/mortgage-map$/);
+  const lesson_requests: string[] = [];
+  page.on('request', (request) => {
+    if (
+      request.resourceType() === 'fetch' &&
+      new URL(request.url()).pathname === '/portfolio/mortgage-map'
+    )
+      lesson_requests.push(request.url());
+  });
   await page.getByRole('button', { name: 'Prepayments', exact: true }).click();
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Prepayments',
@@ -32,6 +40,7 @@ test('free jumps become the saved lesson and support native browser history', as
     'Prepayments',
   );
   await expect(page).toHaveURL(/\/portfolio\/mortgage-map$/);
+  expect(lesson_requests).toEqual([]);
 });
 
 test('lesson changes retain the learning surface and reset the answer', async ({

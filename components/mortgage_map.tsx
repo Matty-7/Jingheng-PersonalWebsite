@@ -135,8 +135,10 @@ export function MortgageMap({
     const current_url = new URL(location.href);
     current_url.hash = `concept=${progress.current_id}`;
     current_url.searchParams.set('concept', progress.current_id);
+    // The framework preserves its own metadata for native History API calls.
+    // Copying that metadata back would mislabel this as a router navigation.
     history.replaceState(
-      { ...history.state, learning_route: progress.route_id },
+      { learning_route: progress.route_id },
       '',
       current_url,
     );
@@ -146,7 +148,7 @@ export function MortgageMap({
     const url = new URL(location.href);
     url.hash = `concept=${id}`;
     url.searchParams.set('concept', id);
-    const state = { ...history.state, learning_route: chosen_route.id };
+    const state = { learning_route: chosen_route.id };
     if (location.hash !== url.hash) history.pushState(state, '', url);
     else history.replaceState(state, '', url);
   }
