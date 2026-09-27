@@ -11,6 +11,7 @@ export function audit_preview(): Plugin {
     '/__audit/mobile': [390, 844],
     '/__audit/short': [1280, 720],
     '/__audit/mortgage_desktop': [1440, 900],
+    '/__audit/mortgage_design': [1488, 1056],
     '/__audit/mortgage_short': [1280, 720],
     '/__audit/mortgage_mobile': [390, 844],
     '/__audit/mortgage_narrow': [320, 844],
@@ -50,7 +51,7 @@ export function audit_preview(): Plugin {
             ? ''
             : `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Site audit viewport</title>
-<style>body{margin:0;background:#ddd}iframe{display:block;border:0}</style></head>
+<style>body{margin:0;background:#ddd}iframe{display:block;border:0${(request.url ?? '').startsWith('/__audit/mortgage_design') ? ';transform:scale(.85);transform-origin:top left' : ''}}</style></head>
 <body><iframe title="Website at ${width} by ${height}" src="${route}" width="${width}" height="${height}"></iframe></body></html>`,
         );
       });

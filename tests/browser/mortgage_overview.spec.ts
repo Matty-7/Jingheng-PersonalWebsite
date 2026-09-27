@@ -1,108 +1,46 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ reducedMotion: 'no-preference' });
-
-test('overview offers readable domains without zooming', async ({
+test('learning starts with a local tree and one focused activity', async ({
   page,
-}, test_info) => {
+}) => {
   await page.goto('/portfolio/mortgage-map');
-  const graph_titles = page.locator('.node-branch strong');
-  const domain_entries = page.locator('.atlas-browse-domain');
-  await expect(graph_titles).toHaveCount(10);
-  await expect
-    .poll(async () => {
-      if ((await domain_entries.count()) === 10) {
-        return domain_entries.evaluateAll((entries) =>
-          entries.every((entry) => {
-            const title = entry.querySelector('strong')!;
-            const question = entry.querySelector('small')!;
-            return (
-              parseFloat(getComputedStyle(title).fontSize) >= 16 &&
-              parseFloat(getComputedStyle(question).fontSize) >= 13 &&
-              title.textContent!.length > 0 &&
-              question.textContent!.length > 0
-            );
-          }),
-        );
-      }
-      return graph_titles.evaluateAll((titles) =>
-        titles.every((title) => {
-          const world = title.closest('.atlas-world')!;
-          const scale = new DOMMatrix(getComputedStyle(world).transform).a;
-          const text = title.getBoundingClientRect();
-          const card = title.closest('button')!.getBoundingClientRect();
-          return (
-            parseFloat(getComputedStyle(title).fontSize) * scale >= 15.9 &&
-            text.left >= card.left &&
-            text.right <= card.right + 1 &&
-            text.top >= card.top &&
-            text.bottom <= card.bottom + 1 &&
-            title.scrollWidth <= title.clientWidth + 1
-          );
-        }),
-      );
-    })
-    .toBe(true);
+  await expect(page.locator('.mortgage-learning')).toHaveAttribute(
+    'data-ready',
+    'true',
+  );
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Mortgage Map',
+  );
+  await expect(page.locator('.learning-tree button')).toHaveCount(6);
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'When does refinancing make sense?',
+  );
+  await expect(page.getByRole('button', { name: 'Map settings' })).toHaveCount(
+    0,
+  );
+  await expect(
+    page.getByRole('button', { name: 'Check understanding' }),
+  ).toBeEnabled();
+  await expect(page.locator('.learning-depth')).not.toHaveAttribute('open');
+  await expect(page.locator('.is-understood')).toHaveCount(0);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth - innerWidth,
     ),
   ).toBe(0);
-  await test_info.attach('readable-overview', {
-    body: await page.screenshot({ fullPage: true }),
-    contentType: 'image/png',
-  });
-
-  if (await domain_entries.count()) {
-    await page
-      .getByRole('navigation', { name: 'Browse map at readable size' })
-      .getByRole('button', { name: /Cash flows & value/ })
-      .click();
-  } else {
-    await page
-      .getByRole('button', { name: 'Explore Cash flows & value', exact: true })
-      .click();
-  }
-  const browse = page.getByRole('button', {
-    name: 'Browse topics',
-    exact: true,
-  });
-  if ((await browse.getAttribute('aria-expanded')) === 'false')
-    await browse.click();
-  await expect(page.locator('.atlas-browse-question')).toHaveText(
-    'How does future money become today’s value?',
-  );
-  await expect(page.locator('.atlas-browse-question')).toHaveCSS(
-    'font-size',
-    '13px',
-  );
+  if ((page.viewportSize()?.width ?? 0) > 800)
+    await expect(
+      page.getByRole('button', { name: 'Check understanding' }),
+    ).toBeInViewport();
 });
 
-test('first visit can start a reading path with the keyboard', async ({
+test('reduced motion keeps the same usable learning surface', async ({
   page,
 }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/portfolio/mortgage-map');
-  const start = page.getByRole('button', {
-    name: 'Start with a reading path',
-    exact: true,
-  });
-  await expect(start).toBeInViewport();
-  await start.press('Enter');
-  const paths = page.getByRole('region', { name: 'Reading paths' });
-  await expect(
-    paths.getByRole('heading', { name: 'Follow a mechanism.' }),
-  ).toBeFocused();
-  const first_path = paths.locator('.atlas-model-cards button').first();
-  const title = await first_path.locator('strong').innerText();
-  await first_path.click();
-  await expect(
-    paths.getByRole('heading', { name: title, exact: true }),
-  ).toBeFocused();
-  const first_step = paths.locator('.atlas-model-steps button').first();
-  const concept = (await first_step.innerText()).trim();
-  await first_step.click();
-  const reader = page.getByRole('complementary', { name: 'Concept reader' });
-  await expect(reader.getByRole('heading', { level: 2 })).toHaveText(concept);
-  await page.getByRole('button', { name: 'Close concept reader' }).click();
-  await expect(first_step).toBeFocused();
+  await expect(page.locator('.learning-node').first()).toHaveCSS(
+    'transition-duration',
+    '0s',
+  );
 });
