@@ -44,9 +44,6 @@ for (const path of [
   '/',
   '/portfolio/mortgage-map',
   '/portfolio/new-york-atlas',
-  '/portfolio/nyc-film-map',
-  '/portfolio/nyc-literary-map',
-  '/portfolio/nyc-music-map',
 ]) {
   const { response, body } = await read(path);
   assert.equal(response.status, 200, path);
@@ -111,6 +108,35 @@ for (const path of [
     }
   }
 }
+for (const [kind, medium, suffix, entry] of [
+  [
+    'film',
+    'film',
+    '?film=youve-got-mail&place=cafe-lalo',
+    'film:cafe-lalo:youve-got-mail',
+  ],
+  [
+    'literary',
+    'literature',
+    '?passage=queensboro-bridge',
+    'literature:queensboro-bridge',
+  ],
+  [
+    'music',
+    'music',
+    '?track=cornelia-street&place=cornelia-street',
+    'music:cornelia-street:cornelia-street',
+  ],
+]) {
+  for (const query of ['', suffix]) {
+    const { response } = await read(`/portfolio/nyc-${kind}-map${query}`);
+    assert.equal(response.status, 308);
+    const destination = new URL(response.headers.get('location'), origin);
+    assert.equal(destination.pathname, '/portfolio/new-york-atlas');
+    assert.equal(destination.searchParams.get('medium'), medium);
+    if (query) assert.equal(destination.searchParams.get('entry'), entry);
+  }
+}
 const journal = await read('/journal');
 assert.equal(journal.response.status, 308);
 assert.equal(journal.response.headers.get('location'), profile.newsletterUrl);
@@ -158,9 +184,6 @@ assert.deepEqual(
     `${canonical}/`,
     `${canonical}/portfolio/mortgage-map`,
     `${canonical}/portfolio/new-york-atlas`,
-    `${canonical}/portfolio/nyc-film-map`,
-    `${canonical}/portfolio/nyc-literary-map`,
-    `${canonical}/portfolio/nyc-music-map`,
   ].sort((a, b) => a.localeCompare(b)),
 );
 const withdrawn_mortgage = await read('/lab/mortgage');
