@@ -6,7 +6,7 @@ Acceptance: at most six nearby nodes on desktop; no initial settings, view tabs,
 
 The illustrated borrower route starts at refinancing incentive, with fundamentals visible alongside it. Completing that route returns to any skipped fundamentals. All other concepts use the existing authored question and answer as a reflective exercise. Detailed summaries, formulas, sources and related reading are disclosed in place. The catalog keeps all ten domains and the existing cross-domain learning routes; its lines express study order, not a causal or prerequisite claim.
 
-The mock’s example completion marks are not pre-populated in a new browser. Mobile uses a compact two-column local tree and normal vertical scrolling; it never shrinks desktop text or captures wheel input. Legacy graph and comparison modules remain isolated from the learning entrypoint for a later scoped cleanup; they are not shown as competing modes.
+The mock’s example completion marks are not pre-populated in a new browser. Mobile uses a compact two-column local tree and normal vertical scrolling; it never shrinks desktop text or captures wheel input. The retired graph, comparison, reader and camera components and their unimported styles were removed in the September 27 cleanup. Current learning routes, catalog data, public references and saved-position behavior are unchanged.
 
 ## September 27 simplification
 

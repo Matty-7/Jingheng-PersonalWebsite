@@ -5,19 +5,18 @@ import {
   mortgage_relationships,
   mortgage_sources,
 } from '../content/mortgage_concepts.ts';
+import { search_concepts } from '../lib/mortgage_search.ts';
 import {
-  build_connection_graph,
-  concept_index,
-  search_concepts,
-} from '../lib/mortgage_graph.ts';
-import {
-  initial_mortgage_state,
-  mortgage_reducer,
-} from '../lib/mortgage_state.ts';
+  learning_index,
+  initial_progress,
+  select_lesson,
+  read_progress,
+} from '../lib/mortgage_learning.ts';
+
 import { mortgage_math } from '../lib/mortgage_math.ts';
 
 test('dollar-roll quotation has explicit units, sign, limits and a counterexample', () => {
-  const rolls = concept_index.get('rolls');
+  const rolls = learning_index.get('rolls');
   assert.equal(mortgage_concepts.filter((c) => c.id === 'rolls').length, 1);
   assert.match(rolls.summary, /sell-near \/ buy-far/);
   assert.match(
@@ -41,48 +40,28 @@ test('dollar-roll quotation has explicit units, sign, limits and a counterexampl
 });
 
 test('roll cash flows, prepayments, delivery and repo are explicit sourced graph connections', () => {
-  const neighbors = new Set(build_connection_graph('rolls').map((n) => n.id));
   for (const id of [
     'cash_flows',
     'prepayments',
     'cheapest_deliverable',
     'repo',
   ]) {
-    assert.ok(neighbors.has(id), id);
     const edge = mortgage_relationships.find(
       (e) =>
         (e.source === 'rolls' && e.target === id) ||
         (e.target === 'rolls' && e.source === id),
     );
+    assert.ok(edge, id);
     assert.equal(edge.kind, id === 'repo' ? 'comparison' : 'mechanism');
     assert.ok(edge.conditions && edge.sources.length);
     for (const source of edge.sources) assert.ok(mortgage_sources[source]);
   }
 });
 
-test('a repo reader can follow the mortgage roll comparison without losing history', () => {
-  let state = initial_mortgage_state;
-  state = mortgage_reducer(state, {
-    type: 'select_concept',
-    id: 'repo',
-    preserve_map_context: false,
-  });
-  state = mortgage_reducer(state, {
-    type: 'select_concept',
-    id: 'rolls',
-    preserve_map_context: false,
-  });
-  state = mortgage_reducer(state, {
-    type: 'follow_history',
-    offset: -1,
-    preserve_map_context: false,
-  });
-  assert.equal(state.selected, 'repo');
-  state = mortgage_reducer(state, {
-    type: 'follow_history',
-    offset: 1,
-    preserve_map_context: false,
-  });
-  assert.equal(state.selected, 'rolls');
-  assert.deepEqual(state.trail.ids, ['repo', 'rolls']);
+test('a repo lesson can jump to dollar rolls and restore its saved position', () => {
+  const repo = select_lesson(initial_progress, 'repo');
+  const rolls = select_lesson({ ...repo, completed: ['repo'] }, 'rolls');
+  assert.equal(rolls.current_id, 'rolls');
+  assert.deepEqual(rolls.completed, ['repo']);
+  assert.deepEqual(read_progress(JSON.stringify(rolls)), rolls);
 });

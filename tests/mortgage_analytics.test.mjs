@@ -5,7 +5,7 @@ import {
   analytics_concepts,
 } from '../content/mortgage_analytics.ts';
 import { mortgage_paths } from '../content/mortgage_concepts.ts';
-import { search_concepts } from '../lib/mortgage_graph.ts';
+import { search_concepts } from '../lib/mortgage_search.ts';
 
 test('analytics paths preserve complete explanations and explicit boundaries', () => {
   for (const path of analytics_paths) {

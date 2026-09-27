@@ -7,7 +7,7 @@ import {
   mortgage_concepts,
   mortgage_paths,
 } from '@/content/mortgage_concepts';
-import { search_concepts } from '@/lib/mortgage_graph';
+import { search_concepts } from '@/lib/mortgage_search';
 import { learning_routes } from '@/lib/mortgage_learning';
 
 export function MortgageCatalog({

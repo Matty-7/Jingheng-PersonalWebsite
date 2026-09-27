@@ -215,7 +215,12 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
     },
   };
 
-export function render_mortgage_math() {
+export type MortgageFormulas = Record<
+  string,
+  { html: string; tex: string; variables: string }
+>;
+
+export function render_mortgage_math(): MortgageFormulas {
   return Object.fromEntries(
     mortgage_concepts
       .filter((c) => c.formula)
