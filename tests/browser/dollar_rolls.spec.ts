@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { learning_checks } from '../../lib/mortgage_learning';
 
 test('dollar-roll explanation, formula, sources and connections remain available on demand', async ({
   page,
@@ -14,7 +15,10 @@ test('dollar-roll explanation, formula, sources and connections remain available
   await expect(page.locator('.learning-depth .katex-mathml')).toHaveCount(1);
   await expect(page.locator('.learning-sources a').first()).toBeVisible();
   await page
-    .getByRole('button', { name: 'Reveal explanation', exact: true })
+    .getByRole('button', {
+      name: learning_checks.rolls.choices[learning_checks.rolls.correct],
+      exact: true,
+    })
     .click();
   await expect(page.locator('.learning-answer')).toContainText(
     'Forgone payments can outweigh the drop and any funding benefit',

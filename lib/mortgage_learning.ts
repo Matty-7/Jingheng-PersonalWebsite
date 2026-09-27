@@ -81,6 +81,19 @@ export function route_for_concept(
   return route_index.get(`topic_${concept?.topic}`) ?? learning_routes[0];
 }
 
+export function select_lesson(
+  progress: LearningProgress,
+  id: string,
+  preferred = progress.route_id,
+): LearningProgress {
+  if (!learning_index.has(id)) return progress;
+  return {
+    ...progress,
+    current_id: id,
+    route_id: route_for_concept(id, preferred).id,
+  };
+}
+
 export function next_lesson(
   route: LearningRoute,
   current_id: string,
@@ -131,64 +144,4 @@ export function refinancing_feedback(new_rate: number, current_rate = 6.5) {
   };
 }
 
-export const learning_checks: Record<
-  string,
-  { choices: string[]; correct: number }
-> = {
-  incentive: {
-    choices: [
-      'Borrowers face different costs and constraints.',
-      'The coupon alone determines every payoff.',
-      'Equal coupons guarantee equal prepayment speeds.',
-    ],
-    correct: 0,
-  },
-  principal_interest: {
-    choices: [
-      'Yes, every part of a payment reduces the balance.',
-      'No, only principal repayment reduces the balance.',
-      'Only when market rates fall.',
-    ],
-    correct: 1,
-  },
-  fixed_arm: {
-    choices: [
-      'Yes, immediately and without limits.',
-      'No, the rate can never change.',
-      'Not always: reset dates, caps and floors matter.',
-    ],
-    correct: 2,
-  },
-  prepayments: {
-    choices: [
-      'Yes, home sales and extra payments can return principal early.',
-      'No, rates must fall first.',
-      'Only at the final maturity date.',
-    ],
-    correct: 0,
-  },
-  cash_flows: {
-    choices: [
-      'The coupon rate automatically becomes zero.',
-      'Repaid principal no longer earns future coupon payments.',
-      'Prepayments increase the remaining balance.',
-    ],
-    correct: 1,
-  },
-  frictions: {
-    choices: [
-      'Their costs, constraints and expected holding periods differ.',
-      'Every borrower refinances on the same day.',
-      'Transaction costs cannot affect the decision.',
-    ],
-    correct: 0,
-  },
-  cpr: {
-    choices: [
-      'Yes, 6% of principal each month.',
-      'No, the monthly equivalent is roughly 0.5%.',
-      'It means 6% of the original balance every year.',
-    ],
-    correct: 1,
-  },
-};
+export { learning_checks } from '../content/mortgage_checks.ts';

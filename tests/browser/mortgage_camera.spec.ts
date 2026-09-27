@@ -22,7 +22,7 @@ test('learning works without panning or zooming and fits narrow screens', async 
     ),
   ).toBe(0);
   await page
-    .getByRole('button', { name: 'Back to your learning path' })
+    .getByRole('button', { name: 'Refinancing incentive', exact: true })
     .press('Enter');
   await expect(page.getByRole('slider')).toBeVisible();
 });
