@@ -4,6 +4,15 @@ import { check_mortgage_focus_surface } from '../../scripts/browser_checks/mortg
 test('catalog traps focus, supports Escape and restores the originating control', async ({
   page,
 }) => {
+  await page.route(
+    'https://static.cloudflareinsights.com/beacon.min.js',
+    (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/javascript',
+        body: '',
+      }),
+  );
   const page_errors: string[] = [];
   page.on('pageerror', (error) => page_errors.push(error.message));
   await page.goto('/portfolio/mortgage-map#concept=cpr');
