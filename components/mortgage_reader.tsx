@@ -56,7 +56,7 @@ export function MortgageReader({
   explore_connections: () => void;
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
-  const model = expansion_paths.find(item => item.id === path_id);
+  const model = expansion_paths.find((item) => item.id === path_id);
   const relations = study_edges(concept.id);
   return (
     <aside
@@ -108,7 +108,11 @@ export function MortgageReader({
           >
             <Route size={14} /> {path.title}
           </button>
-          {model && <p className="atlas-reader-step-explanation">{model.explanations[path.steps.indexOf(concept.id)]}</p>}
+          {model && (
+            <p className="atlas-reader-step-explanation">
+              {model.explanations[path.steps.indexOf(concept.id)]}
+            </p>
+          )}
           <div>
             <span>
               Step {path.steps.indexOf(concept.id) + 1} of {path.steps.length}

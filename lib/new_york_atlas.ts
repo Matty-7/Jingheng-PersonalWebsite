@@ -295,7 +295,7 @@ export function atlas_maps_url(entry: AtlasEntry) {
   return google_music_url(entry.place);
 }
 
-type AtlasSelection = {
+export type AtlasSelection = {
   medium: AtlasFilter;
   query: string;
   entry_id: string | null;

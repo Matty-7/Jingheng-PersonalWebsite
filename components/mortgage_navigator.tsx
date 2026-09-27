@@ -1,4 +1,7 @@
-import { mortgage_branches, mortgage_topics } from '@/content/mortgage_concepts';
+import {
+  mortgage_branches,
+  mortgage_topics,
+} from '@/content/mortgage_concepts';
 import { useEffect, useId, useState } from 'react';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { concept_index } from '@/lib/mortgage_graph';

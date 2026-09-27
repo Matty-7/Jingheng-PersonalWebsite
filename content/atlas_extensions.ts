@@ -621,7 +621,10 @@ const entries: Entry[] = [
     'Product and provider labels need their own definitions; the letter alone is not a calculation contract. A swap par rate is also different from a zero rate.',
     [
       ['swap_curve', 'The swap par curve supplies the comparison rate.'],
-      ['spread_conventions', 'The scope of the convention must accompany the name.'],
+      [
+        'spread_conventions',
+        'The scope of the convention must accompany the name.',
+      ],
       [
         'z_spread',
         'Z-spread instead fits price using the full projected cash-flow schedule.',
@@ -1003,7 +1006,11 @@ export const atlas_relationships: MortgageRelationship[] =
             clo: ['Coverage triggers', 'Coupon resets'],
             callable: ['Value the option', 'Compare early repayment'],
             discount_margin: ['Required vs contractual', 'Spread sensitivity'],
-            i_spread: ['Par-rate reference', 'Convention scope', 'One yield vs all cash flows'],
+            i_spread: [
+              'Par-rate reference',
+              'Convention scope',
+              'One yield vs all cash flows',
+            ],
             fx_hedging: ['Hedging cost', 'Residual mismatch'],
           } as Record<string, string[]>
         )[c.id]?.[index] ??
@@ -1092,11 +1099,23 @@ export const atlas_comparisons: ComparisonSet[] = [
     rows: [
       {
         id: 'credit_spread',
-        cells: ['Credit spread', 'A stated lower-risk benchmark', 'An umbrella description; specify the calculation', 'What compensation accompanies this credit exposure?', 'Can include loss risk, liquidity and other effects; not a default probability.'],
+        cells: [
+          'Credit spread',
+          'A stated lower-risk benchmark',
+          'An umbrella description; specify the calculation',
+          'What compensation accompanies this credit exposure?',
+          'Can include loss risk, liquidity and other effects; not a default probability.',
+        ],
       },
       {
         id: 'nominal_spread',
-        cells: ['Nominal spread', 'One stated benchmark yield', 'Subtract two yields with aligned conventions', 'How far apart are these quoted yields?', 'The benchmark, tenor and yield conventions must be named.'],
+        cells: [
+          'Nominal spread',
+          'One stated benchmark yield',
+          'Subtract two yields with aligned conventions',
+          'How far apart are these quoted yields?',
+          'The benchmark, tenor and yield conventions must be named.',
+        ],
       },
       {
         id: 'g_spread',
@@ -1190,19 +1209,43 @@ export const atlas_comparisons: ComparisonSet[] = [
       },
       {
         id: 'cds_spread',
-        cells: ['CDS spread', 'Specified credit protection contract', 'Premium and contingent protection legs', 'What does protection against these credit events cost?', 'Check reference entity, maturity, seniority and quote convention.'],
+        cells: [
+          'CDS spread',
+          'Specified credit protection contract',
+          'Premium and contingent protection legs',
+          'What does protection against these credit events cost?',
+          'Check reference entity, maturity, seniority and quote convention.',
+        ],
       },
       {
         id: 'cds_bond_basis',
-        cells: ['CDS–bond basis', 'CDS spread minus comparable bond spread', 'Related exposures in derivative and cash markets', 'How differently do the two markets price credit?', 'Funding, liquidity and contractual mismatches can sustain the gap.'],
+        cells: [
+          'CDS–bond basis',
+          'CDS spread minus comparable bond spread',
+          'Related exposures in derivative and cash markets',
+          'How differently do the two markets price credit?',
+          'Funding, liquidity and contractual mismatches can sustain the gap.',
+        ],
       },
       {
         id: 'primary_secondary_spread',
-        cells: ['Primary–secondary spread', 'Borrower mortgage rate minus a representative new-production MBS yield', 'A comparison along the mortgage production chain', 'How far apart are borrower and secondary-market rates?', 'Includes costs and margins; not pure lender profit or MBS OAS.'],
+        cells: [
+          'Primary–secondary spread',
+          'Borrower mortgage rate minus a representative new-production MBS yield',
+          'A comparison along the mortgage production chain',
+          'How far apart are borrower and secondary-market rates?',
+          'Includes costs and margins; not pure lender profit or MBS OAS.',
+        ],
       },
       {
         id: 'excess_spread',
-        cells: ['Excess spread', 'Deal income less specified costs and losses', 'Period income; a ratio needs a balance and time convention', 'What income remains under the deal’s waterfall?', 'A structural income measure, not a benchmark valuation spread.'],
+        cells: [
+          'Excess spread',
+          'Deal income less specified costs and losses',
+          'Period income; a ratio needs a balance and time convention',
+          'What income remains under the deal’s waterfall?',
+          'A structural income measure, not a benchmark valuation spread.',
+        ],
       },
     ],
   },

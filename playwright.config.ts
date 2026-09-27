@@ -1,4 +1,6 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
+
+const standard_tests = { testIgnore: '**/mobile_device.spec.ts' };
 
 export default defineConfig({
   testDir: './tests/browser',
@@ -20,16 +22,40 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   projects: [
-    { name: 'desktop', use: { viewport: { width: 1440, height: 900 } } },
-    { name: 'mobile', use: { viewport: { width: 390, height: 844 } } },
-    { name: 'short', use: { viewport: { width: 1280, height: 720 } } },
+    {
+      name: 'desktop',
+      ...standard_tests,
+      use: { viewport: { width: 1440, height: 900 } },
+    },
+    {
+      name: 'mobile',
+      ...standard_tests,
+      use: { viewport: { width: 390, height: 844 } },
+    },
+    {
+      name: 'short',
+      ...standard_tests,
+      use: { viewport: { width: 1280, height: 720 } },
+    },
     {
       name: 'webkit_desktop',
+      ...standard_tests,
       use: { browserName: 'webkit', viewport: { width: 1440, height: 900 } },
     },
     {
       name: 'webkit_mobile',
+      ...standard_tests,
       use: { browserName: 'webkit', viewport: { width: 390, height: 844 } },
+    },
+    {
+      name: 'touch_chromium',
+      testMatch: '**/mobile_device.spec.ts',
+      use: { ...devices['Pixel 7'] },
+    },
+    {
+      name: 'touch_webkit',
+      testMatch: '**/mobile_device.spec.ts',
+      use: { ...devices['iPhone 13'], browserName: 'webkit' },
     },
   ],
   webServer: {

@@ -5,7 +5,10 @@ const profile = JSON.parse(
   await readFile(new URL('../content/profile.json', import.meta.url), 'utf8'),
 );
 const posts = JSON.parse(
-  await readFile(new URL('../content/newsletter_links.json', import.meta.url), 'utf8'),
+  await readFile(
+    new URL('../content/newsletter_links.json', import.meta.url),
+    'utf8',
+  ),
 );
 const archived_posts = JSON.parse(
   await readFile(new URL('../content/posts.json', import.meta.url), 'utf8'),
@@ -47,7 +50,10 @@ for (const path of [
 ]) {
   const { response, body } = await read(path);
   assert.equal(response.status, 200, path);
-  assert.ok(!body.includes('/lab/mortgage'), 'Withdrawn tool must not be linked');
+  assert.ok(
+    !body.includes('/lab/mortgage'),
+    'Withdrawn tool must not be linked',
+  );
   assert.ok(!response.headers.get('x-robots-tag')?.includes('noindex'), path);
   assert.ok(
     !/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/.test(body),
@@ -66,11 +72,17 @@ for (const path of [
   assert.ok(tagValue(body, 'name="description"', 'content'), path);
   if (path === '/') {
     assert.match(body, /<title[^>]*>Jingheng Huan<\/title>/);
-    assert.equal(tagValue(body, 'name="description"', 'content'), profile.description);
+    assert.equal(
+      tagValue(body, 'name="description"', 'content'),
+      profile.description,
+    );
     const graph = structuredData(body).flatMap((data) => data['@graph'] ?? []);
     const person = graph.find((node) => node['@type'] === 'Person');
     assert.equal(person.name, profile.name);
-    assert.deepEqual(person.alternateName, [profile.creatorName, profile.chineseName]);
+    assert.deepEqual(person.alternateName, [
+      profile.creatorName,
+      profile.chineseName,
+    ]);
     assert.ok(person.sameAs.includes(profile.links.linkedin));
     assert.ok(
       graph.some(
@@ -87,9 +99,15 @@ for (const path of [
     assert.ok(body.includes('also known as Matty Huan'));
   }
   for (const post of archived_posts) {
-    assert.ok(!body.includes(post.blocks[0].text), 'Archived prose must not be rendered');
+    assert.ok(
+      !body.includes(post.blocks[0].text),
+      'Archived prose must not be rendered',
+    );
     if (!published.some((entry) => entry.slug === post.slug)) {
-      assert.ok(!body.includes(post.title), 'Withdrawn article must not be listed');
+      assert.ok(
+        !body.includes(post.title),
+        'Withdrawn article must not be listed',
+      );
     }
   }
 }
@@ -103,7 +121,8 @@ for (const post of published) {
   assert.equal(response.status, 308, post.slug);
   assert.equal(response.headers.get('location'), post.external_url);
   assert.ok(!body.includes('BlogPosting'));
-  for (const archived of archived_posts) assert.ok(!body.includes(archived.blocks[0].text));
+  for (const archived of archived_posts)
+    assert.ok(!body.includes(archived.blocks[0].text));
 }
 const feed = await read('/feed.xml');
 assert.equal(feed.response.status, 200);
@@ -112,11 +131,14 @@ assert.ok(feed.body.includes(`<link>${profile.newsletterUrl}</link>`));
 assert.equal([...feed.body.matchAll(/<item>/g)].length, published.length);
 for (const post of published) {
   assert.ok(feed.body.includes(`<link>${post.external_url}</link>`));
-  assert.ok(feed.body.includes(`<guid isPermaLink="true">${post.external_url}</guid>`));
+  assert.ok(
+    feed.body.includes(`<guid isPermaLink="true">${post.external_url}</guid>`),
+  );
 }
 for (const archived of archived_posts) {
   assert.ok(!feed.body.includes(archived.blocks[0].text));
-  if (!published.some((post) => post.slug === archived.slug)) assert.ok(!feed.body.includes(archived.title));
+  if (!published.some((post) => post.slug === archived.slug))
+    assert.ok(!feed.body.includes(archived.title));
 }
 const robots = await read('/robots.txt');
 assert.equal(robots.response.status, 200);
@@ -147,7 +169,9 @@ assert.ok(withdrawn_mortgage.body.includes('noindex'));
 assert.ok(!withdrawn_mortgage.body.includes('mortgage-workbench'));
 for (const slug of [
   'seo-check-missing-page',
-  ...archived_posts.filter((post) => !published.some((entry) => entry.slug === post.slug)).map((post) => post.slug),
+  ...archived_posts
+    .filter((post) => !published.some((entry) => entry.slug === post.slug))
+    .map((post) => post.slug),
   ...posts.filter((post) => !published.includes(post)).map((post) => post.slug),
 ]) {
   const missing = await read(`/journal/${slug}`);

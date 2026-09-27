@@ -7,7 +7,7 @@ import { useAlbumScroll } from './use_album_scroll';
 import { useMemo, useRef, useState } from 'react';
 import { useMapLocation } from './use_map_location';
 import { useMusicPreview } from './use_music_preview';
-import { music_location } from '@/lib/nyc_music_location';
+import { music_location, type MusicSelection } from '@/lib/nyc_music_location';
 import {
   ArrowUpRight,
   Check,
@@ -135,8 +135,17 @@ function GoogleMusicMap({
   );
 }
 
-export function NycMusicMap({ google_maps_key }: { google_maps_key: string }) {
-  const { state, update, ready } = useMapLocation(music_location);
+export function NycMusicMap({
+  google_maps_key,
+  initial_selection,
+}: {
+  google_maps_key: string;
+  initial_selection?: MusicSelection;
+}) {
+  const { state, update, ready } = useMapLocation(
+    music_location,
+    initial_selection,
+  );
   const { query, overview, track_id, place_id } = state;
   const [fit_request, set_fit_request] = useState(0);
   const [focus_request, set_focus_request] = useState<MusicFocus | null>(null);

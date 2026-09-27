@@ -35,14 +35,14 @@ export function audit_preview(): Plugin {
         const route = (request.url ?? '').startsWith('/__audit/atlas_')
           ? '/portfolio/new-york-atlas'
           : (request.url ?? '').startsWith('/__audit/music_')
-          ? '/portfolio/nyc-music-map'
-          : (request.url ?? '').startsWith('/__audit/mortgage_')
-          ? '/portfolio/mortgage-map'
-          : (request.url ?? '').startsWith('/__audit/literary_')
-            ? '/portfolio/nyc-literary-map'
-          : (request.url ?? '').startsWith('/__audit/film_')
-            ? '/portfolio/nyc-film-map'
-            : '/';
+            ? '/portfolio/nyc-music-map'
+            : (request.url ?? '').startsWith('/__audit/mortgage_')
+              ? '/portfolio/mortgage-map'
+              : (request.url ?? '').startsWith('/__audit/literary_')
+                ? '/portfolio/nyc-literary-map'
+                : (request.url ?? '').startsWith('/__audit/film_')
+                  ? '/portfolio/nyc-film-map'
+                  : '/';
         response.setHeader('Content-Type', 'text/html; charset=utf-8');
         response.setHeader('Cache-Control', 'no-store');
         response.end(

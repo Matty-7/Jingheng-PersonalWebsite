@@ -109,11 +109,20 @@ test('the actual analytical relation network is one component, not just nodes wi
   // The historical SMM/CPR island still has edges after removing its bridges.
   // A degree-only check would pass; this traversal must detect its isolation.
   const island = new Set(['smm', 'cpr']);
-  const severed = mortgage_relationships.filter(edge => island.has(edge.source) === island.has(edge.target));
-  for (const id of island) assert.ok(severed.some(edge => edge.source === id || edge.target === id));
+  const severed = mortgage_relationships.filter(
+    (edge) => island.has(edge.source) === island.has(edge.target),
+  );
+  for (const id of island)
+    assert.ok(severed.some((edge) => edge.source === id || edge.target === id));
   const split = analytical_components(severed);
-  assert.ok(split.length > 1, 'Removing the bridges must break analytical connectivity');
-  assert.deepEqual(split.find(group => group.includes('smm')).sort(), ['cpr', 'smm']);
+  assert.ok(
+    split.length > 1,
+    'Removing the bridges must break analytical connectivity',
+  );
+  assert.deepEqual(split.find((group) => group.includes('smm')).sort(), [
+    'cpr',
+    'smm',
+  ]);
 });
 
 import {

@@ -2,7 +2,10 @@
 
 import { useRef, useState } from 'react';
 import { useMapLocation } from './use_map_location';
-import { literary_location } from '@/lib/nyc_literary_location';
+import {
+  literary_location,
+  type LiterarySelection,
+} from '@/lib/nyc_literary_location';
 import Image from 'next/image';
 import {
   ArrowUpRight,
@@ -52,10 +55,15 @@ function LiteraryCover({
 
 export function NycLiteraryMap({
   google_maps_key,
+  initial_selection,
 }: {
   google_maps_key: string;
+  initial_selection?: LiterarySelection;
 }) {
-  const { state, update, ready } = useMapLocation(literary_location);
+  const { state, update, ready } = useMapLocation(
+    literary_location,
+    initial_selection,
+  );
   const { work_id, query, selected_id } = state;
   const [map_visible, set_map_visible] = useState(true);
   const [map_reload, set_map_reload] = useState(0);

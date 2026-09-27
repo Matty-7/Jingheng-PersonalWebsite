@@ -8,11 +8,19 @@ import { useImageStatus } from './image_status';
 export function RoomScene(control: { paused: boolean; on_toggle: () => void }) {
   const { scene, paused, ready, toggle } = useSceneMotion(control);
   const { image_ref, state, on_load, on_error } = useImageStatus();
-  preload('/images/living-room-motion.jpg', { as: 'image', fetchPriority: 'high' });
+  preload('/images/living-room-motion.jpg', {
+    as: 'image',
+    fetchPriority: 'high',
+  });
 
   return (
     <>
-      <div className="arrival-scene" ref={scene} data-paused={paused} data-image-state={state}>
+      <div
+        className="arrival-scene"
+        ref={scene}
+        data-paused={paused}
+        data-image-state={state}
+      >
         <div className="room-artboard">
           <Image
             unoptimized

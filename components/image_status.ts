@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 
 export function useImageStatus() {
   const image_ref = useRef<HTMLImageElement>(null);
-  const [state, set_state] = useState<'pending' | 'loaded' | 'error'>('pending');
+  const [state, set_state] = useState<'pending' | 'loaded' | 'error'>(
+    'pending',
+  );
 
   useEffect(() => {
     const image = image_ref.current;

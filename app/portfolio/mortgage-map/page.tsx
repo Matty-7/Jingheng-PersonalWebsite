@@ -32,8 +32,9 @@ export default function MortgageMapPage() {
       <p className="map-scope">
         An evolving guide to mortgages and MBS, connecting interest rates,
         commercial property, funding and credit within one map. Original
-        explanations link to public references. Connections distinguish mechanisms, definitions,
-        measurements and comparisons; examples are illustrative.
+        explanations link to public references. Connections distinguish
+        mechanisms, definitions, measurements and comparisons; examples are
+        illustrative.
       </p>
     </main>
   );

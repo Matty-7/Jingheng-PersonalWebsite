@@ -1,33 +1,33 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import type { CSSProperties } from "react";
-import { SceneMotionControl, useSceneMotion } from "./scene_motion";
-import { useImageStatus } from "./image_status";
+import Image from 'next/image';
+import type { CSSProperties } from 'react';
+import { SceneMotionControl, useSceneMotion } from './scene_motion';
+import { useImageStatus } from './image_status';
 
-const amber = "#e4a952";
-const ivory = "#d5ddd9";
-const blue = "#78a6cb";
-const panel = "#171b1e";
+const amber = '#e4a952';
+const ivory = '#d5ddd9';
+const blue = '#78a6cb';
+const panel = '#171b1e';
 
 function ScreenHeader({ title }: { title: string }) {
   return (
     <>
       <rect width="500" height="350" fill={panel} />
       <rect width="500" height="16" fill="#343d47" />
-      {["MENU", "YAS", "OAS", "CASHFLOW", "CURVES"].map((label, index) => (
+      {['MENU', 'YAS', 'OAS', 'CASHFLOW', 'CURVES'].map((label, index) => (
         <g key={label}>
           <rect
             x={3 + index * 80}
             y="3"
             width="76"
             height="10"
-            fill={index === 0 ? "#a87930" : "#283f52"}
+            fill={index === 0 ? '#a87930' : '#283f52'}
           />
           <text
             x={8 + index * 80}
             y="10.5"
-            fill={index === 0 ? "#11191d" : blue}
+            fill={index === 0 ? '#11191d' : blue}
           >
             {label}
           </text>
@@ -60,7 +60,7 @@ function Reading({
           textAnchor="end"
           className={`terminal-cell-frame terminal-cell-frame-${index} scene-motion`}
           style={{ animationDelay: `${-index * 4 - delay}s` } as CSSProperties}
-          fill={index === 0 ? ivory : index === 1 ? "#a9c694" : amber}
+          fill={index === 0 ? ivory : index === 1 ? '#a9c694' : amber}
         >
           {value}
         </text>
@@ -70,14 +70,14 @@ function Reading({
 }
 
 function YieldScreen() {
-  const columns = ["-100", "-50", "BASE", "+50", "+100"];
+  const columns = ['-100', '-50', 'BASE', '+50', '+100'];
   const rows = [
-    ["Price", "98.12", "97.34", "96.50", "95.61", "94.68"],
-    ["Yield", "4.21", "4.58", "4.96", "5.35", "5.75"],
-    ["Avg Life", "5.82", "6.15", "6.48", "6.73", "6.91"],
-    ["Duration", "3.76", "4.02", "4.28", "4.49", "4.64"],
-    ["I Spread", "42.8", "45.1", "47.4", "49.6", "51.9"],
-    ["Prepay", "142", "126", "110", "97", "86"],
+    ['Price', '98.12', '97.34', '96.50', '95.61', '94.68'],
+    ['Yield', '4.21', '4.58', '4.96', '5.35', '5.75'],
+    ['Avg Life', '5.82', '6.15', '6.48', '6.73', '6.91'],
+    ['Duration', '3.76', '4.02', '4.28', '4.49', '4.64'],
+    ['I Spread', '42.8', '45.1', '47.4', '49.6', '51.9'],
+    ['Prepay', '142', '126', '110', '97', '86'],
   ];
   return (
     <>
@@ -146,7 +146,7 @@ function YieldScreen() {
       <text x="259" y="223" fill={ivory}>
         STATIC ANALYTICS
       </text>
-      {["OAS", "OAD", "Convexity", "Option Cost", "Yield"].map((label, i) => (
+      {['OAS', 'OAD', 'Convexity', 'Option Cost', 'Yield'].map((label, i) => (
         <g key={label}>
           <text x="10" y={242 + i * 17} fill={amber}>
             {label}
@@ -156,11 +156,11 @@ function YieldScreen() {
             y={242 + i * 17}
             values={
               [
-                ["28.4", "28.6", "28.3"],
-                ["4.28", "4.29", "4.27"],
-                ["-0.62", "-0.61", "-0.63"],
-                ["53.1", "53.3", "53.0"],
-                ["4.960", "4.964", "4.958"],
+                ['28.4', '28.6', '28.3'],
+                ['4.28', '4.29', '4.27'],
+                ['-0.62', '-0.61', '-0.63'],
+                ['53.1', '53.3', '53.0'],
+                ['4.960', '4.964', '4.958'],
               ][i] as [string, string, string]
             }
             delay={i * 0.6}
@@ -168,11 +168,11 @@ function YieldScreen() {
         </g>
       ))}
       {[
-        "WAL           6.48",
-        "Mod Duration  4.35",
-        "Yield Spread  47.4",
-        "Factor        0.72",
-        "Pay Freq   Monthly",
+        'WAL           6.48',
+        'Mod Duration  4.35',
+        'Yield Spread  47.4',
+        'Factor        0.72',
+        'Pay Freq   Monthly',
       ].map((label, i) => (
         <text key={label} x="259" y={242 + i * 17} fill={amber}>
           {label}
@@ -207,13 +207,13 @@ function CashflowScreen() {
         Collateral Flow
       </text>
       <rect x="5" y="57" width="490" height="14" fill="#334858" />
-      {["Period", "Balance", "Principal", "Interest", "Cashflow"].map(
+      {['Period', 'Balance', 'Principal', 'Interest', 'Cashflow'].map(
         (label, i) => (
           <text
             key={label}
             x={i === 0 ? 10 : 105 + i * 95}
             y="67"
-            textAnchor={i === 0 ? "start" : "end"}
+            textAnchor={i === 0 ? 'start' : 'end'}
             fill={blue}
           >
             {label}
@@ -233,7 +233,7 @@ function CashflowScreen() {
             />
           )}
           <text x="10" y={83 + i * 15} fill={ivory}>
-            {String(i + 1).padStart(2, "0")}
+            {String(i + 1).padStart(2, '0')}
           </text>
           {[2400000 - i * 18400, 18400, 10000 - i * 77, 28400 - i * 77].map(
             (value, j) => (
@@ -244,7 +244,7 @@ function CashflowScreen() {
                 textAnchor="end"
                 fill={amber}
               >
-                {value.toLocaleString("en-US")}
+                {value.toLocaleString('en-US')}
               </text>
             ),
           )}
@@ -265,7 +265,7 @@ function CashflowScreen() {
           <g key={x}>
             <path d={`M${x} 0V88`} stroke="#354047" strokeWidth="0.6" />
             <text x={x} y="99" textAnchor="middle" fill={blue}>
-              {["0.5", "1", "2", "5", "10", "20", "30"][i]}
+              {['0.5', '1', '2', '5', '10', '20', '30'][i]}
             </text>
           </g>
         ))}
@@ -354,7 +354,7 @@ export function TerminalScene() {
           </div>
         </div>
       </div>
-      {ready && state === "loaded" && (
+      {ready && state === 'loaded' && (
         <SceneMotionControl paused={paused} toggle={toggle} subject="desk" />
       )}
     </div>

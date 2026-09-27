@@ -5,7 +5,7 @@ import {
   search_literary_entries,
 } from './nyc_literary_map.ts';
 
-type LiterarySelection = {
+export type LiterarySelection = {
   work_id: string;
   selected_id: string;
   query: string;
