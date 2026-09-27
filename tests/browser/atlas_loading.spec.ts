@@ -173,3 +173,90 @@ test('failed or mismatched details retry and preserve a full-page fallback', asy
   expect(new URL(page.url()).searchParams.get('utm_source')).toBe('test');
   expect(new URL(page.url()).hash).toBe('#reader');
 });
+
+test('search intent shares the pending detail and loads only card artwork until details open', async ({
+  page,
+}) => {
+  let release: () => void = () => {};
+  const held = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  let attempts = 0;
+  let still = { src: '', thumbnail: '' };
+  const images: string[] = [];
+  page.on('request', (request) => {
+    if (request.resourceType() === 'image')
+      images.push(new URL(request.url()).pathname);
+  });
+  await page.route(detail_pattern, async (route) => {
+    ++attempts;
+    const response = await route.fetch();
+    still = (await response.json()).entry.scene.still;
+    await held;
+    await route.fulfill({ response });
+  });
+  await page.goto(atlas_path);
+  await page.getByRole('searchbox').fill('cafe lalo');
+  const result = page.locator('#atlas-search-results button').first();
+  await result.focus();
+  await expect.poll(() => attempts).toBe(1);
+  await result.press('Enter');
+  await expect(page.locator('.atlas-card')).toHaveAttribute(
+    'aria-busy',
+    'true',
+  );
+  expect(attempts).toBe(1);
+  release();
+  await expect(page.locator('.atlas-card')).toHaveAttribute(
+    'aria-busy',
+    'false',
+  );
+  await expect(page.locator('.atlas-artwork img')).toHaveJSProperty(
+    'src',
+    new URL(still.thumbnail, page.url()).href,
+  );
+  await expect(page.locator('.atlas-artwork img')).toHaveAttribute(
+    'loading',
+    'eager',
+  );
+  await expect.poll(() => images.includes(still.thumbnail)).toBe(true);
+  expect(images).not.toContain(still.src);
+  await expect(page.locator('.atlas-info-dialog .atlas-story')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await expect(
+    page.locator('.atlas-info-dialog .atlas-still img'),
+  ).toHaveJSProperty('src', new URL(still.src, page.url()).href);
+  await expect.poll(() => images.includes(still.src)).toBe(true);
+  expect(attempts).toBe(1);
+});
+
+test('a failed intent prefetch does not prevent a later selection from loading', async ({
+  page,
+}) => {
+  let attempts = 0;
+  await page.route(detail_pattern, (route) => {
+    ++attempts;
+    if (attempts === 1)
+      return route.fulfill({ status: 503, body: 'Unavailable' });
+    return route.continue();
+  });
+  await page.goto(atlas_path);
+  await page.getByRole('searchbox').fill('henry james');
+  const result = page.locator('#atlas-search-results button').first();
+  const failure = page.waitForResponse(
+    (response) =>
+      response.url().includes('/api/atlas-entry?') && response.status() === 503,
+  );
+  await result.focus();
+  await failure;
+  await page.getByRole('searchbox').focus();
+  await page.getByRole('searchbox').press('Enter');
+  await expect(page.locator('.atlas-card')).toHaveAttribute(
+    'aria-busy',
+    'false',
+  );
+  await expect(page.locator('.atlas-card-description')).toContainText(
+    'white marble steps',
+  );
+  expect(attempts).toBe(2);
+});

@@ -40,6 +40,26 @@ export const atlas_labels: Record<AtlasFilter, string> = {
   music: 'Music',
 };
 
+export function atlas_card_artwork(detail: AtlasDetail | null) {
+  const entry = detail?.entry;
+  if (entry?.medium === 'film') {
+    const still = entry.scene.still;
+    return still ? { ...still, src: still.thumbnail } : null;
+  }
+  if (entry?.medium === 'literature')
+    return entry.work.cover
+      ? { ...entry.work.cover, width: 300, height: 450 }
+      : null;
+  if (entry?.medium === 'music')
+    return {
+      src: entry.track.artwork_url,
+      alt: `${entry.track.album} cover`,
+      width: 300,
+      height: 300,
+    };
+  return null;
+}
+
 export function search_atlas_index(
   index: AtlasIndexEntry[],
   medium: AtlasFilter,
