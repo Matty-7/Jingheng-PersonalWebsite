@@ -4,17 +4,21 @@ import { approach_shelf } from './music_helpers';
 test('album motion advances faster without playing and honors Pause and reduced motion', async ({
   page,
 }) => {
+  await page.clock.install({ time: new Date('2026-01-01T00:00:00Z') });
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/portfolio/nyc-music-map');
   const shelf = page.locator('.sound-shelf');
   await expect
     .poll(() => shelf.evaluate((element) => element.scrollLeft))
     .toBeGreaterThan(4);
+  // Measure animation speed independently of CI frame scheduling.
+  await page.clock.pauseAt(new Date('2026-01-01T01:00:00Z'));
   const speed_start = await shelf.evaluate((element) => element.scrollLeft);
-  await page.waitForTimeout(600);
+  await page.clock.runFor(600);
   expect(await shelf.evaluate((element) => element.scrollLeft)).toBeGreaterThan(
     speed_start + 14,
   );
+  await page.clock.resume();
   await page
     .getByRole('button', { name: 'Pause album scrolling', exact: true })
     .click();

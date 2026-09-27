@@ -266,9 +266,9 @@ export function Bookshelf() {
     if (drag_frame.current !== null) cancelAnimationFrame(drag_frame.current);
     drag_frame.current = null;
     set_drag_view(null);
+    set_selected_slug(null);
     if (cancelled && current) {
       suppress_click.current = true;
-      set_selected_slug(null);
     }
     if (cancelled && current?.active) {
       change_order(current.original);
@@ -376,7 +376,7 @@ export function Bookshelf() {
                         event.key === 'ArrowRight'
                       ) {
                         event.preventDefault();
-                        set_selected_slug(slug);
+                        set_selected_slug(null);
                         move_book(
                           slug,
                           order.indexOf(slug) +
