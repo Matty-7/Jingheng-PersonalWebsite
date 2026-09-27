@@ -320,6 +320,25 @@ export function atlas_maps_url(entry: AtlasEntry) {
 
 export const atlas_location = create_atlas_location(atlas_index);
 
+const sentence_segmenter = new Intl.Segmenter('en', {
+  granularity: 'sentence',
+});
+
+export function atlas_card_summary(entry: AtlasEntry) {
+  const introduction =
+    entry.medium === 'film'
+      ? entry.scene.scene
+      : entry.medium === 'literature'
+        ? entry.passage.note
+        : (artist_connection(entry.track, entry.place.id)?.note ??
+          entry.track.note);
+  const sentences = Array.from(
+    sentence_segmenter.segment(introduction.trim()),
+    ({ segment }) => segment.trim(),
+  ).slice(0, 2);
+  return sentences.join(' ').length <= 200 ? sentences.join(' ') : sentences[0];
+}
+
 export function atlas_detail(
   entry_id: string | null,
   api_key: string,
@@ -329,6 +348,7 @@ export function atlas_detail(
   const related = atlas_connections(entry);
   return {
     entry,
+    summary: atlas_card_summary(entry),
     label: atlas_entry_label(entry),
     year: atlas_year(entry),
     credit: entry.medium === 'film' ? screen_credit(entry.work) : entry.creator,

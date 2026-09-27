@@ -10,6 +10,8 @@ import {
   atlas_location,
   atlas_entry_label,
   atlas_year,
+  atlas_detail,
+  atlas_card_summary,
   search_atlas,
 } from '../lib/new_york_atlas.ts';
 import {
@@ -22,6 +24,23 @@ import {
 } from '../lib/nyc_film_map.ts';
 import { literary_entries } from '../lib/nyc_literary_map.ts';
 import { music_tracks } from '../lib/nyc_music_map.ts';
+
+test('every Atlas card has one or two complete introductory sentences and retains full details', () => {
+  const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
+  for (const entry of atlas_entries) {
+    const summary = atlas_card_summary(entry);
+    assert.ok(summary.length > 0 && summary.length <= 200, entry.id);
+    assert.ok([...segmenter.segment(summary)].length <= 2, entry.id);
+    assert.match(summary, /[.!?][”"']?$/, entry.id);
+    const detail = atlas_detail(entry.id, '');
+    assert.equal(detail.summary, summary);
+    assert.equal(detail.entry, entry);
+    if (entry.medium === 'literature') {
+      assert.ok(entry.passage.note.startsWith(summary), entry.id);
+      assert.notEqual(summary, entry.passage.excerpt, entry.id);
+    }
+  }
+});
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
   assert.deepEqual(atlas_counts, { film: 45, literature: 20, music: 126 });
