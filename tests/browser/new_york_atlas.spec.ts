@@ -126,6 +126,9 @@ test('sources retain TV metadata and geographic precision when images fail', asy
     'Created by David Crane and Marta Kauffman',
   );
   await expect(page.getByRole('dialog').locator('.atlas-still')).toHaveCount(0);
+  await expect(
+    page.getByRole('dialog').getByRole('link', { name: 'Frame source' }),
+  ).toBeVisible();
   await page
     .getByRole('button', { name: 'Close details', exact: true })
     .click();
@@ -137,6 +140,32 @@ test('sources retain TV metadata and geographic precision when images fail', asy
   await expect(page.getByRole('dialog').locator('blockquote')).toContainText(
     'white marble steps',
   );
+});
+
+test('source dialogs keep one image source and distinct supporting references', async ({
+  page,
+}) => {
+  await page.goto(`${atlas_path}?entry=film:new-york-palace:gossip-girl`);
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(
+    dialog.getByRole('link', { name: 'Frame source' }),
+  ).toBeVisible();
+  await expect(dialog.locator('.atlas-story a')).toHaveCount(1);
+  await expect(dialog.getByText('Scene sources', { exact: true })).toHaveCount(
+    0,
+  );
+  await page.keyboard.press('Escape');
+  await select_search(page, 'cafe lalo');
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await dialog.getByText('Scene sources', { exact: true }).click();
+  await expect(
+    dialog.getByRole('link', { name: 'Closure report · West Side Rag' }),
+  ).toBeVisible();
+  const hrefs = await dialog
+    .locator('.atlas-story a')
+    .evaluateAll((links) => links.map((link) => link.getAttribute('href')));
+  expect(new Set(hrefs).size).toBe(hrefs.length);
 });
 
 test('clusters support keyboard expansion and map failure keeps search usable', async ({
@@ -259,9 +288,9 @@ test('Anora retains its verified Tatiana frame', async ({ page }) => {
       .toBe(true);
   }
   await page.getByRole('button', { name: 'Sources and place details' }).click();
-  await expect(page.getByRole('dialog').locator('figcaption')).toContainText(
-    'Frame source',
-  );
+  await expect(
+    page.getByRole('dialog').getByRole('link', { name: 'Frame source' }),
+  ).toBeVisible();
 });
 
 test('unsupported WebGL keeps search and retry usable without the removed cafe', async ({

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { memo, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import type { AtlasDetail } from '@/lib/atlas_browser';
+import { atlas_story_sources } from '@/lib/atlas_sources';
 import { AtlasMusicLinks } from './atlas_music_links';
 
 export function AtlasImage({
@@ -68,42 +69,47 @@ export const AtlasStory = memo(function AtlasStory({
 }: {
   detail: AtlasDetail;
 }) {
-  const { entry, connection, sources } = detail;
+  const { entry, connection } = detail;
+  const sources = atlas_story_sources(detail);
+  const source_link = (kind: (typeof sources)[number]['kind']) => {
+    const source = sources.find((item) => item.kind === kind);
+    return source ? (
+      <SourceLink href={source.url}>{source.label}</SourceLink>
+    ) : null;
+  };
   if (entry.medium === 'film') {
     const { scene } = entry;
+    const scene_sources = sources.filter((source) => source.kind === 'scene');
     return (
       <div className="atlas-story">
         {scene.still && (
-          <AtlasImage
-            key={scene.still.src}
-            src={scene.still.src}
-            alt={scene.still.alt}
-            width={scene.still.width}
-            height={scene.still.height}
-            class_name="atlas-still"
-          >
-            <figcaption>
-              {scene.still.credit} ·{' '}
-              <SourceLink href={scene.still.source_url}>
-                {scene.still.kind ? 'Image source' : 'Frame source'}
-              </SourceLink>
-            </figcaption>
-          </AtlasImage>
+          <>
+            <AtlasImage
+              key={scene.still.src}
+              src={scene.still.src}
+              alt={scene.still.alt}
+              width={scene.still.width}
+              height={scene.still.height}
+              class_name="atlas-still"
+            />
+            <p className="atlas-caption">
+              {scene.still.credit} · {source_link('image')}
+            </p>
+          </>
         )}
         <p>{scene.scene}</p>
-        <details className="atlas-notes">
-          <summary>Scene sources</summary>
-          <div className="atlas-sources">
-            {scene.source_ids.map((id) => {
-              const source = sources.find((item) => item.id === id);
-              return source ? (
-                <SourceLink key={id} href={source.url}>
+        {scene_sources.length > 0 && (
+          <details className="atlas-notes">
+            <summary>Scene sources</summary>
+            <div className="atlas-sources">
+              {scene_sources.map((source) => (
+                <SourceLink key={source.url} href={source.url}>
                   {source.label}
                 </SourceLink>
-              ) : null;
-            })}
-          </div>
-        </details>
+              ))}
+            </div>
+          </details>
+        )}
       </div>
     );
   }
@@ -114,7 +120,7 @@ export const AtlasStory = memo(function AtlasStory({
         <p className="atlas-eyebrow">Original words · {passage.excerpt_kind}</p>
         <blockquote cite={passage.source_url}>{passage.excerpt}</blockquote>
         <p className="atlas-caption">{passage.locator}</p>
-        <SourceLink href={passage.source_url}>Read the source</SourceLink>
+        {source_link('text')}
         <p>{passage.note}</p>
         <details className="atlas-notes">
           <summary>Text &amp; cover notes</summary>
@@ -127,14 +133,10 @@ export const AtlasStory = memo(function AtlasStory({
               <p>
                 {work.cover.edition} · {work.cover.credit}
               </p>
-              <SourceLink href={work.cover.source_url}>Cover source</SourceLink>
+              {source_link('cover')}
             </>
           )}
-          {passage.place_source_url && (
-            <SourceLink href={passage.place_source_url}>
-              Location reference
-            </SourceLink>
-          )}
+          {source_link('place')}
         </details>
       </div>
     );
@@ -145,9 +147,7 @@ export const AtlasStory = memo(function AtlasStory({
       {connection && (
         <div className="atlas-connection-note">
           <p>{connection.note}</p>
-          <SourceLink href={connection.source_url}>
-            {connection.source_label}
-          </SourceLink>
+          {source_link('connection')}
         </div>
       )}
       <p className="atlas-eyebrow">
@@ -161,9 +161,7 @@ export const AtlasStory = memo(function AtlasStory({
         <blockquote cite={track.source_url}>“{track.excerpt}”</blockquote>
       )}
       <p>{track.note}</p>
-      {!track.source_url.startsWith('https://music.apple.com/') && (
-        <SourceLink href={track.source_url}>{track.source_label}</SourceLink>
-      )}
+      {source_link('track')}
       {track.excerpt && (
         <p className="atlas-caption">
           Short excerpt. Full lyrics at the source.
