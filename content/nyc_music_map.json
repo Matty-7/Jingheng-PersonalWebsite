@@ -2,6 +2,360 @@
   "reviewed_on": "2026-09-27",
   "tracks": [
     {
+      "id": "the-subway-chappell-roan",
+      "title": "The Subway",
+      "artist": "Chappell Roan",
+      "album": "The Subway - Single",
+      "year": 2025,
+      "genre": "Pop",
+      "track_id": 1831372120,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/34/ac/a334acc6-5983-27ac-851d-8f03e148a4ce/25UMGIM99609.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/99/30/63/993063c9-63b1-3ac4-b558-eb1561f3c7c1/mzaf_4724150376642718672.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-subway/1831372118?i=1831372120&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Chappell+Roan+The+Subway&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-08-01T12:00:00Z",
+      "place_ids": [
+        "ny-transit-museum"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "A chance encounter with an ex becomes a rush of unfinished feelings.",
+      "source_url": "https://music.apple.com/us/album/the-subway/1831372118?i=1831372120&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "ny-transit-museum",
+          "kind": "Music video",
+          "note": "The music video turns vintage cars at the New York Transit Museum into a dance floor.",
+          "source_url": "https://www.vogue.com/article/chappell-roan-the-subway-interview",
+          "source_label": "Vogue · on-set interview"
+        }
+      ]
+    },
+    {
+      "id": "nuevayol-bad-bunny",
+      "title": "NUEVAYoL",
+      "artist": "Bad Bunny",
+      "album": "DeBÍ TiRAR MáS FOToS",
+      "year": 2025,
+      "genre": "Latin",
+      "track_id": 1787022572,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/90/5e/7e/905e7ed5-a8fa-a8f3-cd06-0028fdf3afaa/199066342442.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2e/97/55/2e97555a-1ed3-9e07-de57-07e1213186c9/mzaf_7594924455925081680.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/nuevayol/1787022393?i=1787022572&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Bad+Bunny+NUEVAYoL&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-01-05T12:00:00Z",
+      "place_ids": [
+        "tonitas-caribbean-social-club"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "un shot de cañita en casa de Toñita",
+      "note": "Bad Bunny salutes New York’s Puerto Rican community with a lyrical stop at Toñita’s Caribbean Social Club in Williamsburg.",
+      "source_url": "https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=7998473&GUID=C7756D2D-903A-4CCA-BCF3-B38865532EAC",
+      "source_label": "New York City Council · song and venue"
+    },
+    {
+      "id": "basic-being-basic-djo",
+      "title": "Basic Being Basic",
+      "artist": "Djo",
+      "album": "The Crux",
+      "year": 2025,
+      "genre": "Alternative",
+      "track_id": 1791184865,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3e/20/c4/3e20c433-92a9-8866-ee86-b6dc6bc5e76d/199066503560.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2d/6e/5b/2d6e5bd0-7e8b-98a4-2efd-7a1a458b18e6/mzaf_56754998493673707.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/basic-being-basic/1791184860?i=1791184865&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Djo+Basic+Being+Basic&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-01-24T12:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Djo turns a complaint about fitting in into a groove-driven pop song.",
+      "source_url": "https://music.apple.com/us/album/basic-being-basic/1791184860?i=1791184865&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "Basic Being Basic was recorded at Electric Lady Studios in Greenwich Village.",
+          "source_url": "https://electricladystudios.com/djo-announces-new-album-with-release-of-single-basic-being-basic-recorded-at-electric-lady-studios/",
+          "source_label": "Electric Lady Studios · recording notes"
+        }
+      ]
+    },
+    {
+      "id": "the-giver-chappell-roan",
+      "title": "The Giver",
+      "artist": "Chappell Roan",
+      "album": "The Giver - Single",
+      "year": 2025,
+      "genre": "Country",
+      "track_id": 1801197851,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/27/33/16273329-753a-df6e-6c40-7a843f9bbe5d/25UMGIM41700.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/72/47/17/724717d8-d2f2-979b-4f23-befb0031e10e/mzaf_13751565621225225258.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-giver/1801197841?i=1801197851&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Chappell+Roan+The+Giver&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-03-13T07:00:00Z",
+      "place_ids": [
+        "nbc-studio-8h"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Roan’s 2025 country single brings a playful queer perspective to the genre.",
+      "source_url": "https://music.apple.com/us/album/the-giver/1801197841?i=1801197851&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "nbc-studio-8h",
+          "kind": "Live performance",
+          "note": "Roan debuted The Giver on Saturday Night Live in November 2024, before releasing the studio single.",
+          "source_url": "https://www.peacocktv.com/blog/john-mulaney-snl-recap",
+          "source_label": "Peacock · SNL performance"
+        }
+      ]
+    },
+    {
+      "id": "bury-me-jason-isbell",
+      "title": "Bury Me",
+      "artist": "Jason Isbell",
+      "album": "Foxes in the Snow",
+      "year": 2025,
+      "genre": "Singer/Songwriter",
+      "track_id": 1790456399,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c7/78/9d/c7789d58-674c-5e75-fac5-81606c952f82/199066511251.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/55/82/fc5582fa-c50d-f00c-fde2-bbcc65a9c3da/mzaf_12447131158095070271.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/bury-me/1790456398?i=1790456399&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Jason+Isbell+Bury+Me&entity=song&country=us&limit=5",
+      "metadata_release_date": "2025-01-14T12:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "The opening song on Foxes in the Snow pairs Isbell’s voice with acoustic guitar.",
+      "source_url": "https://music.apple.com/us/album/bury-me/1790456398?i=1790456399&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "Bury Me comes from Isbell’s solo sessions at Electric Lady Studios.",
+          "source_url": "https://electricladystudios.com/jason-isbell-announces-new-record-foxes-in-the-snow-recorded-at-electric-lady-studios/",
+          "source_label": "Electric Lady Studios · recording notes"
+        }
+      ]
+    },
+    {
+      "id": "please-please-please-sabrina-carpenter",
+      "title": "Please Please Please",
+      "artist": "Sabrina Carpenter",
+      "album": "Short n' Sweet",
+      "year": 2024,
+      "genre": "Pop",
+      "track_id": 1752214912,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a1/1c/ca/a11ccab6-7d4c-e041-d028-998bcebeb709/24UMGIM61704.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/97/06/58/97065890-7970-725a-1595-5045d4b110b1/mzaf_7668784443609724903.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/please-please-please/1752214909?i=1752214912&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Sabrina+Carpenter+Please+Please+Please&entity=song&country=us&limit=5",
+      "metadata_release_date": "2024-06-14T07:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "A sweet-sounding plea for a lover to behave carries Carpenter’s dry sense of humor.",
+      "source_url": "https://music.apple.com/us/album/please-please-please/1752214909?i=1752214912&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "Please Please Please was recorded at Electric Lady Studios with producer Jack Antonoff.",
+          "source_url": "https://electricladystudios.com/sabrina-carpenter-releases-new-single-please-please-please-recorded-at-electric-lady-studios/",
+          "source_label": "Electric Lady Studios · recording notes"
+        }
+      ]
+    },
+    {
+      "id": "close-to-you-gracie-abrams",
+      "title": "Close To You",
+      "artist": "Gracie Abrams",
+      "album": "The Secret of Us",
+      "year": 2024,
+      "genre": "Pop",
+      "track_id": 1743054994,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/52/9a/a7/529aa76f-5d60-cd81-9eb0-0eb521de861d/24UMGIM43968.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4d/63/ec/4d63ec08-5018-2f90-4095-db0961ec292f/mzaf_4896725712962603390.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/close-to-you/1743054543?i=1743054994&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Gracie+Abrams+Close+To+You&entity=song&country=us&limit=5",
+      "metadata_release_date": "2024-06-20T12:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "First teased in 2017, Close To You finally arrived as a finished single in 2024.",
+      "source_url": "https://music.apple.com/us/album/close-to-you/1743054543?i=1743054994&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Recording studio",
+          "note": "Abrams recorded Close To You at Electric Lady Studios with producer Sam de Jong.",
+          "source_url": "https://electricladystudios.com/gracie-abrams-releases-single-close-to-you-recorded-at-electric-lady-studios/",
+          "source_label": "Electric Lady Studios · recording notes"
+        }
+      ]
+    },
+    {
+      "id": "mary-boone-vampire-weekend",
+      "title": "Mary Boone",
+      "artist": "Vampire Weekend",
+      "album": "Only God Was Above Us",
+      "year": 2024,
+      "genre": "Alternative",
+      "track_id": 1728945695,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/9f/ed/f99fed7a-3b13-3531-3db6-fac34e1d1c7c/196871790307.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/31/62/84/31628429-9836-da35-8798-96c542de845c/mzaf_18178115910125607469.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/mary-boone/1728945682?i=1728945695&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Vampire+Weekend+Mary+Boone&entity=song&country=us&limit=5",
+      "metadata_release_date": "2024-03-29T07:00:00Z",
+      "place_ids": [
+        "manhattan"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Named after the art dealer, Mary Boone follows a newcomer hoping to find a place in New York’s art world.",
+      "source_url": "https://music.apple.com/us/album/mary-boone/1728945682?i=1728945695&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "manhattan",
+          "kind": "Music video",
+          "note": "The official visualizer follows Despot driving through the Lincoln Tunnel into Manhattan.",
+          "source_url": "https://www.nastylittleman.com/2024/03/28/vampire-weekend-latest-single-mary-boone-out-now/",
+          "source_label": "Nasty Little Man · official release notes"
+        }
+      ]
+    },
+    {
+      "id": "the-tortured-poets-department-taylor-swift",
+      "title": "The Tortured Poets Department",
+      "artist": "Taylor Swift",
+      "album": "THE TORTURED POETS DEPARTMENT",
+      "year": 2024,
+      "genre": "Pop",
+      "track_id": 1736268219,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6b/7d/61/6b7d61e4-e6f1-83bc-d645-463aa06b33c4/24UMGIM29563.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3a/e6/30/3ae63069-e186-3493-5aa2-43c6929258f5/mzaf_2003557152266367047.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/the-tortured-poets-department/1736268215?i=1736268219&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Taylor+Swift+The+Tortured+Poets+Department&entity=song&country=us&limit=5",
+      "metadata_release_date": "2024-04-19T12:00:00Z",
+      "place_ids": [
+        "chelsea-hotel"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "This ain't the Chelsea Hotel",
+      "note": "Swift invokes the Chelsea Hotel while puncturing the romantic myth of the tortured artist.",
+      "source_url": "https://www.youtube.com/watch?v=RQMz4JDbtmI",
+      "source_label": "Taylor Swift · official lyric video"
+    },
+    {
+      "id": "deli-ice-spice",
+      "title": "Deli",
+      "artist": "Ice Spice",
+      "album": "Like..? (Deluxe)",
+      "year": 2023,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 1698436904,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/38/79/9a/38799aae-e61d-88c9-cafb-f0565a3d1b33/23UMGIM81000.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/60/b5/19/60b5199d-4f0b-1bee-f17e-0d9480032089/mzaf_15795735352930262786.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/deli/1698436889?i=1698436904&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Ice+Spice+Deli&entity=song&country=us&limit=5",
+      "metadata_release_date": "2023-07-21T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Deli brings Ice Spice’s clipped delivery to the deluxe edition of Like..?.",
+      "source_url": "https://music.apple.com/us/album/deli/1698436889?i=1698436904&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "harlem",
+          "kind": "Music video",
+          "note": "The music video takes over a Harlem deli and spills onto the surrounding street.",
+          "source_url": "https://www.udiscovermusic.com/news/ice-spice-brings-it-back-to-the-bodega-in-deli-video/",
+          "source_label": "uDiscoverMusic · video location"
+        }
+      ]
+    },
+    {
+      "id": "boys-a-liar-pt-2",
+      "title": "Boy's a liar, Pt. 2",
+      "artist": "PinkPantheress & Ice Spice",
+      "album": "Boy's a liar, Pt. 2 - Single",
+      "year": 2023,
+      "genre": "Pop",
+      "track_id": 1664929603,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/de/57/f6/de57f657-3249-cc9b-7616-71985ed7690c/5054197521386.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e2/b6/a0/e2b6a022-2b3a-0e2f-b0e6-49a5450adb75/mzaf_16260806789917505786.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/boys-a-liar-pt-2/1664929598?i=1664929603&uo=4",
+      "metadata_source": "https://itunes.apple.com/lookup?id=1664929603&entity=song&country=us",
+      "metadata_release_date": "2023-02-03T12:00:00Z",
+      "place_ids": [
+        "harlem"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Ice Spice joins PinkPantheress for the 2023 rework of Boy’s a liar.",
+      "source_url": "https://music.apple.com/us/album/boys-a-liar-pt-2/1664929598?i=1664929603&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "harlem",
+          "kind": "Music video",
+          "note": "The music video brings the pair to Harlem, including an apartment rooftop overlooking the city.",
+          "source_url": "https://www.nme.com/big-reads/pinkpantheress-cover-interview-2023-take-me-home-ep-3390837",
+          "source_label": "NME · on-set interview"
+        }
+      ]
+    },
+    {
+      "id": "conceited-lola-young",
+      "title": "Conceited",
+      "artist": "Lola Young",
+      "album": "This Wasn't Meant For You Anyway",
+      "year": 2023,
+      "genre": "Alternative",
+      "track_id": 1746042185,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5a/c6/b1/5ac6b183-8ff1-55e3-fa59-8cce5db3fc87/24UMGIM52751.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/5c/72/7c5c7207-ede7-9e64-a0d1-df93e706a3e1/mzaf_12504455134248660464.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/conceited/1746041954?i=1746042185&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Lola+Young+Conceited&entity=song&country=us&limit=5",
+      "metadata_release_date": "2023-09-29T12:00:00Z",
+      "place_ids": [
+        "electric-lady-studios"
+      ],
+      "relation": "Artist connection",
+      "excerpt": "",
+      "note": "Conceited appeared as a single in 2023 before joining This Wasn’t Meant For You Anyway.",
+      "source_url": "https://music.apple.com/us/album/conceited/1746041954?i=1746042185&uo=4",
+      "source_label": "Apple Music · recording",
+      "connections": [
+        {
+          "place_id": "electric-lady-studios",
+          "kind": "Filmed performance",
+          "note": "Young performed Conceited in Electric Lady’s Studio A for La Blogothèque in 2025.",
+          "source_url": "https://electricladystudios.com/lola-young-conceited-la-blogotheque/",
+          "source_label": "Electric Lady Studios · filmed performance"
+        }
+      ]
+    },
+    {
       "id": "bushwick-blues",
       "title": "Bushwick Blues",
       "artist": "Delta Spirit",
@@ -4456,6 +4810,36 @@
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.721889&mlon=-73.9922757#map=18/40.721889/-73.9922757",
       "plus_code": "87G8P2C5+Q3",
       "geography_source_url": "https://maps.apple.com/place?_provider=9902&coordinate=40.721889%2C-73.9922757&place-id=I19976344BC86279E&query=The+Box"
+    },
+    {
+      "id": "tonitas-caribbean-social-club",
+      "name": "Toñita’s Caribbean Social Club",
+      "area": "Williamsburg, Brooklyn",
+      "map_query": "244 Grand Street, Brooklyn, New York",
+      "precision": "Venue",
+      "note": "The Caribbean Social Club on Grand Street is known as Toñita’s, after its longtime owner.",
+      "coordinates": [
+        40.71348,
+        -73.95907
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.71348&mlon=-73.95907#map=18/40.71348/-73.95907",
+      "plus_code": "87G8P27R+99",
+      "geography_source_url": "https://maps.roadtrippers.com/us/new-york-ny/food-drink/caribbean-social-club"
+    },
+    {
+      "id": "ny-transit-museum",
+      "name": "New York Transit Museum",
+      "area": "Downtown Brooklyn",
+      "map_query": "99 Schermerhorn Street, Brooklyn, New York",
+      "precision": "Venue",
+      "note": "The museum occupies the former Court Street subway station and houses the vintage cars used in the music video.",
+      "coordinates": [
+        40.69052,
+        -73.98998
+      ],
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.69052&mlon=-73.98998#map=18/40.69052/-73.98998",
+      "plus_code": "87G8M2R6+62",
+      "geography_source_url": "https://mapcarta.com/25032622"
     }
   ]
 }

@@ -73,7 +73,7 @@ test('card introductions stop at complete sentences without splitting abbreviate
 });
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.deepEqual(atlas_counts, { film: 52, literature: 20, music: 137 });
+  assert.deepEqual(atlas_counts, { film: 52, literature: 20, music: 149 });
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,
