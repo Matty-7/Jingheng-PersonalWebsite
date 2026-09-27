@@ -104,6 +104,9 @@ test('mortgage lock-in deep link starts its cross-domain reading path', async ({
     name: 'Search mortgage concepts',
   });
   await search.fill('Mortgage lock-in');
+  await expect(
+    page.locator('.atlas-search-results button').first(),
+  ).toContainText('Mortgage lock-in');
   await search.press('Enter');
   let reader = page.getByRole('complementary', { name: 'Concept reader' });
   await expect(
