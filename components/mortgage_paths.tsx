@@ -1,12 +1,10 @@
-import { expansion_paths } from '@/content/fixed_income_expansion';
 import type { RefObject } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import {
   mortgage_paths,
+  mortgage_path_models,
   mortgage_relationships,
 } from '@/content/mortgage_concepts';
-import { mechanism_models } from '@/content/mortgage_mechanisms';
-import { analytics_paths } from '@/content/mortgage_analytics';
 import { concept_index } from '@/lib/mortgage_graph';
 
 export function MortgagePaths({
@@ -25,11 +23,7 @@ export function MortgagePaths({
   choose_concept: (id: string, trigger?: HTMLButtonElement) => void;
 }) {
   const path = mortgage_paths.find((item) => item.id === path_id);
-  const model = [
-    ...mechanism_models,
-    ...analytics_paths,
-    ...expansion_paths,
-  ].find((item) => item.id === path_id);
+  const model = mortgage_path_models.find((item) => item.id === path_id);
   const selected_step = path && selected ? path.steps.indexOf(selected) : -1;
   const step_index = Math.max(0, selected_step);
   return (

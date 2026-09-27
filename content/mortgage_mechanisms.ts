@@ -935,6 +935,32 @@ export type MechanismModel = {
 };
 export const mechanism_models: MechanismModel[] = [
   {
+    id: 'lock_in_to_duration',
+    title: 'From mortgage lock-in to MBS rate risk',
+    description:
+      'Trace a borrower’s replacement-rate gap into principal timing and two different measures of bond exposure.',
+    premise:
+      'A rate gap changes a borrower incentive first. It reaches MBS risk only through behavior, projected principal and valuation assumptions.',
+    steps: [
+      'lock_in',
+      'turnover',
+      'prepayments',
+      'cash_flows',
+      'wal',
+      'duration',
+    ],
+    explanations: [
+      'Compare the available replacement rate with the existing note rate. A positive gap can discourage a move, but it does not determine the borrower’s decision.',
+      'A financed home sale usually repays the old loan. Household needs, housing conditions and eligible assumptions mean turnover is neither zero nor a constant floor.',
+      'Turnover is one prepayment channel alongside refinancing, curtailments and applicable loan removals. Pool composition and loan history affect the observed total.',
+      'A payoff returns principal early and ends future interest on that balance. A prepayment assumption therefore changes both amounts outstanding and payment dates.',
+      'WAL averages projected principal-payment dates without discounting or interest. It summarizes principal timing, not the bond’s price response to a rate shock.',
+      'Effective duration reprices under small rate shocks and can reproject mortgage cash flows. It depends on the rate, volatility, spread and prepayment models used.',
+    ],
+    boundary:
+      'This is a conditional mechanism, not a forecast. The rate gap is not a payment shock, turnover is not a fixed prepayment floor, and WAL does not mechanically determine effective duration.',
+  },
+  {
     id: 'policy_to_prepayment',
     title: 'Why a rate cut may not lower a mortgage quote',
     description:

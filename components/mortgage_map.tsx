@@ -218,8 +218,8 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
             <strong>Connections</strong> puts one concept between what informs
             it and what it affects. <strong>Compare</strong> puts spreads,
             products and currencies side by side. Search finds concepts across
-            every domain in Mortgage Mind Map. <strong>List</strong> lets you
-            browse without moving the canvas.
+            every domain in Mortgage Map. <strong>List</strong> lets you browse
+            without moving the canvas.
           </p>
           <p>
             Drag empty space to pan. Use + / − to zoom, or pinch on touch
@@ -478,6 +478,7 @@ export function MortgageMap({ formulas }: { formulas: MortgageFormulas }) {
             follow_history={follow_history}
             copy_concept_link={reading.copy_concept_link}
             choose_concept={choose_concept}
+            choose_path={choose_path}
             show_paths={() => dispatch({ type: 'change_view', view: 'paths' })}
             explore_connections={() =>
               dispatch({ type: 'read_connections', change_view: true })

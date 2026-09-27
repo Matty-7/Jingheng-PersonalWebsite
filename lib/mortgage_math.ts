@@ -95,6 +95,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'Qₜ: principal repaid at time t; t and WAL are in years. Interest is excluded.',
     },
+    lock_in: {
+      tex: String.raw`\Delta r=r_{\mathrm{new}}-r_{\mathrm{existing}}`,
+      variables:
+        'r: comparable annual mortgage rates, stated as decimals or percentage points. A positive Δr means the available replacement rate is higher; multiply a decimal difference by 10,000 for basis points.',
+    },
     price: {
       tex: String.raw`V=B_t\frac{p}{100}`,
       variables:
