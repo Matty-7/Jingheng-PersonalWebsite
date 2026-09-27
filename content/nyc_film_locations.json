@@ -337,6 +337,61 @@
       "format": "series",
       "creators": "Steve Martin and John Hoffman",
       "note": "Three neighbors investigate murders while making a true-crime podcast."
+    },
+    {
+      "id": "materialists",
+      "title": "Materialists",
+      "year": 2025,
+      "director": "Celine Song",
+      "note": "A matchmaker moves between West Village cafés and the polished restaurants of a wealthier New York."
+    },
+    {
+      "id": "babygirl",
+      "title": "Babygirl",
+      "year": 2024,
+      "director": "Halina Reijn",
+      "note": "A powerful executive crosses between the city’s theatres, offices and late-night bars."
+    },
+    {
+      "id": "in-the-heights",
+      "title": "In the Heights",
+      "year": 2021,
+      "director": "Jon M. Chu",
+      "note": "Washington Heights bursts into song, from a public pool to the neighborhood’s streets."
+    },
+    {
+      "id": "caught-stealing",
+      "title": "Caught Stealing",
+      "year": 2025,
+      "director": "Darren Aronofsky",
+      "note": "An East Village bartender is pulled into a chase through a recreated 1998 New York."
+    },
+    {
+      "id": "and-just-like-that",
+      "title": "And Just Like That…",
+      "year": 2021,
+      "end_year": 2025,
+      "format": "series",
+      "creators": "Michael Patrick King",
+      "note": "Old friendships and changing lives, from museum cafés to Chelsea diners."
+    },
+    {
+      "id": "gossip-girl-2021",
+      "title": "Gossip Girl (2021)",
+      "year": 2021,
+      "end_year": 2023,
+      "format": "series",
+      "creators": "Joshua Safran",
+      "note": "A new generation brings social-media intrigue to familiar museum steps."
+    },
+    {
+      "id": "fallout",
+      "title": "Fallout",
+      "year": 2024,
+      "end_year": null,
+      "format": "series",
+      "creators": "Geneva Robertson-Dworet and Graham Wagner",
+      "note": "New York industrial spaces become fragments of a ruined future."
     }
   ],
   "sources": [
@@ -899,6 +954,131 @@
       "id": "broad-city-tv-source-4",
       "label": "Location reference · wholefoodsmarket.com",
       "url": "https://www.wholefoodsmarket.com/stores/thirdand3rd"
+    },
+    {
+      "id": "recent-culture-113",
+      "label": "On the Set of New York",
+      "url": "https://onthesetofnewyork.com/materialists.html"
+    },
+    {
+      "id": "recent-culture-114",
+      "label": "cntraveller.in",
+      "url": "https://www.cntraveller.in/story/where-was-materialists-filmed/"
+    },
+    {
+      "id": "recent-culture-115",
+      "label": "josephleonard.com",
+      "url": "https://www.josephleonard.com/info/"
+    },
+    {
+      "id": "recent-culture-116",
+      "label": "noburestaurants.com",
+      "url": "https://noburestaurants.com/downtown/contact-and-hours"
+    },
+    {
+      "id": "recent-culture-117",
+      "label": "On the Set of New York",
+      "url": "https://onthesetofnewyork.com/babygirl.html"
+    },
+    {
+      "id": "recent-culture-118",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/7986/Babygirl/United-Palace"
+    },
+    {
+      "id": "recent-culture-119",
+      "label": "thinkmovies.it",
+      "url": "https://www.thinkmovies.it/wp-content/uploads/2025/01/Babygirl-Read-The-Screenplay.pdf"
+    },
+    {
+      "id": "recent-culture-120",
+      "label": "Untapped New York",
+      "url": "https://www.untappedcities.com/filming-locations-in-the-heights/"
+    },
+    {
+      "id": "recent-culture-121",
+      "label": "cntraveler.com",
+      "url": "https://www.cntraveler.com/story/on-location-in-the-heights"
+    },
+    {
+      "id": "recent-culture-122",
+      "label": "Ext.Street",
+      "url": "https://www.extstreet.com/Caught_Stealing.html"
+    },
+    {
+      "id": "recent-culture-123",
+      "label": "evgrieve.com",
+      "url": "https://evgrieve.com/2025/08/evg-q-darren-aronofsky-on-caught.html"
+    },
+    {
+      "id": "recent-culture-124",
+      "label": "sonypictures.com",
+      "url": "https://www.sonypictures.com/movies/caughtstealing"
+    },
+    {
+      "id": "recent-culture-125",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/5674/And-Just-Like-That/The-Whitney-Caf"
+    },
+    {
+      "id": "recent-culture-126",
+      "label": "roadtrippers.com",
+      "url": "https://roadtrippers.com/magazine/filming-locations-and-just-like-that/"
+    },
+    {
+      "id": "recent-culture-127",
+      "label": "whitney.org",
+      "url": "https://whitney.org/visit/dining"
+    },
+    {
+      "id": "recent-culture-128",
+      "label": "Sceen It",
+      "url": "https://www.sceen-it.com/sceen/5905/And-Just-Like-That/Empire-Diner"
+    },
+    {
+      "id": "recent-culture-129",
+      "label": "empire-diner.com",
+      "url": "https://empire-diner.com/"
+    },
+    {
+      "id": "recent-culture-130",
+      "label": "Untapped New York",
+      "url": "https://www.untappedcities.com/gossip-girl-filming-locations/"
+    },
+    {
+      "id": "recent-culture-131",
+      "label": "timeout.com",
+      "url": "https://www.timeout.com/newyork/news/16-nyc-locations-featured-in-the-new-gossip-girl-reboot-072321"
+    },
+    {
+      "id": "recent-culture-132",
+      "label": "mcny.org",
+      "url": "https://www.mcny.org/visit"
+    },
+    {
+      "id": "recent-culture-133",
+      "label": "metmuseum.org",
+      "url": "https://www.metmuseum.org/plan-your-visit"
+    },
+    {
+      "id": "recent-culture-134",
+      "label": "Atlas of Wonders",
+      "url": "https://www.atlasofwonders.com/2024/04/where-was-fallout-filmed.html"
+    },
+    {
+      "id": "recent-culture-135",
+      "label": "moviemaps.org",
+      "url": "https://moviemaps.org/episodes/9f5"
+    },
+    {
+      "id": "recent-culture-136",
+      "label": "kodak.com",
+      "url": "https://www.kodak.com/en/motion/blog-post/fallout/"
+    },
+    {
+      "id": "recent-culture-137",
+      "label": "brooklynarmyterminal.com",
+      "url": "https://brooklynarmyterminal.com/visit"
     }
   ],
   "locations": [
@@ -1355,6 +1535,27 @@
             "width": 750,
             "height": 422
           }
+        },
+        {
+          "film_id": "gossip-girl-2021",
+          "scene": "Julien draws her half-sister Zoya into the group on the Met steps.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/07/cast-of-gossip-girl-reboot-filming-locations-metropolitan-museum-of-art-met-steps-nyc.jpg",
+            "width": 800,
+            "height": 533,
+            "credit": "Gossip Girl (2021) · Production still · Emily V. Aragones / HBO Max via Untapped New York",
+            "alt": "Julien, Zoya and friends gather on the Metropolitan Museum of Art steps in Gossip Girl.",
+            "src": "/images/film-map/gossip-girl-2021--met.jpg",
+            "thumbnail": "/images/film-map/gossip-girl-2021--met.jpg",
+            "source_url": "https://www.untappedcities.com/gossip-girl-filming-locations/",
+            "kind": "production_still"
+          },
+          "source_ids": [
+            "recent-culture-130",
+            "recent-culture-131",
+            "recent-culture-133"
+          ]
         }
       ]
     },
@@ -8162,6 +8363,25 @@
             "src": "/images/film-map/only-murders-in-the-building--united-palace.jpg",
             "thumbnail": "/images/film-map/only-murders-in-the-building--united-palace.jpg"
           }
+        },
+        {
+          "film_id": "babygirl",
+          "scene": "Romy visits the rehearsal of the play directed by her husband.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://onthesetofnewyork.com/locations/babygirl/babygirl17.jpg",
+            "credit": "Babygirl (2024) · Film frame · A24, via On the Set of New York",
+            "alt": "Romy enters through the gilded theatre doors at United Palace in Babygirl.",
+            "width": 565,
+            "height": 282,
+            "src": "/images/film-map/babygirl--united-palace.jpg",
+            "thumbnail": "/images/film-map/babygirl--united-palace.jpg",
+            "source_url": "https://onthesetofnewyork.com/babygirl.html"
+          },
+          "source_ids": [
+            "recent-culture-117",
+            "recent-culture-118"
+          ]
         }
       ]
     },
@@ -8370,6 +8590,387 @@
             "src": "/images/film-map/broad-city--whole-foods-gowanus.jpg",
             "thumbnail": "/images/film-map/broad-city--whole-foods-gowanus.jpg"
           }
+        }
+      ]
+    },
+    {
+      "id": "joseph-leonard",
+      "name": "Joseph Leonard",
+      "address": "170 Waverly Place",
+      "neighborhood": "West Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7337428,
+        -74.0013531
+      ],
+      "access": "Public sidewalk; restaurant for patrons",
+      "visit_note": "View the corner from the public sidewalk; the dining room is a working restaurant.",
+      "scenes": [
+        {
+          "film_id": "materialists",
+          "scene": "Lucy crosses Waverly Place outside Joseph Leonard.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://onthesetofnewyork.com/locations/materialists/materialists10.jpg",
+            "credit": "Materialists (2025) · Film frame · A24, via On the Set of New York",
+            "alt": "Lucy crossing the street outside the green awning of Joseph Leonard in Materialists.",
+            "width": 565,
+            "height": 303,
+            "src": "/images/film-map/materialists--joseph-leonard.jpg",
+            "thumbnail": "/images/film-map/materialists--joseph-leonard.jpg",
+            "source_url": "https://onthesetofnewyork.com/materialists.html"
+          },
+          "source_ids": [
+            "recent-culture-113",
+            "recent-culture-114",
+            "recent-culture-115"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nobu-downtown",
+      "name": "Nobu Downtown",
+      "address": "195 Broadway",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7107732,
+        -74.0095804
+      ],
+      "access": "Restaurant for patrons",
+      "visit_note": "The filmed interior is a working restaurant; plan an ordinary patron visit.",
+      "scenes": [
+        {
+          "film_id": "materialists",
+          "scene": "Lucy stands in Nobu Downtown’s bar and lounge during the film’s restaurant sequence.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://onthesetofnewyork.com/locations/materialists/materialists36.jpg",
+            "credit": "Materialists (2025) · Film frame · A24, via On the Set of New York",
+            "alt": "Lucy on the phone in Nobu Downtown’s columned bar and lounge in Materialists.",
+            "width": 565,
+            "height": 303,
+            "src": "/images/film-map/materialists--nobu-downtown.jpg",
+            "thumbnail": "/images/film-map/materialists--nobu-downtown.jpg",
+            "source_url": "https://onthesetofnewyork.com/materialists.html"
+          },
+          "source_ids": [
+            "recent-culture-113",
+            "recent-culture-114",
+            "recent-culture-116"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-nines",
+      "name": "The Nines",
+      "address": "9 Great Jones Street",
+      "neighborhood": "NoHo",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7273218,
+        -73.9939767
+      ],
+      "access": "Bar and restaurant for patrons",
+      "visit_note": "Visit as a patron and follow the venue’s current reservation and admission policies.",
+      "scenes": [
+        {
+          "film_id": "babygirl",
+          "scene": "Romy enters The Nines, the bar where Samuel works.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://onthesetofnewyork.com/locations/babygirl/babygirl35.jpg",
+            "credit": "Babygirl (2024) · Film frame · A24, via On the Set of New York",
+            "alt": "Romy passing between red curtains into The Nines in Babygirl.",
+            "width": 565,
+            "height": 282,
+            "src": "/images/film-map/babygirl--the-nines.jpg",
+            "thumbnail": "/images/film-map/babygirl--the-nines.jpg",
+            "source_url": "https://onthesetofnewyork.com/babygirl.html"
+          },
+          "source_ids": [
+            "recent-culture-117",
+            "recent-culture-119"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "highbridge-pool",
+      "name": "Highbridge Pool",
+      "address": "Amsterdam Avenue at West 173rd Street",
+      "neighborhood": "Washington Heights",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.84264,
+        -73.93388
+      ],
+      "access": "Public park; pool access subject to NYC Parks rules",
+      "visit_note": "Pool access is seasonal and subject to NYC Parks rules; check the current schedule before visiting.",
+      "scenes": [
+        {
+          "film_id": "in-the-heights",
+          "scene": "The ensemble’s “96,000” number was filmed at Highbridge Pool.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/06/in-the-heights-filming.-location-highbridge-pool-washington-heights-nyc.jpg",
+            "credit": "In the Heights (2021) · Production still · Macall Polay / Warner Bros., via Untapped New York",
+            "alt": "The cast films the pool number at Highbridge Pool, with the camera rig visible.",
+            "width": 800,
+            "height": 533,
+            "src": "/images/film-map/in-the-heights--highbridge-pool.jpg",
+            "thumbnail": "/images/film-map/in-the-heights--highbridge-pool.jpg",
+            "source_url": "https://www.untappedcities.com/filming-locations-in-the-heights/",
+            "kind": "production_still"
+          },
+          "source_ids": [
+            "recent-culture-120",
+            "recent-culture-121"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cooper-triangle",
+      "name": "Cooper Triangle",
+      "address": "Cooper Square at East 7th Street",
+      "neighborhood": "East Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.72882,
+        -73.99078
+      ],
+      "access": "Public park",
+      "visit_note": "A small public park beside Cooper Union; the pin marks the park rather than one exact bench.",
+      "scenes": [
+        {
+          "film_id": "in-the-heights",
+          "scene": "Sonny and Nina talk on a bench in Cooper Triangle.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/06/in-the-heights-filming-location-cooper-triangle-east-village-nyc.jpg",
+            "credit": "In the Heights (2021) · Film frame · Warner Bros., via Untapped New York",
+            "alt": "Sonny and Nina sitting on a bench in Cooper Triangle in In the Heights.",
+            "width": 800,
+            "height": 335,
+            "src": "/images/film-map/in-the-heights--cooper-triangle.jpg",
+            "thumbnail": "/images/film-map/in-the-heights--cooper-triangle.jpg",
+            "source_url": "https://www.untappedcities.com/filming-locations-in-the-heights/"
+          },
+          "source_ids": [
+            "recent-culture-120"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double-down-saloon",
+      "name": "Double Down Saloon",
+      "address": "14 Avenue A",
+      "neighborhood": "East Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.72258,
+        -73.98588
+      ],
+      "access": "Public sidewalk; bar for patrons",
+      "visit_note": "The film’s Paul’s Bar sign was dressing for the production. View the exterior from Avenue A.",
+      "scenes": [
+        {
+          "film_id": "caught-stealing",
+          "scene": "The Double Down Saloon’s exterior appears as Paul’s Bar, Hank’s workplace.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.extstreet.com/stills/49111560876275963560408864075.jpg",
+            "credit": "Caught Stealing (2025) · Film frame · Columbia Pictures / TSG Entertainment II / Eagle Pictures, via Ext.Street",
+            "alt": "The Double Down Saloon dressed as Paul’s Bar at night in Caught Stealing.",
+            "width": 360,
+            "height": 194,
+            "src": "/images/film-map/caught-stealing--double-down-saloon.jpg",
+            "thumbnail": "/images/film-map/caught-stealing--double-down-saloon.jpg",
+            "source_url": "https://www.extstreet.com/Caught_Stealing.html"
+          },
+          "source_ids": [
+            "recent-culture-122",
+            "recent-culture-123"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nathans-famous-coney",
+      "name": "Nathan’s Famous, Coney Island",
+      "address": "1310 Surf Avenue",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.575195,
+        -73.981728
+      ],
+      "access": "Public sidewalk; restaurant for patrons",
+      "visit_note": "The pin marks the original Surf Avenue restaurant; the frame is a wide establishing view.",
+      "scenes": [
+        {
+          "film_id": "caught-stealing",
+          "scene": "Nathan’s Famous appears in a Coney Island establishing shot.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.extstreet.com/stills/1522458387164554870372674877673.jpg",
+            "credit": "Caught Stealing (2025) · Film frame · Columbia Pictures / TSG Entertainment II / Eagle Pictures, via Ext.Street",
+            "alt": "Nathan’s Famous on Surf Avenue at dusk in Caught Stealing.",
+            "width": 360,
+            "height": 194,
+            "src": "/images/film-map/caught-stealing--nathans-famous-coney.jpg",
+            "thumbnail": "/images/film-map/caught-stealing--nathans-famous-coney.jpg",
+            "source_url": "https://www.extstreet.com/Caught_Stealing.html"
+          },
+          "source_ids": [
+            "recent-culture-122",
+            "recent-culture-124"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whitney-cafe",
+      "name": "Whitney Museum ground-floor café",
+      "address": "99 Gansevoort Street",
+      "neighborhood": "Meatpacking District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.739613,
+        -74.00898
+      ],
+      "access": "Business",
+      "visit_note": "The filmed ground-floor space is now Frenchette Café and Bakery. No museum ticket is required for the café.",
+      "scenes": [
+        {
+          "film_id": "and-just-like-that",
+          "scene": "Carrie, Miranda and Charlotte catch up over lunch in the first episode.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/medium/76316.jpg/nos/.jpg",
+            "width": 800,
+            "height": 394,
+            "credit": "And Just Like That… · Episode frame · HBO Max, via Sceen It",
+            "alt": "Miranda, Carrie and Charlotte sit with menus in the Whitney’s glass-walled ground-floor café.",
+            "src": "/images/film-map/and-just-like-that--whitney-cafe.jpg",
+            "thumbnail": "/images/film-map/and-just-like-that--whitney-cafe.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/5674/And-Just-Like-That/The-Whitney-Caf"
+          },
+          "source_ids": [
+            "recent-culture-125",
+            "recent-culture-126",
+            "recent-culture-127"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empire-diner",
+      "name": "Empire Diner",
+      "address": "210 10th Avenue",
+      "neighborhood": "Chelsea",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7471834,
+        -74.0043111
+      ],
+      "access": "Business",
+      "visit_note": "An operating diner. The silver exterior can be seen from the sidewalk; dining is during business hours.",
+      "scenes": [
+        {
+          "film_id": "and-just-like-that",
+          "scene": "Miranda and Che share a meal at the Empire Diner in season one.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://www.sceen-it.com/Service/sceenit/sceen/medium/77577.jpg/nos/.jpg",
+            "width": 800,
+            "height": 424,
+            "credit": "And Just Like That… · Episode frame · HBO Max, via Sceen It",
+            "alt": "Miranda and Che sit inside the silver Empire Diner, viewed through its street-facing windows.",
+            "src": "/images/film-map/and-just-like-that--empire-diner.jpg",
+            "thumbnail": "/images/film-map/and-just-like-that--empire-diner.jpg",
+            "source_url": "https://www.sceen-it.com/sceen/5905/And-Just-Like-That/Empire-Diner"
+          },
+          "source_ids": [
+            "recent-culture-128",
+            "recent-culture-129"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "museum-city-new-york",
+      "name": "Museum of the City of New York",
+      "address": "1220 Fifth Avenue",
+      "neighborhood": "East Harlem",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.7925,
+        -73.95194
+      ],
+      "access": "Museum exterior",
+      "visit_note": "View the school exterior from Fifth Avenue. Museum interiors follow admission and opening hours.",
+      "scenes": [
+        {
+          "film_id": "gossip-girl-2021",
+          "scene": "The museum’s courtyard becomes Constance St. Jude as the students gather for the first day of school.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://storage.ghost.io/c/3e/3b/3e3b259f-e5a2-4287-97e8-4888d22daaef/content/images/wp-content/uploads/2021/07/cast-of-gossip-girl-reboot-filming-locations-museum-of-the-city-of-new-york-constance-billard-school-for-girls-st-jude-school-for-boys-nyc.jpg",
+            "width": 800,
+            "height": 533,
+            "credit": "Gossip Girl (2021) · Production still · Karolina Wojtasik / HBO Max via Untapped New York",
+            "alt": "The new Gossip Girl cast gathers between the brick columns of the Museum of the City of New York.",
+            "src": "/images/film-map/gossip-girl-2021--museum-city-new-york.jpg",
+            "thumbnail": "/images/film-map/gossip-girl-2021--museum-city-new-york.jpg",
+            "source_url": "https://www.untappedcities.com/gossip-girl-filming-locations/",
+            "kind": "production_still"
+          },
+          "source_ids": [
+            "recent-culture-130",
+            "recent-culture-131",
+            "recent-culture-132"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brooklyn-army-terminal",
+      "name": "Brooklyn Army Terminal, Building B",
+      "address": "140 58th Street",
+      "neighborhood": "Sunset Park",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.644842,
+        -74.023822
+      ],
+      "access": "Public atrium",
+      "visit_note": "Stay within the public atrium and visitor areas of this working industrial campus.",
+      "scenes": [
+        {
+          "film_id": "fallout",
+          "scene": "The terminal’s vast atrium becomes the Enclave facility from which Dr. Wilzig escapes with a dog.",
+          "precision": "Venue-level pin; not an exact camera position.",
+          "still": {
+            "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRuI3Mz9vo3uaTTFVqTgdlRTyc9zCaH3QPZN5SP9pIKSIw0dwUZQqTJeuxxxqMsyb88S9Jly6lAFOcNZQgjFqG6UExy3bhjIYnqwl6ZT2mdVxIMJ1evTpzKaJdQO3XAi2XkKBR3QHBskBiiz2kMdb9Q_tnbsSh23TN7wU5B00TQytNwGM/s1600/3.jpg",
+            "width": 800,
+            "height": 450,
+            "credit": "Fallout · Episode frame · Amazon / Prime Video via Atlas of Wonders",
+            "alt": "Dr. Wilzig and a dog move along an upper walkway above the Brooklyn Army Terminal atrium.",
+            "src": "/images/film-map/fallout--brooklyn-army-terminal.jpg",
+            "thumbnail": "/images/film-map/fallout--brooklyn-army-terminal.jpg",
+            "source_url": "https://www.atlasofwonders.com/2024/04/where-was-fallout-filmed.html"
+          },
+          "source_ids": [
+            "recent-culture-134",
+            "recent-culture-135",
+            "recent-culture-136",
+            "recent-culture-137"
+          ]
         }
       ]
     }

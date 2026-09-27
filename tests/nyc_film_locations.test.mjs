@@ -140,13 +140,13 @@ test('real scene frames have local derivatives and matching provenance; missing 
 test('series carry explicit format, creator and completed or ongoing run metadata', () => {
   const films = data.films.filter((work) => work.format !== 'series');
   const series = data.films.filter((work) => work.format === 'series');
-  assert.equal(films.length, 34);
-  assert.equal(series.length, 11);
+  assert.equal(films.length, 38);
+  assert.equal(series.length, 14);
   for (const work of series) {
     assert.ok(work.creators && !work.director, work.id);
     assert.ok(Number.isInteger(work.year) && work.year <= 2026, work.id);
     if (work.end_year === null) {
-      assert.equal(work.id, 'only-murders-in-the-building');
+      assert.ok(['only-murders-in-the-building', 'fallout'].includes(work.id));
     } else {
       assert.ok(Number.isInteger(work.end_year), work.id);
       assert.ok(work.end_year >= work.year && work.end_year <= 2026, work.id);
