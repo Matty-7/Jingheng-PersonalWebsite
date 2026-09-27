@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import type { AtlasDetail } from '../../lib/atlas_browser';
 import {
   mock_map,
   select_search,
@@ -70,11 +71,31 @@ test('film, music and literature share one compact card and keyboard-accessible 
     await expect(card.locator('.atlas-artwork')).toBeVisible();
     await expect(card.locator('.atlas-card-copy')).toBeVisible();
     await expect(card.locator('.atlas-card-actions')).toBeVisible();
+    const entry_id = new URL(page.url()).searchParams.get('entry')!;
+    const response = await page.request.get(
+      `/api/atlas-entry?entry=${encodeURIComponent(entry_id)}`,
+    );
+    const detail = (await response.json()) as AtlasDetail;
+    await expect(card.locator('.atlas-card-description')).toHaveText(
+      detail.summary,
+    );
+    await expect(card.locator('.atlas-card-description')).toHaveCSS(
+      '-webkit-line-clamp',
+      'none',
+    );
+    await expect(card.locator('.atlas-scope, blockquote')).toHaveCount(0);
     sizes.push((await card.boundingBox())!.width);
     await page
       .getByRole('button', { name: 'Sources and place details' })
       .press('Enter');
     await expect(page.getByRole('dialog')).toBeVisible();
+    const full_text =
+      detail.entry.medium === 'film'
+        ? detail.entry.scene.scene
+        : detail.entry.medium === 'literature'
+          ? detail.entry.passage.excerpt
+          : detail.entry.track.note;
+    await expect(page.getByRole('dialog')).toContainText(full_text);
     await expect(
       page.getByRole('dialog').getByRole('link').first(),
     ).toBeVisible();
@@ -109,10 +130,10 @@ test('sources retain TV metadata and geographic precision when images fail', asy
     .getByRole('button', { name: 'Close details', exact: true })
     .click();
   await select_search(page, 'henry james');
-  await expect(page.locator('.atlas-scope')).toContainText(
+  await page.getByRole('button', { name: 'Sources and place details' }).click();
+  await expect(page.getByRole('dialog')).toContainText(
     'not an identified address',
   );
-  await page.getByRole('button', { name: 'Sources and place details' }).click();
   await expect(page.getByRole('dialog').locator('blockquote')).toContainText(
     'white marble steps',
   );

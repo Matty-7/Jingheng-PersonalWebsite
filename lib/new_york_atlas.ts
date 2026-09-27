@@ -317,6 +317,35 @@ export function atlas_maps_url(entry: AtlasEntry) {
 
 export const atlas_location = create_atlas_location(atlas_index);
 
+const sentence_segmenter = new Intl.Segmenter('en', {
+  granularity: 'sentence',
+});
+
+export function atlas_card_summary(entry: AtlasEntry) {
+  const introduction =
+    entry.medium === 'film'
+      ? entry.scene.scene
+      : entry.medium === 'literature'
+        ? entry.passage.note
+        : (artist_connection(entry.track, entry.place.id)?.note ??
+          entry.track.note);
+  const sentences: string[] = [];
+  for (const { segment } of sentence_segmenter.segment(introduction.trim())) {
+    const previous = sentences.at(-1);
+    // Sentence segmentation can split names such as O. Henry and St. Nicholas.
+    if (
+      previous &&
+      /\b(?:Mr|Mrs|Ms|Dr|St|Prof|Rev|Jr|Sr|[A-Z])\.$/.test(previous)
+    ) {
+      sentences[sentences.length - 1] += ` ${segment.trim()}`;
+    } else {
+      sentences.push(segment.trim());
+    }
+  }
+  const summary = sentences.slice(0, 2).join(' ');
+  return summary.length <= 200 ? summary : sentences[0];
+}
+
 export function atlas_detail(
   entry_id: string | null,
   api_key: string,
@@ -326,6 +355,7 @@ export function atlas_detail(
   const related = atlas_connections(entry);
   return {
     entry,
+    summary: atlas_card_summary(entry),
     label: atlas_entry_label(entry),
     year: atlas_year(entry),
     credit: entry.medium === 'film' ? screen_credit(entry.work) : entry.creator,

@@ -125,14 +125,6 @@ export function NewYorkAtlas({
     return () => window.removeEventListener('keydown', dismiss);
   }, [info_open, search_open, entry_id, close_card]);
   const artwork = atlas_card_artwork(detail);
-  const description =
-    selected?.medium === 'film'
-      ? selected.scene.scene
-      : selected?.medium === 'literature'
-        ? selected.passage.excerpt
-        : selected?.medium === 'music'
-          ? (detail?.connection?.note ?? selected.track.note)
-          : '';
   const selection_url =
     typeof window === 'undefined'
       ? ''
@@ -335,7 +327,7 @@ export function NewYorkAtlas({
             )}
             <div className="atlas-card-copy">
               {detail ? (
-                <p className="atlas-card-description">{description}</p>
+                <p className="atlas-card-description">{detail.summary}</p>
               ) : (
                 <output className="atlas-loading">
                   {failed ? (
@@ -354,9 +346,6 @@ export function NewYorkAtlas({
                     'Loading details…'
                   )}
                 </output>
-              )}
-              {selected && selected.medium !== 'film' && (
-                <p className="atlas-scope">{selected.precision}</p>
               )}
             </div>
             <div className="atlas-card-actions">
