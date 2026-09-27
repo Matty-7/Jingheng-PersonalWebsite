@@ -1,0 +1,272 @@
+{
+  "reviewed_on": "2026-09-27",
+  "screen_metadata": [
+    {
+      "id": "marty-supreme",
+      "sources": [
+        {
+          "url": "https://a24films.com/films/marty-supreme",
+          "evidence": "A24 identifies the year as 2025 and director as Josh Safdie."
+        }
+      ]
+    },
+    {
+      "id": "highest-2-lowest",
+      "sources": [
+        {
+          "url": "https://www.apple.com/tv-pr/originals/highest-2-lowest/",
+          "evidence": "Apple TV Press lists September 5, 2025 release and Spike Lee as director."
+        },
+        {
+          "url": "https://www.apple.com/tv-pr/originals/highest-2-lowest/cast-crew/",
+          "evidence": "Official director credit: Spike Lee."
+        }
+      ]
+    },
+    {
+      "id": "you-hurt-my-feelings",
+      "sources": [
+        {
+          "url": "https://a24films.com/films/you-hurt-my-feelings",
+          "evidence": "Distributor page explicitly gives 2023 and Written and Directed by Nicole Holofcener."
+        }
+      ]
+    },
+    {
+      "id": "she-said",
+      "sources": [
+        {
+          "url": "https://www.universalpicturesathome.com/movies/she-said",
+          "evidence": "Universal lists Release Year 2022 and Directed By Maria Schrader."
+        }
+      ]
+    },
+    {
+      "id": "marry-me",
+      "sources": [
+        {
+          "url": "https://www.universalpicturesathome.com/movies/marry-me",
+          "evidence": "Universal lists Release Year 2022 and Directed By Kat Coiro."
+        }
+      ]
+    }
+  ],
+  "screen_assets": [
+    {
+      "work_id": "marty-supreme",
+      "place_id": "norkin-shoes-orchard",
+      "asset": "/images/film-map/marty-supreme--norkin-shoes-orchard.jpg",
+      "sha256": "96eb36b99c98d2ceb4783b5291da5038c73bbb3e394c22a168df2e831e58df86",
+      "source_image_sha256": "2d3c52e4bbf68e37adf844c7f0611aae7e399477dd230c2a181bd895f7fa0ee1",
+      "dimensions": [
+        800,
+        533
+      ],
+      "kind": "production_still",
+      "source_page": "https://nypost.com/2024/10/28/us-news/movie-shoots-with-timothee-chalamet-austin-butler-take-ny/",
+      "original_image": "https://nypost.com/wp-content/uploads/sites/2/2024/10/general-view-marty-supreme-movie-90866714_049074.jpg?quality=75&strip=all&w=1024",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=137+Orchard+Street+Manhattan&size=1",
+      "evidence": "New York Post names 137 Orchard as Norkin Shoes; Untapped connects the shoot to the opening shoe-shop scenes. Visual inspection confirms the storefront number and film set.",
+      "thumbnail": "/images/film-map/marty-supreme--norkin-shoes-orchard--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        240
+      ]
+    },
+    {
+      "work_id": "marty-supreme",
+      "place_id": "moscot-orchard",
+      "asset": "/images/film-map/marty-supreme--moscot-orchard.jpg",
+      "sha256": "83be4a26e0aadba196182017ecb788fca7c92d90b454e04cfdb9dc099ebbd554",
+      "source_image_sha256": "5a30c0acdd7e20e11f7145d9e642692514af86602f5d274c227ff99ba7aa0115",
+      "dimensions": [
+        800,
+        534
+      ],
+      "kind": "production_still",
+      "source_page": "https://nypost.com/2024/10/28/us-news/movie-shoots-with-timothee-chalamet-austin-butler-take-ny/",
+      "original_image": "https://nypost.com/wp-content/uploads/sites/2/2024/10/2024-10-09-sk-despelaren-91358635.jpg?quality=75&strip=all&w=1024",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=94+Orchard+Street+Manhattan&size=1",
+      "evidence": "New York Post captions Chalamet on the ladder at MOSCOT; the shop confirms its present address. Visually inspected.",
+      "thumbnail": "/images/film-map/marty-supreme--moscot-orchard--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        240
+      ]
+    },
+    {
+      "work_id": "highest-2-lowest",
+      "place_id": "olympia-dumbo",
+      "asset": "/images/film-map/highest-2-lowest--olympia-dumbo.jpg",
+      "sha256": "28022eae6cf807fd8490abbfce8f7f70afe35b63f58b4fae2ee3b5e44ed7e063",
+      "source_image_sha256": "2e1b780b0c4cf277bd1d197a4d3d91ad92c77070c02bb24b5eee227ab4b2507f",
+      "dimensions": [
+        565,
+        235
+      ],
+      "kind": "film_frame",
+      "source_page": "https://onthesetofnewyork.com/highesttolowest.html",
+      "original_image": "https://onthesetofnewyork.com/locations/highesttolowest/highesttolowest01.jpg",
+      "coordinate_source": "https://mapcarta.com/W818959355",
+      "evidence": "On the Set of New York labels the sequence David King’s penthouse at Olympia DUMBO. The cinematographer interview distinguishes the actual exterior from stage-set interiors; the building website uses 60 Front Street. Mapcarta publishes OSM way 818959355 and these coordinates. Visually inspected frame.",
+      "thumbnail": "/images/film-map/highest-2-lowest--olympia-dumbo--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        150
+      ]
+    },
+    {
+      "work_id": "highest-2-lowest",
+      "place_id": "brooklyn-bridge",
+      "asset": "/images/film-map/highest-2-lowest--brooklyn-bridge.jpg",
+      "sha256": "27927bcfa5eb9da360509ca1e98e6a750740b5ec59fe743c36f94b939ce12d51",
+      "source_image_sha256": "cd9d93ac146baa55b6dbfd885cbbe82a9e50a26ead16ea2ca70a6cdf0cee4cce",
+      "dimensions": [
+        565,
+        235
+      ],
+      "kind": "film_frame",
+      "source_page": "https://onthesetofnewyork.com/highesttolowest.html",
+      "original_image": "https://onthesetofnewyork.com/locations/highesttolowest/highesttolowest20.jpg",
+      "coordinate_source": "Existing catalog location brooklyn-bridge: coordinates [40.7057, -73.9964] reused unchanged.",
+      "evidence": "On the Set of New York identifies the Brooklyn Bridge sequence; visual inspection confirms David, headphones, bridge walkway and skyline.",
+      "thumbnail": "/images/film-map/highest-2-lowest--brooklyn-bridge--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        150
+      ]
+    },
+    {
+      "work_id": "you-hurt-my-feelings",
+      "place_id": "paragon-sports",
+      "asset": "/images/film-map/you-hurt-my-feelings--paragon-sports.jpg",
+      "sha256": "c8f68787ae7181af001f64f3e991104f715da95e66fde8020546a590306c9b5f",
+      "source_image_sha256": "130e39d3546a9ba014130c3d66e3e360b3a006193f805d0b34a08659b0e997fa",
+      "dimensions": [
+        600,
+        340
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.sceen-it.com/sceen/7073/You-Hurt-My-Feelings/Paragon-Sports",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/94218.jpg/w/600/h/340/crop/true/nos/7073_you%20hurt%20my%20feelings_paragon%20sports_1.png",
+      "coordinate_source": "https://www.whereorg.com/paragon-athletic-goods-co-llc-11584966",
+      "evidence": "Sceen-It describes the overheard-book scene and visibly credits Likely Story. otsoNY identifies 867 Broadway. Director Holofcener confirms filming in Paragon in Filmmaker interview. Current official contact page lists store open daily. Frame downloaded and visually inspected: Beth and Sarah outside the store.",
+      "thumbnail": "/images/film-map/you-hurt-my-feelings--paragon-sports--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        204
+      ]
+    },
+    {
+      "work_id": "you-hurt-my-feelings",
+      "place_id": "192-books",
+      "asset": "/images/film-map/you-hurt-my-feelings--192-books.jpg",
+      "sha256": "22736f8e448527da410ea67e66d21aa73c16ff818d9ec95fda61d0202ec03a09",
+      "source_image_sha256": "b4f5770c3f43bac188fa111bd43e184e9bdf8ce002bc5a3e349c3c9fb9e63600",
+      "dimensions": [
+        600,
+        340
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.sceen-it.com/sceen/7072/You-Hurt-My-Feelings/192-Books",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/94204.jpg/w/600/h/340/crop/true/nos/7072_you%20hurt%20my%20feelings_192%20books_0.png",
+      "coordinate_source": "https://us.geoview.info/192_books%2C2322155479n",
+      "evidence": "Sceen-It identifies the scene as Beth visiting the bookstore and credits Likely Story. otsoNY and NYC MOME give 192 Tenth Avenue. Academy of American Poets gives everyday public bookstore access. Download visually inspected: actor at distinctive 192 Books glass storefront.",
+      "thumbnail": "/images/film-map/you-hurt-my-feelings--192-books--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        204
+      ]
+    },
+    {
+      "work_id": "she-said",
+      "place_id": "orsay-restaurant",
+      "asset": "/images/film-map/she-said--orsay-restaurant.jpg",
+      "sha256": "6da97b6de5843c39454de7e9e530171791d2cfc156665778ab98b9eb8f5c7db8",
+      "source_image_sha256": "5dd1c86dfc7a378a2bddcbfcc08ed7a7c0944cf73134b438b750c11f2af387f4",
+      "dimensions": [
+        600,
+        340
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.sceen-it.com/sceen/6720/She-Said/Orsay-Restaurant",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/89250.jpg/w/600/h/340/crop/true/nos/6720_she%20said_orsay%20restaurant_0.jpg",
+      "coordinate_source": "https://www.addressschool.com/company/2367390/orsay",
+      "evidence": "Sceen-It identifies the witness interview and displays the studio credit; otsoNY independently gives Orsay and its address. Current venue site verifies address and dining/reservations. Download visually inspected: the two characters in Orsay dining room.",
+      "thumbnail": "/images/film-map/she-said--orsay-restaurant--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        204
+      ]
+    },
+    {
+      "work_id": "she-said",
+      "place_id": "new-york-times-building",
+      "asset": "/images/film-map/she-said--new-york-times-building.jpg",
+      "sha256": "78a81b60d3eb57780b86b395f73485aec6506834c7ed0e5bcaff5fb35d247fcd",
+      "source_image_sha256": "649e88964025a7ffbe5a1439758451e2888bcb39e2a79e6d158c415812bf27ce",
+      "dimensions": [
+        600,
+        340
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.sceen-it.com/sceen/6364/She-Said/The-New-York-Times-Building",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/84162.jpg/w/600/h/340/crop/true/nos/6364_she%20said_the%20new%20york%20times%20building_2.jpg",
+      "coordinate_source": "https://www.latlong.net/location/she-said-locations-1808",
+      "evidence": "Sceen-It identifies Jodi and Megan starting the investigation at this building, with visible studio attribution. otsoNY corroborates 620 Eighth Avenue. DP Natasha Braier interview confirms shooting on location at the Times building. Download visually inspected: Jodi on the phone inside the window-lined office. Pin represents the building, not a publicly accessible interior.",
+      "thumbnail": "/images/film-map/she-said--new-york-times-building--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        204
+      ]
+    },
+    {
+      "work_id": "marry-me",
+      "place_id": "radio-city",
+      "asset": "/images/film-map/marry-me--radio-city.jpg",
+      "sha256": "bc68115e320bc8ac5399dcf27f3ec1bb071e8c523533ce71e2916745dcdbc979",
+      "source_image_sha256": "8cab131a7b34d624dd99d38e7691436f47c2bdc7900a95a5ad259dbdafbb8754",
+      "dimensions": [
+        600,
+        340
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.sceen-it.com/sceen/5751/Marry-Me/Radio-City-Music-Hall",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/75299.jpg/w/600/h/340/crop/true/nos/5751_marry%20me_radio%20city%20music%20hall_0.png",
+      "coordinate_source": "Existing catalog radio-city location: exact ID and coordinates retained.",
+      "evidence": "Sceen-It explicitly identifies fans lining up for Kat’s concert and wedding, and attributes the image to the three production companies. Download visually inspected: real Radio City facade with film-specific marquee. Exterior association only; no claim that concert interiors were filmed here.",
+      "thumbnail": "/images/film-map/marry-me--radio-city--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        204
+      ]
+    },
+    {
+      "work_id": "marry-me",
+      "place_id": "denos-wonder-wheel",
+      "asset": "/images/film-map/marry-me--denos-wonder-wheel.jpg",
+      "sha256": "775556fcbd748952f21b0c838dfbec8e67cda14d1ffb70dcde6d4dd21f159120",
+      "source_image_sha256": "9eec9b41aa39bd0e21f13b510f38e94f824d7f88182f5f588b99d0ad97a1dc82",
+      "dimensions": [
+        600,
+        340
+      ],
+      "kind": "film_frame",
+      "source_page": "https://www.sceen-it.com/sceen/5756/Marry-Me/Coney-Island-Wonder-Wheel",
+      "original_image": "https://www.sceen-it.com/Service/sceenit/sceen/thumb/75319.jpg/w/600/h/340/crop/true/nos/5756_marry%20me_coney%20island_0.png",
+      "coordinate_source": "https://mapcarta.com/N4080306783",
+      "evidence": "Sceen-It places the surprise fair date at Coney Island/Wonder Wheel and gives the visible production-company attribution. Deno’s own Movies & TV page lists Marry Me; otsoNY independently labels Wonder Wheel. Official park site confirms address, free park admission and seasonal/weather-dependent operation. Download visually inspected: Kat and Charlie among illuminated rides. This frame does not itself show the wheel; the coordinate marks the verified park landmark, not the exact camera position.",
+      "thumbnail": "/images/film-map/marry-me--denos-wonder-wheel--thumb.jpg",
+      "thumbnail_dimensions": [
+        360,
+        204
+      ]
+    }
+  ],
+  "scope": "Five recent films, ten verified NYC scenes",
+  "asset_notes": [
+    "All ten images visually inspected by parent; eight film frames and two visibly credited production photographs.",
+    "Derivatives preserve aspect ratio without upscaling. Each scene has a separate thumbnail up to 360px.",
+    "Pins identify existing venues, storefronts or the specified park; no exact camera position or timestamp is asserted."
+  ]
+}
