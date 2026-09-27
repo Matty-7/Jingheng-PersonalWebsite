@@ -239,6 +239,12 @@ test('Anora retains its verified Tatiana frame', async ({ page }) => {
 test('unsupported WebGL keeps search and retry usable without the removed cafe', async ({
   page,
 }) => {
+  // Match the focus suite: third-party telemetry is outside this map failure test.
+  await page.route(
+    'https://static.cloudflareinsights.com/beacon.min.js',
+    (route) =>
+      route.fulfill({ contentType: 'application/javascript', body: '' }),
+  );
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.addInitScript(() => {
