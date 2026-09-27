@@ -27,7 +27,6 @@ export type AtlasDetail = {
   label: string;
   year: string | number;
   credit: string;
-  map_url: string | null;
   maps_url: string;
   sources: { id: string; label: string; url: string }[];
   connection: MusicConnection | null;

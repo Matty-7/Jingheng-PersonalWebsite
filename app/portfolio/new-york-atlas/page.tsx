@@ -27,7 +27,7 @@ export default async function NewYorkAtlasPage({
     <main className="atlas-page">
       <NewYorkAtlas
         index={atlas_index}
-        initial_detail={atlas_detail(initial_selection.entry_id, '')}
+        initial_detail={atlas_detail(initial_selection.entry_id)}
         initial_selection={initial_selection}
       />
     </main>

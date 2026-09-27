@@ -1,7 +1,6 @@
 import {
   film_catalog,
   film_locations,
-  google_film_embed_url,
   google_maps_url,
   screen_creator,
   screen_credit,
@@ -15,7 +14,6 @@ import {
 import {
   literary_entries,
   literary_works,
-  literary_embed_url,
   literary_maps_url,
   type LiteraryEntry,
   type LiteraryWork,
@@ -24,7 +22,6 @@ import {
   music_tracks,
   track_places,
   artist_connection,
-  google_music_embed_url,
   google_music_url,
   type MusicPlace,
   type MusicTrack,
@@ -32,16 +29,8 @@ import {
 import {
   atlas_labels,
   create_atlas_location,
-  search_atlas_index,
   type AtlasDetail,
-  type AtlasFilter,
   type AtlasIndexEntry,
-} from './atlas_browser.ts';
-export { atlas_labels } from './atlas_browser.ts';
-export type {
-  AtlasMedium,
-  AtlasFilter,
-  AtlasSelection,
 } from './atlas_browser.ts';
 import { normalize_search_text } from './search_text.ts';
 
@@ -228,11 +217,6 @@ export const atlas_entries: AtlasEntry[] = [
   ),
 ];
 
-export const atlas_counts = {
-  film: film_catalog.length,
-  literature: literary_works.length,
-  music: music_tracks.length,
-};
 export function atlas_entry_label(entry: AtlasEntry) {
   return entry.medium === 'film'
     ? screen_kind(entry.work)
@@ -278,12 +262,6 @@ export const atlas_index: AtlasIndexEntry[] = atlas_entries.map((entry) => {
 const entries_by_id = new Map(atlas_entries.map((entry) => [entry.id, entry]));
 const index_by_id = new Map(atlas_index.map((entry) => [entry.id, entry]));
 
-export function search_atlas(medium: AtlasFilter, query: string) {
-  return search_atlas_index(atlas_index, medium, query).map((entry) =>
-    entries_by_id.get(entry.id)!,
-  );
-}
-
 export function atlas_connections(entry: AtlasEntry) {
   const area = atlas_areas.find((item) =>
     item.places.includes(entry.place_key),
@@ -299,14 +277,6 @@ export function atlas_connections(entry: AtlasEntry) {
           : other.place_key === entry.place_key),
     ),
   };
-}
-
-export function atlas_embed_url(entry: AtlasEntry, api_key: string) {
-  if (entry.medium === 'film')
-    return google_film_embed_url(entry.location, api_key);
-  if (entry.medium === 'literature')
-    return literary_embed_url(entry.passage, api_key);
-  return google_music_embed_url(entry.place, api_key);
 }
 
 export function atlas_maps_url(entry: AtlasEntry) {
@@ -346,10 +316,7 @@ export function atlas_card_summary(entry: AtlasEntry) {
   return summary.length <= 200 ? summary : sentences[0];
 }
 
-export function atlas_detail(
-  entry_id: string | null,
-  api_key: string,
-): AtlasDetail | null {
+export function atlas_detail(entry_id: string | null): AtlasDetail | null {
   const entry = entry_id ? entries_by_id.get(entry_id) : undefined;
   if (!entry) return null;
   const related = atlas_connections(entry);
@@ -359,7 +326,6 @@ export function atlas_detail(
     label: atlas_entry_label(entry),
     year: atlas_year(entry),
     credit: entry.medium === 'film' ? screen_credit(entry.work) : entry.creator,
-    map_url: atlas_embed_url(entry, api_key),
     maps_url: atlas_maps_url(entry),
     sources:
       entry.medium === 'film'

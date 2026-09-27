@@ -1,5 +1,4 @@
-import { google_place_embed_url, google_place_url } from './google_maps.ts';
-import { normalize_search_text } from './search_text.ts';
+import { google_place_url } from './google_maps.ts';
 import catalog from '../content/nyc_literary_locations.json' with { type: 'json' };
 
 export type LiteraryCover = {
@@ -41,37 +40,7 @@ export type LiteraryEntry = {
 
 export const literary_works = catalog.works as LiteraryWork[];
 export const literary_entries = catalog.entries as LiteraryEntry[];
-export const literary_place_count = new Set(
-  literary_entries.map((entry) => entry.place_id),
-).size;
-
-export function entries_for_work(work_id: string) {
-  return work_id === 'all'
-    ? literary_entries
-    : literary_entries.filter((entry) => entry.work_id === work_id);
-}
-
-export function search_literary_entries(work_id: string, query: string) {
-  const terms = normalize_search_text(query)
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-  return entries_for_work(work_id).filter((entry) => {
-    const work = literary_works.find((item) => item.id === entry.work_id)!;
-    const text = normalize_search_text(
-      `${work.title} ${work.author} ${entry.place} ${entry.area}`,
-    );
-    return terms.every((term) => text.includes(term));
-  });
-}
 
 export function literary_maps_url(entry: LiteraryEntry) {
   return google_place_url(entry.coordinates.join(','));
-}
-
-export function literary_embed_url(entry: LiteraryEntry, api_key: string) {
-  const url = google_place_embed_url(entry.plus_code, api_key, 15);
-  return url
-    ? `${url}&center=${encodeURIComponent(entry.coordinates.join(','))}`
-    : null;
 }

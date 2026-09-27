@@ -9,7 +9,7 @@ import {
 
 test('every Atlas entry retains each distinct source exactly once', () => {
   for (const entry of atlas_entries) {
-    const detail = atlas_detail(entry.id, '');
+    const detail = atlas_detail(entry.id);
     const platform_urls =
       entry.medium === 'music'
         ? Object.values(atlas_music_platform_urls(entry.track))
@@ -67,7 +67,6 @@ test('literary cover sources take priority over repeated text and place links', 
       atlas_entries.find(
         (entry) => entry.medium === 'literature' && entry.work.cover,
       ).id,
-      '',
     ),
   );
   detail.entry.passage.source_url = `${detail.entry.work.cover.source_url}#text`;
@@ -80,10 +79,7 @@ test('literary cover sources take priority over repeated text and place links', 
 
 test('music keeps platform icons and only distinct supporting sources', () => {
   const detail = structuredClone(
-    atlas_detail(
-      atlas_entries.find((entry) => entry.medium === 'music').id,
-      '',
-    ),
+    atlas_detail(atlas_entries.find((entry) => entry.medium === 'music').id),
   );
   detail.entry.track.source_url = detail.entry.track.apple_music_url;
   detail.connection = {
