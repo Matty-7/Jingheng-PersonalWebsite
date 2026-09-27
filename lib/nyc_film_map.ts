@@ -7,7 +7,7 @@ export type FilmScene = {
   scene: string;
   source_ids: string[];
   still?: {
-    kind?: 'production_still' | 'episode_image';
+    kind?: 'production_still' | 'episode_image' | 'location_photo';
     src: string;
     thumbnail: string;
     alt: string;

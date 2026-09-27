@@ -287,15 +287,13 @@ export function NewYorkAtlas({
             aria-label="Selected place and work"
             aria-busy={!detail && !failed}
           >
-            <div className={`atlas-artwork atlas-artwork-${summary.medium}`}>
-              {artwork?.src ? (
-                <AtlasImage key={artwork.src} {...artwork} />
-              ) : (
-                <span className="atlas-image-fallback">
-                  {detail ? 'Image unavailable' : 'Loading image…'}
-                </span>
-              )}
-            </div>
+            {artwork?.src && (
+              <AtlasImage
+                key={artwork.src}
+                {...artwork}
+                class_name={`atlas-artwork atlas-artwork-${summary.medium}`}
+              />
+            )}
             <div className="atlas-card-copy">
               <p className="atlas-eyebrow">
                 {summary.label}

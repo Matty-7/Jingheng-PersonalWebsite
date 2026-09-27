@@ -75,6 +75,7 @@ test('real scene frames have local derivatives and matching provenance; missing 
       const expected_status = {
         production_still: 'verified_production_still',
         episode_image: 'verified_episode_image',
+        location_photo: 'verified_location_photo',
       };
       assert.ok(
         still.kind === undefined || Object.hasOwn(expected_status, still.kind),
@@ -107,7 +108,7 @@ test('real scene frames have local derivatives and matching provenance; missing 
   }
   assert.deepEqual(
     missing.sort((a, b) => a.localeCompare(b)),
-    ['ocean-view', 'tatiana'],
+    [],
   );
   assert.ok(
     originals.size > 100,
