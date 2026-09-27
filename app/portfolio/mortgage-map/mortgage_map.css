@@ -1,3 +1,7 @@
+html:has(.mortgage-learning-page),
+body:has(.mortgage-learning-page) {
+  background: #fafbf8;
+}
 .mortgage-learning-page {
   --learning-bg: #fafbf8;
   --learning-ink: #152a2d;
@@ -13,6 +17,11 @@
 .mortgage-learning {
   max-width: 1680px;
   margin: auto;
+}
+html[data-mortgage-pending='true']
+  .mortgage-learning[data-ready='false']
+  > :not(.learning-header) {
+  visibility: hidden;
 }
 .mortgage-learning button,
 .mortgage-learning input,

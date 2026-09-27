@@ -15,3 +15,13 @@ Jingheng requested removing “Learn from here”, “Back to your learning path
 Clicking any concept now adopts it as the saved learning position. The current route is retained when it includes that concept; otherwise the concept’s topic supplies the route. Browser back/forward restores the lesson and route without clearing understood concepts. All topics and search remain the single catalog entry points.
 
 All 228 authored questions receive three distinct answer choices and one correct choice. Selecting an answer shows the existing explanation; a correct answer enables explicit completion. Original summaries, formulas and source links remain available under Why it matters. The footer contains only the current activity’s primary action. Verification covers complete question coverage, route persistence, browser history, incorrect/correct feedback, keyboard focus, and narrow layouts.
+
+## September 27: research cases and stable lesson rendering
+
+Accepted scope: add the reviewed educational gaps and four public research cases, and remove visible intermediate states during lesson changes and refresh. Keep the single local tree and three-choice interaction.
+
+- The catalog now contains 229 concepts. Loan state transitions connects payment status, cures, exits and recovery timing. Existing lessons distinguish fixed-price from fixed-yield experiments, contractual/scenario/expected cash flows, origination/current DSCR, and executed/indicative/evaluated/executable prices.
+- Four original case questions connect SFA's September second-lien research, Apollo's September 25 and 26 discussions, and Fannie Mae's public credit-score disclosure update to existing lessons. Dated sources stay inside the existing disclosure. No employer help pages, screenshots, private newsletters or vendor implementation details are published.
+- Lesson changes retain the stage and heading DOM. Only exercise state and the optional disclosure reset. Tree connections are measured in a layout effect, before painting the new node positions.
+- A validated `concept` query and a bounded position cookie let the server render the chosen lesson on refresh and return visits. The cookie contains only route/concept identifiers; completed lessons remain in browser storage. Old hash links remain supported, with a pre-hydration guard against displaying the wrong server lesson. The browser store uses `useSyncExternalStore` to synchronize history and saved progress without a deferred default-lesson render.
+- The document background matches the learning page. Browser regressions check stable stage/heading identity, cleared answers, focus and correct server-rendered content with JavaScript disabled; existing history and catalog tests remain in the full CI matrix.

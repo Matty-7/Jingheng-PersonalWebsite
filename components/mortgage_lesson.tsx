@@ -39,6 +39,13 @@ export function MortgageLesson({
   );
   const [new_rate, set_new_rate] = useState(5);
   const [answer, set_answer] = useState<number | null>(null);
+  const [lesson_id, set_lesson_id] = useState(concept.id);
+  if (lesson_id !== concept.id) {
+    set_lesson_id(concept.id);
+    set_phase(has_demo ? 'explore' : 'check');
+    set_new_rate(5);
+    set_answer(null);
+  }
   const check = learning_checks[concept.id];
   const correct = answer === check.correct;
   const feedback = refinancing_feedback(new_rate);
@@ -60,7 +67,7 @@ export function MortgageLesson({
               ? 'A lower new rate can make replacing a mortgage more attractive.'
               : concept.summary}
           </p>
-          <details className="learning-depth">
+          <details key={concept.id} className="learning-depth">
             <summary>
               Why it matters <ChevronDown size={17} aria-hidden="true" />
             </summary>
