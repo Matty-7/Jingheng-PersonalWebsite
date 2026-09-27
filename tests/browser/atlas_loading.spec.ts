@@ -173,9 +173,9 @@ test('search intent shares the pending detail and loads only card artwork until 
     'aria-busy',
     'false',
   );
-  await expect(page.locator('.atlas-artwork img')).toHaveAttribute(
+  await expect(page.locator('.atlas-artwork img')).toHaveJSProperty(
     'src',
-    still.thumbnail,
+    new URL(still.thumbnail, page.url()).href,
   );
   await expect(page.locator('.atlas-artwork img')).toHaveAttribute(
     'loading',
@@ -187,7 +187,7 @@ test('search intent shares the pending detail and loads only card artwork until 
   await page.getByRole('button', { name: 'Sources and place details' }).click();
   await expect(
     page.locator('.atlas-info-dialog .atlas-still img'),
-  ).toHaveAttribute('src', still.src);
+  ).toHaveJSProperty('src', new URL(still.src, page.url()).href);
   await expect.poll(() => images.includes(still.src)).toBe(true);
   expect(attempts).toBe(1);
 });
