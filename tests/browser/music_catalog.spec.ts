@@ -13,15 +13,31 @@ test('neighborhood selections focus the overview while search and Show all place
   const tile = page.locator('.sound-overview .leaflet-tile').first();
   await expect(tile).toHaveAttribute('src', /tile.openstreetmap.org/);
   await expect(tile).toHaveClass(/leaflet-tile-loaded/);
-  const all_tile = await tile.getAttribute('src');
+  // Leaflet may retain an old zoom's tiles behind the active layer after flyTo.
+  const read_camera = () => page.locator('.sound-overview .leaflet-tile-container').evaluateAll(layers => {
+    const active_layer = layers.sort((left, right) => Number((right as HTMLElement).style.zIndex) - Number((left as HTMLElement).style.zIndex))[0] as HTMLElement | undefined;
+    return active_layer ? {
+      transform: active_layer.style.transform,
+      tiles: Array.from(active_layer.querySelectorAll<HTMLImageElement>('.leaflet-tile'), image => image.src).sort(),
+    } : null;
+  });
+  const all_camera = await read_camera();
+  expect(all_camera?.tiles.length).toBeGreaterThan(0);
   await page.getByRole('searchbox').fill('Queensbridge');
   await expect(page.getByRole('button', { name: 'Select QueensBridge Politics by Nas', exact: true })).toBeVisible();
-  expect(await tile.getAttribute('src')).toBe(all_tile);
+  expect(await read_camera()).toEqual(all_camera);
   await page.getByRole('button', { name: 'Select QueensBridge Politics by Nas', exact: true }).press('Enter');
-  await expect.poll(() => tile.getAttribute('src')).not.toBe(all_tile);
-  await expect(page.getByRole('button', { name: /^Queensbridge:/ })).toBeVisible();
+  await expect.poll(read_camera).not.toEqual(all_camera);
+  await expect.poll(read_camera).toMatchObject({ tiles: expect.arrayContaining([expect.stringContaining('tile.openstreetmap.org/14/')]) });
+  const queensbridge = page.getByRole('button', { name: /^Queensbridge:/ });
+  await expect(queensbridge).toBeVisible();
+  await expect.poll(() => queensbridge.evaluate(marker => {
+    const pin = marker.getBoundingClientRect();
+    const map = marker.closest('.sound-overview')!.getBoundingClientRect();
+    return Math.hypot(pin.x + pin.width / 2 - map.x - map.width / 2, pin.y + pin.height / 2 - map.y - map.height / 2);
+  })).toBeLessThan(2);
   await page.getByRole('button', { name: 'Show all places', exact: true }).click();
-  await expect.poll(() => tile.getAttribute('src')).toBe(all_tile);
+  await expect.poll(read_camera).toEqual(all_camera);
   await expect(page.getByRole('searchbox')).toHaveValue('');
   await page.getByRole('searchbox').fill('Corona');
   await page.getByRole('button', { name: 'Select Me and Julio Down by the Schoolyard by Paul Simon', exact: true }).press('Enter');
