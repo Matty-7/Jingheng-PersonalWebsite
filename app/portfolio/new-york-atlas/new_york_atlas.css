@@ -279,7 +279,7 @@ body:has(.atlas-page) {
 .atlas-empty button {
   margin: 8px 0 0;
 }
-.atlas-card {
+:is(.atlas-card, .atlas-card-snapshot) {
   position: absolute;
   z-index: 900;
   bottom: 34px;
@@ -325,7 +325,7 @@ body:has(.atlas-page) {
 .atlas-artwork-literature {
   padding: 8px;
 }
-.atlas-card:not(:has(.atlas-artwork)) {
+:is(.atlas-card, .atlas-card-snapshot):not(:has(.atlas-artwork)) {
   grid-template-columns: minmax(0, 1fr) 136px;
   grid-template-areas:
     'heading actions'
@@ -350,7 +350,7 @@ body:has(.atlas-page) {
   text-transform: uppercase;
   margin-bottom: 5px;
 }
-.atlas-card h2 {
+:is(.atlas-card, .atlas-card-snapshot) h2 {
   font:
     29px/1.13 Georgia,
     serif;
@@ -358,14 +358,14 @@ body:has(.atlas-page) {
   margin-bottom: 4px;
   overflow-wrap: anywhere;
 }
-.atlas-card h2:focus {
+:is(.atlas-card, .atlas-card-snapshot) h2:focus {
   outline: none;
 }
-.atlas-card h2:focus-visible {
+:is(.atlas-card, .atlas-card-snapshot) h2:focus-visible {
   outline: 2px solid var(--atlas-rust);
   outline-offset: 2px;
 }
-.atlas-card h3 {
+:is(.atlas-card, .atlas-card-snapshot) h3 {
   font:
     19px/1.3 Georgia,
     serif;
@@ -590,7 +590,7 @@ body:has(.atlas-page) {
   .atlas-filters button {
     padding-inline: 12px;
   }
-  .atlas-card {
+  :is(.atlas-card, .atlas-card-snapshot) {
     grid-template-columns: 210px minmax(0, 1fr) 128px;
     column-gap: 16px;
   }
@@ -644,7 +644,7 @@ body:has(.atlas-page) {
     height: 36px;
     line-height: 36px;
   }
-  .atlas-card {
+  :is(.atlas-card, .atlas-card-snapshot) {
     bottom: max(24px, env(safe-area-inset-bottom));
     width: calc(100% - 24px);
     padding: 12px;
@@ -663,7 +663,7 @@ body:has(.atlas-page) {
     height: 104px;
     margin-top: 5px;
   }
-  .atlas-card:not(:has(.atlas-artwork)) {
+  :is(.atlas-card, .atlas-card-snapshot):not(:has(.atlas-artwork)) {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 'heading' 'works' 'copy' 'actions';
     padding-left: 12px;
@@ -675,11 +675,11 @@ body:has(.atlas-page) {
   .atlas-card-heading {
     padding: 0 18px 0 0;
   }
-  .atlas-card h2 {
+  :is(.atlas-card, .atlas-card-snapshot) h2 {
     font-size: 21px;
     line-height: 1.15;
   }
-  .atlas-card h3 {
+  :is(.atlas-card, .atlas-card-snapshot) h3 {
     font-size: 16px;
   }
   .atlas-work-switcher {
@@ -696,13 +696,15 @@ body:has(.atlas-page) {
     max-width: none;
     white-space: nowrap;
   }
-  .atlas-card:not(:has(.atlas-work-switcher)) {
+  :is(.atlas-card, .atlas-card-snapshot):not(:has(.atlas-work-switcher)) {
     grid-template-areas:
       'artwork heading'
       'copy copy'
       'actions actions';
   }
-  .atlas-card:not(:has(.atlas-work-switcher, .atlas-artwork)) {
+  :is(.atlas-card, .atlas-card-snapshot):not(
+    :has(.atlas-work-switcher, .atlas-artwork)
+  ) {
     grid-template-areas: 'heading' 'copy' 'actions';
   }
   .atlas-eyebrow {
@@ -770,7 +772,7 @@ body:has(.atlas-page) {
   .atlas-filters {
     grid-row: 2;
   }
-  .atlas-card {
+  :is(.atlas-card, .atlas-card-snapshot) {
     max-height: 48dvh;
   }
 }

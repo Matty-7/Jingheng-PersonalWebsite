@@ -31,6 +31,7 @@ import {
 } from '@/lib/atlas_browser';
 import { AtlasImage, AtlasStory } from './atlas_story';
 import { useAtlasDetail } from './use_atlas_detail';
+import { useAtlasCardMotion } from './use_atlas_card_motion';
 import { useMapLocation } from './use_map_location';
 import { useMusicPreview } from './use_music_preview';
 import { map_location_url } from '@/lib/map_location';
@@ -60,6 +61,8 @@ export function NewYorkAtlas({
     useAtlasDetail(entry_id, initial_detail);
   const selected = detail?.entry;
   const heading = useRef<HTMLHeadingElement>(null);
+  const card = useRef<HTMLElement>(null);
+  useAtlasCardMotion(card, summary?.id ?? null);
   const search_input = useRef<HTMLInputElement>(null);
   const origin = useRef<HTMLElement | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -277,6 +280,7 @@ export function NewYorkAtlas({
         )}
         {summary && (
           <article
+            ref={card}
             className="atlas-card atlas-detail"
             data-medium={summary.medium}
             aria-label="Selected place and work"

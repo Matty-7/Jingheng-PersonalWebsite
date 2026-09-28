@@ -24,6 +24,7 @@ export const AtlasMap = memo(function AtlasMap({
 }) {
   const container = useRef<HTMLDivElement>(null);
   const active_map = useRef<Leaflet.Map | null>(null);
+  const framed_map = useRef<Leaflet.Map | null>(null);
   const select = useRef(on_select);
   const selected = useRef(selected_id);
   const prefetch = useRef(on_prefetch);
@@ -220,7 +221,13 @@ export const AtlasMap = memo(function AtlasMap({
       });
       marker.on('add', () => {
         const element = marker.getElement();
-        element?.addEventListener('focus', anticipate);
+        element?.addEventListener('focus', () => {
+          anticipate();
+          // Leaflet may rebuild a focused pin when a flight's zoom snaps.
+          const live = marker.getElement();
+          if (live?.isConnected && live !== element && !element?.isConnected)
+            live.focus({ preventScroll: true });
+        });
         element?.addEventListener('touchstart', anticipate, { passive: true });
         element?.setAttribute('role', 'button');
         element?.setAttribute('aria-label', title);
@@ -239,16 +246,25 @@ export const AtlasMap = memo(function AtlasMap({
     }
     cluster.addLayers(next_markers);
     const render_icons = requestAnimationFrame(() => set_icons(next_icons));
+    const animate =
+      framed_map.current === map &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    framed_map.current = map;
+    map.stop();
+    if (selected.current && markers.current.has(selected.current)) {
+      return () => cancelAnimationFrame(render_icons);
+    }
     if (entries.length > 60)
-      map.setView([40.744, -73.98], 12, { animate: false });
+      map.flyTo([40.744, -73.98], 12, { animate, duration: 0.65 });
     else if (entries.length)
-      map.fitBounds(
+      map.flyToBounds(
         entries.map((entry) => entry.coordinates),
         {
           paddingTopLeft: [30, 30],
           paddingBottomRight: [30, 80],
           maxZoom: 14,
-          animate: false,
+          animate,
+          duration: 0.65,
         },
       );
     return () => cancelAnimationFrame(render_icons);
@@ -257,7 +273,9 @@ export const AtlasMap = memo(function AtlasMap({
   useEffect(() => {
     if (!instance || active_map.current !== instance.map) return;
     const active = selected_id ? markers.current.get(selected_id) : undefined;
-    if (!active) return;
+    if (!active) {
+      return;
+    }
     active.setZIndexOffset(1000);
     active.getElement()?.classList.add('is-selected');
     const point = instance.leaflet
@@ -268,20 +286,74 @@ export const AtlasMap = memo(function AtlasMap({
         fillColor: '#153f2c',
         fillOpacity: 1,
         interactive: false,
+        className: 'atlas-selected-point',
       })
       .addTo(instance.map);
-    const card_height =
-      document.querySelector('.atlas-card')?.getBoundingClientRect().height ??
-      220;
-    instance.map.panInside(active.getLatLng(), {
-      paddingTopLeft: [36, 36],
-      paddingBottomRight: [
-        36,
-        Math.min(card_height + 44, instance.map.getSize().y / 2),
-      ],
-      animate: false,
-    });
+    const { map } = instance;
+    const card = map
+      .getContainer()
+      .parentElement?.querySelector<HTMLElement>('.atlas-card');
+    const reduced_motion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    );
+    let following = true;
+    let frame = 0;
+    const center_place = () => {
+      if (!following || active_map.current !== map) return;
+      map.stop();
+      const zoom = map.getZoom();
+      const height = map.getSize().y;
+      const visible_height = Math.max(
+        80,
+        Math.min(height, card?.offsetTop ?? height),
+      );
+      const center = map.unproject(
+        map
+          .project(active.getLatLng(), zoom)
+          .add([0, (height - visible_height) / 2]),
+        zoom,
+      );
+      if (
+        map.getZoom() === zoom &&
+        map
+          .project(map.getCenter(), zoom)
+          .distanceTo(map.project(center, zoom)) < 1
+      )
+        return;
+      map.panTo(center, {
+        animate: !reduced_motion.matches,
+        duration: 0.65,
+        easeLinearity: 0.25,
+      });
+    };
+    const schedule_center = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(center_place);
+    };
+    const stop_following = () => {
+      following = false;
+      cancelAnimationFrame(frame);
+      map.stop();
+    };
+    const motion_changed = () => {
+      map.stop();
+      if (reduced_motion.matches) center_place();
+    };
+    const observer = new ResizeObserver(schedule_center);
+    if (card) observer.observe(card);
+    schedule_center();
+    map.getContainer().addEventListener('pointerdown', stop_following);
+    map
+      .getContainer()
+      .addEventListener('wheel', stop_following, { passive: true });
+    reduced_motion.addEventListener('change', motion_changed);
     return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      map.getContainer().removeEventListener('pointerdown', stop_following);
+      map.getContainer().removeEventListener('wheel', stop_following);
+      reduced_motion.removeEventListener('change', motion_changed);
+      if (active_map.current === map) map.stop();
       point.remove();
       active.setZIndexOffset(0);
       active.getElement()?.classList.remove('is-selected');
