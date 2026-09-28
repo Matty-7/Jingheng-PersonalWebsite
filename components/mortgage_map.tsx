@@ -24,6 +24,10 @@ import { MortgageCatalog } from './mortgage_catalog';
 import { MortgageLesson } from './mortgage_lesson';
 import type { MortgageFormulas } from '@/lib/mortgage_math';
 import { useLearningProgress } from './use_learning_progress';
+import {
+  tree_connections,
+  useLearningTreeMotion,
+} from './use_learning_tree_motion';
 
 export function MortgageMap({
   formulas,
@@ -43,7 +47,6 @@ export function MortgageMap({
   const map_ref = useRef<HTMLElement>(null);
   const tree_ref = useRef<HTMLElement>(null);
   const focus_requested = useRef(false);
-  const [connectors, set_connectors] = useState<string[]>([]);
   const concept = learning_index.get(selected)!;
   const route = route_for_concept(selected, progress.route_id);
   const tree = local_tree(route, selected);
@@ -51,42 +54,7 @@ export function MortgageMap({
     progress.completed.includes(id),
   ).length;
 
-  useLayoutEffect(() => {
-    const tree_element = tree_ref.current;
-    if (!tree_element) return;
-    function measure_connections() {
-      if (!tree_element) return;
-      const bounds = tree_element.getBoundingClientRect();
-      const pairs = [
-        ['.node-before-0', '.node-current'],
-        ['.node-before-1', '.node-current'],
-        ['.node-current', '.node-after-0'],
-        ['.node-after-0', '.node-after-1'],
-        ['.node-current', '.node-branch'],
-      ];
-      const paths = pairs.flatMap(([from, to]) => {
-        const source = tree_element.querySelector<HTMLElement>(from);
-        const target = tree_element.querySelector<HTMLElement>(to);
-        if (!source || !target || !source.offsetWidth || !target.offsetWidth)
-          return [];
-        const a = source.getBoundingClientRect();
-        const b = target.getBoundingClientRect();
-        const x1 = a.right - bounds.left;
-        const y1 = a.top + a.height / 2 - bounds.top;
-        const x2 = b.left - bounds.left;
-        const y2 = b.top + b.height / 2 - bounds.top;
-        const mid = (x1 + x2) / 2;
-        return [`M${x1} ${y1} C${mid} ${y1} ${mid} ${y2} ${x2} ${y2}`];
-      });
-      set_connectors(paths);
-    }
-    measure_connections();
-    const observer = new ResizeObserver(measure_connections);
-    observer.observe(tree_element);
-    return () => {
-      observer.disconnect();
-    };
-  }, [selected, route.id]);
+  useLearningTreeMotion(tree_ref, `${route.id}:${selected}`, loaded);
 
   useEffect(() => {
     if (!loaded) return;
@@ -220,8 +188,8 @@ export function MortgageMap({
         aria-label="Local learning tree"
       >
         <svg className="learning-tree-links" aria-hidden="true">
-          {connectors.map((path) => (
-            <path key={path} d={path} />
+          {tree_connections.map(([from, to]) => (
+            <path key={`${from}-${to}`} data-connection={`${from}-${to}`} />
           ))}
         </svg>
         {[
