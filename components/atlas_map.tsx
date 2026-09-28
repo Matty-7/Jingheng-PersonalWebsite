@@ -301,7 +301,7 @@ export const AtlasMap = memo(function AtlasMap({
     const center_place = () => {
       if (!following || active_map.current !== map) return;
       map.stop();
-      const zoom = Math.max(map.getZoom(), 14);
+      const zoom = map.getZoom();
       const height = map.getSize().y;
       const visible_height = Math.max(
         80,
@@ -320,9 +320,10 @@ export const AtlasMap = memo(function AtlasMap({
           .distanceTo(map.project(center, zoom)) < 1
       )
         return;
-      map.flyTo(center, zoom, {
+      map.panTo(center, {
         animate: !reduced_motion.matches,
         duration: 0.65,
+        easeLinearity: 0.25,
       });
     };
     const schedule_center = () => {
