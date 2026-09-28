@@ -3756,6 +3756,50 @@
           "source_label": "Electric Lady Studios · recording notes"
         }
       ]
+    },
+    {
+      "id": "charles-de-gaulle-to-jfk-bas",
+      "title": "Charles De Gaulle To JFK",
+      "artist": "Bas",
+      "album": "Last Winter",
+      "year": 2014,
+      "genre": "Hip-Hop/Rap",
+      "track_id": 1443416362,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/25/4b/c4/254bc444-690f-6826-8384-de1598ccc108/00602537781188.rgb.jpg/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/e9/bf/dee9bf95-0fb2-abde-7284-7a9f718a32e4/mzaf_9967279209837327634.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/charles-de-gaulle-to-jfk/1443416251?i=1443416362&uo=4",
+      "metadata_source": "https://itunes.apple.com/lookup?id=1443416362&country=us",
+      "metadata_release_date": "2014-04-29T12:00:00Z",
+      "place_ids": [
+        "jfk-airport"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "Charles De Gaulle to JFK",
+      "note": "Bas names the Paris–New York airport route amid a restless run of international travel.",
+      "source_url": "https://www.shazam.com/track/113029783/charles-de-gaulle-to-jfk",
+      "source_label": "Shazam · lyrics"
+    },
+    {
+      "id": "lga-wakey-wakey",
+      "title": "LGA",
+      "artist": "Wakey!Wakey!",
+      "album": "War Sweater EP",
+      "year": 2009,
+      "genre": "Pop",
+      "track_id": 317081019,
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/09/f2/ef/mzi.dejzowed.tif/600x600bb.jpg",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2c/df/f7/2cdff7ae-c112-f483-c033-8f1b896269a9/mzaf_4158826869938722389.plus.aac.p.m4a",
+      "apple_music_url": "https://music.apple.com/us/album/lga/317080996?i=317081019&uo=4",
+      "metadata_source": "https://itunes.apple.com/search?term=Wakey+Wakey+LGA&entity=song&country=us&limit=10",
+      "metadata_release_date": "2009-05-18T12:00:00Z",
+      "place_ids": [
+        "laguardia-airport"
+      ],
+      "relation": "Lyrics",
+      "excerpt": "Laguardia made you late",
+      "note": "LaGuardia delays a loved one’s homecoming in this piano-led song about waiting.",
+      "source_url": "https://www.seekalyric.com/printer_friendly/Wakey__Wakey_/LGA",
+      "source_label": "SeekALyric · lyrics"
     }
   ],
   "places": [
@@ -5038,6 +5082,36 @@
       "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.76832&mlon=-73.98153#map=18/40.76832/-73.98153",
       "plus_code": "87G8Q299+89",
       "geography_source_url": "https://en.wikipedia.org/wiki/Columbus_Circle"
+    },
+    {
+      "id": "jfk-airport",
+      "name": "John F. Kennedy International Airport (JFK)",
+      "area": "Jamaica, Queens",
+      "coordinates": [
+        40.6399281,
+        -73.7786922
+      ],
+      "geography_source_url": "https://www.airnav.com/airport/JFK",
+      "map_query": "John F. Kennedy International Airport (JFK), Queens, New York",
+      "precision": "Representative point",
+      "note": "Airport-level reference point, not a terminal, pickup lane or gate. Use your airline’s current terminal directions; secure areas require the appropriate travel access.",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.6399281&mlon=-73.7786922#map=14/40.6399281/-73.7786922",
+      "plus_code": "87G8J6QC+XG"
+    },
+    {
+      "id": "laguardia-airport",
+      "name": "LaGuardia Airport (LGA)",
+      "area": "East Elmhurst, Queens",
+      "coordinates": [
+        40.7772422,
+        -73.8726056
+      ],
+      "geography_source_url": "https://www.airnav.com/airport/LGA",
+      "map_query": "LaGuardia Airport (LGA), Queens, New York",
+      "precision": "Representative point",
+      "note": "Airport-level reference point, not a terminal, pickup lane or gate. Use your airline’s current terminal directions; secure areas require the appropriate travel access.",
+      "coordinate_reference": "https://www.openstreetmap.org/?mlat=40.7772422&mlon=-73.8726056#map=14/40.7772422/-73.8726056",
+      "plus_code": "87G8Q4GG+VX"
     }
   ]
 }

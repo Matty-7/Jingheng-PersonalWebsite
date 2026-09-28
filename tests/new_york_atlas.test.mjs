@@ -76,10 +76,31 @@ test('card introductions stop at complete sentences without splitting abbreviate
   );
 });
 
+test('both airports expose film, literature and music without merging the TWA terminal into JFK', () => {
+  for (const query of ['JFK', 'LGA']) {
+    const entries = search_atlas('all', query);
+    assert.deepEqual(
+      new Set(entries.map((entry) => entry.medium)),
+      new Set(['film', 'literature', 'music']),
+    );
+    for (const entry of entries) {
+      assert.equal(atlas_connections(entry).entries.length, 2);
+      assert.ok(atlas_detail(entry.id).summary.length <= 200);
+    }
+  }
+  const terminal = search_atlas('film', 'JFK')[0];
+  const airport = search_atlas('literature', 'JFK')[0];
+  assert.notDeepEqual(
+    terminal.location.coordinates,
+    airport.passage.coordinates,
+  );
+  assert.equal(airport.passage.excerpt_kind, 'Publisher synopsis');
+});
+
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.equal(film_catalog.length, 61);
-  assert.equal(literary_works.length, 24);
-  assert.equal(music_tracks.length, 155);
+  assert.equal(film_catalog.length, 63);
+  assert.equal(literary_works.length, 26);
+  assert.equal(music_tracks.length, 157);
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,
     atlas_entries.length,

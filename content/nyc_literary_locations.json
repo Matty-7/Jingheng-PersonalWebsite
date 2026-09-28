@@ -408,6 +408,40 @@
         "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780385539258",
         "credit": "Doubleday / Penguin Random House; official publisher cover"
       }
+    },
+    {
+      "id": "statistical_probability",
+      "title": "The Statistical Probability of Love at First Sight",
+      "author": "Jennifer E. Smith",
+      "year": 2012,
+      "kind": "Book",
+      "source_url": "https://www.hachettebookgroup.com/titles/jennifer-e-smith/the-statistical-probability-of-love-at-first-sight/9780316192866/",
+      "text_url": "https://simonteen.com/book/the-statistical-probability-of-love-at-first-sight/",
+      "rights": "Copyrighted novel; brief publisher-synopsis quotation",
+      "cover": {
+        "src": "/images/literary-map/statistical-probability.jpg",
+        "alt": "Published cover of The Statistical Probability of Love at First Sight by Jennifer E. Smith.",
+        "edition": "Poppy / Hachette edition, ISBN 9780316192866; current screen-adaptation cover",
+        "source_url": "https://www.hachettebookgroup.com/titles/jennifer-e-smith/the-statistical-probability-of-love-at-first-sight/9780316192866/",
+        "credit": "Poppy / Hachette Book Group; official publisher cover"
+      }
+    },
+    {
+      "id": "a_lot_like_adios",
+      "title": "A Lot Like Adiós",
+      "author": "Alexis Daria",
+      "year": 2021,
+      "kind": "Book",
+      "source_url": "https://alexisdaria.com/books/a-lot-like-adios/",
+      "text_url": "https://freshfiction.com/page.php?id=11470",
+      "rights": "Copyrighted novel; brief quotation from a publisher-authorized excerpt",
+      "cover": {
+        "src": "/images/literary-map/a-lot-like-adios.jpg",
+        "alt": "Published cover of A Lot Like Adiós by Alexis Daria.",
+        "edition": "Avon paperback, September 14, 2021; ISBN 9780062959966",
+        "source_url": "https://alexisdaria.com/books/a-lot-like-adios/",
+        "credit": "Avon / HarperCollins; published cover provided by Alexis Daria"
+      }
     }
   ],
   "entries": [
@@ -1520,6 +1554,48 @@
       "precision": "Named former restaurant at 73 Mulberry Street. The pin follows the restaurant listing; its interior should not be treated as a current literary attraction.",
       "visit_note": "The restaurant is listed as permanently closed; view the former address from the public sidewalk.",
       "place_source_url": "https://mapstr.com/place/eWcY1ErpE2g"
+    },
+    {
+      "id": "statistical-probability-jfk",
+      "work_id": "statistical_probability",
+      "place_id": "jfk-airport",
+      "place": "John F. Kennedy International Airport (JFK)",
+      "area": "Jamaica, Queens",
+      "coordinates": [
+        40.6399281,
+        -73.7786922
+      ],
+      "plus_code": "87G8J6QC+XG",
+      "map_query": "John F. Kennedy International Airport (JFK), Queens, New York",
+      "locator": "Simon Teen publisher synopsis; opening airport encounter",
+      "source_url": "https://simonteen.com/book/the-statistical-probability-of-love-at-first-sight/",
+      "excerpt": "Having just missed her flight, she's stuck at JFK airport",
+      "excerpt_kind": "Publisher synopsis",
+      "note": "A missed flight leaves Hadley waiting at JFK, where she meets Oliver before their journey to London.",
+      "precision": "JFK is named in the publisher’s synopsis. Airport-level pin; no specific terminal or gate is claimed.",
+      "visit_note": "Airport-level reference point, not a terminal, pickup lane or gate. Use your airline’s current terminal directions; secure areas require the appropriate travel access.",
+      "place_source_url": "https://www.airnav.com/airport/JFK"
+    },
+    {
+      "id": "a-lot-like-adios-laguardia",
+      "work_id": "a_lot_like_adios",
+      "place_id": "laguardia-airport",
+      "place": "LaGuardia Airport (LGA)",
+      "area": "East Elmhurst, Queens",
+      "coordinates": [
+        40.7772422,
+        -73.8726056
+      ],
+      "plus_code": "87G8Q4GG+VX",
+      "map_query": "LaGuardia Airport (LGA), Queens, New York",
+      "locator": "Chapter 4; publisher-authorized excerpt at Fresh Fiction",
+      "source_url": "https://freshfiction.com/page.php?id=11470",
+      "excerpt": "nighttime traffic leading into LaGuardia Airport",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Michelle picks up Gabe at LaGuardia after thirteen years apart, bringing old attraction and unfinished feelings to the curb.",
+      "precision": "Named airport and pickup scene. The excerpt does not identify a terminal or exact curb; the pin represents LaGuardia as a whole.",
+      "visit_note": "Airport-level reference point, not a terminal, pickup lane or gate. Use your airline’s current terminal directions; secure areas require the appropriate travel access.",
+      "place_source_url": "https://www.airnav.com/airport/LGA"
     }
   ]
 }

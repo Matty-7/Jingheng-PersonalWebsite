@@ -2523,6 +2523,24 @@
       "original_image": "https://www.motionpictures.org/wp-content/uploads/2019/12/UG_03247-1024x621.jpg",
       "verification": "Cinematographer Darius Khondji describes Howard being pushed into the fountain; Josh Safdie independently identifies Sixth Avenue and 50th Street. Locally inspected A24 image shows Howard soaked in the basin with Radio City behind. Pin marks the public approach, not a claim of exact camera position. Image is conservatively classified as production still; source explicitly credits Courtesy of A24 without naming a photographer.",
       "rights": "Copyrighted production image; source attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "catch-me-if-you-can",
+      "location_id": "twa-flight-center",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/catchmeifyoucan.html",
+      "original_image": "https://onthesetofnewyork.com/locations/catchmeifyoucan/catchmeifyoucan114.jpg",
+      "verification": "Parent visually inspected the source image. Source page places this film frame within its named TWA Terminal location block.",
+      "rights": "Copyrighted image; attribution retained. No open license or reuse permission asserted."
+    },
+    {
+      "film_id": "sully",
+      "location_id": "laguardia-airport",
+      "frame_status": "verified_production_still",
+      "source_page": "https://portfolio.panynj.gov/2016/09/13/behind-the-scenes-at-laguardia-airport-the-making-of-sully/",
+      "original_image": "https://portfolio.panynj.gov/wp-content/uploads/2016/09/hudson-news-scene.jpg?w=640",
+      "verification": "Parent visually inspected the source image. Port Authority caption identifies filming outside Hudson News; credited as behind-the-scenes production photography, not a film frame.",
+      "rights": "Copyrighted image; attribution retained. No open license or reuse permission asserted."
     }
   ]
 }

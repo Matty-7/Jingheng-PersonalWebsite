@@ -62,6 +62,22 @@ export type AtlasEntry = AtlasBase &
 // These are reviewed area associations, not replacement coordinates or merged places.
 export const atlas_areas = [
   {
+    name: 'JFK Airport',
+    places: [
+      'film:twa-flight-center',
+      'literature:jfk-airport',
+      'music:jfk-airport',
+    ],
+  },
+  {
+    name: 'LaGuardia Airport',
+    places: [
+      'film:laguardia-airport',
+      'literature:laguardia-airport',
+      'music:laguardia-airport',
+    ],
+  },
+  {
     name: 'Washington Square',
     places: [
       'film:washington-square-arch',
