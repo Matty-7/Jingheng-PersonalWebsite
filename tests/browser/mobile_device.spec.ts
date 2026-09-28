@@ -68,6 +68,10 @@ test('device touch filters Atlas and selects a unified place card', async ({
   await music.tap();
   await expect(page.locator('.atlas-card')).toHaveCount(0);
   await page.getByRole('searchbox').fill('cornelia street');
+  await expect(page.locator('#atlas-search-hint')).toContainText('in Music');
+  await page
+    .getByRole('searchbox')
+    .evaluate((input) => (input as HTMLInputElement).blur());
   await page.locator('.atlas-search-results button').first().tap();
   await expect(page.locator('.atlas-card')).toHaveAttribute(
     'data-medium',

@@ -137,6 +137,10 @@ body:has(.atlas-page) {
 .atlas-search input:focus-visible {
   outline: none;
 }
+.atlas-search input::placeholder {
+  color: var(--atlas-muted);
+  opacity: 1;
+}
 .atlas-search input::-webkit-search-cancel-button {
   display: none;
 }
@@ -167,6 +171,29 @@ body:has(.atlas-page) {
   padding: 12px;
   border-radius: 8px;
   background: transparent;
+}
+.atlas-search-hint,
+.atlas-search-count {
+  display: block;
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--atlas-muted);
+  font-size: 13px;
+}
+.atlas-search-count {
+  padding-top: 2px;
+  padding-bottom: 6px;
+}
+.atlas-search-results .atlas-search-result-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--atlas-ink);
+}
+.atlas-search-kind {
+  flex-shrink: 0;
+  font-size: 12px;
 }
 .atlas-search-results button:hover,
 .atlas-search-results button:focus-visible {
