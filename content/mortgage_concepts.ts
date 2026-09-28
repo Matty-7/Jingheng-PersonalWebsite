@@ -321,6 +321,18 @@ export const mortgage_sources: Record<
     title: 'Asset Pricing with Cohort-Based Trading · pp. 35–36',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr931.pdf#page=37',
   },
+  burnout_history: {
+    publisher: 'Federal Reserve Bank of New York',
+    title:
+      'Asset Pricing with Cohort-Based Trading · Appendix IA.3, refinancing history · revised October 2021',
+    url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr931.pdf#page=88',
+  },
+  burnout_constraints: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'First Lien Mortgage Model · loan age, updated LTV and burnout, pp. 159–161 · January 2026',
+    url: 'https://www.federalreserve.gov/supervisionreg/files/credit-risk-models.pdf#page=159',
+  },
   guide: {
     publisher: 'SIFMA',
     title: 'Investor’s Guide to Mortgage Securities · hosted by Fifth Third',
@@ -1708,13 +1720,13 @@ const original_concepts: MortgageConcept[] = [
     title: 'Burnout',
     subtitle: 'Who remains after repeated opportunities',
     summary:
-      'Repeated refinancing opportunities can remove the most responsive borrowers, leaving collateral that reacts less strongly to another rate decline.',
+      'Repeated refinancing opportunities can remove the most responsive borrowers. The borrowers who remain may then respond less strongly to a similar incentive: a history-dependent selection effect called burnout.',
     distinction:
-      'Burnout is a history-dependent composition effect, not simply loan age.',
-    question: 'Does today’s rate incentive fully describe a seasoned pool?',
+      'Low CPR or high WALA alone does not establish burnout. An old loan may never have had a feasible refinancing opportunity, while eligibility constraints or transaction costs can also keep observed speeds low. Compare prior opportunities and borrower constraints, not just today’s rate gap or loan age. For example, improved home equity or credit eligibility can let some remaining borrowers refinance; a larger rate decline can also overcome costs. This can weaken apparent prepayment protection without undoing past selection. It does not guarantee faster payments from the whole pool.',
+    question: 'Do low CPR and high WALA alone establish burnout?',
     answer:
-      'No. Its past refinancing opportunities help explain who is still there.',
-    sources: ['cohort'],
+      'No. Check past feasible refinancing opportunities and borrower constraints. Age is not the same as selection; changing rates, equity or eligibility can allow some remaining borrowers to refinance.',
+    sources: ['burnout_history', 'burnout_constraints'],
     links: [
       {
         id: 'prepayments',
@@ -1724,6 +1736,21 @@ const original_concepts: MortgageConcept[] = [
         id: 'specified',
         reason:
           'Refinancing history can influence the value of pool selection.',
+      },
+      {
+        id: 'incentive',
+        reason:
+          'The current rate advantage and the history of past opportunities answer different questions.',
+      },
+      {
+        id: 'wala',
+        reason:
+          'Loan age measures seasoning, not whether borrowers passed up feasible refinancing opportunities.',
+      },
+      {
+        id: 'refinance_eligibility',
+        reason:
+          'Changes in credit or equity can make refinancing possible for borrowers who previously could not qualify.',
       },
     ],
     aliases: [],

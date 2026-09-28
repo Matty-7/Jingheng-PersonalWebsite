@@ -1,5 +1,49 @@
 import { test, expect } from '@playwright/test';
 
+for (const reduced_motion of ['no-preference', 'reduce'] as const) {
+  test(`burnout distinguishes selection from age and constraints (${reduced_motion})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: reduced_motion });
+    await page.goto('/portfolio/mortgage-map?concept=burnout#concept=burnout');
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('Burnout');
+    await page.getByText('Why it matters', { exact: true }).press('Enter');
+    const depth = page.locator('.learning-depth');
+    await expect(depth).toContainText('Low CPR or high WALA alone');
+    await expect(depth).toContainText('without undoing past selection');
+    await expect(depth.getByRole('link')).toHaveCount(2);
+    const choices = page.getByRole('group', { name: 'Choose an answer' });
+    await choices.getByRole('button', { name: /^Yes\. Low CPR/ }).click();
+    await expect(page.locator('.learning-answer')).toContainText('Not quite');
+    await expect(
+      page.getByRole('button', { name: 'Mark understood & continue' }),
+    ).toBeDisabled();
+    await choices
+      .getByRole('button', { name: /^No\. Check past/ })
+      .press('Enter');
+    await expect(page.locator('.learning-answer')).toContainText(
+      'That’s right',
+    );
+    await expect(
+      page.getByRole('button', { name: 'Mark understood & continue' }),
+    ).toBeEnabled();
+    await depth.getByRole('button', { name: 'WALA', exact: true }).click();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('WALA');
+    await page.goBack();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('Burnout');
+    await page.reload();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('Burnout');
+    await page.getByText('Why it matters', { exact: true }).press('Enter');
+    await expect(depth).toContainText('improved home equity');
+    const overflow = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(false);
+  });
+}
+
 test('all domains and concepts remain available through one catalog', async ({
   page,
 }) => {
