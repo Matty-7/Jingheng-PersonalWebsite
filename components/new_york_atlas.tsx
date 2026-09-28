@@ -9,6 +9,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type KeyboardEvent as ReactKeyboardEvent,
 } from 'react';
 import {
   ArrowUpRight,
@@ -64,11 +65,13 @@ export function NewYorkAtlas({
   const card = useRef<HTMLElement>(null);
   useAtlasCardMotion(card, summary?.id ?? null);
   const search_input = useRef<HTMLInputElement>(null);
+  const search_wrap = useRef<HTMLDivElement>(null);
   const origin = useRef<HTMLElement | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const info_button = useRef<HTMLButtonElement>(null);
   const work_switcher = useRef<HTMLElement>(null);
   const [search_open, set_search_open] = useState(false);
+  const has_query = query.trim().length > 0;
   const [info_id, set_info_id] = useState<string | null>(null);
   const info_open = info_id !== null && info_id === entry_id;
   const { audio, audio_events, playing, loading, message, toggle_preview } =
@@ -78,8 +81,9 @@ export function NewYorkAtlas({
     : [];
   const select_entry = useCallback(
     (id: string) => {
-      origin.current =
-        document.activeElement instanceof HTMLElement
+      origin.current = search_wrap.current?.contains(document.activeElement)
+        ? search_input.current
+        : document.activeElement instanceof HTMLElement
           ? document.activeElement
           : null;
       set_search_open(false);
@@ -117,16 +121,66 @@ export function NewYorkAtlas({
     else dialog.current?.close();
   }, [info_open]);
   useEffect(() => {
+    if (!search_open) return;
+    const dismiss_outside = (event: Event) => {
+      if (
+        event.target instanceof Node &&
+        !search_wrap.current?.contains(event.target)
+      )
+        set_search_open(false);
+    };
+    // Safari can blur the input without focusing a clicked result button.
+    document.addEventListener('pointerdown', dismiss_outside);
+    document.addEventListener('focusin', dismiss_outside);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss_outside);
+      document.removeEventListener('focusin', dismiss_outside);
+    };
+  }, [search_open]);
+  useEffect(() => {
     const dismiss = (event: KeyboardEvent) => {
       if (event.key !== 'Escape' || info_open) return;
       if (search_open) {
-        set_search_open(false);
         search_input.current?.focus();
+        set_search_open(false);
       } else if (entry_id) close_card();
     };
     window.addEventListener('keydown', dismiss);
     return () => window.removeEventListener('keydown', dismiss);
   }, [info_open, search_open, entry_id, close_card]);
+  const navigate_search = (
+    event: ReactKeyboardEvent<HTMLInputElement | HTMLButtonElement>,
+  ) => {
+    if (
+      event.nativeEvent.isComposing ||
+      !has_query ||
+      !results.length ||
+      !['ArrowDown', 'ArrowUp'].includes(event.key)
+    )
+      return;
+    event.preventDefault();
+    set_search_open(true);
+    const direction = event.key === 'ArrowDown' ? 1 : -1;
+    const focus_result = () => {
+      const options = Array.from(
+        search_wrap.current?.querySelectorAll<HTMLButtonElement>(
+          '[data-atlas-result]',
+        ) ?? [],
+      );
+      const current = options.findIndex(
+        (option) => option === document.activeElement,
+      );
+      const next =
+        current < 0
+          ? direction > 0
+            ? 0
+            : options.length - 1
+          : current + direction;
+      (options[next] ?? search_input.current)?.focus();
+    };
+    if (search_open) focus_result();
+    else requestAnimationFrame(focus_result);
+  };
   const artwork = atlas_card_artwork(detail);
   const selection_url =
     typeof window === 'undefined'
@@ -168,27 +222,22 @@ export function NewYorkAtlas({
             ),
           )}
         </fieldset>
-        <div
-          className="atlas-search-wrap"
-          onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget))
-              set_search_open(false);
-          }}
-        >
+        <div ref={search_wrap} className="atlas-search-wrap">
           <div className="atlas-search">
             <Search size={18} aria-hidden="true" />
             <label className="sr-only" htmlFor="atlas-search">
-              Search the atlas
+              Search places, films, TV, music, books, and creators
             </label>
             <input
               ref={search_input}
               id="atlas-search"
               type="search"
+              placeholder="Search places or titles"
+              autoComplete="off"
               value={query}
               disabled={!ready}
-              aria-controls={
-                search_open && query ? 'atlas-search-results' : undefined
-              }
+              aria-controls={search_open ? 'atlas-search-results' : undefined}
+              aria-describedby={search_open ? 'atlas-search-hint' : undefined}
               onFocus={() => set_search_open(true)}
               onChange={(event) => {
                 set_search_open(true);
@@ -198,17 +247,15 @@ export function NewYorkAtlas({
                 );
               }}
               onKeyDown={(event) => {
-                if (event.key === 'Enter' && results.length && query) {
+                navigate_search(event);
+                if (
+                  event.key === 'Enter' &&
+                  !event.nativeEvent.isComposing &&
+                  results.length &&
+                  has_query
+                ) {
                   event.preventDefault();
                   select_entry(results[0].id);
-                }
-                if (event.key === 'ArrowDown') {
-                  event.preventDefault();
-                  document
-                    .querySelector<HTMLButtonElement>(
-                      '#atlas-search-results button',
-                    )
-                    ?.focus();
                 }
               }}
             />
@@ -225,27 +272,45 @@ export function NewYorkAtlas({
               </button>
             )}
           </div>
-          {search_open && query && results.length > 0 && (
+          {search_open && (
             <div
               className="atlas-search-results"
               id="atlas-search-results"
               aria-label="Search results"
             >
-              {results.slice(0, 8).map((entry) => (
-                <button
-                  type="button"
-                  key={entry.id}
-                  onPointerEnter={() => prefetch_detail(entry.id)}
-                  onFocus={() => prefetch_detail(entry.id)}
-                  onTouchStart={() => prefetch_detail(entry.id)}
-                  onClick={() => select_entry(entry.id)}
-                >
-                  <strong>{entry.place_name}</strong>
-                  <span>
-                    {entry.title} · {entry.label}
-                  </span>
-                </button>
-              ))}
+              <p className="atlas-search-hint" id="atlas-search-hint">
+                {medium === 'all'
+                  ? 'Places, films & TV, music, books, and creators in this Atlas.'
+                  : `Search places, titles, and creators in ${atlas_labels[medium]}.`}
+              </p>
+              {has_query && (
+                <output className="atlas-search-count">
+                  {results.length
+                    ? `${results.length} ${results.length === 1 ? 'connection' : 'connections'}${results.length > 8 ? ' · First 8 shown' : ''}`
+                    : 'No matches in this Atlas. Try another place or title.'}
+                </output>
+              )}
+              {has_query &&
+                results.slice(0, 8).map((entry) => (
+                  <button
+                    type="button"
+                    key={entry.id}
+                    data-atlas-result={entry.id}
+                    onKeyDown={navigate_search}
+                    onPointerEnter={() => prefetch_detail(entry.id)}
+                    onFocus={() => prefetch_detail(entry.id)}
+                    onTouchStart={() => prefetch_detail(entry.id)}
+                    onClick={() => select_entry(entry.id)}
+                  >
+                    <span className="atlas-search-result-heading">
+                      <strong>{entry.title}</strong>
+                      <span className="atlas-search-kind">{entry.label}</span>
+                    </span>
+                    <span>
+                      {entry.place_name} · {entry.area}
+                    </span>
+                  </button>
+                ))}
             </div>
           )}
         </div>
