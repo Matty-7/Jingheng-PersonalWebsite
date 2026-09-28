@@ -1,0 +1,106 @@
+{
+  "reviewed_on": "2026-09-27",
+  "scope": "JFK and LaGuardia: two films, two books, two songs; preserve existing interface and catalogs.",
+  "geography": [
+    {
+      "id": "jfk-airport",
+      "name": "John F. Kennedy International Airport (JFK)",
+      "area": "Jamaica, Queens",
+      "coordinates": [
+        40.6399281,
+        -73.7786922
+      ],
+      "geography_source_url": "https://www.airnav.com/airport/JFK"
+    },
+    {
+      "id": "laguardia-airport",
+      "name": "LaGuardia Airport (LGA)",
+      "area": "East Elmhurst, Queens",
+      "coordinates": [
+        40.7772422,
+        -73.8726056
+      ],
+      "geography_source_url": "https://www.airnav.com/airport/LGA"
+    },
+    {
+      "id": "twa-flight-center",
+      "coordinates": [
+        40.64583,
+        -73.7775
+      ],
+      "source_url": "https://www.wikidata.org/wiki/Q29257",
+      "precision": "Historic terminal building, separate from airport-level literary and song pins."
+    }
+  ],
+  "films": [
+    {
+      "id": "catch-me-if-you-can",
+      "source_url": "https://onthesetofnewyork.com/catchmeifyoucan.html",
+      "metadata_url": "https://amblin.com/movie/catch-me-if-you-can/",
+      "image_url": "https://onthesetofnewyork.com/locations/catchmeifyoucan/catchmeifyoucan114.jpg",
+      "geography_source_url": "https://www.wikidata.org/wiki/Q29257"
+    },
+    {
+      "id": "sully",
+      "source_url": "https://portfolio.panynj.gov/2016/09/13/behind-the-scenes-at-laguardia-airport-the-making-of-sully/",
+      "metadata_url": "https://www.youtube.com/watch?v=mjKEXxO2KNE",
+      "image_url": "https://portfolio.panynj.gov/wp-content/uploads/2016/09/hudson-news-scene.jpg?w=640",
+      "geography_source_url": "https://www.airnav.com/airport/LGA"
+    }
+  ],
+  "books": [
+    {
+      "id": "statistical_probability",
+      "source_url": "https://simonteen.com/book/the-statistical-probability-of-love-at-first-sight/",
+      "metadata_url": "https://www.hachettebookgroup.com/titles/jennifer-e-smith/the-statistical-probability-of-love-at-first-sight/9780316192866/",
+      "image_url": "https://www.hachettebookgroup.com/wp-content/uploads/2024/01/9780316192866.jpg?w=422",
+      "excerpt_kind": "Publisher synopsis"
+    },
+    {
+      "id": "a_lot_like_adios",
+      "source_url": "https://freshfiction.com/page.php?id=11470",
+      "metadata_url": "https://alexisdaria.com/books/a-lot-like-adios/",
+      "image_url": "https://alexisdaria.com/wp-content/uploads/2021/06/adios_book-2.jpg?w=676",
+      "excerpt_kind": "Brief excerpt"
+    }
+  ],
+  "music": [
+    {
+      "id": "charles-de-gaulle-to-jfk-bas",
+      "track_id": 1443416362,
+      "metadata_url": "https://itunes.apple.com/lookup?id=1443416362&country=us",
+      "source_url": "https://www.shazam.com/track/113029783/charles-de-gaulle-to-jfk"
+    },
+    {
+      "id": "lga-wakey-wakey",
+      "track_id": 317081019,
+      "metadata_url": "https://itunes.apple.com/search?term=Wakey+Wakey+LGA&entity=song&country=us&limit=10",
+      "source_url": "https://www.songverses.net/wakey-wakey/lga"
+    }
+  ],
+  "assets": [
+    {
+      "site_file": "/images/film-map/catch-me-if-you-can--twa-flight-center.jpg",
+      "sha256": "13bbcd50bd7b49123faca45cfde5a44371fec40831ab6bd6c248e5be34271863"
+    },
+    {
+      "site_file": "/images/film-map/sully--laguardia-airport.jpg",
+      "sha256": "b7bf5b1103fb7a5c0b54607752e02c7ed573b2389887fc0c8ff358bbe1edc8ea"
+    },
+    {
+      "site_file": "/images/literary-map/statistical-probability.jpg",
+      "sha256": "6aecaece80038345f64bcbd93e5ba4d1159486c7f18bfea1b534df64b7fc3938"
+    },
+    {
+      "site_file": "/images/literary-map/a-lot-like-adios.jpg",
+      "sha256": "884d89a59301e7b3dfc5b81dfa8cc7c968db91c4ed31bc0147ca7dd9dfceaca7"
+    }
+  ],
+  "notes": [
+    "All four local images visually inspected before integration.",
+    "Sully uses an explicitly credited behind-the-scenes production photo, not a film frame.",
+    "Statistical Probability uses an explicitly labeled publisher synopsis, not an invented novel passage.",
+    "LGA recording year is 2009 (War Sweater EP); do not conflate earlier live performances with this recording.",
+    "Song excerpts remain under ten words; literary excerpts under twenty-five words per work."
+  ]
+}

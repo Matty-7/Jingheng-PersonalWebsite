@@ -140,7 +140,7 @@ test('real scene frames have local derivatives and matching provenance; missing 
 test('series carry explicit format, creator and completed or ongoing run metadata', () => {
   const films = data.films.filter((work) => work.format !== 'series');
   const series = data.films.filter((work) => work.format === 'series');
-  assert.equal(films.length, 47);
+  assert.equal(films.length, 49);
   assert.equal(series.length, 14);
   for (const work of series) {
     assert.ok(work.creators && !work.director, work.id);

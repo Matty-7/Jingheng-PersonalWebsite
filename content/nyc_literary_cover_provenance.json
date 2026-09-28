@@ -406,6 +406,40 @@
         295,
         450
       ]
+    },
+    {
+      "id": "statistical-probability",
+      "title": "The Statistical Probability of Love at First Sight",
+      "author": "Jennifer E. Smith",
+      "original_publication_year": 2012,
+      "cover_edition": "Poppy / Hachette edition, ISBN 9780316192866; current screen-adaptation cover",
+      "dimensions": [
+        422,
+        640
+      ],
+      "source_page": "https://www.hachettebookgroup.com/titles/jennifer-e-smith/the-statistical-probability-of-love-at-first-sight/9780316192866/",
+      "image_url": "https://www.hachettebookgroup.com/wp-content/uploads/2024/01/9780316192866.jpg?w=422",
+      "credit": "Poppy / Hachette Book Group; official publisher cover",
+      "rights_note": "Copyrighted cover; publisher or author source retained. No open license asserted.",
+      "alt": "Published cover of The Statistical Probability of Love at First Sight by Jennifer E. Smith.",
+      "site_file": "/images/literary-map/statistical-probability.jpg"
+    },
+    {
+      "id": "a-lot-like-adios",
+      "title": "A Lot Like Adiós",
+      "author": "Alexis Daria",
+      "original_publication_year": 2021,
+      "cover_edition": "Avon paperback, September 14, 2021; ISBN 9780062959966",
+      "dimensions": [
+        599,
+        900
+      ],
+      "source_page": "https://alexisdaria.com/books/a-lot-like-adios/",
+      "image_url": "https://alexisdaria.com/wp-content/uploads/2021/06/adios_book-2.jpg?w=676",
+      "credit": "Avon / HarperCollins; published cover provided by Alexis Daria",
+      "rights_note": "Copyrighted cover; publisher or author source retained. No open license asserted.",
+      "alt": "Published cover of A Lot Like Adiós by Alexis Daria.",
+      "site_file": "/images/literary-map/a-lot-like-adios.jpg"
     }
   ],
   "magazine": {

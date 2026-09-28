@@ -376,6 +376,22 @@
       "excerpt_sha256": "0320f3251fd18c5a79b884216612efe80bdc4d960c5b56378267489daf5aaf06",
       "verification": "Verbatim contiguous excerpt checked against publisher or publisher-supplied novel text; the interpretation is independently written.",
       "coordinate_source": "Mapstr structured data and Apple Maps link specify 40.7162382, -73.9992305 for 73 Mulberry Street; historical address corroborated by Time Out and NYC Chinatown storefront archive."
+    },
+    {
+      "entry_id": "statistical-probability-jfk",
+      "source_url": "https://simonteen.com/book/the-statistical-probability-of-love-at-first-sight/",
+      "source_file_sha256": "7d889f5d02e30f23c68ebbe40fb3d7874b5b8171646aa264161ebffafc816004",
+      "source_capture": "Publisher HTML",
+      "excerpt_sha256": "808f6d6eeea498ceac768c4455e90b98dbdc72495b50f43eccde5a1d650f1f05",
+      "verification": "Exact short wording checked against the linked source. Explicitly labeled publisher synopsis, not a quotation from the novel text. Airport-level geography; no terminal invented."
+    },
+    {
+      "entry_id": "a-lot-like-adios-laguardia",
+      "source_url": "https://freshfiction.com/page.php?id=11470",
+      "source_file_sha256": "e5f7c9975420dd297a5eb078987bccc7c8d371fb9d062cab0921bae3ee6505d4",
+      "source_capture": "Normalized short evidence capture from web-retrieved authorized Chapter 4 excerpt; not full HTML",
+      "excerpt_sha256": "9a58842d3717015e999c2ee127c9b986683656acfbdaa076c953fddb00feac11",
+      "verification": "Exact short wording checked against the linked source. Publisher permission and Chapter 4 locator appear on the source page. Airport-level geography; no terminal invented."
     }
   ]
 }

@@ -455,6 +455,20 @@
       "year": 2019,
       "director": "Josh Safdie and Benny Safdie",
       "note": "A jeweller chases a life-changing score through the Diamond District."
+    },
+    {
+      "id": "catch-me-if-you-can",
+      "title": "Catch Me If You Can",
+      "year": 2002,
+      "director": "Steven Spielberg",
+      "note": "A young impostor and the FBI agent pursuing him cross paths in the jet age."
+    },
+    {
+      "id": "sully",
+      "title": "Sully",
+      "year": 2016,
+      "director": "Clint Eastwood",
+      "note": "The crew of Flight 1549 faces the aftermath of an emergency landing on the Hudson."
     }
   ],
   "sources": [
@@ -1302,6 +1316,16 @@
       "id": "uncut-gems-reference-2",
       "label": "Filmmaker interview · Le Cinéma Club",
       "url": "https://www.lecinemaclub.com/journal/behind_the_scenes_of_uncut_gems/"
+    },
+    {
+      "id": "catch-me-if-you-can-airport",
+      "label": "otsoNY · TWA terminal scenes",
+      "url": "https://onthesetofnewyork.com/catchmeifyoucan.html"
+    },
+    {
+      "id": "sully-airport",
+      "label": "Port Authority · filming at LaGuardia",
+      "url": "https://portfolio.panynj.gov/2016/09/13/behind-the-scenes-at-laguardia-airport-the-making-of-sully/"
     }
   ],
   "locations": [
@@ -9673,6 +9697,73 @@
             "image_url": "https://www.extstreet.com/stills/61162818371881423296020738907.jpg",
             "width": 360,
             "height": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": "twa-flight-center",
+      "name": "JFK Airport · TWA Flight Center",
+      "address": "TWA Hotel, One Idlewild Drive, JFK Airport",
+      "neighborhood": "Jamaica",
+      "borough": "Queens",
+      "coordinates": [
+        40.64583,
+        -73.7775
+      ],
+      "access": "Historic terminal / hotel",
+      "visit_note": "The former TWA Flight Center is now the TWA Hotel. Follow hotel visitor information; this pin does not mark an airline departure gate.",
+      "scenes": [
+        {
+          "film_id": "catch-me-if-you-can",
+          "scene": "Frank moves through JFK’s futuristic TWA Flight Center in his borrowed airline identity.",
+          "source_ids": [
+            "catch-me-if-you-can-airport"
+          ],
+          "precision": "Historic TWA Flight Center; building-level pin, not an exact camera position.",
+          "still": {
+            "src": "/images/film-map/catch-me-if-you-can--twa-flight-center.jpg",
+            "thumbnail": "/images/film-map/catch-me-if-you-can--twa-flight-center.jpg",
+            "alt": "Airline staff cross the curving interior of the TWA Flight Center in Catch Me If You Can.",
+            "credit": "Catch Me If You Can (2002) · DreamWorks · otsoNY",
+            "source_url": "https://onthesetofnewyork.com/catchmeifyoucan.html",
+            "image_url": "https://onthesetofnewyork.com/locations/catchmeifyoucan/catchmeifyoucan114.jpg",
+            "width": 565,
+            "height": 306
+          }
+        }
+      ]
+    },
+    {
+      "id": "laguardia-airport",
+      "name": "LaGuardia Airport (LGA)",
+      "address": "LaGuardia Airport, Queens, New York",
+      "neighborhood": "East Elmhurst",
+      "borough": "Queens",
+      "coordinates": [
+        40.7772422,
+        -73.8726056
+      ],
+      "access": "Operating airport",
+      "visit_note": "Airport-level reference point, not a terminal, pickup lane or gate. Use your airline’s current terminal directions; secure areas require the appropriate travel access.",
+      "scenes": [
+        {
+          "film_id": "sully",
+          "scene": "Before boarding Flight 1549, Sully stops at Hudson News in LaGuardia’s former Terminal B concourse.",
+          "source_ids": [
+            "sully-airport"
+          ],
+          "precision": "Filmed in the then-Terminal B, Concourse D. The pin represents the airport, not the historic shop or a present-day gate.",
+          "still": {
+            "src": "/images/film-map/sully--laguardia-airport.jpg",
+            "thumbnail": "/images/film-map/sully--laguardia-airport.jpg",
+            "alt": "The Sully film crew works outside Hudson News at LaGuardia Airport.",
+            "credit": "Sully (2016) · behind-the-scenes production photo · Port Authority of NY & NJ",
+            "source_url": "https://portfolio.panynj.gov/2016/09/13/behind-the-scenes-at-laguardia-airport-the-making-of-sully/",
+            "image_url": "https://portfolio.panynj.gov/wp-content/uploads/2016/09/hudson-news-scene.jpg?w=640",
+            "width": 640,
+            "height": 480,
+            "kind": "production_still"
           }
         }
       ]
