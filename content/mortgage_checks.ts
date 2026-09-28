@@ -1046,9 +1046,9 @@ export const learning_checks: Record<
   },
   burnout: {
     choices: [
-      'No. Past refinancing opportunities help explain the remaining borrowers.',
-      'Yes. Today’s incentive makes previous refinancing opportunities irrelevant.',
-      'Yes. A seasoned pool contains the same borrowers regardless of its history.',
+      'No. Check past feasible refinancing opportunities and borrower constraints.',
+      'Yes. Low CPR identifies selection regardless of refinancing eligibility.',
+      'Yes. High WALA confirms that borrowers passed up feasible refinancing.',
     ],
     correct: 0,
   },
