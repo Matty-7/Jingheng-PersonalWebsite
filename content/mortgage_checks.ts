@@ -750,11 +750,11 @@ export const learning_checks: Record<
   },
   fixed_arm: {
     choices: [
-      'Both fixed-rate and ARM note rates reset immediately.',
-      'A fixed note rate automatically follows the market.',
-      'An ARM may reset on its scheduled date, subject to contractual limits.',
+      'The note rate must become 6% immediately because index plus margin overrides the reset schedule.',
+      'The fully indexed reference rate is 6%, while the initial cap limits the first reset to at most 5%.',
+      'The note rate must remain at 3% because an ARM cannot rise above its initial rate.',
     ],
-    correct: 2,
+    correct: 1,
   },
   pool_factor: {
     choices: [

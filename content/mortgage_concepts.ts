@@ -311,6 +311,18 @@ export const mortgage_sources: Record<
     title: 'Fixed-rate and adjustable-rate mortgages',
     url: 'https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-fixed-rate-and-adjustable-rate-mortgage-arm-loan-en-100/',
   },
+  arm_charm: {
+    publisher: 'CFPB',
+    title:
+      'Consumer Handbook on Adjustable-Rate Mortgages · index, margin and adjustment terms',
+    url: 'https://files.consumerfinance.gov/f/documents/cfpb_charm_booklet.pdf',
+  },
+  arm_caps: {
+    publisher: 'CFPB',
+    title:
+      'ARM rate caps · initial, subsequent and lifetime adjustment limits · January 21, 2025',
+    url: 'https://www.consumerfinance.gov/ask-cfpb/what-are-rate-caps-with-an-adjustable-rate-mortgage-arm-and-how-do-they-work-en-1951/',
+  },
   basics: {
     publisher: 'Fannie Mae',
     title: 'Basics of Single-Family MBS · cash flows, factors and guarantees',
@@ -571,9 +583,16 @@ const original_concepts: MortgageConcept[] = [
     subtitle: 'How the note rate changes',
     aliases: ['adjustable rate mortgage', 'index', 'margin', 'reset', 'caps'],
     summary:
-      'A fixed-rate loan keeps its note rate. An adjustable-rate mortgage (ARM) resets under contract terms, commonly using an index plus a margin, with applicable caps and floors.',
+      'A fixed-rate loan keeps its note rate. A hybrid adjustable-rate mortgage (ARM) holds an initial rate for a stated period, then resets at contract intervals. A 5/1 ARM has a five-year initial period followed by annual resets.',
+    formula: {
+      expression: 'Fully indexed rate = contract index observation + margin',
+      assumptions:
+        'Both inputs are annual rates. The contract specifies the observation date, lookback and rounding. This reference calculation is not necessarily the actual reset rate or the payment change because contractual limits and amortization still apply.',
+      example:
+        'Hypothetical: 4% index + 2% margin = 6% fully indexed rate. From a 3% initial rate, a 2-percentage-point initial cap limits the first reset to at most 5%, assuming no other limit binds. Even an unchanged index can allow a rise when the initial rate was below the fully indexed rate.',
+    },
     distinction:
-      'Higher market rates reach a floating-rate borrower through contractual resets and a fixed-rate borrower when replacement financing is needed. Reset dates, caps and floors matter. A fixed note rate does not freeze taxes or insurance. Apollo’s September 25, 2026 credit discussion illustrates this uneven transmission across debt contracts.',
+      'The initial cap limits the first adjustment, the subsequent cap limits each later adjustment and the lifetime cap limits the rate over the loan’s term; cap changes are measured in percentage points from the contract’s comparison rate. Floors and limits on downward adjustments also depend on the contract. The fully indexed rate is a calculation reference, not a promise that the note rate or payment moves there. A fixed note rate still does not freeze taxes or insurance.',
     links: [
       {
         id: 'principal_interest',
@@ -583,12 +602,22 @@ const original_concepts: MortgageConcept[] = [
         id: 'incentive',
         reason: 'The existing loan’s terms affect the benefit of refinancing.',
       },
+      {
+        id: 'caps_floors',
+        reason:
+          'Coupon limits create asymmetric exposure to changes in a reference rate.',
+      },
+      {
+        id: 'reset_payment_dates',
+        reason:
+          'The contract clock separates rate observation, reset, accrual and payment.',
+      },
     ],
     question:
-      'Market rates rise. Whose note rate can respond under the existing contract?',
+      'An ARM starts at 3%. At its first reset, the index is 4%, the margin is 2% and the initial cap is 2 percentage points. If no other limit binds, what do these figures establish?',
     answer:
-      'An ARM borrower’s rate can reset on its contractual dates, within applicable limits. An existing fixed note rate does not reset with the market; a replacement loan can carry a different rate.',
-    sources: ['arm', 'rate_transmission_case'],
+      'The fully indexed reference rate is 6%, but the initial cap limits the first reset to at most 5%. The contract’s reset date and other terms still govern when and how the actual rate changes.',
+    sources: ['arm', 'arm_charm', 'arm_caps'],
     topic: 'loan_contract',
   },
   {

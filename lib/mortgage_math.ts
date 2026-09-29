@@ -50,6 +50,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'D: included monthly debt payments; Y: gross monthly income, in the same currency. Multiply the ratio by 100 for a percentage.',
     },
+    fixed_arm: {
+      tex: String.raw`r_{\mathrm{fully\ indexed}}=I_{\mathrm{contract}}+m`,
+      variables:
+        'I: contract index observation; m: margin; r: fully indexed rate. All are annual rates under the contract’s observation, lookback and rounding conventions. The actual reset rate can be constrained by caps or a floor.',
+    },
     haircut: {
       tex: String.raw`h=1-\frac{C}{V}`,
       variables:

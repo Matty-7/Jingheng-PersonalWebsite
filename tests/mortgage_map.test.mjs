@@ -249,6 +249,26 @@ test('mortgage lock-in states its units and follows principal timing into rate r
   assert.match(mortgage_math.lock_in.variables, /basis points/);
 });
 
+test('hybrid ARM separates the fully indexed reference from the capped reset', () => {
+  const arm = mortgage_concepts.find((c) => c.id === 'fixed_arm');
+  assert.match(arm.summary, /5\/1 ARM.*five-year.*annual resets/);
+  assert.match(arm.formula.expression, /index observation \+ margin/);
+  assert.match(
+    arm.formula.assumptions,
+    /not necessarily the actual reset rate/,
+  );
+  assert.match(arm.formula.example, /6% fully indexed rate/);
+  assert.match(arm.formula.example, /first reset to at most 5%/);
+  assert.match(arm.distinction, /initial cap/);
+  assert.match(arm.distinction, /percentage points/);
+  assert.deepEqual(
+    arm.links.slice(-2).map((link) => link.id),
+    ['caps_floors', 'reset_payment_dates'],
+  );
+  assert.deepEqual(arm.sources, ['arm', 'arm_charm', 'arm_caps']);
+  assert.match(mortgage_math.fixed_arm.variables, /annual rates/);
+});
+
 test('all displayed formulas render strict TeX with accessible MathML and variable definitions', () => {
   const rendered = render_mortgage_math();
   for (const c of mortgage_concepts.filter((c) => c.formula)) {
