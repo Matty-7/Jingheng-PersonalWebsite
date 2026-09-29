@@ -1,0 +1,451 @@
+{
+  "reviewed_on": "2026-09-28",
+  "scope": "Five additional Friends entries and five additional Seinfeld entries.",
+  "sources": [
+    {
+      "id": "friends-ross-village",
+      "label": "Village Preservation · Ross’s apartment exteriors",
+      "url": "https://villagepreservation.org/2015/03/26/where-did-ross-on-friends-live/"
+    },
+    {
+      "id": "friends-museum-guide",
+      "label": "GetYourGuide · Friends filming locations",
+      "url": "https://www.getyourguide.com/explorer/new-york-city-ttd59/friends-filming-locations/"
+    },
+    {
+      "id": "seinfeld-strike-guide",
+      "label": "Maps About Nothing · The Strike",
+      "url": "https://mapsaboutnothing.com/2013/05/14/the-strike/"
+    },
+    {
+      "id": "seinfeld-maid-guide",
+      "label": "Maps About Nothing · The Maid",
+      "url": "https://mapsaboutnothing.com/2013/05/14/the-maid/"
+    },
+    {
+      "id": "seinfeld-hh-history",
+      "label": "H&H Bagels · History and original storefront",
+      "url": "https://www.hhbagels.com/about"
+    },
+    {
+      "id": "seinfeld-hh-closure",
+      "label": "Commercial Observer · H&H’s original shop and later expansion",
+      "url": "https://commercialobserver.com/2023/08/hh-bagels-nationwide-expansion-banks-on-seinfeld-infamy/"
+    },
+    {
+      "id": "seinfeld-heritage-field",
+      "label": "SWA/Balsley · Heritage Field at Macombs Dam Park",
+      "url": "https://swabalsley.com/projects/heritage-field-at-macombs-dam-park/"
+    },
+    {
+      "id": "seinfeld-peterman-imdb",
+      "label": "IMDb · The English Patient exterior locations",
+      "url": "https://www.imdb.com/title/tt0697691/locations/"
+    }
+  ],
+  "geography": [
+    {
+      "query": "Washington Square Village, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=Washington+Square+Village%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 360160279,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "way",
+          "osm_id": 1243061342,
+          "lat": "40.7280556",
+          "lon": "-73.9977778",
+          "category": "landuse",
+          "type": "residential",
+          "place_rank": 24,
+          "importance": 0.39072613673296697,
+          "addresstype": "neighbourhood",
+          "name": "Washington Square Village",
+          "display_name": "Washington Square Village, Manhattan, New York County, New York, 10012, United States",
+          "boundingbox": [
+            "40.7270506",
+            "40.7291914",
+            "-73.9988002",
+            "-73.9957577"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "19 Grove Street, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=19+Grove+Street%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 401315953,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "way",
+          "osm_id": 46610725,
+          "lat": "40.7327170",
+          "lon": "-74.0048895",
+          "category": "place",
+          "type": "house",
+          "place_rank": 30,
+          "importance": 9.99999999995449e-06,
+          "addresstype": "place",
+          "name": "",
+          "display_name": "19, Grove Street, West Village, Manhattan, New York County, New York, 10014, United States",
+          "boundingbox": [
+            "40.7326670",
+            "40.7327670",
+            "-74.0049395",
+            "-74.0048395"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "38 Commerce Street, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=38+Commerce+Street%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 354141518,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "node",
+          "osm_id": 5215246723,
+          "lat": "40.7312452",
+          "lon": "-74.0052802",
+          "category": "amenity",
+          "type": "theatre",
+          "place_rank": 30,
+          "importance": 0.4134776339011324,
+          "addresstype": "amenity",
+          "name": "Cherry Lane Theatre",
+          "display_name": "Cherry Lane Theatre, 38, Commerce Street, West Village, Manhattan, New York County, New York, 10014, United States",
+          "boundingbox": [
+            "40.7311952",
+            "40.7312952",
+            "-74.0053302",
+            "-74.0052302"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "121 Christopher Street, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=121+Christopher+Street%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 356953398,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "way",
+          "osm_id": 250269684,
+          "lat": "40.7333618",
+          "lon": "-74.0057425",
+          "category": "amenity",
+          "type": "theatre",
+          "place_rank": 30,
+          "importance": 0.41359616883692174,
+          "addresstype": "amenity",
+          "name": "Lucille Lortel Theatre",
+          "display_name": "Lucille Lortel Theatre, 121, Christopher Street, West Village, Manhattan, New York County, New York, 10014, United States",
+          "boundingbox": [
+            "40.7332215",
+            "40.7334951",
+            "-74.0058614",
+            "-74.0056222"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "1325 Avenue of the Americas, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=1325+Avenue+of+the+Americas%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 372853233,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "way",
+          "osm_id": 278346616,
+          "lat": "40.7629162",
+          "lon": "-73.9808027",
+          "category": "building",
+          "type": "yes",
+          "place_rank": 30,
+          "importance": 9.175936522464359e-05,
+          "addresstype": "building",
+          "name": "1325 Avenue of the Americas",
+          "display_name": "1325 Avenue of the Americas, West 54th Street, Midtown, Manhattan Community Board 5, Manhattan, New York County, New York, 10105, United States",
+          "boundingbox": [
+            "40.7625915",
+            "40.7632433",
+            "-73.9811853",
+            "-73.9804177"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "259 West 55th Street, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=259+West+55th+Street%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 360210979,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "node",
+          "osm_id": 2708164879,
+          "lat": "40.7653843",
+          "lon": "-73.9834735",
+          "category": "amenity",
+          "type": "fast_food",
+          "place_rank": 30,
+          "importance": 9.175936522464359e-05,
+          "addresstype": "amenity",
+          "name": "Soup Kitchen",
+          "display_name": "Soup Kitchen, 259;259A, West 55th Street, Columbus Circle, Manhattan Community Board 5, Manhattan, New York County, New York, 10019, United States",
+          "boundingbox": [
+            "40.7653343",
+            "40.7654343",
+            "-73.9835235",
+            "-73.9834235"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "2239 Broadway, Manhattan, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=2239+Broadway%2C+Manhattan%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 359253056,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "node",
+          "osm_id": 2148391075,
+          "lat": "40.7845404",
+          "lon": "-73.9798186",
+          "category": "shop",
+          "type": "vacant",
+          "place_rank": 30,
+          "importance": 9.175936522464359e-05,
+          "addresstype": "shop",
+          "name": "",
+          "display_name": "2239, Broadway, Upper West Side, Manhattan Community Board 7, Manhattan, New York County, New York, 10024, United States",
+          "boundingbox": [
+            "40.7844904",
+            "40.7845904",
+            "-73.9798686",
+            "-73.9797686"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Heritage Field, Bronx, New York",
+      "source_url": "https://nominatim.openstreetmap.org/search?q=Heritage+Field%2C+Bronx%2C+New+York&format=jsonv2&limit=1",
+      "result": [
+        {
+          "place_id": 358549523,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "relation",
+          "osm_id": 3242443,
+          "lat": "40.8270221",
+          "lon": "-73.9276225",
+          "category": "leisure",
+          "type": "pitch",
+          "place_rank": 30,
+          "importance": 9.175936522464359e-05,
+          "addresstype": "leisure",
+          "name": "Heritage Field",
+          "display_name": "Heritage Field, River Avenue, The Bronx, Bronx County, New York, 10452, United States",
+          "boundingbox": [
+            "40.8262486",
+            "40.8277902",
+            "-73.9289794",
+            "-73.9266616"
+          ]
+        }
+      ]
+    },
+    {
+      "location_id": "first-and-first",
+      "coordinates": [
+        40.7232615,
+        -73.9884447
+      ],
+      "source_url": "https://mapsaboutnothing.com/2013/05/14/the-maid/",
+      "verification": "Coordinates from the source’s linked map for First Avenue at East 1st Street; no Google API used."
+    }
+  ],
+  "assets": [
+    {
+      "film_id": "friends",
+      "location_id": "ross-washington-square-village",
+      "image_kind": "frame",
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/58121789277470400477.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/friends--ross-washington-square-village.jpg",
+          "sha256": "0ebc16d3d75a0f2b4a356a58bc11306defe725760407d23ade16720a5021d66d"
+        },
+        {
+          "site_file": "/images/film-map/friends--ross-washington-square-village--thumb.jpg",
+          "sha256": "4568ec56a9aaa03c060892e567be08343f92b981c7621a90a06261c22ba15e21"
+        }
+      ]
+    },
+    {
+      "film_id": "friends",
+      "location_id": "ross-grove-apartment",
+      "image_kind": "frame",
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/55855039495643931165460.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/friends--ross-grove-apartment.jpg",
+          "sha256": "46e180e67a96d95977cd80459abb4fec59d7952164d858aecac6b083790f7f22"
+        },
+        {
+          "site_file": "/images/film-map/friends--ross-grove-apartment--thumb.jpg",
+          "sha256": "d2a036d06952a468b33044bbb4721b2d9ff032a77b6ef1ee366f3b38fb18c2a9"
+        }
+      ]
+    },
+    {
+      "film_id": "friends",
+      "location_id": "natural-history",
+      "image_kind": "frame",
+      "source_page": "https://extstreet.com/Friends.html",
+      "original_image": "https://extstreet.com/stills/58121789277464836288.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/friends--natural-history.jpg",
+          "sha256": "9c840e2700d55668a3b4f83ad7e38cc039b1c16ae647c7ffbca05360d85e7216"
+        },
+        {
+          "site_file": "/images/film-map/friends--natural-history--thumb.jpg",
+          "sha256": "7991103712287e71a1945a3a73bebd98e5f34e8b32d0101cf8e4bc0afb60708b"
+        }
+      ]
+    },
+    {
+      "film_id": "friends",
+      "location_id": "cherry-lane-theatre",
+      "image_kind": "location_photo",
+      "source_page": "https://robonlocation.com/tv/friends/",
+      "original_image": "https://robonlocation.com/wp-content/uploads/2019/05/20221210_140044-1024x716.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/friends--cherry-lane-theatre.jpg",
+          "sha256": "db0552785c4534be820796198ada2afe0de799e2dbc6f739466aecd4d6671b94"
+        },
+        {
+          "site_file": "/images/film-map/friends--cherry-lane-theatre--thumb.jpg",
+          "sha256": "9bc8448a667b1e5e9fe73fdc69402064ce7743078cbefc7336c6eea4276ec4a2"
+        }
+      ]
+    },
+    {
+      "film_id": "friends",
+      "location_id": "lucille-lortel-theatre",
+      "image_kind": "location_photo",
+      "source_page": "https://robonlocation.com/tv/friends/",
+      "original_image": "https://robonlocation.com/wp-content/uploads/2019/05/20221210_1543140-1024x678.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/friends--lucille-lortel-theatre.jpg",
+          "sha256": "825c3c744dbbd85d8705c18f24962b9518623fa2b63c8aedb395c8cf46f377bb"
+        },
+        {
+          "site_file": "/images/film-map/friends--lucille-lortel-theatre--thumb.jpg",
+          "sha256": "075e4b12adb6745b330078dec21e17e210c9792f10d72ea1ad8e3ba6d47367aa"
+        }
+      ]
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "original-yankee-stadium",
+      "image_kind": "frame",
+      "source_page": "https://extstreet.com/Seinfeld.html",
+      "original_image": "https://extstreet.com/stills/65378104691561017493143.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/seinfeld--original-yankee-stadium.jpg",
+          "sha256": "3cec4fa4db56aab8250cd425226f3a84bc776daf7557f79205adfe5fa517a275"
+        },
+        {
+          "site_file": "/images/film-map/seinfeld--original-yankee-stadium--thumb.jpg",
+          "sha256": "5587f06bf669e90fcc9768a8ffa1338557a8d8556ed54263ddd8445da809988f"
+        }
+      ]
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "peterman-office",
+      "image_kind": "location_photo",
+      "source_page": "https://robonlocation.com/tv/seinfeld/",
+      "original_image": "https://robonlocation.com/wp-content/uploads/2023/10/337377923_171998545724615_2879360276245368684_n-768x1024.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/seinfeld--peterman-office.jpg",
+          "sha256": "214cad7549ebd6bb56ccd4473ce8f96662647cf93c4ff9ff93efcaeb5216edab"
+        },
+        {
+          "site_file": "/images/film-map/seinfeld--peterman-office--thumb.jpg",
+          "sha256": "f632db614851cee96c54328c81fff3bbd66ab6ee9327bb16feb04d67544ef80f"
+        }
+      ]
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "hh-bagels-original",
+      "image_kind": "location_photo",
+      "source_page": "https://www.hhbagels.com/about",
+      "original_image": "https://cdn.sanity.io/images/fip219i0/production/cab993bf68c58e059e8ffe3837e813d4fe5f5c6d-1440x680.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/seinfeld--hh-bagels-original.jpg",
+          "sha256": "6c19e8bd0d9495c3aceabb1cdb6009823014733b2381c25b34ec87faccf5acea"
+        },
+        {
+          "site_file": "/images/film-map/seinfeld--hh-bagels-original--thumb.jpg",
+          "sha256": "a3a04ec6b4a8396ecdd5483cdc46fb872c319d6ce4b321af958b33759684f7f0"
+        }
+      ]
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "original-soupman",
+      "image_kind": "location_photo",
+      "source_page": "https://robonlocation.com/tv/seinfeld/",
+      "original_image": "https://robonlocation.com/wp-content/uploads/2019/04/DSC01026-1024x768.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/seinfeld--original-soupman.jpg",
+          "sha256": "1673c5f7c4f7c9869208fcdc6e7aaa1a2a95f38b13d845940603a9a8fbc4868a"
+        },
+        {
+          "site_file": "/images/film-map/seinfeld--original-soupman--thumb.jpg",
+          "sha256": "ede876280c9d08a70e28ae05a9db5e4c60ad072c0c6c551c24fccb31fdeb1410"
+        }
+      ]
+    },
+    {
+      "film_id": "seinfeld",
+      "location_id": "first-and-first",
+      "image_kind": "location_photo",
+      "source_page": "https://robonlocation.com/tv/seinfeld/",
+      "original_image": "https://robonlocation.com/wp-content/uploads/2020/02/20191108_111413-1024x576.jpg",
+      "files": [
+        {
+          "site_file": "/images/film-map/seinfeld--first-and-first.jpg",
+          "sha256": "6246d75cc9499457826872a57c3039fd5f4d80b7de13b430bf145f9fc5d453fc"
+        },
+        {
+          "site_file": "/images/film-map/seinfeld--first-and-first--thumb.jpg",
+          "sha256": "cc8d95d5ec6fa2602a9319b3da005dbd5d2f83a90d339dfa4c0e5b1f547dd14d"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Ross’s later exterior follows Village Preservation’s No. 19 correction.",
+    "Existing American Museum of Natural History location reused.",
+    "Heritage Field identifies the historical stadium footprint.",
+    "Photographs remain explicitly labeled; original watermarks preserved."
+  ]
+}

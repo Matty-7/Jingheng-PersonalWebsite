@@ -66,6 +66,9 @@ export const AtlasMap = memo(function AtlasMap({
           })
           .setView([40.754, -73.973], 12);
         active_map.current = map;
+        const selection_pane = map.createPane('atlas-selection');
+        selection_pane.style.zIndex = '625';
+        selection_pane.style.pointerEvents = 'none';
         leaflet.control.zoom({ position: 'topright' }).addTo(map);
         const cluster = leaflet.markerClusterGroup({
           showCoverageOnHover: false,
@@ -286,6 +289,7 @@ export const AtlasMap = memo(function AtlasMap({
         fillColor: '#153f2c',
         fillOpacity: 1,
         interactive: false,
+        pane: 'atlas-selection',
         className: 'atlas-selected-point',
       })
       .addTo(instance.map);

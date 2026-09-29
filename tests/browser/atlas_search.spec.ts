@@ -24,18 +24,22 @@ test('search explains its scope and pointer selection survives input blur', asyn
   await search.fill('Friends');
   const second = results.locator('[data-atlas-result]').nth(1);
   const selected_id = await second.getAttribute('data-atlas-result');
+  const selected_place = (
+    await second.locator(':scope > span').last().innerText()
+  ).split(' · ')[0];
+  expect(selected_place).toBeTruthy();
   await expect(second).toContainText('TV series');
-  await expect(second).toContainText('Solow Building');
   // A Safari pointer click may blur the input with no related focus target.
   await search.evaluate((input) => (input as HTMLInputElement).blur());
   await expect(second).toBeVisible();
   await second.click();
-  await expect(page.locator('.atlas-card h2')).toHaveText('Solow Building');
+  await expect(page.locator('.atlas-card h2')).toHaveText(selected_place);
   await expect(results).toHaveCount(0);
-  await expect(page.locator('.atlas-pin.is-selected')).toBeVisible();
+  // Nearby places can cluster; selection keeps its own visible map highlight.
+  await expect(page.locator('.atlas-selected-point')).toBeVisible();
   expect(new URL(page.url()).searchParams.get('entry')).toBe(selected_id);
   await page.reload();
-  await expect(page.locator('.atlas-card h2')).toHaveText('Solow Building');
+  await expect(page.locator('.atlas-card h2')).toHaveText(selected_place);
 });
 
 test('search navigates results with arrows, Enter and Escape and dismisses outside', async ({
@@ -45,6 +49,12 @@ test('search navigates results with arrows, Enter and Escape and dismisses outsi
   const results = page.locator('#atlas-search-results');
   await search.fill('Friends');
   const options = results.locator('[data-atlas-result]');
+  const second = options.nth(1);
+  const selected_id = await second.getAttribute('data-atlas-result');
+  const selected_place = (
+    await second.locator(':scope > span').last().innerText()
+  ).split(' · ')[0];
+  expect(selected_place).toBeTruthy();
   await search.press('ArrowDown');
   await expect(options.nth(0)).toBeFocused();
   await page.keyboard.press('ArrowDown');
@@ -58,7 +68,8 @@ test('search navigates results with arrows, Enter and Escape and dismisses outsi
   await expect(options.nth(0)).toBeFocused();
   await page.keyboard.press('ArrowDown');
   await page.keyboard.press('Enter');
-  await expect(page.locator('.atlas-card h2')).toHaveText('Solow Building');
+  await expect(page.locator('.atlas-card h2')).toHaveText(selected_place);
+  expect(new URL(page.url()).searchParams.get('entry')).toBe(selected_id);
   await page.getByRole('button', { name: 'Close place card' }).click();
   await expect(search).toBeFocused();
   await expect(results).toBeVisible();

@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-27",
+  "reviewed_on": "2026-09-28",
   "films": [
     {
       "id": "manhattan",
@@ -1326,6 +1326,46 @@
       "id": "sully-airport",
       "label": "Port Authority · filming at LaGuardia",
       "url": "https://portfolio.panynj.gov/2016/09/13/behind-the-scenes-at-laguardia-airport-the-making-of-sully/"
+    },
+    {
+      "id": "friends-ross-village",
+      "label": "Village Preservation · Ross’s apartment exteriors",
+      "url": "https://villagepreservation.org/2015/03/26/where-did-ross-on-friends-live/"
+    },
+    {
+      "id": "friends-museum-guide",
+      "label": "GetYourGuide · Friends filming locations",
+      "url": "https://www.getyourguide.com/explorer/new-york-city-ttd59/friends-filming-locations/"
+    },
+    {
+      "id": "seinfeld-strike-guide",
+      "label": "Maps About Nothing · The Strike",
+      "url": "https://mapsaboutnothing.com/2013/05/14/the-strike/"
+    },
+    {
+      "id": "seinfeld-maid-guide",
+      "label": "Maps About Nothing · The Maid",
+      "url": "https://mapsaboutnothing.com/2013/05/14/the-maid/"
+    },
+    {
+      "id": "seinfeld-hh-history",
+      "label": "H&H Bagels · History and original storefront",
+      "url": "https://www.hhbagels.com/about"
+    },
+    {
+      "id": "seinfeld-hh-closure",
+      "label": "Commercial Observer · H&H’s original shop and later expansion",
+      "url": "https://commercialobserver.com/2023/08/hh-bagels-nationwide-expansion-banks-on-seinfeld-infamy/"
+    },
+    {
+      "id": "seinfeld-heritage-field",
+      "label": "SWA/Balsley · Heritage Field at Macombs Dam Park",
+      "url": "https://swabalsley.com/projects/heritage-field-at-macombs-dam-park/"
+    },
+    {
+      "id": "seinfeld-peterman-imdb",
+      "label": "IMDb · The English Patient exterior locations",
+      "url": "https://www.imdb.com/title/tt0697691/locations/"
     }
   ],
   "locations": [
@@ -6254,6 +6294,25 @@
             "width": 565,
             "height": 240
           }
+        },
+        {
+          "film_id": "friends",
+          "scene": "The museum exterior introduces Ross’s workplace, the fictional Museum of Prehistoric History. His paleontology job gives the group a world of exhibits and office mishaps.",
+          "source_ids": [
+            "friends-extstreet",
+            "friends-museum-guide"
+          ],
+          "precision": "Existing museum pin reused; exterior connection, not a claim that the workplace interiors were filmed here.",
+          "still": {
+            "src": "/images/film-map/friends--natural-history.jpg",
+            "thumbnail": "/images/film-map/friends--natural-history--thumb.jpg",
+            "alt": "Museum exterior used for Ross’s workplace in Friends.",
+            "credit": "Friends (1994–2004) · Ext.Street",
+            "source_url": "https://extstreet.com/Friends.html",
+            "image_url": "https://extstreet.com/stills/58121789277464836288.jpg",
+            "width": 360,
+            "height": 271
+          }
         }
       ]
     },
@@ -9765,6 +9824,322 @@
             "height": 480,
             "kind": "production_still"
           }
+        }
+      ]
+    },
+    {
+      "id": "ross-washington-square-village",
+      "name": "Ross’s first apartment exterior",
+      "address": "Washington Square Village, West 3rd Street",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "View the residential complex from the public sidewalk; apartments are private.",
+      "coordinates": [
+        40.7280556,
+        -73.9977778
+      ],
+      "scenes": [
+        {
+          "film_id": "friends",
+          "scene": "Washington Square Village establishes Ross’s first apartment, where his life after Carol begins. The apartment interior was a studio set.",
+          "source_ids": [
+            "friends-extstreet",
+            "friends-ross-village"
+          ],
+          "precision": "Apartment-complex pin; the exact window and camera position are not identified.",
+          "still": {
+            "src": "/images/film-map/friends--ross-washington-square-village.jpg",
+            "thumbnail": "/images/film-map/friends--ross-washington-square-village--thumb.jpg",
+            "alt": "Washington Square Village at night in a Friends establishing shot.",
+            "credit": "Friends (1994–2004) · Ext.Street",
+            "source_url": "https://extstreet.com/Friends.html",
+            "image_url": "https://extstreet.com/stills/58121789277470400477.jpg",
+            "width": 360,
+            "height": 271
+          }
+        }
+      ]
+    },
+    {
+      "id": "ross-grove-apartment",
+      "name": "Ross’s later apartment exterior",
+      "address": "19 Grove Street",
+      "neighborhood": "West Village",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "Private residence; view only from the public sidewalk.",
+      "coordinates": [
+        40.732717,
+        -74.0048895
+      ],
+      "scenes": [
+        {
+          "film_id": "friends",
+          "scene": "Ross takes over Ugly Naked Guy’s apartment across from Monica’s building. The later exterior is 19 Grove Street, beside the wooden house at number 17.",
+          "source_ids": [
+            "friends-ross-village",
+            "friends-extstreet"
+          ],
+          "precision": "Exterior only. Village Preservation identifies No. 19; Ext.Street’s frame caption gives adjacent No. 21.",
+          "still": {
+            "src": "/images/film-map/friends--ross-grove-apartment.jpg",
+            "thumbnail": "/images/film-map/friends--ross-grove-apartment--thumb.jpg",
+            "alt": "Ross’s Grove Street apartment exterior beside the wooden house in Friends.",
+            "credit": "Friends (1994–2004) · Ext.Street",
+            "source_url": "https://extstreet.com/Friends.html",
+            "image_url": "https://extstreet.com/stills/55855039495643931165460.jpg",
+            "width": 360,
+            "height": 270
+          }
+        }
+      ]
+    },
+    {
+      "id": "cherry-lane-theatre",
+      "name": "Cherry Lane Theatre",
+      "address": "38 Commerce Street",
+      "neighborhood": "West Village",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "Exterior visible from Commerce Street; interior access depends on scheduled events and tickets.",
+      "coordinates": [
+        40.7312452,
+        -74.0052802
+      ],
+      "scenes": [
+        {
+          "film_id": "friends",
+          "scene": "Joey plays Sigmund Freud in the musical “Freud!” in “The One with the Butt.” Cherry Lane supplies the theatre’s establishing exterior.",
+          "source_ids": [
+            "friends-rob"
+          ],
+          "precision": "Theatre exterior; the cast’s performance and audience scenes used studio sets.",
+          "still": {
+            "src": "/images/film-map/friends--cherry-lane-theatre.jpg",
+            "thumbnail": "/images/film-map/friends--cherry-lane-theatre--thumb.jpg",
+            "alt": "Location photo of Cherry Lane Theatre on Commerce Street.",
+            "credit": "Location photo · Rob on Location",
+            "source_url": "https://robonlocation.com/tv/friends/",
+            "image_url": "https://robonlocation.com/wp-content/uploads/2019/05/20221210_140044-1024x716.jpg",
+            "width": 960,
+            "height": 671,
+            "kind": "location_photo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lucille-lortel-theatre",
+      "name": "Lucille Lortel Theatre",
+      "address": "121 Christopher Street",
+      "neighborhood": "West Village",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "View from the public sidewalk; performances require their own tickets.",
+      "coordinates": [
+        40.7333618,
+        -74.0057425
+      ],
+      "scenes": [
+        {
+          "film_id": "friends",
+          "scene": "Joey’s sci-fi play “Boxing Day” brings his friends to the theatre in season three. Its exterior places his acting career a short walk from the apartment building.",
+          "source_ids": [
+            "friends-rob",
+            "friends-ross-village"
+          ],
+          "precision": "Establishing exterior; the play’s interior scenes were studio work.",
+          "still": {
+            "src": "/images/film-map/friends--lucille-lortel-theatre.jpg",
+            "thumbnail": "/images/film-map/friends--lucille-lortel-theatre--thumb.jpg",
+            "alt": "Location photo of the Lucille Lortel Theatre marquee on Christopher Street.",
+            "credit": "Location photo · Rob on Location",
+            "source_url": "https://robonlocation.com/tv/friends/",
+            "image_url": "https://robonlocation.com/wp-content/uploads/2019/05/20221210_1543140-1024x678.jpg",
+            "width": 960,
+            "height": 636,
+            "kind": "location_photo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "original-yankee-stadium",
+      "name": "Original Yankee Stadium site",
+      "address": "Heritage Field, East 161st Street and River Avenue",
+      "neighborhood": "Concourse",
+      "borough": "Bronx",
+      "access": "Public paths",
+      "visit_note": "The original stadium was demolished. Visit the public paths around Heritage Field and respect games in progress.",
+      "coordinates": [
+        40.8270221,
+        -73.9276225
+      ],
+      "scenes": [
+        {
+          "film_id": "seinfeld",
+          "scene": "The old Yankee Stadium establishes George’s unlikely baseball-office career. The stadium seen in the series stood where Heritage Field is today.",
+          "source_ids": [
+            "seinfeld-extstreet",
+            "seinfeld-heritage-field"
+          ],
+          "precision": "Historical stadium footprint, south of the replacement Yankee Stadium. Office interiors were studio sets.",
+          "still": {
+            "src": "/images/film-map/seinfeld--original-yankee-stadium.jpg",
+            "thumbnail": "/images/film-map/seinfeld--original-yankee-stadium--thumb.jpg",
+            "alt": "The original Yankee Stadium exterior in Seinfeld.",
+            "credit": "Seinfeld (1989–1998) · Ext.Street",
+            "source_url": "https://extstreet.com/Seinfeld.html",
+            "image_url": "https://extstreet.com/stills/65378104691561017493143.jpg",
+            "width": 360,
+            "height": 202
+          }
+        }
+      ],
+      "maps_query": "Heritage Field, Bronx, New York"
+    },
+    {
+      "id": "peterman-office",
+      "name": "J. Peterman office exterior",
+      "address": "1325 Avenue of the Americas",
+      "neighborhood": "Midtown",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "View from the sidewalk; the office building is private.",
+      "coordinates": [
+        40.7629162,
+        -73.9808027
+      ],
+      "scenes": [
+        {
+          "film_id": "seinfeld",
+          "scene": "This Midtown tower establishes the J. Peterman catalogue offices where Elaine works. The workplace interiors were studio sets.",
+          "source_ids": [
+            "seinfeld-rob",
+            "seinfeld-peterman-imdb"
+          ],
+          "precision": "Office-tower exterior; this is not a public Seinfeld exhibit.",
+          "still": {
+            "src": "/images/film-map/seinfeld--peterman-office.jpg",
+            "thumbnail": "/images/film-map/seinfeld--peterman-office--thumb.jpg",
+            "alt": "Location photo of the 1325 Avenue of the Americas entrance marker.",
+            "credit": "Location photo · Rob on Location",
+            "source_url": "https://robonlocation.com/tv/seinfeld/",
+            "image_url": "https://robonlocation.com/wp-content/uploads/2023/10/337377923_171998545724615_2879360276245368684_n-768x1024.jpg",
+            "width": 720,
+            "height": 960,
+            "kind": "location_photo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hh-bagels-original",
+      "name": "H&H Bagels original site",
+      "address": "2239 Broadway at West 80th Street",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "Former location only; the original shop is closed. This pin does not identify a current H&H branch.",
+      "coordinates": [
+        40.7845404,
+        -73.9798186
+      ],
+      "scenes": [
+        {
+          "film_id": "seinfeld",
+          "scene": "In “The Strike,” Kramer returns to H&H Bagels after twelve years on strike, then asks for Festivus off. This pin marks the original Broadway shop, which closed in 2011.",
+          "source_ids": [
+            "seinfeld-strike-guide",
+            "seinfeld-hh-history",
+            "seinfeld-hh-closure"
+          ],
+          "precision": "Former shop associated with the story; cast scenes were studio work. The image is a historical location photograph.",
+          "still": {
+            "src": "/images/film-map/seinfeld--hh-bagels-original.jpg",
+            "thumbnail": "/images/film-map/seinfeld--hh-bagels-original--thumb.jpg",
+            "alt": "Historical location photo of H&H Bagels at 2239 Broadway, with taxis in front.",
+            "credit": "Historical location photo · H&H Bagels",
+            "source_url": "https://www.hhbagels.com/about",
+            "image_url": "https://cdn.sanity.io/images/fip219i0/production/cab993bf68c58e059e8ffe3837e813d4fe5f5c6d-1440x680.jpg",
+            "width": 960,
+            "height": 453,
+            "kind": "location_photo"
+          },
+          "relationship": "Screen setting"
+        }
+      ]
+    },
+    {
+      "id": "original-soupman",
+      "name": "The Original Soupman",
+      "address": "259A West 55th Street",
+      "neighborhood": "Hell’s Kitchen",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "View from the sidewalk; check current business hours before planning a food stop.",
+      "coordinates": [
+        40.7653843,
+        -73.9834735
+      ],
+      "scenes": [
+        {
+          "film_id": "seinfeld",
+          "scene": "Al Yeganeh’s soup shop inspired “The Soup Nazi.” The episode’s shop was recreated on a studio backlot.",
+          "source_ids": [
+            "seinfeld-rob",
+            "seinfeld-ad"
+          ],
+          "precision": "Real-life inspiration, not the episode’s filming location.",
+          "still": {
+            "src": "/images/film-map/seinfeld--original-soupman.jpg",
+            "thumbnail": "/images/film-map/seinfeld--original-soupman--thumb.jpg",
+            "alt": "Location photo of The Original Soupman storefront on West 55th Street.",
+            "credit": "Location photo · Rob on Location",
+            "source_url": "https://robonlocation.com/tv/seinfeld/",
+            "image_url": "https://robonlocation.com/wp-content/uploads/2019/04/DSC01026-1024x768.jpg",
+            "width": 960,
+            "height": 720,
+            "kind": "location_photo"
+          },
+          "relationship": "Inspiration"
+        }
+      ]
+    },
+    {
+      "id": "first-and-first",
+      "name": "First Avenue & First Street",
+      "address": "First Avenue at East 1st Street",
+      "neighborhood": "East Village",
+      "borough": "Manhattan",
+      "access": "Exterior",
+      "visit_note": "Public intersection; use the sidewalks and marked crossings.",
+      "coordinates": [
+        40.7232615,
+        -73.9884447
+      ],
+      "scenes": [
+        {
+          "film_id": "seinfeld",
+          "scene": "Kramer gets lost at First Avenue and First Street in “The Maid.” The matching street names convince him he has reached the “nexus of the universe.”",
+          "source_ids": [
+            "seinfeld-maid-guide",
+            "seinfeld-rob"
+          ],
+          "precision": "Intersection named in the story; the photograph shows the real street signs, not the filmed scene.",
+          "still": {
+            "src": "/images/film-map/seinfeld--first-and-first.jpg",
+            "thumbnail": "/images/film-map/seinfeld--first-and-first--thumb.jpg",
+            "alt": "Location photo of the East 1st Street and First Avenue street signs.",
+            "credit": "Location photo · Rob on Location",
+            "source_url": "https://robonlocation.com/tv/seinfeld/",
+            "image_url": "https://robonlocation.com/wp-content/uploads/2020/02/20191108_111413-1024x576.jpg",
+            "width": 960,
+            "height": 540,
+            "kind": "location_photo"
+          },
+          "relationship": "Screen setting"
         }
       ]
     }
