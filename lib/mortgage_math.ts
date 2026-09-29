@@ -220,10 +220,10 @@ export type MortgageFormulas = Record<
   { html: string; tex: string; variables: string }
 >;
 
-export function render_mortgage_math(): MortgageFormulas {
+export function render_mortgage_math(concept_id?: string): MortgageFormulas {
   return Object.fromEntries(
     mortgage_concepts
-      .filter((c) => c.formula)
+      .filter((c) => c.formula && (!concept_id || c.id === concept_id))
       .map((c) => {
         const math = mortgage_math[c.id];
         if (!math) throw new Error(`Missing TeX for ${c.id}`);

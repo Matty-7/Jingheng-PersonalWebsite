@@ -1097,3 +1097,20 @@ html[data-mortgage-pending='true']
     gap: 12px;
   }
 }
+
+.learning-load-status {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 2rem);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--background);
+  z-index: 20;
+  font-size: 0.875rem;
+}
+.learning-load-status button {
+  margin-left: 0.75rem;
+}

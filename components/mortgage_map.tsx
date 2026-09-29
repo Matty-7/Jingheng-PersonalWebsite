@@ -2,6 +2,7 @@
 
 import {
   useEffect,
+  useMemo,
   useLayoutEffect,
   useRef,
   useState,
@@ -10,19 +11,16 @@ import {
 import { Check, ChevronDown, Circle, Search } from 'lucide-react';
 import {
   initial_progress,
-  learning_index,
-  local_tree,
-  next_lesson,
+  create_learning_model,
   progress_key,
   position_cookie,
-  route_for_concept,
-  route_index,
-  select_lesson,
   type LearningProgress,
-} from '@/lib/mortgage_learning';
+  type LearningNode as LearningNodeData,
+  type LearningRoute,
+} from '@/lib/mortgage_learning_state';
 import { MortgageCatalog } from './mortgage_catalog';
 import { MortgageLesson } from './mortgage_lesson';
-import type { MortgageFormulas } from '@/lib/mortgage_math';
+import type { MortgageLessonData } from '@/lib/mortgage_lesson';
 import { useLearningProgress } from './use_learning_progress';
 import {
   tree_connections,
@@ -30,16 +28,40 @@ import {
 } from './use_learning_tree_motion';
 
 export function MortgageMap({
-  formulas,
+  initial_detail,
+  navigation,
+  routes,
   home_link,
   initial_lesson = initial_progress,
 }: {
-  formulas: MortgageFormulas;
+  initial_detail: MortgageLessonData;
+  navigation: LearningNodeData[];
+  routes: LearningRoute[];
   home_link: ReactNode;
   initial_lesson?: LearningProgress;
 }) {
-  const { progress, loaded, set_progress } =
-    useLearningProgress(initial_lesson);
+  const model = useMemo(
+    () => create_learning_model(navigation, routes),
+    [navigation, routes],
+  );
+  const {
+    learning_index,
+    local_tree,
+    next_lesson,
+    route_for_concept,
+    route_index,
+    select_lesson,
+  } = model;
+  const {
+    progress,
+    lesson,
+    loaded,
+    pending_id,
+    failed,
+    set_progress,
+    prefetch,
+    retry,
+  } = useLearningProgress(initial_lesson, initial_detail, model);
   const selected = progress.current_id;
   const [catalog_open, set_catalog_open] = useState(false);
   const [announcement, set_announcement] = useState('');
@@ -59,7 +81,9 @@ export function MortgageMap({
   useEffect(() => {
     if (!loaded) return;
     if (location.pathname !== '/portfolio/mortgage-map') return;
-    document.documentElement.removeAttribute('data-mortgage-pending');
+    if (!pending_id || failed)
+      document.documentElement.removeAttribute('data-mortgage-pending');
+    if (pending_id) return;
     try {
       localStorage.setItem(progress_key, JSON.stringify(progress));
     } catch {
@@ -76,7 +100,7 @@ export function MortgageMap({
     } catch {
       /* The URL still preserves this lesson when cookies are unavailable. */
     }
-  }, [loaded, progress]);
+  }, [loaded, progress, pending_id, failed]);
 
   useEffect(() => {
     const close_on_history = () => set_catalog_open(false);
@@ -89,37 +113,38 @@ export function MortgageMap({
   }, []);
 
   useLayoutEffect(() => {
-    if (!focus_requested.current) return;
+    if (!focus_requested.current || catalog_open || pending_id) return;
     focus_requested.current = false;
     map_ref.current
       ?.querySelector<HTMLElement>('#learning-title')
       ?.focus({ preventScroll: true });
-  }, [selected, catalog_open]);
+  }, [selected, catalog_open, pending_id]);
   function choose(id: string, preferred = progress.route_id) {
     if (!learning_index.has(id)) return;
     const chosen_route = route_for_concept(id, preferred);
-    // Stamp the current entry only when navigating. Rewriting the URL during
-    // hydration can cancel an in-flight document navigation in WebKit.
-    const current_url = new URL(location.href);
-    current_url.hash = `concept=${progress.current_id}`;
-    current_url.searchParams.set('concept', progress.current_id);
-    // The framework preserves its own metadata for native History API calls.
-    // Copying that metadata back would mislabel this as a router navigation.
-    history.replaceState(
-      { learning_route: progress.route_id },
-      '',
-      current_url,
+    set_progress(
+      (current) => select_lesson(current, id, chosen_route.id),
+      () => {
+        const current_url = new URL(location.href);
+        current_url.hash = `concept=${progress.current_id}`;
+        current_url.searchParams.set('concept', progress.current_id);
+        history.replaceState(
+          { learning_route: progress.route_id },
+          '',
+          current_url,
+        );
+        focus_requested.current = true;
+        set_catalog_open(false);
+        const url = new URL(location.href);
+        url.hash = `concept=${id}`;
+        url.searchParams.set('concept', id);
+        const state = { learning_route: chosen_route.id };
+        if (location.hash !== url.hash) history.pushState(state, '', url);
+        else history.replaceState(state, '', url);
+      },
     );
-    focus_requested.current = true;
-    set_progress((current) => select_lesson(current, id, chosen_route.id));
-    set_catalog_open(false);
-    const url = new URL(location.href);
-    url.hash = `concept=${id}`;
-    url.searchParams.set('concept', id);
-    const state = { learning_route: chosen_route.id };
-    if (location.hash !== url.hash) history.pushState(state, '', url);
-    else history.replaceState(state, '', url);
   }
+
   function browse() {
     catalog_trigger.current = document.activeElement as HTMLElement;
     set_catalog_open(true);
@@ -141,7 +166,7 @@ export function MortgageMap({
   function complete() {
     const completed = [...new Set([...progress.completed, selected])];
     const next = next_lesson(route, selected, completed);
-    set_progress({ ...progress, completed, current_id: next ?? selected });
+    set_progress({ ...progress, completed });
     set_announcement(
       next
         ? `${concept.title} marked understood. Next: ${learning_index.get(next)?.title}.`
@@ -176,6 +201,18 @@ export function MortgageMap({
           </button>
         </nav>
       </header>
+      {(pending_id || failed) && (
+        <output className="learning-load-status">
+          {failed
+            ? 'This lesson could not load.'
+            : `Loading ${learning_index.get(pending_id!)?.title ?? 'lesson'}…`}
+          {failed && (
+            <button className="learning-text-button" onClick={retry}>
+              Try again
+            </button>
+          )}
+        </output>
+      )}
       <div className="learning-route-header">
         <p>{route.title}</p>
         <span>
@@ -209,6 +246,8 @@ export function MortgageMap({
           <LearningNode
             key={id}
             id={id}
+            item={learning_index.get(id)!}
+            prefetch={prefetch}
             position={position}
             active={id === selected}
             understood={progress.completed.includes(id)}
@@ -218,8 +257,9 @@ export function MortgageMap({
         ))}
       </nav>
       <MortgageLesson
-        concept={concept}
-        formulas={formulas}
+        lesson={lesson}
+        learning_index={learning_index}
+        busy={pending_id !== null}
         completed={progress.completed.includes(selected)}
         complete={complete}
         choose={choose}
@@ -233,6 +273,12 @@ export function MortgageMap({
           choose={choose}
           choose_route={choose_route}
           completed={progress.completed}
+          first_route={routes[0]}
+          pending_title={
+            pending_id ? learning_index.get(pending_id)?.title : undefined
+          }
+          lesson_failed={failed}
+          retry_lesson={retry}
         />
       )}
     </section>
@@ -241,6 +287,8 @@ export function MortgageMap({
 
 function LearningNode({
   id,
+  item,
+  prefetch,
   position,
   active,
   understood,
@@ -248,19 +296,23 @@ function LearningNode({
   choose,
 }: {
   id: string;
+  item: LearningNodeData;
+  prefetch: (id: string) => void;
   position: string;
   active: boolean;
   understood: boolean;
   up_next: boolean;
   choose: (id: string) => void;
 }) {
-  const item = learning_index.get(id)!;
   return (
     <button
       className={`learning-node ${position}${active ? ' is-current' : ''}${understood ? ' is-understood' : ''}`}
       aria-current={active ? 'step' : undefined}
       aria-label={`${item.title}${active ? ', current concept' : ''}${understood ? ', understood' : ''}`}
       data-concept-id={id}
+      onPointerEnter={() => prefetch(id)}
+      onFocus={() => prefetch(id)}
+      onTouchStart={() => prefetch(id)}
       onClick={() => choose(id)}
     >
       {active && <span className="learning-node-label">You are here</span>}

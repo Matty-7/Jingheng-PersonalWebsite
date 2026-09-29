@@ -4,8 +4,10 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { MortgageMap } from '@/components/mortgage_map';
 import { pageMetadata } from '@/lib/seo';
-import { render_mortgage_math } from '@/lib/mortgage_math';
+import { mortgage_lesson } from '@/lib/mortgage_lesson';
 import {
+  learning_navigation,
+  learning_routes,
   position_cookie,
   read_position,
   select_lesson,
@@ -36,7 +38,9 @@ export default async function MortgageMapPage({
       <script dangerouslySetInnerHTML={{ __html: legacy_hash_guard }} />
       <MortgageMap
         initial_lesson={initial_lesson}
-        formulas={render_mortgage_math()}
+        initial_detail={mortgage_lesson(initial_lesson.current_id)!}
+        navigation={learning_navigation}
+        routes={learning_routes}
         home_link={
           <Link href="/#projects" aria-label="Back to projects">
             <Sprout size={28} aria-hidden="true" />
