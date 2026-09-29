@@ -24,6 +24,9 @@ export async function check_mortgage_focus_surface(
   await search.waitFor({ state: 'visible' });
   assert.equal(await surface.locator('input[type="search"]:focus').count(), 1);
   await search.fill('zzzz_nomatch');
+  await surface
+    .locator('.learning-search-results')
+    .waitFor({ state: 'visible' });
   assert.match(await surface.getByRole('dialog').innerText(), /No match/);
   await search.press('Escape');
   await surface.getByRole('dialog').waitFor({ state: 'detached' });
@@ -32,6 +35,10 @@ export async function check_mortgage_focus_surface(
     .waitFor({ state: 'attached' });
   await button('Search concepts').press('Enter');
   await search.fill('SMM');
+  await surface
+    .locator('.learning-search-results button')
+    .first()
+    .waitFor({ state: 'visible' });
   await search.press('Enter');
   await surface
     .getByRole('heading', { name: 'SMM', exact: true })

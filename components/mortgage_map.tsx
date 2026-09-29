@@ -56,6 +56,7 @@ export function MortgageMap({
     progress,
     lesson,
     loaded,
+    has_committed,
     pending_id,
     failed,
     set_progress,
@@ -83,7 +84,13 @@ export function MortgageMap({
     if (location.pathname !== '/portfolio/mortgage-map') return;
     if (!pending_id || failed)
       document.documentElement.removeAttribute('data-mortgage-pending');
-    if (pending_id) return;
+  }, [loaded, pending_id, failed]);
+
+  useEffect(() => {
+    // Pending requests retain confirmed progress. Failed initial restoration
+    // must not persist the server fallback over previously saved work.
+    if (!has_committed || location.pathname !== '/portfolio/mortgage-map')
+      return;
     try {
       localStorage.setItem(progress_key, JSON.stringify(progress));
     } catch {
@@ -100,7 +107,7 @@ export function MortgageMap({
     } catch {
       /* The URL still preserves this lesson when cookies are unavailable. */
     }
-  }, [loaded, progress, pending_id, failed]);
+  }, [has_committed, progress]);
 
   useEffect(() => {
     const close_on_history = () => set_catalog_open(false);

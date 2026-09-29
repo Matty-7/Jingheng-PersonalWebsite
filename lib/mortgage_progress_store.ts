@@ -15,6 +15,7 @@ export function create_learning_store(
     progress: initial_progress,
     lesson: initial_lesson,
     loaded: false,
+    has_committed: false,
     pending_id: null as string | null,
     failed: false,
   };
@@ -41,6 +42,7 @@ export function create_learning_store(
         progress: next,
         lesson,
         loaded: true,
+        has_committed: true,
         pending_id: null,
         failed: false,
       };

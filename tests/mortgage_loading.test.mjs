@@ -112,6 +112,8 @@ test('failure preserves the displayed lesson and completed work, and retry commi
   const store = create_learning_store(initial_progress, initial_lesson, model);
   store.set_progress({ ...initial_progress, completed: ['incentive'] });
   store.set_progress((current) => model.select_lesson(current, 'prepayments'));
+  assert.equal(store.get_snapshot().has_committed, true);
+  assert.deepEqual(store.get_snapshot().progress.completed, ['incentive']);
   await settle();
   assert.equal(store.get_snapshot().failed, true);
   assert.equal(store.get_snapshot().progress.current_id, 'incentive');
@@ -123,4 +125,23 @@ test('failure preserves the displayed lesson and completed work, and retry commi
   assert.equal(store.get_snapshot().lesson.concept.id, 'prepayments');
   assert.deepEqual(store.get_snapshot().progress.completed, ['incentive']);
   assert.equal(store.get_snapshot().pending_id, null);
+});
+
+test('a failed initial restoration never makes the server fallback persistable', async (t) => {
+  t.mock.method(
+    globalThis,
+    'fetch',
+    async () => new Response('', { status: 503 }),
+  );
+  const store = create_learning_store(initial_progress, initial_lesson, model);
+  const saved = {
+    ...model.select_lesson(initial_progress, 'cpr'),
+    completed: ['incentive'],
+  };
+  store.set_progress(saved);
+  await settle();
+  assert.equal(store.get_snapshot().loaded, true);
+  assert.equal(store.get_snapshot().failed, true);
+  assert.equal(store.get_snapshot().has_committed, false);
+  assert.equal(store.get_snapshot().progress, initial_progress);
 });

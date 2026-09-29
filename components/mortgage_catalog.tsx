@@ -55,12 +55,6 @@ export function MortgageCatalog({
     dialog?.querySelector<HTMLInputElement>('input[type="search"]')?.focus();
     return () => dialog?.close();
   }, []);
-  useEffect(() => {
-    if (data)
-      dialog_ref.current
-        ?.querySelector<HTMLInputElement>('input[type="search"]')
-        ?.focus();
-  }, [data]);
   return (
     <dialog
       ref={dialog_ref}
@@ -118,7 +112,6 @@ export function MortgageCatalog({
           <Search size={18} aria-hidden="true" />
           <input
             type="search"
-            disabled={!data}
             aria-label="Search mortgage concepts"
             placeholder="Find a concept, e.g. OAS"
             value={query}
