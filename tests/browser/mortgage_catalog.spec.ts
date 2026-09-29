@@ -58,9 +58,9 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     );
     await page.getByText('Why it matters', { exact: true }).press('Enter');
     const depth = page.locator('.learning-depth');
-    await expect(depth).toContainText('5/1 ARM');
+    await expect(page.locator('.learning-summary')).toContainText('5/1 ARM');
     await expect(depth.locator('.learning-formula')).toContainText(
-      'Fully indexed rate',
+      'fully indexed rate',
     );
     await expect(depth).toContainText('first reset to at most 5%');
     const choices = page.getByRole('group', { name: 'Choose an answer' });
