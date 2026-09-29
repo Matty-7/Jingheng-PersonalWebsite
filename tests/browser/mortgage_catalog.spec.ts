@@ -44,6 +44,59 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
   });
 }
 
+for (const reduced_motion of ['no-preference', 'reduce'] as const) {
+  test(`hybrid ARM keeps the reference rate distinct from the capped reset (${reduced_motion})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: reduced_motion });
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(
+      '/portfolio/mortgage-map?concept=fixed_arm#concept=fixed_arm',
+    );
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Fixed rate & ARM',
+    );
+    await page.getByText('Why it matters', { exact: true }).press('Enter');
+    const depth = page.locator('.learning-depth');
+    await expect(depth).toContainText('5/1 ARM');
+    await expect(depth.locator('.learning-formula')).toContainText(
+      'Fully indexed rate',
+    );
+    await expect(depth).toContainText('first reset to at most 5%');
+    const choices = page.getByRole('group', { name: 'Choose an answer' });
+    await choices
+      .getByRole('button', { name: /^The note rate must become 6%/ })
+      .click();
+    await expect(page.locator('.learning-answer')).toContainText('Not quite');
+    await choices
+      .getByRole('button', { name: /^The fully indexed reference rate is 6%/ })
+      .press('Enter');
+    await expect(page.locator('.learning-answer')).toContainText(
+      'That’s right',
+    );
+    await depth
+      .getByRole('button', { name: 'Caps and floors', exact: true })
+      .click();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Caps and floors',
+    );
+    await page.goBack();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Fixed rate & ARM',
+    );
+    await page.reload();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Fixed rate & ARM',
+    );
+    const overflow = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(false);
+  });
+}
+
 test('all domains and concepts remain available through one catalog', async ({
   page,
 }) => {
