@@ -35,7 +35,8 @@ test('search explains its scope and pointer selection survives input blur', asyn
   await second.click();
   await expect(page.locator('.atlas-card h2')).toHaveText(selected_place);
   await expect(results).toHaveCount(0);
-  await expect(page.locator('.atlas-pin.is-selected')).toBeVisible();
+  // Nearby places can cluster; selection keeps its own visible map highlight.
+  await expect(page.locator('.atlas-selected-point')).toBeVisible();
   expect(new URL(page.url()).searchParams.get('entry')).toBe(selected_id);
   await page.reload();
   await expect(page.locator('.atlas-card h2')).toHaveText(selected_place);
