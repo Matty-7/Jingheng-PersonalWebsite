@@ -66,12 +66,17 @@ test('all domains and concepts remain available through one catalog', async ({
   });
   await search.fill('IRS');
   await search.press('Enter');
+  await expect(dialog).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Interest-rate swap',
   );
   await page.getByRole('button', { name: 'Search concepts' }).click();
   await search.fill('HELOC');
+  await expect(
+    dialog.locator('.learning-search-results button').first(),
+  ).toBeVisible();
   await search.press('Enter');
+  await expect(dialog).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 2 })).toContainText('HELOC');
   await page.reload();
   await expect(page.getByRole('heading', { level: 2 })).toContainText('HELOC');

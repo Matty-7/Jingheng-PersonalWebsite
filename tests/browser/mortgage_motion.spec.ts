@@ -17,7 +17,13 @@ test('a selected node moves continuously and its connectors stay attached', asyn
     };
     const start = rect();
     node.click();
-    await new Promise(requestAnimationFrame);
+    // The animation starts when the requested lesson commits, after its fetch.
+    const deadline = performance.now() + 5000;
+    while (!node.classList.contains('is-current')) {
+      if (performance.now() > deadline)
+        throw new Error('Lesson did not commit');
+      await new Promise(requestAnimationFrame);
+    }
     const animations = tree.getAnimations({ subtree: true });
     for (const animation of animations) {
       animation.pause();

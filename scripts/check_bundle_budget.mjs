@@ -7,9 +7,21 @@ const manifest = JSON.parse(
   readFileSync(new URL('.vite/manifest.json', root), 'utf8'),
 );
 const budgets = [
-  { entry: 'app/page.tsx', raw: 540_000, gzip: 170_000 },
+  {
+    entry: 'home',
+    entries: [
+      'components/home_hero.tsx',
+      'components/home_motion.tsx',
+      'components/records_player.tsx',
+      'components/bookshelf.tsx',
+      'components/playbill_collection.tsx',
+      'components/terminal_scene.tsx',
+    ],
+    raw: 500_000,
+    gzip: 160_000,
+  },
   { entry: 'components/new_york_atlas.tsx', raw: 470_000, gzip: 150_000 },
-  { entry: 'components/mortgage_map.tsx', raw: 680_000, gzip: 205_000 },
+  { entry: 'components/mortgage_map.tsx', raw: 250_000, gzip: 80_000 },
 ];
 
 for (const budget of budgets) {
@@ -27,7 +39,7 @@ for (const budget of budgets) {
     files.add(chunk.file);
     for (const dependency of chunk.imports ?? []) collect(dependency);
   }
-  collect(budget.entry);
+  for (const entry of budget.entries ?? [budget.entry]) collect(entry);
   const chunks = [...files].map((file) => readFileSync(new URL(file, root)));
   const raw = chunks.reduce((total, bytes) => total + bytes.length, 0);
   const gzip = chunks.reduce(
