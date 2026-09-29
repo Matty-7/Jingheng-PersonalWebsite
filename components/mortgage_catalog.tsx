@@ -26,6 +26,7 @@ export function MortgageCatalog({
   retry_lesson: () => void;
 }) {
   const dialog_ref = useRef<HTMLDialogElement>(null);
+  const submitted_query = useRef<string | null>(null);
   const [query, set_query] = useState('');
   const [section, set_section] = useState<'topics' | 'routes'>('topics');
   const [data, set_data] = useState<MortgageCatalogData | null>(null);
@@ -55,6 +56,12 @@ export function MortgageCatalog({
     dialog?.querySelector<HTMLInputElement>('input[type="search"]')?.focus();
     return () => dialog?.close();
   }, []);
+  useEffect(() => {
+    if (!data || !submitted_query.current) return;
+    const match = search_catalog(data.concepts, submitted_query.current)[0];
+    submitted_query.current = null;
+    if (match) choose(match.id);
+  }, [data, choose]);
   return (
     <dialog
       ref={dialog_ref}
@@ -115,12 +122,15 @@ export function MortgageCatalog({
             aria-label="Search mortgage concepts"
             placeholder="Find a concept, e.g. OAS"
             value={query}
-            onChange={(event) => set_query(event.target.value)}
+            onChange={(event) => {
+              submitted_query.current = null;
+              set_query(event.target.value);
+            }}
             onKeyDown={(event) => {
-              if (event.key === 'Enter' && matches[0]) {
-                event.preventDefault();
-                choose(matches[0].id);
-              }
+              if (event.key !== 'Enter') return;
+              event.preventDefault();
+              if (!data) submitted_query.current = query.trim();
+              else if (matches[0]) choose(matches[0].id);
             }}
             autoFocus
           />

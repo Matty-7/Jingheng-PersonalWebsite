@@ -52,6 +52,34 @@ test('course failure keeps the current lesson usable and retries without replaci
   expect(catalog_requests.length).toBe(1);
 });
 
+test('search submitted while the catalog loads opens its result when ready', async ({
+  page,
+}) => {
+  let release: () => void = () => {};
+  const requested = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route('**/api/mortgage-catalog', async (route) => {
+    await requested;
+    await route.continue();
+  });
+  await page.goto('/portfolio/mortgage-map');
+  await page
+    .getByRole('button', { name: 'Search concepts', exact: true })
+    .click();
+  const search = page.getByRole('searchbox', {
+    name: 'Search mortgage concepts',
+  });
+  await expect(search).toBeFocused();
+  await search.fill('SMM');
+  await search.press('Enter');
+  await expect(page.getByRole('dialog')).toContainText('Loading topics');
+  release();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page.locator('#learning-title')).toHaveText('SMM');
+  await expect(page.locator('#learning-title')).toBeFocused();
+});
+
 test('completing a lesson survives a failed next lesson and reload', async ({
   page,
 }) => {
