@@ -135,4 +135,13 @@ test('failed initial restoration preserves the saved lesson and completed work',
       progress_key,
     ),
   ).toEqual(saved);
+  await page.locator('.learning-node.is-current').click();
+  await expect
+    .poll(() =>
+      page.evaluate(
+        (key) => JSON.parse(localStorage.getItem(key)!),
+        progress_key,
+      ),
+    )
+    .toEqual({ ...saved, current_id: 'incentive' });
 });

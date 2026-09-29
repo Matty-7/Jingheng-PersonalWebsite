@@ -90,6 +90,12 @@ export function create_learning_store(
     } catch {
       /* The server lesson works without browser storage. */
     }
+    // Completion is independent of which lesson has finished loading. Keep it
+    // available if restoration fails and the visitor chooses another lesson.
+    snapshot = {
+      ...snapshot,
+      progress: { ...snapshot.progress, completed: saved.completed },
+    };
     const url = new URL(location.href);
     const id =
       new URLSearchParams(url.hash.slice(1)).get('concept') ??
