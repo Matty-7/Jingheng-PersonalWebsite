@@ -48,6 +48,22 @@ test('every learning node has a unique identity, a visible branch and complete r
   for (const step of learning_path) assert.ok(ids.has(step.id));
 });
 
+test('repo separates settlement agency from central clearing and preserves the MBS funding boundary', () => {
+  const repo = mortgage_concepts.find((concept) => concept.id === 'repo');
+  assert.match(repo.summary, /tri-party agent/i);
+  assert.match(repo.summary, /without becoming.*central counterparty/i);
+  assert.match(repo.distinction, /default-fund/);
+  assert.match(
+    repo.distinction,
+    /SOFR.*not the position-specific funding cost/i,
+  );
+  assert.deepEqual(repo.sources, [
+    'repo_public',
+    'repo_participants_public',
+    'repo_microstructure_public',
+  ]);
+});
+
 test('the knowledge graph has no disconnected cluster, including cross-branch learning connections', () => {
   const seen = new Set();
   const pending = [mortgage_concepts[0].id];

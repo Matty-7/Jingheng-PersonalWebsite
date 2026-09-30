@@ -582,11 +582,11 @@ export const learning_checks: Record<
   },
   repo: {
     choices: [
-      'Yes. A payment guarantee fixes financing terms for the life of the MBS.',
-      'Yes. Guaranteed collateral cannot be subject to a margin requirement.',
-      'No. Financing can reprice or demand additional collateral.',
+      'Yes. Any agent that settles collateral becomes the buyer to every seller and the seller to every buyer.',
+      'No. An agent can provide settlement and collateral management without becoming the central counterparty.',
+      'No. Tri-party means the repo is unsecured and therefore has no collateral to settle.',
     ],
-    correct: 2,
+    correct: 1,
   },
   haircut: {
     choices: [

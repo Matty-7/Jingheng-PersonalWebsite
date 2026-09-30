@@ -56,6 +56,16 @@ export const mechanism_sources = {
     title: 'Reference guide to US repo and securities lending markets',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr740.pdf',
   },
+  repo_participants_public: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'Who’s Borrowing and Lending in Repo Markets? · September 2026',
+    url: 'https://libertystreeteconomics.newyorkfed.org/2026/09/whos-borrowing-and-lending-in-repo-markets/',
+  },
+  repo_microstructure_public: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'Follow the Cash! Microstructure of Repo Markets · September 2026',
+    url: 'https://libertystreeteconomics.newyorkfed.org/2026/09/follow-the-cash-microstructure-of-repo-markets/',
+  },
   return_public: {
     publisher: 'FINRA',
     title: 'Understanding bond yield and return',
@@ -449,9 +459,9 @@ const entries: Entry[] = [
     subtitle: 'Borrowing against securities',
     aliases: ['repo', 'repurchase agreement', 'reverse repo'],
     summary:
-      'A repo exchanges securities for cash with an agreement to repurchase them. A financed MBS position faces both asset risk and funding risk. Repo and reverse repo describe opposite sides of the same transaction.',
+      'A repo exchanges securities for cash with an agreement to repurchase them; repo and reverse repo describe opposite sides of the same trade. Its market plumbing has separate dimensions: settlement covers the transfer, valuation, margining and custody of collateral, while central clearing changes the counterparty arrangement. A tri-party agent can perform settlement services without becoming the trade’s central counterparty.',
     distinction:
-      'A security can be long-lived while its financing must be renewed much sooner.',
+      'Central clearing can increase netting and reduce balance-sheet use, but it can also require margin and default-fund resources. A long-lived MBS may need much shorter funding, and its actual financing terms depend on collateral, maturity, counterparty and haircut. A guarantee on the MBS does not lock those terms; SOFR is an overnight Treasury repo benchmark, not the position-specific funding cost of every MBS.',
     links: [
       {
         id: 'haircut',
@@ -468,9 +478,15 @@ const entries: Entry[] = [
           'SOFR measures overnight Treasury repo financing, not every MBS borrower’s funding rate.',
       },
     ],
-    sources: ['repo_public'],
-    question: 'Does holding a guaranteed MBS remove funding risk?',
-    answer: 'No. Financing can reprice or require additional collateral.',
+    sources: [
+      'repo_public',
+      'repo_participants_public',
+      'repo_microstructure_public',
+    ],
+    question:
+      'Does using a tri-party agent mean that the agent becomes the repo’s central counterparty?',
+    answer:
+      'No. The agent can handle settlement and collateral management while the buyer and seller remain each other’s counterparties.',
   },
   {
     id: 'haircut',
