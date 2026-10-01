@@ -1,6 +1,6 @@
 # NYC Film Map expansion, September 21, 2026
 
-This pass deepens the existing catalog and aligns its presentation with Music Map. It adds no Google lookup service: the existing OSM multi-place overview, single selected-place no-charge Google Embed and keyless destination links remain the only map integrations.
+This historical pass deepened the existing catalog and aligned its presentation with Music Map. At that time, it used an OSM multi-place overview, a selected-place Google Embed and keyless destination links. The Embed integration has since been removed. The current Atlas uses MapLibre/OpenFreeMap and external Google Maps links only; the October 1, 2026 [policy](google_maps.md) prohibits Google Maps APIs and key configuration.
 
 ## Content verification
 
@@ -22,4 +22,4 @@ The selected scene occupies a wider reading pane. Film labels can remain visible
 
 ## Validation boundary
 
-Source checks cover catalog uniqueness, film/source relationships, local JPEG signatures, exact image provenance and allowed Google endpoints. Supported browser checks inspect desktop and a 390px iframe layout; these do not emulate physical devices. CI additionally exercises Chromium and WebKit desktop/mobile flows. Google frames intercepted by CI establish URL/count contracts, not real Google authorization. This pass does not inspect or change the user’s Google Cloud billing or key restrictions.
+The September 21 source checks covered catalog uniqueness, film/source relationships, local JPEG signatures, exact image provenance and then-allowed Google endpoints. Supported browser checks inspected desktop and a 390px iframe layout; these did not emulate physical devices. CI also exercised Chromium and WebKit desktop/mobile flows. Google frames intercepted by that CI established URL/count contracts, not real Google authorization. This historical pass did not inspect or change the user’s Google Cloud billing or key restrictions.

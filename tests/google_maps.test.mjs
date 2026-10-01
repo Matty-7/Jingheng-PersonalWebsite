@@ -18,9 +18,9 @@ test('Google Maps links preserve destinations without an API key', () => {
   }
 });
 
-test('application sources keep the strict zero-charge Google Maps boundary', () => {
+test('application sources keep Google Maps external-link only', () => {
   const forbidden =
-    /(?:maps\.googleapis\.com|places\.googleapis\.com|routes\.googleapis\.com|mapsplatform\.googleapis\.com|streetviewpublish\.googleapis\.com|maps\.google\.com\/maps\/api|google\.maps\.(?:Map|importLibrary)|@googlemaps\/|AIza[\w-]{30,})/;
+    /(?:maps\.googleapis\.com|places\.googleapis\.com|routes\.googleapis\.com|mapsplatform\.googleapis\.com|streetviewpublish\.googleapis\.com|maps\.google\.com\/maps\/api|google\.com\/maps\/embed|GOOGLE_MAPS_[A-Z_]*KEY|google\.maps\.(?:Map|importLibrary)|@googlemaps\/|AIza[\w-]{30,})/;
   for (const root of ['app', 'components', 'lib']) {
     for (const path of readdirSync(new URL(`../${root}/`, import.meta.url), {
       recursive: true,
@@ -33,7 +33,7 @@ test('application sources keep the strict zero-charge Google Maps boundary', () 
       assert.equal(
         forbidden.test(source),
         false,
-        `Metered Google API or hardcoded key in ${root}/${path}`,
+        `Google Maps API, embed or key in ${root}/${path}`,
       );
     }
   }
