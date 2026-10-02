@@ -606,11 +606,11 @@ export const learning_checks: Record<
   },
   total_return: {
     choices: [
-      'No. Positive coupon income ensures a positive total return.',
-      'Yes. Coupon income is excluded when calculating total return.',
-      'Yes. Market-value losses or other costs can exceed coupon income.',
+      'Yes. Positive total return requires nonnegative excess return.',
+      'No. Excess return is +1% minus +2%, or −1 percentage point.',
+      'No. Excess return is the MBS coupon income, so it remains positive.',
     ],
-    correct: 2,
+    correct: 1,
   },
   carry: {
     choices: [
