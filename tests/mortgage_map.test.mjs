@@ -265,6 +265,25 @@ test('mortgage lock-in states its units and follows principal timing into rate r
   assert.match(mortgage_math.lock_in.variables, /basis points/);
 });
 
+test('total return separates the cash bucket from benchmark excess return and OAS', () => {
+  const total_return = mortgage_concepts.find((c) => c.id === 'total_return');
+  assert.match(
+    total_return.formula.expression,
+    /ending value of cash received/,
+  );
+  assert.match(total_return.formula.assumptions, /no overlap/);
+  assert.match(total_return.formula.assumptions, /not an annualized rate/);
+  assert.match(total_return.formula.example, /−1 percentage point \(−100 bp\)/);
+  assert.match(total_return.distinction, /not OAS/);
+  assert.match(total_return.distinction, /actual hedge P&L/);
+  assert.deepEqual(
+    total_return.links.slice(-2).map((link) => link.id),
+    ['benchmark_matching', 'oas'],
+  );
+  assert.ok(total_return.sources.includes('bloomberg_returns_public'));
+  assert.match(mortgage_math.total_return.variables, /do not overlap/);
+});
+
 test('hybrid ARM separates the fully indexed reference from the capped reset', () => {
   const arm = mortgage_concepts.find((c) => c.id === 'fixed_arm');
   assert.match(arm.summary, /5\/1 ARM.*five-year.*annual resets/);

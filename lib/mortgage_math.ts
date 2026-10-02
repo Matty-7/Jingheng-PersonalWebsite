@@ -65,6 +65,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'R: holding-period return as a decimal; π: inflation over that same period. Returns and inflation must use a consistent horizon.',
     },
+    total_return: {
+      tex: String.raw`R=\frac{V_1+C_1-V_0}{V_0}`,
+      variables:
+        'V₀: starting security value; V₁: ending value of the remaining security; C₁: ending value of same-period cash received. Values use one currency and accrued-interest convention, and V₁ and C₁ do not overlap.',
+    },
     expected_loss: {
       tex: String.raw`\mathrm{EL}=\mathrm{PD}\times\mathrm{LGD}\times\mathrm{EAD}`,
       variables:

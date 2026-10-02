@@ -71,6 +71,12 @@ export const mechanism_sources = {
     title: 'Understanding bond yield and return',
     url: 'https://www.finra.org/investors/insights/bond-yield-return',
   },
+  bloomberg_returns_public: {
+    publisher: 'Bloomberg Index Services Limited',
+    title:
+      'Bloomberg Fixed Income Index Methodology · Total and Excess Return, January 8, 2026',
+    url: 'https://assets.bbhub.io/professional/sites/10/Bloomberg-Index-Publications-Fixed-Income-Index-Methodology.pdf#page=59',
+  },
   carry_public: {
     publisher: 'Wharton · Jacobs Levy Center',
     title: 'Carry and Trend in Lots of Places',
@@ -548,9 +554,17 @@ const entries: Entry[] = [
     subtitle: 'Income and value over the whole period',
     aliases: ['total return', 'holding period return'],
     summary:
-      'Total return combines distributions, any reinvestment earnings and the ending investment value, relative to the starting value. For an amortizing MBS, returned principal reduces the remaining asset; it is not all profit.',
+      'Total return combines the ending value of the remaining position with distributions and any reinvestment earnings, relative to the starting value. For an amortizing MBS, returned principal reduces the remaining asset and belongs in the cash bucket exactly once; it is not all profit.',
+    formula: {
+      expression:
+        'R = (ending value + ending value of cash received − starting value) / starting value',
+      assumptions:
+        'Starting value must be positive. Starting and ending security values include accrued interest; the cash bucket contains same-period distributions and any reinvestment earnings, with no overlap with the remaining security. Use one currency, no external contributions or withdrawals, and an unlevered return before fees and taxes. This is a holding-period return, not an annualized rate.',
+      example:
+        'Suppose the starting value is 100, the remaining MBS ends at 98, and 3 of cash is received and held without reinvestment: total return is +1%. If a same-period, same-currency matched Treasury benchmark returns +2%, excess return is −1 percentage point (−100 bp). Principal distributions are counted only in the cash bucket.',
+    },
     distinction:
-      'Coupon rate, yield and realized return are not interchangeable.',
+      'Coupon, yield and realized total return are not interchangeable. Excess return subtracts a stated benchmark return, so benchmark and duration or key-rate matching conventions matter. A published informational excess return is not OAS, expected return or an investor’s actual hedge P&L.',
     links: [
       {
         id: 'cash_flows',
@@ -576,12 +590,22 @@ const entries: Entry[] = [
         id: 'real_return',
         reason: 'Inflation changes the purchasing power of the nominal result.',
       },
+      {
+        id: 'benchmark_matching',
+        reason:
+          'Excess return is interpretable only after stating how Treasury curve exposure and return conventions were matched.',
+      },
+      {
+        id: 'oas',
+        reason:
+          'OAS is a model-implied valuation spread, not the realized difference between two holding-period returns.',
+      },
     ],
-    sources: ['return_public', 'basics'],
+    sources: ['return_public', 'basics', 'bloomberg_returns_public'],
     question:
-      'Can positive coupon income coexist with a negative total return?',
+      'An MBS earns +1% total return while its matched Treasury benchmark earns +2%. Is a −1 percentage point excess return inconsistent?',
     answer:
-      'Yes. A loss in market value or other costs can outweigh the income.',
+      'No. Excess return is the same-period MBS total return minus the stated matched-benchmark return: +1% − +2% = −1 percentage point.',
   },
   {
     id: 'carry',
