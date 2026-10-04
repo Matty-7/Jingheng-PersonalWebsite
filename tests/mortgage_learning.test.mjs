@@ -94,6 +94,17 @@ test('every concept has three distinct choices and one valid answer', () => {
   }
 });
 
+test('pay-up check distinguishes price points from yield and realized return', () => {
+  const check = learning_checks.pay_up;
+  assert.equal(check.correct, 0);
+  assert.match(
+    check.choices[check.correct],
+    /\$0\.50 more per \$100 current face/,
+  );
+  assert.match(check.choices[1], /50 bp.*yield/);
+  assert.match(check.choices[2], /guaranteed 0\.5% realized excess return/);
+});
+
 test('free jumps adopt the new lesson, keep completion and select a valid route', () => {
   const saved = { ...initial_progress, completed: ['incentive'] };
   const same_route = select_lesson(saved, 'prepayments');

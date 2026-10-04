@@ -5,6 +5,11 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    pay_up: {
+      tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,
+      variables:
+        'PU: pay-up in clean-price points per $100 current face; P: comparable specified-pool and TBA clean prices at the same quotation time and settlement month. Not a yield spread or realized return.',
+    },
     rolls: {
       tex: String.raw`D=P_{\mathrm{near}}-P_{\mathrm{far}}`,
       variables:

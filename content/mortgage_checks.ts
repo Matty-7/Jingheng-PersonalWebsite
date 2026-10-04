@@ -1110,11 +1110,11 @@ export const learning_checks: Record<
   },
   pay_up: {
     choices: [
-      'Yes, because a higher purchase price necessarily produces a higher yield.',
-      'Potentially, if preserved interest and other benefits justify the extra price.',
-      'No, because slower principal return cannot preserve additional interest.',
+      '$0.50 more per $100 current face for the comparable specified-pool clean price.',
+      'A 50 bp increase in the security’s yield relative to the comparable TBA.',
+      'A guaranteed 0.5% realized excess return over the comparable TBA.',
     ],
-    correct: 1,
+    correct: 0,
   },
   cheapest_deliverable: {
     choices: [
