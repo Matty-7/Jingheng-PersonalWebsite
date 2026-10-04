@@ -8,7 +8,7 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
     pay_up: {
       tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,
       variables:
-        'PU: pay-up in clean-price points per $100 current face; P: comparable specified-pool and TBA clean prices at the same quotation time and settlement month. Not a yield spread or realized return.',
+        'PU: pay-up in clean-price points per $100 current face; P: comparable specified-pool and TBA clean prices at the same quotation time and settlement date. Not a yield spread or realized return.',
     },
     rolls: {
       tex: String.raw`D=P_{\mathrm{near}}-P_{\mathrm{far}}`,

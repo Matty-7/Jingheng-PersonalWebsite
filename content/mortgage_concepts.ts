@@ -2002,7 +2002,7 @@ const original_concepts: MortgageConcept[] = [
     formula: {
       expression: 'PU = P_spec − P_TBA',
       assumptions:
-        'Both P_spec and P_TBA are clean-price points per $100 current face, observed at the same quotation time for the same settlement month, security coupon and original-term class, and for a comparable agency/program or fungible delivery class. Accrued interest and invoice adjustments are excluded.',
+        'Both P_spec and P_TBA are clean-price points per $100 current face, observed at the same quotation time for the same settlement date, security coupon and original-term class, and for a comparable agency/program or fungible delivery class. Accrued interest and invoice adjustments are excluded.',
       example:
         'Illustrative: 101.5 − 101 = 0.5 price point, or $0.50 per $100 current face. That is not a 0.5% realized return or 50 bp of yield.',
     },

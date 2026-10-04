@@ -292,6 +292,7 @@ test('specified-pool pay-up states quotation units, comparability and extension 
     /clean-price points per \$100 current face/,
   );
   assert.match(pay_up.formula.assumptions, /same quotation time/);
+  assert.match(pay_up.formula.assumptions, /same settlement date/);
   assert.match(pay_up.formula.assumptions, /fungible delivery class/);
   assert.match(pay_up.formula.example, /\$0\.50 per \$100 current face/);
   assert.match(
