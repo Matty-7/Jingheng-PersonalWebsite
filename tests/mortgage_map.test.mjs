@@ -284,6 +284,41 @@ test('total return separates the cash bucket from benchmark excess return and OA
   assert.match(mortgage_math.total_return.variables, /do not overlap/);
 });
 
+test('specified-pool pay-up states quotation units, comparability and extension limits', () => {
+  const pay_up = mortgage_concepts.find((c) => c.id === 'pay_up');
+  assert.match(pay_up.formula.expression, /P_spec − P_TBA/);
+  assert.match(
+    pay_up.formula.assumptions,
+    /clean-price points per \$100 current face/,
+  );
+  assert.match(pay_up.formula.assumptions, /same quotation time/);
+  assert.match(pay_up.formula.assumptions, /same settlement date/);
+  assert.match(pay_up.formula.assumptions, /fungible delivery class/);
+  assert.match(pay_up.formula.example, /\$0\.50 per \$100 current face/);
+  assert.match(
+    pay_up.formula.example,
+    /not a 0\.5% realized return or 50 bp of yield/,
+  );
+  assert.match(
+    pay_up.distinction,
+    /Slower principal is not universally better/,
+  );
+  assert.match(pay_up.answer, /worsen extension of a low-coupon position/);
+  assert.deepEqual(
+    pay_up.links.slice(-2).map((link) => link.id),
+    ['price', 'extension'],
+  );
+  assert.deepEqual(pay_up.sources, [
+    'tba',
+    'specified_pool_pricing',
+    'fannie_mbs_basics',
+  ]);
+  assert.match(
+    mortgage_math.pay_up.variables,
+    /Not a yield spread or realized return/,
+  );
+});
+
 test('hybrid ARM separates the fully indexed reference from the capped reset', () => {
   const arm = mortgage_concepts.find((c) => c.id === 'fixed_arm');
   assert.match(arm.summary, /5\/1 ARM.*five-year.*annual resets/);

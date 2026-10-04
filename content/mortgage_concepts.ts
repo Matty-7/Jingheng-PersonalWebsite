@@ -360,6 +360,18 @@ export const mortgage_sources: Record<
     title: 'TBA Trading and Liquidity in the Agency MBS Market',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/epr/2013/1212vick.pdf',
   },
+  specified_pool_pricing: {
+    publisher: 'Federal Reserve Bank of New York',
+    title:
+      'The Implementation of Current Asset Purchases · TBA and specified-pool pricing · March 27, 2013',
+    url: 'https://www.newyorkfed.org/newsevents/speeches/2013/pot130327.html',
+  },
+  fannie_mbs_basics: {
+    publisher: 'Fannie Mae',
+    title:
+      'Basics of Fannie Mae Single-Family MBS · TBA and specified pools, p. 5 · 2025',
+    url: 'https://capitalmarkets.fanniemae.com/resources/file/mbs/pdf/basics-sf-mbs.pdf#page=5',
+  },
   dollar_roll_faq: {
     publisher: 'Federal Reserve Bank of New York',
     title: 'Agency MBS FAQs · August 2014 archive, dollar-roll mechanics',
@@ -1984,13 +1996,20 @@ const original_concepts: MortgageConcept[] = [
     title: 'Specified-pool pay-up',
     subtitle: 'A premium for known collateral',
     summary:
-      'A pay-up is the extra price of a specified pool relative to a comparable generic TBA execution. Desired prepayment characteristics can contribute to it.',
+      'A pay-up is the clean-price difference between a specified pool and a comparable generic TBA execution. It prices known collateral against generic delivery; desired prepayment characteristics can contribute to that difference.',
     distinction:
-      'Pay-up is a price difference, not a guaranteed excess return.',
-    question: 'Can paying more for slower collateral still be sensible?',
+      'Pay-up is a relative price quotation, not a yield spread or guaranteed excess return. Slower principal is not universally better: it can protect a premium investment from contraction, but it can also extend an unfavorable low-coupon exposure when rates rise.',
+    formula: {
+      expression: 'PU = P_spec − P_TBA',
+      assumptions:
+        'Both P_spec and P_TBA are clean-price points per $100 current face, observed at the same quotation time for the same settlement date, security coupon and original-term class, and for a comparable agency/program or fungible delivery class. Accrued interest and invoice adjustments are excluded.',
+      example:
+        'Illustrative: 101.5 − 101 = 0.5 price point, or $0.50 per $100 current face. That is not a 0.5% realized return or 50 bp of yield.',
+    },
+    question: 'What does a quoted 0.5-point pay-up mean?',
     answer:
-      'Potentially, when preserved interest and other benefits justify the extra price under the investor’s assumptions.',
-    sources: ['tba'],
+      'The specified pool’s comparable clean price is $0.50 higher per $100 current face. Whether that premium is justified depends on the projected cash-flow benefit: slower principal can protect a premium pool from contraction, but slower-than-assumed principal can worsen extension of a low-coupon position when rates rise.',
+    sources: ['tba', 'specified_pool_pricing', 'fannie_mbs_basics'],
     links: [
       {
         id: 'specified',
@@ -2005,6 +2024,16 @@ const original_concepts: MortgageConcept[] = [
         id: 'tba',
         reason:
           'A pay-up is measured against an appropriately comparable TBA execution.',
+      },
+      {
+        id: 'price',
+        reason:
+          'Clean price states the quotation before accrued interest and invoice adjustments.',
+      },
+      {
+        id: 'extension',
+        reason:
+          'Slower-than-assumed principal can lengthen an unfavorable low-coupon exposure.',
       },
     ],
     aliases: [],
