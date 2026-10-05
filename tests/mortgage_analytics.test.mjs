@@ -35,3 +35,16 @@ test('operational acronyms resolve to the intended financial concept', () => {
   ])
     assert.equal(search_concepts(query)[0]?.id, id, query);
 });
+
+test('effective convexity explains sign without treating it as a permanent label', () => {
+  const concept = analytics_concepts.find(
+    (node) => node.id === 'effective_convexity',
+  );
+  assert.ok(concept);
+  assert.match(concept.summary, /P₋ \+ P₊ exceeds 2P₀/);
+  assert.match(concept.distinction, /Low CPR.*alone does not prove/);
+  assert.match(concept.formula?.assumptions ?? '', /P₀ > 0/);
+  assert.match(concept.formula?.example ?? '', /C_eff ≈ \+10 years²/);
+  assert.match(concept.formula?.example ?? '', /up-shock price still falls/);
+  assert.ok(concept.links.some((link) => link.id === 'convexity'));
+});

@@ -599,16 +599,20 @@ export const analytics_concepts: MortgageConcept[] = [
     subtitle: 'Curvature under a defined curve shock',
     aliases: ['option adjusted convexity', 'curve convexity'],
     summary:
-      'Effective convexity describes curvature in modeled price as the benchmark curve shifts, allowing option-sensitive payments to respond.',
+      'Effective convexity describes curvature in modeled price as the benchmark curve shifts, allowing option-sensitive payments to respond. With a positive base full price and equal nonzero shocks, it is positive when P₋ + P₊ exceeds 2P₀, negative when it is below 2P₀ and zero when the two are equal.',
     distinction:
-      'State the shock size and what stays fixed. In a constant-OAS calculation, hold OAS fixed while repricing the changed curve. This differs from shocking the spread with the curve fixed.',
+      'State the shock size and what stays fixed. In a constant-OAS calculation, hold OAS fixed while repricing the changed curve. This differs from shocking the spread with the curve fixed. The sign is local to the model, collateral, valuation date, market state and shock size—not a permanent label. Low CPR or weak refinancing incentive alone does not prove positive convexity.',
     formula: {
       expression: 'C_eff ≈ (P₋ + P₊ − 2P₀) / (P₀ Δy²)',
       assumptions:
-        'Equal up/down parallel curve shifts of magnitude Δy in decimal rate units. P₀ is the base full price; P₋ and P₊ use consistent option modeling at fixed OAS. A finite-difference approximation, not a guarantee for large shocks.',
+        'P₀ > 0 and equal up/down parallel curve shifts of nonzero magnitude Δy in decimal rate units. P₀ is the base full price; P₋ and P₊ use consistent full-price and option-modeling conventions at fixed OAS. A finite-difference approximation, not a guarantee for large shocks.',
+      example:
+        'Hypothetical same-valuation repricing: P₀ = 100, P₋ = 101.05 and P₊ = 99.05 under ±100 bp parallel shocks, so Δy = 0.01. The numerator is 0.10 and the denominator is 0.01, giving C_eff ≈ +10 years². The up-shock price still falls below 100: positive curvature does not require a gain when rates rise. This is neither a future-price forecast nor a realized-profit claim.',
     },
-    question: 'Is a rate-curve shock the same experiment as an OAS shock?',
-    answer: 'No. Different inputs move and different quantities remain fixed.',
+    question:
+      'Can positive effective convexity coexist with an up-shock price below the base price?',
+    answer:
+      'Yes. Its sign compares the two shocked prices with twice the base price; it does not require the up-shock price to rise.',
     links: [
       {
         id: 'duration',
@@ -620,8 +624,13 @@ export const analytics_concepts: MortgageConcept[] = [
         reason:
           'Spread sensitivity changes the spread while preserving the reference curve.',
       },
+      {
+        id: 'convexity',
+        reason:
+          'The sign is a local result, not a permanent label for every MBS or market state.',
+      },
     ],
-    sources: ['cfa_risk', 'embedded_options'],
+    sources: ['cfa_risk', 'embedded_options', 'convexity'],
   }),
   analysis_concept({
     id: 'spread_conventions',

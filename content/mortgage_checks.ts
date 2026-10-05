@@ -126,11 +126,11 @@ export const learning_checks: Record<
   },
   effective_convexity: {
     choices: [
-      'Yes. A curve shock and an OAS shock move the same valuation input.',
-      'Yes. Equal-sized shocks must produce the same mortgage cash-flow response.',
-      'No. The shocked inputs and quantities held fixed differ.',
+      'Yes. Positive curvature compares P₋ + P₊ with 2P₀; P₊ can still be below P₀.',
+      'No. Positive effective convexity requires both shocked prices to exceed the base price.',
+      'No. A low CPR or weak refinancing incentive by itself fixes the convexity sign.',
     ],
-    correct: 2,
+    correct: 0,
   },
   spread_conventions: {
     choices: [
