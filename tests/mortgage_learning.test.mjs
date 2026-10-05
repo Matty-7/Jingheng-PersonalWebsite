@@ -105,6 +105,15 @@ test('pay-up check distinguishes price points from yield and realized return', (
   assert.match(check.choices[2], /guaranteed 0\.5% realized excess return/);
 });
 
+test('effective convexity check separates curvature from price direction', () => {
+  const check = learning_checks.effective_convexity;
+  assert.equal(check.correct, 0);
+  assert.match(check.choices[check.correct], /P₋ \+ P₊ with 2P₀/);
+  assert.match(check.choices[check.correct], /P₊ can still be below P₀/);
+  assert.match(check.choices[1], /both shocked prices to exceed/);
+  assert.match(check.choices[2], /low CPR.*by itself fixes/);
+});
+
 test('free jumps adopt the new lesson, keep completion and select a valid route', () => {
   const saved = { ...initial_progress, completed: ['incentive'] };
   const same_route = select_lesson(saved, 'prepayments');
