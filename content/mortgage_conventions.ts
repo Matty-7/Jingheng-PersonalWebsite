@@ -146,7 +146,7 @@ export const convention_concepts: MortgageConcept[] = [
     summary:
       'Quarterly IMM dates fall on the third Wednesday of March, June, September and December. They define important boundaries for many interest-rate contracts.',
     distinction:
-      'For CME SR3, the named contract month starts the reference quarter; the quarter ends immediately before the next quarterly IMM Wednesday. Last trading and final settlement follow their own rules. An IMM quarter is not always 90 days, and an FOMC meeting date is a different calendar.',
+      'For a quarterly CME SR3 contract, the named contract month starts the reference quarter; the quarter ends immediately before the next quarterly IMM Wednesday. Serial contracts follow their own three-month reference periods. Last trading and final settlement follow their own rules. An IMM quarter is not always 90 days, and an FOMC meeting date is a different calendar.',
     question:
       'Does a September SR3 contract measure only September overnight rates?',
     answer:
@@ -593,7 +593,7 @@ export const convention_relationships: MortgageRelationship[] = [
     kind: 'definition',
     label: 'bounds the reference interval',
     reason:
-      'Quarterly IMM boundaries identify the calendar interval over which an SR3 contract compounds overnight rates.',
+      'Quarterly IMM boundaries identify the calendar interval over which a quarterly SR3 contract compounds overnight rates.',
     conditions:
       'Apply the contract calendar; the resulting number of days is not always 90.',
     sources: ['sofr_contract_period'],
