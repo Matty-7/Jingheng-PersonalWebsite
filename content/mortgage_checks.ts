@@ -70,6 +70,102 @@ export const learning_checks: Record<
     correct: 0,
   },
   ...convention_checks,
+  curve_anchor: {
+    choices: [
+      'Yes. Every curve input starts on the observation date.',
+      'No. Curve reference, effective date and spot-lag conventions are distinct.',
+      'Yes. T+2 fixes every curve and every instrument start date.',
+    ],
+    correct: 1,
+  },
+  imm_dates: {
+    choices: [
+      'It measures only the overnight rates observed in September.',
+      'It measures exactly 90 days beginning on September 1.',
+      'It compounds from September IMM Wednesday to, but excluding, December IMM Wednesday.',
+    ],
+    correct: 2,
+  },
+  accrual_period: {
+    choices: [
+      'No. It accrues between the adjusted three-month and six-month dates.',
+      'Yes. The six-month end label is the length of the accrual interval.',
+      'Yes. The waiting period and interest period are added to calculate interest.',
+    ],
+    correct: 0,
+  },
+  forward_rate_agreement: {
+    choices: [
+      'No. Matching dates make every FRA and future economically identical.',
+      'Yes. Underlying rate, fixing, payment and variation-margin rules can differ.',
+      'No. Both contracts always advance their full notional as a loan.',
+    ],
+    correct: 1,
+  },
+  curve_pillar: {
+    choices: [
+      'Yes. Every 3M node occurs exactly 90 days from today.',
+      'Yes. A pillar is always the first accrual date.',
+      'No. The anchor, calendars, instrument dates and pillar convention also matter.',
+    ],
+    correct: 2,
+  },
+  bank_discount_rate: {
+    choices: [
+      'No. A discount quote uses face value; an investment-based yield uses the price paid.',
+      'Yes. Every number called a rate measures return on the purchase price.',
+      'Yes. A 360-day year removes the difference between face and purchase price.',
+    ],
+    correct: 0,
+  },
+  money_market_yield: {
+    choices: [
+      'Yes. Different annualized rates always imply different securities.',
+      'No. The rates can describe the same payment using different denominators.',
+      'No. They match because 90-day bills pay quarterly coupons.',
+    ],
+    correct: 1,
+  },
+  repo_interest: {
+    choices: [
+      'Yes. Interest always accrues on the collateral face amount.',
+      'Yes. A haircut is added to collateral face before accruing interest.',
+      'No. Use the agreed cash financing balance and repo conventions.',
+    ],
+    correct: 2,
+  },
+  yield_to_worst: {
+    choices: [
+      'No. YTW is a conditional redemption comparison, not a guaranteed realized return.',
+      'Yes. The word worst includes every default and sale-price outcome.',
+      'Yes. YTW assumes coupons can always be reinvested at the quoted rate.',
+    ],
+    correct: 0,
+  },
+  io_notional: {
+    choices: [
+      'Yes. Every notional reduction is a principal distribution to the IO.',
+      'No. The notional is an interest calculation base, not a principal claim.',
+      'Yes. The reduction is paid to the IO at its final maturity instead.',
+    ],
+    correct: 1,
+  },
+  horizon_date: {
+    choices: [
+      'Yes. Every scenario endpoint becomes the contractual maturity.',
+      'Yes. The full original face amount must be repaid at the horizon.',
+      'No. The horizon ends the analysis; the security may still have remaining cash flows.',
+    ],
+    correct: 2,
+  },
+  analytics_context: {
+    choices: [
+      'No. Dates, market inputs, contract terms and calculation assumptions must also match.',
+      'Yes. Identical security names guarantee identical market snapshots.',
+      'Yes. A matching displayed yield label proves every input is the same.',
+    ],
+    correct: 0,
+  },
   loan_states: {
     choices: [
       'The final loss is fixed once a loan is 60 days delinquent.',
