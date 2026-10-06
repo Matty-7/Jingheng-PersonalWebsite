@@ -1,5 +1,13 @@
 # Mortgage Map
 
+## October 6: valuation conventions and pathwise cash flows
+
+`content/mortgage_valuation.ts` adds nine concepts, three topics, two explained learning paths and five formula panels within the existing Mortgage Map. Every concept has a three-choice check and public references. The additions distinguish accrual and discounting clocks, Actual/Actual variants, compounding, convention resolution, curve roles, settlement entitlement, path cash flows, pathwise averaging and the conditional zero-volatility comparison.
+
+Acceptance: the new concepts are searchable and reachable through existing lessons and routes; all relationship targets and source IDs resolve; formulas render accessible MathML with units and assumptions; the original arithmetic examples are internally consistent. Keep this as static educational content with no pricing engine, forecasts, market feed, new subject branding or restoration of the withdrawn lab. Original reference-based explanations replace implementation-specific material; no personal-note images, internal service names, identifiers or undocumented mappings are published.
+
+Public reference checks on October 6 covered OpenGamma Strata day-count and discount-factor documentation, QuantLib's interest-rate implementation, OpenGamma's multi-curve paper, the CFA public arbitrage-free valuation overview, and the New York Fed's *Understanding Mortgage Spreads* (June 2018 revision, Appendix E). The examples are original arithmetic, not quoted market results. Curve-role equality and zero-volatility equivalence are explicitly conditional; the settlement factor ratio is limited to a deterministic curve. Existing graph, formula, learning-check and catalog tests provide the local content contract; exact-head CI remains the full publication gate.
+
 These are historical implementation notes. The current interface and implementation are documented in [Mortgage Map learning redesign](mortgage_learning_redesign.md). The September 27 cleanup removed the retired graph, reducer, reader, camera and style modules described below; catalog content and source provenance remain preserved. Current search lives in `lib/mortgage_search.ts`.
 
 On September 12, 2026, Jingheng explicitly requested a public interactive knowledge map in a real Projects section. This is a separate educational reading project. The withdrawn experiment is not restored, redirected or reused.
