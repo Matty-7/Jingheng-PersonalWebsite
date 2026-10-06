@@ -45,6 +45,12 @@ export async function check_mortgage_focus_surface(
     .waitFor({ state: 'visible' });
   await surface.locator('#learning-title:focus').waitFor({ state: 'attached' });
   await button('All topics').press('Enter');
+  // Loading the catalog changes its final focusable control. Check the
+  // wrap only after the complete topic list has replaced the loading state.
+  await surface
+    .locator('.learning-domains > details > summary')
+    .last()
+    .waitFor({ state: 'visible' });
   await button('Close all topics').press('Shift+Tab');
   assert.equal(await surface.getByRole('dialog').locator(':focus').count(), 1);
   await surface.getByRole('dialog').locator(':focus').press('Tab');

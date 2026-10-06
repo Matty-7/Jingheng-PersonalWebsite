@@ -13,6 +13,13 @@ import {
 } from './mortgage_spreads.ts';
 import { foundational_relationships } from './mortgage_relationships.ts';
 import {
+  contract_topics,
+  contract_sources,
+  contract_concepts,
+  contract_relationships,
+  contract_paths,
+} from './mortgage_contracts.ts';
+import {
   context_topics,
   context_sources,
   context_concepts,
@@ -257,6 +264,7 @@ export const mortgage_topics = [
   ...analytics_topics,
   ...expansion_topics,
   ...convention_topics,
+  ...contract_topics,
 ];
 
 export const mortgage_sources: Record<
@@ -270,6 +278,7 @@ export const mortgage_sources: Record<
   ...analytics_sources,
   ...expansion_sources,
   ...convention_sources,
+  ...contract_sources,
   loan_performance_glossary: {
     publisher: 'Fannie Mae',
     title:
@@ -3557,6 +3566,7 @@ export const mortgage_concepts: MortgageConcept[] = [
   ...expansion_concepts,
   ...context_concepts,
   ...convention_concepts,
+  ...contract_concepts,
   ...mechanism_concepts,
   ...spread_concepts,
   ...original_concepts.filter(
@@ -3576,6 +3586,7 @@ export const mortgage_concepts: MortgageConcept[] = [
 
 export const mortgage_relationships: MortgageRelationship[] = [
   ...convention_relationships,
+  ...contract_relationships,
   ...analytics_relationships,
   ...expansion_relationships,
   ...context_relationships,
@@ -4331,6 +4342,7 @@ export const mortgage_paths = [
   ...convention_paths,
   ...mechanism_models,
   ...atlas_paths,
+  ...contract_paths,
   {
     id: 'quote_to_model',
     title: 'From a yield quote to an option model',
