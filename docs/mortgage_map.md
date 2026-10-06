@@ -1,5 +1,13 @@
 # Mortgage Map
 
+## October 6: conventions and dated inputs
+
+The accepted foreground scope is to deepen the public educational map with original, publicly sourced explanations of date conventions, factor reporting, rate representation and agency/risk comparisons. `content/mortgage_conventions.ts` adds ten concepts, three explained learning paths, a comparison table and ten multiple-choice checks. All entries join the existing catalog, search, relationship network and lesson navigation. The single Mortgage Map identity and current visual design are preserved.
+
+The additions distinguish trading and settlement calendars, date adjustment and accrual, factor month and publication, compounding and inflation terminology, finite and instantaneous forwards, calibration fit and model validation, UMBS and cross-agency prices, rating status and payment status, and option Greeks and curve risk. Existing day-count and KRD entries gain worked examples; OAS explains why path discounting cannot generally use a single terminal short rate. Numerical examples are hypothetical and explanatory.
+
+Acceptance: every new concept is searchable, has a complete lesson and check, connects to the analytical graph and cites a public reference; every adjacent path step has an authored relationship; all formulas render with variable definitions and assumptions. No source images or employer implementation details are part of the publication. This change adds no market feeds, forecasts or pricing simulator.
+
 These are historical implementation notes. The current interface and implementation are documented in [Mortgage Map learning redesign](mortgage_learning_redesign.md). The September 27 cleanup removed the retired graph, reducer, reader, camera and style modules described below; catalog content and source provenance remain preserved. Current search lives in `lib/mortgage_search.ts`.
 
 On September 12, 2026, Jingheng explicitly requested a public interactive knowledge map in a real Projects section. This is a separate educational reading project. The withdrawn experiment is not restored, redirected or reused.

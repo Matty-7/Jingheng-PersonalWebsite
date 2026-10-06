@@ -1,9 +1,11 @@
 // Choices for the existing authored questions in mortgage_concepts.
 // Explanations remain alongside their questions and public sources.
+import { convention_checks } from './mortgage_conventions.ts';
 export const learning_checks: Record<
   string,
   { choices: [string, string, string]; correct: number }
 > = {
+  ...convention_checks,
   loan_states: {
     choices: [
       'The final loss is fixed once a loan is 60 days delinquent.',
