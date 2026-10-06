@@ -5,6 +5,31 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    day_count: {
+      tex: String.raw`I=B\,r\,\alpha`,
+      variables:
+        'I: interest in currency; B: constant principal balance in the same currency; r: annual decimal rate; α: contract-specific year fraction. For simple interest over the stated interval.',
+    },
+    factor_vintage: {
+      tex: String.raw`Q_t=B_0(f_{t-1}-f_t)`,
+      variables:
+        'Qₜ: principal distributed for month t; B₀: original face in currency; fₜ₋₁ and fₜ: consecutive applicable factors for the same security. A principal payment is not investment profit.',
+    },
+    rate_compounding: {
+      tex: String.raw`\begin{aligned}D_{\mathrm{simple}}&=(1+r\tau)^{-1}\\D_{\mathrm{periodic}}&=(1+r/m)^{-m\tau}\\D_{\mathrm{continuous}}&=e^{-r\tau}\end{aligned}`,
+      variables:
+        'r: annual decimal rate under the respective convention; τ: corresponding year fraction; m: compounding periods per year; D: discount factor. The same numerical r is not an equivalent rate across these conventions.',
+    },
+    forward_interval: {
+      tex: String.raw`F(0;T_1,T_2)=\frac{D(0,T_1)/D(0,T_2)-1}{\alpha}`,
+      variables:
+        'D: positive discount factor on one curve; T₁ and T₂: forward start and end; α > 0: interval year fraction; F: annualized simple forward as a decimal. This is not a universal multi-curve index-projection formula.',
+    },
+    key_rate: {
+      tex: String.raw`\frac{\Delta P}{P}\approx-\sum_k\mathrm{KRD}_k\,\Delta y_k`,
+      variables:
+        'KRDₖ: key-rate duration for node k in years under the specified bump convention; Δyₖ: local annual rate change as a decimal; P: consistent base full price. A first-order approximation with other model assumptions fixed.',
+    },
     accrual_period: {
       tex: String.raw`\alpha=\frac{D(T_1,T_2)}{360}`,
       variables:

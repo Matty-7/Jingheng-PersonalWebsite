@@ -13,12 +13,12 @@ import {
 } from './mortgage_spreads.ts';
 import { foundational_relationships } from './mortgage_relationships.ts';
 import {
-  convention_topics,
-  convention_sources,
-  convention_concepts,
-  convention_relationships,
-  convention_paths,
-} from './mortgage_conventions.ts';
+  contract_topics,
+  contract_sources,
+  contract_concepts,
+  contract_relationships,
+  contract_paths,
+} from './mortgage_contracts.ts';
 import {
   context_topics,
   context_sources,
@@ -47,6 +47,13 @@ import {
   mechanism_relationships,
   mechanism_models,
 } from './mortgage_mechanisms.ts';
+import {
+  convention_topics,
+  convention_sources,
+  convention_concepts,
+  convention_relationships,
+  convention_paths,
+} from './mortgage_conventions.ts';
 // Original public educational summaries. No employer data or implementation details.
 export type MortgageConcept = {
   id: string;
@@ -257,6 +264,7 @@ export const mortgage_topics = [
   ...analytics_topics,
   ...expansion_topics,
   ...convention_topics,
+  ...contract_topics,
 ];
 
 export const mortgage_sources: Record<
@@ -270,6 +278,7 @@ export const mortgage_sources: Record<
   ...analytics_sources,
   ...expansion_sources,
   ...convention_sources,
+  ...contract_sources,
   loan_performance_glossary: {
     publisher: 'Fannie Mae',
     title:
@@ -658,6 +667,11 @@ const original_concepts: MortgageConcept[] = [
     distinction:
       'A factor is a principal ratio, not a bond price or an investment return.',
     links: [
+      {
+        id: 'factor_vintage',
+        reason:
+          'The applicable month and publication date identify the balance being reported.',
+      },
       {
         id: 'prepayments',
         reason: 'Unscheduled paydowns change the factor.',
@@ -2292,7 +2306,14 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'A day-count convention specifies how dates become fractions of a year or coupon period. Examples include Actual/360 and 30/360.',
     distinction:
-      'A year fraction and a compounding frequency are separate inputs.',
+      'A year fraction and a compounding frequency are separate inputs. Actual/360 counts actual elapsed days over 360; 30/360 uses a convention-adjusted count, with variants for month ends. Accrual and discounting may use different conventions.',
+    formula: {
+      expression: 'Simple interest = balance × annual rate × year fraction',
+      assumptions:
+        'A constant balance and simple interest over the stated interval. Use the contract’s day-count variant and inclusivity rules; this is not a universal compound-return formula.',
+      example:
+        'Hypothetical January 15 to February 15: Actual/360 uses 31/360, while standard 30/360 uses 30/360. At $100,000 and 6%, interest is $516.67 versus $500.00.',
+    },
     question: 'Can equal stated rates produce different interest amounts?',
     answer: 'Yes, when the day-count conventions or accrual dates differ.',
     sources: ['formulas'],
@@ -2306,7 +2327,7 @@ const original_concepts: MortgageConcept[] = [
         reason: 'Consistent timing is necessary for yield comparisons.',
       },
     ],
-    aliases: [],
+    aliases: ['ACT/360', 'Actual/360', '30/360', 'day count fraction'],
     topic: 'quotation',
     branch: 'valuation',
   },
@@ -2606,7 +2627,7 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'OAS reconciles price with cash flows under a specified rate and option model. Relevant options can include mortgage borrower prepayment or an issuer’s contractual call, depending on the instrument.',
     distinction:
-      'OAS is model-dependent, not a pure credit-risk measurement. A tree can value some callable bonds; Monte Carlo is not required for every OAS calculation.',
+      'OAS is model-dependent, not a pure credit-risk measurement. Discounting along a rate path accumulates rates over the preceding intervals; raising one terminal short rate to the full maturity generally does not reproduce that path. A tree can value some callable bonds; Monte Carlo is not required for every OAS calculation.',
     question: 'Can two models report different OAS for the same price?',
     answer:
       'Yes. Rate dynamics, volatility, prepayment behavior and other assumptions can differ.',
@@ -2685,7 +2706,14 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'Key-rate measures estimate price sensitivity to localized changes in selected maturity regions of a curve.',
     distinction:
-      'A matched total duration does not guarantee a matched curve-shape exposure.',
+      'A matched total duration does not guarantee a matched curve-shape exposure. State the bump shape, interpolation and held-fixed assumptions. Adding key-rate durations approximates parallel duration only when the localized shocks consistently reconstruct that parallel move.',
+    formula: {
+      expression: 'ΔP/P ≈ −Σ KRDₖ × Δyₖ',
+      assumptions:
+        'Small curve changes, annual rate shocks in decimal units, consistent full-price and key-rate bump conventions. Hold OAS and other specified model inputs fixed while allowing modeled cash flows to respond. Cross effects and higher orders are omitted.',
+      example:
+        'If only the 10Y node moves +10 bp and its KRD is 2 years, the first-order estimate is −2 × 0.001 = −0.002, or −0.2%. This is a local approximation, not a forecast.',
+    },
     question: 'Why use more than one hedge maturity?',
     answer:
       'Different instruments can have different exposures to short, intermediate and long rates.',
@@ -3536,8 +3564,9 @@ const formula_additions: Record<
 export const mortgage_concepts: MortgageConcept[] = [
   ...analytics_concepts,
   ...expansion_concepts,
-  ...convention_concepts,
   ...context_concepts,
+  ...convention_concepts,
+  ...contract_concepts,
   ...mechanism_concepts,
   ...spread_concepts,
   ...original_concepts.filter(
@@ -3557,6 +3586,7 @@ export const mortgage_concepts: MortgageConcept[] = [
 
 export const mortgage_relationships: MortgageRelationship[] = [
   ...convention_relationships,
+  ...contract_relationships,
   ...analytics_relationships,
   ...expansion_relationships,
   ...context_relationships,
@@ -4309,9 +4339,10 @@ export const mortgage_paths = [
   ...analytics_paths,
   ...expansion_paths,
   ...context_paths,
+  ...convention_paths,
   ...mechanism_models,
   ...atlas_paths,
-  ...convention_paths,
+  ...contract_paths,
   {
     id: 'quote_to_model',
     title: 'From a yield quote to an option model',
@@ -4380,6 +4411,7 @@ export const mortgage_paths = [
 export const mortgage_path_models = [
   ...analytics_paths,
   ...expansion_paths,
+  ...convention_paths,
   ...mechanism_models,
 ];
 

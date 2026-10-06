@@ -1,9 +1,11 @@
 // Choices for the existing authored questions in mortgage_concepts.
 // Explanations remain alongside their questions and public sources.
+import { convention_checks } from './mortgage_conventions.ts';
 export const learning_checks: Record<
   string,
   { choices: [string, string, string]; correct: number }
 > = {
+  ...convention_checks,
   curve_anchor: {
     choices: [
       'Yes. Every curve input starts on the observation date.',
