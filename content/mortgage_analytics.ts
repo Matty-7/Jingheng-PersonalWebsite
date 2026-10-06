@@ -597,7 +597,7 @@ export const analytics_concepts: MortgageConcept[] = [
     id: 'effective_convexity',
     title: 'Effective convexity',
     subtitle: 'Curvature under a defined curve shock',
-    aliases: ['option adjusted convexity', 'curve convexity'],
+    aliases: ['option adjusted convexity', 'curve convexity', 'OAC'],
     summary:
       'Effective convexity describes curvature in modeled price as the benchmark curve shifts, allowing option-sensitive payments to respond. With a positive base full price and equal nonzero shocks, it is positive when P₋ + P₊ exceeds 2P₀, negative when it is below 2P₀ and zero when the two are equal.',
     distinction:
