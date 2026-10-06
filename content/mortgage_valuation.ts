@@ -44,7 +44,6 @@ export const valuation_topics = [
     concepts: [
       'accrual_discount_clocks',
       'actual_actual_variants',
-      'compounding_conventions',
       'convention_resolution',
     ],
   },
@@ -103,7 +102,7 @@ export const valuation_concepts: MortgageConcept[] = [
         reason: 'The coupon clock determines accrued interest.',
       },
       {
-        id: 'compounding_conventions',
+        id: 'rate_compounding',
         reason: 'A year fraction still needs a rate and compounding rule.',
       },
     ],
@@ -139,45 +138,6 @@ export const valuation_concepts: MortgageConcept[] = [
       },
     ],
     sources: ['day_count_variants'],
-  }),
-  valuation_concept({
-    id: 'compounding_conventions',
-    title: 'Compounding conventions',
-    subtitle: 'A rate number needs an accumulation rule',
-    aliases: [
-      'simple interest',
-      'continuous compounding',
-      'periodic compounding',
-      'equivalent rate',
-    ],
-    summary:
-      'Simple, periodic and continuous compounding turn a quoted annual rate into different accumulation factors. Day count supplies the time fraction; compounding supplies the rate-to-factor rule. An equivalent-rate conversion preserves the factor over the specified interval.',
-    distinction:
-      'Coupon frequency, compounding frequency and day count are separate specifications. Copying 6% between conventions is not an equivalent-rate conversion. A conversion at one maturity need not define a whole equivalent curve.',
-    formula: {
-      expression:
-        'Discount factors are 1/(1+rτ), (1+r/m)^(−mτ), or exp(−rτ) under simple, periodic, or continuous compounding.',
-      assumptions:
-        'A single payment, annual decimal rate r, positive frequency m and nonnegative year fraction τ. Require positive accumulation factors; the periodic power convention must be appropriate to the instrument. An actual curve supplies a maturity-specific rate.',
-      example:
-        'Over one year, 6% nominal compounded semiannually accumulates to 1.0609, an effective annual rate of 6.09%. Continuous 6% accumulates to approximately 1.06184.',
-    },
-    question:
-      'What must stay unchanged when a rate quote is converted to an equivalent convention?',
-    answer:
-      'The accumulation or discount factor for the specified dates, not the displayed rate number.',
-    links: [
-      {
-        id: 'discount_factor',
-        reason:
-          'The accumulation rule determines the factor used for valuation.',
-      },
-      {
-        id: 'yield',
-        reason: 'A yield quote must state its compounding basis.',
-      },
-    ],
-    sources: ['interest_rate_conventions'],
   }),
   valuation_concept({
     id: 'convention_resolution',
@@ -466,20 +426,11 @@ export const valuation_relationships = [
   ),
   valuation_relation(
     'accrual_discount_clocks',
-    'compounding_conventions',
+    'rate_compounding',
     'comparison',
     'separates time from accumulation',
     'The day-count fraction and the rule that compounds a quoted rate are independent specifications.',
     'Rate conversions must preserve the intended interval factor.',
-    ['interest_rate_conventions'],
-  ),
-  valuation_relation(
-    'compounding_conventions',
-    'discount_factor',
-    'measurement',
-    'maps a rate into a factor',
-    'A rate and time fraction produce a discount factor only under a stated compounding convention.',
-    'Require a valid positive accumulation factor.',
     ['interest_rate_conventions'],
   ),
   valuation_relation(
@@ -577,7 +528,7 @@ export const valuation_paths = [
       'convention_resolution',
       'actual_actual_variants',
       'accrual_discount_clocks',
-      'compounding_conventions',
+      'rate_compounding',
       'discount_factor',
       'settlement_cashflow_dates',
       'pv',

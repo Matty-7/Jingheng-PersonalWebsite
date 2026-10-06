@@ -10,11 +10,6 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'B: balance; c: annual decimal coupon; α: contractual accrual year fraction; CF: payment; r: annual continuously compounded discount rate for that payment; τ: discounting year fraction. I and PV are currency amounts. The two fractions have different roles.',
     },
-    compounding_conventions: {
-      tex: String.raw`\begin{aligned}D_{\mathrm{simple}}&=(1+r\tau)^{-1}\\D_{\mathrm{periodic}}&=(1+r/m)^{-m\tau}\\D_{\mathrm{continuous}}&=e^{-r\tau}\end{aligned}`,
-      variables:
-        'r: annual decimal rate under each stated convention; τ: nonnegative year fraction; m: positive compounding frequency per year; D: dimensionless discount factor. Equal numerical r values need not produce equal factors.',
-    },
     settlement_cashflow_dates: {
       tex: String.raw`D(s,t)=\frac{D(v,t)}{D(v,s)}`,
       variables:
@@ -29,6 +24,31 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       tex: String.raw`\begin{aligned}\mathrm{PV}_s(z)&=\sum_i w_i\sum_{k\in\mathcal{K}(s)}\mathrm{CF}_{i,k}D_i(s,t_k)e^{-z\tau_{s,k}}\\\mathbb{E}[\mathrm{CF}\,D]&=\mathbb{E}[\mathrm{CF}]\mathbb{E}[D]+\operatorname{Cov}(\mathrm{CF},D)\end{aligned}`,
       variables:
         's: settlement; K(s): eligible future payments; i: path; wᵢ: nonnegative model weight, summing to one; CF: payment in currency; D: path discount factor before spread; z: annual decimal spread; τ: years. E and Cov use the same weights. In the covariance identity D is the complete discount factor for the payment.',
+    },
+    day_count: {
+      tex: String.raw`I=B\,r\,\alpha`,
+      variables:
+        'I: interest in currency; B: constant principal balance in the same currency; r: annual decimal rate; α: contract-specific year fraction. For simple interest over the stated interval.',
+    },
+    factor_vintage: {
+      tex: String.raw`Q_t=B_0(f_{t-1}-f_t)`,
+      variables:
+        'Qₜ: principal distributed for month t; B₀: original face in currency; fₜ₋₁ and fₜ: consecutive applicable factors for the same security. A principal payment is not investment profit.',
+    },
+    rate_compounding: {
+      tex: String.raw`\begin{aligned}D_{\mathrm{simple}}&=(1+r\tau)^{-1}\\D_{\mathrm{periodic}}&=(1+r/m)^{-m\tau}\\D_{\mathrm{continuous}}&=e^{-r\tau}\end{aligned}`,
+      variables:
+        'r: annual decimal rate under the respective convention; τ: corresponding year fraction; m: compounding periods per year; D: discount factor. The same numerical r is not an equivalent rate across these conventions.',
+    },
+    forward_interval: {
+      tex: String.raw`F(0;T_1,T_2)=\frac{D(0,T_1)/D(0,T_2)-1}{\alpha}`,
+      variables:
+        'D: positive discount factor on one curve; T₁ and T₂: forward start and end; α > 0: interval year fraction; F: annualized simple forward as a decimal. This is not a universal multi-curve index-projection formula.',
+    },
+    key_rate: {
+      tex: String.raw`\frac{\Delta P}{P}\approx-\sum_k\mathrm{KRD}_k\,\Delta y_k`,
+      variables:
+        'KRDₖ: key-rate duration for node k in years under the specified bump convention; Δyₖ: local annual rate change as a decimal; P: consistent base full price. A first-order approximation with other model assumptions fixed.',
     },
     pay_up: {
       tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,

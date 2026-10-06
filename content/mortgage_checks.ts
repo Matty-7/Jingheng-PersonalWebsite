@@ -1,5 +1,6 @@
 // Choices for the existing authored questions in mortgage_concepts.
 // Explanations remain alongside their questions and public sources.
+import { convention_checks } from './mortgage_conventions.ts';
 export const learning_checks: Record<
   string,
   { choices: [string, string, string]; correct: number }
@@ -19,14 +20,6 @@ export const learning_checks: Record<
       'No. Identify the variant and any required coupon schedule, frequency and stub rules.',
     ],
     correct: 2,
-  },
-  compounding_conventions: {
-    choices: [
-      'The accumulation or discount factor over the specified dates.',
-      'The displayed numerical annual rate, regardless of compounding.',
-      'The coupon frequency, regardless of the implied discount factor.',
-    ],
-    correct: 0,
   },
   convention_resolution: {
     choices: [
@@ -76,6 +69,7 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  ...convention_checks,
   loan_states: {
     choices: [
       'The final loss is fixed once a loan is 60 days delinquent.',
