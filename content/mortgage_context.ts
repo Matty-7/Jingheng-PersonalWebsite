@@ -359,17 +359,35 @@ export const context_concepts: MortgageConcept[] = [
     topic: 'dated_references',
     title: 'SOFR futures strip',
     subtitle: 'A sequence of dated reference periods',
-    aliases: ['futures curve', 'contract date', 'IMM', 'SR3', 'strip'],
+    aliases: [
+      'futures curve',
+      'contract date',
+      'SR3',
+      'strip',
+      'Eurodollar futures',
+    ],
     summary:
       'A SOFR futures strip is a sequence of contracts. Each three-month contract references overnight compounding over a specified quarter between IMM dates, rather than an arbitrary whole-year horizon.',
     distinction:
-      'CME SR3 trades at 100 minus an implied annualized rate; final settlement uses realized compounded SOFR over the reference quarter. The contract’s reference period, last trading date and time from today are different dates or intervals. A futures strip is not Treasury STRIPS.',
+      'CME SR3 trades at 100 minus an implied annualized rate; final settlement uses realized compounded SOFR over the reference quarter. Historical Eurodollar futures referenced three-month USD LIBOR, not euro-currency rates; that term fixing differs from overnight SOFR compounded in arrears. A futures strip is not Treasury STRIPS.',
+    formula: {
+      expression: 'Q = 100 − R; r = R/100',
+      assumptions:
+        'Q is the IMM futures index quote and R is the annualized rate in percentage points. The decimal rate r is used in interest calculations. At final SR3 settlement, R is realized compounded SOFR for the reference quarter; before then it is the rate implied by the traded quote, not a guaranteed forecast.',
+      example:
+        'A hypothetical quote of 95.25 implies R = 4.75 and r = 0.0475. It does not mean buying a bond for $95.25 per $100 principal.',
+    },
     question:
       'Why might the next contract fail to line up with a 6M table column?',
     answer:
       'Its reference quarter follows contract dates while 6M is measured from a chosen anchor. Replacing those dates with a rounded label hides which accrual period is being priced.',
-    sources: ['sofr_futures'],
+    sources: ['sofr_futures', 'sofr_contract_period', 'imm_calendar'],
     links: [
+      {
+        id: 'imm_dates',
+        reason:
+          'The named month identifies the beginning of the reference quarter.',
+      },
       {
         id: 'forward_curve',
         reason:

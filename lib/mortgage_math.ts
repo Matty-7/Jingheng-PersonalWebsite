@@ -5,6 +5,41 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    accrual_period: {
+      tex: String.raw`\alpha=\frac{D(T_1,T_2)}{360}`,
+      variables:
+        'T₁ / T₂: adjusted accrual start / end, including the start and excluding the end. D: actual calendar days. α: Actual/360 accrual fraction, not time from valuation to start.',
+    },
+    bank_discount_rate: {
+      tex: String.raw`d=\left(1-\frac{P}{100}\right)\frac{360}{D},\qquad P=100\left(1-\frac{dD}{360}\right)`,
+      variables:
+        'P: price per 100 face redeemed once at maturity; D: positive actual days to redemption; d: annual decimal bank discount rate. No intervening cash flows; Actual/360 quotation.',
+    },
+    money_market_yield: {
+      tex: String.raw`y_{360}=\left(\frac{100}{P}-1\right)\frac{360}{D}=\frac{d}{1-dD/360}`,
+      variables:
+        'y₃₆₀: simple annual decimal yield; P: positive price per 100 redemption; D: positive actual days; d: decimal bank discount quote for the same interval. Not an effective annual or Treasury coupon-equivalent yield.',
+    },
+    repo_interest: {
+      tex: String.raw`I_{\mathrm{repo}}=C\,r_{\mathrm{repo}}\frac{D}{360}`,
+      variables:
+        'C: cash advanced, not collateral face; r_repo: annual decimal financing rate; D: actual calendar days on Actual/360; I_repo: interest in the same currency as C. Assumes unchanged cash and rate with no fees or adjustments.',
+    },
+    yield_to_worst: {
+      tex: String.raw`\mathrm{YTW}=\min\left(\mathrm{YTM},\mathrm{YTC}_1,\ldots,\mathrm{YTC}_n\right)`,
+      variables:
+        'YTM: yield to maturity; YTCᵢ: yield to an eligible call date and price. Use the same full price, settlement and yield conventions. The minimum covers specified non-default scenarios, not all possible realized returns.',
+    },
+    io_notional: {
+      tex: String.raw`I_t=N_t\,c_t\,\alpha_t`,
+      variables:
+        'N_t: notional applicable to the accrual period; c_t: annual decimal class coupon; α_t: contractual year fraction; I_t: interest. The notional is not principal owed; use the class-specific allocation and accrual rules.',
+    },
+    futures_curve: {
+      tex: String.raw`Q=100-R,\qquad r=\frac{R}{100}`,
+      variables:
+        'Q: IMM futures index quote; R: annualized rate in percentage points; r: decimal rate. At final SR3 settlement R is realized compounded SOFR for the reference quarter. The index quote is not a bond dollar price.',
+    },
     pay_up: {
       tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,
       variables:
