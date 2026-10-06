@@ -5,6 +5,26 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    accrual_discount_clocks: {
+      tex: String.raw`\begin{aligned}I&=Bc\alpha_{\mathrm{accrual}}\\\mathrm{PV}&=\mathrm{CF}\,e^{-r\tau_{\mathrm{discount}}}\end{aligned}`,
+      variables:
+        'B: balance; c: annual decimal coupon; α: contractual accrual year fraction; CF: payment; r: annual continuously compounded discount rate for that payment; τ: discounting year fraction. I and PV are currency amounts. The two fractions have different roles.',
+    },
+    settlement_cashflow_dates: {
+      tex: String.raw`D(s,t)=\frac{D(v,t)}{D(v,s)}`,
+      variables:
+        'v: curve valuation date; s: settlement date; t: payment date, with v ≤ s ≤ t. D: positive dimensionless factors from one deterministic curve. The ratio is a curve-implied forward discount factor, not an arbitrary stochastic future factor.',
+    },
+    path_cashflows: {
+      tex: String.raw`\begin{aligned}\mathrm{CF}_{i,k}&=I_{i,k}+\mathrm{SP}_{i,k}+\mathrm{UP}_{i,k}\\B_{i,k}&=B_{i,k-1}-\mathrm{SP}_{i,k}-\mathrm{UP}_{i,k}\end{aligned}`,
+      variables:
+        'i: modeled path; k: payment period; B: outstanding balance; I: investor interest; SP / UP: scheduled / unscheduled principal. All amounts use one currency. This illustration excludes defaults, losses, new advances and capitalization.',
+    },
+    pathwise_valuation: {
+      tex: String.raw`\begin{aligned}\mathrm{PV}_s(z)&=\sum_i w_i\sum_{k\in\mathcal{K}(s)}\mathrm{CF}_{i,k}D_i(s,t_k)e^{-z\tau_{s,k}}\\\mathbb{E}[\mathrm{CF}\,D]&=\mathbb{E}[\mathrm{CF}]\mathbb{E}[D]+\operatorname{Cov}(\mathrm{CF},D)\end{aligned}`,
+      variables:
+        's: settlement; K(s): eligible future payments; i: path; wᵢ: nonnegative model weight, summing to one; CF: payment in currency; D: path discount factor before spread; z: annual decimal spread; τ: years. E and Cov use the same weights. In the covariance identity D is the complete discount factor for the payment.',
+    },
     day_count: {
       tex: String.raw`I=B\,r\,\alpha`,
       variables:

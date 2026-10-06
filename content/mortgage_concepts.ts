@@ -1,4 +1,11 @@
 import {
+  valuation_topics,
+  valuation_sources,
+  valuation_concepts,
+  valuation_relationships,
+  valuation_paths,
+} from './mortgage_valuation.ts';
+import {
   expansion_topics,
   expansion_sources,
   expansion_concepts,
@@ -263,6 +270,7 @@ export const mortgage_topics = [
   ...context_topics,
   ...analytics_topics,
   ...expansion_topics,
+  ...valuation_topics,
   ...convention_topics,
   ...contract_topics,
 ];
@@ -277,6 +285,7 @@ export const mortgage_sources: Record<
   ...context_sources,
   ...analytics_sources,
   ...expansion_sources,
+  ...valuation_sources,
   ...convention_sources,
   ...contract_sources,
   loan_performance_glossary: {
@@ -2326,6 +2335,15 @@ const original_concepts: MortgageConcept[] = [
         id: 'yield',
         reason: 'Consistent timing is necessary for yield comparisons.',
       },
+      {
+        id: 'accrual_discount_clocks',
+        reason: 'Separate the coupon clock from the curve’s time basis.',
+      },
+      {
+        id: 'actual_actual_variants',
+        reason:
+          'An abbreviated convention name may need a precise suffix and schedule.',
+      },
     ],
     aliases: ['ACT/360', 'Actual/360', '30/360', 'day count fraction'],
     topic: 'quotation',
@@ -3562,6 +3580,7 @@ const formula_additions: Record<
   },
 };
 export const mortgage_concepts: MortgageConcept[] = [
+  ...valuation_concepts,
   ...analytics_concepts,
   ...expansion_concepts,
   ...context_concepts,
@@ -3585,6 +3604,7 @@ export const mortgage_concepts: MortgageConcept[] = [
 }));
 
 export const mortgage_relationships: MortgageRelationship[] = [
+  ...valuation_relationships,
   ...convention_relationships,
   ...contract_relationships,
   ...analytics_relationships,
@@ -4336,6 +4356,7 @@ export const mortgage_relationships: MortgageRelationship[] = [
 ];
 
 export const mortgage_paths = [
+  ...valuation_paths,
   ...analytics_paths,
   ...expansion_paths,
   ...context_paths,
@@ -4409,6 +4430,7 @@ export const mortgage_paths = [
 ];
 
 export const mortgage_path_models = [
+  ...valuation_paths,
   ...analytics_paths,
   ...expansion_paths,
   ...convention_paths,

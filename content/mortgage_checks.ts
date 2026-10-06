@@ -5,6 +5,70 @@ export const learning_checks: Record<
   string,
   { choices: [string, string, string]; correct: number }
 > = {
+  accrual_discount_clocks: {
+    choices: [
+      'Yes. The discount curve replaces the coupon’s contractual day count.',
+      'No. Keep the coupon’s accrual rule and the curve’s discounting convention separate.',
+      'Yes. All date fractions in a valuation must share one denominator.',
+    ],
+    correct: 1,
+  },
+  actual_actual_variants: {
+    choices: [
+      'Yes. Actual days always use a fixed denominator of 365.',
+      'Yes. Every Actual/Actual variant treats coupon stubs identically.',
+      'No. Identify the variant and any required coupon schedule, frequency and stub rules.',
+    ],
+    correct: 2,
+  },
+  convention_resolution: {
+    choices: [
+      'Yes. Any convention with a 360 denominator is equivalent.',
+      'No. Reject the input or explicitly disclose and justify the applied alternative.',
+      'Yes. A recognizable input label guarantees an unchanged result.',
+    ],
+    correct: 1,
+  },
+  curve_roles: {
+    choices: [
+      'Yes. One curve fixes all rate-path probabilities and prepayments.',
+      'Yes. A common starting curve eliminates the need to specify volatility.',
+      'No. Dynamics, volatility, prepayments, spread application and conventions remain necessary.',
+    ],
+    correct: 2,
+  },
+  settlement_cashflow_dates: {
+    choices: [
+      'No. Accrual dates determine interest; the payment date determines receipt and discounting.',
+      'Yes. Every extra day before distribution earns another day of coupon interest.',
+      'Yes. The buyer always receives the next calendar month’s payment.',
+    ],
+    correct: 0,
+  },
+  path_cashflows: {
+    choices: [
+      'The final rate uniquely determines every earlier principal payment.',
+      'Earlier refinancing and prepayments can leave different surviving balances and borrowers.',
+      'Scheduled interest reduces the principal balance on every path.',
+    ],
+    correct: 1,
+  },
+  pathwise_valuation: {
+    choices: [
+      'Whenever enough paths are simulated, regardless of dependence.',
+      'Whenever both averages use the same currency and payment date.',
+      'When covariance is zero at each payment, or its contributions cancel in the total.',
+    ],
+    correct: 2,
+  },
+  zero_volatility_case: {
+    choices: [
+      'No. Cash flows, discount factors, spread convention, dates and price basis must also match.',
+      'Yes. Zero volatility means there can be no mortgage prepayments.',
+      'Yes. Setting rate volatility to zero also removes every valuation spread.',
+    ],
+    correct: 0,
+  },
   ...convention_checks,
   curve_anchor: {
     choices: [
