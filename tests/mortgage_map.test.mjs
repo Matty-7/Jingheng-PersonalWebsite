@@ -451,3 +451,26 @@ test('runoff and structured cash-flow links retain direction, conditions and pub
       ),
     );
 });
+
+test('coupon stack connects coupon, borrower behavior and conditional hedge adjustment', () => {
+  const concept = mortgage_concepts.find((item) => item.id === 'coupon_stack');
+  assert.ok(concept);
+  assert.match(concept.summary, /Security coupon.*not.*borrower WAC/i);
+  assert.match(concept.distinction, /not a forecast/i);
+  assert.equal(search_concepts('coupon stack')[0].id, 'coupon_stack');
+  assert.equal(search_concepts('convexity hedging')[0].id, 'coupon_stack');
+  for (const [source, target, kind] of [
+    ['net_coupon', 'coupon_stack', 'definition'],
+    ['current_coupon', 'coupon_stack', 'comparison'],
+    ['incentive', 'coupon_stack', 'mechanism'],
+    ['coupon_stack', 'hedging', 'mechanism'],
+  ]) {
+    const edge = mortgage_relationships.find(
+      (item) =>
+        item.source === source && item.target === target && item.kind === kind,
+    );
+    assert.ok(edge, `${source} -> ${target}`);
+    assert.ok(edge.conditions, `${edge.id}: missing conditions`);
+    assert.ok(edge.sources?.length, `${edge.id}: missing sources`);
+  }
+});
