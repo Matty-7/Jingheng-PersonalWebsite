@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-28",
+  "reviewed_on": "2026-10-07",
   "films": [
     {
       "id": "manhattan",
@@ -469,6 +469,156 @@
       "year": 2016,
       "director": "Clint Eastwood",
       "note": "The crew of Flight 1549 faces the aftermath of an emergency landing on the Hudson."
+    },
+    {
+      "id": "leon-the-professional",
+      "title": "Léon: The Professional",
+      "year": 1994,
+      "director": "Luc Besson",
+      "note": "Léon approaches the entrance of his apartment building on East 97th Street."
+    },
+    {
+      "id": "the-avengers",
+      "title": "The Avengers",
+      "year": 2012,
+      "director": "Joss Whedon",
+      "note": "Patrons react to the Chitauri attack at Pershing Square Cafe, beside Grand Central Terminal."
+    },
+    {
+      "id": "superman",
+      "title": "Superman",
+      "year": 1978,
+      "director": "Richard Donner",
+      "note": "Clark Kent and Lois Lane appear in the Daily Planet lobby, filmed inside the News Building."
+    },
+    {
+      "id": "midnight-cowboy",
+      "title": "Midnight Cowboy",
+      "year": 1969,
+      "director": "John Schlesinger",
+      "note": "Joe and Ratso cross Sixth Avenue in the film’s famous street-crossing sequence."
+    },
+    {
+      "id": "wall-street",
+      "title": "Wall Street",
+      "year": 1987,
+      "director": "Oliver Stone",
+      "note": "The New York Stock Exchange trading floor appears in the film’s portrait of financial Manhattan."
+    },
+    {
+      "id": "working-girl",
+      "title": "Working Girl",
+      "year": 1988,
+      "director": "Mike Nichols",
+      "note": "The Staten Island Ferry crosses New York Harbor in the opening commute sequence."
+    },
+    {
+      "id": "mean-streets",
+      "title": "Mean Streets",
+      "year": 1973,
+      "director": "Martin Scorsese",
+      "note": "The interior of St."
+    },
+    {
+      "id": "inside-llewyn-davis",
+      "title": "Inside Llewyn Davis",
+      "year": 2013,
+      "director": "Joel Coen and Ethan Coen",
+      "note": "Llewyn sits at a window table inside Caffe Reggio."
+    },
+    {
+      "id": "enchanted",
+      "title": "Enchanted",
+      "year": 2007,
+      "director": "Kevin Lima",
+      "note": "Giselle’s Central Park musical number reaches Bethesda Terrace and Fountain."
+    },
+    {
+      "id": "night-at-the-museum",
+      "title": "Night at the Museum",
+      "year": 2006,
+      "director": "Shawn Levy",
+      "note": "Larry approaches the American Museum of Natural History entrance, shown as it appeared in the film."
+    },
+    {
+      "id": "the-wolf-of-wall-street",
+      "title": "The Wolf of Wall Street",
+      "year": 2013,
+      "director": "Martin Scorsese",
+      "note": "Jordan steps off a bus near Wall Street as he begins his brokerage career."
+    },
+    {
+      "id": "a-bronx-tale",
+      "title": "A Bronx Tale",
+      "year": 1993,
+      "director": "Robert De Niro",
+      "note": "The corner bar appears at night."
+    },
+    {
+      "id": "i-am-legend",
+      "title": "I Am Legend",
+      "year": 2007,
+      "director": "Francis Lawrence",
+      "note": "Robert Neville and his dog approach the entrance to his Washington Square townhouse."
+    },
+    {
+      "id": "spider-man-2",
+      "title": "Spider-Man 2",
+      "year": 2004,
+      "director": "Sam Raimi",
+      "note": "Peter’s pizza-delivery job begins at the original Joe’s Pizza storefront on Bleecker Street."
+    },
+    {
+      "id": "requiem-for-a-dream",
+      "title": "Requiem for a Dream",
+      "year": 2000,
+      "director": "Darren Aronofsky",
+      "note": "Harry imagines Marion waiting at the end of Coney Island’s Steeplechase Pier."
+    },
+    {
+      "id": "white-collar",
+      "title": "White Collar",
+      "year": 2009,
+      "end_year": 2014,
+      "format": "series",
+      "creators": "Jeff Eastin",
+      "note": "The Schinasi Mansion supplies the recurring exterior of June’s home, where Neal lives."
+    },
+    {
+      "id": "the-nanny",
+      "title": "The Nanny",
+      "year": 1993,
+      "end_year": 1999,
+      "format": "series",
+      "creators": "Fran Drescher and Peter Marc Jacobson",
+      "note": "This townhouse provides the exterior of the Sheffield home."
+    },
+    {
+      "id": "mad-men",
+      "title": "Mad Men",
+      "year": 2007,
+      "end_year": 2015,
+      "format": "series",
+      "creators": "Matthew Weiner",
+      "note": "In the pilot’s opening bar scene, Don makes cigarette-advertising notes on a cocktail napkin."
+    },
+    {
+      "id": "how-i-met-your-mother",
+      "title": "How I Met Your Mother",
+      "year": 2005,
+      "end_year": 2014,
+      "format": "series",
+      "creators": "Carter Bays and Craig Thomas",
+      "note": "McGee’s inspired the fictional MacLaren’s Pub."
+    },
+    {
+      "id": "30-rock",
+      "title": "30 Rock",
+      "year": 2006,
+      "end_year": 2013,
+      "format": "series",
+      "creators": "Tina Fey",
+      "note": "Jenna performs for her beach-partying fans outside the studios in “Unwindulax.” This is an NBC episode publicity image."
     }
   ],
   "sources": [
@@ -1366,6 +1516,161 @@
       "id": "seinfeld-peterman-imdb",
       "label": "IMDb · The English Patient exterior locations",
       "url": "https://www.imdb.com/title/tt0697691/locations/"
+    },
+    {
+      "id": "classics-leon-the-professional",
+      "label": "Léon: The Professional — image and location source",
+      "url": "https://www.onthesetofnewyork.com/leon.html"
+    },
+    {
+      "id": "classics-the-avengers",
+      "label": "The Avengers — image and location source",
+      "url": "https://mculocationscout.com/2020/07/26/grand-central-terminal-new-york-mcu-location-scout/"
+    },
+    {
+      "id": "classics-the-avengers-1",
+      "label": "The Avengers — location reference",
+      "url": "https://mculocationscout.com/avengers_051-cafe/"
+    },
+    {
+      "id": "classics-the-avengers-2",
+      "label": "The Avengers — location reference",
+      "url": "https://onthesetofnewyork.com/theavengers.html"
+    },
+    {
+      "id": "classics-superman",
+      "label": "Superman — image and location source",
+      "url": "https://onthesetofnewyork.com/superman.html"
+    },
+    {
+      "id": "classics-midnight-cowboy",
+      "label": "Midnight Cowboy — image and location source",
+      "url": "https://www.onthesetofnewyork.com/midnightcowboy.html"
+    },
+    {
+      "id": "classics-wall-street",
+      "label": "Wall Street — image and location source",
+      "url": "https://www.onthesetofnewyork.com/wallstreet.html"
+    },
+    {
+      "id": "classics-working-girl",
+      "label": "Working Girl — image and location source",
+      "url": "https://onthesetofnewyork.com/workinggirl.html"
+    },
+    {
+      "id": "classics-mean-streets",
+      "label": "Mean Streets — image and location source",
+      "url": "https://www.onthesetofnewyork.com/meanstreets.html"
+    },
+    {
+      "id": "classics-inside-llewyn-davis",
+      "label": "Inside Llewyn Davis — image and location source",
+      "url": "https://www.onthesetofnewyork.com/insidellewyndavis.html"
+    },
+    {
+      "id": "classics-enchanted",
+      "label": "Enchanted — image and location source",
+      "url": "https://www.onthesetofnewyork.com/enchanted.html"
+    },
+    {
+      "id": "classics-night-at-the-museum",
+      "label": "Night at the Museum — image and location source",
+      "url": "https://www.onthesetofnewyork.com/nightatthemuseum.html"
+    },
+    {
+      "id": "classics-the-wolf-of-wall-street",
+      "label": "The Wolf of Wall Street — image and location source",
+      "url": "https://www.onthesetofnewyork.com/thewolfofwallstreet.html"
+    },
+    {
+      "id": "classics-a-bronx-tale",
+      "label": "A Bronx Tale — image and location source",
+      "url": "https://onthesetofnewyork.com/abronxtale.html"
+    },
+    {
+      "id": "classics-i-am-legend",
+      "label": "I Am Legend — image and location source",
+      "url": "https://www.onthesetofnewyork.com/iamlegend.html"
+    },
+    {
+      "id": "classics-spider-man-2",
+      "label": "Spider-Man 2 — image and location source",
+      "url": "https://www.onthesetofnewyork.com/spiderman2.html"
+    },
+    {
+      "id": "classics-requiem-for-a-dream",
+      "label": "Requiem for a Dream — image and location source",
+      "url": "https://film-grab.com/2011/02/11/requiem-for-a-dream/"
+    },
+    {
+      "id": "classics-requiem-for-a-dream-1",
+      "label": "Requiem for a Dream — location reference",
+      "url": "https://www.sceen-it.com/sceen/1400/Requiem-for-a-Dream/Pier-at-Coney-Island"
+    },
+    {
+      "id": "classics-requiem-for-a-dream-2",
+      "label": "Requiem for a Dream — location reference",
+      "url": "https://filmoblivion.com/2026/01/01/requiem-for-a-dream-2000/"
+    },
+    {
+      "id": "classics-white-collar",
+      "label": "White Collar — image and location source",
+      "url": "https://www.iamnotastalker.com/2017/04/28/junes-house-from-white-collar"
+    },
+    {
+      "id": "classics-the-nanny",
+      "label": "The Nanny — image and location source",
+      "url": "https://commons.wikimedia.org/wiki/File:7_East_75th_Street_001.JPG"
+    },
+    {
+      "id": "classics-the-nanny-1",
+      "label": "The Nanny — location reference",
+      "url": "https://moviemaps.org/locations/tr"
+    },
+    {
+      "id": "classics-the-nanny-license",
+      "label": "Image license — CC BY-SA 3.0",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "id": "classics-mad-men",
+      "label": "Mad Men — image and location source",
+      "url": "https://hpkomics.com/2026/07/as-scene-on-mad-men-s1e1-smoke-gets-in-your-eyes/"
+    },
+    {
+      "id": "classics-mad-men-1",
+      "label": "Mad Men — location reference",
+      "url": "https://savingplaces.org/stories/sites-of-the-green-book-the-lenox-lounge"
+    },
+    {
+      "id": "classics-mad-men-2",
+      "label": "Mad Men — location reference",
+      "url": "https://emdashes.com/2009/09/the-mad-men-files-lenox-lounge.php"
+    },
+    {
+      "id": "classics-mad-men-3",
+      "label": "Mad Men — location reference",
+      "url": "https://www.tvguide.com/news/mad-men-oral-history-pilot-facts/"
+    },
+    {
+      "id": "classics-how-i-met-your-mother",
+      "label": "How I Met Your Mother — image and location source",
+      "url": "https://mcgeespubny.com/?domain=mcgeespubny.com"
+    },
+    {
+      "id": "classics-30-rock",
+      "label": "30 Rock — image and location source",
+      "url": "https://www.hollywood.com/tv/30-rock-chronicling-the-final-chapter-week-4-57656184"
+    },
+    {
+      "id": "classics-30-rock-1",
+      "label": "30 Rock — location reference",
+      "url": "https://moviemaps.org/movies/43"
+    },
+    {
+      "id": "classics-30-rock-2",
+      "label": "30 Rock — location reference",
+      "url": "https://en.wikipedia.org/wiki/Unwindulax"
     }
   ],
   "locations": [
@@ -1911,6 +2216,24 @@
             "width": 565,
             "height": 314
           }
+        },
+        {
+          "film_id": "enchanted",
+          "scene": "Giselle’s Central Park musical number reaches Bethesda Terrace and Fountain.",
+          "source_ids": [
+            "classics-enchanted"
+          ],
+          "still": {
+            "alt": "The musical procession circles Bethesda Fountain with colorful balloons.",
+            "credit": "Enchanted (2007) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/enchanted.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/enchanted/enchanted42.jpg",
+            "width": 565,
+            "height": 233,
+            "src": "/images/film-map/enchanted--bethesda.jpg",
+            "thumbnail": "/images/film-map/enchanted--bethesda--thumb.jpg"
+          },
+          "precision": "Venue or public approach, not an exact camera position."
         }
       ]
     },
@@ -2236,6 +2559,27 @@
             "width": 565,
             "height": 237
           }
+        },
+        {
+          "film_id": "30-rock",
+          "scene": "Jenna performs for her beach-partying fans outside the studios in “Unwindulax.” This is an NBC episode publicity image.",
+          "source_ids": [
+            "classics-30-rock",
+            "classics-30-rock-1",
+            "classics-30-rock-2"
+          ],
+          "still": {
+            "alt": "NBC episode publicity image of Jenna singing before a TODAY-branded barrier and her beach-partying fans.",
+            "credit": "30 Rock, “Unwindulax” · Ali Goldstein / NBC, via Hollywood.com",
+            "source_url": "https://www.hollywood.com/tv/30-rock-chronicling-the-final-chapter-week-4-57656184",
+            "image_url": "https://media.hollywood.com/images/l/30rockjennaunwindulax.jpg",
+            "width": 620,
+            "height": 538,
+            "src": "/images/film-map/30-rock--rockefeller.jpg",
+            "thumbnail": "/images/film-map/30-rock--rockefeller--thumb.jpg",
+            "kind": "episode_image"
+          },
+          "precision": "Venue or public approach, not an exact camera position."
         }
       ]
     },
@@ -3048,6 +3392,24 @@
             "width": 565,
             "height": 320
           }
+        },
+        {
+          "film_id": "mean-streets",
+          "scene": "The interior of St. Patrick’s Old Cathedral appears in Charlie’s church sequence.",
+          "source_ids": [
+            "classics-mean-streets"
+          ],
+          "still": {
+            "alt": "The cathedral nave, pews and altar in a wide frame from Mean Streets.",
+            "credit": "Mean Streets (1973) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/meanstreets.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/meanstreets/meanstreets01.jpg",
+            "width": 565,
+            "height": 321,
+            "src": "/images/film-map/mean-streets--old-st-patricks.jpg",
+            "thumbnail": "/images/film-map/mean-streets--old-st-patricks--thumb.jpg"
+          },
+          "precision": "Venue or public approach, not an exact camera position."
         }
       ]
     },
@@ -6313,6 +6675,24 @@
             "width": 360,
             "height": 271
           }
+        },
+        {
+          "film_id": "night-at-the-museum",
+          "scene": "Larry approaches the American Museum of Natural History entrance, shown as it appeared in the film.",
+          "source_ids": [
+            "classics-night-at-the-museum"
+          ],
+          "still": {
+            "alt": "Larry looks up at the museum’s Central Park West entrance and the statue then standing outside.",
+            "credit": "Night at the Museum (2006) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/nightatthemuseum.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/nightatthemuseum/nightatthemuseum63.jpg",
+            "width": 565,
+            "height": 305,
+            "src": "/images/film-map/night-at-the-museum--natural-history.jpg",
+            "thumbnail": "/images/film-map/night-at-the-museum--natural-history--thumb.jpg"
+          },
+          "precision": "Venue or public approach, not an exact camera position."
         }
       ]
     },
@@ -10140,6 +10520,548 @@
             "kind": "location_photo"
           },
           "relationship": "Screen setting"
+        }
+      ]
+    },
+    {
+      "id": "leon-apartment",
+      "name": "Léon’s apartment exterior",
+      "address": "71 East 97th Street",
+      "neighborhood": "East Harlem",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.787512,
+        -73.95221
+      ],
+      "access": "Public exterior",
+      "visit_note": "View from the public sidewalk; this is a private building.",
+      "scenes": [
+        {
+          "film_id": "leon-the-professional",
+          "scene": "Léon approaches the entrance of his apartment building on East 97th Street. The building was used for exterior shots.",
+          "source_ids": [
+            "classics-leon-the-professional"
+          ],
+          "still": {
+            "alt": "Léon walks toward the iron-gated apartment entrance at 71 East 97th Street.",
+            "credit": "Léon: The Professional (1994) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/leon.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/leon/leon36.jpg",
+            "width": 565,
+            "height": 239,
+            "src": "/images/film-map/leon-the-professional--leon-apartment.jpg",
+            "thumbnail": "/images/film-map/leon-the-professional--leon-apartment--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "pershing-square-cafe",
+      "name": "Pershing Square Cafe",
+      "address": "90 East 42nd Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.75177,
+        -73.97793
+      ],
+      "access": "Public approach",
+      "visit_note": "Historic filming site beneath the viaduct. View from the public sidewalk; the listing does not imply the cafe is operating.",
+      "scenes": [
+        {
+          "film_id": "the-avengers",
+          "scene": "Patrons react to the Chitauri attack at Pershing Square Cafe, beside Grand Central Terminal.",
+          "source_ids": [
+            "classics-the-avengers",
+            "classics-the-avengers-1",
+            "classics-the-avengers-2"
+          ],
+          "still": {
+            "alt": "Patrons flee between green umbrellas and overturned chairs at Pershing Square Cafe during the Battle of New York.",
+            "credit": "The Avengers (2012) · Marvel Studios / MCU Location Scout",
+            "source_url": "https://mculocationscout.com/2020/07/26/grand-central-terminal-new-york-mcu-location-scout/",
+            "image_url": "https://i0.wp.com/mculocationscout.com/wp-content/uploads/2021/01/avengers_051-cafe.jpg?fit=1500%2C843&ssl=1",
+            "width": 1500,
+            "height": 843,
+            "src": "/images/film-map/the-avengers--pershing-square-cafe.jpg",
+            "thumbnail": "/images/film-map/the-avengers--pershing-square-cafe--thumb.jpg"
+          },
+          "precision": "The real cafe is depicted in a sequence combining location imagery and visual effects. Address pin, not an exact camera position.",
+          "relationship": "Screen setting"
+        }
+      ]
+    },
+    {
+      "id": "daily-news-building",
+      "name": "Daily News Building / Daily Planet",
+      "address": "220 East 42nd Street",
+      "neighborhood": "Midtown East",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.749753,
+        -73.973223
+      ],
+      "access": "Public approach",
+      "visit_note": "View the exterior from public sidewalks. Lobby access follows the building’s current rules.",
+      "scenes": [
+        {
+          "film_id": "superman",
+          "scene": "Clark Kent and Lois Lane appear in the Daily Planet lobby, filmed inside the News Building. New York stands in for Metropolis.",
+          "source_ids": [
+            "classics-superman"
+          ],
+          "still": {
+            "alt": "Clark Kent and Lois Lane stand in the pale marble lobby of the Daily Planet.",
+            "credit": "Superman (1978) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/superman.html",
+            "image_url": "https://onthesetofnewyork.com/locations/superman/superman21.jpg",
+            "width": 565,
+            "height": 240,
+            "src": "/images/film-map/superman--daily-news-building.jpg",
+            "thumbnail": "/images/film-map/superman--daily-news-building--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "west-58-sixth",
+      "name": "West 58th Street and Sixth Avenue",
+      "address": "West 58th Street at Sixth Avenue",
+      "neighborhood": "Midtown West",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.764947,
+        -73.977156
+      ],
+      "access": "Public approach",
+      "visit_note": "Use public streets or pedestrian paths. The film records the location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "midnight-cowboy",
+          "scene": "Joe and Ratso cross Sixth Avenue in the film’s famous street-crossing sequence.",
+          "source_ids": [
+            "classics-midnight-cowboy"
+          ],
+          "still": {
+            "alt": "Joe Buck and Ratso Rizzo among pedestrians at the Sixth Avenue crossing.",
+            "credit": "Midnight Cowboy (1969) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/midnightcowboy.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/midnightcowboy/midnightcowboy18.jpg",
+            "width": 565,
+            "height": 297,
+            "src": "/images/film-map/midnight-cowboy--west-58-sixth.jpg",
+            "thumbnail": "/images/film-map/midnight-cowboy--west-58-sixth--thumb.jpg"
+          },
+          "precision": "Nearby 100 West 58th Street address geocode marks the public approach to the Sixth Avenue intersection; approximate location rather than the exact camera position."
+        }
+      ]
+    },
+    {
+      "id": "nyse",
+      "name": "New York Stock Exchange",
+      "address": "11 Wall Street",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.707195,
+        -74.011149
+      ],
+      "access": "Public approach",
+      "visit_note": "View the exchange from public streets; the trading floor has restricted access.",
+      "scenes": [
+        {
+          "film_id": "wall-street",
+          "scene": "The New York Stock Exchange trading floor appears in the film’s portrait of financial Manhattan.",
+          "source_ids": [
+            "classics-wall-street"
+          ],
+          "still": {
+            "alt": "A high-angle film frame of traders and trading posts on the New York Stock Exchange floor.",
+            "credit": "Wall Street (1987) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/wallstreet.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/wallstreet/wallstreet247.jpg",
+            "width": 565,
+            "height": 306,
+            "src": "/images/film-map/wall-street--nyse.jpg",
+            "thumbnail": "/images/film-map/wall-street--nyse--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "staten-island-ferry",
+      "name": "Staten Island Ferry",
+      "address": "4 South Street",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.701018,
+        -74.013042
+      ],
+      "access": "Public approach",
+      "visit_note": "This pin is the Whitehall boarding approach for the ferry route. Use current ferry service information for boarding.",
+      "scenes": [
+        {
+          "film_id": "working-girl",
+          "scene": "The Staten Island Ferry crosses New York Harbor in the opening commute sequence.",
+          "source_ids": [
+            "classics-working-girl"
+          ],
+          "still": {
+            "alt": "The Staten Island Ferry crosses the harbor with Lower Manhattan behind it.",
+            "credit": "Working Girl (1988) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/workinggirl.html",
+            "image_url": "https://onthesetofnewyork.com/locations/workinggirl/workinggirl102.jpg",
+            "width": 565,
+            "height": 318,
+            "src": "/images/film-map/working-girl--staten-island-ferry.jpg",
+            "thumbnail": "/images/film-map/working-girl--staten-island-ferry--thumb.jpg"
+          },
+          "precision": "Whitehall Terminal boarding approach. The frame is aboard the ferry route in New York Harbor; this does not claim that the shot was filmed at the terminal."
+        }
+      ]
+    },
+    {
+      "id": "caffe-reggio",
+      "name": "Caffe Reggio",
+      "address": "119 MacDougal Street",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.73032,
+        -74.000378
+      ],
+      "access": "Public approach",
+      "visit_note": "View the storefront from MacDougal Street; interior access follows the cafe’s current rules.",
+      "scenes": [
+        {
+          "film_id": "inside-llewyn-davis",
+          "scene": "Llewyn sits at a window table inside Caffe Reggio.",
+          "source_ids": [
+            "classics-inside-llewyn-davis"
+          ],
+          "still": {
+            "alt": "Silhouetted patrons at Caffe Reggio, with the café’s lettering visible on the glass.",
+            "credit": "Inside Llewyn Davis (2013) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/insidellewyndavis.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/insidellewyndavis/insidellewyndavis16.jpg",
+            "width": 565,
+            "height": 301,
+            "src": "/images/film-map/inside-llewyn-davis--caffe-reggio.jpg",
+            "thumbnail": "/images/film-map/inside-llewyn-davis--caffe-reggio--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "nassau-wall-street",
+      "name": "Nassau Street and Wall Street",
+      "address": "Nassau Street at Wall Street",
+      "neighborhood": "Financial District",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.707336,
+        -74.01025
+      ],
+      "access": "Public approach",
+      "visit_note": "Use public streets or pedestrian paths. The film records the location at the time of production.",
+      "scenes": [
+        {
+          "film_id": "the-wolf-of-wall-street",
+          "scene": "Jordan steps off a bus near Wall Street as he begins his brokerage career.",
+          "source_ids": [
+            "classics-the-wolf-of-wall-street"
+          ],
+          "still": {
+            "alt": "Jordan Belfort stands beside a city bus near the Nassau Street and Wall Street junction.",
+            "credit": "The Wolf of Wall Street (2013) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/thewolfofwallstreet.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/thewolfofwallstreet/thewolfofwallstreet04.jpg",
+            "width": 565,
+            "height": 240,
+            "src": "/images/film-map/the-wolf-of-wall-street--nassau-wall-street.jpg",
+            "thumbnail": "/images/film-map/the-wolf-of-wall-street--nassau-wall-street--thumb.jpg"
+          },
+          "precision": "Nearby 26 Wall Street address geocode marks the public approach to Nassau / Wall intersection, not the exact camera position."
+        }
+      ]
+    },
+    {
+      "id": "chez-bippy",
+      "name": "Chez Bippy bar filming site",
+      "address": "44-02 30th Avenue",
+      "neighborhood": "Astoria",
+      "borough": "Queens",
+      "coordinates": [
+        40.762149,
+        -73.911837
+      ],
+      "access": "Public approach",
+      "visit_note": "View the corner from the public sidewalk. The fictional bar name does not identify a current business.",
+      "scenes": [
+        {
+          "film_id": "a-bronx-tale",
+          "scene": "The corner bar appears at night. Astoria, Queens stands in for the story’s Bronx neighborhood.",
+          "source_ids": [
+            "classics-a-bronx-tale"
+          ],
+          "still": {
+            "alt": "Night exterior of the Chez Bippy corner bar with men sitting outside.",
+            "credit": "A Bronx Tale (1993) · On the Set of New York",
+            "source_url": "https://onthesetofnewyork.com/abronxtale.html",
+            "image_url": "https://onthesetofnewyork.com/locations/abronxtale/abronxtale39.jpg",
+            "width": 565,
+            "height": 318,
+            "src": "/images/film-map/a-bronx-tale--chez-bippy.jpg",
+            "thumbnail": "/images/film-map/a-bronx-tale--chez-bippy--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "robert-townhouse",
+      "name": "Robert Neville’s townhouse exterior",
+      "address": "11 Washington Square North",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.73138,
+        -73.996496
+      ],
+      "access": "Public exterior",
+      "visit_note": "View from the public sidewalk; this is a private building.",
+      "scenes": [
+        {
+          "film_id": "i-am-legend",
+          "scene": "Robert Neville and his dog approach the entrance to his Washington Square townhouse.",
+          "source_ids": [
+            "classics-i-am-legend"
+          ],
+          "still": {
+            "alt": "Robert Neville and his dog at the columned doorway of 11 Washington Square North.",
+            "credit": "I Am Legend (2007) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/iamlegend.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/iamlegend/iamlegend15.jpg",
+            "width": 565,
+            "height": 238,
+            "src": "/images/film-map/i-am-legend--robert-townhouse.jpg",
+            "thumbnail": "/images/film-map/i-am-legend--robert-townhouse--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "joes-pizza-original",
+      "name": "Joe’s Pizza, original filming site",
+      "address": "233 Bleecker Street at Carmine Street",
+      "neighborhood": "Greenwich Village",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.730583,
+        -74.002475
+      ],
+      "access": "Public approach",
+      "visit_note": "Historic storefront location on Bleecker Street. The original filming address differs from Joe’s later Carmine Street shop.",
+      "scenes": [
+        {
+          "film_id": "spider-man-2",
+          "scene": "Peter’s pizza-delivery job begins at the original Joe’s Pizza storefront on Bleecker Street.",
+          "source_ids": [
+            "classics-spider-man-2"
+          ],
+          "still": {
+            "alt": "A cyclist passes the original Joe’s Pizza storefront and its delivery sign.",
+            "credit": "Spider-Man 2 (2004) · On the Set of New York",
+            "source_url": "https://www.onthesetofnewyork.com/spiderman2.html",
+            "image_url": "https://www.onthesetofnewyork.com/locations/spiderman2/spiderman2_01.jpg",
+            "width": 565,
+            "height": 231,
+            "src": "/images/film-map/spider-man-2--joes-pizza.jpg",
+            "thumbnail": "/images/film-map/spider-man-2--joes-pizza--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "steeplechase-pier",
+      "name": "Pat Auletta Steeplechase Pier",
+      "address": "Riegelmann Boardwalk at West 17th Street",
+      "neighborhood": "Coney Island",
+      "borough": "Brooklyn",
+      "coordinates": [
+        40.57011,
+        -73.98347
+      ],
+      "access": "Public approach",
+      "visit_note": "Reach the pier from the public boardwalk when open. Its structure has changed since filming.",
+      "scenes": [
+        {
+          "film_id": "requiem-for-a-dream",
+          "scene": "Harry imagines Marion waiting at the end of Coney Island’s Steeplechase Pier.",
+          "source_ids": [
+            "classics-requiem-for-a-dream",
+            "classics-requiem-for-a-dream-1",
+            "classics-requiem-for-a-dream-2"
+          ],
+          "still": {
+            "alt": "Marion, in a red dress, stands at the far end of the wooden-railed pier.",
+            "credit": "Requiem for a Dream (2000) · FilmGrab",
+            "source_url": "https://film-grab.com/2011/02/11/requiem-for-a-dream/",
+            "image_url": "https://film-grab.com/wp-content/uploads/2011/02/Requiem.jpg",
+            "width": 843,
+            "height": 461,
+            "src": "/images/film-map/requiem-for-a-dream--steeplechase-pier.jpg",
+            "thumbnail": "/images/film-map/requiem-for-a-dream--steeplechase-pier--thumb.jpg"
+          },
+          "precision": "Mapcarta / GeoNames point on the pier; approximate feature position rather than exact camera position."
+        }
+      ]
+    },
+    {
+      "id": "schinasi-mansion",
+      "name": "Schinasi Mansion / June’s house",
+      "address": "351 Riverside Drive",
+      "neighborhood": "Upper West Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.802988,
+        -73.969278
+      ],
+      "access": "Public exterior",
+      "visit_note": "View from the public sidewalk; this is a private building.",
+      "scenes": [
+        {
+          "film_id": "white-collar",
+          "scene": "The Schinasi Mansion supplies the recurring exterior of June’s home, where Neal lives.",
+          "source_ids": [
+            "classics-white-collar"
+          ],
+          "still": {
+            "alt": "A White Collar establishing shot of the Schinasi Mansion, with the show’s on-screen logo retained.",
+            "credit": "White Collar · USA Network / IAMNOTASTALKER",
+            "source_url": "https://www.iamnotastalker.com/2017/04/28/junes-house-from-white-collar",
+            "image_url": "https://wp.iamnotastalker.com/wp-content/uploads/2017/04/ae28e13e-07d1-42bf-b6fa-c3be35a45156.jpg",
+            "width": 1024,
+            "height": 576,
+            "src": "/images/film-map/white-collar--schinasi-mansion.jpg",
+            "thumbnail": "/images/film-map/white-collar--schinasi-mansion--thumb.jpg",
+            "kind": "episode_image"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "sheffield-house",
+      "name": "Sheffield house exterior",
+      "address": "7 East 75th Street",
+      "neighborhood": "Upper East Side",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.774265,
+        -73.964663
+      ],
+      "access": "Public exterior",
+      "visit_note": "View from the public sidewalk; this is a private building.",
+      "scenes": [
+        {
+          "film_id": "the-nanny",
+          "scene": "This townhouse provides the exterior of the Sheffield home. The image is a 2010 photograph of the real building.",
+          "source_ids": [
+            "classics-the-nanny",
+            "classics-the-nanny-1",
+            "classics-the-nanny-license"
+          ],
+          "still": {
+            "alt": "Location photograph of 7 East 75th Street, the townhouse used for The Nanny’s Sheffield-house exterior.",
+            "credit": "Location photo · Gryffindor / Wikimedia Commons · CC BY-SA 3.0 · Resized",
+            "source_url": "https://commons.wikimedia.org/wiki/File:7_East_75th_Street_001.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/7_East_75th_Street_001.JPG?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+            "width": 1200,
+            "height": 1600,
+            "src": "/images/film-map/the-nanny--sheffield-house.jpg",
+            "thumbnail": "/images/film-map/the-nanny--sheffield-house--thumb.jpg",
+            "kind": "location_photo"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "lenox-lounge-former",
+      "name": "Lenox Lounge, former site",
+      "address": "288 Lenox Avenue",
+      "neighborhood": "Harlem",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.807217,
+        -73.945419
+      ],
+      "access": "Public approach",
+      "visit_note": "Historical site: the original Lenox Lounge closed and its building was demolished. View the address from the public sidewalk.",
+      "scenes": [
+        {
+          "film_id": "mad-men",
+          "scene": "In the pilot’s opening bar scene, Don makes cigarette-advertising notes on a cocktail napkin. The scene was filmed at the Lenox Lounge.",
+          "source_ids": [
+            "classics-mad-men",
+            "classics-mad-men-1",
+            "classics-mad-men-2",
+            "classics-mad-men-3"
+          ],
+          "still": {
+            "alt": "Don’s hand and handwritten cocktail-napkin notes in the opening bar scene of Mad Men.",
+            "credit": "Mad Men, S1E1 · AMC / hpkomics.com (citing kissthemgoodbye.net)",
+            "source_url": "https://hpkomics.com/2026/07/as-scene-on-mad-men-s1e1-smoke-gets-in-your-eyes/",
+            "image_url": "https://hpkomics.com/wp-content/uploads/2026/07/mms01e01-0050-1024x576.jpg",
+            "width": 1024,
+            "height": 576,
+            "src": "/images/film-map/mad-men--lenox-lounge.jpg",
+            "thumbnail": "/images/film-map/mad-men--lenox-lounge--thumb.jpg"
+          },
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
+        }
+      ]
+    },
+    {
+      "id": "mcgees-pub",
+      "name": "McGee’s Pub",
+      "address": "240 West 55th Street",
+      "neighborhood": "Hell’s Kitchen",
+      "borough": "Manhattan",
+      "coordinates": [
+        40.764828,
+        -73.982984
+      ],
+      "access": "Public approach",
+      "visit_note": "View the storefront from the public sidewalk; interior access follows the pub’s current rules.",
+      "scenes": [
+        {
+          "film_id": "how-i-met-your-mother",
+          "scene": "McGee’s inspired the fictional MacLaren’s Pub. This is a photograph of the real pub, not a filming frame.",
+          "source_ids": [
+            "classics-how-i-met-your-mother"
+          ],
+          "still": {
+            "alt": "Location photograph of McGee’s Pub’s red-and-black entrance and neon sign.",
+            "credit": "Location photo · McGee’s Pub official website",
+            "source_url": "https://mcgeespubny.com/?domain=mcgeespubny.com",
+            "image_url": "https://static.spotapps.co/spots/11/da95ba7cc44362812db2a5962c71ee/full",
+            "width": 800,
+            "height": 800,
+            "src": "/images/film-map/how-i-met-your-mother--mcgees-pub.jpg",
+            "thumbnail": "/images/film-map/how-i-met-your-mother--mcgees-pub--thumb.jpg",
+            "kind": "location_photo"
+          },
+          "relationship": "Inspiration",
+          "precision": "Address geocode; approximate building/public approach rather than camera position."
         }
       ]
     }

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { search_atlas_index } from '../lib/atlas_browser.ts';
+import { atlas_index_label, search_atlas_index } from '../lib/atlas_browser.ts';
 import { normalize_search_text } from '../lib/search_text.ts';
 import {
   atlas_entries,
@@ -10,6 +10,7 @@ import {
   atlas_detail,
   atlas_connections,
   atlas_maps_url,
+  atlas_entry_label,
 } from '../lib/new_york_atlas.ts';
 
 test('lightweight search preserves every catalog field and ordered result', () => {
@@ -66,6 +67,21 @@ test('lightweight search preserves every catalog field and ordered result', () =
     }
   }
   assert.equal(atlas_index.length, atlas_entries.length);
+  for (const [position, entry] of atlas_index.entries()) {
+    assert.equal(
+      atlas_index_label(entry),
+      atlas_entry_label(atlas_entries[position]),
+    );
+    const compact = normalize_search_text(
+      [entry.title, entry.place_name, entry.area, entry.search_text].join(' '),
+    );
+    for (const token of reference[position].text.split(/\s+/).filter(Boolean)) {
+      assert.ok(
+        compact.includes(token),
+        `${entry.id}: retained search token ${token}`,
+      );
+    }
+  }
   assert.ok(
     Buffer.byteLength(JSON.stringify(atlas_index)) < 160_000,
     'Initial search payload budget',

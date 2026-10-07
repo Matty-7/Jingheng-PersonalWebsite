@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import {
   atlas_labels,
+  atlas_index_label,
   atlas_card_artwork,
   create_atlas_location,
   search_atlas_index,
@@ -304,7 +305,9 @@ export function NewYorkAtlas({
                   >
                     <span className="atlas-search-result-heading">
                       <strong>{entry.title}</strong>
-                      <span className="atlas-search-kind">{entry.label}</span>
+                      <span className="atlas-search-kind">
+                        {atlas_index_label(entry)}
+                      </span>
                     </span>
                     <span>
                       {entry.place_name} · {entry.area}
@@ -361,7 +364,7 @@ export function NewYorkAtlas({
             )}
             <div className="atlas-card-heading">
               <p className="atlas-eyebrow">
-                {summary.label}
+                {atlas_index_label(summary)}
                 {detail && <> · {detail.year}</>}
                 {detail?.connection && <> · Artist connection</>}
               </p>

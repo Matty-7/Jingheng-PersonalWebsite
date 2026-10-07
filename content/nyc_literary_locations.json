@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-27",
+  "reviewed_on": "2026-10-07",
   "works": [
     {
       "id": "washington",
@@ -441,6 +441,176 @@
         "edition": "Avon paperback, September 14, 2021; ISBN 9780062959966",
         "source_url": "https://alexisdaria.com/books/a-lot-like-adios/",
         "credit": "Avon / HarperCollins; published cover provided by Alexis Daria"
+      }
+    },
+    {
+      "id": "the_catcher_in_the_rye",
+      "title": "The Catcher in the Rye",
+      "author": "J. D. Salinger",
+      "year": 1951,
+      "kind": "Book",
+      "source_url": "https://www.hachettebookgroup.com/titles/j-d-salinger/9780316769532/9780316769532/",
+      "text_url": "https://www.centralparknyc.org/articles/winter-stories-wildlife",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/the-catcher-in-the-rye.jpg",
+        "alt": "Published cover of The Catcher in the Rye by J. D. Salinger.",
+        "edition": "Little, Brown and Company; ISBN 9780316769532; current publisher cover",
+        "source_url": "https://www.hachettebookgroup.com/titles/j-d-salinger/9780316769532/9780316769532/",
+        "credit": "Little, Brown and Company / Hachette Book Group"
+      }
+    },
+    {
+      "id": "invisible_man",
+      "title": "Invisible Man",
+      "author": "Ralph Ellison",
+      "year": 1952,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouse.com/books/46131/invisible-man-national-book-award-winner-by-ralph-ellison/",
+      "text_url": "https://www.penguinrandomhouse.com/books/46131/invisible-man-national-book-award-winner-by-ralph-ellison/",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/invisible-man.jpg",
+        "alt": "Published cover of Invisible Man by Ralph Ellison.",
+        "edition": "Vintage paperback, 1995; ISBN 9780679732761",
+        "source_url": "https://www.penguinrandomhouse.com/books/46131/invisible-man-national-book-award-winner-by-ralph-ellison/",
+        "credit": "Vintage / Penguin Random House"
+      }
+    },
+    {
+      "id": "a_tree_grows_in_brooklyn",
+      "title": "A Tree Grows in Brooklyn",
+      "author": "Betty Smith",
+      "year": 1943,
+      "kind": "Book",
+      "source_url": "https://books.google.com/books/about/A_Tree_Grows_in_Brooklyn.html?id=thbHjzJpzMUC",
+      "text_url": "https://www.bklynlibrary.org/locations/leonard",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/a-tree-grows-in-brooklyn.jpg",
+        "alt": "Published cover of A Tree Grows in Brooklyn by Betty Smith.",
+        "edition": "Harper Perennial Modern Classics; ISBN 9780060736262; cover supplied through Google Books",
+        "source_url": "https://books.google.com/books/about/A_Tree_Grows_in_Brooklyn.html?id=thbHjzJpzMUC",
+        "credit": "HarperCollins; published cover via Google Books"
+      }
+    },
+    {
+      "id": "the_bell_jar",
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "year": 1963,
+      "kind": "Book",
+      "source_url": "https://www.faber.co.uk/product/9780571081783-the-bell-jar/",
+      "text_url": "https://s-media.nyc.gov/agencies/lpc/lp/2495.pdf",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/the-bell-jar.jpg",
+        "alt": "Published cover of The Bell Jar by Sylvia Plath.",
+        "edition": "Faber paperback; ISBN 9780571081783; current publisher cover",
+        "source_url": "https://www.faber.co.uk/product/9780571081783-the-bell-jar/",
+        "credit": "Faber & Faber"
+      }
+    },
+    {
+      "id": "manhattan_transfer",
+      "title": "Manhattan Transfer",
+      "author": "John Dos Passos",
+      "year": 1925,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouse.com/books/42221/manhattan-transfer-by-john-dos-passos/",
+      "text_url": "https://www.gutenberg.org/cache/epub/71853/pg71853-images.html",
+      "rights": "Public domain in the USA; 1925 novel via Project Gutenberg",
+      "cover": {
+        "src": "/images/literary-map/manhattan-transfer.jpg",
+        "alt": "Published cover of Manhattan Transfer by John Dos Passos.",
+        "edition": "Vintage paperback, 2021; ISBN 9780593312056",
+        "source_url": "https://www.penguinrandomhouse.com/books/42221/manhattan-transfer-by-john-dos-passos/",
+        "credit": "Vintage / Penguin Random House"
+      }
+    },
+    {
+      "id": "another_country",
+      "title": "Another Country",
+      "author": "James Baldwin",
+      "year": 1962,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouse.com/books/7737/another-country-by-james-baldwin/",
+      "text_url": "https://www.penguinrandomhouse.com/books/7737/another-country-by-james-baldwin/",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/another-country.jpg",
+        "alt": "Published cover of Another Country by James Baldwin.",
+        "edition": "Vintage paperback, 1992; ISBN 9780679744719",
+        "source_url": "https://www.penguinrandomhouse.com/books/7737/another-country-by-james-baldwin/",
+        "credit": "Vintage / Penguin Random House"
+      }
+    },
+    {
+      "id": "the_new_york_trilogy",
+      "title": "The New York Trilogy",
+      "author": "Paul Auster",
+      "year": 1987,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouse.com/books/298818/the-new-york-trilogy-by-paul-auster/",
+      "text_url": "https://www.penguinrandomhouse.com/books/298818/the-new-york-trilogy-by-paul-auster/",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/the-new-york-trilogy.jpg",
+        "alt": "Published cover of The New York Trilogy by Paul Auster.",
+        "edition": "Penguin Books paperback, 1990; ISBN 9780140131550",
+        "source_url": "https://www.penguinrandomhouse.com/books/298818/the-new-york-trilogy-by-paul-auster/",
+        "credit": "Penguin Books / Penguin Random House"
+      }
+    },
+    {
+      "id": "breakfast_at_tiffanys",
+      "title": "Breakfast at Tiffany’s",
+      "author": "Truman Capote",
+      "year": 1958,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780812994360",
+      "text_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780812994360",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/breakfast-at-tiffanys.jpg",
+        "alt": "Published cover of Breakfast at Tiffany’s by Truman Capote.",
+        "edition": "Modern Library, 2013; Breakfast at Tiffany’s & Other Voices, Other Rooms; ISBN 9780812994360",
+        "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780812994360",
+        "credit": "Modern Library / Penguin Random House"
+      }
+    },
+    {
+      "id": "kavalier_and_clay",
+      "title": "The Amazing Adventures of Kavalier & Clay",
+      "author": "Michael Chabon",
+      "year": 2000,
+      "kind": "Book",
+      "source_url": "https://www.penguinrandomhouse.com/books/25713/the-amazing-adventures-of-kavalier-and-clay-with-bonus-content-by-michael-chabon/9780812983586/",
+      "text_url": "https://www.penguinrandomhouse.com/books/25713/the-amazing-adventures-of-kavalier-and-clay-with-bonus-content-by-michael-chabon/9780812983586/",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/kavalier-and-clay.jpg",
+        "alt": "Published cover of The Amazing Adventures of Kavalier & Clay by Michael Chabon.",
+        "edition": "Random House Trade Paperbacks, 2012; ISBN 9780812983586",
+        "source_url": "https://www.penguinrandomhouse.com/books/25713/the-amazing-adventures-of-kavalier-and-clay-with-bonus-content-by-michael-chabon/9780812983586/",
+        "credit": "Random House / Penguin Random House"
+      }
+    },
+    {
+      "id": "motherless_brooklyn",
+      "title": "Motherless Brooklyn",
+      "author": "Jonathan Lethem",
+      "year": 1999,
+      "kind": "Book",
+      "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780307789129",
+      "text_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780307789129",
+      "rights": "Copyrighted work; brief quotation from the cited publisher or institution",
+      "cover": {
+        "src": "/images/literary-map/motherless-brooklyn.jpg",
+        "alt": "Published cover of Motherless Brooklyn by Jonathan Lethem.",
+        "edition": "Vintage ebook, 2011; ISBN 9780307789129",
+        "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780307789129",
+        "credit": "Vintage / Penguin Random House"
       }
     }
   ],
@@ -1596,6 +1766,220 @@
       "precision": "Named airport and pickup scene. The excerpt does not identify a terminal or exact curb; the pin represents LaGuardia as a whole.",
       "visit_note": "Airport-level reference point, not a terminal, pickup lane or gate. Use your airline’s current terminal directions; secure areas require the appropriate travel access.",
       "place_source_url": "https://www.airnav.com/airport/LGA"
+    },
+    {
+      "id": "the-catcher-in-the-rye-central-park-pond",
+      "work_id": "the_catcher_in_the_rye",
+      "place_id": "central-park-pond",
+      "place": "The Pond, Central Park",
+      "area": "Central Park, Manhattan",
+      "coordinates": [
+        40.7678,
+        -73.9738
+      ],
+      "plus_code": "87G8Q29G+4F",
+      "map_query": "The Pond, Central Park, Central Park, Manhattan, New York",
+      "locator": "Holden Caulfield quotation opening “Wintering in Central Park”",
+      "source_url": "https://www.centralparknyc.org/articles/winter-stories-wildlife",
+      "excerpt": "You know those ducks in that lagoon right near Central Park South?",
+      "excerpt_kind": "Brief novel quotation in the Conservancy’s wildlife article",
+      "note": "Holden asks where the ducks go when the water freezes, making the Pond a recurring image of uncertainty and change.",
+      "precision": "The Conservancy links Holden’s question to the Pond near Central Park South. Approximate water-body pin, not a particular bench or taxi stop.",
+      "visit_note": "View the Pond from public park paths; keep clear of the water and wildlife.",
+      "relationship": "Literary setting"
+    },
+    {
+      "id": "invisible-man-harlem",
+      "work_id": "invisible_man",
+      "place_id": "harlem",
+      "place": "Harlem",
+      "area": "Harlem, Manhattan",
+      "coordinates": [
+        40.8116,
+        -73.9465
+      ],
+      "plus_code": "87G8R363+JC",
+      "map_query": "Harlem, Harlem, Manhattan, New York",
+      "locator": "Publisher’s book description, narrator’s move to New York",
+      "source_url": "https://www.penguinrandomhouse.com/books/46131/invisible-man-national-book-award-winner-by-ralph-ellison/",
+      "excerpt": "chief spokesman of the Harlem branch of “the Brotherhood,”",
+      "excerpt_kind": "Publisher synopsis",
+      "note": "Ellison’s unnamed narrator enters Harlem’s political life through the Brotherhood, then confronts the limits of the role it offers him.",
+      "precision": "Neighborhood setting stated by the publisher. The shared Harlem pin does not identify the narrator’s fictional basement or a Brotherhood office.",
+      "visit_note": "Explore the neighborhood from public streets; no private interior is identified.",
+      "relationship": "Literary setting"
+    },
+    {
+      "id": "a-tree-grows-in-brooklyn-leonard-library",
+      "work_id": "a_tree_grows_in_brooklyn",
+      "place_id": "leonard-library",
+      "place": "Leonard Library",
+      "area": "Williamsburg, Brooklyn",
+      "coordinates": [
+        40.713657,
+        -73.947946
+      ],
+      "plus_code": "87G8P372+FR",
+      "map_query": "Leonard Library, Williamsburg, Brooklyn, New York",
+      "locator": "Brooklyn Public Library’s description of Leonard Library",
+      "source_url": "https://www.bklynlibrary.org/locations/leonard",
+      "excerpt": "the iconic library visited by Francie",
+      "excerpt_kind": "Library location note",
+      "note": "Francie’s reading leads beyond her Williamsburg neighborhood; Brooklyn Public Library identifies Leonard as the library she visits.",
+      "precision": "Library identified by its operator at 81 Devoe Street. Address geocode represents the building, not an unchanged historical reading room.",
+      "visit_note": "Use the public library entrance during posted opening hours; check the branch page for access updates.",
+      "relationship": "Literary setting",
+      "place_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=81+Devoe+Street+Brooklyn&size=1"
+    },
+    {
+      "id": "the-bell-jar-barbizon-hotel",
+      "work_id": "the_bell_jar",
+      "place_id": "barbizon-hotel",
+      "place": "Former Barbizon Hotel",
+      "area": "Upper East Side, Manhattan",
+      "coordinates": [
+        40.764414,
+        -73.966215
+      ],
+      "plus_code": "87G8Q27M+QG",
+      "map_query": "Former Barbizon Hotel, Upper East Side, Manhattan, New York",
+      "locator": "NYC Landmarks Preservation Commission designation report, p. 8",
+      "source_url": "https://s-media.nyc.gov/agencies/lpc/lp/2495.pdf",
+      "excerpt": "her stay at the Barbizon, which she dubbed the Amazon, in The Bell Jar.",
+      "excerpt_kind": "Landmark report excerpt",
+      "note": "Plath transforms her stay at the Barbizon into the fictional Amazon hotel, linking Esther’s New York summer to this building.",
+      "precision": "Documented real-life model for the novel’s Amazon hotel. The pin marks 140 East 63rd Street, not a room available to visit.",
+      "visit_note": "View the former hotel from the public sidewalk. It is a residential building; no interior access is implied.",
+      "relationship": "Inspiration",
+      "place_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=140+East+63rd+Street+Manhattan&size=1"
+    },
+    {
+      "id": "manhattan-transfer-brooklyn-bridge",
+      "work_id": "manhattan_transfer",
+      "place_id": "brooklyn-bridge",
+      "place": "Brooklyn Bridge",
+      "area": "East River, Manhattan / Brooklyn",
+      "coordinates": [
+        40.7057,
+        -73.9964
+      ],
+      "plus_code": "87G8P243+7C",
+      "map_query": "Brooklyn Bridge, East River, Manhattan / Brooklyn, New York",
+      "locator": "First Section, V. “Steamroller”; Bud’s night walk",
+      "source_url": "https://www.gutenberg.org/cache/epub/71853/pg71853-images.html",
+      "excerpt": "Picking his teeth he walked through the grimydark entrance to Brooklyn Bridge.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Bud crosses the bridge at night as streetlights and the river turn the city into an unsettling constellation.",
+      "precision": "Named bridge and footwalk in the novel. Shared bridge pin, not an exact historical entrance or character position.",
+      "visit_note": "Use the designated pedestrian walkway; the novel describes an earlier bridge layout.",
+      "relationship": "Literary setting"
+    },
+    {
+      "id": "another-country-greenwich-village",
+      "work_id": "another_country",
+      "place_id": "greenwich-village",
+      "place": "Greenwich Village",
+      "area": "Greenwich Village, Manhattan",
+      "coordinates": [
+        40.7336,
+        -74.0027
+      ],
+      "plus_code": "87G7PXMW+CW",
+      "map_query": "Greenwich Village, Greenwich Village, Manhattan, New York",
+      "locator": "Publisher’s opening book description",
+      "source_url": "https://www.penguinrandomhouse.com/books/7737/another-country-by-james-baldwin/",
+      "excerpt": "set in Greenwich Village, Harlem, and France.",
+      "excerpt_kind": "Publisher synopsis",
+      "note": "Baldwin places intimacy, race and artistic ambition within a circle whose New York life moves between Greenwich Village and Harlem.",
+      "precision": "Neighborhood setting named by the publisher. Approximate Village pin; no character’s apartment or jazz club is asserted.",
+      "visit_note": "Neighborhood reference point for a walk on public streets.",
+      "relationship": "Literary setting"
+    },
+    {
+      "id": "the-new-york-trilogy-orange-street",
+      "work_id": "the_new_york_trilogy",
+      "place_id": "orange-street",
+      "place": "Orange Street",
+      "area": "Brooklyn Heights, Brooklyn",
+      "coordinates": [
+        40.698753,
+        -73.993032
+      ],
+      "plus_code": "87G8M2X4+GQ",
+      "map_query": "Orange Street, Brooklyn Heights, Brooklyn, New York",
+      "locator": "Publisher’s description of “Ghosts,” the trilogy’s second novel",
+      "source_url": "https://www.penguinrandomhouse.com/books/298818/the-new-york-trilogy-by-paul-auster/",
+      "excerpt": "From a window of a rented room on Orange Street, Blue keeps watch on his subject",
+      "excerpt_kind": "Publisher synopsis",
+      "note": "In “Ghosts,” Blue watches Black across Orange Street, turning an ordinary stretch of Brooklyn into a puzzle about observation and identity.",
+      "precision": "Street-level setting, presented provisionally by the novel’s narrator. The street pin does not identify either fictional rented room.",
+      "visit_note": "Walk the public sidewalk. Buildings along the street are not identified as accessible fictional interiors.",
+      "relationship": "Literary setting",
+      "place_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=70+Orange+Street+Brooklyn&size=1"
+    },
+    {
+      "id": "breakfast-at-tiffanys-east-seventies",
+      "work_id": "breakfast_at_tiffanys",
+      "place_id": "east-seventies",
+      "place": "The East Seventies",
+      "area": "Upper East Side, Manhattan",
+      "coordinates": [
+        40.772,
+        -73.9601
+      ],
+      "plus_code": "87G8Q2CQ+QX",
+      "map_query": "The East Seventies, Upper East Side, Manhattan, New York",
+      "locator": "Opening paragraph of “Breakfast at Tiffany’s” in the publisher’s sample",
+      "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780812994360",
+      "excerpt": "there is a brownstone in the East Seventies",
+      "excerpt_kind": "Brief excerpt",
+      "note": "The narrator’s memory of a brownstone in the East Seventies opens Capote’s portrait of Holly Golightly and wartime New York.",
+      "precision": "Approximate East Seventies neighborhood pin. The novella does not supply a street number here; the film’s townhouse is a separate location.",
+      "visit_note": "Use public streets; no particular private brownstone is identified.",
+      "relationship": "Literary setting"
+    },
+    {
+      "id": "kavalier-and-clay-empire-state-building",
+      "work_id": "kavalier_and_clay",
+      "place_id": "empire-state-building",
+      "place": "Empire State Building",
+      "area": "Midtown, Manhattan",
+      "coordinates": [
+        40.7484,
+        -73.9857
+      ],
+      "plus_code": "87G8P2X7+9P",
+      "map_query": "Empire State Building, Midtown, Manhattan, New York",
+      "locator": "Publisher’s book description, Joe and Sammy’s New York lives",
+      "source_url": "https://www.penguinrandomhouse.com/books/25713/the-amazing-adventures-of-kavalier-and-clay-with-bonus-content-by-michael-chabon/9780812983586/",
+      "excerpt": "Climbing from the streets of Brooklyn to the top of the Empire State Building",
+      "excerpt_kind": "Publisher synopsis",
+      "note": "Joe and Sammy’s comic-book ambitions unfold across a city that reaches from Brooklyn streets to the Empire State Building.",
+      "precision": "Named landmark in the publisher’s description. The pin marks the building, without assigning the novel’s events to a particular floor.",
+      "visit_note": "View the building from public streets; interior attractions have their own admission rules.",
+      "relationship": "Literary setting"
+    },
+    {
+      "id": "motherless-brooklyn-court-street",
+      "work_id": "motherless_brooklyn",
+      "place_id": "court-street",
+      "place": "Court Street",
+      "area": "Carroll Gardens / Cobble Hill, Brooklyn",
+      "coordinates": [
+        40.682099,
+        -73.995772
+      ],
+      "plus_code": "87G8M2J3+RM",
+      "map_query": "Court Street, Carroll Gardens / Cobble Hill, Brooklyn, New York",
+      "locator": "Opening chapter “Walks Into”; publisher-authorized sample",
+      "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780307789129",
+      "excerpt": "Minna Agency errands mostly stuck us in Brooklyn, rarely far from Court Street, in fact.",
+      "excerpt_kind": "Brief excerpt",
+      "note": "Lionel describes Court Street and the surrounding neighborhoods as the familiar territory of Frank Minna’s agency.",
+      "precision": "Street-level reference for the agency’s usual territory. No exact storefront, office or crime scene is inferred from this passage.",
+      "visit_note": "Use public sidewalks along Court Street; the pin is a reading reference rather than a specific business.",
+      "relationship": "Literary setting",
+      "place_source_url": "https://geosearch.planninglabs.nyc/v2/search?text=349+Court+Street+Brooklyn&size=1"
     }
   ]
 }

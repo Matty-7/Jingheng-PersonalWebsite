@@ -36,6 +36,7 @@ export type LiteraryEntry = {
   precision: string;
   visit_note: string;
   place_source_url?: string;
+  relationship?: 'Literary setting' | 'Inspiration';
 };
 
 export const literary_works = catalog.works as LiteraryWork[];
