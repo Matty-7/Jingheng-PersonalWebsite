@@ -114,6 +114,14 @@ test('effective convexity check separates curvature from price direction', () =>
   assert.match(check.choices[2], /low CPR.*by itself fixes/);
 });
 
+test('coupon stack check rejects coupon-only duration and hedge sizing', () => {
+  const check = learning_checks.coupon_stack;
+  assert.equal(check.correct, 0);
+  assert.match(check.choices[check.correct], /Collateral.*refinancing.*model/i);
+  assert.match(check.choices[1], /always have longer duration/i);
+  assert.match(check.choices[2], /fixes every pool’s hedge size/i);
+});
+
 test('free jumps adopt the new lesson, keep completion and select a valid route', () => {
   const saved = { ...initial_progress, completed: ['incentive'] };
   const same_route = select_lesson(saved, 'prepayments');

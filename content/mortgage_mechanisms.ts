@@ -36,6 +36,18 @@ export const mechanism_sources = {
     title: 'The rising gap between primary and secondary mortgage rates',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/epr/2013/1113fust.pdf',
   },
+  coupon_stack_public: {
+    publisher: 'Federal Reserve',
+    title:
+      'Retrospective: The Agency MBS Market on October 15, 2014 · September 24, 2020',
+    url: 'https://www.federalreserve.gov/econres/notes/feds-notes/retrospective-the-agency-mbs-market-on-october-15-2014-20200924.html',
+  },
+  convexity_feedback_public: {
+    publisher: 'Federal Reserve',
+    title:
+      "Did the Federal Reserve's MBS Purchase Program Lower Mortgage Rates? · 2011",
+    url: 'https://www.federalreserve.gov/pubs/feds/2011/201101/index.html',
+  },
   rate_lock_public: {
     publisher: 'CFPB',
     title: 'Mortgage rate locks',
@@ -177,7 +189,12 @@ export const mechanism_topics = [
     id: 'exposure_channels',
     branch: 'risk',
     title: 'Beyond one rate sensitivity',
-    concepts: ['pipeline_hedging', 'margin_call', 'curve_shifts'],
+    concepts: [
+      'coupon_stack',
+      'pipeline_hedging',
+      'margin_call',
+      'curve_shifts',
+    ],
   },
   {
     id: 'credit_assessment',
@@ -348,7 +365,7 @@ const entries: Entry[] = [
     id: 'current_coupon',
     title: 'Current-coupon MBS',
     subtitle: 'A near-par secondary-market reference',
-    aliases: ['current coupon', 'production coupon'],
+    aliases: ['current coupon'],
     summary:
       'Current-coupon measures estimate the coupon or associated yield of agency MBS trading near par. They provide a reference for new mortgage production; the estimate depends on quotes and methodology.',
     distinction:
@@ -374,6 +391,58 @@ const entries: Entry[] = [
     question: 'Is current coupon the rate offered to every new borrower?',
     answer:
       'No. Borrower characteristics, costs and lender pricing also matter.',
+  },
+  {
+    id: 'coupon_stack',
+    title: 'Coupon stack & convexity hedging',
+    subtitle: 'Different coupons, changing exposures',
+    aliases: [
+      'coupon stack',
+      'MBS coupon stack',
+      'convexity hedging',
+      'production coupon',
+    ],
+    summary:
+      'A coupon stack compares the security coupons of otherwise comparable agency MBS, using a consistent program or fungible delivery class, original term, valuation date and settlement. Security coupon is the investor payment rate, not the pool’s borrower WAC. Rate changes can alter executable refinancing incentives differently across borrower groups, changing expected cash-flow timing and modeled duration across the stack. The response depends on starting coupon, collateral and refinancing history, the rate path, volatility and model assumptions.',
+    distinction:
+      'Current coupon is this map’s near-par reference. Production coupon follows the cited source’s definition and is not automatically the same measure. Coupon rank alone determines neither duration, convexity sign, OAS nor return. If rising rates extend actively hedged MBS, holders targeting stable rate exposure may sell duration or pay fixed in swaps; contraction can prompt the reverse. These adjustments can reinforce a rate move, but the feedback depends on holdings, hedge targets, instruments and market liquidity. It is not a forecast or a rule that every holder trades alike.',
+    links: [
+      {
+        id: 'net_coupon',
+        reason:
+          'Defines the security coupon used to group comparable agency MBS.',
+      },
+      {
+        id: 'current_coupon',
+        reason:
+          'Locates a near-par reference inside, rather than defining, the whole stack.',
+      },
+      {
+        id: 'incentive',
+        reason:
+          'Connects available mortgage rates with borrower exercise decisions.',
+      },
+      {
+        id: 'duration',
+        reason:
+          'Translates changing cash-flow timing into local rate sensitivity.',
+      },
+      {
+        id: 'effective_convexity',
+        reason:
+          'Measures local curvature after cash flows are reprojected under defined shocks.',
+      },
+      {
+        id: 'hedging',
+        reason:
+          'Provides the existing DV01 sizing rule and the boundary on residual risks.',
+      },
+    ],
+    sources: ['coupon_stack_public', 'convexity_feedback_public'],
+    question:
+      'Can security coupon alone determine an agency MBS position’s duration and hedge size?',
+    answer:
+      'No. Collateral, refinancing response and model assumptions also matter.',
   },
   {
     id: 'rate_lock',
@@ -1304,6 +1373,54 @@ export const mechanism_relationships: MortgageRelationship[] = [
       'Near-par pricing defines the reference, rather than a particular borrower quote.',
     kind: 'definition',
     sources: ['primary_secondary_public'],
+  },
+  {
+    id: 'model_net_coupon__coupon_stack',
+    source: 'net_coupon',
+    target: 'coupon_stack',
+    label: 'defines the grouping coupon',
+    reason:
+      'A coupon stack groups securities by the investor coupon, not by the borrower WAC.',
+    conditions:
+      'Keep program or fungible delivery class, original term, valuation date and settlement comparable.',
+    kind: 'definition',
+    sources: ['coupon_stack_public'],
+  },
+  {
+    id: 'model_current_coupon__coupon_stack',
+    source: 'current_coupon',
+    target: 'coupon_stack',
+    label: 'near-par reference versus full stack',
+    reason:
+      'Current coupon identifies a near-par reference; the stack compares multiple security coupons.',
+    conditions:
+      'Production coupon follows the cited source’s definition and is not automatically identical to this map’s current-coupon measure.',
+    kind: 'comparison',
+    sources: ['coupon_stack_public', 'primary_secondary_public'],
+  },
+  {
+    id: 'model_incentive__coupon_stack',
+    source: 'incentive',
+    target: 'coupon_stack',
+    label: 'changes cash-flow timing across coupons',
+    reason:
+      'Executable refinancing opportunities can affect borrower groups differently, changing expected cash flows and modeled duration across the stack.',
+    conditions:
+      'Coupon does not directly determine behavior; borrower constraints, collateral, refinancing history, the rate path and model assumptions also matter.',
+    kind: 'mechanism',
+    sources: ['coupon_stack_public'],
+  },
+  {
+    id: 'model_coupon_stack__hedging',
+    source: 'coupon_stack',
+    target: 'hedging',
+    label: 'can change hedge demand',
+    reason:
+      'Different duration changes across the stack can prompt active hedgers to adjust benchmark exposure.',
+    conditions:
+      'The direction and market feedback depend on actual holdings, hedge targets, instruments and liquidity; this is not a forecast that every holder trades alike.',
+    kind: 'mechanism',
+    sources: ['coupon_stack_public', 'convexity_feedback_public'],
   },
   {
     id: 'model_rate_lock__lock_in',

@@ -718,6 +718,14 @@ export const learning_checks: Record<
     ],
     correct: 1,
   },
+  coupon_stack: {
+    choices: [
+      'No. Collateral, refinancing response and model assumptions also matter.',
+      'Yes. Higher coupons always have longer duration.',
+      'Yes. The current-coupon benchmark fixes every pool’s hedge size.',
+    ],
+    correct: 0,
+  },
   rate_lock: {
     choices: [
       'Yes. A locked rate establishes that the loan has funded.',
