@@ -16,7 +16,7 @@ export type AtlasIndexEntry = {
   title: string;
   place_name: string;
   area: string;
-  label: string;
+  series?: true;
   search_text: string;
   place_key: string;
   coordinates: [number, number];
@@ -39,6 +39,14 @@ export const atlas_labels: Record<AtlasFilter, string> = {
   literature: 'Literature',
   music: 'Music',
 };
+
+export function atlas_index_label(entry: AtlasIndexEntry) {
+  return entry.medium === 'film'
+    ? entry.series
+      ? 'TV series'
+      : 'Film'
+    : atlas_labels[entry.medium];
+}
 
 export function atlas_card_artwork(detail: AtlasDetail | null) {
   const entry = detail?.entry;

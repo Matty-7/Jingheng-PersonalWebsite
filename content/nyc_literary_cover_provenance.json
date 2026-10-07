@@ -1,5 +1,5 @@
 {
-  "verified_date": "2026-09-27",
+  "verified_date": "2026-10-07",
   "verification": "Original source covers visually inspected. Display copies scaled to at most 600 by 900 pixels and encoded as optimized progressive JPEG from the verified originals; no generated or semantic changes.",
   "books": [
     {
@@ -440,6 +440,176 @@
       "rights_note": "Copyrighted cover; publisher or author source retained. No open license asserted.",
       "alt": "Published cover of A Lot Like Adiós by Alexis Daria.",
       "site_file": "/images/literary-map/a-lot-like-adios.jpg"
+    },
+    {
+      "id": "the-catcher-in-the-rye",
+      "title": "The Catcher in the Rye",
+      "author": "J. D. Salinger",
+      "original_publication_year": 1951,
+      "cover_edition": "Little, Brown and Company; ISBN 9780316769532; current publisher cover",
+      "dimensions": [
+        600,
+        860
+      ],
+      "source_page": "https://www.hachettebookgroup.com/titles/j-d-salinger/9780316769532/9780316769532/",
+      "image_url": "https://www.hachettebookgroup.com/wp-content/uploads/2017/06/9780316769532.jpg",
+      "credit": "Little, Brown and Company / Hachette Book Group",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of The Catcher in the Rye by J. D. Salinger.",
+      "site_file": "/images/literary-map/the-catcher-in-the-rye.jpg"
+    },
+    {
+      "id": "invisible-man",
+      "title": "Invisible Man",
+      "author": "Ralph Ellison",
+      "original_publication_year": 1952,
+      "cover_edition": "Vintage paperback, 1995; ISBN 9780679732761",
+      "dimensions": [
+        292,
+        450
+      ],
+      "source_page": "https://www.penguinrandomhouse.com/books/46131/invisible-man-national-book-award-winner-by-ralph-ellison/",
+      "image_url": "https://images1.penguinrandomhouse.com/cover/9780679732761",
+      "credit": "Vintage / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of Invisible Man by Ralph Ellison.",
+      "site_file": "/images/literary-map/invisible-man.jpg"
+    },
+    {
+      "id": "a-tree-grows-in-brooklyn",
+      "title": "A Tree Grows in Brooklyn",
+      "author": "Betty Smith",
+      "original_publication_year": 1943,
+      "cover_edition": "Harper Perennial Modern Classics; ISBN 9780060736262; cover supplied through Google Books",
+      "dimensions": [
+        128,
+        193
+      ],
+      "source_page": "https://books.google.com/books/about/A_Tree_Grows_in_Brooklyn.html?id=thbHjzJpzMUC",
+      "image_url": "https://books.google.co.uk/books/content?id=thbHjzJpzMUC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71_x1pUhTwdhOrDERuXTCGakUiwJGmcQPxSFPSu_VdLBGwbFvpXBtVBgkP3qREcQZuulqZwPGL5cJKf75yD9-80jKoceO2LB_JWSrmEHzAyz4by6YgmtkB6RT7ciYXR4TDYTnGf",
+      "credit": "HarperCollins; published cover via Google Books",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of A Tree Grows in Brooklyn by Betty Smith.",
+      "site_file": "/images/literary-map/a-tree-grows-in-brooklyn.jpg"
+    },
+    {
+      "id": "the-bell-jar",
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "original_publication_year": 1963,
+      "cover_edition": "Faber paperback; ISBN 9780571081783; current publisher cover",
+      "dimensions": [
+        531,
+        815
+      ],
+      "source_page": "https://www.faber.co.uk/product/9780571081783-the-bell-jar/",
+      "image_url": "https://www.faber.co.uk/wp-content/uploads/2026/02/Bell-Jar-531x815.jpg",
+      "credit": "Faber & Faber",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of The Bell Jar by Sylvia Plath.",
+      "site_file": "/images/literary-map/the-bell-jar.jpg"
+    },
+    {
+      "id": "manhattan-transfer",
+      "title": "Manhattan Transfer",
+      "author": "John Dos Passos",
+      "original_publication_year": 1925,
+      "cover_edition": "Vintage paperback, 2021; ISBN 9780593312056",
+      "dimensions": [
+        292,
+        450
+      ],
+      "source_page": "https://www.penguinrandomhouse.com/books/42221/manhattan-transfer-by-john-dos-passos/",
+      "image_url": "https://images3.penguinrandomhouse.com/cover/9780593312056",
+      "credit": "Vintage / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of Manhattan Transfer by John Dos Passos.",
+      "site_file": "/images/literary-map/manhattan-transfer.jpg"
+    },
+    {
+      "id": "another-country",
+      "title": "Another Country",
+      "author": "James Baldwin",
+      "original_publication_year": 1962,
+      "cover_edition": "Vintage paperback, 1992; ISBN 9780679744719",
+      "dimensions": [
+        292,
+        450
+      ],
+      "source_page": "https://www.penguinrandomhouse.com/books/7737/another-country-by-james-baldwin/",
+      "image_url": "https://images2.penguinrandomhouse.com/cover/9780679744719",
+      "credit": "Vintage / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of Another Country by James Baldwin.",
+      "site_file": "/images/literary-map/another-country.jpg"
+    },
+    {
+      "id": "the-new-york-trilogy",
+      "title": "The New York Trilogy",
+      "author": "Paul Auster",
+      "original_publication_year": 1987,
+      "cover_edition": "Penguin Books paperback, 1990; ISBN 9780140131550",
+      "dimensions": [
+        289,
+        450
+      ],
+      "source_page": "https://www.penguinrandomhouse.com/books/298818/the-new-york-trilogy-by-paul-auster/",
+      "image_url": "https://images2.penguinrandomhouse.com/cover/9780140131550",
+      "credit": "Penguin Books / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of The New York Trilogy by Paul Auster.",
+      "site_file": "/images/literary-map/the-new-york-trilogy.jpg"
+    },
+    {
+      "id": "breakfast-at-tiffanys",
+      "title": "Breakfast at Tiffany’s",
+      "author": "Truman Capote",
+      "original_publication_year": 1958,
+      "cover_edition": "Modern Library, 2013; Breakfast at Tiffany’s & Other Voices, Other Rooms; ISBN 9780812994360",
+      "dimensions": [
+        303,
+        450
+      ],
+      "source_page": "https://www.penguinrandomhouseretail.com/book/?isbn=9780812994360",
+      "image_url": "https://images.penguinrandomhouse.com/cover/9780812994360",
+      "credit": "Modern Library / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of Breakfast at Tiffany’s by Truman Capote.",
+      "site_file": "/images/literary-map/breakfast-at-tiffanys.jpg"
+    },
+    {
+      "id": "kavalier-and-clay",
+      "title": "The Amazing Adventures of Kavalier & Clay",
+      "author": "Michael Chabon",
+      "original_publication_year": 2000,
+      "cover_edition": "Random House Trade Paperbacks, 2012; ISBN 9780812983586",
+      "dimensions": [
+        300,
+        450
+      ],
+      "source_page": "https://www.penguinrandomhouse.com/books/25713/the-amazing-adventures-of-kavalier-and-clay-with-bonus-content-by-michael-chabon/9780812983586/",
+      "image_url": "https://images1.penguinrandomhouse.com/cover/9780812983586",
+      "credit": "Random House / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of The Amazing Adventures of Kavalier & Clay by Michael Chabon.",
+      "site_file": "/images/literary-map/kavalier-and-clay.jpg"
+    },
+    {
+      "id": "motherless-brooklyn",
+      "title": "Motherless Brooklyn",
+      "author": "Jonathan Lethem",
+      "original_publication_year": 1999,
+      "cover_edition": "Vintage ebook, 2011; ISBN 9780307789129",
+      "dimensions": [
+        292,
+        450
+      ],
+      "source_page": "https://penguinrandomhouselibrary.com/book/?isbn=9780307789129",
+      "image_url": "https://images.penguinrandomhouse.com/cover/9780307789129",
+      "credit": "Vintage / Penguin Random House",
+      "rights_note": "Copyrighted cover; source attribution retained. No open license asserted.",
+      "alt": "Published cover of Motherless Brooklyn by Jonathan Lethem.",
+      "site_file": "/images/literary-map/motherless-brooklyn.jpg"
     }
   ],
   "magazine": {

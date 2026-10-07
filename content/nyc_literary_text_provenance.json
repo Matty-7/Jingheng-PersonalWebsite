@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-27",
+  "reviewed_on": "2026-10-07",
   "method": "Public-domain primary editions downloaded and paragraphs checked against the source HTML; whitespace is normalized; poem line breaks are retained. Interpretation and location precision are separately authored. Existing eight passages retain their original source notes.",
   "entries": [
     {
@@ -392,6 +392,86 @@
       "source_capture": "Normalized short evidence capture from web-retrieved authorized Chapter 4 excerpt; not full HTML",
       "excerpt_sha256": "9a58842d3717015e999c2ee127c9b986683656acfbdaa076c953fddb00feac11",
       "verification": "Exact short wording checked against the linked source. Publisher permission and Chapter 4 locator appear on the source page. Airport-level geography; no terminal invented."
+    },
+    {
+      "entry_id": "the-catcher-in-the-rye-central-park-pond",
+      "source_url": "https://www.centralparknyc.org/articles/winter-stories-wildlife",
+      "source_file_sha256": "9394acb40c341db908f45f1d7a801ffca45fc1f8f6a485106c0a5fe9164088ee",
+      "source_capture": "Normalized short evidence capture from the web-retrieved institutional page; not full HTML.",
+      "excerpt_sha256": "4a259ab098485b7d6246423c7759f73b972e73308ed90c83fd4b511e1d243e2e",
+      "verification": "Exact short wording checked against the cited source. The Conservancy links Holden’s question to the Pond near Central Park South. Approximate water-body pin, not a particular bench or taxi stop."
+    },
+    {
+      "entry_id": "invisible-man-harlem",
+      "source_url": "https://www.penguinrandomhouse.com/books/46131/invisible-man-national-book-award-winner-by-ralph-ellison/",
+      "source_file_sha256": "4c284a0510bbb8b45457a07f5e72ae72e71b88ddebeb5d05d859897c5d4084f0",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "17959c7e765e7ce2eb0ac06e42cd3eee04c36a8af47f724e2fee830e166608ef",
+      "verification": "Exact short wording checked against the cited source. Neighborhood setting stated by the publisher. The shared Harlem pin does not identify the narrator’s fictional basement or a Brotherhood office."
+    },
+    {
+      "entry_id": "a-tree-grows-in-brooklyn-leonard-library",
+      "source_url": "https://www.bklynlibrary.org/locations/leonard",
+      "source_file_sha256": "ead8ce39ee28235a120a1ca24b56a1bbf99913c71cf0e02e58b0b51dc8402eb7",
+      "source_capture": "Normalized short evidence capture from the web-retrieved institutional page; not full HTML.",
+      "excerpt_sha256": "057684401192b52c1df455542edb8f980aa775d6de548e023edc147716d5864e",
+      "verification": "Exact short wording checked against the cited source. Library identified by its operator at 81 Devoe Street. Address geocode represents the building, not an unchanged historical reading room."
+    },
+    {
+      "entry_id": "the-bell-jar-barbizon-hotel",
+      "source_url": "https://s-media.nyc.gov/agencies/lpc/lp/2495.pdf",
+      "source_file_sha256": "82148b552c00038bc7a4292f4425174fe6f3664da3fb0e7eafc7d005aeb04b3e",
+      "source_capture": "Retrieved source PDF; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "feecda334643fd0936ade1fa80f32b17214d9bec7617e473a5005a2d0a572f50",
+      "verification": "Exact short wording checked against the cited source. Documented real-life model for the novel’s Amazon hotel. The pin marks 140 East 63rd Street, not a room available to visit."
+    },
+    {
+      "entry_id": "manhattan-transfer-brooklyn-bridge",
+      "source_url": "https://www.gutenberg.org/cache/epub/71853/pg71853-images.html",
+      "source_file_sha256": "de5cb2b228cf61fed18bc62589129f62a932a0024454b76b09f617b606104a23",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "9ef3c4d34a73a81c7919029eec63dc687b4f50162f8804432ced1b2dc7142f09",
+      "verification": "Exact short wording checked against the cited source. Named bridge and footwalk in the novel. Shared bridge pin, not an exact historical entrance or character position."
+    },
+    {
+      "entry_id": "another-country-greenwich-village",
+      "source_url": "https://www.penguinrandomhouse.com/books/7737/another-country-by-james-baldwin/",
+      "source_file_sha256": "976448c2cb9f49c4296ba91b0115e173a947d10abad6436698ef05ad20d7a138",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "6cf705ece1a77650532cfce8fce50442fc69e63c4a9d1c28ea7bc6d6975f4e8c",
+      "verification": "Exact short wording checked against the cited source. Neighborhood setting named by the publisher. Approximate Village pin; no character’s apartment or jazz club is asserted."
+    },
+    {
+      "entry_id": "the-new-york-trilogy-orange-street",
+      "source_url": "https://www.penguinrandomhouse.com/books/298818/the-new-york-trilogy-by-paul-auster/",
+      "source_file_sha256": "d998b2884178cb6be1935d6ac1817b81528e8b725ef916438e60523c6dc65ded",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "84f9df652c0e5984bf012ba9da006b1881bfe8ed9156d56044cee3901afcceb3",
+      "verification": "Exact short wording checked against the cited source. Street-level setting, presented provisionally by the novel’s narrator. The street pin does not identify either fictional rented room."
+    },
+    {
+      "entry_id": "breakfast-at-tiffanys-east-seventies",
+      "source_url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780812994360",
+      "source_file_sha256": "d9d16adcc4d43c77091ad33f2cdae4978b18210076fa33c9c60f6d4041e08c59",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "91c9fde64b19d8c5d8bba4679dc28ea9f25109ab7acc3ef652620259951043c0",
+      "verification": "Exact short wording checked against the cited source. Approximate East Seventies neighborhood pin. The novella does not supply a street number here; the film’s townhouse is a separate location."
+    },
+    {
+      "entry_id": "kavalier-and-clay-empire-state-building",
+      "source_url": "https://www.penguinrandomhouse.com/books/25713/the-amazing-adventures-of-kavalier-and-clay-with-bonus-content-by-michael-chabon/9780812983586/",
+      "source_file_sha256": "7a0a4b821389aa1bc234ae850bd980f7c332a3ecb855389a57a9a4bec1fe59f9",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "6825b40b99a872afe5ffabd4296b30ef22bc2147bc5eb02198f91638697e147d",
+      "verification": "Exact short wording checked against the cited source. Named landmark in the publisher’s description. The pin marks the building, without assigning the novel’s events to a particular floor."
+    },
+    {
+      "entry_id": "motherless-brooklyn-court-street",
+      "source_url": "https://penguinrandomhouselibrary.com/book/?isbn=9780307789129",
+      "source_file_sha256": "ab2e5e1816cbed134ac3593bf5773f13886b03b70c5acedd4f8574a62dceda94",
+      "source_capture": "Retrieved source HTML; SHA-256 records the fetched bytes.",
+      "excerpt_sha256": "a0aad4b0879d8974affdc9568c437c5ea87c624f54e48edbc396a887046f2b1b",
+      "verification": "Exact short wording checked against the cited source. Street-level reference for the agency’s usual territory. No exact storefront, office or crime scene is inferred from this passage."
     }
   ]
 }

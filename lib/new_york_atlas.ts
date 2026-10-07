@@ -83,6 +83,7 @@ export const atlas_areas = [
       'film:washington-square-arch',
       'film:washington-square-north',
       'film:washington-mews',
+      'film:robert-townhouse',
       'literature:washington-square',
       'music:washington-square',
     ],
@@ -96,6 +97,7 @@ export const atlas_areas = [
       'film:central-park-mall',
       'literature:central-park',
       'literature:central-park-zoo',
+      'literature:central-park-pond',
       'music:central-park',
       'music:central-park-west',
       'music:central-park-north',
@@ -113,6 +115,7 @@ export const atlas_areas = [
     name: 'Coney Island',
     places: [
       'film:coney-boardwalk',
+      'film:steeplechase-pier',
       'literature:coney-island',
       'music:coney-island',
       'music:mermaid-avenue',
@@ -129,10 +132,15 @@ export const atlas_areas = [
   },
   { name: 'The Plaza', places: ['film:plaza', 'literature:plaza-hotel'] },
   {
+    name: 'Empire State Building',
+    places: ['film:empire-state-building', 'literature:empire-state-building'],
+  },
+  {
     name: 'Riverside',
     places: [
       'film:riverside-garden',
       'film:joe-riverside',
+      'film:schinasi-mansion',
       'literature:riverside-drive',
       'music:riverside',
     ],
@@ -196,7 +204,7 @@ export const atlas_entries: AtlasEntry[] = [
       year: work.year,
       place_name: passage.place,
       area: passage.area,
-      relationship: 'Place in a passage',
+      relationship: passage.relationship ?? 'Place in a passage',
       precision: passage.precision,
       visit_note: passage.visit_note,
       collection_url: `/portfolio/nyc-literary-map?work=${work.id}&passage=${passage.id}`,
@@ -251,28 +259,40 @@ export const atlas_index: AtlasIndexEntry[] = atlas_entries.map((entry) => {
   const area = atlas_areas.find((item) =>
     item.places.includes(entry.place_key),
   );
+  const display_text = normalize_search_text(
+    [entry.title, entry.place_name, entry.area].join(' '),
+  );
+  const search_tokens = normalize_search_text(
+    [
+      entry.creator,
+      atlas_year(entry),
+      entry.relationship,
+      area?.name,
+      entry.medium === 'film' ? entry.location.address : '',
+    ].join(' '),
+  )
+    .split(/\s+/)
+    .filter(Boolean);
   return {
     id: entry.id,
     medium: entry.medium,
     title: entry.title,
     place_name: entry.place_name,
     area: entry.area,
-    label: atlas_entry_label(entry),
+    ...(entry.medium === 'film' && entry.work.format === 'series'
+      ? { series: true as const }
+      : {}),
     place_key: entry.place_key,
     coordinates: (entry.medium === 'film'
       ? entry.location.coordinates
       : entry.medium === 'literature'
         ? entry.passage.coordinates
         : entry.place.coordinates) as [number, number],
-    search_text: normalize_search_text(
-      [
-        entry.creator,
-        atlas_year(entry),
-        entry.relationship,
-        area?.name,
-        entry.medium === 'film' ? entry.location.address : '',
-      ].join(' '),
-    ),
+    // Queries match whitespace-separated terms independently. Each omitted
+    // token (and every substring of it) already exists in a display field.
+    search_text: [...new Set(search_tokens)]
+      .filter((token) => !display_text.includes(token))
+      .join(' '),
   };
 });
 const entries_by_id = new Map(atlas_entries.map((entry) => [entry.id, entry]));

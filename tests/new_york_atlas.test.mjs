@@ -98,8 +98,8 @@ test('both airports expose film, literature and music without merging the TWA te
 });
 
 test('Atlas retains every original scene, passage and track-place relationship', () => {
-  assert.equal(film_catalog.length, 63);
-  assert.equal(literary_works.length, 26);
+  assert.equal(film_catalog.length, 83);
+  assert.equal(literary_works.length, 36);
   assert.equal(music_tracks.length, 157);
   assert.equal(
     new Set(atlas_entries.map((entry) => entry.id)).size,

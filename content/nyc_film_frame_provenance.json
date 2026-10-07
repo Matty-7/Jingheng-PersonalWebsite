@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-09-28",
+  "reviewed_on": "2026-10-07",
   "notes": [
     "Original low-resolution film frames are tied to specific scenes and credited.",
     "No open license or reuse permission is asserted.",
@@ -2632,6 +2632,207 @@
       "original_image": "https://robonlocation.com/wp-content/uploads/2020/02/20191108_111413-1024x576.jpg",
       "verification": "Real street-sign photo; story setting only. Downloaded image visually inspected before integration.",
       "rights": "Source attribution retained; no open license or reuse permission asserted."
+    },
+    {
+      "film_id": "leon-the-professional",
+      "location_id": "leon-apartment",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/leon.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/leon/leon36.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Source explicitly says this building was used only for exteriors; apartment interiors were filmed at the Chelsea Hotel. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=71+East+97th+Street+Manhattan&size=3"
+    },
+    {
+      "film_id": "the-avengers",
+      "location_id": "pershing-square-cafe",
+      "frame_status": "verified_frame",
+      "source_page": "https://mculocationscout.com/2020/07/26/grand-central-terminal-new-york-mcu-location-scout/",
+      "original_image": "https://i0.wp.com/mculocationscout.com/wp-content/uploads/2021/01/avengers_051-cafe.jpg?fit=1500%2C843&ssl=1",
+      "verification": "Original 1500 × 843 frame downloaded and visually inspected. MCU Location Scout places this exact image, Avengers_051-Cafe, under Pershing Square and describes civilians seeking shelter as the Chitauri emerge. The attachment page captions it High angle view of people fleeing an outdoor cafe. This is the Battle of New York café sequence, distinct from the deleted Steve Rogers café conversation. It depicts the real café with film visual effects; the wider battle’s digitally reconstructed viaduct is not claimed as NYC location photography. No pixels altered; proportional thumbnail only. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=90+East+42nd+Street+Manhattan&size=3"
+    },
+    {
+      "film_id": "superman",
+      "location_id": "daily-news-building",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/superman.html",
+      "original_image": "https://onthesetofnewyork.com/locations/superman/superman21.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=220+East+42nd+Street+Manhattan&size=3"
+    },
+    {
+      "film_id": "midnight-cowboy",
+      "location_id": "west-58-sixth",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/midnightcowboy.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/midnightcowboy/midnightcowboy18.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Avoid repeating the disputed unscripted-taxi anecdote as an established production fact. Nearby 100 West 58th Street address geocode marks the public approach to the Sixth Avenue intersection; approximate location rather than the exact camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=100+West+58+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "wall-street",
+      "location_id": "nyse",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/wallstreet.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/wallstreet/wallstreet247.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=11+Wall+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "working-girl",
+      "location_id": "staten-island-ferry",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/workinggirl.html",
+      "original_image": "https://onthesetofnewyork.com/locations/workinggirl/workinggirl102.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Pin chosen as a useful public boarding approach, not the moving vessel’s camera position. Whitehall Terminal boarding approach. The frame is aboard the ferry route in New York Harbor; this does not claim that the shot was filmed at the terminal.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=4+South+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "mean-streets",
+      "location_id": "old-st-patricks",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/meanstreets.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/meanstreets/meanstreets01.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Source captions the cathedral at 264 Mulberry Street; reused established Atlas cathedral identity at 263 Mulberry Street rather than adding a duplicate place. Reused existing place identity and coordinates exactly.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "Existing Atlas location: old-st-patricks"
+    },
+    {
+      "film_id": "inside-llewyn-davis",
+      "location_id": "caffe-reggio",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/insidellewyndavis.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/insidellewyndavis/insidellewyndavis16.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=119+MacDougal+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "enchanted",
+      "location_id": "bethesda",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/enchanted.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/enchanted/enchanted42.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Reused existing place identity and coordinates exactly.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "Existing Atlas location: bethesda"
+    },
+    {
+      "film_id": "night-at-the-museum",
+      "location_id": "natural-history",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/nightatthemuseum.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/nightatthemuseum/nightatthemuseum63.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Reused existing place identity and coordinates exactly.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "Existing Atlas location: natural-history"
+    },
+    {
+      "film_id": "the-wolf-of-wall-street",
+      "location_id": "nassau-wall-street",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/thewolfofwallstreet.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/thewolfofwallstreet/thewolfofwallstreet04.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Source names Nassau Street and Wall Street, so the anchor is the junction rather than an unsupported claim of a Federal Hall scene. Nearby 26 Wall Street address geocode marks the public approach to Nassau / Wall intersection, not the exact camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=26+Wall+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "a-bronx-tale",
+      "location_id": "chez-bippy",
+      "frame_status": "verified_frame",
+      "source_page": "https://onthesetofnewyork.com/abronxtale.html",
+      "original_image": "https://onthesetofnewyork.com/locations/abronxtale/abronxtale39.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Filming borough is Queens. Source captions explicitly name 44-02 30th Avenue, Astoria; Bronx is the story setting. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=44-02+30+Avenue+Queens&size=1"
+    },
+    {
+      "film_id": "i-am-legend",
+      "location_id": "robert-townhouse",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/iamlegend.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/iamlegend/iamlegend15.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=11+Washington+Square+North+Manhattan&size=1"
+    },
+    {
+      "film_id": "spider-man-2",
+      "location_id": "joes-pizza-original",
+      "frame_status": "verified_frame",
+      "source_page": "https://www.onthesetofnewyork.com/spiderman2.html",
+      "original_image": "https://www.onthesetofnewyork.com/locations/spiderman2/spiderman2_01.jpg",
+      "verification": "Original downloaded and visually inspected. The source page places this frame in the named location block. No source-image pixels were altered; thumbnail is a proportional resize. Historical 233 Bleecker Street filming address; do not replace it with the pizza shop’s later Carmine Street address. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Film frame; source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=233+Bleecker+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "requiem-for-a-dream",
+      "location_id": "steeplechase-pier",
+      "frame_status": "verified_frame",
+      "source_page": "https://film-grab.com/2011/02/11/requiem-for-a-dream/",
+      "original_image": "https://film-grab.com/wp-content/uploads/2011/02/Requiem.jpg",
+      "verification": "Original FilmGrab frame visually inspected. Marion in red stands at the pier’s end; whole frame preserved. SCEEN IT identifies the dream scene, and Film Oblivion identifies the pier as Pat Auletta Steeplechase Pier. The current pier has changed since filming. Mapcarta / GeoNames point on the pier; approximate feature position rather than exact camera position.",
+      "rights": "Source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://mapcarta.com/22624892"
+    },
+    {
+      "film_id": "white-collar",
+      "location_id": "schinasi-mansion",
+      "frame_status": "verified_episode_image",
+      "source_page": "https://www.iamnotastalker.com/2017/04/28/junes-house-from-white-collar",
+      "original_image": "https://wp.iamnotastalker.com/wp-content/uploads/2017/04/ae28e13e-07d1-42bf-b6fa-c3be35a45156.jpg",
+      "verification": "Source labels this Screenshot-004647 directly below its explanation of recurring Schinasi Mansion establishing shots. Visually inspected; original White Collar logo retained. It is an episode image; source does not identify the precise episode. The attic apartment was a studio set and the pilot terrace was at Windsor Tower, so neither is assigned to this pin. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=351+Riverside+Drive+Manhattan&size=1"
+    },
+    {
+      "film_id": "the-nanny",
+      "location_id": "sheffield-house",
+      "frame_status": "verified_location_photo",
+      "source_page": "https://commons.wikimedia.org/wiki/File:7_East_75th_Street_001.JPG",
+      "original_image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/7_East_75th_Street_001.JPG?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "verification": "Real location photo, not a television frame. Commons identifies the address and the series. MovieMaps independently lists the Sheffield-house exterior at this address. Source photo by Gryffindor, dated 2010. Display asset and thumbnail are proportional JPEG resizes; full original retained. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Gryffindor, CC BY-SA 3.0. Credit, license link and resize disclosure must be retained.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=7+East+75+Street+Manhattan&size=1",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "film_id": "mad-men",
+      "location_id": "lenox-lounge-former",
+      "frame_status": "verified_frame",
+      "source_page": "https://hpkomics.com/2026/07/as-scene-on-mad-men-s1e1-smoke-gets-in-your-eyes/",
+      "original_image": "https://hpkomics.com/wp-content/uploads/2026/07/mms01e01-0050-1024x576.jpg",
+      "verification": "The image source labels this exact screenshot Mad Men S1E1 and identifies the opening scene. Visually inspected. National Trust for Historic Preservation corroborates that the Lenox Lounge was used for the pilot. Production accounts confirm the pilot used NYC locations; this does not imply the later LA-produced series was filmed here. Original Lenox Lounge closed in 2012 and the building was demolished in 2017. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=288+Lenox+Avenue+Manhattan&size=1"
+    },
+    {
+      "film_id": "how-i-met-your-mother",
+      "location_id": "mcgees-pub",
+      "frame_status": "verified_location_photo",
+      "source_page": "https://mcgeespubny.com/?domain=mcgeespubny.com",
+      "original_image": "https://static.spotapps.co/spots/11/da95ba7cc44362812db2a5962c71ee/full",
+      "verification": "Official pub site expressly calls McGee’s the bar that inspired How I Met Your Mother. Public HTML identifies this exact image as Exterior, entrance via its data-original/data-src URL. Image visually inspected. Relationship must remain Inspiration; the photo must be labeled location_photo, never a scene frame. Address geocode; approximate building/public approach rather than camera position.",
+      "rights": "Source attribution retained. No reuse permission or open license established.",
+      "coordinate_source": "https://geosearch.planninglabs.nyc/v2/search?text=240+West+55+Street+Manhattan&size=1"
+    },
+    {
+      "film_id": "30-rock",
+      "location_id": "rockefeller",
+      "frame_status": "verified_episode_image",
+      "source_page": "https://www.hollywood.com/tv/30-rock-chronicling-the-final-chapter-week-4-57656184",
+      "original_image": "https://media.hollywood.com/images/l/30rockjennaunwindulax.jpg",
+      "verification": "Source article embeds this episode image, credits Ali Goldstein/NBC, and places Jenna’s followers outside the GE Building during Unwindulax. Image visually inspected; TODAY branding and costumed fans visible. MovieMaps identifies 30 Rockefeller Plaza as a series exterior/studio location. Retain episode_image: this is scene-specific NBC publicity photography, not claimed as an extracted broadcast frame. Reused existing Rockefeller Center place identity and coordinates; the pin is the campus anchor, not an asserted exact camera position. Reused existing Rockefeller Center campus anchor and coordinates exactly; not an exact performance/camera spot.",
+      "rights": "NBC episode publicity photography; credit retained. No reuse permission or open license established.",
+      "coordinate_source": "Existing Atlas location: rockefeller"
     }
   ]
 }

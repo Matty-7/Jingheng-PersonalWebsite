@@ -55,11 +55,11 @@ test('expanded readings have primary-source provenance and count repeated places
       'utf8',
     ),
   );
-  assert.equal(catalog.works.length, 26);
-  assert.equal(catalog.entries.length, 57);
+  assert.equal(catalog.works.length, 36);
+  assert.equal(catalog.entries.length, 67);
   assert.equal(
     new Set(catalog.entries.map((entry) => entry.place_id)).size,
-    51,
+    59,
   );
   const evidence = new Map(
     provenance.entries.map((entry) => [entry.entry_id, entry]),
@@ -79,7 +79,7 @@ test('expanded readings have primary-source provenance and count repeated places
   const shared = catalog.entries.filter((entry) => entry.place_id === 'harlem');
   assert.deepEqual(
     new Set(shared.map((entry) => entry.work_id)),
-    new Set(['quicksand', 'harlem']),
+    new Set(['quicksand', 'harlem', 'invisible_man']),
   );
 });
 
