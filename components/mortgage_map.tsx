@@ -75,6 +75,7 @@ export function MortgageMap({
   const [catalog_open, set_catalog_open] = useState(false);
   const [announcement, set_announcement] = useState('');
   const catalog_trigger = useRef<HTMLElement | null>(null);
+  const all_topics_trigger = useRef<HTMLButtonElement>(null);
   const map_ref = useRef<HTMLElement>(null);
   const tree_ref = useRef<HTMLElement>(null);
   const focus_requested = useRef(false);
@@ -155,15 +156,28 @@ export function MortgageMap({
     );
   }
 
-  function browse() {
-    catalog_trigger.current = document.activeElement as HTMLElement;
+  function browse(invoker?: HTMLElement) {
+    const active = document.activeElement;
+    catalog_trigger.current =
+      invoker?.isConnected === true
+        ? invoker
+        : active instanceof HTMLElement &&
+            active !== document.body &&
+            active !== document.documentElement &&
+            active.isConnected
+          ? active
+          : all_topics_trigger.current;
     set_catalog_open(true);
   }
   function close_catalog() {
+    const trigger = catalog_trigger.current;
     set_catalog_open(false);
-    requestAnimationFrame(() =>
-      catalog_trigger.current?.focus({ preventScroll: true }),
-    );
+    requestAnimationFrame(() => {
+      const target = trigger?.isConnected
+        ? trigger
+        : all_topics_trigger.current;
+      target?.focus({ preventScroll: true });
+    });
   }
   function choose_route(id: string) {
     const chosen = route_index.get(id);
@@ -199,12 +213,16 @@ export function MortgageMap({
           <h1>Mortgage Map</h1>
         </div>
         <nav aria-label="Map navigation">
-          <button className="learning-text-button" onClick={browse}>
+          <button
+            ref={all_topics_trigger}
+            className="learning-text-button"
+            onClick={(event) => browse(event.currentTarget)}
+          >
             All topics <ChevronDown size={16} aria-hidden="true" />
           </button>
           <button
             className="learning-icon-button"
-            onClick={browse}
+            onClick={(event) => browse(event.currentTarget)}
             aria-label="Search concepts"
           >
             <Search size={22} aria-hidden="true" />

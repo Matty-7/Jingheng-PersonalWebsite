@@ -20,3 +20,88 @@ test('catalog traps focus, supports Escape and restores the originating control'
   await check_mortgage_focus_surface(page);
   expect(page_errors).toEqual([]);
 });
+
+test('completion-opened catalog returns focus to the active completion control', async ({
+  page,
+}) => {
+  await seed_final_lesson(page);
+  await page.goto(
+    '/portfolio/mortgage-map?concept=cash_flows#concept=cash_flows',
+  );
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Cash-flow components',
+  );
+  await page
+    .getByRole('button', {
+      name: 'No. One scenario does not by itself specify outcomes and their probabilities.',
+      exact: true,
+    })
+    .click();
+  const complete = page.getByRole('button', {
+    name: 'Mark understood & continue',
+    exact: true,
+  });
+  await complete.focus();
+  await complete.press('Enter');
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await page
+    .getByRole('searchbox', { name: 'Search mortgage concepts' })
+    .press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(
+    page.getByRole('button', { name: 'Continue learning', exact: true }),
+  ).toBeFocused();
+});
+
+test('completion-opened catalog falls back to All topics without an active control', async ({
+  page,
+}) => {
+  await seed_final_lesson(page);
+  await page.goto(
+    '/portfolio/mortgage-map?concept=cash_flows#concept=cash_flows',
+  );
+  await page
+    .getByRole('button', {
+      name: 'No. One scenario does not by itself specify outcomes and their probabilities.',
+      exact: true,
+    })
+    .click();
+  const complete = page.getByRole('button', {
+    name: 'Mark understood & continue',
+    exact: true,
+  });
+  await complete.evaluate((element) => {
+    if (!(element instanceof HTMLElement)) return;
+    if (document.activeElement instanceof HTMLElement)
+      document.activeElement.blur();
+    element.click();
+  });
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await page
+    .getByRole('searchbox', { name: 'Search mortgage concepts' })
+    .press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(
+    page.getByRole('button', { name: 'All topics', exact: true }),
+  ).toBeFocused();
+});
+
+async function seed_final_lesson(page: import('@playwright/test').Page) {
+  await page.addInitScript(() =>
+    localStorage.setItem(
+      'mortgage-map-learning-v1',
+      JSON.stringify({
+        route_id: 'borrower_decision',
+        current_id: 'cash_flows',
+        completed: [
+          'principal_interest',
+          'fixed_arm',
+          'incentive',
+          'prepayments',
+        ],
+      }),
+    ),
+  );
+}
