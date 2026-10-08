@@ -98,7 +98,7 @@ html[data-mortgage-pending='true']
   color: var(--learning-green);
 }
 .learning-route-header {
-  padding: 28px 3.25% 22px;
+  padding: 18px 3.25% 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,7 +113,7 @@ html[data-mortgage-pending='true']
   white-space: nowrap;
 }
 .learning-tree {
-  margin: 14px 3.25% 32px;
+  margin: 14px 3.25% 22px;
   display: grid;
   grid-template-columns: 1fr 1.07fr 1fr 0.94fr;
   grid-template-rows: 76px 76px;
@@ -709,14 +709,14 @@ html[data-mortgage-pending='true']
     height: 60px;
   }
   .learning-route-header {
-    padding-top: 20px;
-    padding-bottom: 14px;
+    padding-top: 8px;
+    padding-bottom: 6px;
   }
   .learning-tree {
     grid-template-rows: 63px 63px;
     gap: 22px 4%;
     margin-top: 16px;
-    margin-bottom: 22px;
+    margin-bottom: 14px;
   }
   .learning-node {
     padding: 8px 12px;
@@ -728,7 +728,7 @@ html[data-mortgage-pending='true']
     font-size: 11px;
   }
   .learning-stage {
-    padding-top: 28px;
+    padding-top: 20px;
     min-height: 300px;
   }
   .learning-copy h2 {
@@ -1121,8 +1121,8 @@ html[data-mortgage-pending='true']
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem 1.25rem;
-  margin: 0 0 1rem;
-  padding: 10px 3.25% 0;
+  margin: 0;
+  padding: 6px 3.25% 0;
   color: var(--muted-foreground, #525d55);
   font-size: 0.875rem;
   line-height: 1.5;

@@ -79,10 +79,11 @@ export function create_learning_store(
     const commit = (lesson: MortgageLessonData) => {
       if (ticket !== version) return;
       const previous = snapshot.progress;
+      const answers = { ...previous.answers, ...next.answers };
       const committed = {
         ...next,
         completed: [...new Set([...previous.completed, ...next.completed])],
-        answers: { ...previous.answers, ...next.answers },
+        answers: Object.keys(answers).length ? answers : undefined,
       };
       snapshot = {
         ...snapshot,

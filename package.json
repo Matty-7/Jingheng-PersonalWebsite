@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vinext build && node scripts/check_bundle_budget.mjs",
-    "start": "wrangler dev --config dist/server/wrangler.json",
+    "start": "wrangler dev --config dist/server/wrangler.json --persist-to .wrangler/state",
     "lint": "oxlint",
     "format": "oxfmt .",
     "content:summary": "node scripts/music_map_summary.mjs --write",
