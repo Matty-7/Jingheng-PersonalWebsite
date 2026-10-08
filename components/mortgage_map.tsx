@@ -12,8 +12,8 @@ import { Check, ChevronDown, Circle, Search } from 'lucide-react';
 import {
   initial_progress,
   create_learning_model,
-  progress_key,
   position_cookie,
+  question_version,
   type LearningProgress,
   type LearningNode as LearningNodeData,
   type LearningRoute,
@@ -32,12 +32,16 @@ export function MortgageMap({
   navigation,
   routes,
   home_link,
+  sign_in_link,
+  sign_out_link,
   initial_lesson = initial_progress,
 }: {
   initial_detail: MortgageLessonData;
   navigation: LearningNodeData[];
   routes: LearningRoute[];
   home_link: ReactNode;
+  sign_in_link: ReactNode;
+  sign_out_link: ReactNode;
   initial_lesson?: LearningProgress;
 }) {
   const model = useMemo(
@@ -62,6 +66,10 @@ export function MortgageMap({
     set_progress,
     prefetch,
     retry,
+    save_status,
+    saved_at,
+    signed_in,
+    retry_save,
   } = useLearningProgress(initial_lesson, initial_detail, model);
   const selected = progress.current_id;
   const [catalog_open, set_catalog_open] = useState(false);
@@ -91,11 +99,6 @@ export function MortgageMap({
     // must not persist the server fallback over previously saved work.
     if (!has_committed || location.pathname !== '/portfolio/mortgage-map')
       return;
-    try {
-      localStorage.setItem(progress_key, JSON.stringify(progress));
-    } catch {
-      /* Progress remains available for this visit. */
-    }
     try {
       const position = encodeURIComponent(
         JSON.stringify({
@@ -208,6 +211,41 @@ export function MortgageMap({
           </button>
         </nav>
       </header>
+      <div className="learning-save-bar" aria-label="Learning progress">
+        <span aria-live="polite">
+          {save_status === 'loading'
+            ? 'Restoring your progress…'
+            : save_status === 'saving'
+              ? 'Saving progress…'
+              : save_status === 'error'
+                ? 'Progress has not synced.'
+                : signed_in
+                  ? 'Progress saved to your account'
+                  : 'Progress saved for this browser'}
+          {save_status === 'saved' && saved_at && (
+            <time
+              dateTime={new Date(saved_at).toISOString()}
+              title={new Date(saved_at).toLocaleString()}
+            >
+              {' '}
+              · {progress.completed.length} understood
+            </time>
+          )}
+        </span>
+        {save_status === 'error' && (
+          <button className="learning-text-button" onClick={retry_save}>
+            Retry save
+          </button>
+        )}
+        {signed_in ? (
+          sign_out_link
+        ) : (
+          <span className="learning-sync-signin">
+            {sign_in_link}
+            <small>Continue on another device</small>
+          </span>
+        )}
+      </div>
       {(pending_id || failed) && (
         <output className="learning-load-status">
           {failed
@@ -270,6 +308,22 @@ export function MortgageMap({
         completed={progress.completed.includes(selected)}
         complete={complete}
         choose={choose}
+        saved_answer={progress.answers?.[selected]}
+        answer={(choice) =>
+          set_progress((current) => ({
+            ...current,
+            answers: {
+              ...current.answers,
+              [selected]: {
+                choice,
+                version: question_version(
+                  lesson.concept.question,
+                  lesson.check.choices,
+                ),
+              },
+            },
+          }))
+        }
       />
       <p className="learning-announcement" aria-live="polite">
         {announcement}

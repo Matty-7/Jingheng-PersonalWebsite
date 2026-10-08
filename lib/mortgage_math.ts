@@ -25,6 +25,16 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         's: settlement; K(s): eligible future payments; i: path; wᵢ: nonnegative model weight, summing to one; CF: payment in currency; D: path discount factor before spread; z: annual decimal spread; τ: years. E and Cov use the same weights. In the covariance identity D is the complete discount factor for the payment.',
     },
+    macaulay: {
+      tex: String.raw`D_{\mathrm{Mac}}=\frac{\sum_i t_i\,\mathrm{PV}(\mathrm{CF}_i)}{P}`,
+      variables:
+        'tᵢ: years from settlement; CFᵢ: fixed payment; PV: present value under one yield convention; P: full price on the same basis. Duration is in years.',
+    },
+    modified_duration: {
+      tex: String.raw`D_{\mathrm{mod}}=\frac{D_{\mathrm{Mac}}}{1+y/m}`,
+      variables:
+        'y: nominal annual decimal yield; m: compounding periods per year; D_Mac: Macaulay duration in years. Fixed cash flows and consistent full-price basis.',
+    },
     day_count: {
       tex: String.raw`I=B\,r\,\alpha`,
       variables:

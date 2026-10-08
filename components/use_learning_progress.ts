@@ -26,5 +26,6 @@ export function useLearningProgress(
     set_progress: store.set_progress,
     prefetch: store.prefetch,
     retry: store.retry,
+    retry_save: store.retry_save,
   };
 }

@@ -5,6 +5,10 @@ import {
 } from './mortgage_learning_state.ts';
 import type { MortgageLessonData } from './mortgage_lesson';
 import { create_lesson_loader } from './mortgage_lesson_loader.ts';
+import {
+  create_progress_sync,
+  type SaveState,
+} from './learning_progress_sync.ts';
 
 export function create_learning_store(
   initial_progress: LearningProgress,
@@ -18,6 +22,9 @@ export function create_learning_store(
     has_committed: false,
     pending_id: null as string | null,
     failed: false,
+    save_status: 'loading' as SaveState['save_status'],
+    signed_in: false,
+    saved_at: null as number | null,
   };
   let snapshot = server_snapshot;
   let initialized = false;
@@ -26,26 +33,68 @@ export function create_learning_store(
   const listeners = new Set<() => void>();
   const loader = create_lesson_loader(initial_lesson);
   const notify = () => listeners.forEach((listener) => listener());
+  const sync = create_progress_sync(
+    model,
+    (saved) => {
+      if (snapshot.pending_id) {
+        snapshot = {
+          ...snapshot,
+          progress: {
+            ...snapshot.progress,
+            completed: saved.completed,
+            answers: saved.answers,
+          },
+        };
+        notify();
+        return;
+      }
+      const url = new URL(location.href);
+      const id =
+        new URLSearchParams(url.hash.slice(1)).get('concept') ??
+        url.searchParams.get('concept') ??
+        saved.current_id;
+      set_progress(
+        model.select_lesson(saved, id),
+        () => sync.changed(saved, snapshot.progress),
+        false,
+      );
+    },
+    (state) => {
+      snapshot = { ...snapshot, ...state };
+      notify();
+    },
+    initial_progress,
+  );
 
   function set_progress(
     update:
       | LearningProgress
       | ((current: LearningProgress) => LearningProgress),
     on_commit?: () => void,
+    persist = true,
   ) {
     const next =
       typeof update === 'function' ? update(snapshot.progress) : update;
     const ticket = ++version;
     const commit = (lesson: MortgageLessonData) => {
       if (ticket !== version) return;
+      const previous = snapshot.progress;
+      const answers = { ...previous.answers, ...next.answers };
+      const committed = {
+        ...next,
+        completed: [...new Set([...previous.completed, ...next.completed])],
+        answers: Object.keys(answers).length ? answers : undefined,
+      };
       snapshot = {
-        progress: next,
+        ...snapshot,
+        progress: committed,
         lesson,
         loaded: true,
         has_committed: true,
         pending_id: null,
         failed: false,
       };
+      if (persist) sync.changed(previous, committed);
       retry_request = undefined;
       on_commit?.();
       notify();
@@ -86,7 +135,10 @@ export function create_learning_store(
     let saved = initial_progress;
     try {
       const stored = localStorage.getItem(progress_key);
-      if (stored) saved = model.read_progress(stored);
+      const account = JSON.parse(
+        localStorage.getItem('mortgage-map-sync-v1') ?? 'null',
+      );
+      if (stored && !account?.signed_in) saved = model.read_progress(stored);
     } catch {
       /* The server lesson works without browser storage. */
     }
@@ -94,14 +146,19 @@ export function create_learning_store(
     // available if restoration fails and the visitor chooses another lesson.
     snapshot = {
       ...snapshot,
-      progress: { ...snapshot.progress, completed: saved.completed },
+      progress: {
+        ...snapshot.progress,
+        completed: saved.completed,
+        answers: saved.answers,
+      },
     };
     const url = new URL(location.href);
     const id =
       new URLSearchParams(url.hash.slice(1)).get('concept') ??
       url.searchParams.get('concept') ??
       saved.current_id;
-    set_progress(model.select_lesson(saved, id));
+    set_progress(model.select_lesson(saved, id), undefined, false);
+    sync.start();
   }
 
   function subscribe(listener: () => void) {
@@ -119,6 +176,7 @@ export function create_learning_store(
         ++version;
         loader.dispose();
         initialized = false;
+        sync.stop();
       }
     };
   }
@@ -129,5 +187,6 @@ export function create_learning_store(
     set_progress,
     prefetch: loader.prefetch,
     retry: () => retry_request?.(),
+    retry_save: sync.retry,
   };
 }

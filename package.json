@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vinext build && node scripts/check_bundle_budget.mjs",
-    "start": "wrangler dev --config dist/server/wrangler.json",
+    "start": "wrangler dev --config dist/server/wrangler.json --persist-to .wrangler/state",
     "lint": "oxlint",
     "format": "oxfmt .",
     "content:summary": "node scripts/music_map_summary.mjs --write",
@@ -17,13 +17,16 @@
     "format:check": "npm run format -- --check",
     "check": "node scripts/verify.mjs",
     "check:full": "node scripts/verify.mjs full",
-    "review:packet": "node scripts/review_packet.mjs"
+    "review:packet": "node scripts/review_packet.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local --config dist/server/wrangler.json --persist-to .wrangler/state"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
     "@maplibre/maplibre-gl-leaflet": "0.1.4",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
+    "drizzle-orm": "^0.45.3",
     "katex": "^0.18.7",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
@@ -50,6 +53,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "^0.5.34",
+    "drizzle-kit": "^0.31.11",
     "oxfmt": "0.61.0",
     "oxlint": "1.76.0",
     "oxlint-tsgolint": "7.0.2001",

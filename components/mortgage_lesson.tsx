@@ -11,6 +11,8 @@ import {
 import {
   refinancing_feedback,
   type LearningNode,
+  type LearningAnswer,
+  question_version,
 } from '@/lib/mortgage_learning_state';
 import type { MortgageLessonData } from '@/lib/mortgage_lesson';
 
@@ -21,6 +23,8 @@ export function MortgageLesson({
   completed,
   complete,
   choose,
+  saved_answer,
+  answer: record_answer,
 }: {
   lesson: MortgageLessonData;
   learning_index: Map<string, LearningNode>;
@@ -28,21 +32,25 @@ export function MortgageLesson({
   completed: boolean;
   complete: () => void;
   choose: (id: string) => void;
+  saved_answer?: LearningAnswer;
+  answer: (choice: number) => void;
 }) {
   const { concept, check, sources: mortgage_sources, formula } = lesson;
   const activity_ref = useRef<HTMLDivElement>(null);
   const has_demo = concept.id === 'incentive' || concept.id === 'lock_in';
+  const answer =
+    saved_answer?.version === question_version(concept.question, check.choices)
+      ? saved_answer.choice
+      : null;
   const [phase, set_phase] = useState<'explore' | 'check'>(
-    has_demo ? 'explore' : 'check',
+    has_demo && answer === null ? 'explore' : 'check',
   );
   const [new_rate, set_new_rate] = useState(5);
-  const [answer, set_answer] = useState<number | null>(null);
   const [lesson_id, set_lesson_id] = useState(concept.id);
   if (lesson_id !== concept.id) {
     set_lesson_id(concept.id);
-    set_phase(has_demo ? 'explore' : 'check');
+    set_phase(has_demo && answer === null ? 'explore' : 'check');
     set_new_rate(5);
-    set_answer(null);
   }
   const correct = answer === check.correct;
   const feedback = refinancing_feedback(new_rate);
@@ -174,7 +182,8 @@ export function MortgageLesson({
                           : 'is-incorrect'
                         : ''
                     }
-                    onClick={() => set_answer(index)}
+                    disabled={busy}
+                    onClick={() => record_answer(index)}
                   >
                     {answer === index && correct ? (
                       <Check size={18} aria-hidden="true" />
