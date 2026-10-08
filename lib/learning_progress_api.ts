@@ -51,6 +51,7 @@ function validate_changes(value: unknown): ProgressChanges {
     Object.keys(answers).length > learning_index.size
   )
     throw new Error('Invalid answers');
+  const current_answers: ProgressChanges['answers'] = {};
   for (const [id, answer] of Object.entries(answers)) {
     const concept = learning_index.get(id);
     const check = learning_checks[id];
@@ -61,9 +62,13 @@ function validate_changes(value: unknown): ProgressChanges {
       !Number.isInteger(answer.choice) ||
       answer.choice < 0 ||
       answer.choice >= check.choices.length ||
-      answer.version !== question_version(concept.question, check.choices)
+      typeof answer.version !== 'string' ||
+      answer.version.length > 10000
     )
-      throw new Error('The question has changed. Reload this lesson.');
+      throw new Error('Invalid answer');
+    // A lesson update must not block unrelated work in an offline queue.
+    if (answer.version === question_version(concept.question, check.choices))
+      current_answers[id] = answer;
   }
   if (
     input.position &&
@@ -74,7 +79,7 @@ function validate_changes(value: unknown): ProgressChanges {
     throw new Error('Invalid lesson position');
   return {
     completed: [...new Set(completed)],
-    answers,
+    answers: current_answers,
     ...(input.position ? { position: input.position } : {}),
     bootstrap: input.bootstrap === true,
   };

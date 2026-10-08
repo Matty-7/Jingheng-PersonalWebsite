@@ -168,7 +168,7 @@ test('stale tabs and duplicate writes cannot erase completed lessons or repeat a
   );
 });
 
-test('rejects cross-site writes, invalid IDs, stale questions and changed account ownership', async () => {
+test('rejects cross-site writes, invalid IDs, malformed answers and changed account ownership', async () => {
   const db = database();
   const visitor = await client(db);
   await visitor.call();
@@ -187,7 +187,7 @@ test('rejects cross-site writes, invalid IDs, stale questions and changed accoun
     (
       await visitor.call({
         ...changes,
-        answers: { incentive: { ...answer, version: 'old' } },
+        answers: { incentive: { ...answer, choice: 7 } },
       })
     ).response.status,
     400,
@@ -209,6 +209,29 @@ test('rejects cross-site writes, invalid IDs, stale questions and changed accoun
   );
   assert.equal(response.status, 409);
   assert.deepEqual((await visitor.call()).data.progress.completed, []);
+});
+
+test('stale question versions do not block queued completion, position or later answers', async () => {
+  const visitor = await client(database());
+  await visitor.call();
+  const result = await visitor.call({
+    completed: ['incentive'],
+    position,
+    answers: { incentive: { ...answer, version: 'old' } },
+  });
+  assert.equal(result.response.status, 200);
+  assert.deepEqual(result.data.progress.completed, ['incentive']);
+  assert.equal(result.data.progress.current_id, position.current_id);
+  assert.equal(result.data.progress.answers?.incentive, undefined);
+  await visitor.call({ completed: [], answers: { incentive: answer } });
+  await visitor.call({
+    completed: ['prepayments'],
+    answers: { incentive: { ...answer, version: 'old' } },
+  });
+  assert.deepEqual(
+    (await visitor.call()).data.progress.answers.incentive,
+    answer,
+  );
 });
 
 test('storage errors stay recoverable without claiming a save', async () => {
