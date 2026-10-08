@@ -21,34 +21,12 @@ export async function check_mortgage_focus_surface(
     name: 'Search mortgage concepts',
   });
   const dialog = surface.getByRole('dialog');
-  const pointer_open = async (trigger) => {
-    await trigger.evaluate((element) => {
-      if (document.activeElement instanceof HTMLElement)
-        document.activeElement.blur();
-      element.dispatchEvent(
-        new PointerEvent('pointerdown', {
-          bubbles: true,
-          pointerType: 'mouse',
-        }),
-      );
-      element.dispatchEvent(
-        new PointerEvent('pointerup', { bubbles: true, pointerType: 'mouse' }),
-      );
-      element.dispatchEvent(
-        new MouseEvent('click', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-        }),
-      );
-    });
-  };
   for (const trigger_name of ['Search concepts', 'All topics']) {
     for (const open_method of ['pointer', 'keyboard']) {
       for (const close_method of ['escape', 'close']) {
         const trigger = button(trigger_name);
         await surface.locator('#learning-title').focus();
-        if (open_method === 'pointer') await pointer_open(trigger);
+        if (open_method === 'pointer') await trigger.click();
         else await trigger.press('Enter');
         await search.waitFor({ state: 'visible' });
         assert.equal(
