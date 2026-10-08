@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Sprout } from 'lucide-react';
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
+import { chatGPTSignInPath, chatGPTSignOutPath } from '@/app/chatgpt-auth';
 import { MortgageMap } from '@/components/mortgage_map';
 import { pageMetadata } from '@/lib/seo';
 import { mortgage_lesson } from '@/lib/mortgage_lesson';
@@ -20,6 +21,7 @@ export const metadata: Metadata = pageMetadata(
   'Learn mortgage cash flows, interest rates and structured credit through a focused learning tree, interactive examples and public sources.',
   '/portfolio/mortgage-map',
 );
+export const dynamic = 'force-dynamic';
 
 export default async function MortgageMapPage({
   searchParams,
@@ -41,6 +43,16 @@ export default async function MortgageMapPage({
         initial_detail={mortgage_lesson(initial_lesson.current_id)!}
         navigation={learning_navigation}
         routes={learning_routes}
+        sign_in_link={
+          <a href={chatGPTSignInPath('/portfolio/mortgage-map')} target="_top">
+            Sign in with ChatGPT
+          </a>
+        }
+        sign_out_link={
+          <a href={chatGPTSignOutPath('/portfolio/mortgage-map')} target="_top">
+            Sign out
+          </a>
+        }
         home_link={
           <Link href="/#projects" aria-label="Back to projects">
             <Sprout size={28} aria-hidden="true" />

@@ -1,4 +1,11 @@
 import {
+  foundation_topics,
+  foundation_sources,
+  foundation_concepts,
+  foundation_relationships,
+  foundation_paths,
+} from './fixed_income_foundations.ts';
+import {
   valuation_topics,
   valuation_sources,
   valuation_concepts,
@@ -271,6 +278,7 @@ export const mortgage_topics = [
   ...analytics_topics,
   ...expansion_topics,
   ...valuation_topics,
+  ...foundation_topics,
   ...convention_topics,
   ...contract_topics,
 ];
@@ -286,6 +294,7 @@ export const mortgage_sources: Record<
   ...analytics_sources,
   ...expansion_sources,
   ...valuation_sources,
+  ...foundation_sources,
   ...convention_sources,
   ...contract_sources,
   loan_performance_glossary: {
@@ -1304,7 +1313,7 @@ const original_concepts: MortgageConcept[] = [
       example: '$100,000 × 4 × 0.0001 = about $40 per basis point.',
     },
     distinction:
-      'Sign conventions vary. Matching DV01 does not neutralize convexity, spread or curve-shape changes.',
+      'With a positive loss-per-bp convention, dollar P&L ≈ −DV01 × yield change in bp. Use the position’s dollar market value, not a price quoted per 100. Matching DV01 does not neutralize convexity, spread or curve-shape changes.',
     links: [
       {
         id: 'duration',
@@ -2373,7 +2382,9 @@ const original_concepts: MortgageConcept[] = [
     formula: {
       expression: '1/32 point = 0.03125 points',
       assumptions:
-        'A price point is one dollar per $100 face. Additional tick notation follows the market’s convention.',
+        'A price point is one dollar per $100 face. Additional tick notation follows the market’s convention. A 1/32 price change is not a one-basis-point yield change.',
+      example:
+        'A 1/32-point move on $1,000,000 current face is $312.50: 1,000,000 × (1/32) / 100. This excludes accrued interest.',
     },
     topic: 'quotation',
     branch: 'valuation',
@@ -2672,7 +2683,14 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'Macaulay duration weights payment times by their present-value contribution under a specified yield convention.',
     distinction:
-      'It includes interest and discounting; WAL weights principal and does not discount.',
+      'Measured in years when payment times are in years. It includes interest and discounting; WAL weights principal and does not discount.',
+    formula: {
+      expression: 'Dₘₐc = Σ tᵢ PV(CFᵢ) / P',
+      assumptions:
+        'Fixed positive cash flows valued using the same yield convention and full price P. Payment times tᵢ are years from settlement.',
+      example:
+        'A single fixed payment in five years has Macaulay duration of five years.',
+    },
     question: 'When does Macaulay duration equal maturity?',
     answer:
       'For a single fixed positive payment, such as a default-free zero-coupon bond under the stated convention.',
@@ -2699,7 +2717,14 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'Modified duration approximates price sensitivity to a change in yield while holding the cash-flow schedule fixed.',
     distinction:
-      'Effective duration can let an option-sensitive cash-flow schedule change after a curve shock.',
+      'Modified duration is commonly quoted in years under annual-rate conventions. It is a local sensitivity, not an expected holding period. Effective duration can reproject mortgage payments after a curve shock.',
+    formula: {
+      expression: 'Dₘₒd = Dₘₐc / (1 + y/m)',
+      assumptions:
+        'y is nominal annual yield as a decimal, compounded m times per year; 1 + y/m > 0. Cash flows and full-price basis remain fixed.',
+      example:
+        'Macaulay duration 5 years, y = 6% and semiannual compounding imply modified duration 5/1.03 ≈ 4.854 years.',
+    },
     question: 'Why is fixed-cash-flow duration incomplete for an MBS?',
     answer: 'Borrowers can change the timing of principal when rates move.',
     sources: ['cfa_risk', 'cfa_valuation', 'formulas'],
@@ -3581,6 +3606,7 @@ const formula_additions: Record<
 };
 export const mortgage_concepts: MortgageConcept[] = [
   ...valuation_concepts,
+  ...foundation_concepts,
   ...analytics_concepts,
   ...expansion_concepts,
   ...context_concepts,
@@ -3605,6 +3631,7 @@ export const mortgage_concepts: MortgageConcept[] = [
 
 export const mortgage_relationships: MortgageRelationship[] = [
   ...valuation_relationships,
+  ...foundation_relationships,
   ...convention_relationships,
   ...contract_relationships,
   ...analytics_relationships,
@@ -4357,6 +4384,7 @@ export const mortgage_relationships: MortgageRelationship[] = [
 
 export const mortgage_paths = [
   ...valuation_paths,
+  ...foundation_paths,
   ...analytics_paths,
   ...expansion_paths,
   ...context_paths,

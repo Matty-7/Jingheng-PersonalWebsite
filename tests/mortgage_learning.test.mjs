@@ -28,15 +28,18 @@ test('every concept has an open learning route and a bounded local tree', () => 
 });
 
 test('restoring progress validates route, position and completed concept IDs', () => {
-  for (const raw of [
-    null,
-    '{',
-    'null',
-    '42',
-    '{"route_id":"missing"}',
-    JSON.stringify({ ...initial_progress, current_id: 'oas' }),
-  ])
+  for (const raw of [null, '{', 'null', '42', '{"route_id":"missing"}'])
     assert.deepEqual(read_progress(raw), initial_progress);
+  const repaired = read_progress(
+    JSON.stringify({
+      ...initial_progress,
+      current_id: 'oas',
+      completed: ['incentive'],
+    }),
+  );
+  assert.equal(repaired.current_id, 'oas');
+  assert.deepEqual(repaired.completed, ['incentive']);
+  assert.ok(route_for_concept('oas', repaired.route_id).steps.includes('oas'));
   assert.deepEqual(
     read_progress(
       JSON.stringify({

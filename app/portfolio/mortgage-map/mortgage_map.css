@@ -1114,3 +1114,51 @@ html[data-mortgage-pending='true']
 .learning-load-status button {
   margin-left: 0.75rem;
 }
+
+.learning-save-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0 0 1rem;
+  padding: 10px 3.25% 0;
+  color: var(--muted-foreground, #525d55);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.learning-save-bar a {
+  color: inherit;
+  text-underline-offset: 0.22em;
+}
+.learning-sync-signin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.learning-sync-signin small {
+  font-size: 0.875rem;
+}
+.learning-save-bar button {
+  min-height: 44px;
+}
+@media (max-width: 800px) {
+  .learning-save-bar {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+@media (max-width: 360px) {
+  .learning-save-bar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .learning-save-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

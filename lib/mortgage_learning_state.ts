@@ -8,10 +8,21 @@ export type LearningNode = {
 };
 export const progress_key = 'mortgage-map-learning-v1';
 export const position_cookie = 'mortgage-map-position-v1';
+export type LearningAnswer = { choice: number; version: string };
+export type ProgressChanges = {
+  completed: string[];
+  answers: Record<string, LearningAnswer>;
+  position?: { route_id: string; current_id: string };
+  bootstrap?: boolean;
+};
+export function question_version(question: string, choices: string[]) {
+  return JSON.stringify([question, ...choices]);
+}
 export type LearningProgress = {
   route_id: string;
   current_id: string;
   completed: string[];
+  answers?: Record<string, LearningAnswer>;
 };
 export const initial_progress: LearningProgress = {
   route_id: 'borrower_decision',
@@ -34,15 +45,29 @@ export function create_learning_model(
         typeof saved.route_id === 'string'
           ? route_index.get(saved.route_id)
           : undefined;
-      if (
-        !route ||
-        !saved.current_id ||
-        !route.steps.includes(saved.current_id)
-      )
-        return initial_progress;
+      const current_id =
+        typeof saved.current_id === 'string' &&
+        learning_index.has(saved.current_id)
+          ? saved.current_id
+          : initial_progress.current_id;
+      const restored_route = route?.steps.includes(current_id)
+        ? route
+        : route_for_concept(current_id, initial_progress.route_id);
+      const answers = Object.fromEntries(
+        Object.entries(saved.answers ?? {}).filter(
+          ([id, answer]) =>
+            learning_index.has(id) &&
+            answer &&
+            Number.isInteger(answer.choice) &&
+            answer.choice >= 0 &&
+            answer.choice < 3 &&
+            typeof answer.version === 'string' &&
+            answer.version.length < 10000,
+        ),
+      );
       return {
-        route_id: route.id,
-        current_id: saved.current_id,
+        route_id: restored_route.id,
+        current_id,
         completed: Array.isArray(saved.completed)
           ? [
               ...new Set(
@@ -52,6 +77,7 @@ export function create_learning_model(
               ),
             ]
           : [],
+        ...(Object.keys(answers).length ? { answers } : {}),
       };
     } catch {
       return initial_progress;

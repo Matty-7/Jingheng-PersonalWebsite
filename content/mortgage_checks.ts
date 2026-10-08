@@ -1,3 +1,4 @@
+import { foundation_checks } from './fixed_income_foundations.ts';
 // Choices for the existing authored questions in mortgage_concepts.
 // Explanations remain alongside their questions and public sources.
 import { convention_checks } from './mortgage_conventions.ts';
@@ -70,6 +71,7 @@ export const learning_checks: Record<
     correct: 0,
   },
   ...convention_checks,
+  ...foundation_checks,
   curve_anchor: {
     choices: [
       'Yes. Every curve input starts on the observation date.',
