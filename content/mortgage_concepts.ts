@@ -297,6 +297,12 @@ export const mortgage_sources: Record<
   ...foundation_sources,
   ...convention_sources,
   ...contract_sources,
+  agency_remic_guarantee: {
+    publisher: 'Fannie Mae',
+    title:
+      'Single-Family REMIC Prospectus · May 1, 2023 · guarantee, pp. 4 and 34; class definitions, Exhibit A',
+    url: 'https://capitalmarkets.fanniemae.com/sites/capmrkt/files/syndicated/mbs/remicpros/FNM_REMIC_Base_20230501.pdf',
+  },
   loan_performance_glossary: {
     publisher: 'Fannie Mae',
     title:
@@ -1434,16 +1440,17 @@ const original_concepts: MortgageConcept[] = [
     id: 'cmo',
     branch: 'structure',
     title: 'CMO',
-    subtitle: 'Mortgage cash flows divided into classes',
+    subtitle: 'Separate collateral, guarantee and payment rules',
     aliases: [
       'collateralized mortgage obligation',
+      'Agency CMO',
       'real estate mortgage investment conduit',
       'tranche',
     ],
     summary:
-      'A CMO redistributes mortgage payments among classes. REMIC describes a tax framework often used for these structures.',
+      'A CMO divides mortgage cash flows into classes with different payment rules. In a guaranteed Agency CMO class, the guarantor supports payments defined by the deal documents. That does not fix the class’s market value or modeled repayment path. REMIC describes a tax framework, not a principal-allocation rule.',
     distinction:
-      'Neither label alone tells you the payment priority of a particular class.',
+      'Fannie Mae’s single-family REMIC guarantee covers required distributions and remaining principal by the class’s final distribution date, subject to the prospectus supplement. A projected five-year WAL is not that final date. The guarantee is Fannie Mae’s, not a U.S. government guarantee. Corporate CLOs instead hold business loans and use subordination and coverage tests to allocate credit exposure. Compare collateral, class-specific guarantee and waterfall separately; CMO alone does not mean Agency-guaranteed.',
     links: [
       {
         id: 'sequential',
@@ -1453,10 +1460,20 @@ const original_concepts: MortgageConcept[] = [
         id: 'pass_through',
         reason: 'Can supply the underlying mortgage cash flows.',
       },
+      {
+        id: 'clo',
+        reason:
+          'Contrasts mortgage payment timing with corporate loan credit allocation.',
+      },
+      {
+        id: 'agency',
+        reason: 'Distinguishes the guarantor and the scope of its promise.',
+      },
     ],
-    question: 'Does a REMIC label reveal which class repays first?',
-    answer: 'No. Read the transaction’s actual distribution rules.',
-    sources: ['remic', 'irs'],
+    question: 'Does an Agency guarantee lock in a projected five-year WAL?',
+    answer:
+      'No. The guarantee supports contractual payments, not a modeled WAL. Borrower prepayments and class allocation rules can change the repayment path even when every guaranteed payment is made.',
+    sources: ['agency_remic_guarantee', 'remic', 'irs', 'clo'],
     topic: 'deal_rules',
   },
   {
@@ -1466,9 +1483,16 @@ const original_concepts: MortgageConcept[] = [
     subtitle: 'Principal in a specified order',
     aliases: ['waterfall', 'payment priority'],
     summary:
-      'In a simple sequential structure, principal retires one class before moving to the next. Interest follows each class’s terms.',
+      'In a simple sequential structure, available principal first retires class A, then class B. Ordinary interest-paying classes can receive interest while waiting for principal. Faster collateral paydowns bring the queue forward; slower paydowns keep later classes outstanding longer.',
     distinction:
       'Payment order changes timing; it does not automatically establish credit subordination.',
+    formula: {
+      expression: 'Q_A = min(Q, B_A); Q_B = min(B_B, max(0, Q − Q_A))',
+      assumptions:
+        'One distribution date, two principal-bearing classes and nonnegative beginning balances. Q is principal available to this group, with 0 ≤ Q ≤ B_A + B_B. All amounts use the same currency. No other classes, reserves, losses, accretion or allocation caps. Interest is allocated separately.',
+      example:
+        'Illustrative amounts in $ millions: A begins at 30, B at 70, and available principal is 40. A receives 30 and B receives 10; closing balances are 0 and 60. If only 20 arrives instead, A receives 20 and B receives 0. B can still receive its contractual interest. These are payment allocations, not price changes or forecasts.',
+    },
     links: [
       {
         id: 'cmo',
@@ -1478,10 +1502,22 @@ const original_concepts: MortgageConcept[] = [
         id: 'extension',
         reason: 'Later-paying classes can experience delayed principal.',
       },
+      {
+        id: 'pac',
+        reason:
+          'Uses a conditional schedule instead of a simple principal queue.',
+      },
+      {
+        id: 'subordination',
+        reason:
+          'Loss priority is a separate rule from principal payment priority.',
+      },
     ],
-    question: 'Do later classes necessarily receive no interest while waiting?',
-    answer: 'No. Principal priority and interest-payment rules are separate.',
-    sources: ['structure'],
+    question:
+      'A has $30m outstanding and B has $70m. With $40m principal and A paid first, how much reaches B?',
+    answer:
+      '$10m. A takes the first $30m and retires; the remaining $10m pays B. B’s interest follows its separate class terms.',
+    sources: ['structure', 'agency_remic_guarantee'],
     topic: 'principal_priority',
   },
   {
@@ -1489,11 +1525,16 @@ const original_concepts: MortgageConcept[] = [
     branch: 'structure',
     title: 'PAC',
     subtitle: 'Planned amortization class',
-    aliases: ['PAC band', 'planned amortization schedule'],
+    aliases: [
+      'PAC band',
+      'planned amortization schedule',
+      'effective PAC band',
+      'busted PAC',
+    ],
     summary:
-      'A PAC targets a principal schedule while companion classes absorb variability. That protection depends on collateral behavior and available support.',
+      'A PAC targets a principal schedule with support classes absorbing deviations in collateral paydowns. Its stated PAC band is constructed from assumed constant prepayment speeds, commonly quoted in PSA. The effective band is the range still supportable today, given past paydowns, remaining collateral and remaining support.',
     distinction:
-      'A PAC schedule is conditional, not an unconditional promise across all future prepayment paths.',
+      'A refinancing surge can retire support early. Returning to the original band later does not restore that balance: the PAC may be exposed to faster repayment, often called a busted PAC. Conversely, very slow collateral payments can leave too little principal to meet the schedule. Test the whole path and remaining support, not just today’s speed against the original endpoints.',
     links: [
       {
         id: 'support',
@@ -1503,10 +1544,21 @@ const original_concepts: MortgageConcept[] = [
         id: 'extension',
         reason: 'Describes the timing risks the structure seeks to manage.',
       },
+      {
+        id: 'psa',
+        reason:
+          'Defines the age-dependent speed convention used to state a band.',
+      },
+      {
+        id: 'duration',
+        reason:
+          'Rate sensitivity must reflect the class’s remaining timing protection.',
+      },
     ],
-    question: 'Can a PAC lose its expected timing protection?',
+    question:
+      'After fast prepayments exhaust support, does a return inside the original PAC band restore protection?',
     answer:
-      'Yes. Support can be depleted or actual prepayment paths can exceed the structure’s capacity.',
+      'No. The original band does not replenish support. Evaluate the surviving collateral and class balances under the actual distribution rules.',
     sources: ['structure'],
     topic: 'principal_priority',
   },
@@ -1517,9 +1569,9 @@ const original_concepts: MortgageConcept[] = [
     subtitle: 'Absorbing principal variability',
     aliases: ['support class', 'companion tranche'],
     summary:
-      'Support classes take a more variable principal path so another class can follow a more stable schedule.',
+      'A support class receives principal after the scheduled payments of the classes it supports. When collateral pays faster, support can absorb excess principal and retire early. When collateral pays more slowly, support can receive little or no principal for an extended period. Its balance is a capacity to absorb future paydowns, not a cash reserve that tops up a PAC.',
     distinction:
-      'A companion label concerns payment timing; it does not by itself mean first-loss credit protection.',
+      'Illustration: a PAC is scheduled to receive $5m this period. With $8m available, it takes $5m and support takes $3m. With only $4m available, it takes $4m and support takes zero, leaving a $1m schedule shortfall. Assume sufficient class balances and no other classes, reserves or carryover rules. A companion label describes timing support, not automatic first-loss credit protection.',
     links: [
       {
         id: 'pac',
@@ -1530,11 +1582,16 @@ const original_concepts: MortgageConcept[] = [
         reason:
           'Can vary substantially as the companion’s principal path changes.',
       },
+      {
+        id: 'subordination',
+        reason:
+          'Credit loss absorption differs from taking variable principal timing.',
+      },
     ],
     question:
-      'Where does the variability go when a PAC schedule is stabilized?',
+      'In the two-class illustration, $4m is available against a $5m PAC schedule. What does support receive?',
     answer:
-      'Other classes absorb it under the transaction’s rules; the underlying uncertainty has not disappeared.',
+      'Zero. All $4m goes to the PAC, which still has a $1m schedule shortfall. An outstanding support balance is not cash available to fill that gap.',
     sources: ['freddie_faq'],
     topic: 'principal_priority',
   },

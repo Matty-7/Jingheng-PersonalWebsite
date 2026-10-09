@@ -441,6 +441,10 @@ const entries: Entry[] = [
     'Corporate CLO collateral consists of business loans. A CRE CLO instead holds commercial real-estate loans; the shared acronym does not make the collateral identical.',
     [
       [
+        'cmo',
+        'Compare corporate credit allocation with mortgage class payment rules and guarantees.',
+      ],
+      [
         'oc',
         'Collateral deterioration can breach coverage tests and redirect cash.',
       ],
