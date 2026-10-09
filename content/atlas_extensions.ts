@@ -1008,7 +1008,11 @@ export const atlas_relationships: MortgageRelationship[] =
           {
             rmbs: ['Guarantee matters', 'Early principal'],
             cmbs: ['Deal concentration', 'Property cash flow'],
-            clo: ['Coverage triggers', 'Coupon resets'],
+            clo: [
+              'Mortgage vs corporate collateral',
+              'Coverage triggers',
+              'Coupon resets',
+            ],
             callable: ['Value the option', 'Compare early repayment'],
             discount_margin: ['Required vs contractual', 'Spread sensitivity'],
             i_spread: [
@@ -1062,17 +1066,18 @@ export const atlas_relationships: MortgageRelationship[] =
         )[link.id] ??
         'Read the connection',
       reason: link.reason,
-      kind: [
-        'rmbs',
-        'cmbs',
-        'clo',
-        'crt',
-        'auto_abs',
-        'card_abs',
-        'fx_hedging',
-      ].includes(c.id)
-        ? 'mechanism'
-        : 'comparison',
+      kind:
+        [
+          'rmbs',
+          'cmbs',
+          'clo',
+          'crt',
+          'auto_abs',
+          'card_abs',
+          'fx_hedging',
+        ].includes(c.id) && !(c.id === 'clo' && link.id === 'cmo')
+          ? 'mechanism'
+          : 'comparison',
     })),
   );
 
