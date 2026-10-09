@@ -5,6 +5,11 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    sequential: {
+      tex: String.raw`\begin{aligned}Q_A&=\min(Q,B_A)\\Q_B&=\min\!\left(B_B,\max(0,Q-Q_A)\right)\end{aligned}`,
+      variables:
+        'Q: principal available for this distribution; B_A / B_B: beginning class balances; Q_A / Q_B: principal allocated to each class. All quantities are currency amounts. A is paid before B; interest has separate rules.',
+    },
     accrual_discount_clocks: {
       tex: String.raw`\begin{aligned}I&=Bc\alpha_{\mathrm{accrual}}\\\mathrm{PV}&=\mathrm{CF}\,e^{-r\tau_{\mathrm{discount}}}\end{aligned}`,
       variables:

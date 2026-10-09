@@ -1106,33 +1106,33 @@ export const learning_checks: Record<
   },
   cmo: {
     choices: [
-      'Yes. The REMIC label gives every class the same repayment priority.',
-      'Yes. REMIC status identifies the class with the earliest principal payments.',
-      'No. The transaction’s distribution rules determine principal priority.',
+      'Yes. The guarantee fixes both market value and the projected repayment path.',
+      'Yes. A modeled WAL is the class’s guaranteed final distribution date.',
+      'No. Contractual payment protection does not fix a modeled WAL.',
     ],
     correct: 2,
   },
   sequential: {
     choices: [
-      'Yes. Waiting for principal necessarily suspends the class’s interest payments.',
-      'No. Interest-payment rules are separate from principal priority.',
-      'Yes. Only the class currently receiving principal can receive interest.',
+      '$28m, because B holds 70% of the opening balance.',
+      '$10m, after A receives its remaining $30m.',
+      '$40m, because B is the larger class.',
     ],
     correct: 1,
   },
   pac: {
     choices: [
-      'Yes. Support depletion or prepayment paths can overwhelm the protection.',
-      'No. The PAC schedule remains protected after its support is depleted.',
-      'No. Prepayments outside the structure’s capacity leave PAC timing unchanged.',
+      'No. A return inside the original band does not replenish support.',
+      'Yes. The original endpoints restore protection regardless of past paydowns.',
+      'Yes. A PAC label guarantees the schedule after support is exhausted.',
     ],
     correct: 0,
   },
   support: {
     choices: [
-      'The PAC schedule removes variability from the underlying loan payments.',
-      'Borrowers must adjust their prepayments to match the PAC schedule.',
-      'Other classes absorb variability according to the transaction’s rules.',
+      '$1m, matching the gap in the PAC schedule.',
+      '$4m, because support receives principal before the PAC.',
+      'Zero; the PAC receives $4m and still falls $1m short of its schedule.',
     ],
     correct: 2,
   },

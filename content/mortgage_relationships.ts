@@ -8,6 +8,30 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'cmo__clo',
+    source: 'cmo',
+    target: 'clo',
+    kind: 'comparison',
+    label: 'compares collateral and class protections',
+    reason:
+      'Mortgage CMOs and corporate CLOs both divide cash flows into classes, but collateral, guarantee and loss allocation must be examined separately.',
+    conditions:
+      'Compare a specified guaranteed Agency class with the actual corporate CLO waterfall. Neither acronym alone identifies every class risk.',
+    sources: ['agency_remic_guarantee', 'clo'],
+  },
+  {
+    id: 'support__subordination',
+    source: 'support',
+    target: 'subordination',
+    kind: 'comparison',
+    label: 'distinguishes timing from credit support',
+    reason:
+      'A companion takes variable principal timing; credit subordination specifies which class absorbs collateral losses first.',
+    conditions:
+      'Principal priority and loss priority are separate contractual provisions. A support label alone does not establish first-loss status.',
+    sources: ['freddie_faq', 'clo'],
+  },
+  {
     id: 'rolls__cash_flows',
     source: 'rolls',
     target: 'cash_flows',

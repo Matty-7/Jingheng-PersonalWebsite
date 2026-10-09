@@ -441,6 +441,10 @@ const entries: Entry[] = [
     'Corporate CLO collateral consists of business loans. A CRE CLO instead holds commercial real-estate loans; the shared acronym does not make the collateral identical.',
     [
       [
+        'cmo',
+        'Compare corporate credit allocation with mortgage class payment rules and guarantees.',
+      ],
+      [
         'oc',
         'Collateral deterioration can breach coverage tests and redirect cash.',
       ],
@@ -1004,7 +1008,11 @@ export const atlas_relationships: MortgageRelationship[] =
           {
             rmbs: ['Guarantee matters', 'Early principal'],
             cmbs: ['Deal concentration', 'Property cash flow'],
-            clo: ['Coverage triggers', 'Coupon resets'],
+            clo: [
+              'Mortgage vs corporate collateral',
+              'Coverage triggers',
+              'Coupon resets',
+            ],
             callable: ['Value the option', 'Compare early repayment'],
             discount_margin: ['Required vs contractual', 'Spread sensitivity'],
             i_spread: [
@@ -1058,17 +1066,18 @@ export const atlas_relationships: MortgageRelationship[] =
         )[link.id] ??
         'Read the connection',
       reason: link.reason,
-      kind: [
-        'rmbs',
-        'cmbs',
-        'clo',
-        'crt',
-        'auto_abs',
-        'card_abs',
-        'fx_hedging',
-      ].includes(c.id)
-        ? 'mechanism'
-        : 'comparison',
+      kind:
+        [
+          'rmbs',
+          'cmbs',
+          'clo',
+          'crt',
+          'auto_abs',
+          'card_abs',
+          'fx_hedging',
+        ].includes(c.id) && !(c.id === 'clo' && link.id === 'cmo')
+          ? 'mechanism'
+          : 'comparison',
     })),
   );
 
