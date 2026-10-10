@@ -225,6 +225,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'P₋ / P₊: prices after down / up rate shocks; P₀: base price; Δy: positive annual yield shift as a decimal. Duration is expressed in years.',
     },
+    empirical_duration: {
+      tex: String.raw`r_t=\alpha+\beta\,\Delta y_t+\varepsilon_t,\qquad D_{\mathrm{emp}}=-\beta`,
+      variables:
+        'rₜ: proportional full-price change or total return, stated explicitly; Δyₜ: change in the chosen benchmark annual rate as a decimal over the same interval; α: intercept; β: fitted slope; εₜ: residual. D_emp is sample- and specification-dependent.',
+    },
     dv01: {
       tex: String.raw`\mathrm{DV01}\approx V D\times10^{-4}`,
       variables:
