@@ -296,6 +296,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  empirical_duration: {
+    choices: [
+      'Yes. Historical co-movement makes it the security’s model-free duration in every regime.',
+      'No. The window, frequency, benchmark, concurrent spread and liquidity moves, outliers and regime can change the estimate.',
+      'Yes. A regression beta is the same experiment as a constant-OAS effective-duration shock.',
+    ],
+    correct: 1,
+  },
   spread_conventions: {
     choices: [
       'No. First establish each benchmark and calculation method.',

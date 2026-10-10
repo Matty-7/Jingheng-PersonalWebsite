@@ -52,6 +52,12 @@ export const analytics_sources = {
     title: 'Valuation and Analysis of Bonds with Embedded Options',
     url: 'https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/valuation-analysis-bonds-embedded-options',
   },
+  frbsf_empirical_duration: {
+    publisher: 'Federal Reserve Bank of San Francisco',
+    title:
+      'Measuring Interest Rate Risk for Mortgage-Related Assets · FRBSF Economic Letter 2000-01',
+    url: 'https://www.frbsf.org/research-and-insights/publications/economic-letter/2000/01/measuring-interest-rate-risk-for-mortgage-related-assets/',
+  },
   normal_volatility: {
     publisher: 'OpenGamma Strata',
     title: 'Normal option formula and conversion from Black volatility',
@@ -107,6 +113,7 @@ export const analytics_topics = [
       'short_rate_model',
       'volatility_conventions',
       'model_calibration',
+      'empirical_duration',
       'effective_convexity',
     ],
   },
@@ -594,6 +601,53 @@ export const analytics_concepts: MortgageConcept[] = [
     sources: ['rate_model_calibration'],
   }),
   analysis_concept({
+    id: 'empirical_duration',
+    title: 'Empirical duration',
+    subtitle: 'Historical co-movement under a specified regression',
+    aliases: ['regression-based duration'],
+    summary:
+      'Empirical duration estimates how a security’s proportional price change or total return co-moved with changes in a chosen benchmark rate over a stated historical sample. It is a sample-dependent regression measure, not a model-free or inherently more realistic duration.',
+    formula: {
+      expression: 'rₜ = α + β Δyₜ + εₜ; D_emp = −β',
+      assumptions:
+        'rₜ is either proportional full-price change or total return, identified explicitly, and is measured over the same interval as benchmark-rate change Δyₜ. Rate changes use decimal units. State the observation window, frequency, benchmark, intercept, controls, weighting and return treatment.',
+    },
+    distinction:
+      'Effective duration reprices the same security under defined shocks and held-fixed model assumptions. Empirical duration summarizes historical co-movement and can absorb concurrent spread, liquidity, collateral-mix and other market effects. Its estimate can change with the window, frequency, benchmark, outliers, regression specification and market regime, so it is neither a forecast nor intrinsically more real.',
+    question:
+      'Can an empirical-duration estimate from one sample be treated as the security’s constant effective duration in another regime?',
+    answer:
+      'No. It describes the specified sample and regression; benchmark choice, frequency, spread and liquidity co-movement, outliers and regime changes can alter the estimate.',
+    links: [
+      {
+        id: 'duration',
+        reason:
+          'Effective duration is a defined repricing experiment rather than a historical regression.',
+      },
+      {
+        id: 'hedging',
+        reason:
+          'A historical beta can inform hedge selection without fixing a future hedge ratio.',
+      },
+      {
+        id: 'basis_risk',
+        reason:
+          'Benchmark-relative spread and liquidity moves can enter the estimated beta.',
+      },
+      {
+        id: 'model_risk',
+        reason:
+          'Regression specification, controls and sample choice can change the result.',
+      },
+      {
+        id: 'oas',
+        reason:
+          'An empirical beta is neither a constant-OAS curve shock nor an OAS estimate.',
+      },
+    ],
+    sources: ['frbsf_empirical_duration', 'cfa_risk'],
+  }),
+  analysis_concept({
     id: 'effective_convexity',
     title: 'Effective convexity',
     subtitle: 'Curvature under a defined curve shock',
@@ -872,6 +926,49 @@ export const analytics_relationships: MortgageRelationship[] = [
     'measurement',
     ['embedded_options', 'cfa_risk'],
     'Hold OAS fixed and identify the shock and other model assumptions.',
+  ),
+  analysis_relation(
+    'empirical_duration',
+    'duration',
+    'contrasts observed and modeled sensitivity',
+    'Empirical duration summarizes historical price-rate co-movement; effective duration reprices option-sensitive cash flows under a defined shock.',
+    'comparison',
+    ['frbsf_empirical_duration', 'cfa_risk'],
+    'State the return, rate shock, sample and held-fixed assumptions before comparing the measures.',
+  ),
+  analysis_relation(
+    'empirical_duration',
+    'hedging',
+    'can inform a hedge ratio',
+    'A historical beta can describe past co-movement with a candidate benchmark hedge.',
+    'measurement',
+    ['frbsf_empirical_duration'],
+    'The estimate is sample-dependent and does not guarantee the future hedge ratio.',
+  ),
+  analysis_relation(
+    'empirical_duration',
+    'basis_risk',
+    'can absorb non-benchmark moves',
+    'Spread, liquidity and benchmark-mismatch effects can enter the observed price-rate relationship.',
+    'comparison',
+    ['frbsf_empirical_duration'],
+    'Regression beta does not isolate a pure curve shock unless the specification and data support that interpretation.',
+  ),
+  analysis_relation(
+    'empirical_duration',
+    'model_risk',
+    'depends on specification and sample',
+    'Window, frequency, controls, weighting, outliers and market regime can change the estimate.',
+    'measurement',
+    ['frbsf_empirical_duration', 'cfa_risk'],
+  ),
+  analysis_relation(
+    'empirical_duration',
+    'oas',
+    'differs from a constant-OAS shock',
+    'Historical co-movement does not identify OAS or reproduce an option model’s constant-OAS curve experiment.',
+    'comparison',
+    ['frbsf_empirical_duration', 'embedded_options'],
   ),
   analysis_relation(
     'effective_convexity',

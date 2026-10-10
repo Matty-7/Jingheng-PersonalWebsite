@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
+  analytics_sources,
   analytics_paths,
   analytics_concepts,
 } from '../content/mortgage_analytics.ts';
+import { learning_checks } from '../content/mortgage_checks.ts';
 import { mortgage_paths } from '../content/mortgage_concepts.ts';
 import { search_concepts } from '../lib/mortgage_search.ts';
 
@@ -47,4 +49,48 @@ test('effective convexity explains sign without treating it as a permanent label
   assert.match(concept.formula?.example ?? '', /C_eff ≈ \+10 years²/);
   assert.match(concept.formula?.example ?? '', /up-shock price still falls/);
   assert.ok(concept.links.some((link) => link.id === 'convexity'));
+});
+
+test('empirical duration states its regression convention and sample-dependent boundary', () => {
+  const matches = analytics_concepts.filter(
+    (node) => node.id === 'empirical_duration',
+  );
+  assert.equal(matches.length, 1);
+  const concept = matches[0];
+  assert.equal(
+    search_concepts('regression-based duration')[0]?.id,
+    'empirical_duration',
+  );
+  assert.match(concept.formula?.expression ?? '', /D_emp = −β/);
+  for (const term of [
+    'proportional full-price change',
+    'total return',
+    'decimal units',
+    'window',
+    'frequency',
+    'benchmark',
+  ])
+    assert.match(concept.formula?.assumptions ?? '', new RegExp(term, 'i'));
+  for (const term of [
+    'Effective duration',
+    'spread',
+    'liquidity',
+    'outliers',
+    'regime',
+    'neither a forecast nor intrinsically more real',
+  ])
+    assert.match(concept.distinction, new RegExp(term, 'i'));
+  assert.deepEqual(
+    new Set(concept.links.map((link) => link.id)),
+    new Set(['duration', 'hedging', 'basis_risk', 'model_risk', 'oas']),
+  );
+  assert.ok(concept.sources.includes('frbsf_empirical_duration'));
+  assert.equal(
+    analytics_sources.frbsf_empirical_duration.publisher,
+    'Federal Reserve Bank of San Francisco',
+  );
+  assert.equal(learning_checks.empirical_duration.correct, 1);
+  assert.ok(
+    analytics_paths.every((path) => !path.steps.includes('empirical_duration')),
+  );
 });
