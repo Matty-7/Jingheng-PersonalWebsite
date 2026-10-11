@@ -1856,6 +1856,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  inverse_floater: {
+    choices: [
+      'The floater’s index exposure on 80 of balance is concentrated into 20 of inverse balance, so the coupon slope is 4× without creating additional collateral interest.',
+      'The inverse class owns four times its stated principal balance and therefore receives four times every principal payment.',
+      'The structure guarantees four times the total return whenever the reference index falls.',
+    ],
+    correct: 0,
+  },
   zero_coupon: {
     choices: [
       'A zero-coupon bond and a zero curve are two names for the same instrument.',

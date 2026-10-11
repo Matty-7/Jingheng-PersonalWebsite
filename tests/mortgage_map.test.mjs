@@ -6,6 +6,7 @@ import {
   mortgage_sources,
   learning_path,
 } from '../content/mortgage_concepts.ts';
+import { learning_checks } from '../content/mortgage_checks.ts';
 
 test('every learning node has a unique identity, a visible branch and complete reading links', () => {
   const ids = new Set(mortgage_concepts.map((node) => node.id));
@@ -46,6 +47,78 @@ test('every learning node has a unique identity, a visible branch and complete r
       assert.ok(node.formula.expression && node.formula.assumptions);
   }
   for (const step of learning_path) assert.ok(ids.has(step.id));
+});
+
+test('inverse floater conserves the paired coupon budget and separates coupon leverage from principal', () => {
+  const concept = mortgage_concepts.find(
+    (item) => item.id === 'inverse_floater',
+  );
+  assert.ok(concept);
+  assert.equal(
+    search_concepts('floater inverse pair')[0]?.id,
+    'inverse_floater',
+  );
+  assert.match(
+    concept.summary,
+    /without creating additional collateral interest/i,
+  );
+  assert.match(concept.distinction, /not principal leverage/i);
+  assert.match(concept.distinction, /piecewise/i);
+  assert.ok(mortgage_math.inverse_floater);
+  assert.equal(learning_checks.inverse_floater.correct, 0);
+
+  const parent_balance = 100;
+  const floater_balance = 80;
+  const inverse_balance = 20;
+  const parent_coupon = 0.05;
+  const spread = 0.005;
+  const multiplier = floater_balance / inverse_balance;
+  const intercept =
+    (parent_balance * parent_coupon - floater_balance * spread) /
+    inverse_balance;
+  assert.equal(multiplier, 4);
+  assert.ok(Math.abs(intercept - 0.23) < 1e-12);
+
+  const index = 0.04;
+  const floater_coupon = index + spread;
+  const inverse_coupon = intercept - multiplier * index;
+  const paired_interest =
+    floater_balance * floater_coupon + inverse_balance * inverse_coupon;
+  assert.ok(Math.abs(paired_interest - parent_balance * parent_coupon) < 1e-12);
+
+  const high_index = 0.06;
+  const independently_floored_interest =
+    floater_balance * (high_index + spread) +
+    inverse_balance * Math.max(0, intercept - multiplier * high_index);
+  assert.ok(Math.abs(independently_floored_interest - 5.2) < 1e-12);
+  assert.notEqual(
+    independently_floored_interest,
+    parent_balance * parent_coupon,
+  );
+
+  for (const target of [
+    'floater',
+    'caps_floors',
+    'sofr',
+    'prepayments',
+    'basis_risk',
+    'cmo',
+    'cash_flows',
+    'duration',
+  ]) {
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+    assert.ok(
+      mortgage_relationships.some(
+        (edge) =>
+          (edge.source === 'inverse_floater' && edge.target === target) ||
+          (edge.target === 'inverse_floater' && edge.source === target),
+      ),
+      `missing analytical relationship: ${target}`,
+    );
+  }
 });
 
 test('repo separates settlement agency from central clearing and preserves the MBS funding boundary', () => {
