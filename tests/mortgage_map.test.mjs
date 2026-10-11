@@ -103,6 +103,8 @@ test('inverse floater conserves the paired coupon budget and separates coupon le
     'prepayments',
     'basis_risk',
     'cmo',
+    'cash_flows',
+    'duration',
   ]) {
     assert.ok(
       concept.links.some((link) => link.id === target),

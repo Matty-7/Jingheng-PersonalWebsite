@@ -80,6 +80,30 @@ export const foundational_relationships: SourcedRelationship[] = [
     sources: ['structure', 'agency_remic_guarantee'],
   },
   {
+    id: 'cash_flows__inverse_floater',
+    source: 'cash_flows',
+    target: 'inverse_floater',
+    kind: 'mechanism',
+    label: 'redistributes a parent interest budget',
+    reason:
+      'The paired coupon identity reallocates the same-period parent interest across floater and inverse classes rather than creating additional collateral cash flow.',
+    conditions:
+      'The identity requires the deal’s applicable balances or notionals and accrual conventions; fees, shortfalls and other interest classes can change the distributable amount.',
+    sources: ['structure'],
+  },
+  {
+    id: 'duration__inverse_floater',
+    source: 'duration',
+    target: 'inverse_floater',
+    kind: 'comparison',
+    label: 'separates coupon slope from price duration',
+    reason:
+      'The balance ratio B_F ÷ B_I scales the inverse coupon’s response to its index, not the class price response to a yield-curve shock.',
+    conditions:
+      'Price duration still depends on discounting, caps and floors, prepayment paths, cash-flow timing and model assumptions; a 4× coupon multiplier does not imply 4× duration.',
+    sources: ['structure'],
+  },
+  {
     id: 'cmo__clo',
     source: 'cmo',
     target: 'clo',

@@ -3201,6 +3201,16 @@ const original_concepts: MortgageConcept[] = [
         reason:
           'Places the paired interest allocation inside a multiclass mortgage structure.',
       },
+      {
+        id: 'cash_flows',
+        reason:
+          'Shows that the pair reallocates the parent interest budget rather than creating collateral cash flow.',
+      },
+      {
+        id: 'duration',
+        reason:
+          'Separates the coupon/index multiplier from model-dependent price duration.',
+      },
     ],
     topic: 'cashflow_slices',
     branch: 'structure',
