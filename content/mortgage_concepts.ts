@@ -228,7 +228,7 @@ const original_topics = [
     id: 'cashflow_slices',
     branch: 'structure',
     title: 'Separating payment streams',
-    concepts: ['io_po', 'io', 'po', 'floater'],
+    concepts: ['io_po', 'io', 'po', 'floater', 'inverse_floater'],
   },
   {
     id: 'loss_protection',
@@ -3144,6 +3144,64 @@ const original_concepts: MortgageConcept[] = [
       },
     ],
     aliases: [],
+    topic: 'cashflow_slices',
+    branch: 'structure',
+  },
+  {
+    id: 'inverse_floater',
+    title: 'Inverse floater',
+    subtitle: 'The residual side of a paired coupon split',
+    aliases: [
+      'inverse floating-rate class',
+      'inverse floating rate class',
+      'floater inverse pair',
+    ],
+    summary:
+      'A floater coupon rises with its reference index while a paired inverse-floater coupon falls. In a simplified two-class split, the parent coupon budget is allocated across both balances: concentrating the floater’s index exposure into a smaller inverse balance magnifies the inverse coupon slope without creating additional collateral interest.',
+    distinction:
+      'Coupon leverage is not principal leverage or a guaranteed multiple of total return. The identity conserves stated-period coupon interest, not market value, yield, duration or realized return. Caps and floors make the allocation piecewise; clamping one leg independently can violate the parent interest budget. Actual class formulas, applicable balances or notionals, index observation, reset lag, day count, fees, shortfalls and principal rules come from the transaction documents. Prepayments can shrink future coupon capacity, and the short-rate index need not track mortgage rates or borrower incentives.',
+    formula: {
+      expression:
+        'B_F c_F(L) + B_I c_I(L) = B_P c_P; M = B_F ÷ B_I; c_I(L) = [B_P c_P − B_F(L + s)] ÷ B_I = K − ML',
+      assumptions:
+        'One accrual period with B_P = B_F + B_I. B_P, B_F and B_I are current parent, floater and inverse balances or applicable notionals in the same currency. c_P, c_F, c_I, L, s and K are annual decimal rates; M is dimensionless. Period interest is B × c × α using the same stated accrual fraction α. The parent is fixed-coupon and its interest is split only between these two classes, with no fees, shortfalls, other interest classes or differing accrual conventions. The linear form applies only where no cap or floor binds; use the deal’s piecewise rules otherwise.',
+      example:
+        'Hypothetical annualized amounts: a $100m parent paying 5.00% is split into an $80m floater at L + 0.50% and a $20m inverse. Then M = 4 and K = 23.00%. At L = 4.00%, the floater pays 4.50% × $80m = $3.60m and the inverse pays 7.00% × $20m = $1.40m, totaling the parent’s $5.00m. At L = 6.00%, the unconstrained inverse coupon is −1.00%. Flooring only that coupon at zero while leaving the floater at 6.50% would produce $5.20m, which exceeds the budget. In this simplified pair, a 6.25% floater cap when the inverse reaches zero restores $5.00m. This illustrates allocation, not a market quote, pricing result or forecast.',
+    },
+    question:
+      'Why can a 20% inverse class have a 4× index multiplier when paired with an 80% floater class?',
+    answer:
+      'The floater’s index exposure on 80 of balance is concentrated into 20 of inverse balance, so 80 ÷ 20 = 4. No additional collateral interest is created, and the multiplier does not promise four times the principal exposure or total return.',
+    sources: ['structure'],
+    links: [
+      {
+        id: 'floater',
+        reason: 'Supplies the complementary rising-index coupon leg.',
+      },
+      {
+        id: 'caps_floors',
+        reason: 'Binding limits make the paired coupon allocation piecewise.',
+      },
+      {
+        id: 'sofr',
+        reason:
+          'Can identify the reference-rate family without specifying the full reset convention.',
+      },
+      {
+        id: 'prepayments',
+        reason: 'Balance runoff can reduce future coupon-generating capacity.',
+      },
+      {
+        id: 'basis_risk',
+        reason:
+          'The short-rate index can diverge from mortgage rates and borrower behavior.',
+      },
+      {
+        id: 'cmo',
+        reason:
+          'Places the paired interest allocation inside a multiclass mortgage structure.',
+      },
+    ],
     topic: 'cashflow_slices',
     branch: 'structure',
   },

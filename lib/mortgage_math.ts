@@ -95,6 +95,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'N_t: notional applicable to the accrual period; c_t: annual decimal class coupon; α_t: contractual year fraction; I_t: interest. The notional is not principal owed; use the class-specific allocation and accrual rules.',
     },
+    inverse_floater: {
+      tex: String.raw`\begin{aligned}B_Fc_F(L)+B_Ic_I(L)&=B_Pc_P\\M&=\frac{B_F}{B_I}\\c_I(L)&=\frac{B_Pc_P-B_F(L+s)}{B_I}=K-ML\end{aligned}`,
+      variables:
+        'B_P / B_F / B_I: current parent, floater and inverse balances or applicable notionals in one currency, with B_P = B_F + B_I; c_P / c_F / c_I / L / s / K: annual decimal rates; M: dimensionless multiplier. Period interest is B × c × α under the same accrual fraction. The linear identity excludes fees, shortfalls, other interest classes and binding caps or floors.',
+    },
     futures_curve: {
       tex: String.raw`Q=100-R,\qquad r=\frac{R}{100}`,
       variables:

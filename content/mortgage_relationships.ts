@@ -8,6 +8,78 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'inverse_floater__floater',
+    source: 'inverse_floater',
+    target: 'floater',
+    kind: 'definition',
+    label: 'forms a paired coupon split',
+    reason:
+      'The floater coupon rises with the reference index while the paired inverse coupon falls under the class formulas.',
+    conditions:
+      'Use the same accrual period and the balances or notionals specified by the transaction; actual formulas can include caps, floors and reset lags.',
+    sources: ['structure'],
+  },
+  {
+    id: 'inverse_floater__caps_floors',
+    source: 'inverse_floater',
+    target: 'caps_floors',
+    kind: 'mechanism',
+    label: 'becomes piecewise at coupon limits',
+    reason:
+      'A binding inverse floor or floater cap changes the linear coupon response to the reference index.',
+    conditions:
+      'Do not clamp one leg independently and continue to assume the simplified two-class coupon identity; apply the deal’s paired rules.',
+    sources: ['structure'],
+  },
+  {
+    id: 'sofr__inverse_floater',
+    source: 'sofr',
+    target: 'inverse_floater',
+    kind: 'definition',
+    label: 'can supply the coupon index',
+    reason:
+      'Agency inverse floaters may reference a SOFR-based index whose increase lowers the class coupon under the stated formula.',
+    conditions:
+      'The reference-rate family alone does not specify observation, reset, lookback, spread, multiplier, cap or floor conventions.',
+    sources: ['structure', 'sofr'],
+  },
+  {
+    id: 'prepayments__inverse_floater',
+    source: 'prepayments',
+    target: 'inverse_floater',
+    kind: 'mechanism',
+    label: 'changes future coupon capacity',
+    reason:
+      'Mortgage principal runoff can reduce the balance or notional available to generate later inverse-floater interest.',
+    conditions:
+      'The transaction documents determine how class balances or notionals decline; coupon direction alone does not determine realized yield.',
+    sources: ['structure'],
+  },
+  {
+    id: 'inverse_floater__basis_risk',
+    source: 'inverse_floater',
+    target: 'basis_risk',
+    kind: 'comparison',
+    label: 'links short rates to mortgage behavior imperfectly',
+    reason:
+      'The class index can move differently from mortgage rates, discount curves and the refinancing incentives driving prepayments.',
+    conditions:
+      'A lower mortgage rate can coexist with a higher short-rate index; evaluate both the coupon formula and the mortgage payment path.',
+    sources: ['structure'],
+  },
+  {
+    id: 'cmo__inverse_floater',
+    source: 'cmo',
+    target: 'inverse_floater',
+    kind: 'definition',
+    label: 'reallocates interest across classes',
+    reason:
+      'A multiclass mortgage structure can split a parent interest budget into floater and inverse-floater coupons.',
+    conditions:
+      'Coupon allocation is separate from principal priority, credit subordination, market value and the scope of any Agency guarantee.',
+    sources: ['structure', 'agency_remic_guarantee'],
+  },
+  {
     id: 'cmo__clo',
     source: 'cmo',
     target: 'clo',
