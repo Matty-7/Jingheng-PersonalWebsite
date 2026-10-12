@@ -137,6 +137,56 @@ test('repo separates settlement agency from central clearing and preserves the M
   ]);
 });
 
+test('repo rollover separates funding tenor from asset horizon, rate reset and margining', () => {
+  const concept = mortgage_concepts.find((item) => item.id === 'repo_rollover');
+  assert.ok(concept);
+  assert.equal(concept.topic, 'funding_demand');
+  assert.equal(concept.branch, 'trading');
+  assert.equal(
+    search_concepts('funding rollover risk')[0]?.id,
+    'repo_rollover',
+  );
+  assert.match(concept.summary, /funding maturity/i);
+  assert.match(concept.summary, /planned holding horizon/i);
+  assert.match(concept.summary, /rate-fixing period/i);
+  assert.match(concept.distinction, /30 days/i);
+  assert.match(concept.distinction, /seven-day repo/i);
+  assert.match(concept.distinction, /not the MBS maturity/i);
+  assert.match(concept.distinction, /does not necessarily mean a fixed rate/i);
+  assert.match(concept.distinction, /margin calls/i);
+  assert.equal(learning_checks.repo_rollover.correct, 1);
+
+  for (const target of [
+    'repo',
+    'repo_interest',
+    'haircut',
+    'margin_call',
+    'liquidity',
+  ]) {
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+    const edge = mortgage_relationships.find(
+      (item) =>
+        (item.source === 'repo_rollover' && item.target === target) ||
+        (item.target === 'repo_rollover' && item.source === target),
+    );
+    assert.ok(edge, `missing analytical relationship: ${target}`);
+    assert.ok(edge.conditions, `${edge.id}: missing conditions`);
+    assert.ok(edge.sources?.length, `${edge.id}: missing sources`);
+  }
+
+  for (const source of [
+    'repo_tenor_public',
+    'repo_rollover_public',
+    'repo_open_public',
+  ]) {
+    assert.ok(concept.sources.includes(source));
+    assert.equal(new URL(mortgage_sources[source].url).protocol, 'https:');
+  }
+});
+
 test('the knowledge graph has no disconnected cluster, including cross-branch learning connections', () => {
   const seen = new Set();
   const pending = [mortgage_concepts[0].id];

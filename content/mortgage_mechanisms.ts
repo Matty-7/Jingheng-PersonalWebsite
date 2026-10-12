@@ -78,6 +78,22 @@ export const mechanism_sources = {
     title: 'Follow the Cash! Microstructure of Repo Markets · September 2026',
     url: 'https://libertystreeteconomics.newyorkfed.org/2026/09/follow-the-cash-microstructure-of-repo-markets/',
   },
+  repo_tenor_public: {
+    publisher: 'Office of Financial Research',
+    title:
+      'Short-Term Funding Monitor · Tri-party repo transaction volume by tenor',
+    url: 'https://www.financialresearch.gov/short-term-funding-monitor/market-digests/tenor/chart-25/',
+  },
+  repo_rollover_public: {
+    publisher: 'Federal Reserve Board',
+    title: 'Financial Stability Report · Funding Risks · April 2025',
+    url: 'https://www.federalreserve.gov/publications/April-2025-financial-stability-report-Funding-Risks.htm',
+  },
+  repo_open_public: {
+    publisher: 'International Capital Market Association',
+    title: 'What is an open repo?',
+    url: 'https://www.icmagroup.org/market-practice-and-regulatory-policy/repo-and-collateral-markets/icma-ercc-publications/frequently-asked-questions-on-repo/12-what-is-an-open-repo/',
+  },
   return_public: {
     publisher: 'FINRA',
     title: 'Understanding bond yield and return',
@@ -166,7 +182,7 @@ export const mechanism_topics = [
     id: 'funding_demand',
     branch: 'trading',
     title: 'Funding and investor demand',
-    concepts: ['repo', 'haircut', 'supply_demand'],
+    concepts: ['repo', 'repo_rollover', 'haircut', 'supply_demand'],
   },
   {
     id: 'return_components',
@@ -552,6 +568,11 @@ const entries: Entry[] = [
         reason:
           'SOFR measures overnight Treasury repo financing, not every MBS borrower’s funding rate.',
       },
+      {
+        id: 'repo_rollover',
+        reason:
+          'A financed holding can outlast the current repo and require renewed or replacement funding.',
+      },
     ],
     sources: [
       'repo_public',
@@ -562,6 +583,58 @@ const entries: Entry[] = [
       'Does using a tri-party agent mean that the agent becomes the repo’s central counterparty?',
     answer:
       'No. The agent can handle settlement and collateral management while the buyer and seller remain each other’s counterparties.',
+  },
+  {
+    id: 'repo_rollover',
+    title: 'Repo tenor & rollover risk',
+    subtitle: 'Funding beyond the next maturity',
+    aliases: [
+      'repo tenor',
+      'repo rollover',
+      'funding rollover risk',
+      'term repo',
+    ],
+    summary:
+      'Repo tenor is the time until the current financing matures. Keep three clocks separate: funding maturity says when cash must be repaid or renewed, the planned holding horizon says how long the investor expects to keep the MBS, and the rate-fixing period says when the financing rate can reset. An open repo can continue day to day until terminated, so its rate-setting rule and its legal maturity arrangement still need to be read separately.',
+    distinction:
+      'Suppose an investor plans to hold an MBS for 30 days but finances it with a seven-day repo. On day 7 the investor must renew, find alternative funding or use its own cash; day 30 is only the planned holding horizon, not the MBS maturity. The renewal rate, amount and availability are not guaranteed by timely MBS payments or an Agency guarantee. Longer tenor can reduce the number of planned rollovers, but it does not necessarily mean a fixed rate, lower total cost or freedom from margin calls.',
+    links: [
+      {
+        id: 'repo',
+        reason:
+          'The repo contract defines the current cash financing, collateral and maturity terms.',
+      },
+      {
+        id: 'repo_interest',
+        reason:
+          'Interest accrues on the agreed cash balance under the stated rate and day-count terms for each funding period.',
+      },
+      {
+        id: 'haircut',
+        reason:
+          'The haircut determines the initial cash advanced but does not promise renewal at the same amount.',
+      },
+      {
+        id: 'margin_call',
+        reason:
+          'Mark-to-market collateral calls can occur before the repo matures or is renewed.',
+      },
+      {
+        id: 'liquidity',
+        reason:
+          'A borrower unable to renew may need cash, replacement financing or an asset sale.',
+      },
+    ],
+    sources: [
+      'repo_tenor_public',
+      'repo_rollover_public',
+      'repo_open_public',
+      'repo_public',
+    ],
+    question:
+      'Does receiving the MBS’s payments on time guarantee renewal of its seven-day repo?',
+    answer:
+      'No. Renewal availability, amount and rate can change independently of the MBS’s payment performance.',
   },
   {
     id: 'haircut',

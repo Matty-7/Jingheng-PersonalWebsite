@@ -136,6 +136,14 @@ export const learning_checks: Record<
     ],
     correct: 2,
   },
+  repo_rollover: {
+    choices: [
+      'Yes. Timely MBS payments require the cash lender to renew the repo on unchanged terms.',
+      'No. Renewal availability, amount and rate can change independently of the MBS’s payment performance.',
+      'Yes. Accruing repo interest automatically extends the financing through the planned holding horizon.',
+    ],
+    correct: 1,
+  },
   yield_to_worst: {
     choices: [
       'No. YTW is a conditional redemption comparison, not a guaranteed realized return.',
