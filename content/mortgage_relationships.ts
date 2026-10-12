@@ -8,6 +8,66 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'repo__repo_rollover',
+    source: 'repo',
+    target: 'repo_rollover',
+    kind: 'definition',
+    label: 'sets the next funding maturity',
+    reason:
+      'The current repo specifies when its cash financing matures, while a longer MBS holding may require renewal or replacement funding.',
+    conditions:
+      'Read fixed-term and open-repo provisions directly; neither collateral performance nor the planned holding horizon extends the current financing automatically.',
+    sources: ['repo_public', 'repo_tenor_public', 'repo_open_public'],
+  },
+  {
+    id: 'repo_interest__repo_rollover',
+    source: 'repo_interest',
+    target: 'repo_rollover',
+    kind: 'comparison',
+    label: 'separates accrual from renewal',
+    reason:
+      'Interest measures the cost accrued on the current cash financing, whereas rollover asks whether and on what terms the next funding period is available.',
+    conditions:
+      'Apply the contract’s cash balance, rate and day-count convention to the current period; that calculation does not create a future lending commitment.',
+    sources: ['repo_public', 'repo_rollover_public'],
+  },
+  {
+    id: 'repo_rollover__haircut',
+    source: 'repo_rollover',
+    target: 'haircut',
+    kind: 'mechanism',
+    label: 'can change cash advanced',
+    reason:
+      'A replacement or renewed repo can carry a different haircut, changing the cash that the same collateral can support.',
+    conditions:
+      'The original haircut governs the current trade only; future terms depend on the new agreement, collateral valuation and lender willingness.',
+    sources: ['repo_public', 'repo_rollover_public'],
+  },
+  {
+    id: 'repo_rollover__margin_call',
+    source: 'repo_rollover',
+    target: 'margin_call',
+    kind: 'comparison',
+    label: 'differs from interim margining',
+    reason:
+      'Rollover concerns financing after the current maturity, while a margin call can require cash or collateral during the current repo term.',
+    conditions:
+      'Longer tenor may reduce planned renewal frequency but does not suspend the agreement’s mark-to-market and margin provisions.',
+    sources: ['repo_public', 'repo_tenor_public'],
+  },
+  {
+    id: 'repo_rollover__liquidity',
+    source: 'repo_rollover',
+    target: 'liquidity',
+    kind: 'mechanism',
+    label: 'can force a funding response',
+    reason:
+      'If financing is unavailable at maturity, the holder may need cash, replacement funding or an asset sale even while the MBS continues to pay.',
+    conditions:
+      'The outcome depends on available reserves, alternative lenders, collateral terms and market depth; forced sale is a possible response, not an automatic forecast.',
+    sources: ['repo_tenor_public', 'repo_rollover_public'],
+  },
+  {
     id: 'inverse_floater__floater',
     source: 'inverse_floater',
     target: 'floater',
