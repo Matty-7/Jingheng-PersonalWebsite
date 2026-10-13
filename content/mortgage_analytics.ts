@@ -68,6 +68,24 @@ export const analytics_sources = {
     title: 'Glossary · defeasance and distribution dates',
     url: 'https://www.crefc.org/cre/cre/content/learn/Glossary/CREFC_Glossary.aspx?GlossaryTabs=4',
   },
+  stacr_structure: {
+    publisher: 'Freddie Mac',
+    title:
+      'STACR securities overview · senior/subordinate structure and principal allocation',
+    url: 'https://capitalmarkets.freddiemac.com/crt/securities',
+  },
+  stacr_deleveraging: {
+    publisher: 'Freddie Mac',
+    title:
+      'Repurchase of STACR Notes · deleveraging and changing credit enhancement',
+    url: 'https://capitalmarkets.freddiemac.com/crt/resources/backgrounders/repurchase-stacr-notes',
+  },
+  stacr_loss_allocation: {
+    publisher: 'Freddie Mac',
+    title:
+      'STACR 2018-HQA2 Private Placement Memorandum · tranche write-down allocation and timing, pp. 40–41 and 95–97',
+    url: 'https://capitalmarkets.freddiemac.com/crt/docs/legal-documents/stacr/stacr-2018-hqa2/stacr_2018-hqa2_ppm.pdf',
+  },
 };
 
 export const analytics_topics = [
