@@ -94,3 +94,20 @@ test('empirical duration states its regression convention and sample-dependent b
     analytics_paths.every((path) => !path.steps.includes('empirical_duration')),
   );
 });
+
+test('subordination keeps current support separate from conditional breakeven', () => {
+  const concept = search_concepts('subordination')[0];
+  assert.equal(concept?.id, 'subordination');
+  assert.match(concept.summary, /reporting date/);
+  assert.match(concept.summary, /protected class/);
+  assert.match(concept.distinction, /\$94 million senior/);
+  assert.match(concept.distinction, /about 6\.67% on \$90 million/);
+  assert.match(concept.distinction, /dollar cushion remains \$6 million/);
+  assert.match(concept.distinction, /not a universal RMBS or STACR rule/);
+  assert.match(concept.answer, /first-dollar principal-loss breakeven/);
+  assert.match(concept.answer, /default path and CDR convention/);
+  assert.match(concept.answer, /not a price, yield, IRR breakeven or forecast/);
+  assert.ok(concept.links.some((link) => link.id === 'recovery_lag'));
+  assert.equal(learning_checks.subordination.correct, 0);
+  assert.match(learning_checks.subordination.choices[0], /remains \$6 million/);
+});

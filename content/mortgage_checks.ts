@@ -1594,9 +1594,9 @@ export const learning_checks: Record<
   },
   subordination: {
     choices: [
-      'More senior classes may face losses under the loss waterfall.',
-      'The depleted cushion continues absorbing losses without exposing senior classes.',
-      'Excess losses disappear because the original cushion set a limit on total losses.',
+      'The percentage increased because current total principal fell; the junior cushion remains $6 million.',
+      'The structure added $0.67 million of junior protection when senior principal paid down.',
+      'The new percentage directly establishes a 6.67% breakeven CDR for the senior class.',
     ],
     correct: 0,
   },

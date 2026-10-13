@@ -3218,14 +3218,22 @@ const original_concepts: MortgageConcept[] = [
   {
     id: 'subordination',
     title: 'Subordination',
-    subtitle: 'Junior claims absorb losses first',
+    subtitle: 'A dated, class-specific loss cushion',
     summary:
-      'A senior-subordinate structure allocates specified losses to junior classes before more senior classes, under its governing rules.',
-    distinction: 'A finite junior cushion can be exhausted.',
-    question: 'What happens when losses exceed the available cushion?',
+      'A senior-subordinate structure allocates specified losses to junior classes before a named protected class, under its governing rules. Quote support with its reporting date, protected class, junior balances included in the numerator and current balance used in the denominator; subordination is only one possible form of credit enhancement.',
+    distinction:
+      'The percentage is a snapshot, not a permanent shield. In a hypothetical two-class structure, $94 million senior plus $6 million junior means 6% junior subordination on $100 million current principal. If there are no losses or other enhancement and a $10 million principal payment goes entirely to senior, the next snapshot is $84 million senior plus $6 million junior: about 6.67% on $90 million, while the dollar cushion remains $6 million. This senior-only allocation is an explicit toy assumption, not a universal RMBS or STACR rule. Principal allocation, losses and contractual triggers can change support; a higher percentage alone does not prove lower collateral risk.',
+    question:
+      'In that example, what does the move from 6% to about 6.67% establish?',
     answer:
-      'More senior classes may become exposed according to the loss waterfall.',
-    sources: ['guide', 'investor'],
+      'Only that the stated percentage rose because current total principal fell while the junior cushion stayed at $6 million. It did not add protection dollars or establish a 6.67% breakeven CDR. A first-dollar principal-loss breakeven is a conditional threshold that also requires a horizon, default path and CDR convention, severity, recovery lag, prepayments and the applicable waterfall. It is not a price, yield, IRR breakeven or forecast.',
+    sources: [
+      'guide',
+      'investor',
+      'stacr_structure',
+      'stacr_deleveraging',
+      'stacr_loss_allocation',
+    ],
     links: [
       {
         id: 'severity',
@@ -3234,6 +3242,11 @@ const original_concepts: MortgageConcept[] = [
       {
         id: 'waterfall',
         reason: 'Contractual rules determine loss and payment allocation.',
+      },
+      {
+        id: 'recovery_lag',
+        reason:
+          'A conditional loss threshold depends on when recoveries become available.',
       },
     ],
     aliases: [],
