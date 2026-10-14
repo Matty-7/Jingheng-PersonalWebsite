@@ -538,9 +538,9 @@ export const learning_checks: Record<
   },
   appraisal_reduction: {
     choices: [
-      'No. Certificate interest cannot change until a loan loss is formally realized.',
-      'Yes. Appraisal-based advancing rules may affect distributions before loss realization.',
-      'Yes. An appraisal reduction automatically raises the loan’s contractual interest rate.',
+      'It immediately writes down loan principal by the full ARA and produces an equal certificate interest shortfall.',
+      'It can reduce required interest advances and notionally reduce balances used in specified control tests, subject to the agreement.',
+      'It automatically transfers control to the next class whenever an appraisal is reduced.',
     ],
     correct: 1,
   },
