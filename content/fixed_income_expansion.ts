@@ -89,6 +89,12 @@ export const expansion_sources = {
     title: 'Glossary · advances and appraisal reductions',
     url: 'https://www.crefc.org/cre/content/learn/Glossary/CREFC_Glossary.aspx?GlossaryTabs=1&WebsiteKey=105b6c32-4dc8-4e9f-8ba4-8b92bdce1c9e&hkey=73766de8-5900-480d-a0f3-b4e75bd3ed84',
   },
+  benchmark_2026_v22_ara: {
+    publisher: 'SEC',
+    title:
+      'Benchmark 2026-V22 Term Sheet · appraisal reductions, advances and control tests',
+    url: 'https://www.sec.gov/Archives/edgar/data/1258361/000153949726001308/n5868_x5-ts.htm',
+  },
 };
 
 export const expansion_topics = [
@@ -988,25 +994,30 @@ export const expansion_concepts: MortgageConcept[] = [
     subtitle: 'An appraisal-based adjustment before final liquidation',
     aliases: ['ARA', 'appraisal reduction amount'],
     summary:
-      'A CMBS agreement may use an updated appraisal and specified deductions to calculate an appraisal reduction amount. It can reduce required interest advancing before a loan is finally resolved.',
+      'After a deal-defined appraisal trigger, a CMBS agreement may calculate an appraisal reduction amount from loan principal, specified overdue or advanced amounts, appraisal-based value and applicable adjustments, escrows or reserves. The result is a contract-defined non-negative excess amount, not simply loan balance minus property value.',
     distinction:
-      'An appraisal reduction is not automatically an equal realized principal write-down. Trigger, formula, allocation and reversal mechanics are transaction-specific.',
-    question:
-      'Can certificate interest be affected before a realized loan loss is booked?',
+      'Keep three layers separate. The ARA is the calculated amount. It can reduce the interest portion of required P&I advances and thereby affect certificate interest, but neither the advance reduction nor the downstream interest shortfall must equal the full ARA. The agreement may also allocate ARA as notional class-balance reductions for specified Controlling Class, control-termination or voting tests. Those test balances are not actual principal write-downs, and an allocation does not by itself prove a realized loss or automatic transfer of control. Inputs, appraisal percentages, allocation and reversal rules are deal-specific; for example, the 90% appraisal factor in Benchmark 2026-V22 is not a universal CMBS convention.',
+    question: 'What can an ARA affect before a realized principal loss?',
     answer:
-      'Yes. Appraisal-based advancing rules can change cash distributions earlier.',
+      'Subject to the agreement, it can reduce required interest advances and notionally reduce class balances used in specified control tests. That does not guarantee an equal current-period interest shortfall, an actual principal write-down or an automatic control transfer.',
     links: [
       {
         id: 'servicing_advances',
-        reason: 'Appraisal adjustments may limit advances.',
+        reason:
+          'The agreement can use the ARA to reduce the interest portion of required P&I advances.',
       },
       {
         id: 'severity',
         reason:
           'Estimated collateral shortfall is distinct from realized severity.',
       },
+      {
+        id: 'special_servicing',
+        reason:
+          'Appraisal triggers, servicing authority and control tests remain separate contractual questions.',
+      },
     ],
-    sources: ['crefc_advances'],
+    sources: ['crefc_advances', 'benchmark_2026_v22_ara'],
   }),
   entry({
     id: 'loan_modification',

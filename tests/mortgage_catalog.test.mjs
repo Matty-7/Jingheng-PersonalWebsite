@@ -4,6 +4,7 @@ import {
   expansion_concepts,
   expansion_paths,
 } from '../content/fixed_income_expansion.ts';
+import { learning_checks } from '../content/mortgage_checks.ts';
 import {
   mortgage_branches,
   mortgage_topics,
@@ -67,4 +68,28 @@ test('new paths have authored step explanations, boundaries and complete public-
       ),
     );
   }
+});
+
+test('appraisal reduction separates amount, advance and control-test effects', () => {
+  const concept = expansion_concepts.find(
+    (node) => node.id === 'appraisal_reduction',
+  );
+  assert.ok(concept);
+  assert.match(concept.summary, /overdue or advanced amounts/);
+  assert.match(concept.summary, /escrows or reserves/);
+  assert.match(concept.distinction, /three layers separate/);
+  assert.match(
+    concept.distinction,
+    /interest portion of required P&I advances/,
+  );
+  assert.match(concept.distinction, /notional class-balance reductions/);
+  assert.match(concept.distinction, /not actual principal write-downs/);
+  assert.match(concept.distinction, /not a universal CMBS convention/);
+  assert.ok(concept.sources.includes('benchmark_2026_v22_ara'));
+  assert.ok(concept.links.some((link) => link.id === 'special_servicing'));
+  assert.equal(learning_checks.appraisal_reduction.correct, 1);
+  assert.match(
+    learning_checks.appraisal_reduction.choices[1],
+    /notionally reduce balances used in specified control tests/,
+  );
 });
