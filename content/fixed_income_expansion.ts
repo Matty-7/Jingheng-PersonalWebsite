@@ -95,6 +95,12 @@ export const expansion_sources = {
       'Benchmark 2026-V22 Term Sheet · appraisal reductions, advances and control tests',
     url: 'https://www.sec.gov/Archives/edgar/data/1258361/000153949726001308/n5868_x5-ts.htm',
   },
+  trtx_2025_fl6_future_funding: {
+    publisher: 'SEC',
+    title:
+      'TRTX 2025-FL6 Servicing Agreement · future-funding definitions and §3.26 estimates',
+    url: 'https://www.sec.gov/Archives/edgar/data/1630472/000119312525070927/d943540dex105.htm',
+  },
 };
 
 export const expansion_topics = [
@@ -174,7 +180,7 @@ export const expansion_topics = [
     id: 'transitional_property',
     branch: 'products',
     title: 'Transitional property debt',
-    concepts: ['cre_clo'],
+    concepts: ['cre_clo', 'future_funding_obligation'],
   },
   {
     id: 'mortgage_economics',
@@ -928,8 +934,45 @@ export const expansion_concepts: MortgageConcept[] = [
         reason:
           'Borrower caps and their expiry affect debt-service protection.',
       },
+      {
+        id: 'future_funding_obligation',
+        reason:
+          'Transitional loans can carry later lender advances for the property business plan.',
+      },
     ],
     sources: ['crefc_c', 'cre'],
+  }),
+  entry({
+    id: 'future_funding_obligation',
+    title: 'Future funding obligation',
+    subtitle: 'An unfunded commitment is not current loan principal',
+    aliases: ['future advance obligation', 'unfunded commitment'],
+    summary:
+      'A transitional CRE loan can require later lender advances for documented business-plan items when contractual conditions are met. The unadvanced obligation is separate from current funded collateral principal. Loan documents and transaction agreements identify the responsible holder and any reserve, pledged collateral or other liquidity supporting that duty.',
+    distinction:
+      'Do not add outstanding future funding to current principal as though it has already been advanced. A reserve or certified liquidity supporting the obligation is not automatically unrestricted cash available to absorb certificate losses. Amount, timing, draw conditions, exclusions, responsible party, amendments and support mechanics are contract-specific. Future funding fulfills a lender obligation on an underlying loan; collateral reinvestment acquires or replaces assets, while a servicing advance bridges agreement-defined collection or property-protection needs.',
+    question:
+      'When a CRE CLO reports outstanding future funding, is it already collateral principal or unrestricted cash for noteholders?',
+    answer:
+      'No. It is an unfunded lender obligation. Read the draw conditions, timing, responsible holder and liquidity support in the governing documents; funded principal changes only when an advance is actually made.',
+    links: [
+      {
+        id: 'cre_clo',
+        reason:
+          'Transitional collateral can carry later lender advances for the property business plan.',
+      },
+      {
+        id: 'liquidity',
+        reason:
+          'The obligation creates a contract-defined funding-capacity question.',
+      },
+      {
+        id: 'cash_flows',
+        reason:
+          'Only a funded advance can become funded loan exposure and alter collateral cash flows.',
+      },
+    ],
+    sources: ['trtx_2025_fl6_future_funding'],
   }),
   entry({
     id: 'special_servicing',
@@ -1705,6 +1748,24 @@ export const expansion_relationships: MortgageRelationship[] = [
     'mechanism',
     ['crefc_c', 'cre'],
     'Read actual collateral, future funding and reinvestment provisions.',
+  ),
+  relation(
+    'future_funding_obligation',
+    'cre_clo',
+    'supports the property business plan',
+    'A future advance can fund documented transitional-property work when the loan conditions are satisfied.',
+    'mechanism',
+    ['trtx_2025_fl6_future_funding'],
+    'The responsible holder, eligible uses, conditions and advance timing come from the governing agreements.',
+  ),
+  relation(
+    'future_funding_obligation',
+    'liquidity',
+    'requires contract-defined funding support',
+    'An unfunded lender obligation raises a separate question about the liquidity available to make eligible advances.',
+    'mechanism',
+    ['trtx_2025_fl6_future_funding'],
+    'Reserve, pledged-collateral, estimate and segregation rules are transaction-specific.',
   ),
   relation(
     'special_servicing',
