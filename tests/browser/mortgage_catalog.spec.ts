@@ -62,7 +62,7 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     );
     await page.getByText('Why it matters', { exact: true }).press('Enter');
     const depth = page.locator('.learning-depth');
-    await expect(depth).toContainText(
+    await expect(page.locator('.learning-summary')).toContainText(
       'separate from current funded collateral principal',
     );
     await expect(depth).toContainText('not automatically unrestricted cash');
