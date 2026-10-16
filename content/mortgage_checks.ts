@@ -520,6 +520,14 @@ export const learning_checks: Record<
     ],
     correct: 1,
   },
+  future_funding_obligation: {
+    choices: [
+      'Yes. The full unfunded amount is already included in current collateral principal.',
+      'No. It is an unfunded lender obligation; draw conditions, timing and liquidity support come from the governing documents.',
+      'Yes. Any reserve supporting the obligation is unrestricted cash available to absorb certificate losses.',
+    ],
+    correct: 1,
+  },
   special_servicing: {
     choices: [
       'Yes. The special-servicing rate measures principal already lost after recovery.',

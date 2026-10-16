@@ -93,3 +93,43 @@ test('appraisal reduction separates amount, advance and control-test effects', (
     /notionally reduce balances used in specified control tests/,
   );
 });
+
+test('future funding separates an unfunded lender duty from funded collateral principal', () => {
+  const concept = expansion_concepts.find(
+    (node) => node.id === 'future_funding_obligation',
+  );
+  assert.ok(concept);
+  assert.equal(concept.topic, 'transitional_property');
+  assert.equal(
+    search_concepts('future advance obligation')[0]?.id,
+    'future_funding_obligation',
+  );
+  assert.match(
+    concept.summary,
+    /separate from current funded collateral principal/,
+  );
+  assert.match(concept.distinction, /not automatically unrestricted cash/);
+  assert.match(concept.distinction, /contract-specific/);
+  assert.deepEqual(
+    concept.links.map((link) => link.id),
+    ['cre_clo', 'liquidity', 'cash_flows'],
+  );
+  assert.deepEqual(concept.sources, ['trtx_2025_fl6_future_funding']);
+  const cre_clo = expansion_concepts.find((node) => node.id === 'cre_clo');
+  assert.ok(
+    cre_clo.links.some((link) => link.id === 'future_funding_obligation'),
+  );
+  for (const target of ['cre_clo', 'liquidity'])
+    assert.ok(
+      mortgage_relationships.some(
+        (edge) =>
+          edge.source === 'future_funding_obligation' && edge.target === target,
+      ),
+      target,
+    );
+  assert.equal(learning_checks.future_funding_obligation.correct, 1);
+  assert.match(
+    learning_checks.future_funding_obligation.choices[1],
+    /unfunded lender obligation/,
+  );
+});

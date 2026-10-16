@@ -45,6 +45,56 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
 }
 
 for (const reduced_motion of ['no-preference', 'reduce'] as const) {
+  test(`future funding remains distinct from funded principal (${reduced_motion})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: reduced_motion });
+    await page.setViewportSize(
+      reduced_motion === 'reduce'
+        ? { width: 390, height: 844 }
+        : { width: 1280, height: 900 },
+    );
+    await page.goto(
+      '/portfolio/mortgage-map?concept=future_funding_obligation#concept=future_funding_obligation',
+    );
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Future funding obligation',
+    );
+    await page.getByText('Why it matters', { exact: true }).press('Enter');
+    const depth = page.locator('.learning-depth');
+    await expect(depth).toContainText(
+      'separate from current funded collateral principal',
+    );
+    await expect(depth).toContainText('not automatically unrestricted cash');
+    const choices = page.getByRole('group', { name: 'Choose an answer' });
+    await choices
+      .getByRole('button', { name: /^Yes\. The full unfunded amount/ })
+      .click();
+    await expect(page.locator('.learning-answer')).toContainText('Not quite');
+    await choices
+      .getByRole('button', {
+        name: /^No\. It is an unfunded lender obligation/,
+      })
+      .press('Enter');
+    await expect(page.locator('.learning-answer')).toContainText(
+      'That’s right',
+    );
+    await depth.getByRole('button', { name: 'CRE CLO', exact: true }).click();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('CRE CLO');
+    await page.goBack();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Future funding obligation',
+    );
+    const overflow = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(false);
+  });
+}
+
+for (const reduced_motion of ['no-preference', 'reduce'] as const) {
   test(`hybrid ARM keeps the reference rate distinct from the capped reset (${reduced_motion})`, async ({
     page,
   }) => {
