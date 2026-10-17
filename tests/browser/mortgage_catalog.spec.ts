@@ -11,7 +11,10 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
         : { width: 1280, height: 900 },
     );
     await page.goto('/portfolio/mortgage-map');
-    const search = page.getByRole('searchbox');
+    await page.getByRole('button', { name: 'Search concepts' }).click();
+    const search = page.getByRole('searchbox', {
+      name: 'Search mortgage concepts',
+    });
     await search.fill('TBA proxy');
     await search.press('Enter');
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(
