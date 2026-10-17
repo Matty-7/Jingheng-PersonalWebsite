@@ -8,6 +8,54 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'tba__tba_analytics_mapping',
+    source: 'tba',
+    target: 'tba_analytics_mapping',
+    kind: 'definition',
+    label: 'requires a proxy for pre-allocation analytics',
+    reason:
+      'The generic contract does not identify the final pools at trade time, so analytics before allocation require stated representative collateral assumptions.',
+    conditions:
+      'The proxy is an analytical choice, not a TBA contract term, allocation notice or representation of the pools ultimately delivered.',
+    sources: ['tba', 'tba_analytics_public'],
+  },
+  {
+    id: 'pool_averages__tba_analytics_mapping',
+    source: 'pool_averages',
+    target: 'tba_analytics_mapping',
+    kind: 'measurement',
+    label: 'summarizes proxy collateral',
+    reason:
+      'WALA and weighted-average loan balance can describe the representative collateral supplied to generic TBA analytics.',
+    conditions:
+      'State the population and weighting. Weighted-average loan balance is a collateral statistic, not the TBA trade notional or aggregate pool principal.',
+    sources: ['fannie_mbs_basics', 'tba_analytics_public'],
+  },
+  {
+    id: 'tba_analytics_mapping__oas',
+    source: 'tba_analytics_mapping',
+    target: 'oas',
+    kind: 'mechanism',
+    label: 'conditions the fitted spread',
+    reason:
+      'Different proxy collateral can change projected payments and therefore the OAS re-solved to the same observed price.',
+    conditions:
+      'Align the contract, price basis, as-of, settlement, curve, volatility, prepayment-model method and parameters, and valuation convention; do not also hold projected cash flows or the cross-proxy OAS fixed.',
+    sources: ['tba_analytics_public', 'tba'],
+  },
+  {
+    id: 'tba_analytics_mapping__duration',
+    source: 'tba_analytics_mapping',
+    target: 'duration',
+    kind: 'mechanism',
+    label: 'conditions the rate sensitivity',
+    reason:
+      'Different proxy collateral can change how projected payments respond to curve shocks and therefore change option-adjusted duration.',
+    conditions:
+      "Use the same shock convention and model settings; within each run, hold that run's base OAS fixed across its curve shocks. The sign and size of the change are not predetermined.",
+    sources: ['tba_analytics_public', 'tba'],
+  },
+  {
     id: 'repo__repo_rollover',
     source: 'repo',
     target: 'repo_rollover',
