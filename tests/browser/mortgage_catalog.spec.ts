@@ -180,14 +180,14 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     );
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(
       'Fixed rate & ARM',
-   );
+    );
     await page.getByText('Why it matters', { exact: true }).press('Enter');
     const depth = page.locator('.learning-depth');
     await expect(page.locator('.learning-summary')).toContainText('5/1 ARM');
     await expect(depth.locator('.learning-formula')).toContainText(
       'fully indexed rate',
     );
-    await expect(depth).toContainText('first reset to at most 5');
+    await expect(depth).toContainText('first reset to at most 5%');
     const choices = page.getByRole('group', { name: 'Choose an answer' });
     await choices
       .getByRole('button', { name: /^The note rate must become 6%/ })
@@ -202,7 +202,7 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     await depth
       .getByRole('button', { name: 'Caps and floors', exact: true })
       .click();
-    await expect(page.getByRole('heading, { level: 2 })).toHaveText(
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
       'Caps and floors',
     );
     await page.goBack();
@@ -212,7 +212,7 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     await page.reload();
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(
       'Fixed rate & ARM',
-   );
+    );
     const overflow = await page.evaluate(
       () =>
         document.documentElement.scrollWidth >
@@ -245,7 +245,7 @@ test('all domains and concepts remain available through one catalog', async ({
   await search.fill('IRS');
   await search.press('Enter');
   await expect(dialog).toHaveCount(0);
-  await expect(page.getByRole('heading, { level: 2 })).toHaveText(
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Interest-rate swap',
   );
   await page.getByRole('button', { name: 'Search concepts' }).click();
@@ -267,7 +267,7 @@ test('existing cross-domain routes can become the active study path', async ({
 }) => {
   await page.goto('/portfolio/mortgage-map#concept=lock_in');
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-   'Mortgage lock-in',
+    'Mortgage lock-in',
   );
   await page.getByText('Why it matters', { exact: true }).click();
   await expect(page.locator('.learning-formula')).toContainText('+400 bp');
@@ -283,20 +283,21 @@ test('existing cross-domain routes can become the active study path', async ({
     'From mortgage lock-in to MBS rate risk',
   );
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-   'Mortgage lock-in',
+    'Mortgage lock-in',
   );
-  await page.getByRole('navigation', { name: 'Local learning tree' })
+  await page
+    .getByRole('navigation', { name: 'Local learning tree' })
     .getByRole('button', { name: 'Housing turnover', exact: true })
     .click();
-  await expect(page.getByRole('heading, { level: 2 })).toHaveText(
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Housing turnover',
-   );
+  );
   await expect(
     page.getByRole('button', { name: 'Back to your learning path' }),
   ).toHaveCount(0);
   await page.reload();
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-   'Housing turnover',
+    'Housing turnover',
   );
   await expect(page.locator('.learning-route-header')).toContainText(
     'From mortgage lock-in to MBS rate risk',
