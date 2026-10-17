@@ -16,10 +16,21 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
       name: 'Search mortgage concepts',
     });
     await search.fill('TBA proxy');
+    const dialog = page.getByRole('dialog');
+    await expect(
+      dialog.getByRole('button', {
+        name: 'TBA analytics & collateral proxies',
+        exact: true,
+      }),
+    ).toBeVisible();
     await search.press('Enter');
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-      'TBA analytics & collateral proxies',
-    );
+    await expect(dialog).toHaveCount(0);
+    const lesson_heading = page.getByRole('heading', {
+      level: 2,
+      name: 'TBA analytics & collateral proxies',
+      exact: true,
+    });
+    await expect(lesson_heading).toBeVisible();
     await page.getByText('Why it matters', { exact: true }).press('Enter');
     const depth = page.locator('.learning-depth');
     await expect(page.locator('.learning-summary')).toContainText(
@@ -39,19 +50,23 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     await expect(page.locator('.learning-answer')).toContainText(
       'That’s right',
     );
-    await depth.getByRole('button', { name: 'OAS', exact: true }).click();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText('OAS');
+    await depth
+      .getByRole('button', { name: 'Option-adjusted spread', exact: true })
+      .click();
+    await expect(
+      page.getByRole('heading', {
+        level: 2,
+        name: 'Option-adjusted spread',
+        exact: true,
+      }),
+    ).toBeVisible();
     await page.goBack();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-      'TBA analytics & collateral proxies',
-    );
+    await expect(lesson_heading).toBeVisible();
     await page.goto(
       '/portfolio/mortgage-map?concept=tba_analytics_mapping#concept=tba_analytics_mapping',
     );
     await page.reload();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-      'TBA analytics & collateral proxies',
-    );
+    await expect(lesson_heading).toBeVisible();
     const overflow = await page.evaluate(
       () =>
         document.documentElement.scrollWidth >
