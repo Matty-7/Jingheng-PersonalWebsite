@@ -1,6 +1,81 @@
 import { test, expect } from '@playwright/test';
 
 for (const reduced_motion of ['no-preference', 'reduce'] as const) {
+  test(`TBA proxy separates mapping changes from market moves (${reduced_motion})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: reduced_motion });
+    await page.setViewportSize(
+      reduced_motion === 'reduce'
+        ? { width: 390, height: 844 }
+        : { width: 1280, height: 900 },
+    );
+    await page.goto('/portfolio/mortgage-map');
+    await page.getByRole('button', { name: 'Search concepts' }).click();
+    const search = page.getByRole('searchbox', {
+      name: 'Search mortgage concepts',
+    });
+    await search.fill('TBA proxy');
+    const dialog = page.getByRole('dialog');
+    await expect(
+      dialog.getByRole('button', {
+        name: /^TBA analytics & collateral proxies/,
+      }),
+    ).toBeVisible();
+    await search.press('Enter');
+    await expect(dialog).toHaveCount(0);
+    const lesson_heading = page.getByRole('heading', {
+      level: 2,
+      name: 'TBA analytics & collateral proxies',
+      exact: true,
+    });
+    await expect(lesson_heading).toBeVisible();
+    await page.getByText('Why it matters', { exact: true }).press('Enter');
+    const depth = page.locator('.learning-depth');
+    await expect(page.locator('.learning-summary')).toContainText(
+      'not a delivery promise',
+    );
+    await expect(depth).toContainText(
+      'loan balance here is not the trade notional',
+    );
+    const choices = page.getByRole('group', { name: 'Choose an answer' });
+    await choices
+      .getByRole('button', { name: /^Yes\. Standardized TBA contract terms/ })
+      .click();
+    await expect(page.locator('.learning-answer')).toContainText('Not quite');
+    await choices
+      .getByRole('button', { name: /^No\. Different collateral assumptions/ })
+      .press('Enter');
+    await expect(page.locator('.learning-answer')).toContainText(
+      'That’s right',
+    );
+    await depth
+      .getByRole('button', { name: 'Option-adjusted spread', exact: true })
+      .click();
+    await expect(
+      page.getByRole('heading', {
+        level: 2,
+        name: 'Option-adjusted spread',
+        exact: true,
+      }),
+    ).toBeVisible();
+    await page.goBack();
+    await expect(lesson_heading).toBeVisible();
+    await page.goto(
+      '/portfolio/mortgage-map?concept=tba_analytics_mapping#concept=tba_analytics_mapping',
+    );
+    await page.reload();
+    await expect(lesson_heading).toBeVisible();
+    const overflow = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(false);
+  });
+}
+
+for (const reduced_motion of ['no-preference', 'reduce'] as const) {
   test(`burnout distinguishes selection from age and constraints (${reduced_motion})`, async ({
     page,
   }) => {

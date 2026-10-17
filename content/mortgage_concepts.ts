@@ -144,7 +144,13 @@ const original_topics = [
     id: 'pool_selection',
     branch: 'trading',
     title: 'Generic versus specific',
-    concepts: ['tba', 'specified', 'pay_up', 'cheapest_deliverable'],
+    concepts: [
+      'tba',
+      'tba_analytics_mapping',
+      'specified',
+      'pay_up',
+      'cheapest_deliverable',
+    ],
   },
   {
     id: 'market_mechanics',
@@ -401,6 +407,12 @@ export const mortgage_sources: Record<
     publisher: 'Federal Reserve Bank of New York',
     title: 'TBA Trading and Liquidity in the Agency MBS Market',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/epr/2013/1212vick.pdf',
+  },
+  tba_analytics_public: {
+    publisher: 'Federal Reserve Bank of New York',
+    title:
+      'Understanding Mortgage Spreads · Staff Report No. 674, revised June 2018 · sections 4.2–4.3',
+    url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr674.pdf',
   },
   specified_pool_pricing: {
     publisher: 'Federal Reserve Bank of New York',
@@ -1015,11 +1027,60 @@ const original_concepts: MortgageConcept[] = [
         reason:
           'Fungible delivery conventions can concentrate trading in a broader market.',
       },
+      {
+        id: 'tba_analytics_mapping',
+        reason:
+          'Generic analytics need an explicit collateral proxy before final pools are known.',
+      },
     ],
     question: 'Is every mortgage deliverable?',
     answer:
       'No. Trade characteristics and eligibility rules constrain delivery.',
     sources: ['tba'],
+    topic: 'pool_selection',
+  },
+  {
+    id: 'tba_analytics_mapping',
+    branch: 'trading',
+    title: 'TBA analytics & collateral proxies',
+    subtitle: 'From a generic contract to model inputs',
+    aliases: ['TBA proxy', 'generic TBA analytics', 'TBA mapping', 'TBA OAD'],
+    summary:
+      'A TBA contract fixes standardized trade and delivery terms, but the actual delivered pools are identified later. Before allocation, an analytics system can map the contract to representative collateral assumptions, possibly a composite rather than one real pool. That proxy is an analytical input—not a delivery promise or evidence of the pools ultimately delivered.',
+    distinction:
+      'Keep three layers separate: contract terms, actual delivered collateral and the analytics proxy. Proxy WALA and weighted-average loan-balance measures describe the representative collateral; loan balance here is not the trade notional. OAS and option-adjusted duration are outputs derived from projected cash flows and the selected model. If only the proxy changes, displayed statistics and derived analytics can step to new values without loans aging overnight or the market price moving. The direction is not determined by WALA or loan balance alone.',
+    question:
+      'The TBA contract, price, dates and model settings are unchanged, but the representative collateral proxy changes. Must OAS and option-adjusted duration remain identical?',
+    answer:
+      'No. Different collateral assumptions can change projected cash flows and the resulting analytics. First reconcile the proxy mapping, as-of and settlement dates, then compare outputs under aligned curve, volatility, prepayment-model and valuation conventions.',
+    links: [
+      {
+        id: 'tba',
+        reason:
+          'Defines the generic contract whose actual pools are allocated later.',
+      },
+      {
+        id: 'pool_averages',
+        reason:
+          'WALA and weighted-average loan balance summarize the assumed collateral population.',
+      },
+      {
+        id: 'oas',
+        reason:
+          'OAS is re-solved from price using the cash flows produced by the proxy and model.',
+      },
+      {
+        id: 'duration',
+        reason:
+          'Option-adjusted duration depends on reprojected cash flows under a stated shock convention.',
+      },
+      {
+        id: 'model_risk',
+        reason:
+          'A precise output remains conditional on collateral selection and model assumptions.',
+      },
+    ],
+    sources: ['tba', 'tba_analytics_public', 'fannie_mbs_basics'],
     topic: 'pool_selection',
   },
   {

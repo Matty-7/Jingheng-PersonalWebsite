@@ -133,3 +133,44 @@ test('future funding separates an unfunded lender duty from funded collateral pr
     /unfunded lender obligation/,
   );
 });
+
+test('TBA analytics mapping separates a collateral proxy from contract and delivery', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'tba_analytics_mapping',
+  );
+  assert.ok(concept);
+  assert.equal(concept.topic, 'pool_selection');
+  assert.equal(search_concepts('TBA proxy')[0]?.id, 'tba_analytics_mapping');
+  assert.equal(
+    search_concepts('generic TBA analytics')[0]?.id,
+    'tba_analytics_mapping',
+  );
+  assert.match(concept.summary, /not a delivery promise/);
+  assert.match(
+    concept.distinction,
+    /loan balance here is not the trade notional/,
+  );
+  assert.match(concept.distinction, /without loans aging overnight/);
+  assert.deepEqual(
+    concept.links.map((link) => link.id),
+    ['tba', 'pool_averages', 'oas', 'duration', 'model_risk'],
+  );
+  assert.deepEqual(concept.sources, [
+    'tba',
+    'tba_analytics_public',
+    'fannie_mbs_basics',
+  ]);
+  for (const target of ['oas', 'duration'])
+    assert.ok(
+      mortgage_relationships.some(
+        (edge) =>
+          edge.source === 'tba_analytics_mapping' && edge.target === target,
+      ),
+      target,
+    );
+  assert.equal(learning_checks.tba_analytics_mapping.correct, 1);
+  assert.match(
+    learning_checks.tba_analytics_mapping.choices[1],
+    /Different collateral assumptions can change projected cash flows/,
+  );
+});

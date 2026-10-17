@@ -1032,6 +1032,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  tba_analytics_mapping: {
+    choices: [
+      'Yes. Standardized TBA contract terms require every analytics proxy to produce identical cash flows.',
+      'No. Different collateral assumptions can change projected cash flows and the resulting analytics.',
+      'No. Changing the proxy identifies the pools that will be delivered at settlement.',
+    ],
+    correct: 1,
+  },
   specified: {
     choices: [
       'Equal coupons require equal expected principal paths.',
