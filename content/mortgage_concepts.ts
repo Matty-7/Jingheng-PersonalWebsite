@@ -658,7 +658,7 @@ const original_concepts: MortgageConcept[] = [
         'Hypothetical: 4% index + 2% margin = 6% fully indexed rate. From a 3% initial rate, a 2-percentage-point initial cap limits the first reset to at most 5%, assuming no other limit binds. Even an unchanged index can allow a rise when the initial rate was below the fully indexed rate.',
     },
     distinction:
-      'The initial cap limits the first adjustment, the subsequent cap limits each later adjustment and the lifetime cap limits the rate over the loan’s term; cap changes are measured in percentage points from the contract’s comparison rate. Floors and limits on downward adjustments also depend on the contract. The fully indexed rate is a calculation reference, not a promise that the note rate or payment moves there. A fixed note rate still does not freeze taxes or insurance.',
+      'The initial cap limits the first adjustment, the subsequent cap limits each later adjustment and the lifetime cap limits the rate over the loan’s term; cap changes are measured in percentage points from the contract’s comparison rate. Floors and limits on downward adjustments also depend on the contract. The fully indexed rate is a calculation reference, not a promise that the note rate or payment moves there. For affordability, assess the highest payment permitted by the loan terms, not only the initial payment. A plan to refinance before the first reset does not remove this check: a replacement loan may not be available. A fixed note rate still does not freeze taxes or insurance.',
     links: [
       {
         id: 'principal_interest',
