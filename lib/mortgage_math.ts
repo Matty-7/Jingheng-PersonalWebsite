@@ -5,6 +5,16 @@ import { mortgage_concepts } from '../content/mortgage_concepts.ts';
 // never a TeX parser or visitor-supplied markup. Fonts are bundled locally.
 export const mortgage_math: Record<string, { tex: string; variables: string }> =
   {
+    loan_balance: {
+      tex: String.raw`k=\frac{F}{B}`,
+      variables:
+        'F: fixed refinancing cost; B > 0: loan balance, in the same currency; k: dimensionless one-time cost share. Multiply k by 100 to express a percentage. This is not an annual rate or an exercise threshold.',
+    },
+    prepayment_aggregation: {
+      tex: String.raw`\begin{aligned}E_g&=B_g-S_g,\quad w_g=\frac{E_g}{\sum_h E_h}\\s_{\mathrm{pool}}&=\frac{\sum_g P_g}{\sum_g E_g}=\sum_g w_g s_g\\\mathrm{CPR}_{\mathrm{pool}}&=1-(1-s_{\mathrm{pool}})^{12}\end{aligned}`,
+      variables:
+        'g, h: disjoint borrower groups in one month; B: opening principal; S: scheduled principal; E > 0: post-scheduled balance; P: prepaid principal, all in the same currency; s_g = P_g/E_g: group SMM; w: balance share. SMM and CPR are decimals. Weights sum to one.',
+    },
     sequential: {
       tex: String.raw`\begin{aligned}Q_A&=\min(Q,B_A)\\Q_B&=\min\!\left(B_B,\max(0,Q-Q_A)\right)\end{aligned}`,
       variables:
