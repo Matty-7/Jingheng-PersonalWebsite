@@ -1,4 +1,11 @@
 import {
+  response_topics,
+  response_sources,
+  response_concepts,
+  response_relationships,
+  response_paths,
+} from './mortgage_prepayment_response.ts';
+import {
   foundation_topics,
   foundation_sources,
   foundation_concepts,
@@ -269,6 +276,7 @@ const original_topics = [
 ];
 
 export const mortgage_topics = [
+  ...response_topics,
   ...original_topics
     .map((t) => ({
       ...t,
@@ -293,6 +301,7 @@ export const mortgage_sources: Record<
   string,
   { publisher: string; title: string; url: string }
 > = {
+  ...response_sources,
   ...atlas_sources,
   ...mechanism_sources,
   ...spread_sources,
@@ -735,6 +744,11 @@ const original_concepts: MortgageConcept[] = [
     distinction:
       'WAC is not the investor’s security coupon. WAM is not the expected timing of principal repayment.',
     links: [
+      {
+        id: 'prepayment_aggregation',
+        reason:
+          'Combine subgroup principal payments rather than modeling only the average borrower.',
+      },
       {
         id: 'pass_through',
         reason:
@@ -1816,13 +1830,20 @@ const original_concepts: MortgageConcept[] = [
     title: 'Loan balance',
     subtitle: 'The economics of a smaller loan',
     summary:
-      'Fixed refinancing costs represent a larger share of a small loan. Balance can therefore help distinguish otherwise similar collateral.',
+      'At the same rate and term change, dollar payment savings scale with loan balance, while some refinancing costs are fixed. A smaller balance can therefore make refinancing less attractive. Low-balance collateral may offer relative protection against refinancing, conditional on the borrowers and available offers.',
     distinction:
-      'Low balance is a characteristic, not a promise of slow prepayments.',
+      'Low balance is not a promise of slow prepayments. Lower fixed fees can weaken this cost barrier; they do not remove credit constraints, turnover or buyouts. A no-cost offer may recover fees through a higher rate or financed principal, so less cash due at closing does not necessarily mean lower economic cost.',
+    formula: {
+      expression: 'Fixed cost burden = fixed refinancing cost / loan balance.',
+      assumptions:
+        'Both quantities use the same currency and balance is positive. This dimensionless one-time burden isolates a fixed cost component. It is not an annual interest rate, a break-even rule or a prepayment probability. Real fees can also depend on balance.',
+      example:
+        'An illustrative $2,000 fixed fee is 2% of a $100,000 loan and 0.4% of a $500,000 loan. If that fee falls to $500, the burdens become 0.5% and 0.1%. This changes one hurdle, not the borrower’s whole decision or the pool’s expected speed.',
+    },
     question: 'Why might balance matter to a specified-pool buyer?',
     answer:
       'It can affect refinancing behavior and the value of prepayment protection.',
-    sources: ['tba'],
+    sources: ['tba', 'refinance_costs', 'mortgage_technology'],
     links: [
       {
         id: 'frictions',
@@ -1831,6 +1852,11 @@ const original_concepts: MortgageConcept[] = [
       {
         id: 'specified',
         reason: 'Disclosed loan characteristics help investors select pools.',
+      },
+      {
+        id: 'prepayment_aggregation',
+        reason:
+          'Large and small loans contribute different principal weights to pool speed.',
       },
     ],
     aliases: [],
@@ -1893,13 +1919,13 @@ const original_concepts: MortgageConcept[] = [
     title: 'Refinancing frictions',
     subtitle: 'Savings are only part of the decision',
     summary:
-      'Closing costs, credit qualification and the time a borrower expects to keep the loan affect whether refinancing is worthwhile.',
+      'Closing costs, credit qualification and expected holding period affect whether refinancing is worthwhile and feasible. Attention, shopping effort, documentation and lender processing capacity also affect whether an attractive opportunity becomes a completed payoff.',
     distinction:
-      'A lower available mortgage rate does not imply immediate refinancing.',
+      'A lower available mortgage rate does not imply immediate refinancing. Reducing search or application effort leaves other barriers in place. Historical research associates FinTech lending with faster processing and refinancing, with limits on causal identification; it is not a forecast that AI will accelerate every pool.',
     question: 'Why do identical rate incentives produce different responses?',
     answer:
-      'Borrowers face different costs, constraints and expected holding periods.',
-    sources: ['cohort', 'basics'],
+      'Borrowers face different costs, constraints, attention and expected holding periods; lenders also differ in capacity and execution. Compare a feasible new loan, not just a headline market rate.',
+    sources: ['cohort', 'refinance_costs', 'mortgage_technology'],
     links: [
       {
         id: 'prepayments',
@@ -1909,6 +1935,11 @@ const original_concepts: MortgageConcept[] = [
       {
         id: 'burnout',
         reason: 'Borrowers who do not refinance remain in the pool.',
+      },
+      {
+        id: 'prepayment_model_stability',
+        reason:
+          'A changing friction can alter the response estimated from earlier borrower behavior.',
       },
     ],
     aliases: [],
@@ -3041,6 +3072,11 @@ const original_concepts: MortgageConcept[] = [
     sources: ['cfa_risk', 'fed_spreads'],
     links: [
       {
+        id: 'prepayment_model_stability',
+        reason:
+          'Test whether a borrower-response relationship survives a new period and population.',
+      },
+      {
         id: 'oas',
         reason: 'The fitted spread inherits the model’s assumptions.',
       },
@@ -3804,6 +3840,7 @@ const formula_additions: Record<
   },
 };
 export const mortgage_concepts: MortgageConcept[] = [
+  ...response_concepts,
   ...valuation_concepts,
   ...foundation_concepts,
   ...analytics_concepts,
@@ -3829,6 +3866,7 @@ export const mortgage_concepts: MortgageConcept[] = [
 }));
 
 export const mortgage_relationships: MortgageRelationship[] = [
+  ...response_relationships,
   ...valuation_relationships,
   ...foundation_relationships,
   ...convention_relationships,
@@ -4583,6 +4621,7 @@ export const mortgage_relationships: MortgageRelationship[] = [
 
 export const mortgage_paths = [
   ...valuation_paths,
+  ...response_paths,
   ...foundation_paths,
   ...analytics_paths,
   ...expansion_paths,
@@ -4657,6 +4696,7 @@ export const mortgage_paths = [
 ];
 
 export const mortgage_path_models = [
+  ...response_paths,
   ...valuation_paths,
   ...analytics_paths,
   ...expansion_paths,

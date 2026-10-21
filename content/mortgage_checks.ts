@@ -6,6 +6,22 @@ export const learning_checks: Record<
   string,
   { choices: [string, string, string]; correct: number }
 > = {
+  prepayment_aggregation: {
+    choices: [
+      '3%, the simple average of the two group SMMs.',
+      '1.8%, from $1.8 million prepaid on $100 million of post-scheduled balance.',
+      '18.28%, from averaging each group’s annualized CPR.',
+    ],
+    correct: 1,
+  },
+  prepayment_model_stability: {
+    choices: [
+      'Yes. Any rise in aggregate CPR proves a new borrower response.',
+      'Yes. Matching one aggregate CPR also validates every subgroup and hedge sensitivity.',
+      'No. Check the group mix, conditional responses, definitions and information dates.',
+    ],
+    correct: 2,
+  },
   accrual_discount_clocks: {
     choices: [
       'Yes. The discount curve replaces the coupon’s contractual day count.',
@@ -1242,7 +1258,7 @@ export const learning_checks: Record<
   },
   frictions: {
     choices: [
-      'Their costs, constraints and expected holding periods differ.',
+      'Their costs, constraints, attention and expected holding periods differ.',
       'Every borrower refinances on the same day.',
       'Transaction costs cannot affect the decision.',
     ],
