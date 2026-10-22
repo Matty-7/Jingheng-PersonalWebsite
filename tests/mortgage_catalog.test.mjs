@@ -70,6 +70,65 @@ test('new paths have authored step explanations, boundaries and complete public-
   }
 });
 
+test('data-center CRE separates contracted capacity from mortgage repayment', () => {
+  const concept = expansion_concepts.find(
+    (node) => node.id === 'data_center_cre',
+  );
+  assert.ok(concept);
+  assert.equal(concept.branch, 'credit');
+  assert.equal(concept.topic, 'property_income');
+  assert.match(concept.summary, /planned, contracted, utility-served/);
+  assert.match(concept.distinction, /strong tenant and a long lease/i);
+  assert.match(concept.distinction, /landlord performance/i);
+  assert.match(concept.formula.expression, /min\(DSCR limit, LTV limit\)/);
+  assert.match(concept.formula.expression, /refinance gap = max\(0,/);
+  assert.match(
+    concept.formula.assumptions,
+    /same currency and valuation date/i,
+  );
+  assert.match(
+    concept.formula.assumptions,
+    /not a commitment, appraisal, forecast or market quote/i,
+  );
+  assert.deepEqual(concept.sources, [
+    'cre',
+    'doe_data_center_power_2024',
+    'applied_digital_2026_10k',
+  ]);
+  for (const query of [
+    'data center CRE',
+    'contracted MW',
+    'energized capacity',
+    'critical IT load',
+  ])
+    assert.equal(search_concepts(query)[0]?.id, 'data_center_cre');
+  assert.equal(learning_checks.data_center_cre.correct, 2);
+  assert.equal(learning_checks.data_center_cre.choices.length, 3);
+  const path = expansion_paths.find(
+    (item) => item.id === 'data_center_repayment',
+  );
+  assert.deepEqual(path.steps, [
+    'data_center_cre',
+    'rent_roll',
+    'noi',
+    'dscr',
+    'refinance_risk',
+    'cmbs',
+    'cre_clo',
+  ]);
+  assert.match(
+    path.boundary,
+    /alternative financing or securitization contexts/i,
+  );
+  for (const target of ['rent_roll', 'noi', 'dscr', 'refinance_risk']) {
+    const edge = mortgage_relationships.find(
+      (item) => item.source === 'data_center_cre' && item.target === target,
+    );
+    assert.ok(edge, target);
+    assert.ok(edge.sources?.length, target);
+  }
+});
+
 test('appraisal reduction separates amount, advance and control-test effects', () => {
   const concept = expansion_concepts.find(
     (node) => node.id === 'appraisal_reduction',

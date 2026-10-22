@@ -528,6 +528,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  data_center_cre: {
+    choices: [
+      'Completion and stabilized NOI are established because the tenant signed a long lease.',
+      'The takeout loan must equal contracted rent divided by the original construction budget.',
+      'The lease supports demand visibility, but delivery, energization, acceptance, rent commencement, expenses and takeout terms still need separate verification.',
+    ],
+    correct: 2,
+  },
   cre_clo: {
     choices: [
       'Yes. Resetting note coupons removes rate risk from the underlying borrowers.',

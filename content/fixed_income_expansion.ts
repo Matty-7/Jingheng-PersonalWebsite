@@ -101,6 +101,18 @@ export const expansion_sources = {
       'TRTX 2025-FL6 Servicing Agreement · future-funding definitions and §3.26 estimates',
     url: 'https://www.sec.gov/Archives/edgar/data/1630472/000119312525070927/d943540dex105.htm',
   },
+  doe_data_center_power_2024: {
+    publisher: 'U.S. Department of Energy',
+    title:
+      'Powering Artificial Intelligence and Data Center Infrastructure · grid delivery and interconnection constraints · July 2024',
+    url: 'https://www.energy.gov/sites/default/files/2024-08/Powering%20AI%20and%20Data%20Center%20Infrastructure%20Recommendations%20July%202024.pdf',
+  },
+  applied_digital_2026_10k: {
+    publisher: 'SEC · Applied Digital Corporation',
+    title:
+      '2026 Form 10-K · construction, lease commencement, customer concentration and power risks',
+    url: 'https://www.sec.gov/Archives/edgar/data/1144879/000114487926000048/apld-20260531.htm',
+  },
 };
 
 export const expansion_topics = [
@@ -204,6 +216,59 @@ function entry(input: Entry): MortgageConcept {
 }
 
 export const expansion_concepts: MortgageConcept[] = [
+  {
+    id: 'data_center_cre',
+    branch: 'credit',
+    topic: 'property_income',
+    title: 'Data-center CRE',
+    subtitle: 'Contracted capacity is not yet property cash flow',
+    aliases: [
+      'data center CRE',
+      'contracted MW',
+      'energized capacity',
+      'critical IT load',
+      'rent commencement',
+    ],
+    summary:
+      'A data-center project can move through planned, contracted, utility-served, constructed, commissioned, delivered and energized states. These labels are not interchangeable. Rent may begin by phase only after the lease’s delivery, acceptance or other commencement conditions are met; stabilized NOI requires an identified rent base, collection assumptions and operating-expense convention.',
+    distinction:
+      'Capacity units also need labels: gross site power, utility-delivered power and critical IT load can describe different quantities. A strong tenant and a long lease may support demand visibility, but they do not by themselves prove utility delivery, construction completion, landlord performance, rent commencement, property cash flow or a maturity refinance. Tenant concentration can make one tenant’s acceptance, remedies or termination rights material to the whole property.',
+    formula: {
+      expression:
+        'DSCR limit = (stabilized annual NOI ÷ required DSCR) ÷ annual debt-service constant; LTV limit = appraised stabilized value × maximum LTV; illustrative takeout capacity = min(DSCR limit, LTV limit); refinance gap = max(0, maturity payoff + transaction costs − takeout capacity)',
+      assumptions:
+        'Illustrative sizing only. NOI is currency per year; required DSCR is an x multiple; the annual debt-service constant is annual debt service per unit of loan balance; maximum LTV is a decimal; value, payoff, costs and loan capacity use the same currency and valuation date. This is not a commitment, appraisal, forecast or market quote.',
+      example:
+        'If stabilized NOI is $30 million per year, required DSCR is 1.30× and the debt-service constant is 8% per year, the DSCR limit is about $288.5 million. If value is $400 million and maximum LTV is 65%, the LTV limit is $260 million. Illustrative takeout capacity is therefore $260 million; against a $275 million payoff plus $5 million of costs, the gap is $20 million.',
+    },
+    question:
+      'A data center is fully contracted to a strong tenant under a long lease. What does that establish about current property cash flow and refinancing?',
+    answer:
+      'It supports contractual demand visibility, but it does not establish delivered or energized capacity, satisfaction of rent-commencement conditions, stabilized NOI or sufficient takeout financing. Verify each milestone, the lease remedies, tenant concentration and the lender’s sizing assumptions.',
+    sources: ['cre', 'doe_data_center_power_2024', 'applied_digital_2026_10k'],
+    links: [
+      {
+        id: 'rent_roll',
+        reason:
+          'The lease schedule identifies tenant concentration, phased commencement and expiry exposure.',
+      },
+      {
+        id: 'noi',
+        reason:
+          'Commenced and collectible rent enters property income only under a stated expense convention.',
+      },
+      {
+        id: 'dscr',
+        reason:
+          'Stabilized NOI must cover the replacement loan’s annual debt service.',
+      },
+      {
+        id: 'refinance_risk',
+        reason:
+          'Delivery, cash flow, value and lending terms jointly determine the maturity funding gap.',
+      },
+    ],
+  },
   entry({
     id: 'policy_expectations',
     title: 'Expected policy path',
@@ -1306,6 +1371,69 @@ function relation(
 }
 export const expansion_relationships: MortgageRelationship[] = [
   relation(
+    'data_center_cre',
+    'rent_roll',
+    'organizes lease milestones',
+    'The rent roll and leases identify phased delivery, rent commencement, tenant concentration and expiry exposure.',
+    'measurement',
+    ['applied_digital_2026_10k'],
+    'Keep project states, capacity units and lease triggers explicit.',
+  ),
+  relation(
+    'data_center_cre',
+    'noi',
+    'gates stabilized cash flow',
+    'Construction, utility delivery and lease commencement determine when contracted demand can contribute to property income.',
+    'mechanism',
+    ['applied_digital_2026_10k', 'cre'],
+    'Use consistent rent, collection, operating-expense and stabilization definitions.',
+  ),
+  relation(
+    'data_center_cre',
+    'dscr',
+    'sizes income-supported debt',
+    'Stabilized annual NOI and replacement-loan debt service determine cash-flow coverage.',
+    'measurement',
+    ['cre'],
+    'Align the NOI period, debt-service period, rate, amortization and coverage definition.',
+  ),
+  relation(
+    'data_center_cre',
+    'refinance_risk',
+    'can leave a maturity gap',
+    'Delivery timing, stabilized cash flow, property value and lender terms jointly determine takeout capacity.',
+    'mechanism',
+    ['cre', 'doe_data_center_power_2024', 'applied_digital_2026_10k'],
+    'Compare like-dated values, loan terms, transaction costs and the actual maturity payoff.',
+  ),
+  relation(
+    'rent_roll',
+    'noi',
+    'connects leases to income',
+    'Commenced and collectible lease revenue contributes to NOI under the stated operating-expense convention.',
+    'mechanism',
+    ['cre'],
+    'Use the same measurement period and distinguish contractual rent from collected property revenue.',
+  ),
+  relation(
+    'refinance_risk',
+    'cmbs',
+    'enters collateral performance',
+    'A commercial mortgage maturity gap can affect the collateral cash flows and loss allocation of a CMBS transaction.',
+    'mechanism',
+    ['cre', 'investor'],
+    'The outcome depends on the loan documents, workout, recovery and transaction structure.',
+  ),
+  relation(
+    'cmbs',
+    'cre_clo',
+    'compares securitization contexts',
+    'Both can finance commercial real-estate debt, while collateral stage, loan terms and transaction provisions can differ.',
+    'comparison',
+    ['cre', 'crefc_c'],
+    'Treat CMBS and CRE CLO as alternative contexts rather than successive financing stages.',
+  ),
+  relation(
     'policy_rate',
     'policy_expectations',
     'separates setting from path',
@@ -1864,6 +1992,34 @@ export const expansion_relationships: MortgageRelationship[] = [
 ];
 
 export const expansion_paths = [
+  {
+    id: 'data_center_repayment',
+    title: 'From contracted capacity to the maturity exit',
+    description:
+      'Translate data-center delivery milestones into property cash flow and refinancing capacity.',
+    premise:
+      'Start with the asset’s actual state and units. Planned or contracted capacity is not yet rent, NOI or refinancing proceeds.',
+    steps: [
+      'data_center_cre',
+      'rent_roll',
+      'noi',
+      'dscr',
+      'refinance_risk',
+      'cmbs',
+      'cre_clo',
+    ],
+    explanations: [
+      'Label planned, contracted, utility-served, delivered, energized and critical IT capacity without treating them as synonyms.',
+      'Read phased rent commencement, tenant concentration, lease term, acceptance conditions and remedies.',
+      'Build stabilized annual NOI from commenced and collectible rent under a stated operating-expense convention.',
+      'Align annual NOI with the replacement loan’s annual debt service and required coverage.',
+      'Compare DSCR- and LTV-limited takeout capacity with the maturity payoff and transaction costs.',
+      'Read CMBS as one possible term-loan securitization context after examining the underlying property cash flow.',
+      'Read CRE CLO as a possible transitional-loan context; it is an alternative comparison, not the next step after CMBS.',
+    ],
+    boundary:
+      'The final two steps are alternative financing or securitization contexts, not a causal sequence or recommendation. Tenant quality, lease length and contracted capacity do not alone prove completion, landlord performance, stabilized NOI or refinancing.',
+  },
   {
     id: 'rates_to_mortgages',
     title: 'Why a rate cut need not lower mortgage rates',

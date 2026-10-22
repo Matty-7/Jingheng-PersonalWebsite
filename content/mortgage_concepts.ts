@@ -259,7 +259,7 @@ const original_topics = [
     id: 'property_income',
     branch: 'credit',
     title: 'Property operating income',
-    concepts: ['rent_roll', 'occupancy', 'noi'],
+    concepts: ['rent_roll', 'data_center_cre', 'occupancy', 'noi'],
   },
   {
     id: 'debt_capacity',

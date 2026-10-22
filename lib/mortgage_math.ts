@@ -303,6 +303,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       tex: String.raw`\mathrm{DY}=\frac{\mathrm{NOI}_{\mathrm{annual}}}{B}`,
       variables: 'B: loan balance; DY: annual debt yield as a decimal.',
     },
+    data_center_cre: {
+      tex: String.raw`\begin{aligned}B_{\mathrm{DSCR}}&=\frac{\mathrm{NOI}_{\mathrm{stabilized}}/D_{\min}}{k}\\B_{\mathrm{LTV}}&=V_{\mathrm{stabilized}}L_{\max}\\B_{\mathrm{takeout}}&=\min(B_{\mathrm{DSCR}},B_{\mathrm{LTV}})\\G&=\max(0,P+C-B_{\mathrm{takeout}})\end{aligned}`,
+      variables:
+        'B: loan capacity in currency; NOI: annual stabilized net operating income; Dₘᵢₙ: required DSCR as an x multiple; k: annual debt-service constant per unit of balance; V: appraised stabilized value; Lₘₐₓ: maximum LTV as a decimal; P: maturity payoff; C: transaction costs; G: refinance gap. Use one currency and valuation date.',
+    },
     amortization: {
       tex: String.raw`M=\frac{B_0r(1+r)^N}{(1+r)^N-1}`,
       variables:
