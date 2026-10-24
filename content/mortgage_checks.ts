@@ -882,9 +882,9 @@ export const learning_checks: Record<
   },
   supply_demand: {
     choices: [
-      'No. Demand, liquidity and option valuation can also move the spread.',
-      'Yes. Borrower credit alone determines the MBS spread.',
-      'No. An unchanged credit profile requires the spread to widen.',
+      'No. Investor demand and dealer capacity can absorb supply; any effect depends on allocation, intermediation and other conditions.',
+      'Yes. New corporate bonds automatically exhaust a fixed pool of bank liquidity and force agency MBS spreads wider.',
+      'No. Different credit risks prevent corporate bonds and agency MBS from ever affecting the same investors or intermediaries.',
     ],
     correct: 0,
   },

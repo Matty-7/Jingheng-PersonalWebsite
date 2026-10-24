@@ -10,6 +10,7 @@ import {
   mortgage_topics,
   mortgage_concepts,
   mortgage_relationships,
+  mortgage_sources,
 } from '../content/mortgage_concepts.ts';
 import { search_concepts } from '../lib/mortgage_search.ts';
 import {
@@ -127,6 +128,42 @@ test('data-center CRE separates contracted capacity from mortgage repayment', ()
     assert.ok(edge, target);
     assert.ok(edge.sources?.length, target);
   }
+});
+
+test('MBS supply and demand separates allocation from intermediation', () => {
+  const concept = mortgage_concepts.find((node) => node.id === 'supply_demand');
+  assert.ok(concept);
+  assert.match(
+    concept.summary,
+    /mandates and duration, credit and prepayment-option limits/,
+  );
+  assert.match(concept.summary, /shared balance-sheet capacity/);
+  assert.match(concept.distinction, /does not mechanically widen/);
+  assert.match(concept.distinction, /greater dealer capacity/);
+  assert.match(
+    concept.distinction,
+    /co-movement alone does not identify the cause/,
+  );
+  assert.equal(search_concepts('cross-asset supply')[0]?.id, 'supply_demand');
+  for (const source of [
+    'dealer_capacity_2024',
+    'portfolio_balance_2019',
+    'mbs_supply_overview_2022',
+  ])
+    assert.ok(mortgage_sources[source], source);
+  assert.equal(learning_checks.supply_demand.correct, 0);
+  assert.match(
+    learning_checks.supply_demand.choices[0],
+    /Investor demand and dealer capacity can absorb supply/,
+  );
+  const liquidity = mortgage_relationships.find(
+    (edge) => edge.id === 'model_supply_demand__liquidity',
+  );
+  assert.match(liquidity?.conditions, /does not draw from one fixed/);
+  const spreads = mortgage_relationships.find(
+    (edge) => edge.id === 'model_supply_demand__spreads',
+  );
+  assert.match(spreads?.conditions, /not sufficient evidence/);
 });
 
 test('appraisal reduction separates amount, advance and control-test effects', () => {
