@@ -120,6 +120,23 @@ export const mechanism_sources = {
     title: 'What determines the rate on a 30-year mortgage?',
     url: 'https://www.fanniemae.com/research-and-insights/publications/housing-insights/rate-30-year-mortgage',
   },
+  dealer_capacity_2024: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Assessment of Dealer Capacity to Intermediate in Treasury and Agency MBS Markets · October 22, 2024',
+    url: 'https://www.federalreserve.gov/econres/notes/feds-notes/assessment-of-dealer-capacity-to-intermediate-in-treasury-and-agency-mbs-markets-20241022.html',
+  },
+  portfolio_balance_2019: {
+    publisher: 'Federal Reserve Bank of New York',
+    title:
+      'The Federal Reserve’s Experience Purchasing and Reinvesting Agency MBS · March 7, 2019',
+    url: 'https://www.newyorkfed.org/newsevents/speeches/2019/pot190307',
+  },
+  mbs_supply_overview_2022: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'Mortgage-Backed Securities · Staff Report No. 1001',
+    url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1001.pdf',
+  },
   curve_policy_public: {
     publisher: 'Reserve Bank of Australia',
     title: 'Bonds and the yield curve',
@@ -937,11 +954,17 @@ const entries: Entry[] = [
     id: 'supply_demand',
     title: 'Supply and investor demand',
     subtitle: 'The price that attracts a buyer',
-    aliases: ['investor flows', 'MBS demand', 'net issuance'],
+    aliases: [
+      'investor flows',
+      'MBS demand',
+      'net issuance',
+      'portfolio balance',
+      'cross-asset supply',
+    ],
     summary:
-      'Issuance brings securities to market; principal repayments retire them. Investor demand and the risks investors can hold help determine the price that clears the market.',
+      'Issuance brings securities to market; principal repayments retire them. Two conditional channels connect MBS with wider fixed income. Investors may reallocate among securities when their mandates and duration, credit and prepayment-option limits permit. Dealers may use inventory, financing and shared balance-sheet capacity to intermediate Treasury and agency MBS flows, while desk-specific risk limits can tighten when volatility rises. These channels help determine the price that clears the market; they do not make the assets interchangeable.',
     distinction:
-      'A change in demand can affect spreads without a change in collateral credit quality. Other influences may offset it.',
+      'More corporate issuance can compete for compatible investor demand or intermediation resources, but it does not mechanically widen agency MBS spreads or drain a fixed pool of bank liquidity. New investor demand, greater dealer capacity or other forces can absorb supply. A change in demand can still affect MBS spreads without a change in collateral credit quality; co-movement alone does not identify the cause.',
     links: [
       {
         id: 'current_coupon',
@@ -959,9 +982,16 @@ const entries: Entry[] = [
           'Required compensation can reflect market demand as well as credit and option risk.',
       },
     ],
-    sources: ['mortgage_rate_public', 'curve_policy_public'],
-    question: 'Does unchanged borrower credit imply an unchanged MBS spread?',
-    answer: 'No. Demand, liquidity and option valuation can change too.',
+    sources: [
+      'mortgage_rate_public',
+      'dealer_capacity_2024',
+      'portfolio_balance_2019',
+      'mbs_supply_overview_2022',
+    ],
+    question:
+      'Does increased corporate bond issuance necessarily widen agency MBS spreads?',
+    answer:
+      'No. Investor demand and dealer capacity can absorb supply; any effect depends on allocation, intermediation and other conditions.',
   },
   {
     id: 'curve_shifts',
@@ -1795,9 +1825,11 @@ export const mechanism_relationships: MortgageRelationship[] = [
     target: 'supply_demand',
     label: 'shapes willingness to hold',
     reason:
-      'The ability to trade and fund positions shapes investors’ willingness to hold them.',
+      'Trading, financing and dealer capacity shape how readily investors can add or reduce MBS positions.',
     kind: 'mechanism',
-    sources: ['mortgage_rate_public', 'curve_policy_public'],
+    conditions:
+      'Capacity can expand, and risk limits differ by dealer and desk. Other bond supply does not draw from one fixed market-wide liquidity pool.',
+    sources: ['dealer_capacity_2024', 'mbs_supply_overview_2022'],
   },
   {
     id: 'model_supply_demand__spreads',
@@ -1805,8 +1837,11 @@ export const mechanism_relationships: MortgageRelationship[] = [
     target: 'spreads',
     label: 'changes compensation',
     reason:
-      'Required compensation can reflect market demand as well as credit and option risk.',
+      'Required compensation can reflect cross-asset allocation and intermediation conditions as well as credit and option risk.',
     kind: 'mechanism',
+    conditions:
+      'Corporate issuance is one possible competing supply; it is not sufficient evidence that agency MBS spreads must widen.',
+    sources: ['portfolio_balance_2019', 'mbs_supply_overview_2022'],
   },
   {
     id: 'model_curve_shifts__key_rate',
