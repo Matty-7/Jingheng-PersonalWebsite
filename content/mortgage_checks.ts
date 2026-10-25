@@ -1578,9 +1578,9 @@ export const learning_checks: Record<
   },
   basis_risk: {
     choices: [
-      'The hedge and MBS moving by equal and offsetting amounts.',
-      'Mortgage spreads widening relative to the hedge.',
-      'A spread move that leaves both MBS and hedge values unchanged.',
+      'Yes. Higher spread volatility is itself the same event as a realized spread widening.',
+      'No. The realized spread move, residual exposure and other P&L components still determine the outcome.',
+      'No. A zero-DV01 hedge removes spread, liquidity and option exposure as well as rate exposure.',
     ],
     correct: 1,
   },
@@ -1986,11 +1986,11 @@ export const learning_checks: Record<
   },
   spread_duration: {
     choices: [
-      'A benchmark-duration hedge necessarily offsets the bond’s spread duration too.',
-      'Spread duration measures the same shock as benchmark duration under a different name.',
-      'Benchmark-rate shocks and spread shocks measure different exposures.',
+      'About −1% from spread repricing alone.',
+      'About +1%, because wider spreads increase a long bond’s price.',
+      'A guaranteed −1% total return after carry, funding, convexity and hedge P&L.',
     ],
-    correct: 2,
+    correct: 0,
   },
   usd_rates: {
     choices: [

@@ -102,3 +102,61 @@ test('advanced lessons use choices and continue from the selected topic', async 
   await page.reload();
   await expect(page.locator('.learning-route-header')).toContainText('1 of');
 });
+
+test('spread-duration lesson separates a signed spread shock from spread volatility', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(
+    '/portfolio/mortgage-map?concept=spread_duration#concept=spread_duration',
+  );
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Spread duration',
+  );
+  await page.getByText('Why it matters', { exact: true }).click();
+  const depth = page.locator('.learning-depth');
+  await expect(depth).toContainText(
+    'A spread level change Δs is not spread volatility',
+  );
+  await expect(depth).toContainText('+25 bp');
+  await expect(depth).toContainText('−1%');
+  await expect(depth).toContainText('−$100,000');
+  await expect(depth.locator('.learning-math math')).toHaveCount(1);
+  await expect(
+    depth.getByRole('link', { name: /Federal Reserve Board/ }),
+  ).toBeVisible();
+
+  await expect(page.locator('.learning-check')).toContainText(
+    'For a long position with spread duration of 4',
+  );
+  await expect(page.locator('.learning-check')).toContainText(
+    '+25 bp widening',
+  );
+
+  await page
+    .getByRole('button', {
+      name: learning_checks.spread_duration.choices[2],
+      exact: true,
+    })
+    .click();
+  await expect(page.locator('.learning-answer')).toContainText('Not quite');
+  await page
+    .getByRole('button', {
+      name: learning_checks.spread_duration.choices[0],
+      exact: true,
+    })
+    .click();
+  await expect(page.locator('.learning-answer')).toContainText('That’s right.');
+
+  await page
+    .getByRole('button', { name: 'Option-adjusted spread', exact: true })
+    .click();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Option-adjusted spread',
+  );
+  await page.goBack();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Spread duration',
+  );
+  await expect(page.locator('body')).not.toHaveCSS('overflow-x', 'scroll');
+});

@@ -155,6 +155,12 @@ export const atlas_sources = {
     title: 'Bond analytics · yield, spread and asset-swap definitions',
     url: 'https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation/manuals-and-guides/ipa-financial-contracts/ipa-financial-contracts---bond-contracts',
   },
+  fed_market_risk_2026: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Supervisory Stress Test Documentation · Market Risk Models, January 2026 · effective rate and spread duration, pp. 21–23',
+    url: 'https://www.federalreserve.gov/supervisionreg/files/market-risk-models.pdf#page=21',
+  },
   cfa_floating: {
     publisher: 'CFA Institute',
     title: 'Yield and yield spread measures for floating-rate instruments',
@@ -718,8 +724,8 @@ const entries: Entry[] = [
     'spread_duration',
     'Spread duration',
     'Price sensitivity to a spread change',
-    'Spread duration measures the local percentage price response to a change in the specified spread while holding the chosen benchmark curve fixed. The definition must state whether projected cash flows and option assumptions change. It complements sensitivity to benchmark rates.',
-    'Benchmark duration and spread duration are different shocks. A hedge that offsets one does not necessarily offset the other.',
+    'Spread duration measures the local percentage price response to a signed change in a specified spread while the chosen benchmark curve is fixed. A positive change is widening; a negative change is tightening. The definition must state whether projected cash flows and option assumptions change.',
+    'A spread level change Δs is not spread volatility, which describes how dispersed spread changes may be over a horizon. Neither is interest-rate volatility. Higher spread volatility alone does not determine realized P&L; the realized spread move and every other position exposure still matter.',
     [
       [
         'duration',
@@ -729,8 +735,16 @@ const entries: Entry[] = [
         'basis_risk',
         'A rate hedge can leave spread or relative-market movements unhedged.',
       ],
+      [
+        'oas',
+        'If OAS is the shocked spread, its benchmark and model conventions must be named.',
+      ],
+      [
+        'model_risk',
+        'The sensitivity is conditional on cash-flow and option-model assumptions.',
+      ],
     ],
-    ['spreads_public'],
+    ['fed_market_risk_2026', 'spreads_public'],
     ['spread DV01', 'CS01'],
   ],
   [
@@ -949,6 +963,10 @@ const checks: Record<string, [string, string]> = {
   discount_margin: [
     'Can a floating-rate bond fall in price while its benchmark rate is unchanged?',
     'Yes. The required margin can rise because of credit, liquidity or other market conditions.',
+  ],
+  spread_duration: [
+    'For a long position with spread duration of 4, what is the approximate spread-only price contribution from a +25 bp widening?',
+    'About −1%. Because +25 bp is +0.0025, −4 × 0.0025 = −0.01. This local contribution is not guaranteed total return.',
   ],
   home_prices: [
     'Loan balance stays at $300,000 while the property falls from $500,000 to $400,000. What happens to LTV?',

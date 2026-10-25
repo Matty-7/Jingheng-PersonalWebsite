@@ -462,6 +462,65 @@ test('hybrid ARM separates the fully indexed reference from the capped reset', (
   assert.match(mortgage_math.fixed_arm.variables, /annual rates/);
 });
 
+test('spread duration keeps signed spread moves separate from volatility and total P&L', () => {
+  const spread_duration = mortgage_concepts.find(
+    (concept) => concept.id === 'spread_duration',
+  );
+  const basis_risk = mortgage_concepts.find(
+    (concept) => concept.id === 'basis_risk',
+  );
+  const path = mechanism_models.find(
+    (model) => model.id === 'dv01_residual_risks',
+  );
+
+  assert.match(spread_duration.formula.expression, /ΔP \/ P₀ ≈ −Dₛ × Δs/);
+  assert.match(spread_duration.formula.assumptions, /full-price basis/);
+  assert.match(spread_duration.formula.assumptions, /annual decimal units/);
+  assert.match(spread_duration.formula.example, /\+25 bp/);
+  assert.match(spread_duration.formula.example, /−1%/);
+  assert.match(spread_duration.formula.example, /initial full market value/);
+  assert.match(spread_duration.formula.example, /−\$100,000/);
+  assert.match(spread_duration.formula.example, /not guaranteed total return/i);
+  assert.match(spread_duration.distinction, /not spread volatility/i);
+  assert.match(spread_duration.distinction, /does not determine realized P&L/i);
+  assert.match(spread_duration.question, /spread duration of 4/);
+  assert.match(spread_duration.question, /\+25 bp widening/);
+  assert.match(spread_duration.answer, /About −1%/);
+  assert.match(spread_duration.answer, /not guaranteed total return/i);
+  assert.deepEqual(
+    spread_duration.links.slice(-2).map((link) => link.id),
+    ['oas', 'model_risk'],
+  );
+  assert.ok(spread_duration.sources.includes('fed_market_risk_2026'));
+  assert.match(basis_risk.answer, /volatility is not the same as widening/i);
+  assert.deepEqual(path.steps, [
+    'curve_shifts',
+    'key_rate',
+    'treasury_hedge',
+    'basis_risk',
+    'spread_duration',
+  ]);
+  assert.match(
+    path.explanations.at(-1),
+    /does not by itself fix the P&L sign/i,
+  );
+  assert.match(path.boundary, /spread volatility is a different input/i);
+  assert.equal(learning_checks.spread_duration.correct, 0);
+  assert.match(
+    learning_checks.spread_duration.choices[0],
+    /About −1% from spread repricing alone/,
+  );
+  assert.equal(learning_checks.basis_risk.correct, 1);
+
+  const spread_change = 25 / 10_000;
+  const spread_contribution = -4 * spread_change;
+  assert.equal(spread_change, 0.0025);
+  assert.equal(spread_contribution, -0.01);
+  assert.equal(10_000_000 * spread_contribution, -100_000);
+  assert.match(mortgage_math.spread_duration.tex, /P_0/);
+  assert.match(mortgage_math.spread_duration.variables, /full market value/);
+});
+
 test('all displayed formulas render strict TeX with accessible MathML and variable definitions', () => {
   const rendered = render_mortgage_math();
   for (const c of mortgage_concepts.filter((c) => c.formula)) {

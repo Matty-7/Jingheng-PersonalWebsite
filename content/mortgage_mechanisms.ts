@@ -1271,11 +1271,11 @@ export const mechanism_models: MechanismModel[] = [
       'Yields at different maturities can move by different amounts or in different directions.',
       'Key-rate sensitivities show where exposure sits, including offsets hidden by a single total DV01.',
       'Treasury positions can be chosen to offset selected rate exposures. Hedge sizing still depends on the assumed shocks.',
-      'Mortgage and Treasury prices do not move identically. Mortgage-specific spreads and changing cash flows remain.',
-      'Spread duration isolates sensitivity to the chosen spread under stated assumptions. It complements rate risk instead of replacing it.',
+      'Mortgage and Treasury prices do not move identically. A rate hedge can leave exposure to a realized relative spread move and to changing mortgage cash flows.',
+      'Spread duration maps a signed spread level shock into a local price contribution under stated assumptions. Spread volatility describes a distribution of possible spread changes, not a widening, and does not by itself fix the P&L sign.',
     ],
     boundary:
-      'Prepayment, volatility and cash-flow assumptions can change the sensitivities themselves. A hedge must be reassessed as the exposure changes.',
+      'Rate volatility can alter borrower-option value and projected cash flows; spread volatility is a different input. Prepayment, liquidity and model changes can alter the sensitivities themselves, so a hedge must be reassessed as exposures change.',
   },
   {
     id: 'loss_to_tranche',
@@ -2015,8 +2015,11 @@ export const mechanism_relationships: MortgageRelationship[] = [
     target: 'basis_risk',
     label: 'measures one residual sensitivity',
     reason:
-      'Spread duration measures one form of residual price sensitivity with the benchmark curve held fixed.',
+      'Spread duration maps a realized signed spread change into one local residual price contribution with the benchmark curve held fixed.',
     kind: 'measurement',
+    conditions:
+      'The named spread convention, full-price basis, cash-flow assumptions and option-model treatment must remain consistent.',
+    sources: ['fed_market_risk_2026'],
   },
   {
     id: 'model_affordability__seasonality',
