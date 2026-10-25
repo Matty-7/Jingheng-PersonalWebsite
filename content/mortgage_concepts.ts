@@ -3040,9 +3040,12 @@ const original_concepts: MortgageConcept[] = [
     subtitle: 'The asset and hedge diverge',
     summary:
       'A hedge can offset one driver while the asset and hedge move differently because of spreads, liquidity, collateral or other exposures.',
-    distinction: 'Zero net DV01 does not mean zero total risk.',
-    question: 'What can hurt a duration-neutral MBS position?',
-    answer: 'Mortgage spreads can widen relative to its hedge.',
+    distinction:
+      'Zero net DV01 does not mean zero total risk: the hedge offsets only the specified local rate exposure, not spread exposure.',
+    question:
+      'Does higher spread volatility alone prove that a DV01-neutral MBS position lost money?',
+    answer:
+      'No. The realized spread move, residual exposure and other P&L components determine the outcome; volatility is not the same as widening.',
     sources: ['convexity', 'hedge'],
     links: [
       {
@@ -3833,10 +3836,11 @@ const formula_additions: Record<
       'Simplified uncapped, unfloored coupon before day-count accrual. Observation and reset rules follow the contract.',
   },
   spread_duration: {
-    expression:
-      'Spread duration is approximately minus the proportional price change divided by the decimal spread change.',
+    expression: 'ΔP / P₀ ≈ −Dₛ × Δs',
     assumptions:
-      'Local sensitivity with the benchmark curve fixed. State which cash-flow and option assumptions are held constant.',
+      'Use a consistent full-price basis and annual decimal units for the small signed spread change Δs: widening is positive and tightening is negative. Hold the benchmark curve, valuation date, collateral, projected cash flows and option-model assumptions fixed. If the spread is OAS, name its benchmark and model convention.',
+    example:
+      'Hypothetical long position: Dₛ = 4 and a +25 bp widening means Δs = +0.0025, so the local spread-only price contribution is about −1%. On an initial full market value of $10 million, that is about −$100,000. A tightening gives the opposite local sign. This is not guaranteed total return: carry, convexity, funding, hedge P&L and model changes are excluded.',
   },
 };
 export const mortgage_concepts: MortgageConcept[] = [

@@ -344,9 +344,9 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
         'cₙ: coupon rate for period n; Lₙ: contract reference rate; q: quoted margin. All are annual decimal rates before day-count accrual.',
     },
     spread_duration: {
-      tex: String.raw`D_s\approx-\frac{1}{P}\frac{\Delta P}{\Delta s}`,
+      tex: String.raw`\frac{\Delta P}{P_0}\approx-D_s\Delta s`,
       variables:
-        'P: base price; Δs: small annual decimal spread change; ΔP: corresponding price change with the benchmark curve held fixed.',
+        'P₀: initial full price or full market value; Dₛ: spread duration; Δs: small signed annual decimal spread change, positive for widening and negative for tightening; ΔP: local spread-only price change with the benchmark curve and stated model assumptions fixed.',
     },
   };
 
