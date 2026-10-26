@@ -190,6 +190,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'PD: default probability; LGD: loss fraction conditional on default; EAD: exposure at default in currency. EL is a loan-level currency amount under consistent assumptions.',
     },
+    subordination: {
+      tex: String.raw`\mathrm{Support}_t=\frac{J_t}{P_t+J_t}`,
+      variables:
+        'Jₜ: included junior-class balance; Pₜ: named protected-class balance, both current currency amounts on reporting date t. Support is a decimal snapshot; multiply by 100 for a percentage.',
+    },
     principal_interest: {
       tex: String.raw`I_n=B_{n-1}r`,
       variables:

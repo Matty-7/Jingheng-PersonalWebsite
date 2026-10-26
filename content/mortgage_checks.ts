@@ -1634,9 +1634,9 @@ export const learning_checks: Record<
   },
   subordination: {
     choices: [
-      'The percentage increased because current total principal fell; the junior cushion remains $6 million.',
-      'The structure added $0.67 million of junior protection when senior principal paid down.',
-      'The new percentage directly establishes a 6.67% breakeven CDR for the senior class.',
+      'No. Path B’s realized loss consumed $4 million of junior protection, so it ends with less dollar and percentage support.',
+      'Yes. Equal ending total balances guarantee equal protection regardless of which class paid down or absorbed losses.',
+      'Yes. Both paths establish the same breakeven CDR because their ending class balances sum to $90 million.',
     ],
     correct: 0,
   },
