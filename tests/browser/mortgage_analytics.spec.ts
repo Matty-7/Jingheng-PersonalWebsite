@@ -160,3 +160,40 @@ test('spread-duration lesson separates a signed spread shock from spread volatil
   );
   await expect(page.locator('body')).not.toHaveCSS('overflow-x', 'scroll');
 });
+
+test('subordination path comparison stays usable on mobile and reduced motion', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto(
+    '/portfolio/mortgage-map?concept=subordination#concept=subordination',
+  );
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Subordination',
+  );
+
+  const depth = page.locator('.learning-depth');
+  await depth.locator('summary').press('Enter');
+  await expect(depth).toContainText('Path A');
+  await expect(depth).toContainText('Path B');
+  await expect(depth).toContainText('6.67%');
+  await expect(depth).toContainText('2.22%');
+  await expect(depth.locator('.learning-math math')).toHaveCount(1);
+  await expect(depth.getByRole('link', { name: /Fannie Mae/ })).toBeVisible();
+  expect(
+    await page.locator('html').evaluate((element) => ({
+      client: element.clientWidth,
+      scroll: element.scrollWidth,
+    })),
+  ).toEqual({ client: 390, scroll: 390 });
+
+  await depth.getByRole('button', { name: 'Loss severity' }).click();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Loss severity',
+  );
+  await page.goBack();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Subordination',
+  );
+});

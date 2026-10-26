@@ -86,6 +86,12 @@ export const analytics_sources = {
       'STACR 2018-HQA2 Private Placement Memorandum · tranche write-down allocation and timing, pp. 40–41 and 95–97',
     url: 'https://capitalmarkets.freddiemac.com/crt/docs/legal-documents/stacr/stacr-2018-hqa2/stacr_2018-hqa2_ppm.pdf',
   },
+  cas_performance_tests: {
+    publisher: 'Fannie Mae',
+    title:
+      'CAS Structural and Delinquency Deal Performance Test Monitor · credit enhancement and principal allocation',
+    url: 'https://capitalmarkets.fanniemae.com/media/8626/display',
+  },
 };
 
 export const analytics_topics = [

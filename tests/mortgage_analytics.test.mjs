@@ -95,19 +95,34 @@ test('empirical duration states its regression convention and sample-dependent b
   );
 });
 
-test('subordination keeps current support separate from conditional breakeven', () => {
+test('subordination compares path-dependent dollar and percentage support', () => {
   const concept = search_concepts('subordination')[0];
   assert.equal(concept?.id, 'subordination');
   assert.match(concept.summary, /reporting date/);
   assert.match(concept.summary, /protected class/);
   assert.match(concept.distinction, /\$94 million senior/);
-  assert.match(concept.distinction, /about 6\.67% on \$90 million/);
-  assert.match(concept.distinction, /dollar cushion remains \$6 million/);
-  assert.match(concept.distinction, /not a universal RMBS or STACR rule/);
-  assert.match(concept.answer, /first-dollar principal-loss breakeven/);
-  assert.match(concept.answer, /default path and CDR convention/);
+  assert.match(concept.distinction, /about 6\.67% support on \$90 million/);
+  assert.match(
+    concept.distinction,
+    /about 2\.22% support on the same \$90 million/,
+  );
+  assert.match(concept.distinction, /not universal RMBS or CRT rules/);
+  assert.equal(concept.formula?.expression, 'Supportₜ = Jₜ ÷ (Pₜ + Jₜ)');
+  assert.match(concept.formula?.assumptions ?? '', /two-class snapshot only/i);
+  assert.match(concept.formula?.assumptions ?? '', /different denominator/);
+  assert.match(
+    concept.formula?.example ?? '',
+    /ending total is \$90m in both paths/,
+  );
+  assert.match(concept.answer, /first-dollar principal-loss threshold/);
+  assert.match(concept.answer, /default path/);
   assert.match(concept.answer, /not a price, yield, IRR breakeven or forecast/);
   assert.ok(concept.links.some((link) => link.id === 'recovery_lag'));
   assert.equal(learning_checks.subordination.correct, 0);
-  assert.match(learning_checks.subordination.choices[0], /remains \$6 million/);
+  assert.match(
+    learning_checks.subordination.choices[0],
+    /consumed \$4 million/,
+  );
+  assert.equal(6 / (84 + 6), 0.06666666666666667);
+  assert.equal(2 / (88 + 2), 0.022222222222222223);
 });

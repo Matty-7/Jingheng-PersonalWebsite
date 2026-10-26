@@ -3322,17 +3322,25 @@ const original_concepts: MortgageConcept[] = [
     summary:
       'A senior-subordinate structure allocates specified losses to junior classes before a named protected class, under its governing rules. Quote support with its reporting date, protected class, junior balances included in the numerator and current balance used in the denominator; subordination is only one possible form of credit enhancement.',
     distinction:
-      'The percentage is a snapshot, not a permanent shield. In a hypothetical two-class structure, $94 million senior plus $6 million junior means 6% junior subordination on $100 million current principal. If there are no losses or other enhancement and a $10 million principal payment goes entirely to senior, the next snapshot is $84 million senior plus $6 million junior: about 6.67% on $90 million, while the dollar cushion remains $6 million. This senior-only allocation is an explicit toy assumption, not a universal RMBS or STACR rule. Principal allocation, losses and contractual triggers can change support; a higher percentage alone does not prove lower collateral risk.',
+      'The percentage is a snapshot, not a permanent shield. Start with a hypothetical two-class structure of $94 million senior plus $6 million junior. Path A has no loss and pays $10 million of principal entirely to senior, ending at $84 million senior plus $6 million junior: about 6.67% support on $90 million and a $6 million cushion. Path B first allocates a $4 million realized loss to junior and pays $6 million of principal to senior, ending at $88 million senior plus $2 million junior: about 2.22% support on the same $90 million total and only a $2 million cushion. These paths are explicit toy assumptions, not universal RMBS or CRT rules. Principal allocation, write-downs, write-ups, definitions and triggers come from the transaction documents.',
+    formula: {
+      expression: 'Supportₜ = Jₜ ÷ (Pₜ + Jₜ)',
+      assumptions:
+        'A two-class snapshot only. Jₜ includes the current junior balances that the stated transaction definition places below the named protected class; Pₜ is that protected class’s current balance. Both are measured on one reporting date in the same currency. Real deals may use a different denominator or include additional classes, enhancement, write-down, write-up and payment rules.',
+      example:
+        'Path A: $6m ÷ ($84m + $6m) = 6.67%. Path B: $2m ÷ ($88m + $2m) = 2.22%. The ending total is $90m in both paths, but the realized loss consumed $4m of Path B’s junior protection.',
+    },
     question:
-      'In that example, what does the move from 6% to about 6.67% establish?',
+      'Do the two paths have the same credit support because both end with $90 million of total class balance?',
     answer:
-      'Only that the stated percentage rose because current total principal fell while the junior cushion stayed at $6 million. It did not add protection dollars or establish a 6.67% breakeven CDR. A first-dollar principal-loss breakeven is a conditional threshold that also requires a horizon, default path and CDR convention, severity, recovery lag, prepayments and the applicable waterfall. It is not a price, yield, IRR breakeven or forecast.',
+      'No. Path A retains $6 million of junior protection and 6.67% support, while Path B retains $2 million and about 2.22% after the junior write-down. Equal ending totals do not erase the principal-and-loss path. Neither percentage establishes a breakeven CDR: a first-dollar principal-loss threshold also requires a horizon, default path, severity, recovery lag, prepayments and the applicable waterfall. It is not a price, yield, IRR breakeven or forecast.',
     sources: [
       'guide',
       'investor',
       'stacr_structure',
       'stacr_deleveraging',
       'stacr_loss_allocation',
+      'cas_performance_tests',
     ],
     links: [
       {
