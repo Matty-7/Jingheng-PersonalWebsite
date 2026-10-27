@@ -197,3 +197,47 @@ test('subordination path comparison stays usable on mobile and reduced motion', 
     'Subordination',
   );
 });
+
+test('volatility-to-OAS route exposes its comparison contract on mobile and reduced motion', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto(
+    '/portfolio/mortgage-map?concept=volatility#concept=volatility',
+  );
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Rate volatility',
+  );
+  await expect(page.locator('.learning-route-header')).toContainText(
+    'Why the same volatility shock need not move OAS the same way',
+  );
+
+  const depth = page.locator('.learning-depth');
+  await depth.locator('summary').press('Enter');
+  await expect(depth).toContainText('same observed full price');
+  await expect(depth).toContainText('far out of the money');
+  await expect(depth).toContainText('near-the-money');
+  await expect(depth).toContainText('universal OAS direction or magnitude');
+  await expect(depth.locator('.learning-math math')).toHaveCount(1);
+  await expect(
+    depth.getByRole('link', { name: /Federal Reserve/, exact: false }).first(),
+  ).toBeVisible();
+  expect(
+    await page.locator('html').evaluate((element) => ({
+      client: element.clientWidth,
+      scroll: element.scrollWidth,
+    })),
+  ).toEqual({ client: 390, scroll: 390 });
+
+  await depth
+    .getByRole('button', { name: 'Coupon stack & convexity hedging' })
+    .click();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Coupon stack & convexity hedging',
+  );
+  await page.goBack();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+    'Rate volatility',
+  );
+});
