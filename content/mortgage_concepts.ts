@@ -2953,16 +2953,55 @@ const original_concepts: MortgageConcept[] = [
   {
     id: 'volatility',
     title: 'Rate volatility',
-    subtitle: 'The range of possible rate paths',
+    subtitle: 'A model input whose effect depends on security state',
     summary:
-      'Volatility changes the opportunities to exercise the borrower’s refinancing option and therefore can affect modeled MBS value.',
+      'Rate volatility changes the distribution of modeled paths, not the current curve by itself. Its effect on MBS cash flows depends on whether those paths create executable refinancing opportunities for the particular coupon, collateral and borrower population.',
     distinction:
-      'A model’s volatility assumption is different from a forecast that rates must rise or fall.',
+      'A model’s volatility assumption is different from a forecast that rates must rise or fall. It also does not supply a universal OAS direction or magnitude: quote convention, surface point, calibration, moneyness, refinancing frictions and collateral history can all change the experiment. Observed market spread co-movement is not a pure volatility sensitivity.',
+    formula: {
+      expression:
+        'ΔOAS_vol = OAS(P; shocked volatility, Θ) − OAS(P; base volatility, Θ)',
+      assumptions:
+        'Use the same observed full price P, as-of time, settlement, curve, collateral, prepayment specification and OAS convention. Define the normal or lognormal quote, units, expiry, underlying tenor and strike. Hold the remaining assumptions Θ fixed; if the model is recalibrated, report that as a different experiment.',
+      example:
+        'Illustrative states only: collateral far out of the money may remain far from an executable refinance incentive after the shock, while near-the-money collateral can cross an exercise threshold on some paths and reproject principal, surviving balance and later interest. Re-solve OAS only after those path cash flows are updated; neither state fixes the sign or size of ΔOAS_vol.',
+    },
     question:
       'Why can unchanged current rates coexist with a different option value?',
     answer: 'The distribution of possible future rates can change.',
-    sources: ['convexity', 'cfa_risk'],
+    sources: [
+      'convexity',
+      'cfa_risk',
+      'normal_volatility',
+      'pathwise_mbs_research',
+      'mbs_runoff_public',
+    ],
     links: [
+      {
+        id: 'volatility_conventions',
+        reason:
+          'Normal and lognormal quotes need units and contract terms before comparison.',
+      },
+      {
+        id: 'volatility_surface',
+        reason:
+          'Expiry, underlying tenor and strike identify the shocked surface point.',
+      },
+      {
+        id: 'model_calibration',
+        reason:
+          'Recalibration and an isolated volatility shock are different experiments.',
+      },
+      {
+        id: 'coupon_stack',
+        reason:
+          'Coupon and collateral cohorts can occupy different refinancing states.',
+      },
+      {
+        id: 'path_cashflows',
+        reason:
+          'Changed exercise behavior must be reprojected into path-specific payments.',
+      },
       {
         id: 'oas',
         reason:
