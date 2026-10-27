@@ -209,6 +209,13 @@ test('volatility-to-OAS route exposes its comparison contract on mobile and redu
   await expect(page.getByRole('heading', { level: 2 })).toHaveText(
     'Rate volatility',
   );
+  await page.getByRole('button', { name: 'All topics' }).click();
+  await page.getByRole('button', { name: 'Learning routes' }).click();
+  await page
+    .getByRole('button', {
+      name: /Why the same volatility shock need not move OAS the same way/,
+    })
+    .click();
   await expect(page.locator('.learning-route-header')).toContainText(
     'Why the same volatility shock need not move OAS the same way',
   );
