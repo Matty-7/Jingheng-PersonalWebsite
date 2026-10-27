@@ -353,6 +353,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'P₀: initial full price or full market value; Dₛ: spread duration; Δs: small signed annual decimal spread change, positive for widening and negative for tightening; ΔP: local spread-only price change with the benchmark curve and stated model assumptions fixed.',
     },
+    volatility: {
+      tex: String.raw`\Delta\mathrm{OAS}_{\mathrm{vol}}=\mathrm{OAS}(P;\sigma_{\mathrm{shock}},\Theta)-\mathrm{OAS}(P;\sigma_{\mathrm{base}},\Theta)`,
+      variables:
+        'P: the same observed full price; σ: the defined volatility input with matched quote convention, units and surface point; Θ: the remaining fixed curve, collateral, prepayment, settlement and spread conventions. ΔOAS_vol is the difference between two model-implied annual spreads, reported in consistent units.',
+    },
   };
 
 export type MortgageFormulas = Record<
