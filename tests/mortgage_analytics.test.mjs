@@ -7,6 +7,10 @@ import {
 } from '../content/mortgage_analytics.ts';
 import { learning_checks } from '../content/mortgage_checks.ts';
 import { mortgage_paths } from '../content/mortgage_concepts.ts';
+import {
+  valuation_paths,
+  valuation_relationships,
+} from '../content/mortgage_valuation.ts';
 import { search_concepts } from '../lib/mortgage_search.ts';
 
 test('analytics paths preserve complete explanations and explicit boundaries', () => {
@@ -36,6 +40,80 @@ test('operational acronyms resolve to the intended financial concept', () => {
     ['normal volatility', 'volatility_conventions'],
   ])
     assert.equal(search_concepts(query)[0]?.id, id, query);
+});
+
+test('volatility-to-OAS path preserves the comparison contract and state dependence', () => {
+  const path = valuation_paths.find(
+    (candidate) => candidate.id === 'volatility_state_to_oas',
+  );
+  assert.ok(path);
+  assert.deepEqual(path.steps, [
+    'volatility_conventions',
+    'volatility_surface',
+    'model_calibration',
+    'short_rate_model',
+    'volatility',
+    'coupon_stack',
+    'incentive',
+    'prepayments',
+    'path_cashflows',
+    'pathwise_valuation',
+    'oas',
+  ]);
+  assert.equal(path.steps.length, path.explanations.length);
+  for (const term of [
+    'full price',
+    'as-of',
+    'settlement',
+    'curve',
+    'collateral',
+    'prepayment specification',
+    'OAS convention',
+    'recalibrated',
+  ])
+    assert.match(path.premise, new RegExp(term, 'i'));
+  assert.match(path.explanations.join(' '), /far out-of-the-money/i);
+  assert.match(path.explanations.join(' '), /nearer the money/i);
+  assert.match(path.boundary, /no universal sign or magnitude/i);
+  assert.match(path.boundary, /Observed spread co-movement/i);
+  assert.match(path.boundary, /neither a forecast nor a pricing tool/i);
+
+  const relationshipPairs = new Set(
+    valuation_relationships.map(
+      (relationship) => `${relationship.source}->${relationship.target}`,
+    ),
+  );
+  for (const pair of [
+    'volatility_conventions->volatility_surface',
+    'short_rate_model->volatility',
+    'volatility->coupon_stack',
+    'prepayments->path_cashflows',
+  ])
+    assert.ok(relationshipPairs.has(pair), pair);
+
+  const volatility = search_concepts('rate volatility')[0];
+  assert.equal(volatility?.id, 'volatility');
+  assert.match(
+    volatility.formula?.assumptions ?? '',
+    /same observed full price/i,
+  );
+  assert.match(volatility.formula?.assumptions ?? '', /recalibrated/i);
+  assert.match(volatility.formula?.example ?? '', /far out of the money/i);
+  assert.match(volatility.formula?.example ?? '', /near-the-money/i);
+  assert.match(volatility.distinction, /universal OAS direction or magnitude/i);
+  assert.match(volatility.distinction, /not a pure volatility sensitivity/i);
+  for (const id of [
+    'volatility_conventions',
+    'volatility_surface',
+    'model_calibration',
+    'coupon_stack',
+    'path_cashflows',
+    'oas',
+  ])
+    assert.ok(
+      volatility.links.some((link) => link.id === id),
+      id,
+    );
 });
 
 test('effective convexity explains sign without treating it as a permanent label', () => {
