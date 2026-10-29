@@ -163,7 +163,7 @@ const original_topics = [
     id: 'market_mechanics',
     branch: 'trading',
     title: 'Delivery & financing',
-    concepts: ['settlement', 'rolls', 'liquidity'],
+    concepts: ['tba_allocation', 'settlement', 'rolls', 'liquidity'],
   },
   {
     id: 'payment_timing',
@@ -422,6 +422,36 @@ export const mortgage_sources: Record<
     title:
       'Understanding Mortgage Spreads · Staff Report No. 674, revised June 2018 · sections 4.2–4.3',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr674.pdf',
+  },
+  sifma_pool_notification: {
+    publisher: 'SIFMA',
+    title: 'Uniform Practices Manual · Chapter 7, Pool Notification Process',
+    url: 'https://www.sifma.org/resources/market-practices-model-documentation/tba-market-governance',
+  },
+  sifma_good_delivery: {
+    publisher: 'SIFMA',
+    title: 'Uniform Practices Manual · Chapter 8, Good Delivery Guidelines',
+    url: 'https://www.sifma.org/documents/tba-market-governance-uniform-practices-manual-chapter-8-standard-requirement-for-delivery-on-settlements-of-fannie-mae-freddie-mac-and-ginnie-mae-securities-good-delivery-guidelines',
+  },
+  sifma_mbs_calendar: {
+    publisher: 'SIFMA',
+    title: 'MBS Notification and Settlement Dates',
+    url: 'https://www.sifma.org/resources/general/mbs-notification-and-settlement-dates',
+  },
+  fannie_mbs_operations: {
+    publisher: 'Fannie Mae',
+    title: 'Capital Markets MBS Operations Guidelines · pool information',
+    url: 'https://singlefamily.fanniemae.com/media/document/pdf/capital-markets-mbs-operations-guidelines',
+  },
+  fannie_pool_transactions: {
+    publisher: 'Fannie Mae',
+    title: 'MBS Pool Transactions Overview · allocation information',
+    url: 'https://singlefamily.fanniemae.com/media/document/pdf/mbs-pool-transactions-overview',
+  },
+  freddie_tba_48_hour: {
+    publisher: 'Freddie Mac',
+    title: 'Understanding Mortgage-Backed Securities · TBA 48-Hour Rule',
+    url: 'https://capitalmarkets.freddiemac.com/mbs/understanding-mortgage-backed-securities',
   },
   specified_pool_pricing: {
     publisher: 'Federal Reserve Bank of New York',
@@ -2255,6 +2285,64 @@ const original_concepts: MortgageConcept[] = [
     aliases: ['cheapest to deliver', 'CTD'],
     topic: 'pool_selection',
     branch: 'trading',
+  },
+  {
+    id: 'tba_allocation',
+    branch: 'trading',
+    title: 'TBA allocation & good delivery',
+    subtitle: 'From trade terms to delivered pools',
+    aliases: [
+      'TBA allocation',
+      '48-hour day',
+      'pool notification',
+      'allocation notice',
+      'good delivery',
+      'TBA delivery',
+    ],
+    summary:
+      'A TBA trade first fixes standardized contract and settlement terms without naming the individual pools. On the applicable 48-hour day, the seller notifies the buyer of the pools intended for delivery. Allocation identifies the actual pools, which are checked against the trade terms and applicable good-delivery requirements before securities and cash exchange at settlement.',
+    distinction:
+      'Keep four layers separate: the TBA contract, a pre-allocation analytics proxy, the allocation notice and the pools ultimately delivered at settlement. The proxy is a modeling assumption, not a delivery instruction. Good-delivery validation asks whether the proposed pools and delivery package conform to the trade and market rules; it does not certify that the pools match the proxy, have identical projected cash flows or are economically equivalent. The 48-hour day is a market-calendar designation, not a promise of exactly 48 elapsed hours.',
+    links: [
+      {
+        id: 'tba',
+        reason:
+          'The standardized contract is agreed before individual pools are identified.',
+      },
+      {
+        id: 'tba_analytics_mapping',
+        reason:
+          'Pre-allocation analytics use a proxy separate from the allocation notice and delivered collateral.',
+      },
+      {
+        id: 'settlement',
+        reason:
+          'Validated delivery completes through the agreed exchange of securities and cash.',
+      },
+      {
+        id: 'pool_averages',
+        reason:
+          'Once pools are identified, actual collateral statistics replace representative assumptions for pool-specific analysis.',
+      },
+      {
+        id: 'settlement_cashflow_dates',
+        reason:
+          'Settlement and entitlement rules determine which post-settlement payments enter valuation.',
+      },
+    ],
+    question:
+      'Can a pre-allocation analytics proxy be treated as the seller’s pool notification or as a promise to deliver those pools?',
+    answer:
+      'No. The proxy supports analysis before the pools are known. The seller later identifies proposed pools through the allocation process, and delivery is validated against the actual contract and good-delivery requirements before settlement.',
+    sources: [
+      'sifma_pool_notification',
+      'sifma_good_delivery',
+      'sifma_mbs_calendar',
+      'fannie_mbs_operations',
+      'fannie_pool_transactions',
+      'freddie_tba_48_hour',
+    ],
+    topic: 'market_mechanics',
   },
   {
     id: 'settlement',

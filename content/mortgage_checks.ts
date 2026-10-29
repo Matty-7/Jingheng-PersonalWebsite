@@ -1064,6 +1064,14 @@ export const learning_checks: Record<
     ],
     correct: 1,
   },
+  tba_allocation: {
+    choices: [
+      'Yes. The analytics proxy identifies the pools that the seller must deliver.',
+      'No. The proxy supports pre-allocation analysis; the later allocation notice identifies proposed pools for delivery and good-delivery validation.',
+      'No. Pool identities remain irrelevant even after settlement.',
+    ],
+    correct: 1,
+  },
   specified: {
     choices: [
       'Equal coupons require equal expected principal paths.',

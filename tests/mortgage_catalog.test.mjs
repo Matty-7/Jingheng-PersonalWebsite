@@ -270,3 +270,46 @@ test('TBA analytics mapping separates a collateral proxy from contract and deliv
     /Different collateral assumptions can change projected cash flows/,
   );
 });
+
+test('TBA allocation separates proxy collateral, notification, good delivery and settlement', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'tba_allocation',
+  );
+  assert.ok(concept);
+  assert.equal(concept.topic, 'market_mechanics');
+  for (const query of [
+    '48-hour day',
+    'pool notification',
+    'good delivery',
+    'TBA allocation',
+  ])
+    assert.equal(search_concepts(query)[0]?.id, 'tba_allocation', query);
+  assert.match(concept.distinction, /market-calendar designation/);
+  assert.match(concept.distinction, /not a delivery instruction/);
+  assert.match(concept.distinction, /does not certify/);
+  assert.deepEqual(
+    concept.links.map((link) => link.id),
+    [
+      'tba',
+      'tba_analytics_mapping',
+      'settlement',
+      'pool_averages',
+      'settlement_cashflow_dates',
+    ],
+  );
+  for (const source of concept.sources) assert.ok(mortgage_sources[source]);
+  for (const edge_id of [
+    'tba__tba_allocation',
+    'tba_analytics_mapping__tba_allocation',
+    'tba_allocation__settlement',
+  ])
+    assert.ok(
+      mortgage_relationships.some((edge) => edge.id === edge_id),
+      edge_id,
+    );
+  assert.equal(learning_checks.tba_allocation.correct, 1);
+  assert.match(
+    learning_checks.tba_allocation.choices[1],
+    /later allocation notice identifies proposed pools/,
+  );
+});

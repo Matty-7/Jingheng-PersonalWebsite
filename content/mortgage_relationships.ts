@@ -8,6 +8,46 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'tba__tba_allocation',
+    source: 'tba',
+    target: 'tba_allocation',
+    kind: 'mechanism',
+    label: 'constrains later pool allocation',
+    reason:
+      'The standardized trade terms are agreed before individual pools are identified and define the delivery obligation against which an allocation is checked.',
+    conditions:
+      'Apply the transaction’s actual terms and current market rules. A TBA trade does not identify final pools at execution.',
+    sources: ['sifma_pool_notification', 'sifma_good_delivery'],
+  },
+  {
+    id: 'tba_analytics_mapping__tba_allocation',
+    source: 'tba_analytics_mapping',
+    target: 'tba_allocation',
+    kind: 'comparison',
+    label: 'separates a proxy from pool notification',
+    reason:
+      'A proxy supplies representative collateral for analysis before allocation, while the allocation notice identifies proposed actual pools for delivery.',
+    conditions:
+      'The proxy is not a notice, contract promise or representation of the pools ultimately delivered. Good delivery does not require actual pools to match proxy cash flows.',
+    sources: ['tba_analytics_public', 'sifma_pool_notification'],
+  },
+  {
+    id: 'tba_allocation__settlement',
+    source: 'tba_allocation',
+    target: 'settlement',
+    kind: 'mechanism',
+    label: 'precedes final exchange',
+    reason:
+      'The proposed pools and delivery package are identified and checked before securities and cash are exchanged at settlement.',
+    conditions:
+      'Notification is not settlement completion. Timing, corrections and remedies depend on the applicable calendar, agreements and current market rules.',
+    sources: [
+      'sifma_mbs_calendar',
+      'fannie_mbs_operations',
+      'freddie_tba_48_hour',
+    ],
+  },
+  {
     id: 'tba__tba_analytics_mapping',
     source: 'tba',
     target: 'tba_analytics_mapping',
