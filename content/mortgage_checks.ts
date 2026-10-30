@@ -858,9 +858,9 @@ export const learning_checks: Record<
   },
   policy_rate: {
     choices: [
-      'Yes. Expectations and risk compensation can rise despite the policy cut.',
-      'No. Long yields must move in the same direction as the current policy rate.',
-      'Yes. A policy cut mechanically raises all longer-maturity yields.',
+      'No. Expected short rates, term premium, agency MBS pricing and lender terms can move independently of today’s target.',
+      'Yes. An unchanged policy target fixes all longer-term borrowing rates until the next policy meeting.',
+      'No. Mortgage quotes move independently of all interest-rate and credit conditions.',
     ],
     correct: 0,
   },
