@@ -147,6 +147,11 @@ export const mechanism_sources = {
     title: 'Treasury term premia',
     url: 'https://libertystreeteconomics.newyorkfed.org/2014/05/treasury-term-premia-1961-present/',
   },
+  financial_conditions_public: {
+    publisher: 'Federal Reserve',
+    title: 'How does the Federal Reserve affect inflation and employment?',
+    url: 'https://www.federalreserve.gov/faqs/money_12856.htm',
+  },
   balance_sheet_public: {
     publisher: 'Federal Reserve',
     title: 'Open market operations and balance-sheet tools',
@@ -862,9 +867,9 @@ const entries: Entry[] = [
     subtitle: 'The short end is not the whole curve',
     aliases: ['policy rate', 'Fed funds', 'rate cut'],
     summary:
-      'Central-bank policy directly shapes short-term money-market conditions. Longer-term yields also reflect the expected future rate path and compensation for risk. A mortgage quote contains further pricing components.',
+      'Central-bank policy directly shapes short-term money-market conditions, but the policy target is only one input to the prices and availability of financing faced by borrowers. Longer-term yields reflect the expected future rate path and compensation for risk. Agency MBS pricing and lender terms then help turn those market rates into a mortgage quote.',
     distinction:
-      'A policy-rate change is not a one-for-one change in every borrowing rate.',
+      'An unchanged policy target does not mean unchanged mortgage conditions: the expected rate path, term premium, agency MBS pricing or lender capacity can still change.',
     links: [
       {
         id: 'treasury',
@@ -881,11 +886,21 @@ const entries: Entry[] = [
         reason:
           'Long-term yields include compensation that can move separately from expected short rates.',
       },
+      {
+        id: 'current_coupon',
+        reason:
+          'Agency MBS pricing can move even when the current policy target is unchanged.',
+      },
     ],
-    sources: ['curve_policy_public', 'mortgage_rate_public'],
-    question: 'Can long yields rise on the day of a policy-rate cut?',
+    sources: [
+      'curve_policy_public',
+      'financial_conditions_public',
+      'mortgage_rate_public',
+    ],
+    question:
+      'If the policy target is unchanged, must mortgage borrowing conditions also be unchanged?',
     answer:
-      'Yes. Expectations and risk compensation can move differently from the current policy rate.',
+      'No. Expected short rates, term premium, agency MBS pricing and lender pricing or capacity can still move.',
   },
   {
     id: 'term_premium',
@@ -1174,11 +1189,11 @@ export const mechanism_models: MechanismModel[] = [
   },
   {
     id: 'policy_to_prepayment',
-    title: 'Why a rate cut may not lower a mortgage quote',
+    title: 'Why a policy hold or cut may not lower a mortgage quote',
     description:
       'Follow policy through bond pricing, lender quotes and the borrower’s decision.',
     premise:
-      'A headline rate cut passes through several markets and decisions before it becomes a payment on someone’s mortgage.',
+      'For conforming fixed-rate production, a policy decision reaches a borrower quote through market expectations, Treasury yields, agency MBS pricing and lender economics before it can affect a mortgage payment.',
     steps: [
       'policy_rate',
       'treasury',
@@ -1189,16 +1204,16 @@ export const mechanism_models: MechanismModel[] = [
       'prepayments',
     ],
     explanations: [
-      'Policy changes short-term conditions. Expectations about future policy can already be priced in.',
+      'Start with the current policy target and the path already priced by markets. A hold can coincide with tighter mortgage conditions if longer yields, agency MBS pricing or lender terms change.',
       'Long-term Treasury yields also reflect the expected rate path and term premium, so they need not follow the current policy rate.',
       'Agency MBS pricing adds compensation for mortgage-specific risks and responds to investor demand.',
-      'The rate reaching the borrower also reflects origination, servicing, guarantee costs and margins.',
+      'The borrower quote and its availability also reflect origination, servicing, guarantee costs, margins and lender capacity.',
       'Compare the new borrower quote with the existing mortgage, accounting for the cost of refinancing.',
       'A financially attractive refinance still needs to be available to this borrower under the relevant program.',
       'Only a completed payoff returns principal to the old mortgage pool. The investor then has a different cash-flow schedule.',
     ],
     boundary:
-      'This is a conditional transmission path, not a forecast. Expectations, term premium, MBS valuation, lender capacity and borrower circumstances can each offset a policy move.',
+      'This is a conditional transmission path, not a forecast. A lower, higher or unchanged policy target does not determine the mortgage quote or credit availability. Expectations, term premium, MBS option valuation, investor demand and lender capacity can offset or amplify the policy decision. The agency current-coupon step is most directly applicable to conforming fixed-rate production; other mortgage products can use different benchmarks and credit channels.',
   },
   {
     id: 'rate_lock_to_hedge',
