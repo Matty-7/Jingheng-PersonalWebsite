@@ -115,6 +115,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'Q: IMM futures index quote; R: annualized rate in percentage points; r: decimal rate. At final SR3 settlement R is realized compounded SOFR for the reference quarter. The index quote is not a bond dollar price.',
     },
+    supply_demand: {
+      tex: String.raw`\Delta H=T+V+O`,
+      variables:
+        'ΔH: change in reported holdings over one period; T: net transactions, including MBS principal repayments as negative transactions; V: valuation changes; O: other volume or classification changes. All terms use the same sector, period and valuation basis. The identity does not reveal gross purchases or gross sales.',
+    },
     pay_up: {
       tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,
       variables:

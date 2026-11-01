@@ -138,6 +138,13 @@ test('MBS supply and demand separates allocation from intermediation', () => {
     /mandates and duration, credit and prepayment-option limits/,
   );
   assert.match(concept.summary, /shared balance-sheet capacity/);
+  assert.match(concept.formula.expression, /net transactions/);
+  assert.match(concept.formula.expression, /valuation changes/);
+  assert.match(concept.formula.assumptions, /principal paydowns/);
+  assert.match(
+    concept.distinction,
+    /do not by themselves prove active selling/,
+  );
   assert.match(concept.distinction, /does not mechanically widen/);
   assert.match(concept.distinction, /greater dealer capacity/);
   assert.match(
@@ -149,12 +156,22 @@ test('MBS supply and demand separates allocation from intermediation', () => {
     'dealer_capacity_2024',
     'portfolio_balance_2019',
     'mbs_supply_overview_2022',
+    'financial_accounts_instruments_public',
+    'bank_mbs_holdings_public',
+    'bank_mbs_reporting_notes_public',
   ])
     assert.ok(mortgage_sources[source], source);
+  assert.ok(concept.links.some((link) => link.id === 'prepayments'));
+  for (const source of [
+    'financial_accounts_instruments_public',
+    'bank_mbs_holdings_public',
+    'bank_mbs_reporting_notes_public',
+  ])
+    assert.ok(concept.sources.includes(source), source);
   assert.equal(learning_checks.supply_demand.correct, 0);
   assert.match(
     learning_checks.supply_demand.choices[0],
-    /Investor demand and dealer capacity can absorb supply/,
+    /reconcile transactions and stocks/,
   );
   const liquidity = mortgage_relationships.find(
     (edge) => edge.id === 'model_supply_demand__liquidity',
