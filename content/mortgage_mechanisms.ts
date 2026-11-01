@@ -137,6 +137,22 @@ export const mechanism_sources = {
     title: 'Mortgage-Backed Securities · Staff Report No. 1001',
     url: 'https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1001.pdf',
   },
+  financial_accounts_instruments_public: {
+    publisher: 'Federal Reserve Board',
+    title: 'Financial Accounts Guide · Agency- and GSE-backed securities',
+    url: 'https://www.federalreserve.gov/releases/z1/preview/html/table_desc_instruments.htm',
+  },
+  bank_mbs_holdings_public: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Assets and Liabilities of Commercial Banks in the United States · H.8',
+    url: 'https://www.federalreserve.gov/releases/h8/current/',
+  },
+  bank_mbs_reporting_notes_public: {
+    publisher: 'Federal Reserve Board',
+    title: 'H.8 Notes · reporting and classification changes',
+    url: 'https://www.federalreserve.gov/releases/h8/h8notes.htm',
+  },
   curve_policy_public: {
     publisher: 'Reserve Bank of Australia',
     title: 'Bonds and the yield curve',
@@ -977,10 +993,23 @@ const entries: Entry[] = [
       'cross-asset supply',
     ],
     summary:
-      'Issuance brings securities to market; principal repayments retire them. Two conditional channels connect MBS with wider fixed income. Investors may reallocate among securities when their mandates and duration, credit and prepayment-option limits permit. Dealers may use inventory, financing and shared balance-sheet capacity to intermediate Treasury and agency MBS flows, while desk-specific risk limits can tighten when volatility rises. These channels help determine the price that clears the market; they do not make the assets interchangeable.',
+      'Issuance brings securities to market; principal repayments retire them. Demand must be inferred from prices, transactions and positions rather than from one holdings series. For MBS, principal paydowns are negative transactions, so gross purchases can coexist with a declining holdings stock. Investors may reallocate among securities when their mandates and duration, credit and prepayment-option limits permit. Dealers may use inventory, financing and shared balance-sheet capacity to intermediate Treasury and agency MBS flows, while desk-specific risk limits can tighten when volatility rises. These channels help determine the price that clears the market; they do not make the assets interchangeable.',
+    formula: {
+      expression:
+        'Δ reported holdings = net transactions + valuation changes + other volume/classification changes',
+      assumptions:
+        'Reconcile like-for-like periods, sectors and valuation bases. For MBS, principal paydowns enter net transactions as repayments; the identity does not reveal gross purchases or gross sales by itself.',
+      example:
+        'A sector can purchase MBS while its reported holdings decline if principal paydowns and other reductions exceed those purchases.',
+    },
     distinction:
-      'More corporate issuance can compete for compatible investor demand or intermediation resources, but it does not mechanically widen agency MBS spreads or drain a fixed pool of bank liquidity. New investor demand, greater dealer capacity or other forces can absorb supply. A change in demand can still affect MBS spreads without a change in collateral credit quality; co-movement alone does not identify the cause.',
+      'Falling reported holdings do not by themselves prove active selling. First check whether the series is reported at face, book or market value; how residual estimates, reclassifications and series breaks are handled; and whether principal paydowns offset purchases. More corporate issuance can compete for compatible investor demand or intermediation resources, but it does not mechanically widen agency MBS spreads or drain a fixed pool of bank liquidity. New investor demand, greater dealer capacity or other forces can absorb supply; co-movement alone does not identify the cause.',
     links: [
+      {
+        id: 'prepayments',
+        reason:
+          'Principal paydowns can reduce reported MBS holdings even when investors are making gross purchases.',
+      },
       {
         id: 'current_coupon',
         reason:
@@ -1002,11 +1031,14 @@ const entries: Entry[] = [
       'dealer_capacity_2024',
       'portfolio_balance_2019',
       'mbs_supply_overview_2022',
+      'financial_accounts_instruments_public',
+      'bank_mbs_holdings_public',
+      'bank_mbs_reporting_notes_public',
     ],
     question:
-      'Does increased corporate bond issuance necessarily widen agency MBS spreads?',
+      'Do falling reported MBS holdings prove that the sector was a net seller?',
     answer:
-      'No. Investor demand and dealer capacity can absorb supply; any effect depends on allocation, intermediation and other conditions.',
+      'No. Principal paydowns, valuation changes, reclassifications and measurement basis can reduce reported holdings; reconcile transactions and stocks before inferring selling.',
   },
   {
     id: 'curve_shifts',
