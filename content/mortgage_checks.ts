@@ -882,9 +882,9 @@ export const learning_checks: Record<
   },
   supply_demand: {
     choices: [
-      'No. Investor demand and dealer capacity can absorb supply; any effect depends on allocation, intermediation and other conditions.',
-      'Yes. New corporate bonds automatically exhaust a fixed pool of bank liquidity and force agency MBS spreads wider.',
-      'No. Different credit risks prevent corporate bonds and agency MBS from ever affecting the same investors or intermediaries.',
+      'No. Principal paydowns, valuation changes, reclassifications and measurement basis can reduce reported holdings; reconcile transactions and stocks before inferring selling.',
+      'Yes. A decline in any reported holdings series means that sales exceeded purchases.',
+      'No. Holdings data can never inform demand because positions and transactions are unrelated.',
     ],
     correct: 0,
   },
