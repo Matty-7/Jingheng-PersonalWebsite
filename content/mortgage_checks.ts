@@ -1122,9 +1122,9 @@ export const learning_checks: Record<
   },
   spreads: {
     choices: [
-      'Yes. OAS is observed directly and is independent of modeling assumptions.',
-      'No. A model infers OAS from the observed price.',
-      'No. OAS is the contractual spread written into every mortgage loan.',
+      'The outputs logically contradict one another, so at least two must be calculation errors.',
+      'First align each model’s horizon, benchmark, factors, units and standardization. Wide and tight are conditional on different specifications, while neutral is only an aggregation result—not a causal conclusion or forecast.',
+      'Neutral proves the security is at fair value and has no expected excess return, regardless of the inputs or weights.',
     ],
     correct: 1,
   },
