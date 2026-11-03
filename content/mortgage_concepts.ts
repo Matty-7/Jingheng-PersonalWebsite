@@ -1397,9 +1397,9 @@ const original_concepts: MortgageConcept[] = [
       },
     ],
     question:
-      'Does a fitted fair-spread residual reveal model-free value or predict convergence?',
+      'How can a short-window “wide” signal, a long-window “tight” signal and a composite “neutral” score coexist?',
     answer:
-      'No. Price is observed, OAS is inferred by a pricing model, and the fitted spread adds a second layer conditional on its sample, horizon, factors and standardization.',
+      'Each label is conditional on its own sample, horizon, factors and standardization. Price is observed, OAS is inferred by a pricing model, and a fitted spread adds another conditional layer; none of the labels alone predicts convergence.',
     sources: [
       'fed_spreads',
       'cohort',
