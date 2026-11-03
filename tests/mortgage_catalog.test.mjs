@@ -200,6 +200,10 @@ test('spread relative value remains conditional on its model and window', () => 
   assert.match(concept.formula.example, /z = \+2/);
   assert.match(concept.formula.example, /z = −1/);
   assert.match(concept.formula.example, /neither predicts convergence/i);
+  assert.match(
+    concept.question,
+    /short-window “wide”.*long-window “tight”.*composite “neutral”/i,
+  );
   assert.match(concept.distinction, /opposite signs without contradiction/i);
   assert.match(concept.distinction, /neutral label only means/i);
   assert.match(concept.distinction, /double-counted/i);
