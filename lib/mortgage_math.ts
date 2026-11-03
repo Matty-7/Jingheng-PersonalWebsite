@@ -358,6 +358,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'P₀: initial full price or full market value; Dₛ: spread duration; Δs: small signed annual decimal spread change, positive for widening and negative for tightening; ΔP: local spread-only price change with the benchmark curve and stated model assumptions fixed.',
     },
+    spreads: {
+      tex: String.raw`e_t=s_t-\widehat{s}_t,\qquad z_t=\frac{e_t}{\widehat{\sigma}_{\varepsilon,W}}`,
+      variables:
+        'sₜ: reported spread or model-implied OAS in bp; ŝₜ: regression-fitted spread in bp; eₜ: residual in bp; σ̂ε,W > 0: residual standard deviation in bp over named estimation window W; zₜ: dimensionless standardized residual. All inputs require matched as-of, instrument and spread conventions.',
+    },
     volatility: {
       tex: String.raw`\Delta\mathrm{OAS}_{\mathrm{vol}}=\mathrm{OAS}(P;\sigma_{\mathrm{shock}},\Theta)-\mathrm{OAS}(P;\sigma_{\mathrm{base}},\Theta)`,
       variables:
