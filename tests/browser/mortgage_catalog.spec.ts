@@ -11,6 +11,10 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
         : { width: 1280, height: 900 },
     );
     await page.goto('/portfolio/mortgage-map');
+    await expect(page.locator('#map-top')).toHaveAttribute(
+      'data-content-release',
+      'mbs-spread-rv-2026-11-03',
+    );
     await page.getByRole('button', { name: 'Search concepts' }).click();
     const search = page.getByRole('searchbox', {
       name: 'Search mortgage concepts',

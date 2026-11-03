@@ -36,7 +36,11 @@ export default async function MortgageMapPage({
       : position;
   const legacy_hash_guard = `try{const id=new URLSearchParams(location.hash.slice(1)).get('concept');if(id&&id!==${JSON.stringify(initial_lesson.current_id)})document.documentElement.dataset.mortgagePending='true'}catch{}`;
   return (
-    <main className="mortgage-learning-page" id="map-top">
+    <main
+      className="mortgage-learning-page"
+      id="map-top"
+      data-content-release="mbs-spread-rv-2026-11-03"
+    >
       <script dangerouslySetInnerHTML={{ __html: legacy_hash_guard }} />
       <MortgageMap
         initial_lesson={initial_lesson}
