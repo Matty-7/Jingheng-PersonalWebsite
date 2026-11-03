@@ -1352,11 +1352,21 @@ const original_concepts: MortgageConcept[] = [
       'zero volatility spread',
       'I-spread',
       'benchmark curve',
+      'relative value spread',
+      'spread residual',
+      'spread z-score',
     ],
     summary:
-      'A yield spread compares yields. Z-spread adds one constant spread to a reference zero-coupon curve to fit a specified payment path to price. OAS fits price using rate paths and option-sensitive cash flows.',
+      'A yield spread compares yields. Z-spread adds one constant spread to a reference zero-coupon curve to fit a specified payment path to price. OAS fits observed price using rate paths and option-sensitive cash flows. A regression-fitted “fair OAS” is a second conditional estimate: it explains a model-implied OAS with a stated benchmark and factor specification.',
+    formula: {
+      expression: 'eₜ = sₜ − ŝₜ; zₜ = eₜ / σ̂ε,W',
+      assumptions:
+        'sₜ is a reported spread or OAS in bp under a named pricing convention; ŝₜ is a fitted spread in bp from a stated regression; eₜ is the residual in bp; σ̂ε,W > 0 is residual standard deviation in bp over named window W; zₜ is dimensionless. Align as-of time, collateral or coupon, settlement, benchmark, pricing and OAS model, and units. Disclose the dependent variable, factors, sample dates, frequency, estimation horizon, intercept or controls, weighting and standardization. An in-sample residual is descriptive, not an out-of-sample forecast.',
+      example:
+        'Illustrative only: a reported OAS of 70 bp versus a short-window fit of 60 bp with 5 bp residual volatility gives e = +10 bp and z = +2, conditionally “wide.” The same 70 bp versus a long-window fit of 80 bp with 10 bp residual volatility gives e = −10 bp and z = −1, conditionally “tight.” Both can be correct for their own specifications; neither predicts convergence.',
+    },
     distinction:
-      'OAS depends on rate, volatility and prepayment assumptions; different models can disagree.',
+      'Price is observed; OAS depends on rate, volatility and prepayment assumptions, so models can disagree before a relative-value regression is fitted. Short- and long-window residuals can have opposite signs without contradiction. A composite scorecard’s neutral label only means its stated standardized inputs offset under specified weights; it is not fair value, a causal verdict, expected return, forecast or trading signal. Correlated factors can also be double-counted.',
     links: [
       {
         id: 'pv',
@@ -1370,10 +1380,32 @@ const original_concepts: MortgageConcept[] = [
         id: 'convexity',
         reason: 'Shows rate-dependent payment behavior.',
       },
+      {
+        id: 'empirical_duration',
+        reason:
+          'Historical regressions share sample, window and specification dependence.',
+      },
+      {
+        id: 'model_risk',
+        reason:
+          'Pricing and relative-value layers each add assumptions to the result.',
+      },
+      {
+        id: 'supply_demand',
+        reason:
+          'Flows can be candidate explanatory factors without becoming causal proof.',
+      },
     ],
-    question: 'Is OAS observed independently of a model?',
-    answer: 'No. A model infers it from price.',
-    sources: ['fed_spreads', 'cohort'],
+    question:
+      'Does a fitted fair-spread residual reveal model-free value or predict convergence?',
+    answer:
+      'No. Price is observed, OAS is inferred by a pricing model, and the fitted spread adds a second layer conditional on its sample, horizon, factors and standardization.',
+    sources: [
+      'fed_spreads',
+      'cohort',
+      'tba_analytics_public',
+      'convexity_feedback_public',
+    ],
     topic: 'spread_measures',
   },
   {
