@@ -183,6 +183,49 @@ test('MBS supply and demand separates allocation from intermediation', () => {
   assert.match(spreads?.conditions, /not sufficient evidence/);
 });
 
+test('spread relative value remains conditional on its model and window', () => {
+  const matches = mortgage_concepts.filter((node) => node.id === 'spreads');
+  assert.equal(matches.length, 1);
+  const concept = matches[0];
+  assert.match(concept.formula.expression, /eₜ = sₜ − ŝₜ/);
+  assert.match(concept.formula.expression, /zₜ = eₜ/);
+  for (const term of [
+    'bp',
+    'window',
+    'frequency',
+    'benchmark',
+    'standardization',
+  ])
+    assert.match(concept.formula.assumptions, new RegExp(term, 'i'));
+  assert.match(concept.formula.example, /z = \+2/);
+  assert.match(concept.formula.example, /z = −1/);
+  assert.match(concept.formula.example, /neither predicts convergence/i);
+  assert.match(concept.distinction, /opposite signs without contradiction/i);
+  assert.match(concept.distinction, /neutral label only means/i);
+  assert.match(concept.distinction, /double-counted/i);
+  for (const id of ['empirical_duration', 'model_risk', 'supply_demand'])
+    assert.ok(
+      concept.links.some((link) => link.id === id),
+      id,
+    );
+  for (const source of [
+    'fed_spreads',
+    'tba_analytics_public',
+    'convexity_feedback_public',
+  ])
+    assert.ok(concept.sources.includes(source), source);
+  assert.equal(learning_checks.spreads.choices.length, 3);
+  assert.equal(learning_checks.spreads.correct, 1);
+  assert.match(
+    learning_checks.spreads.choices[1],
+    /align each model’s horizon, benchmark, factors, units and standardization/i,
+  );
+  assert.match(
+    learning_checks.spreads.choices[1],
+    /not a causal conclusion or forecast/i,
+  );
+});
+
 test('appraisal reduction separates amount, advance and control-test effects', () => {
   const concept = expansion_concepts.find(
     (node) => node.id === 'appraisal_reduction',
