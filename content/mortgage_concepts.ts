@@ -358,6 +358,12 @@ export const mortgage_sources: Record<
       'CRT Disclosure Updates to Support Credit Score Changes · August 17, 2026',
     url: 'https://capitalmarkets.fanniemae.com/credit-risk-transfer/single-family-credit-risk-transfer/crt-disclosure-updates-credit-score-changes',
   },
+  sec_abs_rw_943: {
+    publisher: 'SEC',
+    title:
+      'Disclosure for Asset-Backed Securities Required by Section 943 · Rule 15Ga-1',
+    url: 'https://www.sec.gov/rules-regulations/2011/01/disclosure-asset-backed-securities-required-section-943-dodd-frank-wall-street-reform-consumer',
+  },
   cfpb: {
     publisher: 'CFPB',
     title: 'How does paying down a mortgage work?',
@@ -2221,25 +2227,44 @@ const original_concepts: MortgageConcept[] = [
   {
     id: 'non_agency',
     title: 'Non-agency MBS',
-    subtitle: 'Credit reaches the structure',
+    subtitle: 'Credit and contract terms reach the structure',
     summary:
-      'Without an agency guarantee, collateral losses and deal-level credit enhancement directly affect which classes receive their promised payments.',
-    distinction: 'A rating or senior position is not a government guarantee.',
-    question: 'Why examine both the loans and the waterfall?',
+      'Without an agency guarantee, collateral losses and deal-level credit enhancement directly affect which classes receive their promised payments. Transaction parties can also make representations and warranties about stated loan characteristics, documentation or origination standards. A potential mismatch can lead to an alleged breach, document-governed notice and review, and—only if the applicable conditions are met—a cure, replacement, repurchase or other specified remedy.',
+    distinction:
+      'A later borrower default is a loan-performance event, not automatic proof that an origination representation was false. A repurchase request is an allegation under a contract, not an accepted breach determination or completed recovery. Rule 15Ga-1 requires disclosure of fulfilled and unfulfilled requests where the transaction agreements contain a repurchase or replacement covenant; it does not create one universal substantive remedy. The covenant itself is neither a government guarantee nor a blanket payment guarantee, and its practical value also depends on the governing documents, enforcement process and obligated party.',
+    question:
+      'Does a borrower default automatically require the originator to repurchase the loan?',
     answer:
-      'Loan losses are allocated according to the deal’s payment and loss rules.',
-    sources: ['investor', 'guide'],
+      'No. The enforcing party must connect the facts to a breached contractual representation or warranty and follow the deal’s review and enforcement process. Any remedy is conditional on the governing documents; unresolved collateral losses still flow through the deal’s credit enhancement and waterfall.',
+    sources: ['investor', 'guide', 'sec_abs_rw_943'],
     links: [
       {
         id: 'default',
-        reason: 'Loan defaults can produce losses borne within the deal.',
+        reason:
+          'A borrower default can prompt review but does not itself establish a contractual breach.',
       },
       {
         id: 'subordination',
         reason: 'Junior classes can provide a cushion for senior classes.',
       },
+      {
+        id: 'waterfall',
+        reason:
+          'A completed remedy can change the assets available to the deal; unremedied losses remain subject to its allocation rules.',
+      },
+      {
+        id: 'crt',
+        reason:
+          'GSE seller remedies, private-label transaction covenants and CRT note terms are separate contracts rather than interchangeable protection.',
+      },
     ],
-    aliases: [],
+    aliases: [
+      'private-label MBS',
+      'PLS',
+      'representations and warranties',
+      'R&W',
+      'repurchase request',
+    ],
     topic: 'guarantees',
     branch: 'trading',
   },
@@ -4131,6 +4156,30 @@ export const mortgage_relationships: MortgageRelationship[] = [
     reason:
       'Without an agency guarantee, a transaction may use junior loss absorption to protect senior claims.',
     kind: 'definition',
+  },
+  {
+    id: 'non_agency__default',
+    source: 'non_agency',
+    target: 'default',
+    label: 'separates performance from breach',
+    reason:
+      'A borrower default can prompt review but does not itself establish that a representation or warranty was breached.',
+    kind: 'comparison',
+    conditions:
+      'Identify the stated representation, governing documents, relevant facts and enforcement process.',
+    sources: ['sec_abs_rw_943'],
+  },
+  {
+    id: 'non_agency__waterfall',
+    source: 'non_agency',
+    target: 'waterfall',
+    label: 'a remedy can change deal collateral',
+    reason:
+      'A completed document-governed cure, replacement or repurchase can change the assets or cash available to the deal; unremedied losses remain subject to its allocation rules.',
+    kind: 'mechanism',
+    conditions:
+      'A request must satisfy the applicable transaction terms and enforcement process; the obligated party must perform the resulting remedy.',
+    sources: ['sec_abs_rw_943', 'guide'],
   },
   {
     id: 'sequential__wal',
