@@ -442,6 +442,43 @@ test('specified-pool pay-up states quotation units, comparability and extension 
   );
 });
 
+test('non-agency R&W separates credit performance, alleged breach and conditional remedy', () => {
+  const concept = mortgage_concepts.find((item) => item.id === 'non_agency');
+  assert.ok(concept);
+  assert.match(concept.summary, /representations and warranties/i);
+  assert.match(concept.summary, /alleged breach/i);
+  assert.match(concept.summary, /cure, replacement, repurchase/i);
+  assert.match(concept.distinction, /default.*not automatic proof/i);
+  assert.match(
+    concept.distinction,
+    /repurchase request.*not an accepted breach/i,
+  );
+  assert.match(concept.distinction, /Rule 15Ga-1.*disclosure/i);
+  assert.match(concept.distinction, /neither a government guarantee/i);
+  assert.match(concept.answer, /governing documents/i);
+  assert.deepEqual(concept.sources, ['investor', 'guide', 'sec_abs_rw_943']);
+  assert.equal(learning_checks.non_agency.correct, 1);
+
+  for (const target of ['default', 'subordination', 'waterfall', 'crt']) {
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+  }
+
+  for (const edge_id of ['non_agency__default', 'non_agency__waterfall']) {
+    const edge = mortgage_relationships.find((item) => item.id === edge_id);
+    assert.ok(edge, edge_id);
+    assert.ok(edge.conditions, `${edge_id}: missing conditions`);
+    assert.ok(edge.sources?.includes('sec_abs_rw_943'));
+  }
+
+  assert.equal(
+    mortgage_sources.sec_abs_rw_943.url,
+    'https://www.sec.gov/rules-regulations/2011/01/disclosure-asset-backed-securities-required-section-943-dodd-frank-wall-street-reform-consumer',
+  );
+});
+
 test('hybrid ARM separates the fully indexed reference from the capped reset', () => {
   const arm = mortgage_concepts.find((c) => c.id === 'fixed_arm');
   assert.match(arm.summary, /5\/1 ARM.*five-year.*annual resets/);
