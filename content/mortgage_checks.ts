@@ -1338,11 +1338,11 @@ export const learning_checks: Record<
   },
   non_agency: {
     choices: [
-      'The loan collateral determines each class’s losses without the waterfall.',
-      'The waterfall determines loan recoveries independently of the underlying loans.',
-      'Loan losses are allocated under the deal’s payment and loss rules.',
+      'Yes. Every borrower default proves an origination breach and requires repurchase.',
+      'No. The enforcing party must identify a breached contractual representation and follow the deal’s review and enforcement process.',
+      'Yes. Filing a repurchase request creates a government-backed payment guarantee.',
     ],
-    correct: 2,
+    correct: 1,
   },
   pay_up: {
     choices: [
