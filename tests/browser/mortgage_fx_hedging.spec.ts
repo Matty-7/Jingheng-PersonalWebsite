@@ -40,7 +40,7 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     await page.getByText('Why it matters', { exact: true }).press('Enter');
     await depth
       .getByRole('button', { name: 'Supply and investor demand', exact: true })
-      .click();
+      .press('Enter');
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(
       'Supply and investor demand',
     );
