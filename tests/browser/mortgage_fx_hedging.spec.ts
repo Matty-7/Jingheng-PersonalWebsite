@@ -50,7 +50,7 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
     const choices = page.getByRole('group', { name: 'Choose an answer' });
     await choices
       .getByRole('button', {
-        name: /^No\. The factor updates current principal/,
+        name: /^No\. Allocation still depends/,
       })
       .press('Enter');
     await expect(page.locator('.learning-answer')).toContainText(

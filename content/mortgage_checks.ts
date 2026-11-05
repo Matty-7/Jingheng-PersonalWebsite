@@ -2058,9 +2058,9 @@ export const learning_checks: Record<
   },
   fx_hedging: {
     choices: [
-      'Yes. Original face remains the required hedge notional regardless of principal paydowns.',
-      'No. The factor updates current principal, but the hedge still needs a named exposure basis, hedge ratio, as-of date and reset timing.',
-      'Yes. The current factor fixes market-value and projected-cash-flow exposure and guarantees total return after hedging.',
+      'Yes. A lower hedge cost makes agency MBS the required allocation and mechanically tightens spreads.',
+      'No. Allocation still depends on asset valuation, hedge terms and basis, funding, mandates, alternatives and existing positions; purchases and spread direction must be established separately.',
+      'Yes. Once cross-currency basis improves, current factor and investor holdings no longer affect the decision.',
     ],
     correct: 1,
   },

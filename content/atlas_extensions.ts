@@ -934,6 +934,10 @@ const entries: Entry[] = [
         'usd_rates',
         'A cross-currency contract must specify the reference on each currency leg.',
       ],
+      [
+        'supply_demand',
+        'Currency-hedge pricing can affect relative allocation, but it does not establish observed MBS purchases or spread direction.',
+      ],
     ],
     ['bis_basis'],
     ['currency basis', 'cross currency swap', 'CIP'],
@@ -961,8 +965,8 @@ const entries: Entry[] = [
 
 const checks: Record<string, [string, string]> = {
   fx_hedging: [
-    'Does a lower current factor automatically tell an investor the complete FX hedge notional?',
-    'No. The factor updates current principal, but the hedge still needs a named exposure basis, hedge ratio, as-of date and reset timing.',
+    'Does a lower FX hedge cost prove that foreign investors will buy agency MBS and spreads will tighten?',
+    'No. Allocation still depends on asset valuation, hedge terms and basis, funding, mandates, alternatives and existing positions; observed purchases and spread direction must be established separately.',
   ],
   rmbs: [
     'Can a security be residential, agency, pass-through and fixed-rate at the same time?',
@@ -1070,6 +1074,11 @@ export const atlas_relationships: MortgageRelationship[] =
               'Paydowns change exposure',
               'Factor dates the reset',
               'Allocation is conditional',
+            ],
+            cross_currency_basis: [
+              'Currency conversion',
+              'Reference convention',
+              'Allocation input',
             ],
           } as Record<string, string[]>
         )[c.id]?.[index] ??

@@ -100,6 +100,7 @@ test('agency MBS paydowns change a selected FX hedge without forecasting foreign
     'pool_factor',
     'factor_vintage',
     'fx_hedging',
+    'cross_currency_basis',
     'supply_demand',
     'current_coupon',
   ]);
@@ -113,7 +114,7 @@ test('agency MBS paydowns change a selected FX hedge without forecasting foreign
   assert.equal(learning_checks.fx_hedging.correct, 1);
   assert.match(
     learning_checks.fx_hedging.choices[1],
-    /named exposure basis, hedge ratio, as-of date and reset timing/i,
+    /asset valuation, hedge terms and basis, funding, mandates/i,
   );
 });
 
