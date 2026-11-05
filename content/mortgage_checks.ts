@@ -2058,11 +2058,11 @@ export const learning_checks: Record<
   },
   fx_hedging: {
     choices: [
-      'FX hedging leaves credit risk, and changing cash flows can create hedge mismatches.',
-      'An FX hedge removes the bond’s credit risk as well as currency exposure.',
-      'Hedging the original principal guarantees total return even when cash flows change.',
+      'Yes. A lower hedge cost makes agency MBS the required allocation and mechanically tightens spreads.',
+      'No. Allocation still depends on asset valuation, hedge terms and basis, funding, mandates, alternatives and existing positions; purchases and spread direction must be established separately.',
+      'Yes. Once cross-currency basis improves, current factor and investor holdings no longer affect the decision.',
     ],
-    correct: 0,
+    correct: 1,
   },
   cross_currency_basis: {
     choices: [

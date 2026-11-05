@@ -60,6 +60,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'Qₜ: principal distributed for month t; B₀: original face in currency; fₜ₋₁ and fₜ: consecutive applicable factors for the same security. A principal payment is not investment profit.',
     },
+    fx_hedging: {
+      tex: String.raw`H_t^{*}=h_t E_t^{\mathrm{USD}}`,
+      variables:
+        'Hₜ*: target FX hedge notional in USD; hₜ: dimensionless hedge ratio; EₜUSD: named USD exposure in USD. All quantities use the same as-of date. This sizing identity does not define an optimal hedge or forecast return.',
+    },
     rate_compounding: {
       tex: String.raw`\begin{aligned}D_{\mathrm{simple}}&=(1+r\tau)^{-1}\\D_{\mathrm{periodic}}&=(1+r/m)^{-m\tau}\\D_{\mathrm{continuous}}&=e^{-r\tau}\end{aligned}`,
       variables:
