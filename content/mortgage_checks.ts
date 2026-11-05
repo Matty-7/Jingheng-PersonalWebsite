@@ -2058,11 +2058,11 @@ export const learning_checks: Record<
   },
   fx_hedging: {
     choices: [
-      'FX hedging leaves credit risk, and changing cash flows can create hedge mismatches.',
-      'An FX hedge removes the bond’s credit risk as well as currency exposure.',
-      'Hedging the original principal guarantees total return even when cash flows change.',
+      'Yes. Original face remains the required hedge notional regardless of principal paydowns.',
+      'No. The factor updates current principal, but the hedge still needs a named exposure basis, hedge ratio, as-of date and reset timing.',
+      'Yes. The current factor fixes market-value and projected-cash-flow exposure and guarantees total return after hedging.',
     ],
-    correct: 0,
+    correct: 1,
   },
   cross_currency_basis: {
     choices: [

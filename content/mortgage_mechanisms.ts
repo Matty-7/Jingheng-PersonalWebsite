@@ -1348,6 +1348,32 @@ export const mechanism_models: MechanismModel[] = [
     boundary:
       'A pool’s average expected loss is insufficient for tranche analysis. Joint defaults, concentration, recovery timing and structural triggers also matter.',
   },
+  {
+    id: 'foreign_mbs_fx_hedge_reset',
+    title: 'From an MBS paydown to an FX hedge reset',
+    description:
+      'Trace mortgage principal information into a selected currency hedge and only then into conditional portfolio demand.',
+    premise:
+      'For a foreign-base-currency investor, mortgage cash-flow information changes the USD exposure considered for an FX hedge. This workflow does not forecast foreign demand or MBS spreads.',
+    steps: [
+      'prepayments',
+      'pool_factor',
+      'factor_vintage',
+      'fx_hedging',
+      'supply_demand',
+      'current_coupon',
+    ],
+    explanations: [
+      'Scheduled and unscheduled principal change the USD principal that remains in the security.',
+      'The applicable current factor converts original face into current principal. That balance is not automatically the investor’s chosen currency exposure.',
+      'The applicable month, publication date and principal payment date are separate clocks, so the known balance, cash receipt and hedge reset may not coincide.',
+      'The investor names a current-principal, market-value or projected-cash-flow exposure, applies a stated hedge ratio and can reset before or after principal arrives.',
+      'Hedge cost and residual mismatch can affect relative attractiveness, but mandates, valuation, funding, existing positions and alternatives determine whether allocation changes.',
+      'Any demand effect reaches current-coupon pricing only conditionally; it does not establish the direction or size of a spread move.',
+    ],
+    boundary:
+      'Under the cited program-specific convention, factor publication can precede principal receipt. Reducing a hedge early can leave receipt-timing exposure; resetting later can leave a temporary over-hedge. Other agencies, securities and investors can use different calendars and reset policies. A lower cross-currency basis or hedge cost does not prove foreign buying, stronger demand or spread tightening. No real investor flow, region, current hedge ratio or market forecast is implied.',
+  },
 ];
 
 // Analytical relationships are authored independently of suggested reading.

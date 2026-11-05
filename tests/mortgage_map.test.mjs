@@ -49,6 +49,74 @@ test('every learning node has a unique identity, a visible branch and complete r
   for (const step of learning_path) assert.ok(ids.has(step.id));
 });
 
+test('agency MBS paydowns change a selected FX hedge without forecasting foreign demand', () => {
+  const hedge = mortgage_concepts.find((item) => item.id === 'fx_hedging');
+  assert.ok(hedge);
+  assert.equal(hedge.topic, 'currency_mechanics');
+  assert.match(hedge.summary, /current principal equals original face times/i);
+  assert.match(hedge.distinction, /not interchangeable notionals/i);
+  assert.match(hedge.formula.expression, /H_t\^\{\*\}.*h_t.*E_t/);
+  assert.match(hedge.formula.assumptions, /same as-of date/i);
+  assert.match(
+    hedge.formula.assumptions,
+    /current principal_t = original face/i,
+  );
+  assert.match(hedge.formula.assumptions, /not an optimal hedge/i);
+  assert.match(hedge.formula.example, /temporarily too large/i);
+  assert.deepEqual(
+    ['bis_basis', 'factor_disclosure'].every((id) =>
+      hedge.sources.includes(id),
+    ),
+    true,
+  );
+  for (const source_id of hedge.sources)
+    assert.equal(new URL(mortgage_sources[source_id].url).protocol, 'https:');
+  for (const target of [
+    'cross_currency_basis',
+    'basis_risk',
+    'prepayments',
+    'factor_vintage',
+    'supply_demand',
+  ]) {
+    assert.ok(
+      hedge.links.some((link) => link.id === target),
+      target,
+    );
+    const relationship = mortgage_relationships.find(
+      (edge) =>
+        (edge.source === 'fx_hedging' && edge.target === target) ||
+        (edge.target === 'fx_hedging' && edge.source === target),
+    );
+    assert.ok(relationship, target);
+    if (target === 'supply_demand')
+      assert.match(relationship.reason, /do not identify/i);
+  }
+
+  const model = mortgage_path_models.find(
+    (item) => item.id === 'foreign_mbs_fx_hedge_reset',
+  );
+  assert.deepEqual(model.steps, [
+    'prepayments',
+    'pool_factor',
+    'factor_vintage',
+    'fx_hedging',
+    'supply_demand',
+    'current_coupon',
+  ]);
+  assert.equal(model.steps.length, model.explanations.length);
+  assert.match(
+    model.premise,
+    /does not forecast foreign demand or MBS spreads/i,
+  );
+  assert.match(model.boundary, /does not prove foreign buying/i);
+  assert.match(model.boundary, /spread tightening/i);
+  assert.equal(learning_checks.fx_hedging.correct, 1);
+  assert.match(
+    learning_checks.fx_hedging.choices[1],
+    /named exposure basis, hedge ratio, as-of date and reset timing/i,
+  );
+});
+
 test('inverse floater conserves the paired coupon budget and separates coupon leverage from principal', () => {
   const concept = mortgage_concepts.find(
     (item) => item.id === 'inverse_floater',

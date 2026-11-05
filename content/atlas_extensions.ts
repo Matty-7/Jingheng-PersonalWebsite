@@ -223,6 +223,7 @@ type Entry = [
   links: [string, string][],
   sources: string[],
   aliases?: string[],
+  formula?: MortgageConcept['formula'],
 ];
 const entries: Entry[] = [
   [
@@ -883,9 +884,9 @@ const entries: Entry[] = [
   [
     'fx_hedging',
     'Currency hedging',
-    'Managing the currency mismatch',
-    'Forwards and currency swaps can change the exchange-rate exposure of foreign-currency bond cash flows. Hedge tenor, collateral, refinancing and basis all influence the outcome. A nominally higher foreign yield does not establish a higher return after hedging.',
-    'Hedging FX does not remove the bond’s credit risk or guarantee its total return. Cash-flow changes can also make the hedge amount imperfect.',
+    'Sizing a changing currency exposure',
+    'A foreign-base-currency investor first chooses which USD exposure to hedge. For agency MBS, scheduled principal and prepayments reduce current principal, so original face is not automatically the hedge notional. Current principal equals original face times the applicable factor. Market-value exposure can also reflect price and accrued interest, while projected-cash-flow exposure depends on expected payment amounts and dates. Hedge tenor, collateral, refinancing and cross-currency basis still affect the result.',
+    'Original face is a static issuance reference; current principal is the remaining balance; market value applies price and the relevant accrual convention to current face; projected cash-flow exposure is a dated scenario. They are not interchangeable notionals. An FX hedge manages the selected currency exposure only—it does not remove credit, spread, option, liquidity or total-return risk.',
     [
       [
         'cross_currency_basis',
@@ -895,9 +896,28 @@ const entries: Entry[] = [
         'basis_risk',
         'Hedge maturity or cash-flow mismatches can leave residual exposure.',
       ],
+      [
+        'prepayments',
+        'Scheduled and unscheduled principal alter the USD amount that remains exposed.',
+      ],
+      [
+        'factor_vintage',
+        'The applicable month and publication date determine which balance was known when the hedge was reset.',
+      ],
+      [
+        'supply_demand',
+        'Hedge economics may affect relative portfolio allocation but do not identify purchases, sales or spread direction by themselves.',
+      ],
     ],
-    ['bis_basis'],
+    ['bis_basis', 'factor_disclosure'],
     ['FX hedge', 'hedged yield'],
+    {
+      expression: 'H_t^{*} = h_t \\times E_t^{\\mathrm{USD}}',
+      assumptions:
+        'H* is the target FX hedge notional and E is the chosen USD exposure, both in USD and measured on the same as-of date; h is a dimensionless hedge ratio. The exposure basis must be named. If current principal is used, current principal_t = original face × applicable factor_t. Market-value or projected-cash-flow bases require their own price, accrual, timing and scenario assumptions. This is a sizing identity, not an optimal hedge, return forecast or recommendation.',
+      example:
+        'After an MBS paydown, an unchanged principal-based hedge can be temporarily too large. A market-value or projected-cash-flow hedge can move differently because price, accrued interest and expected payment timing also change.',
+    },
   ],
   [
     'cross_currency_basis',
@@ -940,6 +960,10 @@ const entries: Entry[] = [
 ];
 
 const checks: Record<string, [string, string]> = {
+  fx_hedging: [
+    'Does a lower current factor automatically tell an investor the complete FX hedge notional?',
+    'No. The factor updates current principal, but the hedge still needs a named exposure basis, hedge ratio, as-of date and reset timing.',
+  ],
   rmbs: [
     'Can a security be residential, agency, pass-through and fixed-rate at the same time?',
     'Yes. These identify collateral, guarantee framework, cash-flow structure and coupon, respectively.',
@@ -995,6 +1019,7 @@ export const atlas_concepts: MortgageConcept[] = entries.map(
     links,
     sources,
     aliases = [],
+    formula,
   ]) => {
     const topic = atlas_topics.find((t) => t.concepts.includes(id))!;
     return {
@@ -1008,6 +1033,7 @@ export const atlas_concepts: MortgageConcept[] = entries.map(
       aliases,
       links: links.map(([id, reason]) => ({ id, reason })),
       sources,
+      ...(formula ? { formula } : {}),
       question:
         checks[id]?.[0] ??
         `What is the most important distinction when reading ${title}?`,
@@ -1038,7 +1064,13 @@ export const atlas_relationships: MortgageRelationship[] =
               'Convention scope',
               'One yield vs all cash flows',
             ],
-            fx_hedging: ['Hedging cost', 'Residual mismatch'],
+            fx_hedging: [
+              'Hedging cost',
+              'Residual mismatch',
+              'Paydowns change exposure',
+              'Factor dates the reset',
+              'Allocation is conditional',
+            ],
           } as Record<string, string[]>
         )[c.id]?.[index] ??
         (
