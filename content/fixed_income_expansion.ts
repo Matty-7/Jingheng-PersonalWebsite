@@ -95,6 +95,22 @@ export const expansion_sources = {
       'Benchmark 2026-V22 Term Sheet · appraisal reductions, advances and control tests',
     url: 'https://www.sec.gov/Archives/edgar/data/1258361/000153949726001308/n5868_x5-ts.htm',
   },
+  crefc_controlling_party: {
+    publisher: 'CRE Finance Council',
+    title: 'CMBS Glossary · Controlling Party',
+    url: 'https://www.crefc.org/cre/cre/content/learn/Glossary/CREFC_Glossary.aspx?GlossaryTabs=3',
+  },
+  crefc_psa_control: {
+    publisher: 'CRE Finance Council',
+    title:
+      'CMBS 101 · Pooling and Servicing Agreements · controlling class and servicing standard',
+    url: 'https://css.crefc.org/uploadedfiles/cmbs101_psas_monday_1230pm.pdf',
+  },
+  benchmark_2026_v22_control: {
+    publisher: 'SEC',
+    title: 'Benchmark 2026-V22 Term Sheet · control and consultation rights',
+    url: 'https://www.sec.gov/Archives/edgar/data/1258361/000153949726001308/n5868_x5-ts.htm',
+  },
   trtx_2025_fl6_future_funding: {
     publisher: 'SEC',
     title:
@@ -1042,16 +1058,22 @@ export const expansion_concepts: MortgageConcept[] = [
   entry({
     id: 'special_servicing',
     title: 'Special servicing',
-    subtitle: 'A workout process, not a realized-loss number',
-    aliases: ['special servicer', 'servicing transfer'],
+    subtitle: 'Workout authority with deal-defined control rights',
+    aliases: [
+      'special servicer',
+      'servicing transfer',
+      'Controlling Party',
+      'Control Termination Event',
+      'Consultation Termination Event',
+    ],
     summary:
-      'A CMBS loan may transfer to a special servicer after a defined default or anticipated distress event. The special servicer evaluates workout alternatives under the transaction’s servicing agreement.',
+      'After a defined transfer event, the Special Servicer evaluates resolution alternatives under the servicing agreement. Before a Control Termination Event, the Controlling Party may have deal-defined approval or direction rights over specified major decisions.',
     distinction:
-      'Transfer is neither automatic foreclosure nor a final loss amount. Loans may cure, modify or liquidate. The agreement, control rights, fees and recoverability shape the process.',
+      'Those rights do not displace the Special Servicer’s ultimate authority and duty to act under the Servicing Standard. After a Control Termination Event, approval and direction rights end, while the agreement may preserve non-binding consultation until a Consultation Termination Event. After that later event, consultation rights also end. The covered decisions, tests and event triggers are transaction-specific. Transfer is neither automatic foreclosure nor a final loss amount.',
     question:
-      'Does a higher special-servicing rate equal a higher realized loss rate today?',
+      'Does the Controlling Party decide every workout action through final resolution?',
     answer:
-      'No. It flags a workout population; timing and eventual recoveries still have to be assessed.',
+      'No. Its rights cover only specified decisions and can change after deal-defined control and consultation termination events; the Special Servicer remains responsible for acting under the Servicing Standard.',
     links: [
       {
         id: 'delinquency',
@@ -1059,14 +1081,19 @@ export const expansion_concepts: MortgageConcept[] = [
       },
       {
         id: 'loan_modification',
-        reason: 'A modification is one possible workout outcome.',
+        reason:
+          'A modification can be a specified major decision, but the Special Servicer remains responsible for acting under the Servicing Standard.',
       },
       {
         id: 'recovery_lag',
         reason: 'Resolution can delay investor cash receipts.',
       },
     ],
-    sources: ['crefc_s'],
+    sources: [
+      'crefc_controlling_party',
+      'crefc_psa_control',
+      'benchmark_2026_v22_control',
+    ],
   }),
   entry({
     id: 'servicing_advances',
@@ -1586,7 +1613,7 @@ export const expansion_relationships: MortgageRelationship[] = [
     'separates extension from workout',
     'An available contractual extension and a transfer for default or anticipated default are different events.',
     'comparison',
-    ['cre', 'crefc_s'],
+    ['cre', 'crefc_psa_control'],
   ),
   relation(
     'special_servicing',
@@ -1594,7 +1621,7 @@ export const expansion_relationships: MortgageRelationship[] = [
     'separates transfer from adjustment',
     'A servicing transfer does not itself establish the amount or trigger of an appraisal-based advance reduction.',
     'comparison',
-    ['crefc_s', 'crefc_advances'],
+    ['benchmark_2026_v22_control', 'crefc_advances'],
   ),
   relation(
     'servicing_advances',
@@ -1899,10 +1926,14 @@ export const expansion_relationships: MortgageRelationship[] = [
     'special_servicing',
     'loan_modification',
     'may lead to a workout',
-    'The special servicer can evaluate modified terms among other resolution alternatives.',
+    'A modification can be a specified major decision, while the Special Servicer remains responsible for acting under the Servicing Standard.',
     'mechanism',
-    ['crefc_s'],
-    'Authority and decision standards come from the servicing agreement.',
+    [
+      'crefc_controlling_party',
+      'crefc_psa_control',
+      'benchmark_2026_v22_control',
+    ],
+    'Approval, direction, consultation and termination rights come from the servicing agreement and can change after deal-defined events.',
   ),
   relation(
     'servicing_advances',
@@ -2147,14 +2178,14 @@ export const expansion_paths = [
     explanations: [
       'Compare repayment due with realistic refinancing and property-sale capacity.',
       'Check whether contractual extension conditions can actually be met.',
-      'Read the transfer trigger and the special servicer’s authority.',
+      'Read the transfer trigger, Servicing Standard, specified approval or direction rights, and the control and consultation termination events.',
       'Distinguish appraisal-based adjustments from final realized losses.',
       'Identify which collections are bridged and how advances are reimbursed.',
       'Rebuild amount and timing assumptions from the executed workout terms.',
       'Apply the actual waterfall to determine each claim’s receipts.',
     ],
     boundary:
-      'Transfer, appraisal reduction, modification and liquidation are different events. The servicing agreement and executed terms control each channel.',
+      'Transfer, appraisal reduction, modification and liquidation are different events. Controlling Party rights can change after deal-defined control and consultation termination events; none of those events makes a workout action automatic.',
   },
   {
     id: 'headline_to_evidence',
