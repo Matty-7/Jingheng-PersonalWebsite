@@ -554,11 +554,11 @@ export const learning_checks: Record<
   },
   special_servicing: {
     choices: [
-      'Yes. The special-servicing rate measures principal already lost after recovery.',
-      'No. It measures only the servicing fee charged on performing loans.',
-      'No. It identifies a workout population, whose recoveries and timing remain uncertain.',
+      'Yes. The Controlling Party directs every workout action until liquidation.',
+      'No. The Special Servicer acts under the Servicing Standard; specified approval or direction rights can become non-binding consultation after a Control Termination Event and end after a Consultation Termination Event.',
+      'No. A servicing transfer immediately ends every Controlling Party right and fixes the realized loss.',
     ],
-    correct: 2,
+    correct: 1,
   },
   servicing_advances: {
     choices: [

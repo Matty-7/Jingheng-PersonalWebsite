@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import {
   expansion_concepts,
   expansion_paths,
+  expansion_relationships,
 } from '../content/fixed_income_expansion.ts';
 import { learning_checks } from '../content/mortgage_checks.ts';
 import {
@@ -251,6 +252,64 @@ test('appraisal reduction separates amount, advance and control-test effects', (
   assert.match(
     learning_checks.appraisal_reduction.choices[1],
     /notionally reduce balances used in specified control tests/,
+  );
+});
+
+test('special servicing separates servicer authority from changing control rights', () => {
+  const concept = expansion_concepts.find(
+    (node) => node.id === 'special_servicing',
+  );
+  assert.ok(concept);
+  assert.match(concept.summary, /approval or direction rights/);
+  assert.match(concept.distinction, /ultimate authority/);
+  assert.match(concept.distinction, /Servicing Standard/);
+  assert.match(concept.distinction, /Control Termination Event/);
+  assert.match(concept.distinction, /non-binding consultation/);
+  assert.match(concept.distinction, /Consultation Termination Event/);
+  assert.match(concept.distinction, /transaction-specific/);
+  assert.deepEqual(concept.sources, [
+    'crefc_controlling_party',
+    'crefc_psa_control',
+    'benchmark_2026_v22_control',
+  ]);
+  assert.ok(!concept.sources.includes('crefc_s'));
+  assert.equal(learning_checks.special_servicing.correct, 1);
+  assert.match(
+    learning_checks.special_servicing.choices[1],
+    /Servicing Standard/,
+  );
+  assert.match(
+    learning_checks.special_servicing.choices[1],
+    /Consultation Termination Event/,
+  );
+
+  const modification_edge = expansion_relationships.find(
+    (edge) =>
+      edge.source === 'special_servicing' &&
+      edge.target === 'loan_modification',
+  );
+  assert.ok(modification_edge);
+  assert.ok(!modification_edge.sources.includes('crefc_s'));
+  assert.match(modification_edge.reason, /Servicing Standard/);
+
+  const path = expansion_paths.find(
+    (model) => model.id === 'cre_workout_to_tranche',
+  );
+  assert.ok(path);
+  assert.deepEqual(path.steps, [
+    'refinance_risk',
+    'extension_options',
+    'special_servicing',
+    'appraisal_reduction',
+    'servicing_advances',
+    'loan_modification',
+    'collateral_tranche_cashflows',
+  ]);
+  assert.match(path.explanations[2], /Servicing Standard/);
+  assert.match(path.explanations[2], /consultation termination events/);
+  assert.match(
+    path.boundary,
+    /none of those events makes a workout action automatic/,
   );
 });
 

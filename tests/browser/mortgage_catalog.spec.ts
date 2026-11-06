@@ -174,6 +174,60 @@ for (const reduced_motion of ['no-preference', 'reduce'] as const) {
 }
 
 for (const reduced_motion of ['no-preference', 'reduce'] as const) {
+  test(`special servicing keeps control rights conditional (${reduced_motion})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: reduced_motion });
+    await page.setViewportSize(
+      reduced_motion === 'reduce'
+        ? { width: 390, height: 844 }
+        : { width: 1280, height: 900 },
+    );
+    await page.goto(
+      '/portfolio/mortgage-map?concept=special_servicing#concept=special_servicing',
+    );
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Special servicing',
+    );
+    await page.getByText('Why it matters', { exact: true }).press('Enter');
+    const depth = page.locator('.learning-depth');
+    await expect(page.locator('.learning-summary')).toContainText(
+      'deal-defined approval or direction rights',
+    );
+    await expect(depth).toContainText('ultimate authority');
+    await expect(depth).toContainText('non-binding consultation');
+    await expect(depth).toContainText('Consultation Termination Event');
+    const choices = page.getByRole('group', { name: 'Choose an answer' });
+    await choices
+      .getByRole('button', { name: /^Yes\. The Controlling Party/ })
+      .click();
+    await expect(page.locator('.learning-answer')).toContainText('Not quite');
+    await choices
+      .getByRole('button', { name: /^No\. The Special Servicer/ })
+      .press('Enter');
+    await expect(page.locator('.learning-answer')).toContainText(
+      'That’s right',
+    );
+    await depth
+      .getByRole('button', { name: 'Loan modification & workout', exact: true })
+      .press('Enter');
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Loan modification & workout',
+    );
+    await page.goBack();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
+      'Special servicing',
+    );
+    const overflow = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(false);
+  });
+}
+
+for (const reduced_motion of ['no-preference', 'reduce'] as const) {
   test(`hybrid ARM keeps the reference rate distinct from the capped reset (${reduced_motion})`, async ({
     page,
   }) => {
