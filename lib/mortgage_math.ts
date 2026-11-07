@@ -80,6 +80,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'KRDₖ: key-rate duration for node k in years under the specified bump convention; Δyₖ: local annual rate change as a decimal; P: consistent base full price. A first-order approximation with other model assumptions fixed.',
     },
+    curve_factor_hedge: {
+      tex: String.raw`\mathbf{s}_{\mathrm{MBS}}+\mathbf{B}\mathbf{q}=\mathbf{0},\qquad \mathbf{q}=-\mathbf{B}^{-1}\mathbf{s}_{\mathrm{MBS}}`,
+      variables:
+        's_MBS: 3 × 1 MBS loss-BPV vector for declared level, slope and curvature shocks, in USD per +1 bp factor shock; B: full-rank, sufficiently well-conditioned 3 × 3 matrix of the same loss-BPV units per long Treasury futures contract; q: signed contract quantities, negative for short. All entries use one factor normalization, curve, as-of date, settlement, full-price, OAS, prepayment and model convention. A first-order local equation, not an optimal hedge or forecast.',
+    },
     accrual_period: {
       tex: String.raw`\alpha=\frac{D(T_1,T_2)}{360}`,
       variables:
