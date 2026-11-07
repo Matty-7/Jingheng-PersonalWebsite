@@ -129,6 +129,28 @@ export const expansion_sources = {
       '2026 Form 10-K · construction, lease commencement, customer concentration and power risks',
     url: 'https://www.sec.gov/Archives/edgar/data/1144879/000114487926000048/apld-20260531.htm',
   },
+  fed_yield_curve_pca_2008: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'The TIPS Yield Curve and Inflation Compensation · level, slope and curvature factors',
+    url: 'https://www.federalreserve.gov/pubs/feds/2008/200805/',
+  },
+  fed_nelson_siegel_factors_2026: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Supervisory Stress Test Documentation · Nelson–Siegel level, slope and curvature factors, p. 137',
+    url: 'https://www.federalreserve.gov/supervisionreg/files/market-risk-models.pdf#page=137',
+  },
+  cme_treasury_futures_bpv: {
+    publisher: 'CME Group',
+    title: 'Treasuries Hedging and Risk Management · CTD BPV and hedge ratios',
+    url: 'https://www.cmegroup.com/education/courses/introduction-to-treasuries/treasuries-hedging-and-risk-management',
+  },
+  cme_key_rate_duration: {
+    publisher: 'CME Group',
+    title: 'Case Study: Key Rate Duration Adjustment',
+    url: 'https://www.cmegroup.com/education/articles-and-reports/case-study-key-rate-duration-adjustment',
+  },
 };
 
 export const expansion_topics = [
@@ -155,6 +177,7 @@ export const expansion_topics = [
     branch: 'risk',
     title: 'Instruments behind the hedge',
     concepts: [
+      'curve_factor_hedge',
       'interest_rate_swap',
       'swaption',
       'option_moneyness',
@@ -523,6 +546,60 @@ export const expansion_concepts: MortgageConcept[] = [
       },
     ],
     sources: ['sofr_swaps', 'rate_model_calibration'],
+  }),
+  entry({
+    id: 'curve_factor_hedge',
+    title: 'Curve-factor hedge matrix',
+    subtitle: 'Solve level, slope and curvature together',
+    aliases: [
+      'factor hedge matrix',
+      'level slope curvature hedge',
+      'three factor hedge',
+    ],
+    summary:
+      'A curve-factor hedge expresses an MBS and several Treasury futures in the same level, slope and curvature coordinates, then solves simultaneous equations for signed contract quantities that offset those first-order exposures.',
+    distinction:
+      'The factor basis is not unique: a PCA sample, maturity grid, sign and scale, or a Nelson–Siegel shape parameter can change the loadings and hedge quantities. A unique stable solution also requires a full-rank, reasonably conditioned futures matrix. Even a zero linear residual does not remove convexity, mortgage-spread, prepayment, model, CTD, delivery, financing, liquidity or contract-rounding risk.',
+    formula: {
+      expression:
+        's_MBS + Bq = 0; q = −B⁻¹s_MBS, when B is full rank and sufficiently well conditioned',
+      assumptions:
+        'Rows are declared level, slope and curvature factors; columns are hypothetical 2Y, 5Y and 10Y Treasury futures. Every coordinate uses the same +1 bp factor normalization, curve, as-of date, settlement and full-price basis. B is USD loss-BPV per +1 bp factor shock per long contract; positive means a loss under the positive shock, and a negative q means short. Start each contract level BPV from CTD BPV divided by its conversion factor, then reprice slope and curvature under the same factor shocks. Hold the stated MBS OAS, prepayment and model conventions fixed. This is a first-order local hedge for small shocks; integer contracts leave rounding residuals.',
+      example:
+        'Hypothetical USD/bp example: s_MBS = [140, −10, 10]ᵀ and B = [[20, 40, 60], [−20, 0, 30], [10, −20, 10]]. The signed solution q = [−2, −1, −1]ᵀ gives Bq = [−140, 10, −10]ᵀ, so the three first-order factor residuals are zero. The negative signs mean short contracts under this convention, not a trade recommendation.',
+    },
+    question:
+      'If two futures columns are proportional, do three named contracts guarantee a unique level-slope-curvature hedge?',
+    answer:
+      'No. Matrix rank and conditioning matter; named contracts do not guarantee independent factor exposures.',
+    links: [
+      {
+        id: 'key_rate',
+        reason:
+          'Tenor sensitivities can be projected into a declared factor basis.',
+      },
+      {
+        id: 'treasury_delivery',
+        reason:
+          'CTD and conversion-factor assumptions help define each futures column.',
+      },
+      {
+        id: 'basis_risk',
+        reason:
+          'A first-order factor match leaves mortgage and futures basis risks.',
+      },
+      {
+        id: 'coupon_stack',
+        reason:
+          'Coupon-specific borrower behavior can change the MBS factor vector.',
+      },
+    ],
+    sources: [
+      'fed_yield_curve_pca_2008',
+      'fed_nelson_siegel_factors_2026',
+      'cme_treasury_futures_bpv',
+      'cme_key_rate_duration',
+    ],
   }),
   entry({
     id: 'interest_rate_swap',
@@ -1397,6 +1474,54 @@ function relation(
   };
 }
 export const expansion_relationships: MortgageRelationship[] = [
+  {
+    id: 'key_rate__curve_factor_hedge',
+    source: 'key_rate',
+    target: 'curve_factor_hedge',
+    label: 'projects tenor risk into factors',
+    reason:
+      'Key-rate exposures can be mapped into a declared level, slope and curvature basis before solving hedge quantities.',
+    kind: 'measurement',
+    sources: ['fed_yield_curve_pca_2008', 'cme_key_rate_duration'],
+    conditions:
+      'Use one curve, as-of date, bump method, factor normalization and price basis for the MBS and every hedge instrument.',
+  },
+  {
+    id: 'curve_factor_hedge__treasury_delivery',
+    source: 'curve_factor_hedge',
+    target: 'treasury_delivery',
+    label: 'depends on futures delivery exposure',
+    reason:
+      'Each futures factor-loading column depends on its CTD, conversion factor and delivery economics at the stated date.',
+    kind: 'mechanism',
+    sources: ['cme_treasury_futures_bpv', 'treasury_futures'],
+    conditions:
+      'Re-estimate the column when CTD, conversion-factor application, financing or delivery assumptions change.',
+  },
+  {
+    id: 'curve_factor_hedge__basis_risk',
+    source: 'curve_factor_hedge',
+    target: 'basis_risk',
+    label: 'leaves non-factor mismatch',
+    reason:
+      'Matching three local curve coordinates does not match mortgage spreads, borrower behavior, volatility, liquidity or financing.',
+    kind: 'comparison',
+    sources: ['cme_key_rate_duration', 'cfa_risk'],
+    conditions:
+      'Treat a zero matrix residual as a local sensitivity result, not a complete hedge or expected P&L.',
+  },
+  {
+    id: 'treasury_delivery__basis_risk',
+    source: 'treasury_delivery',
+    target: 'basis_risk',
+    label: 'can change the residual hedge basis',
+    reason:
+      'A CTD switch or financing change can alter futures sensitivity without an identical change in the MBS exposure.',
+    kind: 'mechanism',
+    sources: ['treasury_futures', 'cme_treasury_futures_bpv'],
+    conditions:
+      'Use current delivery and financing assumptions and retain residual mortgage-versus-Treasury basis risk.',
+  },
   relation(
     'data_center_cre',
     'rent_roll',
@@ -2023,6 +2148,30 @@ export const expansion_relationships: MortgageRelationship[] = [
 ];
 
 export const expansion_paths = [
+  {
+    id: 'curve_factor_hedge_workflow',
+    title: 'From curve factors to signed hedge quantities',
+    description:
+      'Put an MBS and three Treasury futures in one declared factor basis before solving a local hedge.',
+    premise:
+      'This is a hypothetical linear sensitivity exercise under one stated factor basis, not a market calibration, optimizer or recommendation.',
+    steps: [
+      'curve_shifts',
+      'key_rate',
+      'curve_factor_hedge',
+      'treasury_delivery',
+      'basis_risk',
+    ],
+    explanations: [
+      'Define the level, slope and curvature shocks instead of saying only that rates moved.',
+      'Project the MBS tenor sensitivities into the same signed and normalized factor coordinates.',
+      'Place three futures loading columns beside the MBS vector and solve for signed contract quantities when the matrix is full rank and stable enough.',
+      'Define contract exposure from current CTD BPV, conversion factors and delivery assumptions, then re-estimate it when those inputs change.',
+      'Report the convexity, spread, prepayment, model, delivery, financing, liquidity and rounding risks that the linear factor match did not remove.',
+    ],
+    boundary:
+      'Factor definitions are not unique, and a rank-deficient or ill-conditioned matrix does not provide a stable unique solution. Even a zero first-order residual is not an optimal hedge, forecast or expected P&L; larger moves and changing prepayments, OAS, CTD, financing and liquidity require fresh sensitivities.',
+  },
   {
     id: 'data_center_repayment',
     title: 'From contracted capacity to the maturity exit',

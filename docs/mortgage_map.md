@@ -1,5 +1,9 @@
 # Mortgage Map
 
+## November 7: curve-factor hedge matrix
+
+One source-backed lesson now connects MBS key-rate exposure with a worked level/slope/curvature hedge matrix and an explained path through Treasury futures delivery and residual basis risk. The arithmetic is an original hypothetical example, not a market quote. The lesson requires a declared factor basis and a full-rank, reasonably conditioned sensitivity matrix, and limits the result to first-order local matching. It keeps convexity, mortgage spread, prepayment, model, CTD/delivery, financing, liquidity and contract-rounding risks explicit. No market feed, pricing engine, optimizer, forecast or trading recommendation was added.
+
 ## October 6: valuation conventions and pathwise cash flows
 
 `content/mortgage_valuation.ts` adds eight concepts, three topics, two explained learning paths and four formula panels within the existing Mortgage Map. Every new concept has a three-choice check and public references. The paths reuse the existing rate-compounding lesson and formula instead of duplicating them. The additions distinguish accrual and discounting clocks, Actual/Actual variants, compounding, convention resolution, curve roles, settlement entitlement, path cash flows, pathwise averaging and the conditional zero-volatility comparison.

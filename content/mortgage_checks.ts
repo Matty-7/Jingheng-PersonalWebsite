@@ -456,6 +456,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  curve_factor_hedge: {
+    choices: [
+      'No. A unique stable solution requires independent, reasonably conditioned factor-loading columns.',
+      'Yes. Naming three different Treasury futures guarantees an invertible sensitivity matrix.',
+      'Yes. Matching total DV01 alone also matches every slope and curvature move.',
+    ],
+    correct: 0,
+  },
   repo_specialness: {
     choices: [
       'No. Similar duration fixes identical repo terms.',

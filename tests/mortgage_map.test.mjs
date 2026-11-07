@@ -401,6 +401,86 @@ test('search prioritizes exact terms and rejects empty or unmatched queries', ()
   assert.equal(search_concepts('').length, 0);
 });
 
+test('curve-factor hedge solves one declared matrix and preserves its residual risks', () => {
+  const concept = mortgage_concepts.find(
+    (item) => item.id === 'curve_factor_hedge',
+  );
+  assert.ok(concept);
+  assert.equal(concept.topic, 'rates_instruments');
+  assert.equal(search_concepts('factor hedge matrix')[0]?.id, concept.id);
+  assert.match(concept.formula.expression, /Bq = 0/);
+  assert.match(concept.formula.assumptions, /USD loss-BPV per \+1 bp/i);
+  assert.match(concept.formula.assumptions, /negative q means short/i);
+  assert.match(concept.formula.assumptions, /CTD BPV divided by/i);
+  assert.match(concept.formula.assumptions, /first-order local hedge/i);
+  assert.match(concept.distinction, /full-rank/i);
+  assert.match(concept.distinction, /conditioned/i);
+  assert.match(concept.distinction, /factor basis is not unique/i);
+  for (const risk of [
+    'convexity',
+    'mortgage-spread',
+    'prepayment',
+    'model',
+    'CTD',
+    'delivery',
+  ])
+    assert.match(concept.distinction, new RegExp(risk, 'i'));
+
+  const matrix = [
+    [20, 40, 60],
+    [-20, 0, 30],
+    [10, -20, 10],
+  ];
+  const quantities = [-2, -1, -1];
+  const mbs = [140, -10, 10];
+  const hedge = matrix.map((row) =>
+    row.reduce((sum, value, index) => sum + value * quantities[index], 0),
+  );
+  assert.deepEqual(hedge, [-140, 10, -10]);
+  assert.deepEqual(
+    mbs.map((value, index) => value + hedge[index]),
+    [0, 0, 0],
+  );
+
+  const path = mortgage_paths.find(
+    (item) => item.id === 'curve_factor_hedge_workflow',
+  );
+  assert.deepEqual(path?.steps, [
+    'curve_shifts',
+    'key_rate',
+    'curve_factor_hedge',
+    'treasury_delivery',
+    'basis_risk',
+  ]);
+  assert.match(path.boundary, /rank-deficient or ill-conditioned/i);
+  assert.match(path.boundary, /zero first-order residual/i);
+
+  for (const source_id of [
+    'fed_yield_curve_pca_2008',
+    'fed_nelson_siegel_factors_2026',
+    'cme_treasury_futures_bpv',
+    'cme_key_rate_duration',
+  ])
+    assert.equal(new URL(mortgage_sources[source_id].url).protocol, 'https:');
+
+  for (const edge_id of [
+    'key_rate__curve_factor_hedge',
+    'curve_factor_hedge__treasury_delivery',
+    'curve_factor_hedge__basis_risk',
+  ]) {
+    const edge = mortgage_relationships.find((item) => item.id === edge_id);
+    assert.ok(edge?.conditions);
+    assert.ok(edge.sources.length);
+  }
+
+  assert.match(
+    learning_checks.curve_factor_hedge.choices[
+      learning_checks.curve_factor_hedge.correct
+    ],
+    /rank|condition/i,
+  );
+});
+
 import { atlas_comparisons } from '../content/atlas_extensions.ts';
 import { render_mortgage_math, mortgage_math } from '../lib/mortgage_math.ts';
 
