@@ -14,6 +14,14 @@ export const learning_checks: Record<
     ],
     correct: 1,
   },
+  refinance_transition: {
+    choices: [
+      'Yes. Every refinance must lower the rate on an otherwise identical loan.',
+      'No. A cash-out refinance can replace the first lien, but the matched transition does not prove motive or measure pool CPR.',
+      'No. A HELOC necessarily pays off and replaces the existing first lien.',
+    ],
+    correct: 1,
+  },
   prepayment_model_stability: {
     choices: [
       'Yes. Any rise in aggregate CPR proves a new borrower response.',
