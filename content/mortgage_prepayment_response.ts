@@ -4,6 +4,30 @@ import type {
 } from './mortgage_concepts.ts';
 
 export const response_sources = {
+  fannie_refinance_transition_2026: {
+    publisher: 'Fannie Mae',
+    title:
+      'Explore Refinance Activity with the New Refinance Transition Trends Dashboard · October 26, 2026 · matched old/new purpose, product and term',
+    url: 'https://capitalmarkets.fanniemae.com/mortgage-backed-securities/new-refinance-transition-trends-dashboard',
+  },
+  freddie_refinance_product_transition: {
+    publisher: 'Freddie Mac',
+    title:
+      'Refinance Product Transition Report · methodology and old/new mortgage definitions',
+    url: 'https://capitalmarkets.freddiemac.com/mbs/refinance-transition-report',
+  },
+  fhfa_refinance_2q26: {
+    publisher: 'Federal Housing Finance Agency',
+    title:
+      'Foreclosure Prevention, Refinance, and FPM Report · 2Q2026 · refinance volume and cash-out share',
+    url: 'https://www.fhfa.gov/reports/foreclosure-prevention-refinance-and-fpm/2026/Q2',
+  },
+  cfpb_cash_out_nmdb: {
+    publisher: 'Consumer Financial Protection Bureau',
+    title:
+      'A look at cash-out refinance mortgages and their borrowers between 2013 to 2023 · December 18, 2023',
+    url: 'https://www.consumerfinance.gov/archive/blog/office-of-research-blog-a-look-at-cash-out-refinance-mortgages-and-their-borrowers-between-2013-to-2023/',
+  },
   refinance_costs: {
     publisher: 'Federal Reserve Board',
     title:
@@ -35,7 +59,11 @@ export const response_topics = [
     id: 'prepayment_response',
     branch: 'prepayment',
     title: 'From borrower response to pool speed',
-    concepts: ['prepayment_aggregation', 'prepayment_model_stability'],
+    concepts: [
+      'prepayment_aggregation',
+      'refinance_transition',
+      'prepayment_model_stability',
+    ],
   },
 ];
 
@@ -95,6 +123,60 @@ export const response_concepts: MortgageConcept[] = [
       },
     ],
     sources: ['cohort'],
+  },
+  {
+    id: 'refinance_transition',
+    branch: 'prepayment',
+    topic: 'prepayment_response',
+    title: 'Refinance transitions',
+    subtitle: 'Track the old loan and its replacement',
+    aliases: [
+      'old-to-new refinance',
+      'product transition',
+      'term transition',
+      'cash-out transition',
+    ],
+    summary:
+      'Refinancing replaces an old loan with a new one, but the replacement need not preserve the old loan’s purpose, product, term, balance or note rate. A rate-and-term refinance may change the rate or repayment term; a cash-out refinance may retire a first lien while extracting equity. Mapping matched old-to-new loans therefore shows a payoff channel that a same-product rate comparison can miss.',
+    distinction:
+      'A transition report conditions on completed, matched refinances. Its shares describe composition within the report’s defined matched population, not market-wide refinance volume, application propensity, pool CPR or the borrower’s causal motive. Enterprise samples, matching rules, product buckets and balance weights are not universal. A home-equity loan or HELOC may provide equity access while preserving the existing first lien; a cash-out refinance replaces that first lien. Compare purpose, product, term, balance and note rate together, and state the population and time window.',
+    question:
+      'A borrower pays off a low-rate 30-year fixed first lien with a new 30-year fixed mortgage and receives cash. Does the weak rate incentive mean the payoff cannot be a refinance?',
+    answer:
+      'No. A cash-out refinance can replace the first lien even when lowering the note rate is not the main observed benefit. The matched transition confirms replacement, but it does not establish the borrower’s motive or measure pool CPR.',
+    links: [
+      {
+        id: 'incentive',
+        reason:
+          'Rate incentive is one signal, not a complete description of purpose, product or term changes.',
+      },
+      {
+        id: 'prepayments',
+        reason:
+          'A completed refinance can pay off the old loan and return unscheduled principal.',
+      },
+      {
+        id: 'fixed_arm',
+        reason:
+          'The replacement loan may retain or change the fixed-rate or ARM product.',
+      },
+      {
+        id: 'second_lien',
+        reason:
+          'A second lien or HELOC may access equity without replacing the first lien.',
+      },
+      {
+        id: 'prepayment_aggregation',
+        reason:
+          'Transition shares describe a matched subgroup, not the pool’s balance-weighted SMM or CPR.',
+      },
+    ],
+    sources: [
+      'fannie_refinance_transition_2026',
+      'freddie_refinance_product_transition',
+      'fhfa_refinance_2q26',
+      'cfpb_cash_out_nmdb',
+    ],
   },
   {
     id: 'prepayment_model_stability',
@@ -198,6 +280,73 @@ export const response_relationships = [
     ['cohort'],
   ),
   relation(
+    'loan_balance',
+    'refinance_transition',
+    'measurement',
+    'can change at replacement',
+    'A completed refinance can replace the old balance with a different new balance, including additional borrowing in a cash-out transaction.',
+    'Matched balance changes are descriptive within the provider-defined population; they do not establish borrower motive, causality or pool prepayment speed.',
+    ['fannie_refinance_transition_2026', 'cfpb_cash_out_nmdb'],
+  ),
+  relation(
+    'incentive',
+    'refinance_transition',
+    'comparison',
+    'is only one transition signal',
+    'Matched old-to-new loans can differ in purpose, product, term, balance and note rate, so a same-product rate gap does not describe every completed refinance.',
+    'Matched transitions are descriptive and population-specific; they do not establish borrower motive or a causal response to rates.',
+    [
+      'fannie_refinance_transition_2026',
+      'freddie_refinance_product_transition',
+    ],
+  ),
+  relation(
+    'refinance_transition',
+    'prepayments',
+    'definition',
+    'identifies a payoff channel',
+    'A completed refinance retires the matched old loan and can return unscheduled principal to its MBS.',
+    'The matched population is report-specific and non-causal; it does not cover every payoff or determine pool prepayment speed.',
+    [
+      'fannie_refinance_transition_2026',
+      'freddie_refinance_product_transition',
+    ],
+  ),
+  relation(
+    'fixed_arm',
+    'refinance_transition',
+    'comparison',
+    'can change at refinance',
+    'The replacement loan can retain or change the old loan’s fixed-rate or adjustable-rate product and term.',
+    'Product buckets and matched populations are provider-specific and descriptive, not proof of motive or causality.',
+    [
+      'fannie_refinance_transition_2026',
+      'freddie_refinance_product_transition',
+    ],
+  ),
+  relation(
+    'second_lien',
+    'refinance_transition',
+    'comparison',
+    'may preserve or replace the first lien',
+    'A home-equity loan or HELOC can preserve the first lien, while a cash-out refinance replaces it.',
+    'Matched refinance data are descriptive within a defined population; they do not cover every equity-access choice or establish motive or causality.',
+    ['cfpb_cash_out_nmdb'],
+  ),
+  relation(
+    'refinance_transition',
+    'prepayment_aggregation',
+    'measurement',
+    'segments completed payoff principal',
+    'Purpose, product and term transitions can segment completed refinance payoffs before principal is aggregated.',
+    'A transition share is population-specific and descriptive, not SMM, CPR, market-wide volume or a causal estimate. Aggregate principal with aligned balance weights and event definitions.',
+    [
+      'fannie_refinance_transition_2026',
+      'freddie_refinance_product_transition',
+      'fhfa_refinance_2q26',
+    ],
+  ),
+  relation(
     'prepayment_aggregation',
     'cpr',
     'measurement',
@@ -282,6 +431,7 @@ export const response_paths = [
     steps: [
       'frictions',
       'loan_balance',
+      'refinance_transition',
       'prepayment_aggregation',
       'prepayment_model_stability',
       'oas',
@@ -290,12 +440,13 @@ export const response_paths = [
     explanations: [
       'Separate the economic offer, eligibility and the effort required to complete refinancing.',
       'Compare the fixed cost burden with the loan balance and test whether that burden has actually fallen.',
+      'Separate rate-and-term, cash-out, product and term transitions before treating completed refinance payoffs as one homogeneous response.',
       'Combine principal dollars using consistent monthly denominators before annualizing the pool speed.',
       'Distinguish a new population mix from a changed conditional response, and test on later outcomes.',
       'Interpret a changed fitted spread at the same price as conditional on the changed payment model.',
       'Check shocked cash flows too: matching one base-case speed does not validate a hedge sensitivity.',
     ],
     boundary:
-      'This path is an interpretation and validation framework, not a prepayment forecast or pricing engine. Technology effects require evidence; lower costs do not remove credit constraints. Historical findings do not prescribe a future CPR, pay-up, OAS move or hedge.',
+      'This path is an interpretation and validation framework, not a prepayment forecast or pricing engine. Matched enterprise transitions neither cover every payoff nor identify borrower motive. Technology effects require evidence; lower costs do not remove credit constraints. Historical findings do not prescribe a future CPR, pay-up, OAS move or hedge.',
   },
 ];

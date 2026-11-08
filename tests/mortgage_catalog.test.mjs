@@ -38,6 +38,58 @@ test('one Mortgage Map includes every domain and concept in the catalog', () => 
   assert.equal(search_concepts('HELOC')[0].id, 'heloc');
 });
 
+test('refinance transitions separate completed replacement from rate incentive and pool speed', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'refinance_transition',
+  );
+  assert.ok(concept);
+  assert.equal(concept.branch, 'prepayment');
+  assert.equal(concept.topic, 'prepayment_response');
+  assert.equal(concept.formula, undefined);
+  assert.match(concept.summary, /cash-out refinance may retire a first lien/i);
+  assert.match(concept.distinction, /not market-wide refinance volume/i);
+  assert.match(concept.distinction, /not.*pool CPR/i);
+  assert.match(concept.distinction, /borrower’s causal motive/i);
+  assert.match(
+    concept.distinction,
+    /HELOC may provide equity access while preserving/i,
+  );
+  for (const source of [
+    'fannie_refinance_transition_2026',
+    'freddie_refinance_product_transition',
+    'fhfa_refinance_2q26',
+    'cfpb_cash_out_nmdb',
+  ]) {
+    assert.ok(mortgage_sources[source], source);
+    assert.ok(concept.sources.includes(source), source);
+  }
+  for (const target of [
+    'incentive',
+    'prepayments',
+    'fixed_arm',
+    'second_lien',
+    'prepayment_aggregation',
+  ])
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+  for (const edge of mortgage_relationships.filter(
+    (item) =>
+      item.source === 'refinance_transition' ||
+      item.target === 'refinance_transition',
+  )) {
+    assert.ok(edge.sources?.length, edge.id);
+    assert.match(edge.conditions, /population|provider-specific/i, edge.id);
+    assert.match(edge.conditions, /descriptive|non-causal|causal/i, edge.id);
+  }
+  assert.equal(learning_checks.refinance_transition.correct, 1);
+  assert.match(
+    learning_checks.refinance_transition.choices[1],
+    /does not prove motive or measure pool CPR/i,
+  );
+});
+
 test('lesson selection and saved position retain concepts across every Mortgage Map domain', () => {
   for (const id of [
     'interest_rate_swap',

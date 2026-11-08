@@ -1,5 +1,13 @@
 # Mortgage Map
 
+## November 8: refinance transitions
+
+Mortgage Map now distinguishes a completed refinance transition from a same-product rate-savings comparison. The new `refinance_transition` concept follows the old loan into its replacement and separates rate-and-term, cash-out, product and term changes before connecting the payoff to MBS prepayments. It also distinguishes a cash-out refinance, which replaces the first lien, from a home-equity loan or HELOC that may preserve it.
+
+Public support comes from Fannie Mae's October 26, 2026 Refinance Transition Trends dashboard, Freddie Mac's Refinance Product Transition Report methodology, FHFA's 2Q2026 refinance report and the CFPB's 2013–2023 NMDB cash-out study. Restricted reading supplied the research question only; no private text or proprietary data is reproduced.
+
+This is a categorical and denominator-definition lesson, so it adds no universal formula. Matched transition shares are provider- and population-specific: they are not market-wide refinance volume, application propensity, pool SMM or CPR, and they do not establish borrower motive or causality. The change adds static public-source provenance, analytical relationships, a guided-path step and one knowledge check; it adds no live data, forecast, pricing output or advice.
+
 ## November 7: curve-factor hedge matrix
 
 One source-backed lesson now connects MBS key-rate exposure with a worked level/slope/curvature hedge matrix and an explained path through Treasury futures delivery and residual basis risk. The arithmetic is an original hypothetical example, not a market quote. The lesson requires a declared factor basis and a full-rank, reasonably conditioned sensitivity matrix, and limits the result to first-order local matching. It keeps convexity, mortgage spread, prepayment, model, CTD/delivery, financing, liquidity and contract-rounding risks explicit. No market feed, pricing engine, optimizer, forecast or trading recommendation was added.
