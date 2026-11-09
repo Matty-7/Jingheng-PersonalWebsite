@@ -24,7 +24,7 @@ One source-backed lesson now connects MBS key-rate exposure with a worked level/
 
 Acceptance: the new concepts are searchable and reachable through existing lessons and routes; all relationship targets and source IDs resolve; formulas render accessible MathML with units and assumptions; the original arithmetic examples are internally consistent. Keep this as static educational content with no pricing engine, forecasts, market feed, new subject branding or restoration of the withdrawn lab. Original reference-based explanations replace implementation-specific material; no personal-note images, internal service names, identifiers or undocumented mappings are published.
 
-Public reference checks on October 6 covered OpenGamma Strata day-count and discount-factor documentation, QuantLib's interest-rate implementation, OpenGamma's multi-curve paper, the CFA public arbitrage-free valuation overview, and the New York Fed's _Understanding Mortgage Spreads_ (June 2018 revision, Appendix E). The examples are original arithmetic, not quoted market results. Curve-role equality and zero-volatility equivalence are explicitly conditional; the settlement factor ratio is limited to a deterministic curve. Existing graph, formula, learning-check and catalog tests provide the local content contract; exact-head CI remains the full publication gate.
+Public reference checks on October 6 covered OpenGamma Strata day-count and discount-factor documentation, QuantLib's interest-rate implementation, OpenGamma's multi-curve paper, the CFA public arbitrage-free valuation overview, and the New York Fed's *Understanding Mortgage Spreads* (June 2018 revision, Appendix E). The examples are original arithmetic, not quoted market results. Curve-role equality and zero-volatility equivalence are explicitly conditional; the settlement factor ratio is limited to a deterministic curve. Existing graph, formula, learning-check and catalog tests provide the local content contract; exact-head CI remains the full publication gate.
 
 ## October 6: conventions and dated inputs
 
@@ -94,6 +94,7 @@ Concepts have validated `#concept=id` links. The address updates without filling
 
 Validation covers path explanation completeness, link parsing and bounded history, as well as existing graph, math and publishing checks. Preview inspection targets the independent navigation, compact framing, Paths, reader history, direct links, math and responsive layout. Production HTTP results are recorded separately after deployment.
 
+
 ## September 13: relationship and learning correction
 
 Analytical relationships are authored separately from suggested reading. The mechanism module now uses explicit typed edges; its 84-edge semantic review reversed 14 relationships, corrected categories and labels, and removed eight redundant or misleading reverse links. This was a direction/type audit, not an independent re-verification of every financial source in the catalog.
@@ -111,6 +112,7 @@ Normal reader, List, Paths, Compare and the mobile concept directory use documen
 `content/mortgage_context.ts` adds public date/quote context, original versus remaining maturity, nominal tenor labels, curve nodes and interpolation, constant-maturity references, Term SOFR, SOFR futures strips and Treasury STRIPS. Dates and Curves comparisons complement the existing maturity and currency tables. Tenor examples belong to named sources and measures; they are not universal provider or currency grids. Unverified internal abbreviations and employer-specific schemas are excluded.
 
 New typed, sourced and conditional relationships join SMM/CPR and PSA/WALA to prepayment analysis, and benchmark matching to nominal yield spreads. The analytical-connectivity test now traverses `mortgage_relationships` separately from reading links, including a bridge-removal case whose isolated nodes still have neighbors. One connected component is a coverage check, not proof that every financial relationship has been independently verified.
+
 
 ## Interaction state and stylesheet ownership
 
