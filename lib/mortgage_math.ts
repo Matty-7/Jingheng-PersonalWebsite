@@ -10,6 +10,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'F: fixed refinancing cost; B > 0: loan balance, in the same currency; k: dimensionless one-time cost share. Multiply k by 100 to express a percentage. This is not an annual rate or an exercise threshold.',
     },
+    treasury_financing_flow: {
+      tex: String.raw`C_{\mathrm{new}}=O_{\mathrm{gross}}-M_{\mathrm{private}}`,
+      variables:
+        'C_new: privately held new cash; O_gross: gross offering for one refunding settlement set; M_private: privately held maturities in that set. All amounts use the same currency, usually USD billions, holder basis and settlement scope. This identity is not the quarterly borrowing estimate; the TGA assumption is separate.',
+    },
     prepayment_aggregation: {
       tex: String.raw`\begin{aligned}E_g&=B_g-S_g,\quad w_g=\frac{E_g}{\sum_h E_h}\\s_{\mathrm{pool}}&=\frac{\sum_g P_g}{\sum_g E_g}=\sum_g w_g s_g\\\mathrm{CPR}_{\mathrm{pool}}&=1-(1-s_{\mathrm{pool}})^{12}\end{aligned}`,
       variables:

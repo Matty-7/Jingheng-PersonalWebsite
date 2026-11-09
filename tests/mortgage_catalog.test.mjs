@@ -90,6 +90,69 @@ test('refinance transitions separate completed replacement from rate incentive a
   );
 });
 
+test('Treasury financing flow separates quarterly estimates, refunding and auction cash', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'treasury_financing_flow',
+  );
+  assert.ok(concept);
+  assert.equal(concept.branch, 'curves');
+  assert.equal(concept.topic, 'treasury_foundations');
+  assert.match(concept.summary, /quarterly borrowing estimate/i);
+  assert.match(
+    concept.summary,
+    /gross offering less privately held maturities/i,
+  );
+  assert.match(concept.distinction, /auction size is security-level/i);
+  assert.match(concept.distinction, /SOMA rollover add-ons/i);
+  assert.match(
+    concept.distinction,
+    /none of these figures alone determines.*MBS spreads or OAS/i,
+  );
+  assert.match(concept.formula.expression, /gross refunding offering/);
+  assert.match(
+    concept.formula.assumptions,
+    /holder and settlement bases must align/i,
+  );
+  assert.match(concept.formula.example, /125 billion.*97 billion.*28 billion/i);
+  assert.match(concept.formula.example, /618 billion.*850 billion/i);
+  for (const source of [
+    'treasury_borrowing_estimate_2026_11_02',
+    'treasury_refunding_2026_11_04',
+    'treasurydirect_auction_announcements',
+  ]) {
+    assert.ok(mortgage_sources[source], source);
+    assert.ok(concept.sources.includes(source), source);
+  }
+  for (const target of [
+    'treasury_family',
+    'qe_qt',
+    'supply_demand',
+    'term_premium',
+    'current_coupon',
+  ]) {
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+    const edge = mortgage_relationships.find(
+      (item) =>
+        item.source === 'treasury_financing_flow' && item.target === target,
+    );
+    assert.ok(edge, target);
+    assert.ok(edge.sources?.length, target);
+    assert.ok(edge.conditions.length > 60, target);
+  }
+  assert.equal(learning_checks.treasury_financing_flow.correct, 1);
+  assert.match(
+    learning_checks.treasury_financing_flow.choices[1],
+    /28 billion.*quarterly estimate is broader/i,
+  );
+  assert.equal(
+    search_concepts('TGA cash balance')[0]?.id,
+    'treasury_financing_flow',
+  );
+});
+
 test('lesson selection and saved position retain concepts across every Mortgage Map domain', () => {
   for (const id of [
     'interest_rate_swap',

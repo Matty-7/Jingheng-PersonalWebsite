@@ -9,6 +9,22 @@ export const foundation_sources = {
     title: 'About Treasury Marketable Securities',
     url: 'https://www.treasurydirect.gov/marketable-securities/',
   },
+  treasury_borrowing_estimate_2026_11_02: {
+    publisher: 'U.S. Treasury',
+    title:
+      'Treasury Announces Marketable Borrowing Estimates · November 2, 2026',
+    url: 'https://home.treasury.gov/news/press-releases/sb0675',
+  },
+  treasury_refunding_2026_11_04: {
+    publisher: 'U.S. Treasury',
+    title: 'Treasury Quarterly Refunding Statement · November 4, 2026',
+    url: 'https://home.treasury.gov/news/press-releases/sb0678',
+  },
+  treasurydirect_auction_announcements: {
+    publisher: 'TreasuryDirect',
+    title: 'Auction announcements, data and results',
+    url: 'https://treasurydirect.gov/auctions/auction-announcements/',
+  },
   operation_twist_public: {
     publisher: 'Federal Reserve',
     title: 'Maturity Extension Program and Reinvestment Policy · 2011–2012',
@@ -31,7 +47,7 @@ export const foundation_topics = [
     id: 'treasury_foundations',
     branch: 'curves',
     title: 'Treasury instruments and policy operations',
-    concepts: ['treasury_family', 'operation_twist'],
+    concepts: ['treasury_family', 'treasury_financing_flow', 'operation_twist'],
   },
   {
     id: 'credit_contracts',
@@ -68,6 +84,65 @@ const entries: Omit<MortgageConcept, 'topic' | 'branch'>[] = [
     answer:
       'No. Remaining payment dates, coupons, yield and the duration definition matter.',
     sources: ['treasury_family_public'],
+  },
+  {
+    id: 'treasury_financing_flow',
+    title: 'Treasury financing flow',
+    subtitle: 'Borrowing estimates, refunding and auction cash',
+    aliases: [
+      'Treasury borrowing estimate',
+      'quarterly refunding',
+      'new cash',
+      'auction size',
+      'TGA cash balance',
+      'SOMA add-on',
+    ],
+    summary:
+      'Treasury’s quarterly borrowing estimate projects privately held net marketable borrowing from expected receipts, outlays, other financing and an assumed quarter-end cash balance. A refunding statement instead identifies a specific package of securities: gross offering less privately held maturities is the package’s new cash. Each auction announcement then states one security’s offering amount, dates and terms.',
+    distinction:
+      'Match the period, holder basis and cash convention before comparing figures. Gross refunding offering includes the amount used to refinance maturing privately held debt; an auction size is security-level, while a quarterly borrowing estimate is broader and depends on the Treasury General Account cash-balance assumption. Treasury’s estimate excludes SOMA rollover add-ons but includes financing needed when SOMA holdings redeem. None of these figures alone determines Treasury yields, agency MBS spreads or OAS.',
+    formula: {
+      expression:
+        'privately held new cash = gross refunding offering − privately held maturities',
+      assumptions:
+        'All inputs use the same currency, usually USD billions, and the same refunding settlement set. The holder and settlement bases must align. This identity is not the quarterly borrowing estimate, and the TGA cash-balance assumption remains separate.',
+      example:
+        'Historical snapshot, not a live forecast or pricing signal: on November 4, 2026, Treasury announced a $125 billion refunding offering against about $97 billion of privately held maturities, implying about $28 billion of new cash. That is not the November 2 estimate of $618 billion in privately held net marketable borrowing for the October–December quarter, which assumed an $850 billion end-December cash balance.',
+    },
+    links: [
+      {
+        id: 'treasury_family',
+        reason: 'Define which securities are issued in the financing package.',
+      },
+      {
+        id: 'qe_qt',
+        reason:
+          'Separate public financing needs from Federal Reserve portfolio flows.',
+      },
+      {
+        id: 'supply_demand',
+        reason:
+          'Place issuance beside investor allocation and intermediation capacity.',
+      },
+      {
+        id: 'term_premium',
+        reason: 'Connect maturity supply to conditional required compensation.',
+      },
+      {
+        id: 'current_coupon',
+        reason:
+          'Trace Treasury conditions into, but not through, the MBS basis.',
+      },
+    ],
+    question:
+      'Treasury announces a $125 billion refunding offering and $97 billion of privately held maturities. Does that mean quarterly net borrowing is $125 billion?',
+    answer:
+      'No. That refunding package raises about $28 billion of new cash. The quarterly borrowing estimate covers a broader period and depends on projected cash flows and the assumed TGA balance.',
+    sources: [
+      'treasury_borrowing_estimate_2026_11_02',
+      'treasury_refunding_2026_11_04',
+      'treasurydirect_auction_announcements',
+    ],
   },
   {
     id: 'operation_twist',
@@ -178,17 +253,19 @@ export const foundation_concepts: MortgageConcept[] = entries.map((entry) => {
 });
 const concept_relationships: MortgageRelationship[] =
   foundation_concepts.flatMap((concept) =>
-    concept.links.map((link) => ({
-      id: `foundation_${concept.id}__${link.id}`,
-      source: concept.id,
-      target: link.id,
-      label: link.reason,
-      reason: link.reason,
-      kind: 'comparison' as const,
-      conditions:
-        'Compare the stated instrument, contract and measurement conventions; shared terminology does not make the exposures identical.',
-      sources: concept.sources,
-    })),
+    concept.id === 'treasury_financing_flow'
+      ? []
+      : concept.links.map((link) => ({
+          id: `foundation_${concept.id}__${link.id}`,
+          source: concept.id,
+          target: link.id,
+          label: link.reason,
+          reason: link.reason,
+          kind: 'comparison' as const,
+          conditions:
+            'Compare the stated instrument, contract and measurement conventions; shared terminology does not make the exposures identical.',
+          sources: concept.sources,
+        })),
   );
 export const foundation_paths = [
   {
@@ -258,6 +335,14 @@ export const foundation_checks = {
     ] as [string, string, string],
     correct: 2,
   },
+  treasury_financing_flow: {
+    choices: [
+      'Yes. Gross offering and quarterly net borrowing are the same measure.',
+      'No. The refunding set raises about $28 billion of new cash; the quarterly estimate is broader and depends on projected cash flows and the TGA assumption.',
+      'Yes. Privately held maturities do not affect new cash.',
+    ] as [string, string, string],
+    correct: 1,
+  },
   debt_covenants: {
     choices: [
       'No. Priority and borrowing restrictions are separate terms.',
@@ -278,6 +363,72 @@ export const foundation_checks = {
 
 export const foundation_relationships: MortgageRelationship[] = [
   ...concept_relationships,
+  {
+    id: 'foundation_treasury_financing_flow__treasury_family',
+    source: 'treasury_financing_flow',
+    target: 'treasury_family',
+    label: 'financing package uses Treasury instruments',
+    reason:
+      'Refunding and auction announcements identify bills, notes, bonds, TIPS or FRNs with security-specific terms.',
+    conditions:
+      'Instrument type and offering amount do not by themselves state the package’s privately held new cash.',
+    kind: 'definition',
+    sources: ['treasurydirect_auction_announcements'],
+  },
+  {
+    id: 'foundation_treasury_financing_flow__qe_qt',
+    source: 'treasury_financing_flow',
+    target: 'qe_qt',
+    label: 'public borrowing differs from SOMA flows',
+    reason:
+      'Treasury separates privately held borrowing from Federal Reserve rollover add-ons and financing associated with SOMA redemptions.',
+    conditions:
+      'Use the announced holder convention: rollover add-ons are excluded while redemption financing is included.',
+    kind: 'measurement',
+    sources: ['treasury_borrowing_estimate_2026_11_02'],
+  },
+  {
+    id: 'foundation_treasury_financing_flow__supply_demand',
+    source: 'treasury_financing_flow',
+    target: 'supply_demand',
+    label: 'issuance meets investor balance sheets',
+    reason:
+      'Auction supply becomes one input to investor allocation, dealer intermediation and cross-asset balance-sheet decisions.',
+    conditions:
+      'An announced financing amount does not identify the buyer mix or mechanically widen Treasury or agency MBS spreads.',
+    kind: 'mechanism',
+    sources: [
+      'treasury_refunding_2026_11_04',
+      'treasurydirect_auction_announcements',
+    ],
+  },
+  {
+    id: 'foundation_treasury_financing_flow__term_premium',
+    source: 'treasury_financing_flow',
+    target: 'term_premium',
+    label: 'maturity supply can alter duration absorption',
+    reason:
+      'The maturity composition of issuance can change how much duration private investors must absorb.',
+    conditions:
+      'The effect is conditional on demand, expected policy, inflation risk, liquidity and the existing maturity mix; issuance is not a term-premium forecast.',
+    kind: 'mechanism',
+    sources: ['treasury_refunding_2026_11_04'],
+  },
+  {
+    id: 'foundation_treasury_financing_flow__current_coupon',
+    source: 'treasury_financing_flow',
+    target: 'current_coupon',
+    label: 'Treasury financing enters the mortgage basis indirectly',
+    reason:
+      'Treasury yields and balance-sheet conditions can influence the benchmark and intermediation environment around agency MBS current coupon.',
+    conditions:
+      'Agency MBS spreads and OAS also depend on mortgage supply, prepayment-option value, volatility, liquidity and investor demand; no one-for-one pass-through is implied.',
+    kind: 'comparison',
+    sources: [
+      'treasury_refunding_2026_11_04',
+      'treasurydirect_auction_announcements',
+    ],
+  },
   {
     id: 'foundation_dv01__price_32nds',
     source: 'dv01',

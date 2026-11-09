@@ -1,5 +1,11 @@
 # Mortgage Map
 
+## November 9: Treasury financing flow
+
+Mortgage Map now separates Treasury's quarterly privately held net marketable borrowing estimate from a specific refunding package and a security-level auction. The new `treasury_financing_flow` concept defines refunding new cash as gross offering less privately held maturities, keeps the Treasury General Account cash-balance assumption separate, and explains the announced treatment of SOMA rollover add-ons and redemptions.
+
+The worked November 2026 figures are a dated historical snapshot from public U.S. Treasury and TreasuryDirect material, not live data, a forecast or a pricing signal. Conditional relationships connect maturity supply to term premium, investor balance sheets and agency MBS current coupon without implying that issuance mechanically determines Treasury yields, MBS spreads or OAS. The change adds one stable concept, one formula panel, public-source provenance, analytical relationships and a knowledge check; it adds no pricing engine, market feed, trading advice or pool simulation.
+
 ## November 8: refinance transitions
 
 Mortgage Map now distinguishes a completed refinance transition from a same-product rate-savings comparison. The new `refinance_transition` concept follows the old loan into its replacement and separates rate-and-term, cash-out, product and term changes before connecting the payoff to MBS prepayments. It also distinguishes a cash-out refinance, which replaces the first lien, from a home-equity loan or HELOC that may preserve it.
