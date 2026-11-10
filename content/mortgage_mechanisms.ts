@@ -1115,7 +1115,7 @@ const entries: Entry[] = [
     formula: {
       expression: 'ΔP_rate ≈ −D × P × Δy; DV01 ≈ D × P × 0.0001',
       assumptions:
-        'Use one valuation date and currency, name the real or nominal benchmark curve, and state cash-flow and model assumptions. D is effective or key-rate duration as applicable; Δy is a yield change in decimal units and DV01 is price change per 1 bp. These local measures do not estimate correlation, diversification benefit or stress performance.',
+        'Use one valuation date and currency, name the real or nominal benchmark curve, and state cash-flow and model assumptions. D is effective or key-rate duration as applicable; Δy is a yield change in decimal units. DV01 is the positive currency loss magnitude per 1 bp for a positive-duration position, so a +1 bp move gives ΔP_rate ≈ −DV01. These local measures do not estimate correlation, diversification benefit or stress performance.',
       example:
         'Two sectors can have distinct repayment contracts yet both lose market value under the same duration shock or become sale candidates under the same holder constraint.',
     },

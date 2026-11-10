@@ -138,7 +138,7 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
     conditional_sector_diversification: {
       tex: String.raw`\Delta P_{\mathrm{rate}}\approx-DP\Delta y,\qquad \mathrm{DV01}\approx DP\times 0.0001`,
       variables:
-        'P: full price or market value in one stated currency and valuation date; D: effective or key-rate duration in years under named cash-flow and model assumptions; Δy: small real or nominal benchmark-yield change in decimal units; ΔP_rate: local rate-only price change; DV01: price change for a 1 bp parallel move. These measures do not estimate correlation or diversification benefit.',
+        'P: full price or market value in one stated currency and valuation date; D: effective or key-rate duration in years under named cash-flow and model assumptions; Δy: small real or nominal benchmark-yield change in decimal units; ΔP_rate: signed local rate-only price change; DV01: positive currency loss magnitude per 1 bp for a positive-duration position, so a +1 bp move gives ΔP_rate ≈ −DV01. These measures do not estimate correlation or diversification benefit.',
     },
     pay_up: {
       tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,

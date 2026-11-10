@@ -319,6 +319,11 @@ test('sector diversification separates contracts from shared market channels', (
   assert.match(concept.distinction, /dated framework and snapshot/i);
   assert.match(concept.formula.expression, /DV01/);
   assert.match(concept.formula.assumptions, /one valuation date and currency/i);
+  assert.match(
+    concept.formula.assumptions,
+    /positive currency loss magnitude per 1 bp/i,
+  );
+  assert.match(concept.formula.assumptions, /\+1 bp.*−DV01/i);
   assert.match(concept.formula.assumptions, /do not estimate correlation/i);
   for (const source of [
     'agency_mbs_funding_liquidity_2016',
