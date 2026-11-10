@@ -1,5 +1,11 @@
 # Mortgage Map
 
+## November 10: conditional sector diversification
+
+Mortgage Map now distinguishes contractual and collateral diversification from shared market, funding and liquidation channels. The new `conditional_sector_diversification` concept compares Agency MBS, non-agency RMBS, CMBS, CLOs and corporate bonds through a qualitative exposure checklist: repayment contract, guarantee and waterfall; rate and duration; credit-factor scope; financing and intermediation; holder constraints and forced sales; and separate conclusions for risks diversified versus factors retained.
+
+The source boundaries are explicit. New York Fed Staff Report 1094 documents a global factor for its corporate-bond universe; it is not evidence that the same factor governs MBS, CMBS, CLOs or all securitized credit. The Federal Reserve's 2021 fire-sale sector and holder buckets are a dated framework and snapshot, not current weights, a live ranking or a forecast. The change adds one stable concept, five analytical relationships, public-source provenance and a knowledge check. It adds no live data, correlation estimate, portfolio score, forecast, advice, pricing engine or new subject map.
+
 ## November 9: Treasury financing flow
 
 Mortgage Map now separates Treasury's quarterly privately held net marketable borrowing estimate from a specific refunding package and a security-level auction. The new `treasury_financing_flow` concept defines refunding new cash as gross offering less privately held maturities, keeps the Treasury General Account cash-balance assumption separate, and explains the announced treatment of SOMA rollover add-ons and redemptions.
