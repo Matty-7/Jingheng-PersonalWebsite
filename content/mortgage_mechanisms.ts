@@ -179,6 +179,29 @@ export const mechanism_sources = {
       'Yield-Based Bond Duration Measures and Properties · public overview',
     url: 'https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/yield-based-bond-duration-measures-and-properties',
   },
+  agency_mbs_funding_liquidity_2016: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Funding Liquidity Risk and the Cross-section of MBS Returns · FEDS 2016-052',
+    url: 'https://www.federalreserve.gov/econres/feds/funding-liquidity-risk-and-the-cross-section-of-mbs-returns.htm',
+  },
+  debt_fire_sale_framework_2021: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Household and Business Debt: A Fire-Sale Risk Analysis · February 1, 2021',
+    url: 'https://www.federalreserve.gov/econres/notes/feds-notes/household-and-business-debt-a-fire-sale-risk-analysis-20210201.html',
+  },
+  global_credit_cycle_2026: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'The Global Credit Cycle · Staff Report No. 1094, revised May 2026',
+    url: 'https://www.newyorkfed.org/research/staff_reports/sr1094',
+  },
+  agency_mbs_dealer_stress_2026: {
+    publisher: 'Federal Reserve Bank of New York',
+    title:
+      'Dealers and the Dealer of Last Resort: Evidence from the Agency MBS Market in the COVID-19 Crisis · Staff Report No. 933, revised September 2026',
+    url: 'https://www.newyorkfed.org/research/staff_reports/sr933',
+  },
   mbs_runoff_public: {
     publisher: 'Federal Reserve',
     title:
@@ -248,6 +271,7 @@ export const mechanism_topics = [
       'pipeline_hedging',
       'margin_call',
       'curve_shifts',
+      'conditional_sector_diversification',
     ],
   },
   {
@@ -1075,6 +1099,66 @@ const entries: Entry[] = [
       'Does matching total DV01 guarantee a hedge against a curve twist?',
     answer:
       'No. The maturity distribution of sensitivity must also be considered.',
+  },
+  {
+    id: 'conditional_sector_diversification',
+    title: 'Conditional diversification across credit sectors',
+    subtitle: 'Different contracts, potentially shared market channels',
+    aliases: [
+      'cross-sector diversification',
+      'common credit factors',
+      'shared liquidation risk',
+      'mortgage credit diversification',
+    ],
+    summary:
+      'Agency MBS, non-agency RMBS, CMBS, CLOs and corporate bonds differ in collateral, guarantees, contractual waterfalls and loss allocation. Holding more than one sector can therefore reduce particular issuer, repayment-source or structural concentrations. But sector count does not establish independence: market values can remain exposed to benchmark real or nominal yield moves and duration; corporate bonds can share a documented global credit factor; and several sectors can meet the same funding, dealer-balance-sheet, holder-constraint or forced-sale shock. Review six items without combining them into a score: (1) repayment source, guarantee, waterfall and loss allocation; (2) the named real or nominal benchmark curve plus effective or key-rate duration; (3) the issuer or borrower credit channel, marking the global factor as “not established by this source” outside the cited corporate-bond universe; (4) repo or other financing, haircut and dealer capacity; (5) holder type, redemption, capital or margin constraints, saleable assets and market liquidity; and (6) separate conclusions for contractual risks diversified and shared factors retained. For example, CMBS property income and refinancing risk differ from a CLO loan waterfall or an Agency guarantee, yet those positions can still be concurrent sellers. Diversification is conditional on actual holdings, financing, hedges, investor type and stress state—not a fixed property of a sector label.',
+    formula: {
+      expression: 'ΔP_rate ≈ −D × P × Δy; DV01 ≈ D × P × 0.0001',
+      assumptions:
+        'Use one valuation date and currency, name the real or nominal benchmark curve, and state cash-flow and model assumptions. D is effective or key-rate duration as applicable; Δy is a yield change in decimal units and DV01 is price change per 1 bp. These local measures do not estimate correlation, diversification benefit or stress performance.',
+      example:
+        'Two sectors can have distinct repayment contracts yet both lose market value under the same duration shock or become sale candidates under the same holder constraint.',
+    },
+    distinction:
+      'Diversifying repayment contracts and collateral is not the same as diversifying mark-to-market, funding or liquidation risk. The cited global-credit evidence covers corporate bonds only; it does not establish the same factor for MBS, CMBS, CLOs or all securitized credit. The Federal Reserve’s 2021 sector and holder buckets are a dated framework and snapshot, not current weights, a live ranking or a forecast.',
+    links: [
+      {
+        id: 'agency',
+        reason:
+          'The guarantee changes contractual credit exposure but does not remove shared rate, funding or liquidity exposure.',
+      },
+      {
+        id: 'non_agency',
+        reason:
+          'Collateral performance and structural protection differ from Agency MBS while market channels can overlap.',
+      },
+      {
+        id: 'clo',
+        reason:
+          'Corporate-loan collateral and tranche tests create distinct contract risk without extending corporate-bond evidence beyond its universe.',
+      },
+      {
+        id: 'corporate',
+        reason:
+          'Corporate bonds anchor the documented global credit factor and its empirical scope boundary.',
+      },
+      {
+        id: 'liquidity',
+        reason:
+          'Holder constraints or financing needs can turn otherwise distinct assets into concurrent sellers.',
+      },
+    ],
+    sources: [
+      'agency_mbs_funding_liquidity_2016',
+      'debt_fire_sale_framework_2021',
+      'global_credit_cycle_2026',
+      'agency_mbs_dealer_stress_2026',
+      'yield_duration_public',
+    ],
+    question:
+      'A portfolio holds Agency MBS, non-agency RMBS, CMBS, CLOs and corporate bonds. Do five sector labels establish diversification during a funding stress?',
+    answer:
+      'No. The contracts and collateral differ, but the portfolio can still share rate and duration, funding, dealer-capacity, holder-constraint and forced-sale exposures. The global corporate-credit evidence also cannot be assumed to apply directly to MBS.',
   },
   {
     id: 'credit_rating',
@@ -1917,6 +2001,69 @@ export const mechanism_relationships: MortgageRelationship[] = [
     conditions:
       'Corporate issuance is one possible competing supply; it is not sufficient evidence that agency MBS spreads must widen.',
     sources: ['portfolio_balance_2019', 'mbs_supply_overview_2022'],
+  },
+  {
+    id: 'model_conditional_sector_diversification__agency',
+    source: 'conditional_sector_diversification',
+    target: 'agency',
+    label: 'separates guarantee from market channels',
+    reason:
+      'An Agency guarantee changes contractual credit exposure but does not remove rate, funding, dealer-capacity or liquidity exposure.',
+    kind: 'comparison',
+    conditions:
+      'Compare the same valuation date, currency and horizon; do not treat guarantee status as evidence of independent returns or immunity from market-value changes.',
+    sources: [
+      'agency_mbs_funding_liquidity_2016',
+      'agency_mbs_dealer_stress_2026',
+    ],
+  },
+  {
+    id: 'model_conditional_sector_diversification__non_agency',
+    source: 'conditional_sector_diversification',
+    target: 'non_agency',
+    label: 'compares collateral and structural protection',
+    reason:
+      'Non-agency collateral performance and structural protection differ from Agency MBS while market, funding and holder channels can overlap.',
+    kind: 'comparison',
+    conditions:
+      'Identify the actual collateral, tranche and financing terms; a different sector label does not establish a stable correlation or stress outcome.',
+    sources: ['debt_fire_sale_framework_2021'],
+  },
+  {
+    id: 'model_conditional_sector_diversification__clo',
+    source: 'conditional_sector_diversification',
+    target: 'clo',
+    label: 'distinguishes loan and tranche contracts',
+    reason:
+      'Corporate-loan collateral and tranche tests create contract risk distinct from mortgage repayment and guarantee structures.',
+    kind: 'comparison',
+    conditions:
+      'The cited global corporate-bond factor is not direct evidence for CLO tranches; analyze the loan pool, waterfall, tests, holders and liquidity separately.',
+    sources: ['global_credit_cycle_2026', 'debt_fire_sale_framework_2021'],
+  },
+  {
+    id: 'model_conditional_sector_diversification__corporate',
+    source: 'conditional_sector_diversification',
+    target: 'corporate',
+    label: 'sets the documented factor boundary',
+    reason:
+      'Corporate bonds anchor the cited evidence for a global corporate-credit factor and define the limit of that empirical claim.',
+    kind: 'comparison',
+    conditions:
+      'Do not extrapolate the corporate-bond result to MBS, CMBS, CLOs or all securitized credit without separate evidence and aligned return definitions.',
+    sources: ['global_credit_cycle_2026'],
+  },
+  {
+    id: 'model_conditional_sector_diversification__liquidity',
+    source: 'conditional_sector_diversification',
+    target: 'liquidity',
+    label: 'reveals a shared sale channel',
+    reason:
+      'Holder constraints or financing needs can make otherwise distinct assets concurrent sale candidates without making their repayment contracts identical.',
+    kind: 'mechanism',
+    conditions:
+      'The 2021 sector and holder buckets are a dated framework and snapshot, not current weights, a live liquidity ranking or a forecast.',
+    sources: ['debt_fire_sale_framework_2021', 'agency_mbs_dealer_stress_2026'],
   },
   {
     id: 'model_curve_shifts__key_rate',

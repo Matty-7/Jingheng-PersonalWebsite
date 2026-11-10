@@ -299,6 +299,76 @@ test('MBS supply and demand separates allocation from intermediation', () => {
   assert.match(spreads?.conditions, /not sufficient evidence/);
 });
 
+test('sector diversification separates contracts from shared market channels', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'conditional_sector_diversification',
+  );
+  assert.ok(concept);
+  assert.equal(concept.branch, 'risk');
+  assert.equal(concept.topic, 'exposure_channels');
+  assert.match(concept.summary, /Agency MBS, non-agency RMBS, CMBS, CLOs/);
+  assert.match(concept.summary, /does not establish independence/i);
+  assert.match(concept.summary, /not established by this source/i);
+  assert.match(concept.summary, /without combining them into a score/i);
+  assert.match(concept.summary, /conditional on actual holdings, financing/);
+  assert.match(
+    concept.distinction,
+    /Diversifying repayment contracts and collateral is not the same/i,
+  );
+  assert.match(concept.distinction, /covers corporate bonds only/i);
+  assert.match(concept.distinction, /dated framework and snapshot/i);
+  assert.match(concept.formula.expression, /DV01/);
+  assert.match(concept.formula.assumptions, /one valuation date and currency/i);
+  assert.match(concept.formula.assumptions, /do not estimate correlation/i);
+  for (const source of [
+    'agency_mbs_funding_liquidity_2016',
+    'debt_fire_sale_framework_2021',
+    'global_credit_cycle_2026',
+    'agency_mbs_dealer_stress_2026',
+    'yield_duration_public',
+  ]) {
+    assert.ok(mortgage_sources[source], source);
+    assert.ok(concept.sources.includes(source), source);
+  }
+  for (const target of [
+    'agency',
+    'non_agency',
+    'clo',
+    'corporate',
+    'liquidity',
+  ]) {
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+    const edge = mortgage_relationships.find(
+      (item) =>
+        item.source === 'conditional_sector_diversification' &&
+        item.target === target,
+    );
+    assert.ok(edge, target);
+    assert.ok(edge.sources?.length, target);
+    assert.ok(edge.conditions?.length > 60, target);
+  }
+  const corporate = mortgage_relationships.find(
+    (edge) => edge.id === 'model_conditional_sector_diversification__corporate',
+  );
+  assert.match(corporate.conditions, /Do not extrapolate/i);
+  const liquidity = mortgage_relationships.find(
+    (edge) => edge.id === 'model_conditional_sector_diversification__liquidity',
+  );
+  assert.match(liquidity.conditions, /dated framework and snapshot/i);
+  assert.equal(learning_checks.conditional_sector_diversification.correct, 1);
+  assert.match(
+    learning_checks.conditional_sector_diversification.choices[1],
+    /cannot be assumed to apply directly to MBS/i,
+  );
+  assert.equal(
+    search_concepts('shared liquidation risk')[0]?.id,
+    'conditional_sector_diversification',
+  );
+});
+
 test('spread relative value remains conditional on its model and window', () => {
   const matches = mortgage_concepts.filter((node) => node.id === 'spreads');
   assert.equal(matches.length, 1);

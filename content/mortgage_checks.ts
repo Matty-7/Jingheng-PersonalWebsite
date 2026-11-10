@@ -904,6 +904,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  conditional_sector_diversification: {
+    choices: [
+      'Yes. Different collateral guarantees independent returns in every market state.',
+      'No. Different contracts can still share rate, funding, dealer-capacity, holder-constraint and forced-sale exposures; corporate-bond factor evidence cannot be assumed to apply directly to MBS.',
+      'Yes. An Agency guarantee removes mark-to-market, funding and liquidity risk.',
+    ],
+    correct: 1,
+  },
   curve_shifts: {
     choices: [
       'Yes. Equal total DV01 offsets every possible curve movement.',

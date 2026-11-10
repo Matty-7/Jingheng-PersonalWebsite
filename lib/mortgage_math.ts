@@ -135,6 +135,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'ΔH: change in reported holdings over one period; T: net transactions, including MBS principal repayments as negative transactions; V: valuation changes; O: other volume or classification changes. All terms use the same sector, period and valuation basis. The identity does not reveal gross purchases or gross sales.',
     },
+    conditional_sector_diversification: {
+      tex: String.raw`\Delta P_{\mathrm{rate}}\approx-DP\Delta y,\qquad \mathrm{DV01}\approx DP\times 0.0001`,
+      variables:
+        'P: full price or market value in one stated currency and valuation date; D: effective or key-rate duration in years under named cash-flow and model assumptions; Δy: small real or nominal benchmark-yield change in decimal units; ΔP_rate: local rate-only price change; DV01: price change for a 1 bp parallel move. These measures do not estimate correlation or diversification benefit.',
+    },
     pay_up: {
       tex: String.raw`\mathrm{PU}=P_{\mathrm{specified}}-P_{\mathrm{TBA}}`,
       variables:
