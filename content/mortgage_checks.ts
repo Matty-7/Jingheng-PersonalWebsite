@@ -912,6 +912,14 @@ export const learning_checks: Record<
     ],
     correct: 1,
   },
+  property_insurance_transmission: {
+    choices: [
+      'No. Verify actual damage and mitigation, insurance coverage and availability, borrower cash-flow effects, collateral condition, default and recovery, then apply the relevant Agency, private-label or CRT contract.',
+      'Yes. Any increase in modeled hazard immediately creates mortgage default and a security loss.',
+      'No. Property insurance guarantees that no mortgage, pool or tranche loss can occur.',
+    ],
+    correct: 0,
+  },
   curve_shifts: {
     choices: [
       'Yes. Equal total DV01 offsets every possible curve movement.',

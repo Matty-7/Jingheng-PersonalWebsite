@@ -202,6 +202,41 @@ export const mechanism_sources = {
       'Dealers and the Dealer of Last Resort: Evidence from the Agency MBS Market in the COVID-19 Crisis · Staff Report No. 933, revised September 2026',
     url: 'https://www.newyorkfed.org/research/staff_reports/sr933',
   },
+  fhfa_climate_summit_2024: {
+    publisher: 'Federal Housing Finance Agency',
+    title:
+      'Fall 2024 Econ Summit on Climate Risk · presenter research on insurance, securitization and mortgage performance',
+    url: 'https://www.fhfa.gov/blog/insights/fhfas-fall-2024-econ-summit-on-climate-risk',
+  },
+  fhfa_annual_report_2024_insurance: {
+    publisher: 'Federal Housing Finance Agency',
+    title:
+      '2024 Annual Report to Congress · property-insurance coverage, deductibles, availability and data gaps',
+    url: 'https://www.fhfa.gov/document/d/arc/fhfa-2024-annual-report-to-congress',
+  },
+  fannie_property_insurance_2026: {
+    publisher: 'Fannie Mae',
+    title:
+      'Selling Guide B7-3-02 · Property Insurance Requirements for One- to Four-Unit Properties · August 5, 2026',
+    url: 'https://selling-guide.fanniemae.com/sel/b7-3-02/property-insurance-requirements-one-four-unit-properties',
+  },
+  fannie_disaster_property_2025: {
+    publisher: 'Fannie Mae',
+    title:
+      'Selling Guide B2-3-05 · Properties Affected by a Disaster · September 3, 2025',
+    url: 'https://selling-guide.fanniemae.com/sel/b2-3-05/properties-affected-disaster',
+  },
+  fannie_insured_loss_servicing_2023: {
+    publisher: 'Fannie Mae',
+    title: 'Servicing Guide B-5-01 · Insured Loss Events · July 12, 2023',
+    url: 'https://servicing-guide.fanniemae.com/svc/b-5-01/insured-loss-events',
+  },
+  gao_homeowners_insurance_2026: {
+    publisher: 'U.S. Government Accountability Office',
+    title:
+      'GAO-26-107867 · Homeowners Insurance: Premiums Generally Tracked Inflation but Rose More in Disaster-Prone Areas',
+    url: 'https://www.gao.gov/products/gao-26-107867',
+  },
   mbs_runoff_public: {
     publisher: 'Federal Reserve',
     title:
@@ -279,6 +314,12 @@ export const mechanism_topics = [
     branch: 'credit',
     title: 'Assessing credit outcomes',
     concepts: ['credit_rating', 'expected_loss', 'credit_migration'],
+  },
+  {
+    id: 'collateral_insurance',
+    branch: 'credit',
+    title: 'Hazard, insurance and mortgage loss',
+    concepts: ['property_insurance_transmission'],
   },
 ];
 
@@ -1161,6 +1202,68 @@ const entries: Entry[] = [
       'No. The contracts and collateral differ, but the portfolio can still share rate and duration, funding, dealer-capacity, holder-constraint and forced-sale exposures. The global corporate-credit evidence also cannot be assumed to apply directly to MBS.',
   },
   {
+    id: 'property_insurance_transmission',
+    title: 'Property insurance transmission',
+    subtitle: 'Hazard, coverage and mortgage loss are different layers',
+    aliases: [
+      'homeowners insurance',
+      'insurance availability',
+      'insurance non-renewal',
+      'disaster collateral risk',
+      'spatial concentration',
+    ],
+    summary:
+      'Hazard exposure describes a possible source of damage, not an observed mortgage loss. Event intensity, property mitigation and neighborhood conditions influence physical damage. The policy form, exclusions, limits, deductible and availability then determine how much damage may be insured and how much cash the borrower may need. Premiums, deductibles, uncovered repairs and temporary displacement can pressure borrower cash flow; damage or unavailable coverage can also affect collateral condition, marketability and program eligibility. A realized mortgage loss is measured from the applicable default, workout and recovery outcomes, and a non-agency waterfall or CRT contract then determines whether and where that loss is allocated. Spatially correlated collateral can therefore remain relevant even when one property is hardened, but neither a neighborhood label nor a hazard estimate proves a pool or security loss.',
+    distinction:
+      'Hazard is not damage; damage is not necessarily an uninsured loss; an uninsured loss is not automatically a default; default is not automatically 100% severity; and pool loss is not automatically a loss on a particular tranche or CRT note. A hardened home may have lower physical vulnerability while a high deductible, non-renewal or neighborhood-level exposure still affects financing, liquidity or borrower burden. Conversely, higher modeled hazard does not prove realized mortgage loss when mitigation, insurance, borrower resources or recoveries absorb the shock. FHFA’s summit page summarizes presenter research rather than an official FHFA conclusion; the 2024 annual report is a dated policy record; Fannie Mae rules apply to the named Enterprise framework; and the GAO associations are aggregate and non-causal.',
+    links: [
+      {
+        id: 'agency',
+        reason:
+          'Property insurance and acceptable-collateral rules affect loan eligibility, while the security guarantee remains a separate contractual layer.',
+      },
+      {
+        id: 'non_agency',
+        reason:
+          'Private-label collateral losses and structural protection remain transaction-specific.',
+      },
+      {
+        id: 'crt',
+        reason:
+          'A collateral loss must satisfy governing credit-event and allocation terms before reaching a CRT note.',
+      },
+      {
+        id: 'servicing',
+        reason:
+          'Damage, claims, repairs, escrow administration and borrower relief can create servicing work under applicable rules.',
+      },
+      {
+        id: 'default',
+        reason:
+          'Cash-flow pressure or impaired collateral can contribute to default without making it deterministic.',
+      },
+      {
+        id: 'severity',
+        reason:
+          'Coverage, repair costs, collateral proceeds and recovery expenses affect loss after default.',
+      },
+    ],
+    sources: [
+      'fhfa_climate_summit_2024',
+      'fhfa_annual_report_2024_insurance',
+      'fannie_property_insurance_2026',
+      'fannie_disaster_property_2025',
+      'fannie_insured_loss_servicing_2023',
+      'gao_homeowners_insurance_2026',
+      'investor',
+      'fannie_crt',
+    ],
+    question:
+      'A property’s wildfire hazard estimate rises. Does that establish a realized mortgage loss or a loss on a CRT note?',
+    answer:
+      'No. Verify actual damage and mitigation, insurance coverage and availability, borrower cash-flow effects, collateral condition, default and recovery, then apply the relevant Agency, private-label or CRT contract. A hazard estimate alone does not determine any of those outcomes.',
+  },
+  {
     id: 'credit_rating',
     title: 'Credit ratings',
     subtitle: 'An opinion about credit risk',
@@ -2001,6 +2104,81 @@ export const mechanism_relationships: MortgageRelationship[] = [
     conditions:
       'Corporate issuance is one possible competing supply; it is not sufficient evidence that agency MBS spreads must widen.',
     sources: ['portfolio_balance_2019', 'mbs_supply_overview_2022'],
+  },
+  {
+    id: 'model_property_insurance_transmission__agency',
+    source: 'property_insurance_transmission',
+    target: 'agency',
+    label: 'separates collateral eligibility from guarantee',
+    reason:
+      'Insurance and acceptable-collateral requirements affect loan eligibility, while an Agency guarantee is a separate security-level contract.',
+    kind: 'comparison',
+    conditions:
+      'Fannie Mae and Freddie Mac requirements are program- and date-specific; do not apply one guide provision to every mortgage or RMBS.',
+    sources: [
+      'fannie_property_insurance_2026',
+      'fannie_disaster_property_2025',
+    ],
+  },
+  {
+    id: 'model_property_insurance_transmission__non_agency',
+    source: 'property_insurance_transmission',
+    target: 'non_agency',
+    label: 'leaves loss with collateral and structure',
+    reason:
+      'Private-label credit exposure depends on actual collateral outcomes and transaction-specific structural protection.',
+    kind: 'comparison',
+    conditions:
+      'Read the governing documents and actual collateral; an aggregate hazard or insurance statistic does not determine a deal loss.',
+    sources: ['fhfa_climate_summit_2024', 'investor'],
+  },
+  {
+    id: 'model_property_insurance_transmission__crt',
+    source: 'property_insurance_transmission',
+    target: 'crt',
+    label: 'precedes contract-specific loss allocation',
+    reason:
+      'A mortgage credit outcome must pass through the governing credit-event and allocation terms before affecting a CRT note.',
+    kind: 'mechanism',
+    conditions:
+      'Do not infer a CRT note loss from hazard, property damage or even pool loss without the applicable contract and allocation rules.',
+    sources: ['fhfa_climate_summit_2024', 'fannie_crt'],
+  },
+  {
+    id: 'model_property_insurance_transmission__servicing',
+    source: 'property_insurance_transmission',
+    target: 'servicing',
+    label: 'can create claim and repair obligations',
+    reason:
+      'Damage, insurance proceeds, repairs, escrow administration and borrower relief can require servicing actions.',
+    kind: 'mechanism',
+    conditions:
+      'Duties, documentation, advance treatment and relief options vary by program and servicing agreement.',
+    sources: ['fannie_insured_loss_servicing_2023'],
+  },
+  {
+    id: 'model_property_insurance_transmission__default',
+    source: 'property_insurance_transmission',
+    target: 'default',
+    label: 'can pressure borrower cash flow',
+    reason:
+      'Premiums, deductibles, uncovered repairs or displacement can weaken payment capacity after a hazard event.',
+    kind: 'mechanism',
+    conditions:
+      'This is a possible channel, not a default forecast; coverage, borrower resources, assistance, mitigation and recovery can interrupt it.',
+    sources: ['gao_homeowners_insurance_2026', 'fhfa_climate_summit_2024'],
+  },
+  {
+    id: 'model_property_insurance_transmission__severity',
+    source: 'property_insurance_transmission',
+    target: 'severity',
+    label: 'changes recovery inputs',
+    reason:
+      'Insurance proceeds, repair costs, collateral value and recovery expenses can affect loss after default.',
+    kind: 'measurement',
+    conditions:
+      'Actual coverage, proceeds, costs, timing and disposition outcomes are required; a hazard estimate alone is not a severity measure.',
+    sources: ['fhfa_climate_summit_2024', 'fannie_disaster_property_2025'],
   },
   {
     id: 'model_conditional_sector_diversification__agency',
