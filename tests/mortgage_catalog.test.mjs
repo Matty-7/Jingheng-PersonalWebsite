@@ -385,6 +385,11 @@ test('property insurance transmission separates hazard from mortgage and securit
     concept.summary,
     /Hazard exposure.*not an observed mortgage loss/i,
   );
+  assert.match(
+    concept.summary,
+    /A realized mortgage loss is measured from the applicable default, workout and recovery outcomes/i,
+  );
+  assert.doesNotMatch(concept.summary, /recognized only after/i);
   assert.match(concept.summary, /Spatially correlated collateral/i);
   assert.match(concept.distinction, /Hazard is not damage/i);
   assert.match(concept.distinction, /pool loss is not automatically a loss/i);
@@ -397,6 +402,8 @@ test('property insurance transmission separates hazard from mortgage and securit
     'fannie_disaster_property_2025',
     'fannie_insured_loss_servicing_2023',
     'gao_homeowners_insurance_2026',
+    'investor',
+    'fannie_crt',
   ]) {
     assert.ok(mortgage_sources[source], source);
     assert.ok(concept.sources.includes(source), source);

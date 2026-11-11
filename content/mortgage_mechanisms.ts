@@ -1213,7 +1213,7 @@ const entries: Entry[] = [
       'spatial concentration',
     ],
     summary:
-      'Hazard exposure describes a possible source of damage, not an observed mortgage loss. Event intensity, property mitigation and neighborhood conditions influence physical damage. The policy form, exclusions, limits, deductible and availability then determine how much damage may be insured and how much cash the borrower may need. Premiums, deductibles, uncovered repairs and temporary displacement can pressure borrower cash flow; damage or unavailable coverage can also affect collateral condition, marketability and program eligibility. A mortgage loss is recognized only after the relevant delinquency, workout and recovery process, and a non-agency waterfall or CRT contract then determines whether and where that loss is allocated. Spatially correlated collateral can therefore remain relevant even when one property is hardened, but neither a neighborhood label nor a hazard estimate proves a pool or security loss.',
+      'Hazard exposure describes a possible source of damage, not an observed mortgage loss. Event intensity, property mitigation and neighborhood conditions influence physical damage. The policy form, exclusions, limits, deductible and availability then determine how much damage may be insured and how much cash the borrower may need. Premiums, deductibles, uncovered repairs and temporary displacement can pressure borrower cash flow; damage or unavailable coverage can also affect collateral condition, marketability and program eligibility. A realized mortgage loss is measured from the applicable default, workout and recovery outcomes, and a non-agency waterfall or CRT contract then determines whether and where that loss is allocated. Spatially correlated collateral can therefore remain relevant even when one property is hardened, but neither a neighborhood label nor a hazard estimate proves a pool or security loss.',
     distinction:
       'Hazard is not damage; damage is not necessarily an uninsured loss; an uninsured loss is not automatically a default; default is not automatically 100% severity; and pool loss is not automatically a loss on a particular tranche or CRT note. A hardened home may have lower physical vulnerability while a high deductible, non-renewal or neighborhood-level exposure still affects financing, liquidity or borrower burden. Conversely, higher modeled hazard does not prove realized mortgage loss when mitigation, insurance, borrower resources or recoveries absorb the shock. FHFA’s summit page summarizes presenter research rather than an official FHFA conclusion; the 2024 annual report is a dated policy record; Fannie Mae rules apply to the named Enterprise framework; and the GAO associations are aggregate and non-causal.',
     links: [
@@ -1255,6 +1255,8 @@ const entries: Entry[] = [
       'fannie_disaster_property_2025',
       'fannie_insured_loss_servicing_2023',
       'gao_homeowners_insurance_2026',
+      'investor',
+      'fannie_crt',
     ],
     question:
       'A property’s wildfire hazard estimate rises. Does that establish a realized mortgage loss or a loss on a CRT note?',
@@ -2128,7 +2130,7 @@ export const mechanism_relationships: MortgageRelationship[] = [
     kind: 'comparison',
     conditions:
       'Read the governing documents and actual collateral; an aggregate hazard or insurance statistic does not determine a deal loss.',
-    sources: ['fhfa_climate_summit_2024'],
+    sources: ['fhfa_climate_summit_2024', 'investor'],
   },
   {
     id: 'model_property_insurance_transmission__crt',
@@ -2140,7 +2142,7 @@ export const mechanism_relationships: MortgageRelationship[] = [
     kind: 'mechanism',
     conditions:
       'Do not infer a CRT note loss from hazard, property damage or even pool loss without the applicable contract and allocation rules.',
-    sources: ['fhfa_climate_summit_2024'],
+    sources: ['fhfa_climate_summit_2024', 'fannie_crt'],
   },
   {
     id: 'model_property_insurance_transmission__servicing',
