@@ -1,5 +1,13 @@
 # Mortgage Map
 
+## November 11: property insurance transmission
+
+Mortgage Map now separates hazard exposure, physical damage, insurance coverage and availability, borrower cash-flow pressure, collateral condition, default and recovery, and contract-specific security loss allocation. The new `property_insurance_transmission` concept explains why a hazard estimate is not a mortgage-loss estimate and why property-level mitigation does not by itself establish insurance availability, collateral liquidity or pool-level diversification.
+
+The public-source boundaries remain explicit. FHFA's Fall 2024 summit page summarizes presenter research rather than an official FHFA conclusion; FHFA's 2024 annual report is a dated policy record; the cited Fannie Mae selling and servicing guides apply to the named Enterprise framework and effective dates; and GAO-26-107867 reports aggregate, non-causal associations rather than a specific pool's loss. Recent restricted reading supplied only the research question; no private article text, statistics or distinctive phrasing is published.
+
+The change adds one stable concept, six conditional relationships and one knowledge check. It adds no climate score, current premium data, causal forecast, pricing engine, pool simulation, allocation advice or separate subject map.
+
 ## November 10: conditional sector diversification
 
 Mortgage Map now distinguishes contractual and collateral diversification from shared market, funding and liquidation channels. The new `conditional_sector_diversification` concept compares Agency MBS, non-agency RMBS, CMBS, CLOs and corporate bonds through a qualitative exposure checklist: repayment contract, guarantee and waterfall; rate and duration; credit-factor scope; financing and intermediation; holder constraints and forced sales; and separate conclusions for risks diversified versus factors retained.

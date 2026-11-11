@@ -374,6 +374,82 @@ test('sector diversification separates contracts from shared market channels', (
   );
 });
 
+test('property insurance transmission separates hazard from mortgage and security loss', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'property_insurance_transmission',
+  );
+  assert.ok(concept);
+  assert.equal(concept.branch, 'credit');
+  assert.equal(concept.topic, 'collateral_insurance');
+  assert.match(
+    concept.summary,
+    /Hazard exposure.*not an observed mortgage loss/i,
+  );
+  assert.match(concept.summary, /Spatially correlated collateral/i);
+  assert.match(concept.distinction, /Hazard is not damage/i);
+  assert.match(concept.distinction, /pool loss is not automatically a loss/i);
+  assert.match(concept.distinction, /aggregate and non-causal/i);
+  assert.equal(concept.formula, undefined);
+  for (const source of [
+    'fhfa_climate_summit_2024',
+    'fhfa_annual_report_2024_insurance',
+    'fannie_property_insurance_2026',
+    'fannie_disaster_property_2025',
+    'fannie_insured_loss_servicing_2023',
+    'gao_homeowners_insurance_2026',
+  ]) {
+    assert.ok(mortgage_sources[source], source);
+    assert.ok(concept.sources.includes(source), source);
+  }
+  for (const target of [
+    'agency',
+    'non_agency',
+    'crt',
+    'servicing',
+    'default',
+    'severity',
+  ]) {
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+    const edge = mortgage_relationships.find(
+      (item) =>
+        item.source === 'property_insurance_transmission' &&
+        item.target === target,
+    );
+    assert.ok(edge, target);
+    assert.ok(edge.sources?.length, target);
+    assert.ok(edge.conditions?.length > 70, target);
+  }
+  const kinds = Object.fromEntries(
+    mortgage_relationships
+      .filter((edge) => edge.source === 'property_insurance_transmission')
+      .map((edge) => [edge.target, edge.kind]),
+  );
+  assert.deepEqual(kinds, {
+    agency: 'comparison',
+    non_agency: 'comparison',
+    crt: 'mechanism',
+    servicing: 'mechanism',
+    default: 'mechanism',
+    severity: 'measurement',
+  });
+  assert.equal(learning_checks.property_insurance_transmission.correct, 0);
+  assert.match(
+    learning_checks.property_insurance_transmission.choices[0],
+    /apply the relevant Agency, private-label or CRT contract/i,
+  );
+  assert.match(
+    learning_checks.property_insurance_transmission.choices[1],
+    /immediately creates mortgage default/i,
+  );
+  assert.equal(
+    search_concepts('insurance non-renewal')[0]?.id,
+    'property_insurance_transmission',
+  );
+});
+
 test('spread relative value remains conditional on its model and window', () => {
   const matches = mortgage_concepts.filter((node) => node.id === 'spreads');
   assert.equal(matches.length, 1);
