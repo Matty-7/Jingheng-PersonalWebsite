@@ -1104,6 +1104,14 @@ export const learning_checks: Record<
     ],
     correct: 1,
   },
+  stipulated_pool_trade: {
+    choices: [
+      'Yes. Any WALA or geography stip identifies the final pool CUSIP at execution.',
+      'No. The stip constrains later allocation; a specified-pool trade identifies the pool at execution.',
+      'No. A stip is only an analytics proxy and never becomes a contract term.',
+    ],
+    correct: 1,
+  },
   specified: {
     choices: [
       'Equal coupons require equal expected principal paths.',

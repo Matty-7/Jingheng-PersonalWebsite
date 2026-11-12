@@ -154,6 +154,7 @@ const original_topics = [
     concepts: [
       'tba',
       'tba_analytics_mapping',
+      'stipulated_pool_trade',
       'specified',
       'pay_up',
       'cheapest_deliverable',
@@ -470,6 +471,17 @@ export const mortgage_sources: Record<
     title:
       'Basics of Fannie Mae Single-Family MBS · TBA and specified pools, p. 5 · 2025',
     url: 'https://capitalmarkets.fanniemae.com/resources/file/mbs/pdf/basics-sf-mbs.pdf#page=5',
+  },
+  sec_mbs_trade_types: {
+    publisher: 'U.S. Securities and Exchange Commission',
+    title:
+      'Staff Report: Enhancing Disclosure in the Mortgage-Backed Securities Markets · generic, stipulated and specified trades',
+    url: 'https://www.sec.gov/reports/staff-report-enhancing-disclosure-mortgage-backed-securities-markets',
+  },
+  dtcc_tba_stips: {
+    publisher: 'DTCC Learning',
+    title: 'TBAs · stipulated characteristics and allocation',
+    url: 'https://dtcclearning.com/products-and-services/fixed-income-clearing/mbsd/mbsd-overview/tbas.html',
   },
   dollar_roll_faq: {
     publisher: 'Federal Reserve Bank of New York',
@@ -1131,6 +1143,69 @@ const original_concepts: MortgageConcept[] = [
       },
     ],
     sources: ['tba', 'tba_analytics_public', 'fannie_mbs_basics'],
+    topic: 'pool_selection',
+  },
+  {
+    id: 'stipulated_pool_trade',
+    branch: 'trading',
+    title: 'Stipulated TBA trade',
+    subtitle: 'Extra constraints without a known CUSIP',
+    aliases: [
+      'stip',
+      'stips',
+      'stipulated pool',
+      'stipulated TBA',
+      'TBA with stipulations',
+    ],
+    summary:
+      'A stipulated TBA trade agrees the ordinary TBA terms plus one or more bilateral constraints at trade time. A collateral stip can address characteristics such as WALA, geography or issuance or maturity year; an operational stip can address pool count, delivery variance or agreed delivery timing. The specific pools and CUSIPs are still identified later through allocation.',
+    distinction:
+      'A stip narrows the seller’s eligible delivery set; it does not by itself identify a pool. The seller can still choose among pools that satisfy the trade terms, the stipulations and the applicable delivery rules. There is no universal list of stips independent of the trade confirmation and governing rules, and a representative analytics proxy is not a contractual stipulation.',
+    formula: {
+      expression: 'ΔP_stip = P_stip − P_generic',
+      assumptions:
+        'Both prices are clean-price points per $100 current face, observed at the same quotation time for the same agency or program, original-term class, coupon and settlement date. The comparison isolates the agreed stipulation; accrued interest and invoice adjustments are excluded.',
+      example:
+        'Illustrative: 101.25 − 101.00 = 0.25 price point, or $0.25 per $100 current face. A positive difference is not 25 bp of yield, an extra coupon or a guaranteed realized return.',
+    },
+    question:
+      'A buyer requires a maximum WALA and a named geography. Does the buyer therefore know the pool CUSIP at execution?',
+    answer:
+      'No. Those stipulations constrain the pools that may later be allocated, but they do not identify a specific pool. A specified-pool trade identifies the pool or CUSIP when the trade is executed.',
+    sources: [
+      'sec_mbs_trade_types',
+      'tba',
+      'dtcc_tba_stips',
+      'sifma_pool_notification',
+      'sifma_good_delivery',
+    ],
+    links: [
+      {
+        id: 'tba',
+        reason:
+          'A stipulated trade retains delayed pool identification while adding bilateral constraints.',
+      },
+      {
+        id: 'tba_allocation',
+        reason:
+          'The later allocation must satisfy the agreed stipulations as well as the applicable delivery terms.',
+      },
+      {
+        id: 'specified',
+        reason:
+          'A specified-pool trade identifies the actual pool at execution instead.',
+      },
+      {
+        id: 'cheapest_deliverable',
+        reason:
+          'Stipulations narrow, but do not necessarily eliminate, the seller’s pool-selection set.',
+      },
+      {
+        id: 'pay_up',
+        reason:
+          'A narrower stipulated delivery set can trade above a comparable generic TBA, using a different information set from a fully specified pool.',
+      },
+    ],
     topic: 'pool_selection',
   },
   {

@@ -145,6 +145,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'PU: pay-up in clean-price points per $100 current face; P: comparable specified-pool and TBA clean prices at the same quotation time and settlement date. Not a yield spread or realized return.',
     },
+    stipulated_pool_trade: {
+      tex: String.raw`\Delta P_{\mathrm{stip}}=P_{\mathrm{stip}}-P_{\mathrm{generic}}`,
+      variables:
+        'ΔP_stip: stipulated-versus-generic clean-price difference in price points per $100 current face; P_stip and P_generic: clean prices observed at the same quotation time for the same agency or program, original-term class, coupon and settlement date. Not yield basis points, an extra coupon or realized return.',
+    },
     rolls: {
       tex: String.raw`D=P_{\mathrm{near}}-P_{\mathrm{far}}`,
       variables:
