@@ -667,6 +667,49 @@ test('TBA analytics mapping separates a collateral proxy from contract and deliv
   );
 });
 
+test('stipulated TBA narrows delivery without identifying a pool', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'stipulated_pool_trade',
+  );
+  assert.ok(concept);
+  assert.equal(concept.topic, 'pool_selection');
+  for (const query of ['stip', 'stips', 'stipulated TBA'])
+    assert.equal(search_concepts(query)[0]?.id, 'stipulated_pool_trade', query);
+  assert.match(
+    concept.summary,
+    /specific pools and CUSIPs are still identified later/,
+  );
+  assert.match(
+    concept.distinction,
+    /narrows the seller’s eligible delivery set/,
+  );
+  assert.match(
+    concept.distinction,
+    /analytics proxy is not a contractual stipulation/,
+  );
+  assert.deepEqual(
+    concept.links.map((link) => link.id),
+    ['tba', 'tba_allocation', 'specified', 'cheapest_deliverable', 'pay_up'],
+  );
+  for (const source of concept.sources) assert.ok(mortgage_sources[source]);
+  for (const edge_id of [
+    'tba__stipulated_pool_trade',
+    'stipulated_pool_trade__tba_allocation',
+    'stipulated_pool_trade__specified',
+    'stipulated_pool_trade__cheapest_deliverable',
+    'stipulated_pool_trade__pay_up',
+  ])
+    assert.ok(
+      mortgage_relationships.some((edge) => edge.id === edge_id),
+      edge_id,
+    );
+  assert.equal(learning_checks.stipulated_pool_trade.correct, 1);
+  assert.match(
+    learning_checks.stipulated_pool_trade.choices[1],
+    /stip constrains later allocation/,
+  );
+});
+
 test('TBA allocation separates proxy collateral, notification, good delivery and settlement', () => {
   const concept = mortgage_concepts.find(
     (node) => node.id === 'tba_allocation',

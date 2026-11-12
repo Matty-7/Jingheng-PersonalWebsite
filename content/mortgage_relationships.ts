@@ -8,6 +8,70 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'tba__stipulated_pool_trade',
+    source: 'tba',
+    target: 'stipulated_pool_trade',
+    kind: 'definition',
+    label: 'adds bilateral delivery constraints',
+    reason:
+      'Ordinary TBA terms remain, while the parties add agreed constraints without identifying the final pools.',
+    conditions:
+      'Read the confirmation and applicable rules; do not infer a universal stip list.',
+    sources: ['sec_mbs_trade_types', 'tba'],
+  },
+  {
+    id: 'stipulated_pool_trade__tba_allocation',
+    source: 'stipulated_pool_trade',
+    target: 'tba_allocation',
+    kind: 'mechanism',
+    label: 'constrains later allocation',
+    reason:
+      'Proposed pools must satisfy the agreed stipulations when the seller later identifies them.',
+    conditions:
+      'Allocation remains distinct from execution; exact validation follows the trade terms and current rules.',
+    sources: [
+      'dtcc_tba_stips',
+      'sifma_pool_notification',
+      'sifma_good_delivery',
+    ],
+  },
+  {
+    id: 'stipulated_pool_trade__specified',
+    source: 'stipulated_pool_trade',
+    target: 'specified',
+    kind: 'comparison',
+    label: 'stops short of pool identification',
+    reason:
+      'A stip defines acceptable characteristics, while a specified trade identifies the actual pool or CUSIP at execution.',
+    conditions:
+      'Do not equate a collateral restriction, analytics proxy or expected delivery with a known security.',
+    sources: ['sec_mbs_trade_types', 'tba'],
+  },
+  {
+    id: 'stipulated_pool_trade__cheapest_deliverable',
+    source: 'stipulated_pool_trade',
+    target: 'cheapest_deliverable',
+    kind: 'mechanism',
+    label: 'narrows the delivery option',
+    reason:
+      'The seller retains choice only among pools satisfying both the base TBA terms and the stipulations.',
+    conditions:
+      'The remaining choice set depends on the confirmation, available pools and applicable delivery rules.',
+    sources: ['dtcc_tba_stips', 'sifma_good_delivery'],
+  },
+  {
+    id: 'stipulated_pool_trade__pay_up',
+    source: 'stipulated_pool_trade',
+    target: 'pay_up',
+    kind: 'measurement',
+    label: 'can price narrower delivery',
+    reason:
+      'A stipulated trade can command a clean-price premium over a comparable generic TBA because the buyer rejects part of the generic delivery set.',
+    conditions:
+      'Align quotation time, program, term, coupon, settlement, current-face basis and clean-price convention. This is not the fully specified-pool information set.',
+    sources: ['sec_mbs_trade_types', 'dtcc_tba_stips'],
+  },
+  {
     id: 'tba__tba_allocation',
     source: 'tba',
     target: 'tba_allocation',
