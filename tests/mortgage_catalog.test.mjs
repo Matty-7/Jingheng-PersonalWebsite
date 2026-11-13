@@ -52,6 +52,10 @@ test('Ginnie buyouts separate eligibility, issuer action and observed CPR', () =
     assert.ok(mortgage_sources[source], source);
     assert.ok(concept.sources.includes(source), source);
   }
+  assert.match(
+    mortgage_sources.ginnie_buyout_apm22_03.title,
+    /Delinquent Loan Buyout Requirements · May 16, 2022/,
+  );
   for (const target of [
     'ginnie',
     'delinquency',

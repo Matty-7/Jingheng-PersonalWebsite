@@ -600,8 +600,7 @@ export const mortgage_sources: Record<
   },
   ginnie_buyout_apm22_03: {
     publisher: 'Ginnie Mae',
-    title:
-      'APM 22-03 · Reperforming Loan Securitization Eligibility Requirements · March 28, 2022',
+    title: 'APM 22-03 · Delinquent Loan Buyout Requirements · May 16, 2022',
     url: 'https://www.ginniemae.gov/issuers/program_guidelines/Lists/MBSGuideAPMsLib/Attachments/126/APM_22-03.pdf',
   },
   arrc: {
