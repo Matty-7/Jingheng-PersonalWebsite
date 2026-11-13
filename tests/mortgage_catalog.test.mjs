@@ -38,6 +38,49 @@ test('one Mortgage Map includes every domain and concept in the catalog', () => 
   assert.equal(search_concepts('HELOC')[0].id, 'heloc');
 });
 
+test('Ginnie buyouts separate eligibility, issuer action and observed CPR', () => {
+  const concept = mortgage_concepts.find((node) => node.id === 'buyouts');
+  assert.ok(concept);
+  assert.match(concept.summary, /three consecutive months/i);
+  assert.match(concept.summary, /unscheduled principal/i);
+  assert.match(concept.distinction, /not an automatic or immediate removal/i);
+  assert.match(concept.distinction, /weak refinance incentive/i);
+  assert.match(concept.formula.expression, /U\(buyout\)/);
+  assert.match(concept.formula.assumptions, /mutually exclusive/i);
+  assert.match(concept.formula.assumptions, /not a causal model or forecast/i);
+  for (const source of ['ginnie_buyout_ch18', 'ginnie_buyout_apm22_03']) {
+    assert.ok(mortgage_sources[source], source);
+    assert.ok(concept.sources.includes(source), source);
+  }
+  assert.match(
+    mortgage_sources.ginnie_buyout_apm22_03.title,
+    /Delinquent Loan Buyout Requirements · May 16, 2022/,
+  );
+  for (const target of [
+    'ginnie',
+    'delinquency',
+    'prepayments',
+    'cpr',
+    'servicing',
+  ])
+    assert.ok(
+      concept.links.some((link) => link.id === target),
+      target,
+    );
+  for (const edge_id of [
+    'buyouts__prepayments',
+    'ginnie__buyouts',
+    'servicing__buyouts',
+  ]) {
+    const edge = mortgage_relationships.find((item) => item.id === edge_id);
+    assert.ok(edge, edge_id);
+    assert.ok(edge.sources?.length, edge_id);
+  }
+  assert.equal(learning_checks.buyouts.correct, 1);
+  assert.match(learning_checks.buyouts.choices[1], /not an automatic removal/i);
+  assert.match(learning_checks.buyouts.choices[1], /without refinancing/i);
+});
+
 test('refinance transitions separate completed replacement from rate incentive and pool speed', () => {
   const concept = mortgage_concepts.find(
     (node) => node.id === 'refinance_transition',

@@ -240,6 +240,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'U: unscheduled principal; B: opening balance; S: scheduled principal. Amounts cover the same month.',
     },
+    buyouts: {
+      tex: String.raw`\begin{aligned}U&=U_{\mathrm{refi}}+U_{\mathrm{turnover}}+U_{\mathrm{curtailment}}+U_{\mathrm{buyout}}+U_{\mathrm{other}}\\\mathrm{SMM}&=\frac{U}{B-S}\\\mathrm{CPR}&=1-(1-\mathrm{SMM})^{12}\end{aligned}`,
+      variables:
+        'U and each U channel: unscheduled principal in one reporting month; B: opening principal; S: scheduled principal, all in the same currency with B − S > 0. Channels must be mutually exclusive to avoid double counting. SMM and CPR are decimals. This accounting attribution is not a causal model or forecast.',
+    },
     cpr: {
       tex: String.raw`\begin{aligned}\mathrm{CPR}&=1-(1-\mathrm{SMM})^{12}\\\mathrm{SMM}&=1-(1-\mathrm{CPR})^{1/12}\end{aligned}`,
       variables:

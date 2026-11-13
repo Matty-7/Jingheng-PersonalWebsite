@@ -592,6 +592,17 @@ export const mortgage_sources: Record<
     title: 'Our Guaranty',
     url: 'https://www.ginniemae.gov/about-us/who-we-are/funding-government-lending',
   },
+  ginnie_buyout_ch18: {
+    publisher: 'Ginnie Mae',
+    title:
+      'MBS Guide, Chapter 18 · Issuer Pool and Loan Administration · effective December 4, 2024',
+    url: 'https://www.ginniemae.gov/issuers/program_guidelines/Lists/MBSGuideAPMsLib/Attachments/169/Chapter_18.pdf',
+  },
+  ginnie_buyout_apm22_03: {
+    publisher: 'Ginnie Mae',
+    title: 'APM 22-03 · Delinquent Loan Buyout Requirements · May 16, 2022',
+    url: 'https://www.ginniemae.gov/issuers/program_guidelines/Lists/MBSGuideAPMsLib/Attachments/126/APM_22-03.pdf',
+  },
   arrc: {
     publisher: 'Federal Reserve Bank of New York · ARRC',
     title: 'An Updated User’s Guide to SOFR',
@@ -2251,23 +2262,46 @@ const original_concepts: MortgageConcept[] = [
   {
     id: 'buyouts',
     title: 'Loan buyouts',
-    subtitle: 'Principal return without refinancing',
+    subtitle: 'Ginnie principal return without refinancing',
     summary:
-      'Under applicable agency rules, a loan may be removed from a pool, returning principal to the security even if the borrower did not refinance.',
+      'For applicable Ginnie Mae securities issued on or after January 1, 2003, an issuer may buy out a pooled loan once it is due but unpaid for three consecutive months. If the issuer removes the eligible loan, the remaining principal reaches securityholders as unscheduled principal even though the borrower did not refinance.',
     distinction:
-      'An investor prepayment and a voluntary borrower payoff are not identical events.',
-    question: 'Can credit trouble accelerate agency principal return?',
+      'Eligibility is not an automatic or immediate removal, and the Ginnie timing rule should not be generalized to every agency program. Weak refinance incentive can coexist with elevated observed pool CPR when buyout principal is material: investor prepayment and voluntary borrower payoff are not identical events.',
+    formula: {
+      expression:
+        'U = U(refi) + U(turnover) + U(curtailment) + U(buyout) + U(other)\nSMM = U ÷ (B − S)\nCPR = 1 − (1 − SMM)¹²',
+      assumptions:
+        'All principal amounts use the same currency and reporting month; B − S must be positive. Classify channels as mutually exclusive to avoid double counting, and enter SMM and CPR as decimals. This is an accounting attribution, not a causal model or forecast.',
+    },
+    question:
+      'Can a Ginnie pool show faster observed CPR without borrower refinancing?',
     answer:
-      'Certain delinquent-loan removals can do so; program rules determine treatment.',
-    sources: ['basics'],
+      'Yes. Once the delinquency condition is met, an issuer may elect to remove an eligible loan and pass through its remaining principal. The condition creates eligibility, not an automatic buyout.',
+    sources: ['ginnie_buyout_ch18', 'ginnie_buyout_apm22_03'],
     links: [
+      {
+        id: 'ginnie',
+        reason:
+          'Defines the program whose loan-administration rules create this buyout eligibility.',
+      },
       {
         id: 'prepayments',
         reason: 'A qualifying removal can generate unscheduled principal.',
       },
       {
+        id: 'cpr',
+        reason:
+          'Annualizes the observed SMM that includes classified buyout principal.',
+      },
+      {
         id: 'delinquency',
-        reason: 'Loan performance can matter even for guaranteed securities.',
+        reason:
+          'Three consecutive months due but unpaid can create eligibility under the cited Ginnie rule.',
+      },
+      {
+        id: 'servicing',
+        reason:
+          'Issuer and servicing actions can affect pool-removal timing separately from borrower optionality.',
       },
     ],
     aliases: [],
@@ -4393,8 +4427,35 @@ export const mortgage_relationships: MortgageRelationship[] = [
     target: 'prepayments',
     label: 'returns principal',
     reason:
-      'Applicable loan-removal rules can cause early principal return without a borrower refinance.',
+      'An elected removal of an eligible Ginnie delinquent loan passes remaining principal through as unscheduled principal without a borrower refinance.',
     kind: 'mechanism',
+    conditions:
+      'For applicable Ginnie securities, three consecutive months due but unpaid create eligibility; removal is not automatic and the rule is not a universal agency threshold.',
+    sources: ['ginnie_buyout_ch18', 'ginnie_buyout_apm22_03'],
+  },
+  {
+    id: 'ginnie__buyouts',
+    source: 'ginnie',
+    target: 'buyouts',
+    label: 'sets eligibility rules',
+    reason:
+      'Ginnie loan-administration rules can make a persistently delinquent pooled loan eligible for issuer buyout.',
+    kind: 'mechanism',
+    conditions:
+      'For applicable securities issued on or after January 1, 2003, the loan must be due but unpaid for three consecutive months; eligibility does not require immediate removal.',
+    sources: ['ginnie_buyout_ch18'],
+  },
+  {
+    id: 'servicing__buyouts',
+    source: 'servicing',
+    target: 'buyouts',
+    label: 'separates issuer action',
+    reason:
+      'Observed pool paydown can reflect an issuer loan-removal decision rather than a borrower refinancing decision.',
+    kind: 'mechanism',
+    conditions:
+      'The accounting channel identifies principal attribution; it does not infer issuer motive or forecast future buyout timing.',
+    sources: ['ginnie_buyout_ch18', 'ginnie_buyout_apm22_03'],
   },
   {
     id: 'prepayments__cash_flows',
