@@ -1362,9 +1362,9 @@ export const learning_checks: Record<
   },
   buyouts: {
     choices: [
-      'No. Credit trouble can only delay principal in an agency pool.',
-      'Yes. Certain delinquent-loan removals accelerate principal under program rules.',
-      'Yes. Every delinquency triggers an immediate, identical buyout across programs.',
+      'No. Without a borrower refinance, a Ginnie pool cannot record unscheduled principal or CPR.',
+      'Yes. The cited delinquency condition creates issuer buyout eligibility, not an automatic removal; an elected buyout can add unscheduled principal without refinancing.',
+      'Yes. Every delinquency triggers an immediate, identical buyout across all agency programs.',
     ],
     correct: 1,
   },
