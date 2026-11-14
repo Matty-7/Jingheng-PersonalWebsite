@@ -810,9 +810,9 @@ export const learning_checks: Record<
   },
   pipeline_hedging: {
     choices: [
-      'Yes. Locked face value alone determines the appropriate hedge size.',
-      'No. Expected completion and sensitivity per dollar affect the required hedge.',
-      'No. Only loans that have already funded can contribute pipeline exposure.',
+      'Yes. It assigns the same 75% closing probability to every open IRLC.',
+      'No. It is an ex-post cohort statistic on a stated basis and window; forward hedge sizing uses a separately identified forecast input.',
+      'Yes. Realized pull-through makes locked UPB identical to funded warehouse exposure.',
     ],
     correct: 1,
   },
