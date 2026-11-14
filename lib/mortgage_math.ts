@@ -20,6 +20,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         'g, h: disjoint borrower groups in one month; B: opening principal; S: scheduled principal; E > 0: post-scheduled balance; P: prepaid principal, all in the same currency; s_g = P_g/E_g: group SMM; w: balance share. SMM and CPR are decimals. Weights sum to one.',
     },
+    pipeline_hedging: {
+      tex: String.raw`\begin{aligned}\mathrm{DV01}_{\mathrm{pipeline}}&\approx\sum_c U_c\,p_c\,d_c\\n&=-\frac{\mathrm{DV01}_{\mathrm{pipeline}}}{\mathrm{DV01}_{\mathrm{hedge\ unit}}}\end{aligned}`,
+      variables:
+        'c: defined unfunded lock cohort; U_c: locked UPB in USD; p_c: decimal forecast pull-through input; d_c: USD/bp per USD; pipeline DV01: USD/bp; hedge-unit DV01: USD/bp per long unit. Negative n means short or sell. Use one valuation date, currency, +1 bp shock and sensitivity convention. Exclude funded warehouse loans and separately covered exposure. This is first-order scenario sizing, not a pricing engine, forecast, optimal hedge or trading advice.',
+    },
     sequential: {
       tex: String.raw`\begin{aligned}Q_A&=\min(Q,B_A)\\Q_B&=\min\!\left(B_B,\max(0,Q-Q_A)\right)\end{aligned}`,
       variables:

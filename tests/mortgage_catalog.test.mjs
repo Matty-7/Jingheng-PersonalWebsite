@@ -10,6 +10,7 @@ import {
   mortgage_branches,
   mortgage_topics,
   mortgage_concepts,
+  mortgage_paths,
   mortgage_relationships,
   mortgage_sources,
 } from '../content/mortgage_concepts.ts';
@@ -79,6 +80,65 @@ test('Ginnie buyouts separate eligibility, issuer action and observed CPR', () =
   assert.equal(learning_checks.buyouts.correct, 1);
   assert.match(learning_checks.buyouts.choices[1], /not an automatic removal/i);
   assert.match(learning_checks.buyouts.choices[1], /without refinancing/i);
+});
+
+test('pipeline hedging separates contracts, execution branches and pull-through measures', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'pipeline_hedging',
+  );
+  assert.ok(concept);
+  assert.equal(
+    mortgage_concepts.filter((node) => node.id === 'pipeline_hedging').length,
+    1,
+  );
+  assert.match(concept.summary, /interest rate lock commitment \(IRLC\)/i);
+  assert.match(concept.summary, /warehouse/i);
+  assert.match(concept.distinction, /three contracts separate/i);
+  assert.match(concept.distinction, /best efforts.*loan-specific/i);
+  assert.match(concept.distinction, /mandatory.*aggregate amount/i);
+  assert.match(concept.distinction, /pair-off/i);
+  assert.match(concept.distinction, /substitution/i);
+  assert.match(concept.distinction, /alternative executions/i);
+  assert.match(
+    concept.distinction,
+    /not each open loan’s closing probability/i,
+  );
+  assert.match(concept.formula.expression, /Expected pipeline DV01/);
+  assert.match(concept.formula.expression, /Hedge units n/);
+  assert.match(concept.formula.assumptions, /USD\/bp per USD/);
+  assert.match(concept.formula.assumptions, /negative n means short/i);
+  assert.match(concept.formula.assumptions, /first-order.*scenario-dependent/i);
+  assert.match(concept.formula.assumptions, /avoid double counting/i);
+  assert.match(concept.formula.example, /−\$12,000\/bp.*overhedged/i);
+  assert.match(concept.formula.example, /\+\$6,000\/bp.*underhedged/i);
+  for (const source of [
+    'pipeline_public',
+    'fannie_execution_options_public',
+    'fannie_pe_whole_loan_glossary_public',
+  ]) {
+    assert.ok(mortgage_sources[source], source);
+    assert.ok(concept.sources.includes(source), source);
+    assert.match(mortgage_sources[source].url, /^https:\/\//);
+  }
+  for (const id of ['rate_lock', 'fallout', 'pipeline_hedging'])
+    assert.equal(mortgage_concepts.filter((node) => node.id === id).length, 1);
+  const path = mortgage_paths.find((item) => item.id === 'rate_lock_to_hedge');
+  assert.ok(path);
+  assert.deepEqual(path.steps, [
+    'rate_lock',
+    'fallout',
+    'pipeline_hedging',
+    'tba',
+    'basis_risk',
+  ]);
+  assert.equal(path.steps.length, path.explanations.length);
+  assert.match(path.boundary, /one TBA-hedge branch/i);
+  assert.match(path.boundary, /mandatory and best efforts.*alternative/i);
+  assert.equal(learning_checks.pipeline_hedging.correct, 1);
+  assert.match(
+    learning_checks.pipeline_hedging.choices[1],
+    /ex-post cohort statistic.*forecast input/i,
+  );
 });
 
 test('refinance transitions separate completed replacement from rate incentive and pool speed', () => {

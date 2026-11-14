@@ -55,8 +55,19 @@ export const mechanism_sources = {
   },
   pipeline_public: {
     publisher: 'Office of the Comptroller of the Currency',
-    title: 'Mortgage Banking Handbook',
+    title: 'Mortgage Banking, Comptroller’s Handbook · March 2016',
     url: 'https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/mortgage-banking/pub-ch-mortgage-banking.pdf',
+  },
+  fannie_execution_options_public: {
+    publisher: 'Fannie Mae',
+    title: 'Selling Guide C1-1-01 · Execution Options · November 4, 2026',
+    url: 'https://guide-selling.fanniemae.com/sel/c1-1-01/execution-options',
+  },
+  fannie_pe_whole_loan_glossary_public: {
+    publisher: 'Fannie Mae',
+    title:
+      'Pricing & Execution – Whole Loan Glossary · execution type and pull-through rate',
+    url: 'https://singlefamily.fanniemae.com/job-aid/pe-whole-loan/topics/glossary.htm',
   },
   tba_hedge_public: {
     publisher: 'Milliman',
@@ -620,13 +631,38 @@ const entries: Entry[] = [
   {
     id: 'pipeline_hedging',
     title: 'Mortgage pipeline hedging',
-    subtitle: 'Hedging loans that have not all closed',
-    aliases: ['origination hedge', 'pipeline hedge'],
+    subtitle: 'From borrower lock to secondary execution',
+    aliases: [
+      'origination hedge',
+      'pipeline hedge',
+      'IRLC',
+      'interest rate lock commitment',
+      'mandatory delivery',
+      'best efforts',
+    ],
     summary:
-      'Originators can use forward MBS trades to manage the rate exposure of expected loan deliveries. The hedge reflects projected completion, timing and sensitivity, rather than mechanically matching every locked dollar.',
+      'A borrower rate lock or interest rate lock commitment (IRLC) can give an originator rate exposure before funding. The originator estimates forecast pull-through for defined pipeline cohorts, converts the expected locked UPB into sensitivity and may offset part of it with a forward TBA sale. Once a loan funds, its exposure belongs in the warehouse rather than the unfunded pipeline, so the same loan should not be counted twice.',
     distinction:
-      'A TBA hedge can reduce rate exposure while leaving delivery, fallout and basis risk.',
+      'Keep three contracts separate: the borrower’s IRLC, the seller’s whole-loan commitment and the TBA hedge with a market counterparty. Under the cited Fannie Mae whole-loan rules, best efforts is a loan-specific alternative that generally avoids a non-delivery pair-off when that loan does not close; mandatory execution covers an aggregate amount within tolerances, can permit substitution and creates pair-off exposure for a delivery shortfall. These are alternative executions, not sequential steps or universal rules for every purchaser. Realized pull-through is an ex-post cohort ratio on a stated count or UPB basis and window, not each open loan’s closing probability or the forecast input used for hedge sizing. A TBA hedge can reduce first-order rate exposure while leaving fallout, delivery and basis risk.',
+    formula: {
+      expression:
+        'Expected pipeline DV01 ≈ Σc(locked UPBc × forecast pull-throughc × DV01 per dollarc)\nHedge units n = −Expected pipeline DV01 ÷ DV01 per long hedge unit',
+      assumptions:
+        'Locked UPB is in USD; forecast pull-through is a decimal input for a defined cohort; DV01 per dollar is USD/bp per USD; expected pipeline DV01 and hedge-unit DV01 are USD/bp. Use one valuation date, currency, +1 bp shock and sensitivity convention. A negative n means short or sell the hedge, so net DV01 is exposure DV01 + n × unit DV01. Exclude funded warehouse loans and exposure already covered by a loan-specific execution to avoid double counting. Realized pull-through is an ex-post statistic on a stated cohort, window and count or UPB basis, not an individual probability. This is a first-order, scenario-dependent sizing illustration, not a pricing engine, forecast, optimal hedge or trading advice.',
+      example:
+        'Illustration: $100 million locked UPB × 80% forecast pull-through × $0.0004/bp per dollar = $32,000/bp. With $400/bp per long hedge unit, n = −80. If realized pull-through is 50%, exposure DV01 is $20,000/bp and net DV01 is −$12,000/bp: overhedged. At 95%, exposure DV01 is $38,000/bp and net DV01 is +$6,000/bp: underhedged. This counterexample is not live market sizing.',
+    },
     links: [
+      {
+        id: 'rate_lock',
+        reason:
+          'The borrower commitment can create rate exposure before funding.',
+      },
+      {
+        id: 'fallout',
+        reason:
+          'Forecast completion determines how much locked UPB enters expected exposure.',
+      },
       {
         id: 'tba',
         reason:
@@ -639,13 +675,19 @@ const entries: Entry[] = [
       },
       {
         id: 'dv01',
-        reason: 'Sensitivity helps translate exposure into hedge size.',
+        reason:
+          'A signed, convention-aligned DV01 translates expected exposure into hedge units.',
       },
     ],
-    sources: ['pipeline_public', 'tba_hedge_public'],
+    sources: [
+      'pipeline_public',
+      'fannie_execution_options_public',
+      'fannie_pe_whole_loan_glossary_public',
+    ],
     question:
-      'Is the correct hedge always the total face value of locked loans?',
-    answer: 'No. Expected completion and risk per dollar both matter.',
+      'Does a 75% realized pull-through ratio mean every open IRLC has a 75% probability of closing?',
+    answer:
+      'No. It is an ex-post cohort statistic on a stated basis and window. Forward hedge sizing uses a separately identified forecast input, along with expected sensitivity and existing execution coverage.',
   },
   {
     id: 'repo',
@@ -1444,13 +1486,13 @@ export const mechanism_models: MechanismModel[] = [
     steps: ['rate_lock', 'fallout', 'pipeline_hedging', 'tba', 'basis_risk'],
     explanations: [
       'The lender commits to a quote for a limited period while market prices can move.',
-      'Some applications will not complete on the expected terms. Pull-through estimates determine how much exposure is likely to remain.',
-      'The hedge is sized against expected delivery and sensitivity, and updated as those expectations change.',
+      'Some applications will not complete on the expected terms. Forecast pull-through is a forward input; realized pull-through is an ex-post cohort statistic on a stated basis and window.',
+      'Expected locked UPB and DV01 determine a signed first-order hedge size. Funding moves a loan from the unfunded pipeline to warehouse exposure, so it should not be counted twice.',
       'Forward TBA sales can offset part of the rate-driven value change in expected mortgage production.',
       'The eventual loans and deliverable securities may differ from the hedge. Residual basis risk remains even with matched aggregate sensitivity.',
     ],
     boundary:
-      'This describes one common mechanism, not every lender’s hedge. Contract terms, delivery eligibility, fallout and hedge instruments determine the remaining exposure.',
+      'This path describes one TBA-hedge branch, not every lender’s execution. Under the cited Fannie whole-loan rules, mandatory and best efforts are alternative commitments beside this path, not consecutive steps. Contract terms, cohort definition, delivery eligibility, fallout, funded-loan treatment and hedge instruments determine the remaining exposure. The sizing identity is not a pricing engine, forecast, optimal hedge or trading advice.',
   },
   {
     id: 'funding_to_liquidity',
@@ -1826,9 +1868,15 @@ export const mechanism_relationships: MortgageRelationship[] = [
     target: 'tba',
     label: 'can use forward TBA sales',
     reason:
-      'A forward TBA sale can offset part of the value change in expected mortgage production.',
+      'A forward TBA sale can offset part of the rate-driven value change in expected mortgage production after forecast pull-through and sensitivity are defined.',
+    conditions:
+      'The borrower IRLC, a Fannie whole-loan commitment and the TBA hedge are separate contracts. Mandatory and best efforts are alternative whole-loan executions, not steps in the TBA hedge path.',
     kind: 'definition',
-    sources: ['pipeline_public', 'tba_hedge_public'],
+    sources: [
+      'pipeline_public',
+      'fannie_execution_options_public',
+      'fannie_pe_whole_loan_glossary_public',
+    ],
   },
   {
     id: 'model_pipeline_hedging__basis_risk',
@@ -1843,9 +1891,12 @@ export const mechanism_relationships: MortgageRelationship[] = [
     source: 'dv01',
     target: 'pipeline_hedging',
     label: 'informs hedge sizing',
-    reason: 'Sensitivity helps translate exposure into hedge size.',
+    reason:
+      'Convention-aligned DV01 translates expected cohort exposure into signed hedge units.',
+    conditions:
+      'Use one valuation date, currency, +1 bp shock and sensitivity convention; exclude funded warehouse loans and separately covered loan-specific exposure to avoid double counting.',
     kind: 'measurement',
-    sources: ['pipeline_public', 'tba_hedge_public'],
+    sources: ['pipeline_public'],
   },
   {
     id: 'model_repo__haircut',
