@@ -8,6 +8,101 @@ type SourcedRelationship = MortgageRelationship & {
 };
 export const foundational_relationships: SourcedRelationship[] = [
   {
+    id: 'pipeline_hedging__securitization_roles',
+    source: 'pipeline_hedging',
+    target: 'securitization_roles',
+    kind: 'comparison',
+    label: 'keeps market hedge and asset transfer separate',
+    reason:
+      'The hedge counterparty owes the market-contract obligations; the hedge does not transfer the loan or create issuance, servicing or guaranty duties.',
+    conditions:
+      'Read the borrower commitment, hedge confirmation and loan-sale or securitization documents separately; the same firm may appear in more than one capacity.',
+    sources: ['pipeline_public', 'fannie_single_family_mbs_roles_public'],
+  },
+  {
+    id: 'securitization_roles__agency',
+    source: 'securitization_roles',
+    target: 'agency',
+    kind: 'definition',
+    label: 'assigns issuer and guarantor duties',
+    reason:
+      'Fannie Mae and Freddie Mac issue mortgage securities and provide the payment guaranties stated in their program and security documents.',
+    conditions:
+      'Agency status does not make every participant a guarantor, and the guaranty scope must be read from the applicable documents.',
+    sources: [
+      'fannie_single_family_mbs_roles_public',
+      'freddie_mbs_roles_public',
+    ],
+  },
+  {
+    id: 'securitization_roles__ginnie',
+    source: 'securitization_roles',
+    target: 'ginnie',
+    kind: 'comparison',
+    label: 'separates approved issuer from guarantor',
+    reason:
+      'An approved private issuer pools eligible loans and issues the security, while Ginnie Mae supplies the stated security guaranty.',
+    conditions:
+      'Government insurance or guaranty on an underlying loan, the issuer duty and the Ginnie Mae security guaranty are distinct obligations.',
+    sources: ['ginnie_program_roles_public'],
+  },
+  {
+    id: 'securitization_roles__non_agency',
+    source: 'securitization_roles',
+    target: 'non_agency',
+    kind: 'comparison',
+    label: 'replaces agency guaranty with deal terms',
+    reason:
+      'Without an agency guaranty, investor protection depends on collateral, structural credit support and the obligations assigned in the transaction documents.',
+    conditions:
+      'Identify the sponsor, depositor or seller, issuing entity, servicer, trustee and any separate credit-support provider for the specific transaction.',
+    sources: ['sec_reg_ab_roles_public', 'sec_abs'],
+  },
+  {
+    id: 'securitization_roles__servicing',
+    source: 'securitization_roles',
+    target: 'servicing',
+    kind: 'definition',
+    label: 'assigns collection and administration',
+    reason:
+      'The servicing agreement or program documents assign collection, administration, remittance and any advance duties.',
+    conditions:
+      'Performing servicing functions does not by itself establish loan ownership, security ownership or a payment guaranty.',
+    sources: ['sec_reg_ab_roles_public', 'ginnie_program_roles_public'],
+  },
+  {
+    id: 'agency__servicing',
+    source: 'agency',
+    target: 'servicing',
+    kind: 'mechanism',
+    label: 'keeps administration and guaranty distinct',
+    reason:
+      'Agency program documents can impose servicing, remittance or advance duties alongside a separately defined security guaranty.',
+    conditions:
+      'The duty, timing and party responsible vary by program and contract; do not infer them from the agency label alone.',
+    sources: [
+      'fannie_single_family_mbs_roles_public',
+      'freddie_mbs_roles_public',
+      'ginnie_program_roles_public',
+    ],
+  },
+  {
+    id: 'servicing__cash_flows',
+    source: 'servicing',
+    target: 'cash_flows',
+    kind: 'mechanism',
+    label: 'turns collections into remittances',
+    reason:
+      'Borrower collections pass through servicing, stated fees and contractual timing rules before they become investor distributions.',
+    conditions:
+      'A borrower payment, a servicer remittance or advance, and an investor distribution are related cash movements but not the same legal obligation.',
+    sources: [
+      'fannie_single_family_mbs_roles_public',
+      'ginnie_program_roles_public',
+      'sec_reg_ab_roles_public',
+    ],
+  },
+  {
     id: 'tba__stipulated_pool_trade',
     source: 'tba',
     target: 'stipulated_pool_trade',

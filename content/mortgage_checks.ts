@@ -1826,11 +1826,11 @@ export const learning_checks: Record<
   },
   securitization_roles: {
     choices: [
-      'A servicer administers payments; other legal roles depend on the documents.',
-      'Collecting borrower payments makes the servicer the security’s guarantor.',
-      'Administering loan payments establishes the servicer as the security’s investor.',
+      'A TBA hedge counterparty guarantees the borrower’s mortgage payments if the loan closes.',
+      'The hedge counterparty becomes the MBS issuer and security guarantor when it enters the trade.',
+      'A TBA hedge counterparty owes only the hedge contract’s obligations; it does not thereby guarantee borrower or security payments.',
     ],
-    correct: 0,
+    correct: 2,
   },
   home_prices: {
     choices: [
