@@ -290,6 +290,104 @@ test('new paths have authored step explanations, boundaries and complete public-
   }
 });
 
+test('securitization roles preserve contract boundaries from rate lock to investor cash flows', () => {
+  const concepts = mortgage_concepts.filter(
+    (node) => node.id === 'securitization_roles',
+  );
+  assert.equal(concepts.length, 1);
+  const concept = concepts[0];
+  for (const term of [
+    'seller',
+    'issuer',
+    'guarantor',
+    'servicer',
+    'trustee',
+    'investor',
+    'hedge counterparty',
+  ])
+    assert.match(
+      `${concept.summary} ${concept.distinction} ${concept.aliases.join(' ')}`,
+      new RegExp(term, 'i'),
+    );
+  assert.match(concept.distinction, /Fannie Mae and Freddie Mac/i);
+  assert.match(concept.distinction, /Ginnie Mae/i);
+  assert.match(concept.distinction, /Non-agency RMBS has no agency guaranty/i);
+
+  for (const source of [
+    'pipeline_public',
+    'fannie_single_family_mbs_roles_public',
+    'freddie_mbs_roles_public',
+    'ginnie_program_roles_public',
+    'sec_reg_ab_roles_public',
+  ]) {
+    assert.ok(concept.sources.includes(source), source);
+    assert.match(mortgage_sources[source].url, /^https:\/\//);
+  }
+
+  const expected = [
+    [
+      'pipeline_hedging__securitization_roles',
+      'pipeline_hedging',
+      'securitization_roles',
+    ],
+    ['securitization_roles__agency', 'securitization_roles', 'agency'],
+    ['securitization_roles__ginnie', 'securitization_roles', 'ginnie'],
+    ['securitization_roles__non_agency', 'securitization_roles', 'non_agency'],
+    ['securitization_roles__servicing', 'securitization_roles', 'servicing'],
+    ['agency__servicing', 'agency', 'servicing'],
+    ['servicing__cash_flows', 'servicing', 'cash_flows'],
+  ];
+  for (const [id, source, target] of expected) {
+    const matches = mortgage_relationships.filter((edge) => edge.id === id);
+    assert.equal(matches.length, 1, id);
+    assert.equal(matches[0].source, source, id);
+    assert.equal(matches[0].target, target, id);
+    assert.ok(matches[0].conditions?.length > 30, id);
+    assert.ok(matches[0].sources?.length, id);
+    for (const sourceId of matches[0].sources)
+      assert.match(mortgage_sources[sourceId].url, /^https:\/\//, sourceId);
+  }
+
+  const path = mortgage_paths.find(
+    (item) => item.id === 'rate_lock_to_investor_cash_flows',
+  );
+  assert.ok(path);
+  assert.deepEqual(path.steps, [
+    'rate_lock',
+    'pipeline_hedging',
+    'securitization_roles',
+    'agency',
+    'servicing',
+    'cash_flows',
+  ]);
+  assert.equal(path.explanations.length, path.steps.length);
+  assert.match(path.premise, /different contract or program document/i);
+  assert.match(path.boundary, /typical agency branch/i);
+  assert.match(path.boundary, /retained, sold as a whole loan/i);
+  assert.match(
+    path.boundary,
+    /neither the borrower guarantor nor the security guarantor/i,
+  );
+  assert.doesNotMatch(
+    `${path.premise} ${path.explanations.join(' ')} ${path.boundary}`,
+    /DV01|pull-through|80%|50%|95%/i,
+  );
+
+  assert.equal(learning_checks.securitization_roles.correct, 2);
+  assert.match(
+    learning_checks.securitization_roles.choices[2],
+    /only the hedge contract’s obligations.*does not thereby guarantee/i,
+  );
+  assert.match(
+    learning_checks.securitization_roles.choices[0],
+    /guarantees the borrower’s mortgage payments/i,
+  );
+  assert.match(
+    learning_checks.securitization_roles.choices[1],
+    /becomes the MBS issuer and security guarantor/i,
+  );
+});
+
 test('data-center CRE separates contracted capacity from mortgage repayment', () => {
   const concept = expansion_concepts.find(
     (node) => node.id === 'data_center_cre',

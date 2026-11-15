@@ -145,6 +145,27 @@ export const atlas_sources = {
     title: 'Asset-backed securities · background and definitions',
     url: 'https://www.sec.gov/spotlight/dodd-frank/assetbackedsecurities.shtml',
   },
+  fannie_single_family_mbs_roles_public: {
+    publisher: 'Fannie Mae',
+    title: 'Single-Family MBS · creation, guaranty and investor resources',
+    url: 'https://capitalmarkets.fanniemae.com/mortgage-backed-securities/single-family-mbs',
+  },
+  freddie_mbs_roles_public: {
+    publisher: 'Freddie Mac',
+    title:
+      'Understanding Mortgage-Backed Securities · origination through sale',
+    url: 'https://capitalmarkets.freddiemac.com/mbs/understanding-mortgage-backed-securities',
+  },
+  ginnie_program_roles_public: {
+    publisher: 'Ginnie Mae',
+    title: 'MBS Guide, Chapter 1 · issuer and guaranty roles',
+    url: 'https://www.ginniemae.gov/s3/sites/default/files/2026-02/Chapter_01.pdf',
+  },
+  sec_reg_ab_roles_public: {
+    publisher: 'SEC · eCFR',
+    title: 'Regulation AB Item 1101 · asset-backed securities definitions',
+    url: 'https://www.ecfr.gov/current/title-17/chapter-II/part-229/subpart-229.1100/section-229.1101',
+  },
   fannie_crt: {
     publisher: 'Fannie Mae',
     title: 'Credit Risk Transfer',
@@ -262,20 +283,54 @@ const entries: Entry[] = [
     'securitization_roles',
     'Securitization roles',
     'Different jobs around the same pool',
-    'The originator makes or acquires the underlying loans. The issuer or special-purpose vehicle issues securities under the transaction structure. The servicer collects payments and handles loan administration. The trustee carries out duties specified in the governing documents, including aspects of payment administration. One firm can perform several roles.',
-    'A servicer collects and administers payments; that alone does not make it the guarantor or investor. Legal responsibilities follow the transaction documents.',
+    'The originator makes or acquires a loan. A seller can transfer the loan or a participation to a purchaser, sponsor or issuing program. The issuer or issuing trust creates the security under its governing documents; a guarantor owes only the payment obligation stated in the applicable program or security documents. The servicer collects and administers borrower payments and may have remittance or advance duties under a servicing agreement. A trustee or payment administrator performs only its assigned document duties, while the investor owns the security claim. A hedge counterparty is party to a separate market contract. One firm can perform several roles, but role overlap does not merge the underlying legal obligations.',
+    'Fannie Mae and Freddie Mac purchase or securitize eligible loans and issue securities under their own guaranty frameworks. In the Ginnie Mae program, an approved private issuer pools eligible government-insured or guaranteed loans and issues the security, while Ginnie Mae provides the stated security guaranty; Ginnie Mae does not thereby become the loan originator. Non-agency RMBS has no agency guaranty, so protection depends on collateral, structure, transaction documents and the specifically obligated parties. A TBA hedge counterparty does not guarantee borrower payments or security principal and interest.',
     [
       [
-        'servicing',
-        'Servicing affects administration, fees and the timing of collections.',
+        'pipeline_hedging',
+        'A hedge contract is separate from the loan sale, issuance and security guaranty.',
       ],
       [
-        'waterfall',
-        'The governing structure determines how collected cash is allocated.',
+        'agency',
+        'Agency program documents define issuer and guarantor responsibilities.',
+      ],
+      [
+        'ginnie',
+        'Ginnie Mae guarantees qualifying securities issued by approved issuers.',
+      ],
+      [
+        'non_agency',
+        'Non-agency protection is transaction-specific rather than an agency guaranty.',
+      ],
+      [
+        'servicing',
+        'Servicing governs collection, administration, fees and remittance duties.',
+      ],
+      [
+        'cash_flows',
+        'Borrower collections become investor distributions only through the governing contracts.',
       ],
     ],
-    ['guide', 'sec_abs'],
-    ['originator', 'SPV', 'trustee'],
+    [
+      'pipeline_public',
+      'fannie_single_family_mbs_roles_public',
+      'freddie_mbs_roles_public',
+      'ginnie_program_roles_public',
+      'sec_reg_ab_roles_public',
+    ],
+    [
+      'originator',
+      'seller',
+      'sponsor',
+      'issuer',
+      'SPV',
+      'guarantor',
+      'servicer',
+      'trustee',
+      'payment administrator',
+      'investor',
+      'hedge counterparty',
+    ],
   ],
   [
     'home_prices',
@@ -964,6 +1019,10 @@ const entries: Entry[] = [
 ];
 
 const checks: Record<string, [string, string]> = {
+  securitization_roles: [
+    "Does the counterparty to an originator's TBA hedge guarantee the borrower's mortgage payment or the security's principal and interest?",
+    'No. The counterparty owes only the obligations in the hedge contract. A borrower-payment or security-payment guaranty must come from the applicable loan, program or security documents.',
+  ],
   fx_hedging: [
     'Does a lower FX hedge cost prove that foreign investors will buy agency MBS and spreads will tighten?',
     'No. Allocation still depends on asset valuation, hedge terms and basis, funding, mandates, alternatives and existing positions; observed purchases and spread direction must be established separately.',
@@ -1581,6 +1640,32 @@ atlas_comparisons.push(
 );
 
 export const atlas_paths = [
+  {
+    id: 'rate_lock_to_investor_cash_flows',
+    title: 'From a borrower rate lock to investor cash flows',
+    description:
+      'Follow separate contracts from a lender commitment through securitization roles and investor distributions.',
+    premise:
+      'A typical agency execution can connect a borrower rate lock to an investor payment, but each transfer, hedge, guaranty and servicing duty comes from a different contract or program document.',
+    steps: [
+      'rate_lock',
+      'pipeline_hedging',
+      'securitization_roles',
+      'agency',
+      'servicing',
+      'cash_flows',
+    ],
+    explanations: [
+      'The borrower and lender enter a time-limited rate-lock commitment before the mortgage is funded. The lender bears the commitment terms; no security exists yet.',
+      'The lender may use a TBA or other market hedge with a counterparty. That hedge contract can offset market exposure, but it neither sells the loan nor creates an MBS guaranty.',
+      'A seller transfers a loan or participation into a purchase or securitization channel. Issuer, guarantor, servicer, trustee or payment administrator, investor and hedge-counterparty duties remain contract-specific even when one firm performs several roles.',
+      'Fannie Mae and Freddie Mac issue securities within their guaranty frameworks. In the Ginnie Mae branch, an approved issuer issues securities backed by eligible government-insured or guaranteed loans and Ginnie Mae provides the stated security guaranty. Non-agency RMBS has no agency guaranty.',
+      'The servicer collects borrower payments, administers the loans, retains stated fees and remits or advances amounts as required by the governing servicing and program documents. Servicing does not by itself establish ownership or a guaranty.',
+      'The investor receives distributions on the security according to the governing documents after applicable servicing and guaranty fees, timing rules and any transaction waterfall. Those distributions are not the same legal claim as the borrower payment or the hedge settlement.',
+    ],
+    boundary:
+      'This is a typical agency branch, not a single required path for every mortgage. A loan may be retained, sold as a whole loan or enter a different securitization, and one entity may perform several roles. Fannie Mae/Freddie Mac, Ginnie Mae and non-agency structures allocate issuer and guarantor duties differently. The TBA hedge counterparty is neither the borrower guarantor nor the security guarantor.',
+  },
   {
     id: 'product_to_option',
     title: 'A home loan, a bond, an option',
