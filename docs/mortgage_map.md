@@ -1,5 +1,13 @@
 # Mortgage Map
 
+## November 17: corporate issuance hedge flows
+
+Mortgage Map now distinguishes a future fixed-rate issuance lock from a post-issuance fixed-to-floating or floating-to-fixed swap. The new `corporate_issuance_hedging` concept explains why gross corporate debt supply does not reveal the signed swap flow: notional, tenor, execution timing, unwind, the issuer's actual position and the dealer hedge must be identified first. Unswapped issuance and offsetting client or dealer flows remain explicit counterexamples.
+
+One guided path follows the question through corporate debt, signed swap direction, swap spreads, market intermediation and agency MBS current-coupon attribution. Its quoted-yield identity uses aligned currency, time, settlement, maturity or interpolation, yield and quote conventions. Quoted yield-over-swap is not OAS, and a non-bullet MBS benchmark may require duration or key-rate mapping rather than final maturity.
+
+Recent restricted reading supplied only the research question. Published copy is original and supported by public Federal Reserve, New York Fed and U.S. Treasury material. The change adds one stable concept, four conditional relationships, one path and one knowledge check. It adds no current market claim, prediction, pricing engine, live feed, trade recommendation, mortgage-rate advice or separate subject map.
+
 ## November 11: property insurance transmission
 
 Mortgage Map now separates hazard exposure, physical damage, insurance coverage and availability, borrower cash-flow pressure, collateral condition, default and recovery, and contract-specific security loss allocation. The new `property_insurance_transmission` concept explains why a hazard estimate is not a mortgage-loss estimate and why property-level mitigation does not by itself establish insurance availability, collateral liquidity or pool-level diversification.

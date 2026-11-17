@@ -95,6 +95,11 @@ export const mortgage_math: Record<string, { tex: string; variables: string }> =
       variables:
         's_MBS: 3 × 1 MBS loss-BPV vector for declared level, slope and curvature shocks, in USD per +1 bp factor shock; B: full-rank, sufficiently well-conditioned 3 × 3 matrix of the same loss-BPV units per long Treasury futures contract; q: signed contract quantities, negative for short. All entries use one factor normalization, curve, as-of date, settlement, full-price, OAS, prepayment and model convention. A first-order local equation, not an optimal hedge or forecast.',
     },
+    corporate_issuance_hedging: {
+      tex: String.raw`y_{\mathrm{MBS}}-y_T=\left(y_{\mathrm{MBS}}-S\right)+\left(S-y_T\right)`,
+      variables:
+        'y_MBS: quoted MBS yield; S: comparable swap fixed rate; y_T: comparable Treasury yield. Every difference is expressed in basis points under the same currency, as-of time, aligned settlement, yield definition and quote convention. Use the same maturity or an explicit interpolation or duration/key-rate mapping. y_MBS − S is quoted yield-over-swap, not OAS; S − y_T is swap spread. This arithmetic identity does not identify issuance flow or predict any rate.',
+    },
     accrual_period: {
       tex: String.raw`\alpha=\frac{D(T_1,T_2)}{360}`,
       variables:

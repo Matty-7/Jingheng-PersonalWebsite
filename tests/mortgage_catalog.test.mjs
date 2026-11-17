@@ -15,6 +15,7 @@ import {
   mortgage_sources,
 } from '../content/mortgage_concepts.ts';
 import { search_concepts } from '../lib/mortgage_search.ts';
+import { mortgage_math } from '../lib/mortgage_math.ts';
 import {
   learning_index,
   initial_progress,
@@ -37,6 +38,125 @@ test('one Mortgage Map includes every domain and concept in the catalog', () => 
     assert.ok(route_for_concept(id).steps.includes(id));
   }
   assert.equal(search_concepts('HELOC')[0].id, 'heloc');
+});
+
+test('corporate issuance hedge flows separate signed swap direction from MBS benchmark attribution', () => {
+  const concept = mortgage_concepts.find(
+    (node) => node.id === 'corporate_issuance_hedging',
+  );
+  assert.ok(concept);
+  assert.equal(
+    mortgage_concepts.filter((node) => node.id === 'corporate_issuance_hedging')
+      .length,
+    1,
+  );
+  assert.equal(concept.branch, 'risk');
+  assert.equal(concept.topic, 'rates_instruments');
+  assert.equal(search_concepts('issuance lock')[0]?.id, concept.id);
+  assert.equal(search_concepts('fixed to floating')[0]?.id, concept.id);
+  assert.equal(search_concepts('floating to fixed')[0]?.id, concept.id);
+  assert.match(concept.summary, /issuance lock.*pay fixed.*receive floating/i);
+  assert.match(concept.summary, /fixed-rate debt to floating.*receive fixed/i);
+  assert.match(concept.summary, /floating-rate debt to fixed.*pay fixed/i);
+  assert.match(concept.distinction, /gross issuance does not identify net/i);
+  for (const term of [
+    /notional/i,
+    /tenor/i,
+    /execution timing/i,
+    /unwind/i,
+    /dealer hedge/i,
+    /unswapped issuance/i,
+    /offsetting receive-fixed/i,
+  ])
+    assert.match(concept.distinction, term);
+  assert.match(concept.formula.expression, /y_MBS.*y_T.*S/);
+  for (const term of [
+    /basis points/i,
+    /same currency/i,
+    /as-of time/i,
+    /settlement/i,
+    /yield definition/i,
+    /quote convention/i,
+    /maturity.*interpolation.*mapping/i,
+    /duration or key-rate/i,
+    /not OAS/i,
+  ])
+    assert.match(concept.formula.assumptions, term);
+  assert.match(concept.formula.example, /50 bp.*50 bp.*100 bp/i);
+  assert.match(concept.formula.example, /not causation/i);
+  assert.match(mortgage_math[concept.id].tex, /y_\{\\mathrm\{MBS\}\}/);
+  assert.match(mortgage_math[concept.id].variables, /not OAS/i);
+  for (const source of [
+    'fed_corporate_swap_exposure_2016',
+    'tbac_swap_spreads_2010',
+    'fed_tealbook_swap_spreads_2015',
+    'nyfed_negative_swap_spreads_2018',
+    'nyfed_intermediary_balance_sheets_2022',
+  ]) {
+    assert.ok(mortgage_sources[source], source);
+    assert.match(mortgage_sources[source].url, /^https:\/\//);
+    assert.ok(concept.sources.includes(source), source);
+  }
+  for (const edge_id of [
+    'expansion_corporate_corporate_issuance_hedging',
+    'expansion_corporate_issuance_hedging_interest_rate_swap',
+    'expansion_interest_rate_swap_swap_spread',
+    'expansion_swap_spread_supply_demand',
+  ]) {
+    const edge = mortgage_relationships.find((item) => item.id === edge_id);
+    assert.ok(edge, edge_id);
+    assert.ok(edge.sources?.length, edge_id);
+    assert.ok(edge.conditions?.length, edge_id);
+  }
+  const path = mortgage_paths.find(
+    (item) => item.id === 'corporate_issuance_to_mbs_benchmark',
+  );
+  assert.ok(path);
+  assert.deepEqual(path.steps, [
+    'corporate',
+    'corporate_issuance_hedging',
+    'interest_rate_swap',
+    'swap_spread',
+    'supply_demand',
+    'current_coupon',
+  ]);
+  assert.equal(path.steps.length, path.explanations.length);
+  for (let index = 1; index < path.steps.length; index += 1) {
+    const left = path.steps[index - 1];
+    const right = path.steps[index];
+    assert.ok(
+      mortgage_relationships.some(
+        (edge) =>
+          (edge.source === left && edge.target === right) ||
+          (edge.source === right && edge.target === left),
+      ),
+      `${left} ↔ ${right}`,
+    );
+  }
+  assert.match(path.boundary, /cannot be attributed.*alone/i);
+  assert.match(path.boundary, /not one-for-one pass-through/i);
+  assert.equal(learning_checks[concept.id].correct, 1);
+  assert.match(
+    learning_checks[concept.id].choices[1],
+    /direction.*notional.*tenor.*timing.*unwind.*dealer hedge/i,
+  );
+  assert.match(
+    learning_checks[concept.id].choices[1],
+    /unswapped or offsetting flows/i,
+  );
+  const public_copy = [
+    concept.title,
+    concept.subtitle,
+    concept.summary,
+    concept.distinction,
+    concept.question,
+    concept.answer,
+    path.title,
+    path.description,
+    path.premise,
+    path.boundary,
+  ].join(' ');
+  assert.doesNotMatch(public_copy, /AI debt|hyperscaler/i);
 });
 
 test('Ginnie buyouts separate eligibility, issuer action and observed CPR', () => {

@@ -2032,6 +2032,14 @@ export const learning_checks: Record<
     ],
     correct: 0,
   },
+  corporate_issuance_hedging: {
+    choices: [
+      'Yes. A large fixed-rate issue is automatically swapped to floating, so its full face amount is receive-fixed flow and swap spreads must narrow.',
+      'No. First identify the hedge state, signed direction, notional, tenor, timing, unwind and dealer hedge; unswapped or offsetting flows can produce a different result.',
+      'Yes. Gross issuance determines the Treasury-versus-swap move even when dealer balance-sheet capacity and other fixed-income flows change.',
+    ],
+    correct: 1,
+  },
   spread_duration: {
     choices: [
       'About −1% from spread repricing alone.',
