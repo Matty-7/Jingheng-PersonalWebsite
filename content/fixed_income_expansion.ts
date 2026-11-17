@@ -151,6 +151,35 @@ export const expansion_sources = {
     title: 'Case Study: Key Rate Duration Adjustment',
     url: 'https://www.cmegroup.com/education/articles-and-reports/case-study-key-rate-duration-adjustment',
   },
+  fed_corporate_swap_exposure_2016: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'Corporate Bond Issuers’ Swap Exposure to Rising Interest Rates · May 26, 2016',
+    url: 'https://www.federalreserve.gov/econresdata/notes/feds-notes/2016/corporate-bond-issuers-swap-exposure-to-rising-interest-rates-20160526.html',
+  },
+  tbac_swap_spreads_2010: {
+    publisher: 'U.S. Department of the Treasury',
+    title:
+      'Treasury Borrowing Advisory Committee Minutes · Interest Rate Swap Spreads to Treasuries · May 4, 2010',
+    url: 'https://home.treasury.gov/news/press-releases/tg681',
+  },
+  fed_tealbook_swap_spreads_2015: {
+    publisher: 'Federal Reserve Board',
+    title:
+      'December 2015 Tealbook A · corporate issuance, swap spreads and dealer capacity · released May 2020',
+    url: 'https://www.federalreserve.gov/monetarypolicy/files/FOMC20151216tealbooka20151209.pdf',
+  },
+  nyfed_negative_swap_spreads_2018: {
+    publisher: 'Federal Reserve Bank of New York',
+    title: 'Negative Swap Spreads · Economic Policy Review · October 2018',
+    url: 'https://www.newyorkfed.org/research/epr/2018/epr_2018_negative-swap-spreads_boyarchenko',
+  },
+  nyfed_intermediary_balance_sheets_2022: {
+    publisher: 'Federal Reserve Bank of New York',
+    title:
+      'Intermediary Balance Sheets and the Treasury Yield Curve · Staff Report 1023 · July 2022',
+    url: 'https://www.newyorkfed.org/research/staff_reports/sr1023.html',
+  },
 };
 
 export const expansion_topics = [
@@ -179,6 +208,7 @@ export const expansion_topics = [
     concepts: [
       'curve_factor_hedge',
       'interest_rate_swap',
+      'corporate_issuance_hedging',
       'swaption',
       'option_moneyness',
       'volatility_surface',
@@ -630,6 +660,68 @@ export const expansion_concepts: MortgageConcept[] = [
       },
     ],
     sources: ['sofr_swaps'],
+  }),
+  entry({
+    id: 'corporate_issuance_hedging',
+    title: 'Corporate issuance hedge flows',
+    subtitle: 'Gross debt supply does not reveal the swap direction',
+    aliases: [
+      'issuance lock',
+      'pre-issuance hedge',
+      'fixed to floating',
+      'floating to fixed',
+      'swapped issuance',
+    ],
+    summary:
+      'A future fixed-rate issuance lock commonly has the issuer pay fixed and receive floating before pricing. After issuance, converting fixed-rate debt to floating has the issuer receive fixed and pay floating; converting floating-rate debt to fixed has the issuer pay fixed and receive floating. These are alternative hedge states, not stages every deal follows. Each can create different client and dealer flows in swaps, Treasury instruments or other duration hedges.',
+    distinction:
+      'Gross issuance does not identify net market flow. Determine whether debt was hedged at all, then identify notional, tenor, execution timing, expected unwind, the issuer’s actual position and the dealer hedge. Large unswapped issuance is one counterexample. Pay-fixed pre-issuance hedges, offsetting receive-fixed demand, dealer hedges in swaps or Treasuries, and post-pricing unwinds can also break a simple issuance-to-swap-rate story. Dealer balance-sheet capacity conditions how shocks are absorbed; it does not fix the direction or size of the result.',
+    formula: {
+      expression:
+        'y_MBS − y_T = (y_MBS − S) + (S − y_T); quoted MBS–Treasury spread = quoted yield-over-swap + swap spread',
+      assumptions:
+        'All three differences are expressed in basis points under the same currency, as-of time, aligned settlement, yield definition and quote convention. S and y_T use a comparable maturity or an explicitly stated interpolation or mapping rule. For MBS, benchmark mapping can use duration or key-rate exposure rather than final maturity. y_MBS − S is quoted yield-over-swap, not OAS. This arithmetic identity does not identify issuer hedge flow or predict Treasury, swap, MBS or borrower mortgage rates.',
+      example:
+        'Hypothetical arithmetic only: 5.00% − 4.00% = (5.00% − 4.50%) + (4.50% − 4.00%) = 50 bp + 50 bp = 100 bp. Holding one term fixed illustrates attribution, not causation; a different mapping or quotation convention can make the inputs non-comparable.',
+    },
+    question:
+      'A headline reports heavy fixed-rate corporate issuance. Does that establish receive-fixed swap flow and predict a narrower swap spread?',
+    answer:
+      'No. First identify whether and how the issuer hedged, including direction, notional, tenor, timing and unwind, then identify the dealer hedge and other market flows. Unswapped issuance and offsetting pay-fixed or dealer activity are direct counterexamples.',
+    links: [
+      {
+        id: 'corporate',
+        reason:
+          'The debt contract and issuer objective come before any derivative interpretation.',
+      },
+      {
+        id: 'interest_rate_swap',
+        reason:
+          'Pay-fixed and receive-fixed positions change the issuer’s rate exposure in opposite directions.',
+      },
+      {
+        id: 'swap_spread',
+        reason:
+          'Issuer and dealer flows are only some of the inputs that can move swaps relative to Treasuries.',
+      },
+      {
+        id: 'current_coupon',
+        reason:
+          'Mortgage benchmark attribution must remain separate from mortgage option and spread valuation.',
+      },
+      {
+        id: 'basis_risk',
+        reason:
+          'Treasury, swap and MBS exposures need not move together under the selected mapping.',
+      },
+    ],
+    sources: [
+      'fed_corporate_swap_exposure_2016',
+      'tbac_swap_spreads_2010',
+      'fed_tealbook_swap_spreads_2015',
+      'nyfed_negative_swap_spreads_2018',
+      'nyfed_intermediary_balance_sheets_2022',
+    ],
   }),
   entry({
     id: 'swaption',
@@ -1523,6 +1615,45 @@ export const expansion_relationships: MortgageRelationship[] = [
       'Use current delivery and financing assumptions and retain residual mortgage-versus-Treasury basis risk.',
   },
   relation(
+    'corporate',
+    'corporate_issuance_hedging',
+    'separates debt supply from hedge flow',
+    'A corporate debt transaction can remain fixed, remain floating or be paired with a pre-issuance or post-issuance hedge.',
+    'comparison',
+    ['fed_corporate_swap_exposure_2016'],
+    'Identify the actual debt and derivative positions; gross issuance is not a measure of swapped notional or net duration flow.',
+  ),
+  relation(
+    'corporate_issuance_hedging',
+    'interest_rate_swap',
+    'sets the signed swap direction',
+    'A fixed-rate issuance lock commonly pays fixed, while a fixed-to-floating debt conversion receives fixed; a floating-to-fixed conversion pays fixed.',
+    'mechanism',
+    ['fed_corporate_swap_exposure_2016'],
+    'Confirm notional, tenor, execution timing, unwind and dealer hedge before inferring the market-facing position.',
+  ),
+  relation(
+    'interest_rate_swap',
+    'swap_spread',
+    'enters relative rate-market demand',
+    'Client and dealer fixed-rate demand can affect the swap rate relative to a comparable Treasury yield.',
+    'mechanism',
+    ['tbac_swap_spreads_2010', 'fed_tealbook_swap_spreads_2015'],
+    'Corporate issuance is only one possible flow; Treasury supply, funding, mortgage hedging, institutional demand and other positions can offset it.',
+  ),
+  relation(
+    'swap_spread',
+    'supply_demand',
+    'reflects two markets and constrained intermediation',
+    'Swap and Treasury supply-demand conditions meet through dealers and relative-value investors with finite balance-sheet capacity.',
+    'mechanism',
+    [
+      'nyfed_negative_swap_spreads_2018',
+      'nyfed_intermediary_balance_sheets_2022',
+    ],
+    'Balance-sheet capacity changes shock absorption and arbitrage bounds; it does not make any single issuance flow determinative.',
+  ),
+  relation(
     'data_center_cre',
     'rent_roll',
     'organizes lease milestones',
@@ -2148,6 +2279,32 @@ export const expansion_relationships: MortgageRelationship[] = [
 ];
 
 export const expansion_paths = [
+  {
+    id: 'corporate_issuance_to_mbs_benchmark',
+    title: 'From corporate issuance to an MBS benchmark question',
+    description:
+      'Separate the issuer’s signed hedge from swap-spread attribution before connecting the headline to mortgages.',
+    premise:
+      'Issuance lock, fixed-to-floating and floating-to-fixed are alternative states, not a required sequence. A gross issuance headline is not a net swap order.',
+    steps: [
+      'corporate',
+      'corporate_issuance_hedging',
+      'interest_rate_swap',
+      'swap_spread',
+      'supply_demand',
+      'current_coupon',
+    ],
+    explanations: [
+      'Start with the debt’s fixed or floating terms and the issuer’s funding objective.',
+      'Identify whether a hedge exists, its direction, notional, tenor, timing and expected unwind.',
+      'Translate the issuer position and the dealer hedge into signed pay-fixed, receive-fixed or Treasury exposure.',
+      'Decompose swap versus Treasury pricing without assigning the observed move to one flow.',
+      'Add Treasury supply, mortgage hedging, institutional demand, funding and dealer balance-sheet capacity.',
+      'Use the resulting benchmark comparison around current-coupon MBS without treating it as OAS or a borrower mortgage-rate forecast.',
+    ],
+    boundary:
+      'Observed swap-spread moves cannot be attributed to corporate issuance alone. Dealer capacity and other flows can amplify, offset or reverse the apparent transmission. The final step is benchmark attribution, not one-for-one pass-through, pricing, a forecast, a trade recommendation or mortgage-rate advice.',
+  },
   {
     id: 'curve_factor_hedge_workflow',
     title: 'From curve factors to signed hedge quantities',
